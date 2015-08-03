@@ -24,8 +24,6 @@ public class SparqlExample {
         QueryExecution qExe = QueryExecutionFactory.sparqlService(endpoint, query , authenticator);
         ResultSet results = qExe.execSelect();
         ResultSetFormatter.out(System.out, results, query) ;
-        
-        // Test
 	}
 
 }
