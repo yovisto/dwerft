@@ -1,4 +1,4 @@
-package de.dwerft.lpdcimport.general;
+package de.dwerft.lpdc.importer.general;
 
 // TODO: Auto-generated Javadoc
 /**

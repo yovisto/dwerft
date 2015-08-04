@@ -1,4 +1,4 @@
-package de.dwerft.lpdcimport.general;
+package de.dwerft.lpdc.importer.general;
 
 import java.io.File;
 import java.io.FileNotFoundException;
