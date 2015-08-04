@@ -1,0 +1,1405 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY bmf "http://www.irt.de/bmf#" >
+    <!ENTITY filmontology "http://filmontology.org/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY for "http://filmontology.org/resource/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY foo "http://filmontology.org/ontology/1.0/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY webprotege "http://protege.stanford.edu/webprotege/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ebucore "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#" >
+]>
+
+
+<rdf:RDF xmlns="http://filmontology.org/"
+     xml:base="http://filmontology.org/"
+     xmlns:bmf="http://www.irt.de/bmf#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:webprotege="http://protege.stanford.edu/webprotege/"
+     xmlns:for="&filmontology;resource/"
+     xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:foo="&filmontology;ontology/1.0/"
+     xmlns:filmontology="http://filmontology.org/">
+    <owl:Ontology rdf:about="http://filmontology.org/ontology/ontology">
+        <dc:date rdf:datatype="&xsd;dateTime">Jun 30, 2015 8:03:46 AM</dc:date>
+        <dc:creator rdf:datatype="&xsd;string">hagt</dc:creator>
+        <owl:imports rdf:resource="http://bmf.irt.de/bmf"/>
+        <owl:imports rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://filmontology.org/address -->
+
+    <owl:ObjectProperty rdf:about="&foo;address">
+        <rdfs:label>address</rdfs:label>
+        <rdfs:comment>An address of a location, company, emergency facility or belonging to a cast member</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Address"/>
+        <rdfs:domain rdf:resource="&foo;Cast"/>
+        <rdfs:domain rdf:resource="&foo;Company"/>
+        <rdfs:domain rdf:resource="&foo;Emergency"/>
+        <rdfs:domain rdf:resource="&foo;Location"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+        <owl:equivalentProperty rdf:resource="&bmf;addressAndContact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/characterCast -->
+
+    <owl:ObjectProperty rdf:about="&foo;characterCast">
+        <rdfs:label>characterCast</rdfs:label>
+        <rdfs:comment>A character is played by a certain cast member.</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Cast"/>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/dwerftObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&foo;dwerftObjectProperty">
+        <rdfs:label>dwerftObjectProperty</rdfs:label>
+        <rdfs:comment>Abstract object property to structure the dwerft properties and other imported properties</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasCast -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasCast">
+        <rdfs:label>hasCast</rdfs:label>
+        <rdfs:comment>Cast members of a project</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Cast"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasCharacter -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasCharacter">
+        <rdfs:label>hasCharacter</rdfs:label>
+        <rdfs:comment>Characters of a project.</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Character"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasCompany -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasCompany">
+        <rdfs:label>hasCompany</rdfs:label>
+        <rdfs:comment>Associated companies of a project (e.g. production company)</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Company"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+        <owl:equivalentProperty rdf:resource="&bmf;productionCompanyReference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasCrew -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasCrew">
+        <rdfs:label>hasCrew</rdfs:label>
+        <rdfs:comment>Crew members of a project</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Crew"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasCrewDepartment -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasCrewDepartment">
+        <rdfs:label>hasCrewDepartment</rdfs:label>
+        <rdfs:comment>Crew departments of a project</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;CrewDepartment"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasCrewMember -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasCrewMember">
+        <rdfs:label>hasCrewMember</rdfs:label>
+        <rdfs:comment>Crew member of a crew department</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Crew"/>
+        <rdfs:domain rdf:resource="&foo;CrewDepartment"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasEmergency -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasEmergency">
+        <rdfs:label>hasEmergency</rdfs:label>
+        <rdfs:comment>Associated emergency facilities at a set</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Emergency"/>
+        <rdfs:domain rdf:resource="&foo;Set"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasEpisode -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasEpisode">
+        <rdfs:label>hasEpisode</rdfs:label>
+        <rdfs:comment>Episodes of a project</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Episode"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasFacility -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasFacility">
+        <rdfs:label>hasFacility</rdfs:label>
+        <rdfs:comment>Associated facilities / equipment at a set</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Facility"/>
+        <rdfs:domain rdf:resource="&foo;Set"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasLocation -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasLocation">
+        <rdfs:label>hasLocation</rdfs:label>
+        <rdfs:comment>Locations of a project</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Location"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasScene -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasScene">
+        <rdfs:label>hasScene</rdfs:label>
+        <rdfs:comment>Scene in a scene group</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Scene"/>
+        <rdfs:domain rdf:resource="&foo;SceneGroup"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasSceneGroup -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasSceneGroup">
+        <rdfs:label>hasSceneGroup</rdfs:label>
+        <rdfs:comment>Groups of scenes of an episode</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
+        <rdfs:range rdf:resource="&foo;SceneGroup"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasSet -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasSet">
+        <rdfs:label>hasSet</rdfs:label>
+        <rdfs:comment>Sets that belong to a project.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:range rdf:resource="&foo;Set"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasShootingDay -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasShootingDay">
+        <rdfs:label>hasShootingDay</rdfs:label>
+        <rdfs:comment>Shooting days of a shooting schedule</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;ShootingDay"/>
+        <rdfs:domain rdf:resource="&foo;ShootingSchedule"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/hasShootingSchedule -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasShootingSchedule">
+        <rdfs:label>hasShootingSchedule</rdfs:label>
+        <rdfs:comment>Shooting schedule of a project</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:range rdf:resource="&foo;ShootingSchedule"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/sceneCharacter -->
+
+    <owl:ObjectProperty rdf:about="&foo;sceneCharacter">
+        <rdfs:label>sceneCharacter</rdfs:label>
+        <rdfs:comment>Character playing in a scene</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Character"/>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/sceneExtra -->
+
+    <owl:ObjectProperty rdf:about="&foo;sceneExtra">
+        <rdfs:label>sceneExtra</rdfs:label>
+        <rdfs:comment>Extra characters in a scene</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Extra"/>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/sceneSet -->
+
+    <owl:ObjectProperty rdf:about="&foo;sceneSet">
+        <rdfs:label>sceneSet</rdfs:label>
+        <rdfs:comment>Set on which the scene is shot</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:range rdf:resource="&foo;Set"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/setLocation -->
+
+    <owl:ObjectProperty rdf:about="&foo;setLocation">
+        <rdfs:label>setLocation</rdfs:label>
+        <rdfs:comment>Reference to the location of a set</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Location"/>
+        <rdfs:domain rdf:resource="&foo;Set"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/shootingDayScene -->
+
+    <owl:ObjectProperty rdf:about="&foo;shootingDayScene">
+        <rdfs:label>shootingDayScene</rdfs:label>
+        <rdfs:comment>Which scenes will be shot on a particular day.</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Scene"/>
+        <rdfs:domain rdf:resource="&foo;ShootingDay"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.irt.de/bmf#addressAndContact -->
+
+    <rdf:Description rdf:about="&bmf;addressAndContact"/>
+    
+
+
+    <!-- http://www.irt.de/bmf#productionCompanyReference -->
+
+    <rdf:Description rdf:about="&bmf;productionCompanyReference"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://filmontology.org/age -->
+
+    <owl:DatatypeProperty rdf:about="&foo;age">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>age</rdfs:label>
+        <rdfs:comment>Age of a character</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/aliasName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;aliasName">
+        <rdfs:label>aliasName</rdfs:label>
+        <rdfs:comment>Alternative name(s) of a character</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/appearance -->
+
+    <owl:DatatypeProperty rdf:about="&foo;appearance">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>appearance</rdfs:label>
+        <rdfs:comment>Description of the character look/appearance</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/aspectRatio -->
+
+    <owl:DatatypeProperty rdf:about="&foo;aspectRatio">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>aspectRatio</rdfs:label>
+        <rdfs:comment>Relationship between width and height that was used for recording.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&ebucore;aspectRatio"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/biography -->
+
+    <owl:DatatypeProperty rdf:about="&foo;biography">
+        <rdfs:label>biography</rdfs:label>
+        <rdfs:comment>Short biographical description of a character</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/characterDescription -->
+
+    <owl:DatatypeProperty rdf:about="&foo;characterDescription">
+        <rdfs:label>characterDescription</rdfs:label>
+        <rdfs:comment>Long description of a character</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/characterNumber -->
+
+    <owl:DatatypeProperty rdf:about="&foo;characterNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>characterNumber</rdfs:label>
+        <rdfs:comment>Sequential number of a character.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/cityName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;cityName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>cityName</rdfs:label>
+        <rdfs:comment>Name of the city of an address</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Address"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&bmf;city"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/contactPerson -->
+
+    <owl:DatatypeProperty rdf:about="&foo;contactPerson">
+        <rdfs:label>contactPerson</rdfs:label>
+        <rdfs:comment>Contact person of a location</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Location"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/countryName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;countryName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>countryName</rdfs:label>
+        <rdfs:comment>Name of the country of an address</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Address"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&bmf;countryName"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/crewRole -->
+
+    <owl:DatatypeProperty rdf:about="&foo;crewRole">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>crewRole</rdfs:label>
+        <rdfs:comment>Kind of role (function) that the crew member possesses</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Crew"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/date -->
+
+    <owl:DatatypeProperty rdf:about="&foo;date">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>date</rdfs:label>
+        <rdfs:comment>Date of the shooting day (format YYYY-MM-DD)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ShootingDay"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/dayTime -->
+
+    <owl:DatatypeProperty rdf:about="&foo;dayTime">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>dayTime</rdfs:label>
+        <rdfs:comment>Daytime of the scene (e.g., day, night, morning, etc). Should be modeled as enumeration (not possible with Webprotege).</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/departmentCode -->
+
+    <owl:DatatypeProperty rdf:about="&foo;departmentCode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>departmentCode</rdfs:label>
+        <rdfs:comment>Short name/abbreviation of a crew department</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;CrewDepartment"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/duration -->
+
+    <owl:DatatypeProperty rdf:about="&foo;duration">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>duration</rdfs:label>
+        <rdfs:comment>Length of an episode in seconds</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&ebucore;duration"/>
+        <owl:equivalentProperty rdf:resource="&bmf;duration"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/dwerftDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="&foo;dwerftDataProperty">
+        <rdfs:label>dwerftDataProperty</rdfs:label>
+        <rdfs:comment>Abstract data property to structure the dwerft properties and other imported properties</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/estimatedTime -->
+
+    <owl:DatatypeProperty rdf:about="&foo;estimatedTime">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>estimatedTime</rdfs:label>
+        <rdfs:comment>Estimated time of a scene (pre-stop time).</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/facilityType -->
+
+    <owl:DatatypeProperty rdf:about="&foo;facilityType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>facilityType</rdfs:label>
+        <rdfs:comment>Kind of the facility (e.g., parking, toilets)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Facility"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/format -->
+
+    <owl:DatatypeProperty rdf:about="&foo;format">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>format</rdfs:label>
+        <rdfs:comment>Material on which the film is recorded (e.g., DVCPRO)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/frameRate -->
+
+    <owl:DatatypeProperty rdf:about="&foo;frameRate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>frameRate</rdfs:label>
+        <rdfs:comment>Frame rate of an episode</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&ebucore;frameRate"/>
+        <owl:equivalentProperty rdf:resource="&bmf;frameRate"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/fullName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;fullName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>fullName</rdfs:label>
+        <rdfs:comment>Complete name of a character</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/hobby -->
+
+    <owl:DatatypeProperty rdf:about="&foo;hobby">
+        <rdfs:label>hobby</rdfs:label>
+        <rdfs:comment>Free time activities of a character</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/houseNumber -->
+
+    <owl:DatatypeProperty rdf:about="&foo;houseNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>houseNumber</rdfs:label>
+        <rdfs:comment>House number of an address</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Address"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/identifier -->
+
+    <owl:DatatypeProperty rdf:about="&foo;identifier">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>identifier</rdfs:label>
+        <rdfs:comment>Unique identifier of a data object (e.g., project, scene)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/identifierDramaQueen -->
+
+    <owl:DatatypeProperty rdf:about="&foo;identifierDramaQueen">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>identifierDramaQueen</rdfs:label>
+        <rdfs:comment>Identifier specific to DramaQueen projects</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/identifierLockitNetwork -->
+
+    <owl:DatatypeProperty rdf:about="&foo;identifierLockitNetwork">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>identifierLockitNetwork</rdfs:label>
+        <rdfs:comment>Identifier specific to LockitNetwork projects</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/identifierPreProducer -->
+
+    <owl:DatatypeProperty rdf:about="&foo;identifierPreProducer">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>identifierPreProducer</rdfs:label>
+        <rdfs:comment>Identifier specific to Preproducer projects</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/interiorExterior -->
+
+    <owl:DatatypeProperty rdf:about="&foo;interiorExterior">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>interiorExterior</rdfs:label>
+        <rdfs:comment>Scene takes place indoor or outdoor, possible values int, ext, int/ext, ext/int. Should be modeled as enumeration (not possible with Webprotege).</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/isTemporaryTitle -->
+
+    <owl:DatatypeProperty rdf:about="&foo;isTemporaryTitle">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>isTemporaryTitle</rdfs:label>
+        <rdfs:comment>Whether the title of a project is temporary or not</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/lastModified -->
+
+    <owl:DatatypeProperty rdf:about="&foo;lastModified">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>lastModified</rdfs:label>
+        <rdfs:comment>Date and time on which a data object was last modified</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/name -->
+
+    <owl:DatatypeProperty rdf:about="&foo;name">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>name</rdfs:label>
+        <rdfs:comment>Name of a data object</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/occupation -->
+
+    <owl:DatatypeProperty rdf:about="&foo;occupation">
+        <rdfs:label>occupation</rdfs:label>
+        <rdfs:comment>Profession of a character</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/pageEnd -->
+
+    <owl:DatatypeProperty rdf:about="&foo;pageEnd">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pageEnd</rdfs:label>
+        <rdfs:comment>On which page of the script the scene ends</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/pageStart -->
+
+    <owl:DatatypeProperty rdf:about="&foo;pageStart">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pageStart</rdfs:label>
+        <rdfs:comment>On which page of the script a scene starts</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/pages -->
+
+    <owl:DatatypeProperty rdf:about="&foo;pages">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pages</rdfs:label>
+        <rdfs:comment>Number of pages of a scene</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/relationshipStatus -->
+
+    <owl:DatatypeProperty rdf:about="&foo;relationshipStatus">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>relationshipStatus</rdfs:label>
+        <rdfs:comment>Status of relationship of a character (e.g. married etc).</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/remarks -->
+
+    <owl:DatatypeProperty rdf:about="&foo;remarks">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>remarks</rdfs:label>
+        <rdfs:comment>Additional information wrt to a scene</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/revision -->
+
+    <owl:DatatypeProperty rdf:about="&foo;revision">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>revision</rdfs:label>
+        <rdfs:comment>Revision number of a data object, in case several versions exist</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/sceneContent -->
+
+    <owl:DatatypeProperty rdf:about="&foo;sceneContent">
+        <rdfs:label>sceneContent</rdfs:label>
+        <rdfs:comment>Text content of the scene (formatted script)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/sceneDescription -->
+
+    <owl:DatatypeProperty rdf:about="&foo;sceneDescription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>sceneDescription</rdfs:label>
+        <rdfs:comment>Short summary of the scene.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/sceneHeader -->
+
+    <owl:DatatypeProperty rdf:about="&foo;sceneHeader">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>sceneHeader</rdfs:label>
+        <rdfs:comment>Header of a scene, usually containing the information whether it is shot indoors or outdoors, at day or night and the name of the set</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/sceneInserted -->
+
+    <owl:DatatypeProperty rdf:about="&foo;sceneInserted">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>sceneInserted</rdfs:label>
+        <rdfs:comment>Whether a scene was inserted or not.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/sceneNumber -->
+
+    <owl:DatatypeProperty rdf:about="&foo;sceneNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>sceneNumber</rdfs:label>
+        <rdfs:comment>Sequential number of a scene in a script. Can have letters (e.g., 5a, if split scene)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&bmf;sceneNumber"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/sceneShots -->
+
+    <owl:DatatypeProperty rdf:about="&foo;sceneShots">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>sceneShots</rdfs:label>
+        <rdfs:comment>Number of shots of a scene</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/setDescription -->
+
+    <owl:DatatypeProperty rdf:about="&foo;setDescription">
+        <rdfs:label>setDescription</rdfs:label>
+        <rdfs:comment>Long description of a set (setting)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Set"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/setType -->
+
+    <owl:DatatypeProperty rdf:about="&foo;setType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>setType</rdfs:label>
+        <rdfs:comment>Kind of the set (values in preproducer: locori - original filming location, locint - studio, locext - exterior construction)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Set"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/sex -->
+
+    <owl:DatatypeProperty rdf:about="&foo;sex">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>sex</rdfs:label>
+        <rdfs:comment>Gender of a cast (male or female)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Cast"/>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/shootingDayMode -->
+
+    <owl:DatatypeProperty rdf:about="&foo;shootingDayMode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>shootingDayMode</rdfs:label>
+        <rdfs:comment>Type of the day: shoot, free or travel</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ShootingDay"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/shootingDayNight -->
+
+    <owl:DatatypeProperty rdf:about="&foo;shootingDayNight">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>shootingDayNight</rdfs:label>
+        <rdfs:comment>Whether the shooting day contained a night shot? (Not sure value is never filled)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ShootingDay"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/shootingRatio -->
+
+    <owl:DatatypeProperty rdf:about="&foo;shootingRatio">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>shootingRatio</rdfs:label>
+        <rdfs:comment>Calculated ratio between the total duration of the footage and the final cut. Value is 1:X</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/socialStatus -->
+
+    <owl:DatatypeProperty rdf:about="&foo;socialStatus">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>socialStatus</rdfs:label>
+        <rdfs:comment>Rank of a character within the society</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/storyDay -->
+
+    <owl:DatatypeProperty rdf:about="&foo;storyDay">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>storyDay</rdfs:label>
+        <rdfs:comment>On which day of the story the scene takes place.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/storyTime -->
+
+    <owl:DatatypeProperty rdf:about="&foo;storyTime">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>storyTime</rdfs:label>
+        <rdfs:comment>On which daytime of the story the scene takes place.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/streetName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;streetName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>streetName</rdfs:label>
+        <rdfs:comment>Name of the street of an address</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Address"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&bmf;streetName"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/timeLevel -->
+
+    <owl:DatatypeProperty rdf:about="&foo;timeLevel">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>timeLevel</rdfs:label>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/title -->
+
+    <owl:DatatypeProperty rdf:about="&foo;title">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>title</rdfs:label>
+        <rdfs:comment>Title of project</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/zipCode -->
+
+    <owl:DatatypeProperty rdf:about="&foo;zipCode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>zipCode</rdfs:label>
+        <rdfs:comment>Postcal code of an address</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Address"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#aspectRatio -->
+
+    <owl:DatatypeProperty rdf:about="&ebucore;aspectRatio"/>
+    
+
+
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#duration -->
+
+    <owl:DatatypeProperty rdf:about="&ebucore;duration"/>
+    
+
+
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameRate -->
+
+    <rdf:Description rdf:about="&ebucore;frameRate"/>
+    
+
+
+    <!-- http://www.irt.de/bmf#city -->
+
+    <rdf:Description rdf:about="&bmf;city"/>
+    
+
+
+    <!-- http://www.irt.de/bmf#countryName -->
+
+    <rdf:Description rdf:about="&bmf;countryName"/>
+    
+
+
+    <!-- http://www.irt.de/bmf#duration -->
+
+    <rdf:Description rdf:about="&bmf;duration"/>
+    
+
+
+    <!-- http://www.irt.de/bmf#frameRate -->
+
+    <rdf:Description rdf:about="&bmf;frameRate"/>
+    
+
+
+    <!-- http://www.irt.de/bmf#sceneNumber -->
+
+    <rdf:Description rdf:about="&bmf;sceneNumber"/>
+    
+
+
+    <!-- http://www.irt.de/bmf#streetName -->
+
+    <rdf:Description rdf:about="&bmf;streetName"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://filmontology.org/Address -->
+
+    <owl:Class rdf:about="&foo;Address">
+        <rdfs:label>Address</rdfs:label>
+        <owl:equivalentClass rdf:resource="&bmf;AddressAndContactSet"/>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>Street address of a company, location, cast member, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/Cast -->
+
+    <owl:Class rdf:about="&foo;Cast">
+        <rdfs:label>Cast</rdfs:label>
+        <owl:equivalentClass rdf:resource="&ebucore;Cast"/>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>Person playing a character in a movie</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/Character -->
+
+    <owl:Class rdf:about="&foo;Character">
+        <rdfs:label>Character</rdfs:label>
+        <owl:equivalentClass rdf:resource="&ebucore;Character"/>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>A fictitious person</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/Company -->
+
+    <owl:Class rdf:about="&foo;Company">
+        <rdfs:label>Company</rdfs:label>
+        <owl:equivalentClass rdf:resource="&ebucore;Organisation"/>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>A business taking part in the film project (e.g., production company)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/Crew -->
+
+    <owl:Class rdf:about="&foo;Crew">
+        <rdfs:label>Crew</rdfs:label>
+        <owl:equivalentClass rdf:resource="&ebucore;Staff"/>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>A person involved in the film project who does not belong to the cast</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/CrewDepartment -->
+
+    <owl:Class rdf:about="&foo;CrewDepartment">
+        <rdfs:label>CrewDepartment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>A group of staff/crew members (e.g., production staff)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/DataObject -->
+
+    <owl:Class rdf:about="&foo;DataObject">
+        <rdfs:label>DataObject</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment>An abstract class to capture general information about data objects of film projects, such as identifier, versions, modify dates.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/Emergency -->
+
+    <owl:Class rdf:about="&foo;Emergency">
+        <rdfs:label>Emergency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>Emergency facilities next to a shooting location</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/Episode -->
+
+    <owl:Class rdf:about="&foo;Episode">
+        <rdfs:label>Episode</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>Parts of a series film project (a single film always has exactly one episode)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/Extra -->
+
+    <owl:Class rdf:about="&foo;Extra">
+        <rdfs:label>Extra</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;Character"/>
+        <rdfs:comment>Background actors</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/Facility -->
+
+    <owl:Class rdf:about="&foo;Facility">
+        <rdfs:label>Facility</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>Equipment at a shooting location (e.g., parking, toilets)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/Location -->
+
+    <owl:Class rdf:about="&foo;Location">
+        <rdfs:label>Location</rdfs:label>
+        <owl:equivalentClass rdf:resource="&ebucore;Location"/>
+        <owl:equivalentClass rdf:resource="&bmf;LocationSet"/>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>Actual location where a shooting takes place.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/Project -->
+
+    <owl:Class rdf:about="&foo;Project">
+        <rdfs:label>Project</rdfs:label>
+        <owl:equivalentClass rdf:resource="&bmf;ProductionSet"/>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>A film production project</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/Scene -->
+
+    <owl:Class rdf:about="&foo;Scene">
+        <rdfs:label>Scene</rdfs:label>
+        <owl:equivalentClass rdf:resource="&bmf;SceneSet"/>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>Action taking place in one location.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/SceneGroup -->
+
+    <owl:Class rdf:about="&foo;SceneGroup">
+        <rdfs:label>SceneGroup</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>A set of scenes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/Set -->
+
+    <owl:Class rdf:about="&foo;Set">
+        <rdfs:label>Set</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment xml:lang="en">A prepared location (motive) at which a scene is shot.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ShootingDay -->
+
+    <owl:Class rdf:about="&foo;ShootingDay">
+        <rdfs:label>ShootingDay</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>A day in the shooting schedule on which a number of scenes is shot</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ShootingSchedule -->
+
+    <owl:Class rdf:about="&foo;ShootingSchedule">
+        <rdfs:label>ShootingSchedule</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>Time schedule of the shooting for each shooting day</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Cast -->
+
+    <owl:Class rdf:about="&ebucore;Cast"/>
+    
+
+
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Character -->
+
+    <owl:Class rdf:about="&ebucore;Character"/>
+    
+
+
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Location -->
+
+    <rdf:Description rdf:about="&ebucore;Location"/>
+    
+
+
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Organisation -->
+
+    <rdf:Description rdf:about="&ebucore;Organisation"/>
+    
+
+
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Staff -->
+
+    <owl:Class rdf:about="&ebucore;Staff"/>
+    
+
+
+    <!-- http://www.irt.de/bmf#AddressAndContactSet -->
+
+    <rdf:Description rdf:about="&bmf;AddressAndContactSet"/>
+    
+
+
+    <!-- http://www.irt.de/bmf#LocationSet -->
+
+    <rdf:Description rdf:about="&bmf;LocationSet"/>
+    
+
+
+    <!-- http://www.irt.de/bmf#ProductionSet -->
+
+    <rdf:Description rdf:about="&bmf;ProductionSet"/>
+    
+
+
+    <!-- http://www.irt.de/bmf#SceneSet -->
+
+    <rdf:Description rdf:about="&bmf;SceneSet"/>
+    
+
+
+	
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
