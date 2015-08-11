@@ -19,9 +19,14 @@ public class OntologyConstants {
 	 */
 	public static final String ONTOLOGY_FORMAT = "RDF/XML";
 	
-	
+	/*
+	 * Namespace prefix for the ontology model
+	 */
 	public static final String ONTOLOGY_PREFIX = "foo";
 	
+	/*
+	 * Namespace prefix for resouces
+	 */
 	public static final String RESOURCE_PREFIX = "for";
 	
 
