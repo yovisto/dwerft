@@ -48,13 +48,17 @@ public class DramaQueenConverter extends RdfGenerator {
 	 * Mappings of DramaQueen identifiers to created RDF resouces
 	 */
 	private Map<String, Resource> idResourceMapping = null;
+	
+	/*
+	 * Mappings of IDs in attribute values to named attribute values 
+	 */
+	private Map<String, String> attributeValueMappings = null;
 
 	public DramaQueenConverter(String owl, String format) {
 		super(owl, format);
 		initializeMappings();
 		
 		idResourceMapping = new HashMap<String, Resource>();
-		
 		resourceStack = new Stack<Resource>();	
 	}
 	
@@ -74,13 +78,42 @@ public class DramaQueenConverter extends RdfGenerator {
 			}
 		}
 		
-		String id = getValueOfAttribute(node, "id");
-		if (id != null && id != "") {
-			projectIdentifier = id;
+		String pid = getValueOfAttribute(node, "id");
+		if (pid != null && pid != "") {
+			projectIdentifier = pid;
 		} else {
 			throw new IllegalStateException("No ScriptDocument id found");
 		}
 		
+		attributeValueMappings = new HashMap<String, String>();
+		attributeValueMappings.put("interiorExterior_0", "int");
+		attributeValueMappings.put("interiorExterior_1", "ext");
+		attributeValueMappings.put("interiorExterior_2", "intext");
+		attributeValueMappings.put("interiorExterior_3", "extint");
+		
+		attributeValueMappings.put("sex_0", "männlich");
+		attributeValueMappings.put("sex_1", "weiblich");
+		
+		// Build attribute value id to value mappings for daytimes
+		NodeList timeTemp = documentElement.getElementsByTagName("times_of_day");
+		Node timeRoot = timeTemp.item(0);
+		NodeList times = timeRoot.getChildNodes();
+		for (int i = 0; i < times.getLength(); i++) {
+			Node child = times.item(i);
+			if (child.getNodeName().equals("TimeOfDay")) {
+				String id = getValueOfAttribute(child,"id");
+				NodeList props = child.getChildNodes();
+				for (int j = 0; j < props.getLength(); j++) {
+					Node prop = props.item(j);
+					if (prop.getNodeName().equals("Property")) {
+						if ("0".equals(getValueOfAttribute(prop, "id"))) {
+							String timeName = getValueOfAttribute(prop,"value");
+							attributeValueMappings.put("dayTime_"+id, timeName);
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	private void initializeMappings() {
@@ -264,10 +297,15 @@ public class DramaQueenConverter extends RdfGenerator {
 
 	public void createDatatypePropertyLinking(DatatypeProperty datatypeProperty, Node node, Mapping mapping) {
 		
-		//TODO Hard coded name of the value attribute --> move to mapping
 		String attributeValue = getValueOfAttribute(node, "value");
 		if (attributeValue != null && attributeValue != "") {
 			Resource peek = resourceStack.peek();
+
+			// Check whether an attribute value is mapped
+			String valMap = attributeValueMappings.get(mapping.getOutput()+"_"+attributeValue);
+			if (valMap != null) {
+				attributeValue = valMap;
+			}
 			setProperty(mapping.getOutput(), attributeValue, peek);
 		}
 	}
