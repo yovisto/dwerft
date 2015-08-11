@@ -9,11 +9,12 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
+  			<groupId>junit</groupId>
+  			<artifactId>junit</artifactId>
+  			<version>4.12</version>
+  			<scope>test</scope>
+  		</dependency>
+		
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>apache-jena-libs</artifactId>
@@ -21,10 +22,33 @@
 			<version>2.11.2</version>
 		</dependency>
 		
+		<dependency>
+        	<groupId>org.jdom</groupId>
+        	<artifactId>jdom2</artifactId>
+        	<version>2.0.6</version>
+    	</dependency>
+		
+		<dependency>
+        	<groupId>org.apache.commons</groupId>
+        	<artifactId>commons-lang3</artifactId>
+        	<version>3.4</version>
+    	</dependency>
 	</dependencies>
 	<modules>
 		<module>de.dwerft.ln</module>
 	</modules>
 
-
+ <build>
+  <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+    </build>
 </project>
