@@ -1,8 +1,8 @@
 package de.dwerft.lpdc.importer.general;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Optional;
@@ -76,16 +76,47 @@ public abstract class RdfGenerator {
 	}
 	
 	/**
+	 * Gets the ontology class with a certain prefix or null if it does not exist.
+	 * 
+	 * @param prefix
+	 * 				the short namespace prefix
+	 * @param name
+	 * 				name of the class
+	 * @return the ontology class
+	 */
+	protected Optional<OntClass> getOntologyClass(String prefix, String name) {
+		ExtendedIterator<OntClass> classes = ontologyModel.listClasses();
+		return classes.toList().stream().filter(o -> o.getLocalName().equalsIgnoreCase(name) && prefix.equals(ontologyModel.getNsURIPrefix(o.getNameSpace()))).findFirst();
+	}
+	
+	/**
 	 * Gets the ontology object property.
 	 *
 	 * @param name
 	 *            the name
 	 * @return the ontology object property
 	 */
+	
 	protected Optional<ObjectProperty> getOntologyObjectProperty(String name) {
 		ExtendedIterator<ObjectProperty> classes = ontologyModel.listObjectProperties();
 		return classes.toList().stream().filter(o -> o.getLocalName().equalsIgnoreCase(name)).findFirst();
 	}
+	
+	
+	/**
+	 * Gets an ontology object property with a certain prefix or null if it does not exist.
+	 * 
+	 * @param prefix
+	 * 				the short namespace prefix
+	 * @param name
+	 * 				name of the object property
+	 * @return the ontology object property
+	 */
+	protected Optional<ObjectProperty> getOntologyObjectProperty(String prefix, String name) {
+		ExtendedIterator<ObjectProperty> classes = ontologyModel.listObjectProperties();
+		return classes.toList().stream().filter(o -> o.getLocalName().equalsIgnoreCase(name) && prefix.equals(ontologyModel.getNsURIPrefix(o.getNameSpace()))).findFirst();
+	}
+	
 	
 	/**
 	 * Gets the ontology datatype property.
@@ -97,6 +128,21 @@ public abstract class RdfGenerator {
 	protected Optional<DatatypeProperty> getOntologyDatatypeProperty(String name) {
 		ExtendedIterator<DatatypeProperty> classes = ontologyModel.listDatatypeProperties();
 		return classes.toList().stream().filter(o -> o.getLocalName().equalsIgnoreCase(name)).findFirst();
+	}	
+	
+	
+	/**
+	 * Gets an ontology datatype property with a certain prefix or null if it does not exist.
+	 * 
+	 * @param prefix
+	 * 				the short namespace prefix
+	 * @param name
+	 * 				name of the datatype property
+	 * @return the ontology datatype property
+	 */
+	protected Optional<DatatypeProperty> getOntologyDatatypeProperty(String prefix, String name) {
+		ExtendedIterator<DatatypeProperty> classes = ontologyModel.listDatatypeProperties();
+		return classes.toList().stream().filter(o -> o.getLocalName().equalsIgnoreCase(name) && prefix.equals(ontologyModel.getNsURIPrefix(o.getNameSpace()))).findFirst();
 	}	
 	
 	/**
@@ -207,13 +253,13 @@ public abstract class RdfGenerator {
 	 * @param outputPath
 	 * 			path to the file name
 	 */
-	public void writeRDFToFile(Model m, String outputPath) {
+	public static void writeRDFToFile(Model m, String outputPath) {
 		OutputStream out;
 		try {
 			out = new FileOutputStream(outputPath);
 			m.write(out, "TTL");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+			out.close();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

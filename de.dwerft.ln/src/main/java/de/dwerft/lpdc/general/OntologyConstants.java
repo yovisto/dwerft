@@ -19,5 +19,10 @@ public class OntologyConstants {
 	 */
 	public static final String ONTOLOGY_FORMAT = "RDF/XML";
 	
+	
+	public static final String ONTOLOGY_PREFIX = "foo";
+	
+	public static final String RESOURCE_PREFIX = "for";
+	
 
 }

@@ -15,9 +15,25 @@ public class Mapping {
 	/**  The input, an xml tag for example. */
 	private String input;
 	
+	/**
+	 *  The input XML tag additionally must have a certain attribute
+	 */
+	private String inputAttributeName;
+
+	/**
+	 *  The input XML tag additionally must have a certain attribute with a certain value
+	 */
+	private String inputAttributeValue;
+	
 	/** A super node of the input. 
 	 * Example: 'company' would be the parent of it's attribute 'name' */
 	private String context;
+	
+	/**
+	 * How many levels away is the context node. If not given direct parent is assumed.
+	 * Example in dramaqueen document: <Frame ..> Level 1 --> <children> / <Frame ..> Level 2 --> <Scene ..>
+	 */
+	private int distance;
 	
 	/** The action. */
 	/* 3 actions are provided link, map, contextMap */
@@ -53,6 +69,23 @@ public class Mapping {
 		this.property = property;
 		this.linkNode = linkNode;
 		this.directBackLink = directBackLink;
+	}
+	
+	private Mapping(MappingAction action, String input, String inputAttributeName, String inputAttributeValue,
+			String context, int distance, String ontologyTarget) {
+		
+		this.action = action;
+		this.input = input;
+		this.inputAttributeName = inputAttributeName;
+		this.inputAttributeValue = inputAttributeValue;
+		this.context = context;
+		this.distance = distance;
+		this.property = ontologyTarget;
+	}
+	
+	public static Mapping createMapping(MappingAction action, String input, String inputAttributeName,
+			String inputAttributeValue, String context, int distance, String ontologyTarget) {
+		return new Mapping(action,input,inputAttributeName,inputAttributeValue,context,distance,ontologyTarget);
 	}
 
 	/**
@@ -247,5 +280,21 @@ public class Mapping {
 
 	public boolean isDirectBackLink() {
 		return directBackLink;
+	}
+
+	public int getDistance() {
+		return distance;
+	}
+
+	public String getInputAttributeName() {
+		return inputAttributeName;
+	}
+
+	public String getInputAttributeValue() {
+		return inputAttributeValue;
+	}
+
+	public void setDistance(int distance) {
+		this.distance = distance;
 	}
 }
