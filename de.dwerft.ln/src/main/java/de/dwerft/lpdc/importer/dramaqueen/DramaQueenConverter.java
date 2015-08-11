@@ -119,11 +119,18 @@ public class DramaQueenConverter extends RdfGenerator {
 		mappings.add(Mapping.createMapping(
 				MappingAction.CONTEXTMAP, "Property", "id", "102", "Character", 1, "name"));
 		
-//		objectPropertyMappings.add(new PropertyMapping("ScriptDocument", 2, "Character", "", "", "hasCharacter"));
-
 		mappings.add(Mapping.createMapping(
-				MappingAction.LINK, "Character", "", "", "ScriptDocument", 2, "hasCharacter"));
-
+				MappingAction.LINK, "Character", null, null, "ScriptDocument", 2, "hasCharacter"));
+		mappings.add(Mapping.createMapping(
+				MappingAction.LINK, "Location", null, null, "ScriptDocument", 2, "hasLocation"));
+		mappings.add(Mapping.createMapping(
+				MappingAction.LINK, "Frame", null, null, "Step", 4, "hasScene"));
+		mappings.add(Mapping.createMapping(
+				MappingAction.LINK, "Step", null, null, "sequences", 1, "hasSceneGroup"));
+		mappings.add(Mapping.createMapping(
+				MappingAction.LINK, "Character", null, null, "ScriptDocument", 2, "hasCharacter"));
+//		mappings.add(Mapping.createMapping(
+//				MappingAction.LINK, "Property", "id", "10", "Frame", 1, "sceneSet"));
 	}
 	
 	private Node getParentNode(Node node, int level) {
@@ -161,19 +168,14 @@ public class DramaQueenConverter extends RdfGenerator {
 		ArrayList<Mapping> result = new ArrayList<Mapping>();
 		
 		String nodeName = node.getNodeName();
-		
-//		if (nodeName.equals("Character")) {
-//			System.out.println(node);
-//		}
-		
+				
 		Stream<Mapping> filter = mappings.stream().filter(m -> m.getInput().equals(nodeName));
 		Iterator<Mapping> iterator = filter.iterator();
 		while(iterator.hasNext()) {
 			Mapping mapping = iterator.next();
-//			System.out.println(mapping.getInput());
+
 			boolean context = false;
 			boolean attribute = false;
-//			boolean action = false;			
 			
 			if (mapping.getContext() != null && !"".equals(mapping.getContext())) {
 				int distance = mapping.getDistance();
@@ -203,7 +205,6 @@ public class DramaQueenConverter extends RdfGenerator {
 	public Resource createOntologyClassInstance(OntClass ontClass, Node node, Mapping mapping) {
 		Resource result = null;
 		
-//		OntClass ontClass = optClass.get();
 		String dramaQueenId = getValueOfAttribute(node, "id");
 		if (dramaQueenId == null) {
 			dramaQueenId = "1";
@@ -232,17 +233,33 @@ public class DramaQueenConverter extends RdfGenerator {
 		// Put the recent created resource on the stack
 		resourceStack.push(result);
 		
-//		System.out.println(ontClass);
-//		System.out.println(dramaQueenId);
-//		System.out.println(result);
-		
 		return result;
 		
 	}
 	
 	public void createObjectPropertyLinking(ObjectProperty objectProperty, Node node, Mapping mapping) {
-		
-		
+
+		if (mapping.getAction().equals(MappingAction.LINK)) {
+			
+			if (mapping.getInputAttributeName() != null && !"".equals(mapping.getInputAttributeName()) &&
+					mapping.getInputAttributeValue() != null && !"".equals(mapping.getInputAttributeValue())) {
+				
+			} else {
+				
+				Node parentNode = getParentNode(node, mapping.getDistance());
+				if (parentNode != null) {
+					String parentId = getValueOfAttribute(parentNode, "id");
+					Resource parentResource = null;
+					
+					if (parentId == null) {
+						parentResource = resourceStack.elementAt(resourceStack.size()-1-mapping.getDistance());
+					} else {
+						parentResource = idResourceMapping.get(parentId);
+					}
+					parentResource.addProperty(objectProperty, resourceStack.peek());
+				}
+			}
+		}
 	}
 
 	public void createDatatypePropertyLinking(DatatypeProperty datatypeProperty, Node node, Mapping mapping) {
@@ -277,26 +294,10 @@ public class DramaQueenConverter extends RdfGenerator {
 			}
 		}
 		
-//		String nsPrefixURI = ontologyModel.getNsPrefixURI();
-//		String targetURI = nsPrefixURI+mapping.getOutput();
-//		
-//		OntClass ontClass = ontologyModel.getOntClass(targetURI);
-//		
-//		String nameSpace = ontClass.getNameSpace();
-//		
-//		System.out.println(ontologyModel.getNsURIPrefix(nameSpace));
-//		
-//		System.out.println(nameSpace);
-//		
-//		
-//		System.out.println(ontClass);
-		
 		return result;		
 	}
 	
 	public void traverse(Node node) {
-		
-		String nodeName = node.getNodeName();
 		
 		boolean newIndiviudalWasCreated = false;
 		boolean traverseChildren = true;
@@ -304,8 +305,6 @@ public class DramaQueenConverter extends RdfGenerator {
 		ArrayList<Mapping> mappings = getMappingsForNode(node);
 
 		if (!mappings.isEmpty()) {
-//			System.out.println(nodeName+" -- "+mapping);
-			
 			Optional<Mapping> mapMapping = mappings.stream().filter(m -> m.getAction().equals(MappingAction.MAP)).findFirst();
 
 			if (mapMapping.isPresent()) {
