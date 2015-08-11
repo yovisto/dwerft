@@ -1,0 +1,9 @@
+##############################
+#
+# configuration template
+#
+##############################
+
+pp.key=
+pp.secret=
+pp.appsecret=
