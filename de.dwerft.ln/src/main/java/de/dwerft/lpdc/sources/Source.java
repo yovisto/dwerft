@@ -1,6 +1,6 @@
 package de.dwerft.lpdc.sources;
 
-import java.io.BufferedInputStream;
+import java.io.InputStream;
 
 
 /**
@@ -18,9 +18,9 @@ public interface Source {
 	 * Provides an input stream from a tool. a.k.a import.
 	 *
 	 * @param source the source
-	 * @return the buffered input stream or null if we can't construct a working stream.
+	 * @return the input stream or null if we can't construct a working stream.
 	 */
-	public BufferedInputStream get(String source);
+	public InputStream get(String source);
 	
 	/**
 	 * Sends the results to a tool. a.k.a. export
