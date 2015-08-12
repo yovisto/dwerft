@@ -151,6 +151,14 @@ public class DramaQueenConverter extends RdfGenerator {
 				MappingAction.CONTEXTMAP, "Property", "id", "101", "Character", 1, "socialStatus"));
 		mappings.add(Mapping.createMapping(
 				MappingAction.CONTEXTMAP, "Property", "id", "102", "Character", 1, "occupation"));
+
+		mappings.add(Mapping.createMapping(
+				MappingAction.CONVERT, "Property", "id", "1", "Character", 1, "characterDescription"));
+		mappings.add(Mapping.createMapping(
+				MappingAction.CONVERT, "Property", "id", "1", "Location", 1, "setDescription"));
+		mappings.add(Mapping.createMapping(
+				MappingAction.CONVERT, "Property", "id", "1", "Frame", 1, "sceneContent"));
+
 		
 		mappings.add(Mapping.createMapping(
 				MappingAction.LINK, "Character", null, null, "ScriptDocument", 2, "hasCharacter"));
@@ -201,7 +209,7 @@ public class DramaQueenConverter extends RdfGenerator {
 		ArrayList<Mapping> result = new ArrayList<Mapping>();
 		
 		String nodeName = node.getNodeName();
-				
+		
 		Stream<Mapping> filter = mappings.stream().filter(m -> m.getInput().equals(nodeName));
 		Iterator<Mapping> iterator = filter.iterator();
 		while(iterator.hasNext()) {
@@ -307,15 +315,27 @@ public class DramaQueenConverter extends RdfGenerator {
 
 	public void createDatatypePropertyLinking(DatatypeProperty datatypeProperty, Node node, Mapping mapping) {
 		
-		String attributeValue = getValueOfAttribute(node, "value");
-		if (attributeValue != null && attributeValue != "") {
-			Resource peek = resourceStack.peek();
-
+		String attributeValue = null;
+		
+		if (mapping.getAction().equals(MappingAction.CONTEXTMAP)) {
+			attributeValue = getValueOfAttribute(node, "value");
 			// Check whether an attribute value is mapped
 			String valMap = attributeValueMappings.get(mapping.getOutput()+"_"+attributeValue);
 			if (valMap != null) {
 				attributeValue = valMap;
 			}
+		} else 
+		if (mapping.getAction().equals(MappingAction.CONVERT)) {
+			NodeList list = ((Element)node).getElementsByTagName("Text");
+			if (list.getLength() == 1) {
+				Node textNode = list.item(0);
+				attributeValue = textNode.getTextContent();
+			}
+		}
+		
+		if (attributeValue != null && attributeValue != "") {
+			Resource peek = resourceStack.peek();
+
 			setProperty(mapping.getOutput(), attributeValue, peek);
 		}
 	}
