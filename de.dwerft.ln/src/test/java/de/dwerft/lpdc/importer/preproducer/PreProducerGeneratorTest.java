@@ -81,7 +81,7 @@ public class PreProducerGeneratorTest {
 		m.write(System.out, "TTL");
 	}
 	
-	@Test
+	//@Test
 	public void testGenerateDecorations() throws MalformedURLException, IOException {
 		// a simple example how to call the generator und use it
 		PreProducerGenerator ppg = new PreProducerGenerator(owl, format, ignore, getMappings(), 3);
