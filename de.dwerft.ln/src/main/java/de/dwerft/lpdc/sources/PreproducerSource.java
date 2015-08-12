@@ -4,6 +4,7 @@ package de.dwerft.lpdc.sources;
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -43,12 +44,13 @@ public class PreproducerSource implements Source {
 		Properties prop = new Properties();
 		
 		try {
-			InputStream is = getClass().getClassLoader().getResourceAsStream(propertyFile.getName());
+//			InputStream is = getClass().getClassLoader().getResourceAsStream(propertyFile.getName());
+			InputStream is = new FileInputStream(propertyFile);
 		
 			if (is != null) {
 				prop.load(is);
-			} else {
-				System.err.println("File not found: " + propertyFile.getAbsolutePath());
+//			} else {
+//				System.err.println("File not found: " + propertyFile.getAbsolutePath());
 			}
 			
 			this.key = prop.getProperty("pp.key");
