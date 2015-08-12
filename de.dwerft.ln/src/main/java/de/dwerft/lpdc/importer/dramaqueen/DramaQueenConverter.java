@@ -150,7 +150,7 @@ public class DramaQueenConverter extends RdfGenerator {
 		mappings.add(Mapping.createMapping(
 				MappingAction.CONTEXTMAP, "Property", "id", "101", "Character", 1, "socialStatus"));
 		mappings.add(Mapping.createMapping(
-				MappingAction.CONTEXTMAP, "Property", "id", "102", "Character", 1, "name"));
+				MappingAction.CONTEXTMAP, "Property", "id", "102", "Character", 1, "occupation"));
 		
 		mappings.add(Mapping.createMapping(
 				MappingAction.LINK, "Character", null, null, "ScriptDocument", 2, "hasCharacter"));
@@ -162,8 +162,8 @@ public class DramaQueenConverter extends RdfGenerator {
 				MappingAction.LINK, "Step", null, null, "sequences", 1, "hasSceneGroup"));
 		mappings.add(Mapping.createMapping(
 				MappingAction.LINK, "Character", null, null, "ScriptDocument", 2, "hasCharacter"));
-//		mappings.add(Mapping.createMapping(
-//				MappingAction.LINK, "Property", "id", "10", "Frame", 1, "sceneSet"));
+		mappings.add(Mapping.createMapping(
+				MappingAction.LINK, "Property", "id", "10", "Frame", 1, "sceneSet"));
 	}
 	
 	private Node getParentNode(Node node, int level) {
@@ -276,9 +276,19 @@ public class DramaQueenConverter extends RdfGenerator {
 			
 			if (mapping.getInputAttributeName() != null && !"".equals(mapping.getInputAttributeName()) &&
 					mapping.getInputAttributeValue() != null && !"".equals(mapping.getInputAttributeValue())) {
+				// In case the object to link is referenced by an identifier in a property node 
 				
+				String attributeValue = getValueOfAttribute(node, "value");
+				if (attributeValue != null && attributeValue != "") {
+					Resource resourceToLink = idResourceMapping.get(attributeValue);
+					if (resourceToLink != null) {
+						Resource peek = resourceStack.peek();
+						peek.addProperty(objectProperty, resourceToLink);
+					}
+				}
 			} else {
 				
+				// In case the object to link is referenced implicitly via containment
 				Node parentNode = getParentNode(node, mapping.getDistance());
 				if (parentNode != null) {
 					String parentId = getValueOfAttribute(parentNode, "id");
