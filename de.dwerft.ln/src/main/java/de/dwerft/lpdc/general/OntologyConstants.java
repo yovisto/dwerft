@@ -23,11 +23,21 @@ public class OntologyConstants {
 	 * Namespace prefix for the ontology model
 	 */
 	public static final String ONTOLOGY_PREFIX = "foo";
-	
+
 	/*
-	 * Namespace prefix for resouces
+	 * Namespace for the ontology model
+	 */
+	public static final String ONTOLOGY_NAMESPACE = "http://filmontology.org/ontology/1.0/";
+
+	/*
+	 * Namespace prefix for resources
 	 */
 	public static final String RESOURCE_PREFIX = "for";
-	
+
+	/*
+	 * Namespace for resources
+	 */
+	public static final String RESOURCE_NAMESPACE = "http://filmontology.org/resource/";
+
 
 }
