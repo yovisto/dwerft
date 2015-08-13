@@ -261,6 +261,8 @@ public abstract class RdfGenerator {
 			out.close();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			System.out.println("Turtle file written: "+outputPath);
 		}
 	}
 }

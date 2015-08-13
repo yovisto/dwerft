@@ -42,8 +42,16 @@ public class DramaQueenConverter extends RdfGenerator {
 
 	private HashSet<Mapping> mappings = null;
 	
+	/*
+	 * Identifier for the project, obtained from ScriptDocument ID
+	 */
 	private String projectIdentifier = null;
 	
+	/*
+	 * Identifier of the archive in order to identify not visible scenes
+	 */
+	private String archiveId = null;
+
 	/*
 	 * Mappings of DramaQueen identifiers to created RDF resouces
 	 */
@@ -53,6 +61,13 @@ public class DramaQueenConverter extends RdfGenerator {
 	 * Mappings of IDs in attribute values to named attribute values 
 	 */
 	private Map<String, String> attributeValueMappings = null;
+	
+	
+	/*
+	 * Data structure to remember the containment hierarchy of the XML document
+	 * regarding elements that have a children tag.
+	 */
+	private HashMap<String, ArrayList<String>> containmentLinks = null;
 
 	public DramaQueenConverter(String owl, String format) {
 		super(owl, format);
@@ -60,13 +75,125 @@ public class DramaQueenConverter extends RdfGenerator {
 		
 		idResourceMapping = new HashMap<String, Resource>();
 		resourceStack = new Stack<Resource>();	
+		containmentLinks = new HashMap<String, ArrayList<String>>();
+	}
+	
+	/**
+	 * Searches for the archive and retrieves the identifier. The identifier
+	 * is used to determine whether a scene is visible or not
+	 * (if in the archive == not visible).
+	 * 
+	 * @param root
+	 * 				Root element of the XML document
+	 * @return
+	 * 				The archive identifier
+	 */
+	private String findArchiveId(Element root) {
+		NodeList nodeList = root.getElementsByTagName("Plot");
+		for (int i = 0; i < nodeList.getLength(); i++) {
+			Node plot = nodeList.item(i);
+			String plotId = getValueOfAttribute(plot, "id");
+			NodeList childNodes = plot.getChildNodes();
+			for (int j = 0; j < childNodes.getLength(); j++) {
+				Node item = childNodes.item(j);
+				if ("Property".equals(item.getNodeName()) && "157".equals(getValueOfAttribute(item, "id"))) {
+					return plotId;
+				}
+			}
+		}
+		return null;
 	}
 	
 	
+	private boolean isSceneVisible(Node node) {
+		boolean isVisibleInStory = false;
+		boolean isInArchive = false;
+		int manualExclusion = 1 << 1;
+		
+		NodeList props = node.getChildNodes();
+		for (int i = 0; i < props.getLength(); i++) {
+			Node prop = props.item(i);
+			if ("Property".equals(prop.getNodeName()) && "11".equals(getValueOfAttribute(prop, "id"))) {
+				
+				NodeList childNodes = prop.getChildNodes();
+				for (int j = 0; j < childNodes.getLength(); j++) {
+					Node ref = childNodes.item(j);
+					if (projectIdentifier.equals(getValueOfAttribute(ref, "value"))) {
+						int flags = Integer.valueOf(getValueOfAttribute(ref, "flags"));
+						isVisibleInStory = (flags & manualExclusion) == 0;
+					} else if (archiveId.equals(getValueOfAttribute(ref, "value"))) {
+						int flags = Integer.valueOf(getValueOfAttribute(ref, "flags"));
+						isInArchive = (flags & manualExclusion) == 0;
+					}
+				}
+			}
+		}
+		
+		return isVisibleInStory && !isInArchive;
+	}
+	
+	
+	private void buildSceneNumbering(Element root) {
+		
+		ArrayList<String> stepListInCorrectOrder = new ArrayList<String>();
+		
+		Element storyChildren = null;
+		NodeList childNodes = root.getChildNodes();
+		for (int i = 0; i < childNodes.getLength(); i++) {
+			Node item = childNodes.item(i);
+			if ("children".equals(item.getNodeName())) {
+				storyChildren = (Element) item;
+				break;
+			}
+		}
+		
+		if (storyChildren == null) {
+			return;
+		}
+		
+		NodeList stations = storyChildren.getElementsByTagName("Station");
+		
+		for (int j = 0; j < stations.getLength(); j++) {				
+			Element station = (Element)stations.item(j);				
+			Element stationChildren = (Element)station.getElementsByTagName("children").item(0);
+			if (stationChildren != null) {
+				NodeList proxies = stationChildren.getElementsByTagName("Proxy");
+				for (int k = 0; k < proxies.getLength(); k++) {
+					Node proxy = proxies.item(k);
+					String stepid = getValueOfAttribute(proxy, "proxy_for");
+					stepListInCorrectOrder.add(stepid);
+				}
+			}
+		}
+		
+		int sceneNumber = 0;
+		ArrayList<String> allFrameIds = new ArrayList<String>();
+
+		for (String step : stepListInCorrectOrder) {
+			
+			ArrayList<String> sceneList = containmentLinks.get(step);
+			for (String sceneId : sceneList) {
+				ArrayList<String> frameIds = containmentLinks.get(sceneId);
+				for (String frameId : frameIds) {
+					allFrameIds.add(frameId);
+				}
+			}
+		}
+		for (String frameId : allFrameIds) {
+			sceneNumber++;
+			Resource sceneResource = idResourceMapping.get(frameId);
+			setProperty("sceneNumber", Integer.toString(sceneNumber), sceneResource);
+		}
+	}
+	
 	private void initializeInternalDocumentData(Element documentElement) {
 		
-		Node node = null;
+		archiveId = findArchiveId(documentElement);
+		if (archiveId == null) {
+			throw new IllegalStateException("No archive id found");
+		}
 		
+		Node node = null;
 		if ("ScriptDocument".equals(documentElement.getNodeName())) {
 			node = documentElement;
 		} else {
@@ -158,6 +285,8 @@ public class DramaQueenConverter extends RdfGenerator {
 				MappingAction.CONVERT, "Property", "id", "1", "Location", 1, "setDescription"));
 		mappings.add(Mapping.createMapping(
 				MappingAction.CONVERT, "Property", "id", "1", "Frame", 1, "sceneContent"));
+		mappings.add(Mapping.createMapping(
+				MappingAction.CONVERT, "Property", "id", "278", "Frame", 1, "sceneHeader"));
 
 		
 		mappings.add(Mapping.createMapping(
@@ -249,6 +378,13 @@ public class DramaQueenConverter extends RdfGenerator {
 		String dramaQueenId = getValueOfAttribute(node, "id");
 		if (dramaQueenId == null) {
 			dramaQueenId = "1";
+		}
+		
+		// Special handling for not visible scenes (frames)
+		if("Frame".equals(node.getNodeName())) {
+			if (!isSceneVisible(node)) {
+				return null;
+			}
 		}
 		
 		String resourcePrefix = ontologyModel.getNsPrefixURI(OntologyConstants.RESOURCE_PREFIX);
@@ -365,14 +501,44 @@ public class DramaQueenConverter extends RdfGenerator {
 		return result;		
 	}
 	
+	/**
+	 * Saves all child references via IDs between nodes that are in the
+	 * following containment relation: <tag id=""> <children> <tag id ="">
+	 * 
+	 * @param node
+	 */
+	private void storeChildLinks(Node node) {
+		String nodeId = getValueOfAttribute(node, "id");
+		
+		if (nodeId != null && !"".equals(nodeId)) {
+			Node parent = getParentNode(node, 1);
+			if ("children".equals(parent.getNodeName())) {
+				Node superParent = getParentNode(parent, 1);
+				String superParentId = getValueOfAttribute(superParent, "id");
+				if (superParentId != null && !"".equals(superParentId)) {
+					ArrayList<String> childList = containmentLinks.get(superParentId);
+					if (childList == null) {
+						childList = new ArrayList<String>();
+						containmentLinks.put(superParentId, childList);
+					}
+					childList.add(nodeId);
+				}
+			}
+		}
+	}
+	
 	public void traverse(Node node) {
 		
 		boolean newIndiviudalWasCreated = false;
 		boolean traverseChildren = true;
 		
+		storeChildLinks(node);
+		
 		ArrayList<Mapping> mappings = getMappingsForNode(node);
 
 		if (!mappings.isEmpty()) {
+
+			
 			Optional<Mapping> mapMapping = mappings.stream().filter(m -> m.getAction().equals(MappingAction.MAP)).findFirst();
 
 			if (mapMapping.isPresent()) {
@@ -416,6 +582,8 @@ public class DramaQueenConverter extends RdfGenerator {
 			Element documentElement = doc.getDocumentElement();
 			initializeInternalDocumentData(documentElement);
 			traverse(documentElement);
+			
+			buildSceneNumbering(documentElement);
 			
 //			initializeInternalData(documentElement);
 //			
