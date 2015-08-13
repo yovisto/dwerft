@@ -27,7 +27,6 @@ import com.hp.hpl.jena.ontology.ObjectProperty;
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.ResIterator;
 import com.hp.hpl.jena.rdf.model.Resource;
 
 import de.dwerft.lpdc.general.OntologyConstants;
@@ -42,6 +41,10 @@ public class DramaQueenConverter extends RdfGenerator {
 	 */
 	private Stack<Resource> resourceStack = null;
 
+	
+	/*
+	 * XML element to ontology classes / properties mappings 
+	 */
 	private HashSet<Mapping> mappings = null;
 	
 	/*
