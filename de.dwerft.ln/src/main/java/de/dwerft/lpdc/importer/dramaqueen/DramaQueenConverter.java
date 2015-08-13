@@ -25,7 +25,9 @@ import org.xml.sax.SAXException;
 import com.hp.hpl.jena.ontology.DatatypeProperty;
 import com.hp.hpl.jena.ontology.ObjectProperty;
 import com.hp.hpl.jena.ontology.OntClass;
+import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.rdf.model.ResIterator;
 import com.hp.hpl.jena.rdf.model.Resource;
 
 import de.dwerft.lpdc.general.OntologyConstants;
@@ -290,6 +292,8 @@ public class DramaQueenConverter extends RdfGenerator {
 
 		
 		mappings.add(Mapping.createMapping(
+				MappingAction.LINK, "sequences", null, null, "ScriptDocument", 1, "hasEpisode"));
+		mappings.add(Mapping.createMapping(
 				MappingAction.LINK, "Character", null, null, "ScriptDocument", 2, "hasCharacter"));
 		mappings.add(Mapping.createMapping(
 				MappingAction.LINK, "Location", null, null, "ScriptDocument", 2, "hasLocation"));
@@ -301,6 +305,7 @@ public class DramaQueenConverter extends RdfGenerator {
 				MappingAction.LINK, "Character", null, null, "ScriptDocument", 2, "hasCharacter"));
 		mappings.add(Mapping.createMapping(
 				MappingAction.LINK, "Property", "id", "10", "Frame", 1, "sceneSet"));
+
 	}
 	
 	private Node getParentNode(Node node, int level) {
@@ -585,13 +590,15 @@ public class DramaQueenConverter extends RdfGenerator {
 			
 			buildSceneNumbering(documentElement);
 			
-//			initializeInternalData(documentElement);
-//			
-//			archiveId = findArchiveId(documentElement);
-//			scriptDocumentId = getValueOfAttribute(documentElement, "id");		
-//			
-//			traverse(documentElement);
-//			buildSceneNumbering(documentElement);
+			
+			// Create the DWERFT resource and a link to the dramaqueen project
+			Model model = getGeneratedModel();
+			Resource dwerft = model.createResource("http://filmontology.org/resource/DWERFT");
+			Property dctPart = model.createProperty("http://purl.org/dc/terms/hasPart");
+			String resourcePrefix = ontologyModel.getNsPrefixURI(OntologyConstants.RESOURCE_PREFIX);
+			Resource project = model.getResource(resourcePrefix+"Project/"+projectIdentifier);
+			dwerft.addProperty(dctPart, project);
+			
 			
 		} catch ( ParserConfigurationException | SAXException | IOException e) {
 			e.printStackTrace();
