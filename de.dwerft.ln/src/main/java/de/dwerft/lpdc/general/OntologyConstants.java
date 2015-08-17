@@ -39,5 +39,14 @@ public class OntologyConstants {
 	 */
 	public static final String RESOURCE_NAMESPACE = "http://filmontology.org/resource/";
 
+	
+	public static final String ONTOLOGY_PREFIXES = 
+			"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+			"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
+			"PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+			"PREFIX "+ONTOLOGY_PREFIX+": <"+ONTOLOGY_NAMESPACE+">" +
+			"PREFIX "+RESOURCE_PREFIX+": <"+RESOURCE_NAMESPACE+">";
+
+
 
 }

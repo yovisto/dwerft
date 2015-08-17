@@ -5,6 +5,11 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+import org.apache.jena.atlas.web.auth.HttpAuthenticator;
+import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
 
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
@@ -20,12 +25,20 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 
-public abstract class RdfExporter {
+import de.dwerft.lpdc.general.OntologyConstants;
 
+public abstract class RdfExporter {
+	
 	private final String FILMONTOLOGY_BASE_URI = "http://filmontology.org/ontology/1.0/";
 	
 	private File rdfInput;
 	private Model model;
+	
+	private String sparqlEndpoint;
+	
+	public RdfExporter(String sparqlEndpointUrl) {
+		this.sparqlEndpoint = sparqlEndpointUrl;
+	}
 	
 	public RdfExporter(File rdfInput) throws IOException {
 		this.rdfInput = rdfInput;	
@@ -39,6 +52,60 @@ public abstract class RdfExporter {
 		in.close();
 	}
 	
+	private ResultSet queryEndpoint(String queryString) {
+		Query query = QueryFactory.create(queryString);
+		HttpAuthenticator authenticator = new SimpleAuthenticator("dwerft", "#dwerft".toCharArray());
+        QueryExecution qExe = QueryExecutionFactory.sparqlService(sparqlEndpoint, query , authenticator);
+		return qExe.execSelect();
+	}
+	
+	
+
+	/**
+	 * Retrieves a set of resources that have the specified type (ontology class name)
+	 * 
+	 * @param className
+	 * @return
+	 */
+	public ArrayList<Resource> getResourcesByType(String className) {
+		
+		ArrayList<Resource> result = new ArrayList<Resource>();
+		
+		String query = OntologyConstants.ONTOLOGY_PREFIXES 
+				+ "select ?res where { "
+				+ "?res rdf:type "+OntologyConstants.ONTOLOGY_PREFIX+":"+className
+				+ "}";
+
+		ResultSet rs = queryEndpoint(query);
+		while(rs.hasNext()) {
+			QuerySolution sol = rs.nextSolution();
+			result.add(sol.getResource("res"));
+		}
+		
+		return result;
+		
+	}
+	
+	public ArrayList<Resource> getLinkedResources(Resource start, String objectProperty) {
+		
+		ArrayList<Resource> result = new ArrayList<Resource>();
+		
+		String query = OntologyConstants.ONTOLOGY_PREFIXES 
+				+ "select ?res where { "
+				+ OntologyConstants.RESOURCE_PREFIX + ":" + start.getLocalName() + " "
+				+ OntologyConstants.ONTOLOGY_PREFIX+":"+objectProperty + " "
+				+ "?res"
+				+ "}";
+
+		ResultSet rs = queryEndpoint(query);
+		while(rs.hasNext()) {
+			QuerySolution sol = rs.nextSolution();
+			result.add(sol.getResource("res"));
+		}
+		
+		return result;
+		
+	}
 	
 	/**
 	 * Gets all scenes of a project
