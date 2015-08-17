@@ -5,8 +5,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
@@ -86,14 +84,24 @@ public abstract class RdfExporter {
 		
 	}
 	
-	public ArrayList<Resource> getLinkedResources(Resource start, String objectProperty) {
+	/**
+	 * Retrieves a set of resources that are linked to the start resource
+	 * via the specified object property. 
+	 * 
+	 * @param start
+	 * 				Start resource (subject)
+	 * @param objectPropertyName
+	 * 				Name of the object property
+	 * @return Linked resources
+	 */
+	public ArrayList<Resource> getLinkedResources(Resource start, String objectPropertyName) {
 		
 		ArrayList<Resource> result = new ArrayList<Resource>();
 		
 		String query = OntologyConstants.ONTOLOGY_PREFIXES 
 				+ "select ?res where { "
-				+ OntologyConstants.RESOURCE_PREFIX + ":" + start.getLocalName() + " "
-				+ OntologyConstants.ONTOLOGY_PREFIX+":"+objectProperty + " "
+				+ "<" + start.getURI() + "> "
+				+ OntologyConstants.ONTOLOGY_PREFIX+":"+objectPropertyName + " "
 				+ "?res"
 				+ "}";
 
@@ -104,7 +112,36 @@ public abstract class RdfExporter {
 		}
 		
 		return result;
+	}
+	
+	/**
+	 * Retrieves a set of data values (literals) that are linked to the start
+	 * resource via the specified datatype property. 
+	 * 
+	 * @param start
+	 * 				Start resource (subject)
+	 * @param datatypePropertyName
+	 * 				Name of the datatype property
+	 * @return
+	 */
+	public ArrayList<Object> getLinkedDataValues(Resource start, String datatypePropertyName) {
+		ArrayList<Object> result = new ArrayList<Object>();
 		
+		String query = OntologyConstants.ONTOLOGY_PREFIXES 
+				+ "select ?res where { "
+				+ "<" + start.getURI() + "> "
+				+ OntologyConstants.ONTOLOGY_PREFIX+":"+datatypePropertyName + " "
+				+ "?res"
+				+ "}";
+
+		
+		ResultSet rs = queryEndpoint(query);
+		while(rs.hasNext()) {
+			QuerySolution sol = rs.nextSolution();
+			result.add(sol.getLiteral("res").getValue());
+		}
+				
+		return result;
 	}
 	
 	/**
