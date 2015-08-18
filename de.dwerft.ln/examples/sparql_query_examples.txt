@@ -16,7 +16,7 @@ select ?project where {
 	?project rdf:type foo:Project .
 }
 
-Retrieves an order list of scenes for a specific project
+Retrieves an ordered list of scenes for a specific project
 --------------------------------------------------------------------------
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
