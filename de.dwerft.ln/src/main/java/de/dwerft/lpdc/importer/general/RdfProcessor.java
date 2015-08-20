@@ -29,18 +29,41 @@ import de.dwerft.lpdc.importer.general.MappingDefinition.TargetPropertyType;
  */
 public class RdfProcessor {
 	
+	/**
+	 * Connector to the ontology model
+	 */
 	private OntologyConnector ontologyConnector;
 	
+	/**
+	 * The new generated RDF model
+	 */
 	private Model generatedModel;
 	
+	/**
+	 * Whenever a new resource is created, the ID of the XML element is stored
+	 * together with the created resource.
+	 */
 	private Map<String, Resource> idResourceMapping;
 
+	/**
+	 * Whenever a new resource is created, the XML node is stored
+	 * together with the created resource.
+	 */
 	private Map<Node, Resource> nodeResourceMapping;
 	
+	/**
+	 * The stack always has the latest created resource on top in order to be
+	 * able to do datatype property and object property linking.
+	 */
 	private Stack<Resource> resourceStack;
 	
+	/**
+	 * The URI identifier prefix will be added for newly created resources
+	 * between the general knowledge base prefix and the generated URI suffix.
+	 * E.g. http://filmontology.org/resource/<uriIdentifierPrefix>/Scene/c900a8ce-e29b-41e5-b0cf-21bdbe6f11a1
+	 */
 	private String uriIdentifierPrefix = "";
-
+	
 	public RdfProcessor(OntologyConnector ontologyConnector) {
 		this.ontologyConnector = ontologyConnector;
 		generatedModel = ModelFactory.createDefaultModel();
@@ -51,6 +74,10 @@ public class RdfProcessor {
 		resourceStack = new Stack<Resource>();
 	}
 
+	/**
+	 * Returns the generated RDF model
+	 * @return The generated RDF model
+	 */
 	public Model getGeneratedModel() {
 		return generatedModel;
 	}
@@ -108,9 +135,6 @@ public class RdfProcessor {
 				}
 			}
 			
-			if (idValue == null) {
-				idValue = UUID.randomUUID().toString();
-			}
 		}
 		
 		return idValue;
@@ -129,6 +153,11 @@ public class RdfProcessor {
 		if (ontologyClass != null) {
 		
 			String nodeId = getIdentifierOfNode(node);
+			
+			if (nodeId == null) {
+				nodeId = UUID.randomUUID().toString();
+			}
+			
 			String uri = generateURI(ontologyClass, nodeId);
 			Resource createdResource = generatedModel.createResource(uri);
 			idResourceMapping.put(nodeId, createdResource);
@@ -179,27 +208,12 @@ public class RdfProcessor {
 			if (containmentNode == null) {
 				throw new IllegalStateException("Specified parent not found: "+mapping.getContentElementName()+" -- "+node+" -- "+mapping);
 			} else {
-				String parentId = getIdentifierOfNode(containmentNode);
-				if (parentId != null && idResourceMapping.get(parentId) != null) {
+				
+				Resource containmentResource = nodeResourceMapping.get(containmentNode);
+				if (containmentResource != null) {
 					ObjectProperty objectProperty = ontologyConnector.getOntologyObjectProperty(mapping.getTargetOntologyProperty());
-					
-					Resource parentResource = idResourceMapping.get(parentId);
 					Resource latestResource = resourceStack.peek();
-					
-					/*
-					OntClass ontologyClass = ontologyConnector.getOntologyClass(mapping.getTargetOntologyClass());
-					Property typeProp = ontologyConnector.getProperty("rdf", "type");
-					Resource linkResource = null;
-					
-					// Find the latest created resource of the target type
-					for (Resource resource : resourceStack) {
-						if (generatedModel.contains(resource, typeProp, ontologyClass)) {
-							linkResource = resource;
-							break;
-						}
-					}
-					*/
-					parentResource.addProperty(objectProperty, latestResource);
+					containmentResource.addProperty(objectProperty, latestResource);
 				}
 			}
 		} else 
