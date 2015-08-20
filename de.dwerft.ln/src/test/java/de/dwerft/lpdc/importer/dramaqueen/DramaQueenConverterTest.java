@@ -1,4 +1,4 @@
-package de.dwerft.lpdcimport.dramaqueen;
+package de.dwerft.lpdc.importer.dramaqueen;
 
 import java.io.InputStream;
 
