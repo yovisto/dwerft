@@ -22,7 +22,7 @@ import de.dwerft.lpdc.importer.general.MappingDefinition.TargetPropertyType;
 
 /**
  * The RdfProcessor is responsible for creating the appropriate RDF statements
- * based on the input XML nodes and a set of mappings. * 
+ * based on the input XML nodes and a set of mappings.
  * 
  * @author hagt
  *

@@ -86,7 +86,8 @@ public class MappingDefinition {
 	private ContentSource contentSource;
 	
 	/**
-	 * If content will be extracted from an attribute, this is the name of the attribute
+	 * If content will be extracted from an attribute, this is the name of the attribute.
+	 * If a surrounding containment will be extracted, this is the name of the parent xml tag.
 	 */
 	private String contentElementName;
 	
