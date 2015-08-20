@@ -42,6 +42,28 @@ public class XMLProcessor {
 		}
 		return null;
 	}
+	
+	/**
+	 * Builds the path of an XML node up to the root by getting parent elements names.
+	 * 
+	 * @param node	Node to be evaluated.
+	 * @return Path from the document root to the input node.
+	 */
+	public static String getXmlPath(Node node) {
+		
+		String result = node.getNodeName();
+		
+		Node current = node;
+		
+		while((current = current.getParentNode()) != null) {
+			if (!current.getNodeName().equals("#document")) {
+				result = current.getNodeName()+"/"+result;
+			}
+		}
+		
+		return "/"+result;
+		
+	}
 
 	/**
 	 * Creates a new XMLProcessor and parses the XML document.

@@ -30,28 +30,6 @@ public class Mapper {
 		this.mappings = mappings;
 	}
 	
-	/**
-	 * Builds the path of an XML node up to the root by getting parent elements names.
-	 * 
-	 * @param node	Node to be evaluated.
-	 * @return Path from the document root to the input node.
-	 */
-	public String getXmlPath(Node node) {
-		
-		String result = node.getNodeName();
-		
-		Node current = node;
-		
-		while((current = current.getParentNode()) != null) {
-			if (!current.getNodeName().equals("#document")) {
-				result = current.getNodeName()+"/"+result;
-			}
-		}
-		
-		return "/"+result;
-		
-	}
-	
 	private List<MappingDefinition> checkAttributeConditions(Iterator<MappingDefinition> iterator, Node node) {
 		List<MappingDefinition> result = new ArrayList<MappingDefinition>();
 		
@@ -92,7 +70,7 @@ public class Mapper {
 	public List<MappingDefinition> getMappingsForNode(Node node) {
 		List<MappingDefinition> result = new ArrayList<MappingDefinition>();
 		
-		String xmlPath = getXmlPath(node);
+		String xmlPath = XMLProcessor.getXmlPath(node);
 		
 		// First check mappings that target a class
 		Stream<MappingDefinition> classFilter = mappings.stream().filter(
