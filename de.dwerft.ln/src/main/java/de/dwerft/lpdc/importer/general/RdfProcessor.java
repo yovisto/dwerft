@@ -129,7 +129,10 @@ public class RdfProcessor {
 			NamedNodeMap attributes = node.getAttributes();
 			for (int i = 0; i < attributes.getLength(); i++) {
 				Node item = attributes.item(i);
-				if (item.getNodeName().toLowerCase().contains("id") || item.getNodeName().toLowerCase().contains("identifier")) {
+				if (item.getNodeName().toLowerCase().contains("id") ||
+						item.getNodeName().toLowerCase().contains("identifier") ||
+						item.getNodeName().toLowerCase().contains("rel")
+						) {
 					idValue = item.getNodeValue();
 					break;
 				}
