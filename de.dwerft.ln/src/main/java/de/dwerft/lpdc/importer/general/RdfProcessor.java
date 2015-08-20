@@ -126,17 +126,22 @@ public class RdfProcessor {
 		
 		OntClass ontologyClass = ontologyConnector.getOntologyClass(mapping.getTargetOntologyClass());
 		
-		String nodeId = getIdentifierOfNode(node);
-		String uri = generateURI(ontologyClass, nodeId);
-		Resource createdResource = generatedModel.createResource(uri);
-		idResourceMapping.put(nodeId, createdResource);
-		nodeResourceMapping.put(node, createdResource);
-		resourceStack.push(createdResource);			
+		if (ontologyClass != null) {
 		
-		Property typeProp = ontologyConnector.getProperty("rdf","type");
-		createdResource.addProperty(typeProp, ontologyClass);
-		
-		result = createdResource;
+			String nodeId = getIdentifierOfNode(node);
+			String uri = generateURI(ontologyClass, nodeId);
+			Resource createdResource = generatedModel.createResource(uri);
+			idResourceMapping.put(nodeId, createdResource);
+			nodeResourceMapping.put(node, createdResource);
+			resourceStack.push(createdResource);			
+			
+			Property typeProp = ontologyConnector.getProperty("rdf","type");
+			createdResource.addProperty(typeProp, ontologyClass);
+			
+			result = createdResource;
+		} else {
+			throw new IllegalStateException("Ontology class not found in the ontology model: "+mapping.getTargetOntologyClass()+" -- "+node+" -- "+mapping);
+		}
 
 		return result;
 	}
@@ -172,17 +177,45 @@ public class RdfProcessor {
 				containmentNode = containmentNode.getParentNode();
 			}
 			if (containmentNode == null) {
-				throw new IllegalStateException("Specified parent not found "+node+" "+mapping);
+				throw new IllegalStateException("Specified parent not found: "+mapping.getContentElementName()+" -- "+node+" -- "+mapping);
 			} else {
 				String parentId = getIdentifierOfNode(containmentNode);
 				if (parentId != null && idResourceMapping.get(parentId) != null) {
 					ObjectProperty objectProperty = ontologyConnector.getOntologyObjectProperty(mapping.getTargetOntologyProperty());
+					
 					Resource parentResource = idResourceMapping.get(parentId);
 					Resource latestResource = resourceStack.peek();
+					
+					/*
+					OntClass ontologyClass = ontologyConnector.getOntologyClass(mapping.getTargetOntologyClass());
+					Property typeProp = ontologyConnector.getProperty("rdf", "type");
+					Resource linkResource = null;
+					
+					// Find the latest created resource of the target type
+					for (Resource resource : resourceStack) {
+						if (generatedModel.contains(resource, typeProp, ontologyClass)) {
+							linkResource = resource;
+							break;
+						}
+					}
+					*/
 					parentResource.addProperty(objectProperty, latestResource);
 				}
 			}
-		}	
+		} else 
+		if (mapping.getContentSource().equals(ContentSource.REFERENCE)) {
+			String referenceValue = XMLProcessor.getValueOfAttribute(node, mapping.getContentElementName());
+			
+			Resource resourceToLink = idResourceMapping.get(referenceValue);
+			Resource latestResource = resourceStack.peek();
+			ObjectProperty objectProperty = ontologyConnector.getOntologyObjectProperty(mapping.getTargetOntologyProperty());
+			
+			if (resourceToLink != null) {
+				latestResource.addProperty(objectProperty, resourceToLink);
+			} else {
+				throw new IllegalStateException("Referenced resource could not be found: "+referenceValue+" -- "+node+" -- "+mapping);
+			}
+		}
 	}
 	
 	public Resource createRDF(Node node, MappingDefinition mapping) {
