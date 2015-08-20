@@ -5,10 +5,18 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
 
+import com.hp.hpl.jena.ontology.OntClass;
+import com.hp.hpl.jena.ontology.OntModel;
+import com.hp.hpl.jena.ontology.OntModelSpec;
+import com.hp.hpl.jena.ontology.OntProperty;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -20,8 +28,10 @@ import com.hp.hpl.jena.query.ResultSetFormatter;
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.util.iterator.ExtendedIterator;
 
 import de.dwerft.lpdc.general.OntologyConstants;
 
@@ -34,8 +44,12 @@ public abstract class RdfExporter {
 	
 	private String sparqlEndpoint;
 	
-	public RdfExporter(String sparqlEndpointUrl) {
+	private OntModel ontologyModel;
+	
+	public RdfExporter(String sparqlEndpointUrl, String ontologyFilename) {
 		this.sparqlEndpoint = sparqlEndpointUrl;
+		this.ontologyModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+		ontologyModel.read(ontologyFilename, OntologyConstants.ONTOLOGY_FORMAT);
 	}
 	
 	public RdfExporter(File rdfInput) throws IOException {
@@ -50,6 +64,15 @@ public abstract class RdfExporter {
 		in.close();
 	}
 	
+	
+	/**
+	 * Executes a query on the sparql endpoint and returns a result set.
+	 * 
+	 * @param queryString
+	 * 						The sparql query string
+	 * @return	The query result set
+	 * 
+	 */
 	private ResultSet queryEndpoint(String queryString) {
 		Query query = QueryFactory.create(queryString);
 		HttpAuthenticator authenticator = new SimpleAuthenticator("dwerft", "#dwerft".toCharArray());
@@ -57,13 +80,12 @@ public abstract class RdfExporter {
 		return qExe.execSelect();
 	}
 	
-	
-
 	/**
 	 * Retrieves a set of resources that have the specified type (ontology class name)
 	 * 
 	 * @param className
-	 * @return
+	 * 					Name of the ontology class
+	 * @return All resources that have a RDF type relation to the ontology class
 	 */
 	public ArrayList<Resource> getResourcesByType(String className) {
 		
@@ -86,7 +108,7 @@ public abstract class RdfExporter {
 	
 	/**
 	 * Retrieves a set of resources that are linked to the start resource
-	 * via the specified object property. 
+	 * via the specified object property using default name space.
 	 * 
 	 * @param start
 	 * 				Start resource (subject)
@@ -95,13 +117,30 @@ public abstract class RdfExporter {
 	 * @return Linked resources
 	 */
 	public ArrayList<Resource> getLinkedResources(Resource start, String objectPropertyName) {
+		return getLinkedResources(start, OntologyConstants.ONTOLOGY_PREFIX, objectPropertyName);
+	}
+	
+	/**
+	 * Retrieves a set of resources that are linked to the start resource
+	 * via the specified object property. 
+	 * 
+	 * @param start
+	 * 				Start resource (subject)
+	 * @param prefix
+	 * 				Namespace prefix of the object property
+	 * 
+	 * @param objectPropertyName
+	 * 				Name of the object property
+	 * @return Linked resources
+	 */
+	public ArrayList<Resource> getLinkedResources(Resource start, String prefix, String objectPropertyName) {
 		
 		ArrayList<Resource> result = new ArrayList<Resource>();
 		
 		String query = OntologyConstants.ONTOLOGY_PREFIXES 
 				+ "select ?res where { "
 				+ "<" + start.getURI() + "> "
-				+ OntologyConstants.ONTOLOGY_PREFIX+":"+objectPropertyName + " "
+				+ prefix+":"+objectPropertyName + " "
 				+ "?res"
 				+ "}";
 
@@ -114,6 +153,7 @@ public abstract class RdfExporter {
 		return result;
 	}
 	
+	
 	/**
 	 * Retrieves a set of data values (literals) that are linked to the start
 	 * resource via the specified datatype property. 
@@ -124,8 +164,8 @@ public abstract class RdfExporter {
 	 * 				Name of the datatype property
 	 * @return
 	 */
-	public ArrayList<Object> getLinkedDataValues(Resource start, String datatypePropertyName) {
-		ArrayList<Object> result = new ArrayList<Object>();
+	public ArrayList<Literal> getLinkedDataValues(Resource start, String datatypePropertyName) {
+		ArrayList<Literal> result = new ArrayList<Literal>();
 		
 		String query = OntologyConstants.ONTOLOGY_PREFIXES 
 				+ "select ?res where { "
@@ -138,9 +178,61 @@ public abstract class RdfExporter {
 		ResultSet rs = queryEndpoint(query);
 		while(rs.hasNext()) {
 			QuerySolution sol = rs.nextSolution();
-			result.add(sol.getLiteral("res").getValue());
+			result.add(sol.getLiteral("res"));
 		}
 				
+		return result;
+	}
+	
+	
+	public Map<String, ArrayList<Literal>> getAllLinkedDataValues(Resource start) {
+		
+		Map<String, ArrayList<Literal>> result = new HashMap<String, ArrayList<Literal>>();
+		
+		ArrayList<Resource> linkedResources = getLinkedResources(start, "rdf", "type");
+		Resource type = null;
+		if (linkedResources.size() == 1) {
+			type = linkedResources.get(0);
+		} else {
+			return null;
+		}
+		
+		Set<Property> declaredProperties = getDeclaredProperties(type);
+		
+		for (Property property : declaredProperties) {
+			if (ontologyModel.getDatatypeProperty(property.getURI()) != null) {
+				ArrayList<Literal> linkedDataValues = getLinkedDataValues(start, property.getLocalName());
+				if (linkedDataValues.size() > 0) {
+					result.put(property.getLocalName(), linkedDataValues);
+				}
+			}
+		}
+		
+		return result;
+				
+	}
+	
+	/**
+	 * Retrieves the set of declared properties in the ontology model
+	 * for the given ontology class.
+	 * @param ontologyClass
+	 * 						The ontology class to looked up
+	 * @return A set of property names
+	 */
+	public Set<Property> getDeclaredProperties(Resource ontologyClass) {
+		Set<Property> result = new HashSet<Property>();
+		
+		OntClass ontClass = ontologyModel.getOntClass(ontologyClass.getURI());
+		if (ontClass != null) {
+			ExtendedIterator<OntProperty> props = ontClass.listDeclaredProperties();
+			while (props.hasNext()) {
+				OntProperty prop = (OntProperty) props.next();
+				if (prop.getURI().startsWith(OntologyConstants.ONTOLOGY_NAMESPACE)) {
+					result.add(prop);
+				}
+			}
+		}
+		
 		return result;
 	}
 	
