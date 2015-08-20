@@ -64,6 +64,14 @@ public class RdfProcessor {
 	 */
 	private String uriIdentifierPrefix = "";
 	
+	
+	/**
+	 * Predefined mappings for attribute values that will be evaluated before
+	 * creating literals. The keys of the mappings must be in the format
+	 * <property name>_<value>.
+	 */
+	private Map<String, String> attributeValueMappings;
+	
 	public RdfProcessor(OntologyConnector ontologyConnector) {
 		this.ontologyConnector = ontologyConnector;
 		generatedModel = ModelFactory.createDefaultModel();
@@ -72,6 +80,7 @@ public class RdfProcessor {
 		idResourceMapping = new HashMap<String, Resource>();
 		nodeResourceMapping = new HashMap<Node, Resource>();
 		resourceStack = new Stack<Resource>();
+		attributeValueMappings = new HashMap<String, String>();
 	}
 
 	/**
@@ -196,6 +205,10 @@ public class RdfProcessor {
 		} else {
 			DatatypeProperty datatypeProperty = ontologyConnector.getOntologyDatatypeProperty(mapping.getTargetOntologyProperty());
 			Resource latestResource = resourceStack.peek();
+			String mappedValue = attributeValueMappings.get(datatypeProperty.getLocalName()+"_"+value);
+			if (mappedValue != null) {
+				value = mappedValue;
+			}
 			latestResource.addLiteral(datatypeProperty, convertStringToAppropriateObject(value));
 		}
 
@@ -257,6 +270,14 @@ public class RdfProcessor {
 
 	public void setUriIdentifierPrefix(String uriIdentifierPrefix) {
 		this.uriIdentifierPrefix = uriIdentifierPrefix;
+	}
+
+	public Map<String, String> getAttributeValueMappings() {
+		return attributeValueMappings;
+	}
+
+	public void setAttributeValueMappings(Map<String, String> attributeValueMappings) {
+		this.attributeValueMappings = attributeValueMappings;
 	}
 
 }
