@@ -1,25 +1,25 @@
 package de.dwerft.lpdc.importer.preproducer;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.util.HashSet;
-import java.util.Set;
 
 import org.junit.Test;
 
 import com.hp.hpl.jena.rdf.model.Model;
 
 import de.dwerft.lpdc.general.OntologyConstants;
-import de.dwerft.lpdc.importer.general.MappingDefinition;
-import de.dwerft.lpdc.importer.general.MappingDefinition.ContentSource;
-import de.dwerft.lpdc.importer.general.MappingDefinition.TargetPropertyType;
 import de.dwerft.lpdc.sources.PreproducerSource;
 
 public class PreProducerToRdfTest {
-
+	
+	public static final String PREPRODUCER_CONFIG_FILE = "src/main/resource/config.properties";
+	
+	public static final String PREPRODUCER_MAPPINGS_FILE = "src/main/resource/preproducer.mappings";
+	
 
 	@Test
 	public void testConverter() {
+		
+/*
 		
 		Set<MappingDefinition> mappings = new HashSet<MappingDefinition>();
 		
@@ -191,11 +191,14 @@ public class PreProducerToRdfTest {
 						OntologyConstants.ONTOLOGY_NAMESPACE+"sex",
 						TargetPropertyType.DATATYPE_PROPERTY));		
 		
+		*/
 		
-		PreproducerSource pps = new PreproducerSource(new File("src/main/resource/config.properties"));
+		PreproducerSource pps = new PreproducerSource(new File(PREPRODUCER_CONFIG_FILE));
 		
-		PreProducerToRdf pprdf = new PreProducerToRdf(OntologyConstants.ONTOLOGY_FILE,
-				OntologyConstants.ONTOLOGY_FORMAT, mappings);
+		PreProducerToRdf pprdf = new PreProducerToRdf(
+				OntologyConstants.ONTOLOGY_FILE,
+				OntologyConstants.ONTOLOGY_FORMAT,
+				PREPRODUCER_MAPPINGS_FILE);
 		
 		pprdf.convert(pps.get("info"));
 		pprdf.convert(pps.get("listCharacters"));

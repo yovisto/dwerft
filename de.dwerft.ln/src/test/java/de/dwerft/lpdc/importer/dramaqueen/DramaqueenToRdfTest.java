@@ -1,25 +1,24 @@
 package de.dwerft.lpdc.importer.dramaqueen;
 
 import java.io.InputStream;
-import java.util.HashSet;
-import java.util.Set;
 
 import org.junit.Test;
 
 import com.hp.hpl.jena.rdf.model.Model;
 
 import de.dwerft.lpdc.general.OntologyConstants;
-import de.dwerft.lpdc.importer.general.MappingDefinition;
-import de.dwerft.lpdc.importer.general.MappingDefinition.ContentSource;
-import de.dwerft.lpdc.importer.general.MappingDefinition.TargetPropertyType;
 import de.dwerft.lpdc.sources.DramaQueenSource;
 
 public class DramaqueenToRdfTest {
 	
 	private static final String dqFile = "examples/Hansel_Gretel_de.dq";
+	public static final String DRAMAQUEEN_MAPPINGS_FILE = "src/main/resource/dramaqueen.mappings";
+
 
 	@Test
 	public void testConverter() {
+		
+		/*
 		
 		Set<MappingDefinition> mappings = new HashSet<MappingDefinition>();
 		
@@ -135,13 +134,16 @@ public class DramaqueenToRdfTest {
 						OntologyConstants.ONTOLOGY_NAMESPACE+"sceneSet",
 						TargetPropertyType.OBJECT_PROPERTY));
 		
-		
+		*/
 
 		DramaQueenSource dqsoure = new DramaQueenSource();
 		InputStream inputStream = dqsoure.get(dqFile);
 		
 		
-		DramaqueenToRdf dqrdf = new DramaqueenToRdf(OntologyConstants.ONTOLOGY_FILE, OntologyConstants.ONTOLOGY_FORMAT, mappings);
+		DramaqueenToRdf dqrdf = new DramaqueenToRdf(
+				OntologyConstants.ONTOLOGY_FILE, 
+				OntologyConstants.ONTOLOGY_FORMAT, 
+				DRAMAQUEEN_MAPPINGS_FILE);
 		
 		dqrdf.convert(inputStream);
 		
