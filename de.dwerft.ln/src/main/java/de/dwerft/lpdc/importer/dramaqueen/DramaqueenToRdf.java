@@ -1,18 +1,16 @@
 package de.dwerft.lpdc.importer.dramaqueen;
 
 import java.util.Map;
-import java.util.Set;
 
 import org.w3c.dom.Element;
 
-import de.dwerft.lpdc.importer.general.MappingDefinition;
 import de.dwerft.lpdc.importer.general.XMLProcessor;
 import de.dwerft.lpdc.importer.general.XMLtoRDFconverter;
 
 public class DramaqueenToRdf extends XMLtoRDFconverter {
 	
-	public DramaqueenToRdf(String ontologyFileName, String ontologyFormat, Set<MappingDefinition> mappings) {
-		super(ontologyFileName, ontologyFormat, mappings);
+	public DramaqueenToRdf(String ontologyFileName, String ontologyFormat, String mappingsFilename) {
+		super(ontologyFileName, ontologyFormat, mappingsFilename);
 	}
 	
 	private String findProjectId() {

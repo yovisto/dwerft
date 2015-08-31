@@ -2,7 +2,6 @@ package de.dwerft.lpdc.importer.general;
 
 import java.io.InputStream;
 import java.util.List;
-import java.util.Set;
 
 import org.w3c.dom.Node;
 
@@ -23,13 +22,13 @@ public abstract class XMLtoRDFconverter {
 	 * routines that are execute before and after the general conversion process based
 	 * on the mapping definitions.
 	 * 
-	 * @param ontologyFileName
-	 * @param ontologyFormat
-	 * @param mappings
+	 * @param ontologyFileName Filename of the OWL ontology to be used.
+	 * @param ontologyFormat Format, e.g., RDF/XML, of the ontology file.
+	 * @param mappingsFilename Filename of the mappings definitions.
 	 */
-	public XMLtoRDFconverter(String ontologyFileName, String ontologyFormat, Set<MappingDefinition> mappings) {
+	public XMLtoRDFconverter(String ontologyFileName, String ontologyFormat, String mappingsFilename) {
 		ontConn = new OntologyConnector(ontologyFileName, ontologyFormat);
-		mapper = new Mapper(mappings);
+		mapper = new Mapper(mappingsFilename);
 		rdfProc = new RdfProcessor(ontConn);
 	}
 	
