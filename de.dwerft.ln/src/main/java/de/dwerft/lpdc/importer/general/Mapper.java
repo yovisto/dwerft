@@ -73,8 +73,6 @@ public class Mapper {
 			e.printStackTrace();
 		}
 		
-		System.out.println(mappings);
-		
 	}
 	
 	/**
@@ -86,6 +84,10 @@ public class Mapper {
 	 * @return
 	 */
 	private MappingDefinition buildMapping(Properties prop, int index) {
+		
+		if (!prop.containsKey("map"+index+".xmlNodePath")) {
+			return null;
+		}
 		
 		String xmlNodePath = prop.getProperty("map"+index+".xmlNodePath");
 		String conditionalAttributeName = prop.getProperty("map"+index+".conditionalAttributeName");

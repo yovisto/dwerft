@@ -141,14 +141,15 @@ public class MappingDefinition {
 
 	@Override
 	public String toString() {
-		return "MappingDefinition [xmlNodePath=" + xmlNodePath
-				+ ", conditionalAttributeName=" + conditionalAttributeName
-				+ ", conditionalAttributeValue=" + conditionalAttributeValue
-				+ ", contentSource=" + contentSource + ", contentElementName="
-				+ contentElementName + ", targetOntologyClass="
-				+ targetOntologyClass + ", targetOntologyProperty="
-				+ targetOntologyProperty + ", targetPropertyType="
-				+ targetPropertyType + "]";
+		
+		return "map.xmlNodePath=" + xmlNodePath + "\n"
+				+ "map.conditionalAttributeName=" + conditionalAttributeName + "\n"
+				+ "map.conditionalAttributeValue=" + conditionalAttributeValue + "\n"
+				+ "map.contentSource=" + contentSource  + "\n"
+				+ "map.contentElementName="	+ contentElementName  + "\n"
+				+ "map.targetOntologyClass=" + targetOntologyClass  + "\n"
+				+ "map.targetOntologyProperty=" + targetOntologyProperty + "\n"
+				+ "map.targetPropertyType=" + targetPropertyType;
 	}
 
 }
