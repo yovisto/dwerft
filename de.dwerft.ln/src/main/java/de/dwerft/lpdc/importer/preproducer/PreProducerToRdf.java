@@ -1,17 +1,13 @@
 package de.dwerft.lpdc.importer.preproducer;
 
-import java.util.Set;
-
-import de.dwerft.lpdc.importer.general.MappingDefinition;
 import de.dwerft.lpdc.importer.general.XMLtoRDFconverter;
 
 public class PreProducerToRdf extends XMLtoRDFconverter {
 
-	public PreProducerToRdf(String ontologyFileName,
-			String ontologyFormat, Set<MappingDefinition> mappings) {
-		super(ontologyFileName, ontologyFormat, mappings);
+	public PreProducerToRdf(String ontologyFileName, String ontologyFormat,
+			String mappingsFilename) {
+		super(ontologyFileName, ontologyFormat, mappingsFilename);
 	}
-
 
 	@Override
 	public void processingBeforeConvert() {
