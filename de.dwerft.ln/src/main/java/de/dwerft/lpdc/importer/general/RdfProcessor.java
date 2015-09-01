@@ -154,7 +154,12 @@ public class RdfProcessor {
 	}
 	
 	public String generateURI(OntClass ontologyClass, String nodeId) {
-		return OntologyConstants.RESOURCE_NAMESPACE+uriIdentifierPrefix+ontologyClass.getLocalName()+"/"+nodeId;
+		
+		if (uriIdentifierPrefix.contains(nodeId)) {
+			return OntologyConstants.RESOURCE_NAMESPACE+ontologyClass.getLocalName()+"/"+nodeId;
+		} else {
+			return OntologyConstants.RESOURCE_NAMESPACE+uriIdentifierPrefix+ontologyClass.getLocalName()+"/"+nodeId;
+		}
 	}
 	
 	public Resource createOntologyClassInstance(Node node, MappingDefinition mapping) {
