@@ -1,6 +1,9 @@
 package de.dwerft.lpdc.importer.general;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 
 import org.w3c.dom.Node;
@@ -51,6 +54,25 @@ public abstract class XMLtoRDFconverter {
 	
 	public Model getGeneratedModel() {
 		return rdfProc.getGeneratedModel();
+	}
+	
+	
+	public void writeRdfToFile(String filename, String format) {
+		
+		OutputStream out;
+		try {
+			out = new FileOutputStream(filename);
+			getGeneratedModel().write(out, format);
+			out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println("Turtle file written: "+filename);
+		}
+	}
+	
+	public void writeRdfToFile(String filename) {
+		writeRdfToFile(filename, "TTL");
 	}
 	
 	public abstract void processingBeforeConvert();
