@@ -46,10 +46,22 @@ public class RdfProcessor {
 	private Map<String, Resource> idResourceMapping;
 
 	/**
+	 * Whenever a new resource is created, the created resource is stored
+	 * together with the ID of the XML element.
+	 */
+	private Map<Resource, String> resourceIdMapping;
+
+	/**
 	 * Whenever a new resource is created, the XML node is stored
 	 * together with the created resource.
 	 */
 	private Map<Node, Resource> nodeResourceMapping;
+	
+	/**
+	 * Whenever a new resource is created, the ID of the XML element is stored
+	 * together with original XML node.
+	 */
+	private Map<String, Node> idNodeMapping;
 	
 	/**
 	 * The stack always has the latest created resource on top in order to be
@@ -78,7 +90,10 @@ public class RdfProcessor {
 		generatedModel.setNsPrefixes(this.ontologyConnector.getOntologyModel().getNsPrefixMap());
 		
 		idResourceMapping = new HashMap<String, Resource>();
+		resourceIdMapping = new HashMap<Resource, String>();
 		nodeResourceMapping = new HashMap<Node, Resource>();
+		idNodeMapping = new HashMap<String, Node>();
+		
 		resourceStack = new Stack<Resource>();
 		attributeValueMappings = new HashMap<String, String>();
 	}
@@ -178,7 +193,9 @@ public class RdfProcessor {
 			String uri = generateURI(ontologyClass, nodeId);
 			Resource createdResource = generatedModel.createResource(uri);
 			idResourceMapping.put(nodeId, createdResource);
+			resourceIdMapping.put(createdResource, nodeId);
 			nodeResourceMapping.put(node, createdResource);
+			idNodeMapping.put(nodeId, node);
 			resourceStack.push(createdResource);			
 			
 			Property typeProp = ontologyConnector.getProperty("rdf","type");
@@ -190,6 +207,12 @@ public class RdfProcessor {
 		}
 
 		return result;
+	}
+	
+	public void linkDatatypeProperty(String elementId, String propertyURI, String propertyValue) {
+		DatatypeProperty datatypeProperty = ontologyConnector.getOntologyDatatypeProperty(propertyURI);
+		Resource resource = idResourceMapping.get(elementId);
+		resource.addLiteral(datatypeProperty, convertStringToAppropriateObject(propertyValue));
 	}
 	
 	public void linkDatatypeProperty(Node node, MappingDefinition mapping) {
@@ -283,6 +306,22 @@ public class RdfProcessor {
 
 	public void setAttributeValueMappings(Map<String, String> attributeValueMappings) {
 		this.attributeValueMappings = attributeValueMappings;
+	}
+
+	public Map<String, Resource> getIdResourceMapping() {
+		return idResourceMapping;
+	}
+
+	public Map<Resource, String> getResourceIdMapping() {
+		return resourceIdMapping;
+	}
+
+	public Map<Node, Resource> getNodeResourceMapping() {
+		return nodeResourceMapping;
+	}
+
+	public Map<String, Node> getIdNodeMapping() {
+		return idNodeMapping;
 	}
 
 }
