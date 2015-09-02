@@ -11,11 +11,12 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX foo: <http://filmontology.org/ontology/1.0/>
 PREFIX for: <http://filmontology.org/resource/>
 
-select ?project, ?dramaqueenID, ?preproducerID  where {
+select ?project, ?name, ?dramaqueenID, ?preproducerID  where {
 	for:DWERFT <http://purl.org/dc/terms/hasPart> ?project .
 	?project rdf:type foo:Project .
 	OPTIONAL {?project foo:identifierDramaQueen ?dramaqueenID }
 	OPTIONAL {?project foo:identifierPreProducer ?preproducerID}
+	?project foo:name ?name.
 }
 
 Retrieves an ordered list of scenes for a specific project
