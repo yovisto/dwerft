@@ -120,7 +120,7 @@ map14.conditionalAttributeName=id
 map14.conditionalAttributeValue=168
 map14.contentSource=ATTRIBUTE
 map14.contentElementName=value
-map14.targetOntologyClass=http://filmontology.org/ontology/1.0/Frame
+map14.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map14.targetOntologyProperty=http://filmontology.org/ontology/1.0/interiorExterior
 map14.targetPropertyType=DATATYPE_PROPERTY
 
@@ -129,7 +129,7 @@ map15.conditionalAttributeName=id
 map15.conditionalAttributeValue=10
 map15.contentSource=REFERENCE
 map15.contentElementName=value
-map15.targetOntologyClass=http://filmontology.org/ontology/1.0/Frame
+map15.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map15.targetOntologyProperty=http://filmontology.org/ontology/1.0/sceneSet
 map15.targetPropertyType=OBJECT_PROPERTY
 
@@ -221,7 +221,7 @@ map25.conditionalAttributeName=id
 map25.conditionalAttributeValue=126
 map25.contentSource=ATTRIBUTE
 map25.contentElementName=value
-map25.targetOntologyClass=http://filmontology.org/ontology/1.0/Frame
+map25.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map25.targetOntologyProperty=http://filmontology.org/ontology/1.0/dayTime
 map25.targetPropertyType=DATATYPE_PROPERTY
 
@@ -230,7 +230,7 @@ map26.conditionalAttributeName=id
 map26.conditionalAttributeValue=9
 map26.contentSource=ATTRIBUTE
 map26.contentElementName=value
-map26.targetOntologyClass=http://filmontology.org/ontology/1.0/Frame
+map26.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map26.targetOntologyProperty=http://filmontology.org/ontology/1.0/sceneDescription
 map26.targetPropertyType=DATATYPE_PROPERTY
 
@@ -239,7 +239,7 @@ map27.conditionalAttributeName=id
 map27.conditionalAttributeValue=1
 map27.contentSource=TEXT_CONTENT
 map27.contentElementName=
-map27.targetOntologyClass=http://filmontology.org/ontology/1.0/Frame
+map27.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map27.targetOntologyProperty=http://filmontology.org/ontology/1.0/sceneContent
 map27.targetPropertyType=DATATYPE_PROPERTY
 
@@ -268,7 +268,7 @@ map30.conditionalAttributeName=id
 map30.conditionalAttributeValue=278
 map30.contentSource=TEXT_CONTENT
 map30.contentElementName=
-map30.targetOntologyClass=http://filmontology.org/ontology/1.0/Frame
+map30.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map30.targetOntologyProperty=http://filmontology.org/ontology/1.0/sceneHeader
 map30.targetPropertyType=DATATYPE_PROPERTY
 
