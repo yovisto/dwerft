@@ -28,11 +28,11 @@ public class PreProducerToRdfTest {
 		
 		pprdf.convert(pps.get("info"));
 		pprdf.convert(pps.get("listCharacters"));
+		pprdf.convert(pps.get("listCrew"));
 		pprdf.convert(pps.get("listDecorations"));
 		pprdf.convert(pps.get("listExtras"));
 		pprdf.convert(pps.get("listScenes"));
 		pprdf.convert(pps.get("listSchedule"));
-		pprdf.convert(pps.get("listCharacters"));
 		
 		Model generatedModel = pprdf.getGeneratedModel();
 		
