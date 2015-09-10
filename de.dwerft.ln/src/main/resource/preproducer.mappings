@@ -389,7 +389,7 @@ map43.conditionalAttributeValue=
 map43.contentSource=CONTAINMENT
 map43.contentElementName=prp:project
 map43.targetOntologyClass=http://filmontology.org/ontology/1.0/Project
-map43.targetOntologyProperty=http:/filmontology.org/ontology/1.0/hasCrewDepartment
+map43.targetOntologyProperty=http://filmontology.org/ontology/1.0/hasCrewDepartment
 map43.targetPropertyType=OBJECT_PROPERTY
 
 map44.xmlNodePath=/root/return/prp:project/prp:function-group/code
@@ -398,7 +398,7 @@ map44.conditionalAttributeValue=
 map44.contentSource=TEXT_CONTENT
 map44.contentElementName=
 map44.targetOntologyClass=http://filmontology.org/ontology/1.0/CrewDepartment
-map44.targetOntologyProperty=http://filmontolog.org/ontology/1.0/departmentCode
+map44.targetOntologyProperty=http://filmontology.org/ontology/1.0/departmentCode
 map44.targetPropertyType=DATATYPE_PROPERTY
 
 map45.xmlNodePath=/root/return/prp:project/prp:function-group/name
