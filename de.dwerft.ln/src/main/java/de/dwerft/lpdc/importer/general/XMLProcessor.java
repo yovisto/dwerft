@@ -21,8 +21,9 @@ import org.xml.sax.SAXException;
  *
  */
 public class XMLProcessor {
-	
-	private Element documentElement;
+
+	private Document document = null; 
+	private Element documentElement = null;
 	private Node currentNode = null;
 	
 	/**
@@ -66,7 +67,8 @@ public class XMLProcessor {
 	}
 
 	/**
-	 * Creates a new XMLProcessor and parses the XML document.
+	 * Creates a new XMLProcessor and parses the XML document supplied
+	 * via the inputStream.
 	 * 
 	 * @param inputStream	Input stream of the XML document.
 	 */
@@ -76,10 +78,29 @@ public class XMLProcessor {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder(); 
 			Document doc = db.parse(inputStream);
-			
+			this.document = doc;
 			this.documentElement = doc.getDocumentElement();
 			
 		} catch ( ParserConfigurationException | SAXException | IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	/**
+	 * Creates a new XMLProcessor with an empty document. To be used for
+	 * creating new XML files.
+	 */
+	public XMLProcessor() {
+		try {
+
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder(); 
+			
+			Document doc = db.newDocument();
+			this.document = doc;		
+			
+		} catch ( ParserConfigurationException e ) {
 			e.printStackTrace();
 		}
 	}
@@ -133,6 +154,10 @@ public class XMLProcessor {
 	 */
 	public Element getDocumentElement() {
 		return documentElement;
+	}
+
+	public Document getDocument() {
+		return document;
 	}
 	
 }
