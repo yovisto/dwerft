@@ -4,17 +4,14 @@ import java.io.File;
 
 import org.junit.Test;
 
-import com.hp.hpl.jena.rdf.model.Model;
-
 import de.dwerft.lpdc.general.OntologyConstants;
 import de.dwerft.lpdc.sources.PreproducerSource;
 
 public class PreProducerToRdfTest {
 	
-	public static final String PREPRODUCER_CONFIG_FILE = "src/main/resource/config.properties";
-	
-	public static final String PREPRODUCER_MAPPINGS_FILE = "src/main/resource/preproducer.mappings";
-	
+	private static final String PREPRODUCER_CONFIG_FILE = "src/main/resource/config.properties";
+	private static final String PREPRODUCER_MAPPINGS_FILE = "src/main/resource/preproducer.mappings";
+	private static final String outputFile = "examples/preproducer_export_new.ttl";
 
 	@Test
 	public void testConverter() {
@@ -31,12 +28,15 @@ public class PreProducerToRdfTest {
 		pprdf.convert(pps.get("listCrew"));
 		pprdf.convert(pps.get("listDecorations"));
 		pprdf.convert(pps.get("listExtras"));
+		pprdf.convert(pps.get("listFigures"));
 		pprdf.convert(pps.get("listScenes"));
 		pprdf.convert(pps.get("listSchedule"));
 		
-		Model generatedModel = pprdf.getGeneratedModel();
+//		Model generatedModel = pprdf.getGeneratedModel();
 		
-		generatedModel.write(System.out, "TTL");
+//		generatedModel.write(System.out, "TTL");
+		
+		pprdf.writeRdfToFile(outputFile);
 
 		
 	}
