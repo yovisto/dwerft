@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
@@ -101,18 +102,18 @@ public abstract class RdfExporter {
 	 * @param value the value of the literal
 	 * @return a list of resources
 	 */
-	public List<Resource> getResourcesFilteredByLiteral(String className, String datatypeName, String value) {
-		List<Resource> result = new ArrayList<Resource>();
+	public Optional<Resource> getResourcesFilteredByLiteral(String className, String datatypeName, String value) {
+		Optional<Resource> optional = Optional.empty();
 		
 		for (Resource r : getResourcesByType(className)) {
 			for (Literal l : getLinkedDataValues(r, datatypeName)) {
 				if (StringUtils.equalsIgnoreCase(l.getString(), value)) {
-					result.add(r);
+					optional = Optional.of(r);
 				}
 			}
 		}
 		
-		return result;
+		return optional;
 	}
 	
 	/**
