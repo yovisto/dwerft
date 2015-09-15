@@ -36,15 +36,6 @@ public class Mapper {
 	private Set<MappingDefinition> mappings;
 
 	/**
-	 * Creates a new mapper.
-	 * 
-	 * @param mappings The mapping definitions
-	 */
-	public Mapper(Set<MappingDefinition> mappings) {
-		this.mappings = mappings;
-	}
-	
-	/**
 	 * Creates a new mapping and loads mapping definitions from the mappings filename
 	 * 
 	 * @param mappingsFilename File containing mapping definitions
@@ -204,6 +195,14 @@ public class Mapper {
 		result.addAll(propMappings);	
 		
 		return result;
+	}
+
+	/**
+	 * Get all mapping definitions
+	 * @return
+	 */
+	public Set<MappingDefinition> getMappings() {
+		return mappings;
 	}
 
 }

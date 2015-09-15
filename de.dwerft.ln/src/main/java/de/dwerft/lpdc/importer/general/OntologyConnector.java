@@ -1,15 +1,20 @@
 package de.dwerft.lpdc.importer.general;
 
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 import com.hp.hpl.jena.ontology.DatatypeProperty;
 import com.hp.hpl.jena.ontology.ObjectProperty;
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
+import com.hp.hpl.jena.ontology.OntProperty;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.util.iterator.ExtendedIterator;
+
+import de.dwerft.lpdc.general.OntologyConstants;
 
 /**
  * The OntologyConnector is responsible for retrieving ontology model elements based on the names and prefixes.
@@ -104,7 +109,29 @@ public class OntologyConnector {
 		return getOntologyObjectProperty(ontologyModel.getNsPrefixURI(prefix)+propertyName);
 	}
 	
-
+	/**
+	 * Retrieves the set of declared properties in the ontology model
+	 * for the specific ontology class.
+	 * @param uri The URI of the ontology class
+	 * @return A set of property names
+	 */
+	public Set<Property> getDeclaredProperties(String uri) {
+		Set<Property> result = new HashSet<Property>();
+		
+		OntClass ontClass = ontologyModel.getOntClass(uri);
+		if (ontClass != null) {
+			ExtendedIterator<OntProperty> props = ontClass.listDeclaredProperties();
+			while (props.hasNext()) {
+				OntProperty prop = (OntProperty) props.next();
+				if (prop.getURI().startsWith(OntologyConstants.ONTOLOGY_NAMESPACE)) {
+					result.add(prop);
+				}
+			}
+		}
+		
+		return result;
+	}
+	
 	/**
 	 * Gets the ontology model.
 	 * 

@@ -1,0 +1,964 @@
+@prefix :      <http://filmontology.org/> .
+@prefix webprotege: <http://protege.stanford.edu/webprotege/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix filmontology: <http://filmontology.org/> .
+@prefix foo:   <http://filmontology.org/ontology/1.0/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix for:   <http://filmontology.org/resource/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://filmontology.org/resource/Cast/20923bda-1ba2-4104-98be-cd497674bb2f>
+        a         foo:Cast ;
+        foo:name  "Berta Beispiel"^^xsd:string .
+
+<http://filmontology.org/resource/Address/e0146dab-66ad-49ed-95bb-dd4fdcca6edb>
+        a                foo:Address ;
+        foo:cityName     "Märchenwald"^^xsd:string ;
+        foo:countryName  "DE"^^xsd:string ;
+        foo:houseNumber  "2"^^xsd:int ;
+        foo:streetName   "Schlossalle"^^xsd:string ;
+        foo:zipCode      "90123"^^xsd:int .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0C4E>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0C4E"^^xsd:string ;
+        foo:name                   "Peter Planlos"^^xsd:string , "1. Aufnahmeleitung"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1EA0>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-13"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1EA0"^^xsd:string ;
+        foo:name                   "12. Drehtag: Di, 13. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1E9A>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-07"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1E9A"^^xsd:string ;
+        foo:name                   "8. Drehtag: Mi, 7. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0D2D>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0D2D"^^xsd:string ;
+        foo:name                   "Pia Puder"^^xsd:string , "Maskenbildnerassistenz"^^xsd:string .
+
+<http://filmontology.org/resource/Extra/44D5-14F46B0DAA>
+        a                          foo:Extra ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/124d5c78-50d9-4c01-8ba4-115dbd3f68cd> , <http://filmontology.org/resource/Cast/20923bda-1ba2-4104-98be-cd497674bb2f> , <http://filmontology.org/resource/Cast/d6b361ec-3da2-4c75-b083-694a4f748130> ;
+        foo:identifierPreProducer  "44D5-14F46B0DAA"^^xsd:string ;
+        foo:name                   "Hofdamen"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B5CED>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B5CED"^^xsd:string ;
+        foo:name                   "Traum"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B0E1E>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B0E1E"^^xsd:string ;
+        foo:name                   "Dorfplatz"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B1065> .
+
+<http://filmontology.org/resource/Location/44D5-14F46B1065>
+        a       foo:Location .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B100B>
+        a         foo:Cast ;
+        foo:name  "Martin Mustermann"^^xsd:string ;
+        foo:sex   "male"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0C48>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0C48"^^xsd:string ;
+        foo:name                   "Dolly Dollar"^^xsd:string , "Produzent"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B1E3E>
+        a         foo:Cast ;
+        foo:name  "Bernd Bettelmann"^^xsd:string ;
+        foo:sex   "male"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/1a5f34eb-1457-4f1e-8b6b-6388a16df8f7>
+        a         foo:Cast ;
+        foo:name  "Bettina Bach"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B0F52>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B0F52"^^xsd:string ;
+        foo:name                   "Schloss / Innenhof"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B1F35> .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B4713>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B4713"^^xsd:string ;
+        foo:name                   "Paul Pauke"^^xsd:string , "Musiker im Aufnahmestudio"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B1513>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B1513"^^xsd:string ;
+        foo:name                   "Tilo Tungsten"^^xsd:string , "Beleuchter (2nd Unit)"^^xsd:string .
+
+<http://filmontology.org/resource/Location/44D5-14F46B1F35>
+        a       foo:Location .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B1047>
+        a         foo:Cast ;
+        foo:name  "Berthold Beispiel"^^xsd:string ;
+        foo:sex   "male"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B5CA5>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B5CA5"^^xsd:string ;
+        foo:name                   "Hexenhaus"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B15B9>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B15B9"^^xsd:string ;
+        foo:name                   "Roland Rohschnitt"^^xsd:string , "Cutterassistenz"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B0FA1>
+        a         foo:Cast ;
+        foo:name  "Margot Mustermann"^^xsd:string ;
+        foo:sex   "female"^^xsd:string .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0CB3>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/44D5-14F46B0CFA> ;
+        foo:characterNumber        "3"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0CB3"^^xsd:string ;
+        foo:name                   "13. Fee"^^xsd:string .
+
+<http://filmontology.org/resource/Location/44D5-14F46B10CA>
+        a       foo:Location .
+
+<http://filmontology.org/resource/Extra/44D5-14F46B0D27>
+        a                          foo:Extra ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/2b6cecb9-a622-4063-bc8f-d3927c754063> , <http://filmontology.org/resource/Cast/44D5-14F46B1BEE> , <http://filmontology.org/resource/Cast/44D5-14F46B1B7C> , <http://filmontology.org/resource/Cast/1ea084ca-7888-4b67-8c5a-f7e23f641517> , <http://filmontology.org/resource/Cast/f3a63279-1e52-4cce-b64b-e9232fe6dca5> , <http://filmontology.org/resource/Cast/86980ae7-775d-4886-941f-e6fd5a9b1682> , <http://filmontology.org/resource/Cast/b110db37-176a-4d14-89d8-b2367303af37> , <http://filmontology.org/resource/Cast/6bfcd75c-bac8-4c90-928b-bdbf132bb404> ;
+        foo:identifierPreProducer  "44D5-14F46B0D27"^^xsd:string ;
+        foo:name                   "Feen"^^xsd:string .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0D49>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/44D5-14F46B0FED> ;
+        foo:characterNumber        "8"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0D49"^^xsd:string ;
+        foo:name                   "Haushofmeister"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1A97>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-10-30"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1A97"^^xsd:string ;
+        foo:name                   "2. Drehtag: Di, 30. Oktober 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Cast/751082ad-0543-4276-9030-0293dbae2fc2>
+        a         foo:Cast ;
+        foo:name  "Fritz Fiebrich"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B1500>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B1500"^^xsd:string ;
+        foo:name                   "Anja Anzug"^^xsd:string , "Garderobe"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B09A9>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B09A9"^^xsd:string ;
+        foo:name                   "Schlosspark / Teich"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B1068> .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1EA3>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-16"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1EA3"^^xsd:string ;
+        foo:name                   "14. Drehtag: Fr, 16. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B5C99>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B5C99"^^xsd:string ;
+        foo:name                   "Waldlichtung"^^xsd:string .
+
+<http://filmontology.org/resource/CrewDepartment/062e58b3-6bd7-4cf6-afaa-8056ed6abc05>
+        a                   foo:CrewDepartment ;
+        foo:departmentCode  "TON"^^xsd:string ;
+        foo:hasCrewMember   <http://filmontology.org/resource/Crew/44D5-14F46B46F2> , <http://filmontology.org/resource/Crew/44D5-14F46B46EC> , <http://filmontology.org/resource/Crew/44D5-14F46B46EF> ;
+        foo:name            "Tonabteilung"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1E9D>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-10"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1E9D"^^xsd:string ;
+        foo:name                   "drehfrei: Sa, 10. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "free"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B0CFA>
+        a         foo:Cast ;
+        foo:name  "Marta Mustermann"^^xsd:string ;
+        foo:sex   "female"^^xsd:string .
+
+<http://filmontology.org/resource/Location/44D5-14F46B1068>
+        a       foo:Location .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0C51>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0C51"^^xsd:string ;
+        foo:name                   "Olaf Organizer"^^xsd:string , "Produktionsleitung"^^xsd:string .
+
+<http://filmontology.org/resource/SceneGroup/18ed74db-4134-4020-8714-465823556a76>
+        a       foo:SceneGroup .
+
+<http://filmontology.org/resource/Set/44D5-14F46B0F55>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B0F55"^^xsd:string ;
+        foo:name                   "Schloss / Zimmer Dornröschen"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B1FA1> .
+
+<http://filmontology.org/resource/Extra/44D5-14F46B10FF>
+        a                          foo:Extra ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/a60c0ecd-9496-4fcf-bb41-27235b163f2f> , <http://filmontology.org/resource/Cast/2b7d38df-4233-4bdf-a2f0-11d4e62e31f0> , <http://filmontology.org/resource/Cast/ddb44797-9733-4d60-9a14-cd0f6a9c8a26> ;
+        foo:identifierPreProducer  "44D5-14F46B10FF"^^xsd:string ;
+        foo:name                   "Höflinge"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1E97>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-03"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1E97"^^xsd:string ;
+        foo:name                   "drehfrei: Sa, 3. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "free"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Cast/d6b361ec-3da2-4c75-b083-694a4f748130>
+        a         foo:Cast ;
+        foo:name  "Lise Lotte"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0D30>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0D30"^^xsd:string ;
+        foo:name                   "Lisa Lippstick"^^xsd:string , "Maskenbildner"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B0F6F>
+        a         foo:Cast ;
+        foo:name  "Bettina Beispiel"^^xsd:string ;
+        foo:sex   "female"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0C80>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0C80"^^xsd:string ;
+        foo:name                   "Derrick Drive"^^xsd:string , "Produktionsfahrer"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B1029>
+        a         foo:Cast ;
+        foo:name  "Catharina Cast"^^xsd:string ;
+        foo:sex   "female"^^xsd:string .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0E23>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/44D5-14F46B1047> ;
+        foo:characterNumber        "15"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0E23"^^xsd:string ;
+        foo:name                   "Offizier"^^xsd:string .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0CB6>
+        a                          foo:Character ;
+        foo:characterNumber        "10"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0CB6"^^xsd:string ;
+        foo:name                   "Küchenjunge"^^xsd:string .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0D3F>
+        a                          foo:Character ;
+        foo:characterNumber        "13"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0D3F"^^xsd:string ;
+        foo:name                   "Baby Dornröschen"^^xsd:string .
+
+<http://filmontology.org/resource/CrewDepartment/e7a00c70-469f-465c-8b8b-22e303998cbc>
+        a                   foo:CrewDepartment ;
+        foo:departmentCode  "SST"^^xsd:string ;
+        foo:hasCrewMember   <http://filmontology.org/resource/Crew/44D5-14F46B098B> ;
+        foo:name            "sonstiger Stab"^^xsd:string .
+
+<http://filmontology.org/resource/Project/17621>
+        a                          foo:Project ;
+        foo:hasCast                <http://filmontology.org/resource/Cast/44D5-14F46B1047> , <http://filmontology.org/resource/Cast/44D5-14F46B0FA1> , <http://filmontology.org/resource/Cast/44D5-14F46B0F6F> , <http://filmontology.org/resource/Cast/44D5-14F46B0FBF> , <http://filmontology.org/resource/Cast/44D5-14F46B0F20> , <http://filmontology.org/resource/Cast/44D5-14F46B0FED> , <http://filmontology.org/resource/Cast/44D5-14F46B1029> , <http://filmontology.org/resource/Cast/44D5-14F46B100B> , <http://filmontology.org/resource/Cast/44D5-14F46B0CDD> , <http://filmontology.org/resource/Cast/44D5-14F46B0CFA> ;
+        foo:hasCharacter           <http://filmontology.org/resource/Character/44D5-14F46B0CB2> , <http://filmontology.org/resource/Character/44D5-14F46B0D25> , <http://filmontology.org/resource/Character/44D5-14F46B5064> , <http://filmontology.org/resource/Character/44D5-14F46B0CB3> , <http://filmontology.org/resource/Character/44D5-14F46B0CB4> , <http://filmontology.org/resource/Character/44D5-14F46B0CB5> , <http://filmontology.org/resource/Character/44D5-14F46B0E23> , <http://filmontology.org/resource/Character/44D5-14F46B0CB6> , <http://filmontology.org/resource/Character/44D5-14F46B0D3F> , <http://filmontology.org/resource/Character/44D5-14F46B0CAF> , <http://filmontology.org/resource/Character/44D5-14F46B0D45> , <http://filmontology.org/resource/Character/44D5-14F46B0D47> , <http://filmontology.org/resource/Character/44D5-14F46B0D29> , <http://filmontology.org/resource/Character/44D5-14F46B0CB0> , <http://filmontology.org/resource/Character/44D5-14F46B0D49> , <http://filmontology.org/resource/Character/44D5-14F46B0CB1> ;
+        foo:hasCompany             <http://filmontology.org/resource/Company/39a2d36e-4658-4f9c-8d86-f012b99cdaa8> , <http://filmontology.org/resource/Company/3168f152-3c58-4893-a583-ed862dcbe3a4> ;
+        foo:hasCrew                <http://filmontology.org/resource/Crew/44D5-14F46B0C48> , <http://filmontology.org/resource/Crew/44D5-14F46B0CB7> , <http://filmontology.org/resource/Crew/44D5-14F46B46FB> , <http://filmontology.org/resource/Crew/44D5-14F46B470A> , <http://filmontology.org/resource/Crew/44D5-14F46B46EC> , <http://filmontology.org/resource/Crew/44D5-14F46B0D2A> , <http://filmontology.org/resource/Crew/44D5-14F46B0C3A> , <http://filmontology.org/resource/Crew/44D5-14F46B0D3C> , <http://filmontology.org/resource/Crew/44D5-14F46B46F2> , <http://filmontology.org/resource/Crew/44D5-14F46B46EF> , <http://filmontology.org/resource/Crew/44D5-14F46B4701> , <http://filmontology.org/resource/Crew/44D5-14F46B0C80> , <http://filmontology.org/resource/Crew/44D5-14F46B0D33> , <http://filmontology.org/resource/Crew/44D5-14F46B0D39> , <http://filmontology.org/resource/Crew/44D5-14F46B470D> , <http://filmontology.org/resource/Crew/44D5-14F46B0D30> , <http://filmontology.org/resource/Crew/44D5-14F46B46F8> , <http://filmontology.org/resource/Crew/44D5-14F46B15B9> , <http://filmontology.org/resource/Crew/44D5-14F46B1513> , <http://filmontology.org/resource/Crew/44D5-14F46B0C37> , <http://filmontology.org/resource/Crew/44D5-14F46B0986> , <http://filmontology.org/resource/Crew/44D5-14F46B4707> , <http://filmontology.org/resource/Crew/44D5-14F46B46FE> , <http://filmontology.org/resource/Crew/44D5-14F46B4710> , <http://filmontology.org/resource/Crew/44D5-14F46B0CBA> , <http://filmontology.org/resource/Crew/44D5-14F46B0C51> , <http://filmontology.org/resource/Crew/44D5-14F46B0C4E> , <http://filmontology.org/resource/Crew/44D5-14F46B0D2D> , <http://filmontology.org/resource/Crew/44D5-14F46B4713> , <http://filmontology.org/resource/Crew/44D5-14F46B15B6> , <http://filmontology.org/resource/Crew/44D5-14F46B46F5> , <http://filmontology.org/resource/Crew/44D5-14F46B4704> , <http://filmontology.org/resource/Crew/44D5-14F46B1500> , <http://filmontology.org/resource/Crew/44D5-14F46B15BC> , <http://filmontology.org/resource/Crew/44D5-14F46B098B> , <http://filmontology.org/resource/Crew/44D5-14F46B0D36> , <http://filmontology.org/resource/Crew/44D5-14F46B46E9> , <http://filmontology.org/resource/Crew/44D5-14F46B0C4B> ;
+        foo:hasCrewDepartment      <http://filmontology.org/resource/CrewDepartment/1802b5db-4a20-4c08-94f0-4e2c3fe05485> , <http://filmontology.org/resource/CrewDepartment/e7a00c70-469f-465c-8b8b-22e303998cbc> , <http://filmontology.org/resource/CrewDepartment/0a664076-9014-4c4b-9e1f-e0d0849a8b0c> , <http://filmontology.org/resource/CrewDepartment/0ef3bbef-f651-458f-85e7-dcc61b4aeef9> , <http://filmontology.org/resource/CrewDepartment/5c144e05-128e-4e4b-a007-4526eb3443f9> , <http://filmontology.org/resource/CrewDepartment/1b90043d-0adc-481d-9487-7e8feff9fc70> , <http://filmontology.org/resource/CrewDepartment/cae87b48-9049-4a70-85d0-3e32c6ad3c6d> , <http://filmontology.org/resource/CrewDepartment/908b8bcf-52b9-4616-94c2-e3a5ba6ee720> , <http://filmontology.org/resource/CrewDepartment/062e58b3-6bd7-4cf6-afaa-8056ed6abc05> , <http://filmontology.org/resource/CrewDepartment/771bfa3d-1cfe-4b46-a12c-f7c18e9d8723> , <http://filmontology.org/resource/CrewDepartment/917fd602-cdb6-4afc-96d1-160e81fe0d5c> ;
+        foo:hasEpisode             <http://filmontology.org/resource/Episode/44D5-13532F7E01> ;
+        foo:hasSet                 <http://filmontology.org/resource/Set/44D5-14F46B0F55> , <http://filmontology.org/resource/Set/44D5-14F46B0F46> , <http://filmontology.org/resource/Set/44D5-14F46B0F43> , <http://filmontology.org/resource/Set/44D5-14F46B5C42> , <http://filmontology.org/resource/Set/44D5-14F46B112F> , <http://filmontology.org/resource/Set/44D5-14F46B5CA5> , <http://filmontology.org/resource/Set/44D5-14F46B0F3D> , <http://filmontology.org/resource/Set/44D5-14F46B0F4C> , <http://filmontology.org/resource/Set/44D5-14F46B0F52> , <http://filmontology.org/resource/Set/44D5-14F46B09CD> , <http://filmontology.org/resource/Set/44D5-14F46B09AD> , <http://filmontology.org/resource/Set/44D5-14F46B09BE> , <http://filmontology.org/resource/Set/44D5-14F46B0E1E> , <http://filmontology.org/resource/Set/44D5-14F46B5C45> , <http://filmontology.org/resource/Set/44D5-14F46B0F49> , <http://filmontology.org/resource/Set/44D5-14F46B09DC> , <http://filmontology.org/resource/Set/44D5-14F46B0F4F> , <http://filmontology.org/resource/Set/44D5-14F46B5C99> , <http://filmontology.org/resource/Set/44D5-14F46B5C66> , <http://filmontology.org/resource/Set/44D5-14F46B0F40> , <http://filmontology.org/resource/Set/44D5-14F46B0F58> , <http://filmontology.org/resource/Set/44D5-14F46B5CED> , <http://filmontology.org/resource/Set/44D5-14F46B50CA> , <http://filmontology.org/resource/Set/44D5-14F46B09A9> , <http://filmontology.org/resource/Set/44D5-14F46B11CD> , <http://filmontology.org/resource/Set/44D5-14F46B108B> ;
+        foo:hasShootingSchedule    <http://filmontology.org/resource/ShootingSchedule/44D5-14F46B1AD1> ;
+        foo:identifierPreProducer  "17621"^^xsd:int ;
+        foo:title                  "Beispielprojekt Dornröschen"^^xsd:string .
+
+<http://filmontology.org/resource/CrewDepartment/917fd602-cdb6-4afc-96d1-160e81fe0d5c>
+        a                   foo:CrewDepartment ;
+        foo:departmentCode  "KAM"^^xsd:string ;
+        foo:hasCrewMember   <http://filmontology.org/resource/Crew/44D5-14F46B46E9> , <http://filmontology.org/resource/Crew/44D5-14F46B0D3C> , <http://filmontology.org/resource/Crew/44D5-14F46B0D39> ;
+        foo:name            "Kamerastab"^^xsd:string .
+
+<http://filmontology.org/resource/Episode/44D5-13532F7E01>
+        a                          foo:Episode ;
+        foo:aspectRatio            ""^^xsd:string ;
+        foo:duration               "5700"^^xsd:int ;
+        foo:format                 "DVCPRO"^^xsd:string ;
+        foo:frameRate              "25"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-13532F7E01"^^xsd:string ;
+        foo:shootingRatio          "15"^^xsd:int .
+
+<http://filmontology.org/resource/ShootingSchedule/44D5-14F46B1AD1>
+        a                          foo:ShootingSchedule ;
+        foo:hasShootingDay         <http://filmontology.org/resource/ShootingDay/44D5-14F46B1EA2> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1E9F> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1E97> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1E98> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1EA4> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1E9C> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1A97> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1AA1> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1EA1> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1E9E> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1E96> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B19F8> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1EA3> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1E9B> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1EA0> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1E9D> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1E95> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1E99> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1E9A> , <http://filmontology.org/resource/ShootingDay/44D5-14F46B1A9F> ;
+        foo:identifierPreProducer  "44D5-14F46B1AD1"^^xsd:string ;
+        foo:lastModified           "2015-06-30T16:00:38"^^xsd:string ;
+        foo:revision               "2"^^xsd:int .
+
+<http://filmontology.org/resource/CrewDepartment/1802b5db-4a20-4c08-94f0-4e2c3fe05485>
+        a                   foo:CrewDepartment ;
+        foo:departmentCode  "SZE"^^xsd:string ;
+        foo:hasCrewMember   <http://filmontology.org/resource/Crew/44D5-14F46B4704> , <http://filmontology.org/resource/Crew/44D5-14F46B4707> , <http://filmontology.org/resource/Crew/44D5-14F46B4701> , <http://filmontology.org/resource/Crew/44D5-14F46B46FB> ;
+        foo:name            "Szenographiestab"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B46EC>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B46EC"^^xsd:string ;
+        foo:name                   "Angela Angel"^^xsd:string , "Settonassistenz"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B0F3D>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B0F3D"^^xsd:string ;
+        foo:name                   "Waldweg"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1AA1>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-01"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1AA1"^^xsd:string ;
+        foo:name                   "4. Drehtag: Do, 1. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0986>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0986"^^xsd:string ;
+        foo:name                   "Draffi Drama"^^xsd:string , "Regie"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B09AD>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B09AD"^^xsd:string ;
+        foo:name                   "Schlosspark / Schlossmauer"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B1F35> .
+
+<http://filmontology.org/resource/Cast/1ea084ca-7888-4b67-8c5a-f7e23f641517>
+        a         foo:Cast ;
+        foo:name  "Gudrun Günther"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/9ee070a8-24c4-4573-be43-bf4d0b7a1536>
+        a         foo:Cast ;
+        foo:name  "Mario Mustermann"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B0F58>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B0F58"^^xsd:string ;
+        foo:name                   "Schloss / Turmzimmer"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B10CA> .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0CB1>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/44D5-14F46B0F20> ;
+        foo:characterNumber        "4"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0CB1"^^xsd:string ;
+        foo:name                   "König"^^xsd:string .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0D47>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/44D5-14F46B0FBF> ;
+        foo:characterNumber        "7"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0D47"^^xsd:string ;
+        foo:name                   "Hofnarr"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0D33>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0D33"^^xsd:string ;
+        foo:name                   "Lilo Lichtmann"^^xsd:string , "Beleuchter"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B09DC>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B09DC"^^xsd:string ;
+        foo:name                   "Schloss / Speisesaal"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B1FA1> .
+
+<http://filmontology.org/resource/CrewDepartment/908b8bcf-52b9-4616-94c2-e3a5ba6ee720>
+        a                   foo:CrewDepartment ;
+        foo:departmentCode  "LIG"^^xsd:string ;
+        foo:hasCrewMember   <http://filmontology.org/resource/Crew/44D5-14F46B46FE> , <http://filmontology.org/resource/Crew/44D5-14F46B1513> , <http://filmontology.org/resource/Crew/44D5-14F46B0D33> , <http://filmontology.org/resource/Crew/44D5-14F46B0D36> ;
+        foo:name            "Licht und Bühne"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1EA1>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-14"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1EA1"^^xsd:string ;
+        foo:name                   "Reisetag: Mi, 14. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "travel"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/CrewDepartment/0ef3bbef-f651-458f-85e7-dcc61b4aeef9>
+        a                   foo:CrewDepartment ;
+        foo:departmentCode  "PST"^^xsd:string ;
+        foo:hasCrewMember   <http://filmontology.org/resource/Crew/44D5-14F46B470A> , <http://filmontology.org/resource/Crew/44D5-14F46B15BC> , <http://filmontology.org/resource/Crew/44D5-14F46B15B9> , <http://filmontology.org/resource/Crew/44D5-14F46B15B6> ;
+        foo:name            "Postproduktion"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/3f79f793-3dab-40a7-a22b-aa899ab70bde>
+        a         foo:Cast ;
+        foo:name  "Branko Brankowitsch"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1E9B>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-08"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1E9B"^^xsd:string ;
+        foo:name                   "9. Drehtag: Do, 8. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B11CD>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B11CD"^^xsd:string ;
+        foo:name                   "Schloss / Turm"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B108E> .
+
+<http://filmontology.org/resource/Cast/b110db37-176a-4d14-89d8-b2367303af37>
+        a         foo:Cast ;
+        foo:name  "Margot Müller"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B46EF>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B46EF"^^xsd:string ;
+        foo:name                   "Holger Horchmann"^^xsd:string , "Settonmeister"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1E95>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-02"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1E95"^^xsd:string ;
+        foo:name                   "5. Drehtag: Fr, 2. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0D3C>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0D3C"^^xsd:string ;
+        foo:name                   "Volker Focus"^^xsd:string , "1. Kameraassistenz"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B5C42>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B5C42"^^xsd:string ;
+        foo:name                   "Waldrand"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B1B7C>
+        a         foo:Cast ;
+        foo:name  "Holly Holle"^^xsd:string ;
+        foo:sex   "female"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B112F>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B112F"^^xsd:string ;
+        foo:name                   "Schloss"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B10CA> .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B1B3A>
+        a         foo:Cast ;
+        foo:name  "Karl Maier"^^xsd:string ;
+        foo:sex   "male"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/124d5c78-50d9-4c01-8ba4-115dbd3f68cd>
+        a         foo:Cast ;
+        foo:name  "Hanni Hansen"^^xsd:string .
+
+<http://filmontology.org/resource/Address/62fdf30c-3c8a-4755-8ec8-2c403d037dfc>
+        a                foo:Address ;
+        foo:cityName     "Berlin"^^xsd:string ;
+        foo:countryName  "DE"^^xsd:string ;
+        foo:houseNumber  "19"^^xsd:int ;
+        foo:streetName   "Waldowstr."^^xsd:string ;
+        foo:zipCode      "13156"^^xsd:int .
+
+<http://filmontology.org/resource/Set/44D5-14F46B0F40>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B0F40"^^xsd:string ;
+        foo:name                   "Waldwiese"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B1F63> .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0CB4>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/44D5-14F46B0FA1> ;
+        foo:characterNumber        "6"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0CB4"^^xsd:string ;
+        foo:name                   "12. Fee"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B46E9>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B46E9"^^xsd:string ;
+        foo:name                   "Roland Rolle"^^xsd:string , "2. Kameraassistenz"^^xsd:string .
+
+<http://filmontology.org/resource/Extra/44D5-14F46B0D28>
+        a                          foo:Extra ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/1a5f34eb-1457-4f1e-8b6b-6388a16df8f7> , <http://filmontology.org/resource/Cast/5e874ff4-a760-467e-b781-aad30038ba23> ;
+        foo:identifierPreProducer  "44D5-14F46B0D28"^^xsd:string ;
+        foo:name                   "Dienerschaft"^^xsd:string .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0D29>
+        a                          foo:Character ;
+        foo:characterNumber        "12"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0D29"^^xsd:string ;
+        foo:name                   "Gastwirt"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0D36>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0D36"^^xsd:string ;
+        foo:name                   "Davy Daylight"^^xsd:string , "Oberbeleuchter"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B4701>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B4701"^^xsd:string ;
+        foo:name                   "N.N."^^xsd:string , "Szenographieassistenz"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/2b6cecb9-a622-4063-bc8f-d3927c754063>
+        a         foo:Cast ;
+        foo:name  "Sarah Schulz"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B09BE>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B09BE"^^xsd:string ;
+        foo:name                   "Schloss / Schlafzimmer"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B10CA> .
+
+<http://filmontology.org/resource/Extra/44D5-14F46B0E28>
+        a                          foo:Extra ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/44D5-14F46B1E3E> ;
+        foo:identifierPreProducer  "44D5-14F46B0E28"^^xsd:string ;
+        foo:name                   "Tagelöhner"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B1BEE>
+        a         foo:Cast ;
+        foo:name  "Lena Lehmann"^^xsd:string ;
+        foo:sex   "female"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1EA4>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-17"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1EA4"^^xsd:string ;
+        foo:name                   "15. Drehtag: Sa, 17. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/CrewDepartment/771bfa3d-1cfe-4b46-a12c-f7c18e9d8723>
+        a                   foo:CrewDepartment ;
+        foo:departmentCode  "PRD"^^xsd:string ;
+        foo:hasCrewMember   <http://filmontology.org/resource/Crew/44D5-14F46B0C51> , <http://filmontology.org/resource/Crew/44D5-14F46B0C80> , <http://filmontology.org/resource/Crew/44D5-14F46B46F5> , <http://filmontology.org/resource/Crew/44D5-14F46B46F8> , <http://filmontology.org/resource/Crew/44D5-14F46B0C4E> , <http://filmontology.org/resource/Crew/44D5-14F46B0C4B> , <http://filmontology.org/resource/Crew/44D5-14F46B0C48> ;
+        foo:name            "Produktionsstab"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/7d7d65b2-f41e-4c7a-982e-aac19f871b80>
+        a         foo:Cast ;
+        foo:name  "Max Müller"^^xsd:string .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0CAF>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/44D5-14F46B0F6F> ;
+        foo:characterNumber        "1"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0CAF"^^xsd:string ;
+        foo:name                   "Dornröschen"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1E9E>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-11"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1E9E"^^xsd:string ;
+        foo:name                   "drehfrei: So, 11. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "free"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B0FED>
+        a         foo:Cast ;
+        foo:name  "Bodo Beispiel"^^xsd:string ;
+        foo:sex   "male"^^xsd:string .
+
+<http://filmontology.org/resource/Company/3168f152-3c58-4893-a583-ed862dcbe3a4>
+        a            foo:Company ;
+        foo:address  <http://filmontology.org/resource/Address/e0146dab-66ad-49ed-95bb-dd4fdcca6edb> ;
+        foo:name     "Gebrüder Grimm  "^^xsd:string .
+
+<http://filmontology.org/resource/CrewDepartment/1b90043d-0adc-481d-9487-7e8feff9fc70>
+        a                   foo:CrewDepartment ;
+        foo:departmentCode  "REG"^^xsd:string ;
+        foo:hasCrewMember   <http://filmontology.org/resource/Crew/44D5-14F46B0C37> , <http://filmontology.org/resource/Crew/44D5-14F46B0D2A> , <http://filmontology.org/resource/Crew/44D5-14F46B0C3A> , <http://filmontology.org/resource/Crew/44D5-14F46B0986> ;
+        foo:name            "Regiestab"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B5C66>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B5C66"^^xsd:string ;
+        foo:name                   ""^^xsd:string .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0D45>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/44D5-14F46B1029> ;
+        foo:characterNumber        "14"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0D45"^^xsd:string ;
+        foo:name                   "Hebamme"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1E98>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-04"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1E98"^^xsd:string ;
+        foo:name                   "drehfrei: So, 4. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "free"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B5C45>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B5C45"^^xsd:string ;
+        foo:name                   "Hänsels und Gretels Zuhause"^^xsd:string .
+
+<http://filmontology.org/resource/CrewDepartment/0a664076-9014-4c4b-9e1f-e0d0849a8b0c>
+        a                   foo:CrewDepartment ;
+        foo:departmentCode  "MUS"^^xsd:string ;
+        foo:hasCrewMember   <http://filmontology.org/resource/Crew/44D5-14F46B470D> , <http://filmontology.org/resource/Crew/44D5-14F46B4713> , <http://filmontology.org/resource/Crew/44D5-14F46B4710> ;
+        foo:name            "Musiker"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B470A>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B470A"^^xsd:string ;
+        foo:name                   "N.N."^^xsd:string , "3D Supervisor"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B0F20>
+        a         foo:Cast ;
+        foo:name  "Bernd Beispiel"^^xsd:string ;
+        foo:sex   "male"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B46F2>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B46F2"^^xsd:string ;
+        foo:name                   "Micha Mixer"^^xsd:string , "Mischtonmeister"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B0F43>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B0F43"^^xsd:string ;
+        foo:name                   "Schloss / Zugbrücke"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B1F35> .
+
+<http://filmontology.org/resource/Cast/2b7d38df-4233-4bdf-a2f0-11d4e62e31f0>
+        a         foo:Cast ;
+        foo:name  "Bodo Becker"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0D39>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0D39"^^xsd:string ;
+        foo:name                   "Stefan Schnellschuss"^^xsd:string , "Kamera"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B4704>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B4704"^^xsd:string ;
+        foo:name                   "N.N."^^xsd:string , "Innenrequisite"^^xsd:string .
+
+<http://filmontology.org/resource/Character/44D5-14F46B5064>
+        a                          foo:Character ;
+        foo:characterNumber        "16"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B5064"^^xsd:string ;
+        foo:name                   "ohne was"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0C3A>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0C3A"^^xsd:string ;
+        foo:name                   "Chubby Checker"^^xsd:string , "1. Regieassistenz"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/8c967cb3-7e0e-4b6b-8cd3-3eb863746d4f>
+        a         foo:Cast ;
+        foo:name  "Manfred Maier"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/a60c0ecd-9496-4fcf-bb41-27235b163f2f>
+        a         foo:Cast ;
+        foo:name  "Bernd Bäcker"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B0CDD>
+        a         foo:Cast ;
+        foo:name  "Max Mustermann"^^xsd:string ;
+        foo:sex   "male"^^xsd:string .
+
+<http://filmontology.org/resource/CrewDepartment/cae87b48-9049-4a70-85d0-3e32c6ad3c6d>
+        a                   foo:CrewDepartment ;
+        foo:departmentCode  "KST"^^xsd:string ;
+        foo:hasCrewMember   <http://filmontology.org/resource/Crew/44D5-14F46B0D2D> , <http://filmontology.org/resource/Crew/44D5-14F46B0D30> , <http://filmontology.org/resource/Crew/44D5-14F46B1500> , <http://filmontology.org/resource/Crew/44D5-14F46B0CBA> , <http://filmontology.org/resource/Crew/44D5-14F46B0CB7> ;
+        foo:name            "Kostümbild und Maske"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B46FB>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B46FB"^^xsd:string ;
+        foo:name                   "Boris Baumeister"^^xsd:string , "Szenographie"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B0F4C>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B0F4C"^^xsd:string ;
+        foo:name                   "Schloss / Küche"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B10CA> .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0CB2>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/44D5-14F46B0F6F> ;
+        foo:characterNumber        "5"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0CB2"^^xsd:string ;
+        foo:name                   "Königin"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/5e874ff4-a760-467e-b781-aad30038ba23>
+        a         foo:Cast ;
+        foo:name  "Manfred Maier"^^xsd:string .
+
+<http://filmontology.org/resource/Location/44D5-14F46B1F63>
+        a       foo:Location .
+
+<http://filmontology.org/resource/Extra/44D5-14F46B0E47>
+        a                          foo:Extra ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/8c967cb3-7e0e-4b6b-8cd3-3eb863746d4f> , <http://filmontology.org/resource/Cast/9ee070a8-24c4-4573-be43-bf4d0b7a1536> , <http://filmontology.org/resource/Cast/a1ab25b0-de6b-467f-bdc1-116d16cbbdbd> , <http://filmontology.org/resource/Cast/434a4fd3-56a9-4983-a041-c8199284fc3f> ;
+        foo:identifierPreProducer  "44D5-14F46B0E47"^^xsd:string ;
+        foo:name                   "Soldaten"^^xsd:string .
+
+<http://filmontology.org/resource/Extra/44D5-14F46B0E26>
+        a                          foo:Extra ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/751082ad-0543-4276-9030-0293dbae2fc2> , <http://filmontology.org/resource/Cast/3f79f793-3dab-40a7-a22b-aa899ab70bde> , <http://filmontology.org/resource/Cast/7d7d65b2-f41e-4c7a-982e-aac19f871b80> , <http://filmontology.org/resource/Cast/44D5-14F46B1B3A> ;
+        foo:identifierPreProducer  "44D5-14F46B0E26"^^xsd:string ;
+        foo:name                   "Bauern"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B470D>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B470D"^^xsd:string ;
+        foo:name                   "Norbert Note"^^xsd:string , "Solisten / Sänger"^^xsd:string .
+
+<http://filmontology.org/resource/Location/44D5-14F46B108E>
+        a       foo:Location .
+
+<http://filmontology.org/resource/Set/44D5-14F46B108B>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B108B"^^xsd:string ;
+        foo:name                   "Schlosspark"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B108E> .
+
+<http://filmontology.org/resource/Cast/434a4fd3-56a9-4983-a041-c8199284fc3f>
+        a         foo:Cast ;
+        foo:name  "Fritz Fiebrich"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1EA2>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-15"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1EA2"^^xsd:string ;
+        foo:name                   "13. Drehtag: Do, 15. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B46F5>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B46F5"^^xsd:string ;
+        foo:name                   "N.N."^^xsd:string , "Filmgeschäftsführung"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B0F46>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B0F46"^^xsd:string ;
+        foo:name                   "Wirtshaus"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B10CA> .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0CBA>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0CBA"^^xsd:string ;
+        foo:name                   "Fanny Faden"^^xsd:string , "Kostümbildassistenz"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1E9C>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-09"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1E9C"^^xsd:string ;
+        foo:name                   "10. Drehtag: Fr, 9. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B4707>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B4707"^^xsd:string ;
+        foo:name                   "N.N."^^xsd:string , "Außenrequisite"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1E96>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-05"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1E96"^^xsd:string ;
+        foo:name                   "6. Drehtag: Mo, 5. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B19F8>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-10-29"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B19F8"^^xsd:string ;
+        foo:name                   "1. Drehtag: Mo, 29. Oktober 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1A9F>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-10-31"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1A9F"^^xsd:string ;
+        foo:name                   "3. Drehtag: Mi, 31. Oktober 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0C4B>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0C4B"^^xsd:string ;
+        foo:name                   "Martin Macher"^^xsd:string , "Producer"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0C37>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0C37"^^xsd:string ;
+        foo:name                   "Wally Wahllos"^^xsd:string , "Casting Director"^^xsd:string .
+
+<http://filmontology.org/resource/Location/44D5-14F46B1FA1>
+        a       foo:Location .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B46FE>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B46FE"^^xsd:string ;
+        foo:name                   "N.N."^^xsd:string , "Kamerabühnenmeister"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B0F4F>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B0F4F"^^xsd:string ;
+        foo:name                   "Schloss / Pferdestall"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B1F35> .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0CB5>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/44D5-14F46B100B> ;
+        foo:characterNumber        "9"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0CB5"^^xsd:string ;
+        foo:name                   "Küchenmeister"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B50CA>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B50CA"^^xsd:string ;
+        foo:name                   "Palast / Schlafzimmer"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B098B>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B098B"^^xsd:string ;
+        foo:name                   "Jakob Grimm"^^xsd:string , "Drehbuchautor"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/ddb44797-9733-4d60-9a14-cd0f6a9c8a26>
+        a         foo:Cast ;
+        foo:name  "Sebastian Schulz"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0D2A>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0D2A"^^xsd:string ;
+        foo:name                   "Bibi Bleistift"^^xsd:string , "Script / Continuity"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B15BC>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B15BC"^^xsd:string ;
+        foo:name                   "N.N."^^xsd:string , "Color Supervisor"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/44D5-14F46B0FBF>
+        a         foo:Cast ;
+        foo:name  "Paul Platzhalter"^^xsd:string ;
+        foo:sex   "male"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/a1ab25b0-de6b-467f-bdc1-116d16cbbdbd>
+        a         foo:Cast ;
+        foo:name  "Dirk Deutschmann"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B46F8>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B46F8"^^xsd:string ;
+        foo:name                   "N.N."^^xsd:string , "Produktionsassistenz"^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B0F49>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B0F49"^^xsd:string ;
+        foo:name                   "Eichenallee"^^xsd:string .
+
+<http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa>
+        a                          foo:Project ;
+        foo:hasEpisode             <http://filmontology.org/resource/Episode/44D5-13532F7E01> ;
+        foo:identifierPreProducer  "17621"^^xsd:int .
+
+<http://filmontology.org/resource/Company/39a2d36e-4658-4f9c-8d86-f012b99cdaa8>
+        a            foo:Company ;
+        foo:address  <http://filmontology.org/resource/Address/62fdf30c-3c8a-4755-8ec8-2c403d037dfc> ;
+        foo:name     "PolyArtis GbR"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1E9F>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-12"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1E9F"^^xsd:string ;
+        foo:name                   "11. Drehtag: Mo, 12. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Set/44D5-14F46B09CD>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B09CD"^^xsd:string ;
+        foo:name                   "Schloss / Thronsaal"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Location/44D5-14F46B10CA> .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B4710>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B4710"^^xsd:string ;
+        foo:name                   "Tilo Tuba"^^xsd:string , "Musiker im Aufnahmestudio"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B15B6>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B15B6"^^xsd:string ;
+        foo:name                   "Fibi Feinschnitt"^^xsd:string , "Cutter / Editor"^^xsd:string .
+
+<http://filmontology.org/resource/CrewDepartment/5c144e05-128e-4e4b-a007-4526eb3443f9>
+        a                   foo:CrewDepartment ;
+        foo:departmentCode  "RED"^^xsd:string ;
+        foo:name            "Redaktion"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/6bfcd75c-bac8-4c90-928b-bdbf132bb404>
+        a         foo:Cast ;
+        foo:name  "Susanne Schulz"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/86980ae7-775d-4886-941f-e6fd5a9b1682>
+        a         foo:Cast ;
+        foo:name  "Dörte Deichmann"^^xsd:string .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0CB0>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Cast/44D5-14F46B0CDD> ;
+        foo:characterNumber        "2"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0CB0"^^xsd:string ;
+        foo:name                   "Prinz"^^xsd:string .
+
+<http://filmontology.org/resource/Cast/f3a63279-1e52-4cce-b64b-e9232fe6dca5>
+        a         foo:Cast ;
+        foo:name  "Frauke Fraumann"^^xsd:string .
+
+<http://filmontology.org/resource/Crew/44D5-14F46B0CB7>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "44D5-14F46B0CB7"^^xsd:string ;
+        foo:name                   "Nadja Nadel"^^xsd:string , "Kostümbild"^^xsd:string .
+
+<http://filmontology.org/resource/ShootingDay/44D5-14F46B1E99>
+        a                          foo:ShootingDay ;
+        foo:date                   "2012-11-06"^^xsd:string ;
+        foo:identifierPreProducer  "44D5-14F46B1E99"^^xsd:string ;
+        foo:name                   "7. Drehtag: Di, 6. November 2012"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayNight       ""^^xsd:string .
+
+<http://filmontology.org/resource/Extra/44D5-14F46B2728>
+        a                          foo:Extra ;
+        foo:identifierPreProducer  "44D5-14F46B2728"^^xsd:string ;
+        foo:name                   "Wirtshausgäste"^^xsd:string .
+
+<http://filmontology.org/resource/Character/44D5-14F46B0D25>
+        a                          foo:Character ;
+        foo:characterNumber        "11"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0D25"^^xsd:string ;
+        foo:name                   "11. Fee"^^xsd:string .
