@@ -8,6 +8,10 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.rdf.model.Resource;
+
 import de.dwerft.lpdc.general.OntologyConstants;
 import de.dwerft.lpdc.importer.general.XMLProcessor;
 import de.dwerft.lpdc.importer.general.XMLtoRDFconverter;
@@ -176,9 +180,20 @@ public class DramaqueenToRdf extends XMLtoRDFconverter {
 	@Override
 	public void processingAfterConvert() {
 		
-		String archiveId = findArchiveId();
+//		String archiveId = findArchiveId();
 		
 		buildSceneNumbering(xmlProc.getDocumentElement());
+		
+		Model generatedModel = rdfProc.getGeneratedModel();
+
+		Resource dwerft = generatedModel.getResource("http://filmontology.org/resource/DWERFT");
+
+		String projectId = findProjectId();
+		Resource project = rdfProc.getIdResourceMapping().get(projectId);
+		
+		Property property = generatedModel.getProperty("http://purl.org/dc/terms/hasPart");
+		
+		dwerft.addProperty(property, project);
 		
 		
 	}

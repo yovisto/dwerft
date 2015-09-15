@@ -601,16 +601,16 @@ map66.targetOntologyClass=http://filmontology.org/ontology/1.0/SceneGroup
 map66.targetOntologyProperty=
 map66.targetPropertyType=
 
-map67.xmlNodePath=/root/return/prp:project/prp:scene-group
+map67.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group
 map67.conditionalAttributeName=
 map67.conditionalAttributeValue=
 map67.contentSource=CONTAINMENT
-map67.contentElementName=prp:project
+map67.contentElementName=prp:episode
 map67.targetOntologyClass=http://filmontology.org/ontology/1.0/Episode
 map67.targetOntologyProperty=http://filmontology.org/ontology/1.0/hasSceneGroup
 map67.targetPropertyType=OBJECT_PROPERTY
 
-map68.xmlNodePath=/root/return/prp:project/prp:scene-group/version
+map68.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/version
 map68.conditionalAttributeName=
 map68.conditionalAttributeValue=
 map68.contentSource=TEXT_CONTENT
@@ -619,7 +619,7 @@ map68.targetOntologyClass=http://filmontology.org/ontology/1.0/SceneGroup
 map68.targetOntologyProperty=http://filmontology.org/ontology/1.0/revision
 map68.targetPropertyType=DATATYPE_PROPERTY
 
-map69.xmlNodePath=/root/return/prp:project/prp:scene-group/lastModified
+map69.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/lastModified
 map69.conditionalAttributeName=
 map69.conditionalAttributeValue=
 map69.contentSource=TEXT_CONTENT
@@ -628,7 +628,7 @@ map69.targetOntologyClass=http://filmontology.org/ontology/1.0/ShootingDay
 map69.targetOntologyProperty=http://filmontology.org/ontology/1.0/lastModified
 map69.targetPropertyType=DATATYPE_PROPERTY
 
-map70.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene
+map70.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene
 map70.conditionalAttributeName=
 map70.conditionalAttributeValue=
 map70.contentSource=
@@ -637,7 +637,7 @@ map70.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map70.targetOntologyProperty=
 map70.targetPropertyType=
 
-map71.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene
+map71.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene
 map71.conditionalAttributeName=
 map71.conditionalAttributeValue=
 map71.contentSource=CONTAINMENT
@@ -646,7 +646,7 @@ map71.targetOntologyClass=http://filmontology.org/ontology/1.0/SceneGroup
 map71.targetOntologyProperty=http://filmontology.org/ontology/1.0/hasScene
 map71.targetPropertyType=OBJECT_PROPERTY
 
-map72.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene
+map72.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene
 map72.conditionalAttributeName=
 map72.conditionalAttributeValue=
 map72.contentSource=ATTRIBUTE
@@ -655,7 +655,7 @@ map72.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map72.targetOntologyProperty=http://filmontology.org/ontology/1.0/identifierPreProducer
 map72.targetPropertyType=DATATYPE_PROPERTY
 
-map73.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene
+map73.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene
 map73.conditionalAttributeName=
 map73.conditionalAttributeValue=
 map73.contentSource=ATTRIBUTE
@@ -664,7 +664,7 @@ map73.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map73.targetOntologyProperty=http://filmontology.org/ontology/1.0/sceneInserted
 map73.targetPropertyType=DATATYPE_PROPERTY
 
-map74.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/number
+map74.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/number
 map74.conditionalAttributeName=
 map74.conditionalAttributeValue=
 map74.contentSource=TEXT_CONTENT
@@ -673,7 +673,7 @@ map74.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map74.targetOntologyProperty=http://filmontology.org/ontology/1.0/sceneNumber
 map74.targetPropertyType=DATATYPE_PROPERTY
 
-map75.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/head
+map75.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/head
 map75.conditionalAttributeName=
 map75.conditionalAttributeValue=
 map75.contentSource=TEXT_CONTENT
@@ -682,16 +682,16 @@ map75.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map75.targetOntologyProperty=http://filmontology.org/ontology/1.0/sceneHeader
 map75.targetPropertyType=DATATYPE_PROPERTY
 
-map76.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:intext
+map76.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:intext
 map76.conditionalAttributeName=
 map76.conditionalAttributeValue=
-map76.contentSource=
+map76.contentSource=TEXT_CONTENT
 map76.contentElementName=
 map76.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map76.targetOntologyProperty=http://filmontology.org/ontology/1.0/interiorExterior
 map76.targetPropertyType=DATATYPE_PROPERTY
 
-map77.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:daynight
+map77.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:daynight
 map77.conditionalAttributeName=
 map77.conditionalAttributeValue=
 map77.contentSource=TEXT_CONTENT
@@ -700,7 +700,7 @@ map77.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map77.targetOntologyProperty=http://filmontology.org/ontology/1.0/dayTime
 map77.targetPropertyType=DATATYPE_PROPERTY
 
-map78.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:shots
+map78.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:shots
 map78.conditionalAttributeName=
 map78.conditionalAttributeValue=
 map78.contentSource=TEXT_CONTENT
@@ -709,7 +709,7 @@ map78.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map78.targetOntologyProperty=http://filmontology.org/ontology/1.0/sceneShots
 map78.targetPropertyType=DATATYPE_PROPERTY
 
-map79.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:prestop
+map79.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:prestop
 map79.conditionalAttributeName=
 map79.conditionalAttributeValue=
 map79.contentSource=TEXT_CONTENT
@@ -718,7 +718,7 @@ map79.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map79.targetOntologyProperty=http://filmontology.org/ontology/1.0/estimatedTime
 map79.targetPropertyType=DATATYPE_PROPERTY
 
-map80.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:pages
+map80.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:pages
 map80.conditionalAttributeName=
 map80.conditionalAttributeValue=
 map80.contentSource=TEXT_CONTENT
@@ -727,7 +727,7 @@ map80.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map80.targetOntologyProperty=http://filmontology.org/ontology/1.0/pages
 map80.targetPropertyType=DATATYPE_PROPERTY
 
-map81.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:storyday
+map81.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:storyday
 map81.conditionalAttributeName=
 map81.conditionalAttributeValue=
 map81.contentSource=TEXT_CONTENT
@@ -736,16 +736,16 @@ map81.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map81.targetOntologyProperty=http://filmontology.org/ontology/1.0/storyDay
 map81.targetPropertyType=DATATYPE_PROPERTY
 
-map82.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:timelevel
+map82.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:timelevel
 map82.conditionalAttributeName=
 map82.conditionalAttributeValue=
 map82.contentSource=TEXT_CONTENT
 map82.contentElementName=
 map82.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
-map82.targetOntologyProperty=http://filmontology.org/ontology/1.0/timelevel
+map82.targetOntologyProperty=http://filmontology.org/ontology/1.0/revision
 map82.targetPropertyType=DATATYPE_PROPERTY
 
-map83.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:storytime
+map83.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:storytime
 map83.conditionalAttributeName=
 map83.conditionalAttributeValue=
 map83.contentSource=TEXT_CONTENT
@@ -754,7 +754,7 @@ map83.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map83.targetOntologyProperty=http://filmontology.org/ontology/1.0/storyTime
 map83.targetPropertyType=DATATYPE_PROPERTY
 
-map84.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:pagefrom
+map84.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:pagefrom
 map84.conditionalAttributeName=
 map84.conditionalAttributeValue=
 map84.contentSource=TEXT_CONTENT
@@ -763,7 +763,7 @@ map84.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map84.targetOntologyProperty=http://filmontology.org/ontology/1.0/pageStart
 map84.targetPropertyType=DATATYPE_PROPERTY
 
-map85.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:pageto
+map85.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:pageto
 map85.conditionalAttributeName=
 map85.conditionalAttributeValue=
 map85.contentSource=TEXT_CONTENT
@@ -772,7 +772,7 @@ map85.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map85.targetOntologyProperty=http://filmontology.org/ontology/1.0/pageEnd
 map85.targetPropertyType=DATATYPE_PROPERTY
 
-map86.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:description
+map86.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:description
 map86.conditionalAttributeName=
 map86.conditionalAttributeValue=
 map86.contentSource=TEXT_CONTENT
@@ -781,7 +781,7 @@ map86.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map86.targetOntologyProperty=http://filmontology.org/ontology/1.0/sceneDescription
 map86.targetPropertyType=DATATYPE_PROPERTY
 
-map87.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:decoration
+map87.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:decoration
 map87.conditionalAttributeName=
 map87.conditionalAttributeValue=
 map87.contentSource=REFERENCE
@@ -790,7 +790,7 @@ map87.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map87.targetOntologyProperty=http://filmontology.org/ontology/1.0/sceneSet
 map87.targetPropertyType=OBJECT_PROPERTY
 
-map88.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:remarks
+map88.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:remarks
 map88.conditionalAttributeName=
 map88.conditionalAttributeValue=
 map88.contentSource=TEXT_CONTENT
@@ -799,7 +799,7 @@ map88.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map88.targetOntologyProperty=http://filmontology.org/ontology/1.0/remarks
 map88.targetPropertyType=DATATYPE_PROPERTY
 
-map89.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:character
+map89.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:character
 map89.conditionalAttributeName=
 map89.conditionalAttributeValue=
 map89.contentSource=REFERENCE
@@ -808,16 +808,16 @@ map89.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map89.targetOntologyProperty=http://filmontology.org/ontology/1.0/hasCharacter
 map89.targetPropertyType=OBJECT_PROPERTY
 
-map90.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:extras
+map90.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:extras
 map90.conditionalAttributeName=
 map90.conditionalAttributeValue=
 map90.contentSource=REFERENCE
-map90.contentElementName=
+map90.contentElementName=ref
 map90.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
 map90.targetOntologyProperty=http://filmontology.org/ontology/1.0/sceneExtra
 map90.targetPropertyType=OBJECT_PROPERTY
 
-map91.xmlNodePath=/root/return/prp:project/prp:scene-group/prp:scene/prp:script/prp:formattedscript
+map91.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:script/prp:formattedscript
 map91.conditionalAttributeName=
 map91.conditionalAttributeValue=
 map91.contentSource=TEXT_CONTENT
