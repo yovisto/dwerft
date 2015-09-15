@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Stack;
 import java.util.UUID;
 
+import org.apache.log4j.Logger;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
@@ -28,6 +29,9 @@ import de.dwerft.lpdc.importer.general.MappingDefinition.TargetPropertyType;
  *
  */
 public class RdfProcessor {
+	
+	/** The Logger. */
+	private static final Logger L = Logger.getLogger(XMLtoRDFconverter.class.getName());
 	
 	/**
 	 * Connector to the ontology model
@@ -237,7 +241,9 @@ public class RdfProcessor {
 			if (mappedValue != null) {
 				value = mappedValue;
 			}
-			latestResource.addLiteral(datatypeProperty, convertStringToAppropriateObject(value));
+			if (!"".equals(value)) {
+				latestResource.addLiteral(datatypeProperty, convertStringToAppropriateObject(value));
+			}
 		}
 
 	}
@@ -271,7 +277,7 @@ public class RdfProcessor {
 			if (resourceToLink != null) {
 				latestResource.addProperty(objectProperty, resourceToLink);
 			} else {
-				throw new IllegalStateException("Referenced resource could not be found: "+referenceValue+" -- "+node+" -- "+mapping);
+				L.error("Referenced resource could not be found: "+referenceValue+" -- "+node+" -- "+mapping);
 			}
 		}
 	}
