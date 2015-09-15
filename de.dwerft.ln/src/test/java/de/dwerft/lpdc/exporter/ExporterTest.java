@@ -14,4 +14,10 @@ public class ExporterTest {
 		LockitExporter e = new LockitExporter(ontologyFile, tmpDir + "/lockit_filmontology_scenes.csv");
 		e.export();
 	}
+	
+	//@Test
+	public void testPreproducerExporter() throws IOException {
+		
+		PreproducerExporter e = new PreproducerExporter(ontologyFile, mapping, tmpDir + "/preproducer_filmontology_scenes.csv", "");
+	}
 }

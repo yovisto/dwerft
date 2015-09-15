@@ -12,6 +12,7 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.stream.Stream;
 
+import org.apache.log4j.Logger;
 import org.w3c.dom.Node;
 
 import de.dwerft.lpdc.importer.general.MappingDefinition.ContentSource;
@@ -26,6 +27,9 @@ import de.dwerft.lpdc.importer.general.MappingDefinition.TargetPropertyType;
  */
 public class Mapper {
 	
+	/** The Logger. */
+	private static final Logger L = Logger.getLogger(Mapper.class.getName());
+	
 	/**
 	 * All mapping definitions
 	 */
@@ -36,7 +40,7 @@ public class Mapper {
 	 * 
 	 * @param mappingsFilename File containing mapping definitions
 	 */
-	public Mapper(String mappingsFilename) {
+	public Mapper(String mappingsFilename) {		
 		
 		mappings = new HashSet<MappingDefinition>();
 		
@@ -59,9 +63,10 @@ public class Mapper {
 			}
 			
 			is.close();
+			L.info("Mapping with file " + mappingsFilename + " successful");
 			
 		} catch (IOException e) {
-			e.printStackTrace();
+			L.warn("Encountered error while mapping with file " + mappingsFilename + ": " + e);
 		}
 		
 	}
@@ -168,6 +173,8 @@ public class Mapper {
 	 * @return List of mappings.
 	 */
 	public List<MappingDefinition> getMappingsForNode(Node node) {
+		L.debug("Retrieving mappings for node " + node.getNodeName());
+		
 		List<MappingDefinition> result = new ArrayList<MappingDefinition>();
 		
 		String xmlPath = XMLProcessor.getXmlPath(node);
