@@ -3,6 +3,10 @@ package de.dwerft.lpdc.exporter;
 import java.io.File;
 import java.io.IOException;
 
+import org.junit.Test;
+
+import de.dwerft.lpdc.general.OntologyConstants;
+
 public class ExporterTest {
 
 	private final String tmpDir = System.getProperty("java.io.tmpdir");
@@ -15,9 +19,10 @@ public class ExporterTest {
 		e.export();
 	}
 	
-	//@Test
+	@Test
 	public void testPreproducerExporter() throws IOException {
 		
-		PreproducerExporter e = new PreproducerExporter(ontologyFile, mapping, tmpDir + "/preproducer_filmontology_scenes.csv", "");
+		PreproducerExporter e = new PreproducerExporter(OntologyConstants.SPARQL_ENDPOINT, OntologyConstants.ONTOLOGY_FILE, tmpDir + "/preproducer_filmontology_scenes.csv", "17621");
+		e.export();
 	}
 }
