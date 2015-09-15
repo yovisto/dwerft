@@ -43,8 +43,6 @@ public abstract class RdfExporter {
 	/** The Logger. */
 	private static final Logger L = Logger.getLogger(RdfExporter.class.getName());
 
-	
-	private File rdfInput;
 	private Model model;
 	
 	private String sparqlEndpoint;
@@ -60,6 +58,7 @@ public abstract class RdfExporter {
 	 * 				the file containing the model used with the RDF data
 	 */
 	public RdfExporter(String sparqlEndpointUrl, String ontologyFilename) {
+		L.info("Exporting RDF from SPARQL endpoint " + sparqlEndpointUrl);
 		this.sparqlEndpoint = sparqlEndpointUrl;
 		this.ontologyModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 		ontologyModel.read(ontologyFilename, OntologyConstants.ONTOLOGY_FORMAT);
@@ -72,9 +71,9 @@ public abstract class RdfExporter {
 	 * 				the file containing the data, in RDF format
 	 * @throws IOException
 	 */
-	public RdfExporter(File rdfInput) throws IOException {
-		this.rdfInput = rdfInput;	
-		prepareARQ();
+	public RdfExporter(File rdfInput) throws IOException {	
+		L.info("Exporting RDF from file " + rdfInput.getAbsolutePath());
+		prepareARQ(rdfInput);
 	}
 	
 	/**
@@ -82,7 +81,7 @@ public abstract class RdfExporter {
 	 * 
 	 * @throws IOException
 	 */
-	private void prepareARQ() throws IOException {
+	private void prepareARQ(File rdfInput) throws IOException {
 		L.info("Preparing ARQ for use with an RDF File");
 		
 		InputStream in = new FileInputStream(rdfInput);
