@@ -7,9 +7,11 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
 
@@ -64,6 +66,28 @@ public abstract class RdfExporter {
 		in.close();
 	}
 	
+	
+	/**
+	 * Gets the resources filtered by literal name and value.
+	 *
+	 * @param className the class name
+	 * @param datatypeName the datatype property name
+	 * @param value the value of the literal
+	 * @return a list of resources
+	 */
+	public List<Resource> getResourcesFilteredByLiteral(String className, String datatypeName, String value) {
+		List<Resource> result = new ArrayList<Resource>();
+		
+		for (Resource r : getResourcesByType(className)) {
+			for (Literal l : getLinkedDataValues(r, datatypeName)) {
+				if (StringUtils.equalsIgnoreCase(l.getString(), value)) {
+					result.add(r);
+				}
+			}
+		}
+		
+		return result;
+	}
 	
 	/**
 	 * Executes a query on the sparql endpoint and returns a result set.
@@ -237,6 +261,7 @@ public abstract class RdfExporter {
 	}
 	
 	/**
+	 * TODO convert to the new setup
 	 * Gets all scenes of a project
 	 * 
 	 * @param projectID
