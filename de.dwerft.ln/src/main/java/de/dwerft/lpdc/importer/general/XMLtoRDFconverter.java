@@ -6,11 +6,15 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.w3c.dom.Node;
 
 import com.hp.hpl.jena.rdf.model.Model;
 
 public abstract class XMLtoRDFconverter {
+	
+	/** The Logger. */
+	private static final Logger L = Logger.getLogger(XMLtoRDFconverter.class.getName());
 	
 	protected OntologyConnector ontConn;
 	protected XMLProcessor xmlProc;
@@ -58,16 +62,14 @@ public abstract class XMLtoRDFconverter {
 	
 	
 	public void writeRdfToFile(String filename, String format) {
-		
 		OutputStream out;
 		try {
 			out = new FileOutputStream(filename);
 			getGeneratedModel().write(out, format);
 			out.close();
+			L.info("Turtle file written: " + filename);
 		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			System.out.println("Turtle file written: "+filename);
+			L.error("Failed writing turtle file " + filename + ": " + e);
 		}
 	}
 	

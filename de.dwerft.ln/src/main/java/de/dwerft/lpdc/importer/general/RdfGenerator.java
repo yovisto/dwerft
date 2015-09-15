@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Optional;
 
+import org.apache.log4j.Logger;
+
 import com.hp.hpl.jena.ontology.DatatypeProperty;
 import com.hp.hpl.jena.ontology.ObjectProperty;
 import com.hp.hpl.jena.ontology.OntClass;
@@ -34,6 +36,9 @@ import com.hp.hpl.jena.util.iterator.Filter;
 **/
 public abstract class RdfGenerator {
 	
+	/** The Logger. */
+	private static final Logger L = Logger.getLogger(RdfGenerator.class.getName());
+	
 	/** The ontology model. */
 	protected OntModel ontologyModel;
 	
@@ -57,6 +62,7 @@ public abstract class RdfGenerator {
 	
 	/* read the ontology we use and create a default model for generation */
 	private void loadOntModel(String owl, String format) {
+		L.info("Loading RDF model from file " + owl + " with format " + format);
 		ontologyModel.read(owl, format);
 		generatedModel = ModelFactory.createDefaultModel();
 		generatedModel.setNsPrefixes(ontologyModel.getNsPrefixMap());
@@ -71,6 +77,7 @@ public abstract class RdfGenerator {
 	 * @return the ontology class
 	 */
 	protected Optional<OntClass> getOntologyClass(String name) {
+		L.debug("Getting plain ontology class with name " + name);
 		ExtendedIterator<OntClass> classes = ontologyModel.listClasses();
 		return classes.toList().stream().filter(o -> o.getLocalName().equalsIgnoreCase(name)).findFirst();
 	}
@@ -85,6 +92,7 @@ public abstract class RdfGenerator {
 	 * @return the ontology class
 	 */
 	protected Optional<OntClass> getOntologyClass(String prefix, String name) {
+		L.debug("Getting prefixed ontology class with name " + name + " and prefix " + prefix);
 		ExtendedIterator<OntClass> classes = ontologyModel.listClasses();
 		return classes.toList().stream().filter(o -> o.getLocalName().equalsIgnoreCase(name) && prefix.equals(ontologyModel.getNsURIPrefix(o.getNameSpace()))).findFirst();
 	}
@@ -98,6 +106,7 @@ public abstract class RdfGenerator {
 	 */
 	
 	protected Optional<ObjectProperty> getOntologyObjectProperty(String name) {
+		L.debug("Getting pain ontology object property with name " + name);
 		ExtendedIterator<ObjectProperty> classes = ontologyModel.listObjectProperties();
 		return classes.toList().stream().filter(o -> o.getLocalName().equalsIgnoreCase(name)).findFirst();
 	}
@@ -113,6 +122,7 @@ public abstract class RdfGenerator {
 	 * @return the ontology object property
 	 */
 	protected Optional<ObjectProperty> getOntologyObjectProperty(String prefix, String name) {
+		L.debug("Getting prefixed ontology object property with name " + name + " and prefix " + prefix);
 		ExtendedIterator<ObjectProperty> classes = ontologyModel.listObjectProperties();
 		return classes.toList().stream().filter(o -> o.getLocalName().equalsIgnoreCase(name) && prefix.equals(ontologyModel.getNsURIPrefix(o.getNameSpace()))).findFirst();
 	}
@@ -126,6 +136,7 @@ public abstract class RdfGenerator {
 	 * @return the ontology datatype property
 	 */
 	protected Optional<DatatypeProperty> getOntologyDatatypeProperty(String name) {
+		L.debug("Getting plain ontology dataytaype property with name " + name);
 		ExtendedIterator<DatatypeProperty> classes = ontologyModel.listDatatypeProperties();
 		return classes.toList().stream().filter(o -> o.getLocalName().equalsIgnoreCase(name)).findFirst();
 	}	
@@ -141,6 +152,7 @@ public abstract class RdfGenerator {
 	 * @return the ontology datatype property
 	 */
 	protected Optional<DatatypeProperty> getOntologyDatatypeProperty(String prefix, String name) {
+		L.debug("Getting prefixed ontology datatype property with name " + name + " and prefix " + prefix);
 		ExtendedIterator<DatatypeProperty> classes = ontologyModel.listDatatypeProperties();
 		return classes.toList().stream().filter(o -> o.getLocalName().equalsIgnoreCase(name) && prefix.equals(ontologyModel.getNsURIPrefix(o.getNameSpace()))).findFirst();
 	}	

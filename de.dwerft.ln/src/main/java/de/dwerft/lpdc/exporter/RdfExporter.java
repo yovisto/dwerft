@@ -12,6 +12,7 @@ import java.util.Set;
 
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
+import org.apache.log4j.Logger;
 
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
@@ -39,6 +40,10 @@ public abstract class RdfExporter {
 	
 	private final String FILMONTOLOGY_BASE_URI = "http://filmontology.org/ontology/1.0/";
 	
+	/** The Logger. */
+	private static final Logger L = Logger.getLogger(RdfExporter.class.getName());
+
+	
 	private File rdfInput;
 	private Model model;
 	
@@ -46,18 +51,40 @@ public abstract class RdfExporter {
 	
 	private OntModel ontologyModel;
 	
+	/**
+	 * Constructor for querying a remote SPARQL endpoint.
+	 * 
+	 * @param sparqlEndpointUrl 
+	 * 				the URL of the SPARQL end point
+	 * @param ontologyFilename 
+	 * 				the file containing the model used with the RDF data
+	 */
 	public RdfExporter(String sparqlEndpointUrl, String ontologyFilename) {
 		this.sparqlEndpoint = sparqlEndpointUrl;
 		this.ontologyModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 		ontologyModel.read(ontologyFilename, OntologyConstants.ONTOLOGY_FORMAT);
 	}
 	
+	/**
+	 * This constructor is for use with an RDF file
+	 * 
+	 * @param rdfInput 
+	 * 				the file containing the data, in RDF format
+	 * @throws IOException
+	 */
 	public RdfExporter(File rdfInput) throws IOException {
 		this.rdfInput = rdfInput;	
 		prepareARQ();
 	}
 	
+	/**
+	 * Prepares ARQ so regular SPARQL queries can be issued to the given file of RDF data
+	 * 
+	 * @throws IOException
+	 */
 	private void prepareARQ() throws IOException {
+		L.info("Preparing ARQ for use with an RDF File");
+		
 		InputStream in = new FileInputStream(rdfInput);
 		model = ModelFactory.createMemModelMaker().createModel("");
 		model.read(in, null, "TTL"); // null base URI, since model URIs are absolute
@@ -74,9 +101,12 @@ public abstract class RdfExporter {
 	 * 
 	 */
 	private ResultSet queryEndpoint(String queryString) {
+		L.debug("Attempting to query remote SPARQL end point... ");
+		
 		Query query = QueryFactory.create(queryString);
 		HttpAuthenticator authenticator = new SimpleAuthenticator("dwerft", "#dwerft".toCharArray());
         QueryExecution qExe = QueryExecutionFactory.sparqlService(sparqlEndpoint, query , authenticator);
+
 		return qExe.execSelect();
 	}
 	
@@ -87,7 +117,8 @@ public abstract class RdfExporter {
 	 * 					Name of the ontology class
 	 * @return All resources that have a RDF type relation to the ontology class
 	 */
-	public ArrayList<Resource> getResourcesByType(String className) {
+	public ArrayList<Resource> getResourcesByType(String className) {	
+		L.debug("Requesting resources of type " + className);
 		
 		ArrayList<Resource> result = new ArrayList<Resource>();
 		
@@ -134,6 +165,7 @@ public abstract class RdfExporter {
 	 * @return Linked resources
 	 */
 	public ArrayList<Resource> getLinkedResources(Resource start, String prefix, String objectPropertyName) {
+		L.debug("Requesting resources linked to " + start.getLocalName() + " via object property " + objectPropertyName);
 		
 		ArrayList<Resource> result = new ArrayList<Resource>();
 		
@@ -165,6 +197,8 @@ public abstract class RdfExporter {
 	 * @return
 	 */
 	public ArrayList<Literal> getLinkedDataValues(Resource start, String datatypePropertyName) {
+		L.debug("Requesting literals linked to " + start.getLocalName() + " via datatype property " + datatypePropertyName);
+		
 		ArrayList<Literal> result = new ArrayList<Literal>();
 		
 		String query = OntologyConstants.ONTOLOGY_PREFIXES 
@@ -184,7 +218,12 @@ public abstract class RdfExporter {
 		return result;
 	}
 	
-	
+	/**
+	 * TODO
+	 * 
+	 * @param start
+	 * @return
+	 */
 	public Map<String, ArrayList<Literal>> getAllLinkedDataValues(Resource start) {
 		
 		Map<String, ArrayList<Literal>> result = new HashMap<String, ArrayList<Literal>>();
@@ -220,6 +259,8 @@ public abstract class RdfExporter {
 	 * @return A set of property names
 	 */
 	public Set<Property> getDeclaredProperties(Resource ontologyClass) {
+		L.debug("Requesting properties for ontology class " + ontologyClass.getLocalName());
+		
 		Set<Property> result = new HashSet<Property>();
 		
 		OntClass ontClass = ontologyModel.getOntClass(ontologyClass.getURI());
@@ -240,10 +281,13 @@ public abstract class RdfExporter {
 	 * Gets all scenes of a project
 	 * 
 	 * @param projectID
-	 * @param episodeID
+	 * 				the ID  of the project containing the scenes.
+	 * 				TODO: !! Currently NOT used, all scenes are retrieved regardless of projectID !!
 	 * @return a XML String containing all scenes of an episode
 	 */
 	protected String getScenesAsXML(String projectID) {
+		
+		L.info("Requesting all scenes of project with ID " + projectID);;
 		
 		//Get all properties of the class scene
 		ResultSet rs = ResultSetFactory.fromXML(getAllClassPropertiesAsXML("Scene"));
@@ -287,9 +331,12 @@ public abstract class RdfExporter {
 	 * Extracts the value from a given query solution
 	 * Returns an empty string instead of null if the resource/literal is empty
 	 * 
-	 * @param q the QuerySolution
-	 * @param nodeName the name of the resource/literal
-	 * @return the value of the resource/literal or an empty string
+	 * @param q 
+	 * 			the QuerySolution
+	 * @param nodeName 
+	 * 			the name of the resource/literal
+	 * @return 
+	 * 			the value of the resource/literal or an empty string
 	 */
 	protected String getResourceOrLiteralValue(QuerySolution q, String nodeName) {
 		
@@ -317,6 +364,7 @@ public abstract class RdfExporter {
 	 * @return a ResultSet with the names of the properties
 	 */
 	private String getAllClassPropertiesAsXML(String OntClass) {
+		L.debug("Converting properties to XML format for class " + OntClass);
 		
 		String propertyQuery = "PREFIX filmontology: <" + FILMONTOLOGY_BASE_URI + "> "
 				+ "SELECT DISTINCT ?property "
@@ -333,6 +381,7 @@ public abstract class RdfExporter {
 	 * @return
 	 */
 	private String executeQuery(String query) {
+		L.debug("Executing SPARQL query " + query);
 		
 		Query q = QueryFactory.create(query);
 
