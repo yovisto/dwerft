@@ -1,75 +1,82 @@
 package de.dwerft.lpdc.exporter;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
-import com.hp.hpl.jena.query.QuerySolution;
-import com.hp.hpl.jena.query.ResultSet;
-import com.hp.hpl.jena.query.ResultSetFactory;
+import com.hp.hpl.jena.rdf.model.Literal;
+import com.hp.hpl.jena.rdf.model.Resource;
 
 public class LockitExporter extends RdfExporter {
 	
 	private String outputPath;
 	
-	public LockitExporter(File rdfInput, String outputPath) throws IOException {
-		super(rdfInput);
-		this.outputPath = outputPath;
-	}
+	private String projectId;
 	
+	public LockitExporter(String sparqlEndpointUrl, String ontologyFilename, String outputPath, String projectId) throws IOException {
+		super(sparqlEndpointUrl, ontologyFilename);
+		this.outputPath = outputPath;
+		this.projectId = projectId;
+	}
 	
 	@Override
 	public void export() {
-		
-			writeSceneCSV(getScenesAsXML(""));
-	}
-
-	/**
-	 * Restores a ResultSet from a given XML and writes a CSV file containing selected variables
-	 * 
-	 * TODO 
-	 * Lockit importer only reads a certain (unknown encoding)
-	 * Add missing variables
-	 * 
-	 * @param sceneXML
-	 */
-	private void writeSceneCSV(String sceneXML) {
-		
 		try {
 			FileWriter writer = new FileWriter(outputPath);
 			
-			ResultSet sceneResults = ResultSetFactory.fromXML(sceneXML);
-			
-			while (sceneResults.hasNext()) {
-				QuerySolution scene = sceneResults.next();
+			List<Resource> scenes = getAllScenesFromProject();
+			for (Resource scene : scenes) {
+				Map<String, ArrayList<Literal>> literals = getAllLinkedDataValues(scene);
 				
-				writer.append(getResourceOrLiteralValue(scene, "sceneNumbers") + ";");
+				writer.append(getValueFromLiteral(literals, "sceneNumber") + ";");
 				
-				//Merge environment info to one variable
-				String intExt = getResourceOrLiteralValue(scene, "interiorExteriors");
-				String dayNight = getResourceOrLiteralValue(scene, "dayTimes");
+				String intExt = getValueFromLiteral(literals, "interiorExterior");
+				String dayNight = getValueFromLiteral(literals, "dayTime");
 				writer.append(createLockitIAT(intExt, dayNight) + ";");
 				
-				writer.append(getResourceOrLiteralValue(scene, "estimatedTimes") + ";");
-				
-				////////////////////
-				// TODO - Wenn man den kompletten Header nimmt, f�hrt das zu merkw�rdgem Erzeugen von Schaupl�tzen bei Lockit, deswegen erstmal der Split
-				// TODO - Es gibt auch ein Problem mit dem Encoding, das Leerzeichen direkt nach dem Bindestrich ist irgendein Sonderzeichen
-				String lit = getResourceOrLiteralValue(scene, "sceneHeaders");
-				String[] split = lit.split("�-");				
-				writer.append(split[1].trim() + ";");
-				/////////////////
-				writer.append(getResourceOrLiteralValue(scene, "sceneDescriptions") + ";");				
+				writer.append(getValueFromLiteral(literals, "estimatedTime") + ";");
+				writer.append(getValueFromLiteral(literals, "sceneHeader") + ";");
+				writer.append(getValueFromLiteral(literals, "sceneDescription") + ";");
 				writer.append("\n");
 			}
 			
 			writer.flush();
 			writer.close();
-			
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException io) {
+			System.out.println("Could not write csv. " + io.getMessage());
+		}
+	}
+	
+	// returns the literal value from the first found literal or an empty string
+	private String getValueFromLiteral(Map<String, ArrayList<Literal>> literals, String propertyName) {
+		if (literals.containsKey(propertyName)) {
+			return literals.get(propertyName).get(0).getString();
+		} else {
+			return "";	
+		}
+	}
+	
+	// retuns all scenes for a project
+	private List<Resource> getAllScenesFromProject() {
+		List<Resource> scenes = new ArrayList<Resource>();
+		List<Resource> project = getResourcesFilteredByLiteral("Project", "identifierPreProducer", projectId);
+		
+		// if we have a project we seek for the episodes and collect all scenes
+		if (!project.isEmpty()) {
+			List<Resource> episodes = getLinkedResources(project.get(0), "hasEpisode");
+		
+			for (Resource r : episodes) {
+				List<Resource> sceneGroup = getLinkedResources(r, "hasSceneGroup");
+				
+				for (Resource s : sceneGroup) {
+					scenes.addAll(getLinkedResources(s, "hasScene"));
+				}
+			}
 		}
 		
+		return scenes;
 	}
 	
 	/**
