@@ -12,17 +12,25 @@ public class ExporterTest {
 	private final String tmpDir = System.getProperty("java.io.tmpdir");
 	private final File ontologyFile = new File(tmpDir + "/filmontology_example.ttl");
 	
-	//@Test
+	@Test
 	public void testLockitExporter() throws IOException {
 		
-		LockitExporter e = new LockitExporter(ontologyFile, tmpDir + "/lockit_filmontology_scenes.csv");
+		LockitExporter e = new LockitExporter(OntologyConstants.SPARQL_ENDPOINT, OntologyConstants.ONTOLOGY_FILE, tmpDir + "/lockit_filmontology_scenes.csv", "17621");
 		e.export();
 	}
 	
+<<<<<<< HEAD
 	@Test
 	public void testPreproducerExporter() throws IOException {
 		
 		PreproducerExporter e = new PreproducerExporter(OntologyConstants.SPARQL_ENDPOINT, OntologyConstants.ONTOLOGY_FILE, tmpDir + "/preproducer_filmontology_scenes.csv", "17621");
 		e.export();
 	}
+=======
+	//@Test
+//	public void testPreproducerExporter() throws IOException {
+//		
+//		PreproducerExporter e = new PreproducerExporter(ontologyFile, mapping, tmpDir + "/preproducer_filmontology_scenes.csv", "");
+//	}
+>>>>>>> 209267e5919b45bdfa5de6a82b11994172c2fc48
 }
