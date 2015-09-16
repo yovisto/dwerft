@@ -316,4 +316,14 @@ map34.targetPropertyType=OBJECT_PROPERTY
 
 
 
+map35.xmlNodePath=/ScriptDocument/characters/Character/Property
+map35.conditionalAttributeName=id
+map35.conditionalAttributeValue=98
+map35.contentSource=ATTRIBUTE
+map35.contentElementName=value
+map35.targetOntologyClass=http://filmontology.org/ontology/1.0/Character
+map35.targetOntologyProperty=http://filmontology.org/ontology/1.0/age
+map35.targetPropertyType=DATATYPE_PROPERTY
+
+
 
