@@ -16,6 +16,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.Statement;
 
 import de.dwerft.lpdc.general.OntologyConstants;
 import de.dwerft.lpdc.importer.general.MappingDefinition.ContentSource;
@@ -87,6 +88,8 @@ public class RdfProcessor {
 	 * <property name>_<value>.
 	 */
 	private Map<String, String> attributeValueMappings;
+	
+	private int internalIdentifier = 0;
 	
 	public RdfProcessor(OntologyConnector ontologyConnector) {
 		this.ontologyConnector = ontologyConnector;
@@ -204,6 +207,13 @@ public class RdfProcessor {
 			
 			Property typeProp = ontologyConnector.getProperty("rdf","type");
 			createdResource.addProperty(typeProp, ontologyClass);
+			
+			Property idProperty = generatedModel.getProperty(OntologyConstants.ONTOLOGY_NAMESPACE+"identifier");
+			Statement stat = createdResource.getProperty(idProperty);
+			if (stat == null) {
+				internalIdentifier++;
+				createdResource.addLiteral(idProperty, internalIdentifier);
+			}
 			
 			result = createdResource;
 		} else {
