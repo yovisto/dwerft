@@ -241,6 +241,56 @@ public abstract class RdfExporter {
 		return result;
 	}
 	
+	
+	public Map<String,ArrayList<Literal>> getLinkedDataValues(Resource start, Set<Property> datatypeProperties) {
+		L.debug("Requesting literals linked to " + start.getLocalName() + " via datatype properties " + datatypeProperties);
+		
+		Map<String,ArrayList<Literal>>  result = new HashMap<String,ArrayList<Literal>>();
+		
+		Set<String> propertyNames = new HashSet<String>();
+		for (Property p : datatypeProperties) {
+			propertyNames.add(p.getLocalName());
+		}
+		
+		String query = OntologyConstants.ONTOLOGY_PREFIXES 
+				+ "select ?prop ?lit where { "
+				+ "<" + start.getURI() + "> "
+				+ "?prop "
+				+ "?lit"
+				+ "}";
+
+		
+		ResultSet rs = queryEndpoint(query);
+		while(rs.hasNext()) {
+			QuerySolution sol = rs.nextSolution();
+			
+			RDFNode prop = sol.get("prop");
+			RDFNode lit = sol.get("lit");
+			
+			if (lit.isLiteral() && prop.isResource()) {
+				
+				Resource resource = prop.asResource();
+				Literal literal = lit.asLiteral();
+				
+				String propName = resource.getLocalName();
+				
+				if (propertyNames.contains(propName)) {
+					ArrayList<Literal> values = result.get(propName);
+					if (values == null) {
+						values = new ArrayList<Literal>();
+						result.put(propName, values);
+					}
+					values.add(literal);
+				}
+				
+			}
+		}
+				
+		return result;
+	}
+	
+	
+	
 	/**
 	 * TODO
 	 * 
@@ -261,15 +311,17 @@ public abstract class RdfExporter {
 		
 		Set<Property> declaredProperties = getDeclaredProperties(type);
 		
-		for (Property property : declaredProperties) {
-			if (ontologyModel.getDatatypeProperty(property.getURI()) != null) {
-				ArrayList<Literal> linkedDataValues = getLinkedDataValues(start, property.getLocalName());
-				if (linkedDataValues.size() > 0) {
-					result.put(property.getLocalName(), linkedDataValues);
-				}
-			}
-		}
+		result = getLinkedDataValues(start, declaredProperties);
 		
+//		for (Property property : declaredProperties) {
+//			if (ontologyModel.getDatatypeProperty(property.getURI()) != null) {
+//				ArrayList<Literal> linkedDataValues = getLinkedDataValues(start, property.getLocalName());
+//				if (linkedDataValues.size() > 0) {
+//					result.put(property.getLocalName(), linkedDataValues);
+//				}
+//			}
+//		}
+//		
 		return result;
 				
 	}
