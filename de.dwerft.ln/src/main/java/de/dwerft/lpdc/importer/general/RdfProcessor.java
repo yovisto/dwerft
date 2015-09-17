@@ -1,9 +1,17 @@
 package de.dwerft.lpdc.importer.general;
 
+import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 import java.util.UUID;
+
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.apache.log4j.Logger;
 import org.w3c.dom.NamedNodeMap;
@@ -229,6 +237,22 @@ public class RdfProcessor {
 		resource.addLiteral(datatypeProperty, convertStringToAppropriateObject(propertyValue));
 	}
 	
+
+
+	private String nodeToString(Node node) {
+		StringWriter sw = new StringWriter();
+		try {
+			Transformer t = TransformerFactory.newInstance().newTransformer();
+			t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+			t.transform(new DOMSource(node), new StreamResult(sw));
+		} catch (TransformerException te) {
+			System.out.println("nodeToString Transformer Exception");
+		}
+	return sw.toString();
+	}
+	
+	
+		
 	public void linkDatatypeProperty(Node node, MappingDefinition mapping) {
 		
 		String value = null;
@@ -237,7 +261,26 @@ public class RdfProcessor {
 			value = XMLProcessor.getValueOfAttribute(node, mapping.getContentElementName());
 		} else 
 		if (mapping.getContentSource().equals(ContentSource.TEXT_CONTENT)) {
-			value = node.getTextContent();
+			
+			String result = nodeToString(node);
+			
+			if (node.getTextContent().equals("")) {
+				value = "";
+			} else if (result.contains("StyledText")) {
+				value = "<p>"+node.getTextContent()+"</p>";
+				
+				value = value.replaceAll("\\n", "</p><p>");
+				
+			} else {
+			
+				int i = result.indexOf(">")+1;
+				int j = result.length()-1;
+				while (!result.substring(j, j+1).equals("<")) {
+					j--;
+				}
+				result = result.substring(i,j);
+				value = result;
+			}
 		} else {
 			throw new IllegalStateException("Datatype properties can only be filled from attribute values or text content: "+node+" -- "+mapping);
 		}
