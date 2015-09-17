@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import de.dwerft.lpdc.general.OntologyConstants;
 import de.dwerft.lpdc.sources.PreproducerSource;
-import de.dwerft.lpdc.sources.TripleStoreSource;
 
 public class PreProducerToRdfTest {
 	
@@ -40,7 +39,7 @@ public class PreProducerToRdfTest {
 		pprdf.writeRdfToFile(outputFile);
 
 		// upload to triplestore
-		TripleStoreSource triple = new TripleStoreSource();
-		triple.send(outputFile);
+//		TripleStoreSource triple = new TripleStoreSource();
+//		triple.send(outputFile);
 	}
 }
