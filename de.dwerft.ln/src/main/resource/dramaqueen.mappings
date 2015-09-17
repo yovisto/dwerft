@@ -139,7 +139,7 @@ map16.conditionalAttributeValue=0
 map16.contentSource=ATTRIBUTE
 map16.contentElementName=value
 map16.targetOntologyClass=http://filmontology.org/ontology/1.0/Project
-map16.targetOntologyProperty=http://filmontology.org/ontology/1.0/name
+map16.targetOntologyProperty=http://filmontology.org/ontology/1.0/title
 map16.targetPropertyType=DATATYPE_PROPERTY
 
 
