@@ -1,6 +1,5 @@
 package de.dwerft.lpdc.exporter;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,8 +14,12 @@ import org.jdom2.Namespace;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Resource;
+
+import de.dwerft.lpdc.general.OntologyConstants;
 
 
 public class PreproducerExporter extends RdfExporter {
@@ -113,7 +116,24 @@ public class PreproducerExporter extends RdfExporter {
 		Element sceneGroupElement = new Element("scene-group");
 		
 		//Get all scenes of the scene group
-		ArrayList<Resource> scenes = getLinkedResources(sceneGroup, "hasScene");
+//		ArrayList<Resource> scenes = getLinkedResources(sceneGroup, "hasScene");
+
+		//TODO Scenes must be in correct order for preproducer import. This is a hack, because ordering for scene numbers with letters does not work
+		ArrayList<Resource> scenes = new ArrayList<Resource>();
+		String orderByQuery = OntologyConstants.ONTOLOGY_PREFIXES 
+				+ "select ?scene where { "
+				+ "<"+sceneGroup.getURI()+"> "
+				+ OntologyConstants.ONTOLOGY_PREFIX+":hasScene ?scene. "
+				+ "?scene "+ OntologyConstants.ONTOLOGY_PREFIX+":identifier ?identifier ."
+				+ "}ORDER BY ASC(?identifier)";
+
+		ResultSet rs = queryEndpoint(orderByQuery);
+		
+		while(rs.hasNext()) {
+			QuerySolution sol = rs.nextSolution();
+			scenes.add(sol.getResource("scene"));
+		}
+		
 		
 		//Iterating over each scene, append the scene element to the scene group element
 		for (Resource scene : scenes) {
@@ -135,12 +155,8 @@ public class PreproducerExporter extends RdfExporter {
 		//scene decoration name | this is an attribute
 		ArrayList<Resource> sets = getLinkedResources(scene, "sceneSet");
 		if (sets.size() == 1) {
-			sets = getLinkedResources(sets.get(0), "setLocation");
-			
-			if (sets.size() == 1) {
-				String name = getLinkedDataValues(sets.get(0), "name").get(0).getString();
-				sceneElement.setAttribute("decorationname", name);
-			}
+			String name = getLinkedDataValues(sets.get(0), "name").get(0).getString();
+			sceneElement.setAttribute("decorationname", name);
 		}
 			
 		
