@@ -285,9 +285,9 @@ public class RdfProcessor {
 			throw new IllegalStateException("Datatype properties can only be filled from attribute values or text content: "+node+" -- "+mapping);
 		}
 		
-		if (value == null) {
-			throw new IllegalStateException("Value for datatype property linking could not be found: "+node+" -- "+mapping);
-		} else {
+		if (value != null) {
+//			throw new IllegalStateException("Value for datatype property linking could not be found: "+node+" -- "+mapping);
+//		} else {
 			DatatypeProperty datatypeProperty = ontologyConnector.getOntologyDatatypeProperty(mapping.getTargetOntologyProperty());
 			Resource latestResource = resourceStack.peek();
 			String mappedValue = attributeValueMappings.get(datatypeProperty.getLocalName()+"_"+value);
