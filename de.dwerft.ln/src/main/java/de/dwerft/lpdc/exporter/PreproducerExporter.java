@@ -2,6 +2,8 @@ package de.dwerft.lpdc.exporter;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -31,11 +33,13 @@ public class PreproducerExporter extends RdfExporter {
 	
 	private String outputPath;
 	private String projectID;
+	private String targetProjectID;
 	
-	public PreproducerExporter(String sparqlEndpointUrl, String ontologyFileName, String outputPath, String projectID) {
+	public PreproducerExporter(String sparqlEndpointUrl, String ontologyFileName, String outputPath, String projectID, String targetProjectID) {
 		super(sparqlEndpointUrl, ontologyFileName);
 		this.outputPath = outputPath;
 		this.projectID = projectID;
+		this.targetProjectID = targetProjectID;
 	}
 	
 	@Override
@@ -45,7 +49,7 @@ public class PreproducerExporter extends RdfExporter {
 		Element root = new Element("root");
 		root.addNamespaceDeclaration(PRP_NAMESPACE);
 		Element methodElement = new Element("payload").setAttribute(new Attribute("method", "postScript"));	
-		Element projectIdElement = new Element("project").setAttribute(new Attribute("projectid", projectID));
+		Element projectIdElement = new Element("project").setAttribute(new Attribute("projectid", targetProjectID));
 		
 		//Spawn new document and append primary elements
 		Document prpXml = new Document(root);
@@ -53,6 +57,7 @@ public class PreproducerExporter extends RdfExporter {
 				
 		//Get project referenced by the given ID
 		List<Resource> listOfProjectsWithSpecifiedID = getResourcesFilteredByLiteral("Project", "identifierPreProducer", projectID);
+		listOfProjectsWithSpecifiedID.addAll(getResourcesFilteredByLiteral("Project", "identifierDramaQueen", projectID));
 		Resource project = null;
 		//If the the number of projects found is not equal to 1 throw an error
 		if (listOfProjectsWithSpecifiedID.size() == 1)
@@ -100,7 +105,23 @@ public class PreproducerExporter extends RdfExporter {
 			episodeElement.setAttribute("id", episodeIDs.get(0).getString());
 		
 		//Get all scene groups of the episode
-		ArrayList<Resource> sceneGroups = getLinkedResources(episode, "hasSceneGroup");
+//		ArrayList<Resource> sceneGroups = getLinkedResources(episode, "hasSceneGroup");
+
+		//////////////////////////////////////////////////////////////////////////////
+		//TODO Scenes must be in correct order for preproducer import. This is a hack, because ordering for scene numbers with letters does not work
+		ArrayList<Resource> sceneGroups = new ArrayList<Resource>();
+		String orderByQuery = OntologyConstants.ONTOLOGY_PREFIXES 
+				+ "select ?group where { "
+				+ "<"+episode.getURI()+"> "
+				+ OntologyConstants.ONTOLOGY_PREFIX+":hasSceneGroup ?group. "
+				+ "?group "+ OntologyConstants.ONTOLOGY_PREFIX+":identifier ?identifier ."
+				+ "}ORDER BY ASC(?identifier)";
+		ResultSet rs = queryEndpoint(orderByQuery);
+		while(rs.hasNext()) {
+			QuerySolution sol = rs.nextSolution();
+			sceneGroups.add(sol.getResource("group"));
+		}
+		//////////////////////////////////////////////////////////////////////////////
 		
 		//Iterating over each scene group, append the scene group element to the episode element
 		for (Resource sceneGroup : sceneGroups) {
@@ -118,6 +139,7 @@ public class PreproducerExporter extends RdfExporter {
 		//Get all scenes of the scene group
 //		ArrayList<Resource> scenes = getLinkedResources(sceneGroup, "hasScene");
 
+		//////////////////////////////////////////////////////////////////////////////
 		//TODO Scenes must be in correct order for preproducer import. This is a hack, because ordering for scene numbers with letters does not work
 		ArrayList<Resource> scenes = new ArrayList<Resource>();
 		String orderByQuery = OntologyConstants.ONTOLOGY_PREFIXES 
@@ -126,14 +148,12 @@ public class PreproducerExporter extends RdfExporter {
 				+ OntologyConstants.ONTOLOGY_PREFIX+":hasScene ?scene. "
 				+ "?scene "+ OntologyConstants.ONTOLOGY_PREFIX+":identifier ?identifier ."
 				+ "}ORDER BY ASC(?identifier)";
-
 		ResultSet rs = queryEndpoint(orderByQuery);
-		
 		while(rs.hasNext()) {
 			QuerySolution sol = rs.nextSolution();
 			scenes.add(sol.getResource("scene"));
 		}
-		
+		//////////////////////////////////////////////////////////////////////////////
 		
 		//Iterating over each scene, append the scene element to the scene group element
 		for (Resource scene : scenes) {
@@ -241,14 +261,21 @@ public class PreproducerExporter extends RdfExporter {
 	 */
 	private void writeXmlToFile(Document prpXml) {
 		try {
-			XMLOutputter xmlOutput = new XMLOutputter();  
-			xmlOutput.setFormat(Format.getPrettyFormat());  
+			Format prettyFormat = Format.getPrettyFormat();
+			XMLOutputter xmlOutput = new XMLOutputter(prettyFormat);
 			xmlOutput.output(prpXml, System.out);
-			xmlOutput.output(prpXml, new FileWriter(outputPath)); 
+			xmlOutput.output(prpXml, new FileWriter(outputPath));
+			
+			String content = new String(Files.readAllBytes(Paths.get(outputPath)));
+			
+			content = content.replaceAll("&lt;", "<");
+			content = content.replaceAll("&gt;", ">");
+			
+			Files.write(Paths.get(outputPath), content.getBytes());
+			
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}  
 	}
-	
-	
 }
