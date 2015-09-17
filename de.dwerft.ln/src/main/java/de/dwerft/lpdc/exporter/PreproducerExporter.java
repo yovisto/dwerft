@@ -24,7 +24,7 @@ public class PreproducerExporter extends RdfExporter {
 	/** The Logger. */
 	private static final Logger L = Logger.getLogger(PreproducerExporter.class.getName());
 	
-	private final Namespace PRP_NAMESPACE = Namespace.getNamespace("prp", "http://www.preproducer.com");
+	private final Namespace PRP_NAMESPACE = Namespace.getNamespace("prp", "http://www.preproducer.com/");
 	
 	private String outputPath;
 	private String projectID;
@@ -35,17 +35,12 @@ public class PreproducerExporter extends RdfExporter {
 		this.projectID = projectID;
 	}
 	
-	public PreproducerExporter(File rdfInput, String outputPath, String projectID) throws IOException {
-		super(rdfInput);
-		this.outputPath = outputPath;
-		this.projectID = projectID;
-	}
-	
 	@Override
 	public void export() {
 		
 		//Prepare xml document template, including root, payload method, and project
 		Element root = new Element("root");
+		root.addNamespaceDeclaration(PRP_NAMESPACE);
 		Element methodElement = new Element("payload").setAttribute(new Attribute("method", "postScript"));	
 		Element projectIdElement = new Element("project").setAttribute(new Attribute("projectid", projectID));
 		
@@ -204,7 +199,7 @@ public class PreproducerExporter extends RdfExporter {
 	private void addNameSpaces(Element root) {
 		
 	    if(root != null) {
-		    if (hasNamespace(root))
+		    if (!hasNamespace(root))
 	    		root.setNamespace(PRP_NAMESPACE);
 		    
 		    for (int index = 0; root.getChildren() != null &&  index < root.getChildren().size(); index++) {
@@ -221,7 +216,7 @@ public class PreproducerExporter extends RdfExporter {
 	 * @return
 	 */
 	private boolean hasNamespace(Element root) {
-		return !(root.getName().equals("title") /*|| !root.getName().equals("root")*/ || root.getName().equals("payload"));
+		return root.getName().equals("title") || root.getName().equals("root") || root.getName().equals("payload");
 	}
 	
 	
