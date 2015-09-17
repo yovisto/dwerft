@@ -22,7 +22,6 @@ public class ExporterTest {
 		e.export();
 	}
 	
-<<<<<<< HEAD
 	@Test
 	public void testPreproducerExporter() throws IOException {
 		
@@ -33,11 +32,4 @@ public class ExporterTest {
 		PreproducerSource prpSource = new PreproducerSource(new File("src/main/resource/config.preproducer"));
 		prpSource.send(new String(Files.readAllBytes(Paths.get(outputPath))));
 	}
-=======
-	//@Test
-//	public void testPreproducerExporter() throws IOException {
-//		
-//		PreproducerExporter e = new PreproducerExporter(ontologyFile, mapping, tmpDir + "/preproducer_filmontology_scenes.csv", "");
-//	}
->>>>>>> 209267e5919b45bdfa5de6a82b11994172c2fc48
 }
