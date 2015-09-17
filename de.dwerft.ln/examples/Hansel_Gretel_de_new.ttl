@@ -14,7 +14,7 @@
         foo:identifier            "8"^^xsd:long ;
         foo:identifierDramaQueen  "82e0b36d-32fb-4216-a0e7-3b8a3135e961"^^xsd:string ;
         foo:name                  "Waldrand"^^xsd:string ;
-        foo:setDescription        "Der Ort des Übergangs von Zivilisation zur dunklen Wildness - hier steht das Haus von Hänsel und Gretel\n\n\n      "^^xsd:string .
+        foo:setDescription        "<p>Der Ort des Übergangs von Zivilisation zur dunklen Wildness - hier steht das Haus von Hänsel und Gretel</p><p></p><p></p><p>      </p>"^^xsd:string .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/ce1b1ec1-4e51-4f73-924c-1a743af67928>
         a                         foo:Scene ;
@@ -22,9 +22,9 @@
         foo:identifier            "86"^^xsd:long ;
         foo:identifierDramaQueen  "ce1b1ec1-4e51-4f73-924c-1a743af67928"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Gretel rennt hinein - niemand ist da! Hänsel kommt herein und stellt die Taschen ab. Er geht ins Kinderzimmer und sieht die Dekoration seines Vaters. Auf seinem Bett liegt ein kleines Floß aus Zweigen und zwei kleine Stoffpuppen - Hänsel und der Vater.\n\nHänsel stopft die Puppen tief in seine Tasche und versucht das Floß zu verstecken. Aber dann sieht er, dass auch auf Gretels Bett etwas liegt - eine kleine Sammlung bunter Märchenbilder. Er legt das Floß und die Puppen wieder hin. Er lächelt.\n\nGRETEL\nSie sind noch unterwegs. Lass uns saubermachen und dann Essen kochen. Sie werden sich so freuen, wenn sie zurück kommen!\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel rennt hinein - niemand ist da! Hänsel kommt herein und stellt die Taschen ab. Er geht ins Kinderzimmer und sieht die Dekoration seines Vaters. Auf seinem Bett liegt ein kleines Floß aus Zweigen und zwei kleine Stoffpuppen - Hänsel und der Vater.</p><p></p><p>Hänsel stopft die Puppen tief in seine Tasche und versucht das Floß zu verstecken. Aber dann sieht er, dass auch auf Gretels Bett etwas liegt - eine kleine Sammlung bunter Märchenbilder. Er legt das Floß und die Puppen wieder hin. Er lächelt.</p><p></p><p>GRETEL</p><p>Sie sind noch unterwegs. Lass uns saubermachen und dann Essen kochen. Sie werden sich so freuen, wenn sie zurück kommen!</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel erkennt, wie sehr ihr Vater sie vermisst hat."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "62"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -34,8 +34,8 @@
         foo:identifier            "79"^^xsd:long ;
         foo:identifierDramaQueen  "2158bd52-0770-4c04-80c1-8e2ba52e0540"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Alle Taschen sind gepackt. Sie versuchen verschiedene Tragevariationen.\n\nHÄNSEL\nLass mich den großen Rucksack nehmen. Du nimmst die braune Tasche da drüben.\n\nGretel wird etwas klar.\n\nGRETEL\nHänsel?\n\nHÄNSEL\nOder möchtest du lieber den roten Korb nehmen?\n\nGRETEL\nWie kommen wir nach Hause?\n\nHÄNSEL\nIch weiß, das ist alles schwer, aber wir werden einfach viele Pausen machen...\n\nGRETEL\nWie werden wir denn den Weg finden?\n\nSie wissen es beide nicht.\n              "^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tInnen/Nacht\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Alle Taschen sind gepackt. Sie versuchen verschiedene Tragevariationen.</p><p></p><p>HÄNSEL</p><p>Lass mich den großen Rucksack nehmen. Du nimmst die braune Tasche da drüben.</p><p></p><p>Gretel wird etwas klar.</p><p></p><p>GRETEL</p><p>Hänsel?</p><p></p><p>HÄNSEL</p><p>Oder möchtest du lieber den roten Korb nehmen?</p><p></p><p>GRETEL</p><p>Wie kommen wir nach Hause?</p><p></p><p>HÄNSEL</p><p>Ich weiß, das ist alles schwer, aber wir werden einfach viele Pausen machen...</p><p></p><p>GRETEL</p><p>Wie werden wir denn den Weg finden?</p><p></p><p>Sie wissen es beide nicht.</p><p>              </p>"^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tInnen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "56"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -51,9 +51,9 @@
         foo:identifier            "53"^^xsd:long ;
         foo:identifierDramaQueen  "c2be14a7-ca11-4976-830a-4bdaaac4fd10"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Es ist nicht das Haus ihrer Eltern, sondern ein verzaubertes Haus aus Pfefferkuchen und anderen Süßigkeiten - ein Gaumen- und Augenschmaus.\n\nHänsel bricht ein Stück ab und stopft es sich in den Mund.\n\nGretel ist vorsichtiger, aber dann ist der Hunger doch größer als die Angst.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Es ist nicht das Haus ihrer Eltern, sondern ein verzaubertes Haus aus Pfefferkuchen und anderen Süßigkeiten - ein Gaumen- und Augenschmaus.</p><p></p><p>Hänsel bricht ein Stück ab und stopft es sich in den Mund.</p><p></p><p>Gretel ist vorsichtiger, aber dann ist der Hunger doch größer als die Angst.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel und Gretel naschen am Pfefferkuchenhaus."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "35"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -69,9 +69,9 @@
         foo:identifier            "38"^^xsd:long ;
         foo:identifierDramaQueen  "8ecf7fbc-90fd-4ba0-a027-3c961151db86"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Gretel kann nicht aufhören zu weinen.\n\nHänsel singt ihr ein Kinderlied vor und schneidet dabei Grimassen. Gretel lacht.\n\n\nHÄNSEL\nEs wird alles wieder gut werden. Ich verspreche es dir.\n\nGRETEL\nPapa muss etwas passiert sein.\n\nHÄNSEL\nNein, du verstehst das nicht. Das ist doch alles Teil des Spiels.\n\nGretel versteht nicht.\n\nHÄNSEL\nEs ist doch alles nur ein Spiel. Als Papa uns hierher geführt hat, habe ich eine Spur gelegt. Jetzt müssen wir nur noch der Spur folgen und wir sind wieder zu Hause. Das ist alles.\n\nGRETEL\nWarum hast du mir das nicht vorher gesagt?\n\nHÄNSEL \nDas hätte doch das Ganze verdorben. Nun müssen wir einfach nur den Kieselsteinen folgen. Los komm!\n\nGretel ist sich immer noch nicht sicher, als sie aber den ersten weißen Kieselstein entdeckt, ist sie begeistert.\n\nGRETEL\nDa! Und da auch!\n\nHänsel ist immer noch etwas zögerlich, aber entscheidet sich dann doch dafür, seiner Schwester mit der Suche zu helfen und der Spur zu folgen.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel kann nicht aufhören zu weinen.</p><p></p><p>Hänsel singt ihr ein Kinderlied vor und schneidet dabei Grimassen. Gretel lacht.</p><p></p><p></p><p>HÄNSEL</p><p>Es wird alles wieder gut werden. Ich verspreche es dir.</p><p></p><p>GRETEL</p><p>Papa muss etwas passiert sein.</p><p></p><p>HÄNSEL</p><p>Nein, du verstehst das nicht. Das ist doch alles Teil des Spiels.</p><p></p><p>Gretel versteht nicht.</p><p></p><p>HÄNSEL</p><p>Es ist doch alles nur ein Spiel. Als Papa uns hierher geführt hat, habe ich eine Spur gelegt. Jetzt müssen wir nur noch der Spur folgen und wir sind wieder zu Hause. Das ist alles.</p><p></p><p>GRETEL</p><p>Warum hast du mir das nicht vorher gesagt?</p><p></p><p>HÄNSEL </p><p>Das hätte doch das Ganze verdorben. Nun müssen wir einfach nur den Kieselsteinen folgen. Los komm!</p><p></p><p>Gretel ist sich immer noch nicht sicher, als sie aber den ersten weißen Kieselstein entdeckt, ist sie begeistert.</p><p></p><p>GRETEL</p><p>Da! Und da auch!</p><p></p><p>Hänsel ist immer noch etwas zögerlich, aber entscheidet sich dann doch dafür, seiner Schwester mit der Suche zu helfen und der Spur zu folgen.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel erzählt seiner Schwester, dass alles nur ein Spiel ist."^^xsd:string ;
-        foo:sceneHeader           "\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "18"^^xsd:int .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/2b133dbe-e9d8-479e-ac90-43e04b935644>
@@ -80,8 +80,8 @@
         foo:identifier            "90"^^xsd:long ;
         foo:identifierDramaQueen  "2b133dbe-e9d8-479e-ac90-43e04b935644"^^xsd:string ;
         foo:interiorExterior      "extint"^^xsd:string ;
-        foo:sceneContent          "Man sieht die Familie durch das Fenster, wie sie ihre selbstgemachte Pizza genießen. Sie fühlen sich wohl miteinander und könnten nicht glücklicher sein.\n\nENDE\n              "^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tAußen/Innen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Man sieht die Familie durch das Fenster, wie sie ihre selbstgemachte Pizza genießen. Sie fühlen sich wohl miteinander und könnten nicht glücklicher sein.</p><p></p><p>ENDE</p><p>              </p>"^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tAußen/Innen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "66"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -96,7 +96,7 @@
         foo:identifier            "10"^^xsd:long ;
         foo:identifierDramaQueen  "c34ef9bc-1516-4444-8f11-23a234564a4a"^^xsd:string ;
         foo:name                  "Hänsels und Gretels Zuhause"^^xsd:string ;
-        foo:setDescription        "Kalter und gefühlloser Ort, der Liebe und Glück beherbergen könnte, aber von aller Wärme und allem was gut ist verlassen ist - von Armut gekennzeichnet\n\n\n      "^^xsd:string .
+        foo:setDescription        "<p>Kalter und gefühlloser Ort, der Liebe und Glück beherbergen könnte, aber von aller Wärme und allem was gut ist verlassen ist - von Armut gekennzeichnet</p><p></p><p></p><p>      </p>"^^xsd:string .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/dec3f6d5-ad99-4dbf-a383-c4af739ea777>
         a                         foo:Scene ;
@@ -104,9 +104,9 @@
         foo:identifier            "97"^^xsd:long ;
         foo:identifierDramaQueen  "dec3f6d5-ad99-4dbf-a383-c4af739ea777"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Der Vater folgt ihm und setzt sich neben ihn aufs Bett. Niemand sagt etwas für eine Weile.\n\nVATER\nEs tut mir leid.\n\nEr steht auf und geht wieder. Hänsel bleibt allein zurück.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater folgt ihm und setzt sich neben ihn aufs Bett. Niemand sagt etwas für eine Weile.</p><p></p><p>VATER</p><p>Es tut mir leid.</p><p></p><p>Er steht auf und geht wieder. Hänsel bleibt allein zurück.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater entschuldigt sich bei ihm."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "26"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -116,9 +116,9 @@
         foo:identifier            "24"^^xsd:long ;
         foo:identifierDramaQueen  "ba6aac1f-f491-4abe-a5ee-1264b1e2c1c4"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Hänsel schleicht zum Kühlschrank: Es sind nur wenige Reste da - einige alte Pilze, eine halbe Flasche Milch und zwei Zitronen.\n\nEr nimmt sich die Milchflasche und nimmt einen Mikro-Schluck.\n\nLeise schließt er wieder die Kühlschranktür.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel schleicht zum Kühlschrank: Es sind nur wenige Reste da - einige alte Pilze, eine halbe Flasche Milch und zwei Zitronen.</p><p></p><p>Er nimmt sich die Milchflasche und nimmt einen Mikro-Schluck.</p><p></p><p>Leise schließt er wieder die Kühlschranktür.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Er schleicht zur Küche, um einen Schluck Milch zu trinken."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "8"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -128,8 +128,8 @@
         foo:identifier            "94"^^xsd:long ;
         foo:identifierDramaQueen  "a648edc1-3a6e-4b11-b431-e8601bfd779d"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Der Vater findet die Mutter in der Nähe beim Brennholzsammeln.\n\nVATER\nLass mich das doch machen. Das ist doch meine Aufgabe.\n\nMUTTER\nJa, ist es.\n\nSie wirft ihm den Korb zu Füßen und dreht sich weg, um zum Haus zurückzugehen. Der Vater hält sie zurück.\n\nVATER\nIch möchte, dass du uns ein großartiges Essen kochst. Ein Festessen.\n\nMUTTER\nSpinnst du?!\n\nVATER\nHör auf! Es ist unser letztes gemeinsames Essen und wir werden ein Festmahl daraus machen!\n\n\nEr öffnet sein Portemonnaie und nimmt das letzte Geld heraus - es ist nicht viel - und reicht es seiner Frau. \n\nVATER\nEin Festessen. Das ist das Mindeste...\n\nDie Mutter ist zu überrascht von seiner Heftigkeit, um etwas zu erwidern und steckt das Geld in ihre Tasche. Sie geht.\n\nDer Vater bleibt zurück und sammelt Brennholz. Er wischt sich über die Augen.\n              "^^xsd:string ;
-        foo:sceneHeader           "Waldrand\tAußen/Tag\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater findet die Mutter in der Nähe beim Brennholzsammeln.</p><p></p><p>VATER</p><p>Lass mich das doch machen. Das ist doch meine Aufgabe.</p><p></p><p>MUTTER</p><p>Ja, ist es.</p><p></p><p>Sie wirft ihm den Korb zu Füßen und dreht sich weg, um zum Haus zurückzugehen. Der Vater hält sie zurück.</p><p></p><p>VATER</p><p>Ich möchte, dass du uns ein großartiges Essen kochst. Ein Festessen.</p><p></p><p>MUTTER</p><p>Spinnst du?!</p><p></p><p>VATER</p><p>Hör auf! Es ist unser letztes gemeinsames Essen und wir werden ein Festmahl daraus machen!</p><p></p><p></p><p>Er öffnet sein Portemonnaie und nimmt das letzte Geld heraus - es ist nicht viel - und reicht es seiner Frau. </p><p></p><p>VATER</p><p>Ein Festessen. Das ist das Mindeste...</p><p></p><p>Die Mutter ist zu überrascht von seiner Heftigkeit, um etwas zu erwidern und steckt das Geld in ihre Tasche. Sie geht.</p><p></p><p>Der Vater bleibt zurück und sammelt Brennholz. Er wischt sich über die Augen.</p><p>              </p>"^^xsd:string ;
+        foo:sceneHeader           "<p>Waldrand\tAußen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "23"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/82e0b36d-32fb-4216-a0e7-3b8a3135e961> .
 
@@ -139,9 +139,9 @@
         foo:identifier            "73"^^xsd:long ;
         foo:identifierDramaQueen  "fcd9daa7-20fe-4048-ac4f-3cac81c1efdc"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Die Hexe steht mit Gretel vor dem großen Ofen auf dem Hof.\n\nHEXE\nZum vierten Mal - du musst erst genug Kleinholz nehmen, um das Feuer zu entfachen. Wenn du die großen Holzscheite zu früh draufwirfst, erstickst du es wieder.\n\nGRETEL\nAber das war kein Scheit. Es sah sehr klein aus...\n\nHEXE\nAch komm, Mädchen! Das ist doch keine Raumfahrtswissenschaft hier! Fang noch mal an!\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Die Hexe steht mit Gretel vor dem großen Ofen auf dem Hof.</p><p></p><p>HEXE</p><p>Zum vierten Mal - du musst erst genug Kleinholz nehmen, um das Feuer zu entfachen. Wenn du die großen Holzscheite zu früh draufwirfst, erstickst du es wieder.</p><p></p><p>GRETEL</p><p>Aber das war kein Scheit. Es sah sehr klein aus...</p><p></p><p>HEXE</p><p>Ach komm, Mädchen! Das ist doch keine Raumfahrtswissenschaft hier! Fang noch mal an!</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Gretel benimmt sich beim Heizen des Ofens absichtlich ungeschickt."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "52"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -151,9 +151,9 @@
         foo:identifier            "51"^^xsd:long ;
         foo:identifierDramaQueen  "49b0eda6-5e87-4054-9e15-f899acd532ec"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Hänsel versucht sich durch die Dunkelheit zu navigieren. Gretel stolpert ihm hinterher.\n\nGRETEL\nIch glaube, wir waren hier schon mal.\n\nHÄNSEL\nHab' ich doch gesagt. Ich kann mich an diese Eiche gut erinnern.\n\nGRETEL\nNein, nicht auf dem Weg hierher. Sondern gerade eben. Nur wir beide.\n\nHänsel ignoriert ihren Einwand und macht weiter. Gretel bleibt kurz stehen, hat aber keine andere Wahl, als ihm zu folgen.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel versucht sich durch die Dunkelheit zu navigieren. Gretel stolpert ihm hinterher.</p><p></p><p>GRETEL</p><p>Ich glaube, wir waren hier schon mal.</p><p></p><p>HÄNSEL</p><p>Hab' ich doch gesagt. Ich kann mich an diese Eiche gut erinnern.</p><p></p><p>GRETEL</p><p>Nein, nicht auf dem Weg hierher. Sondern gerade eben. Nur wir beide.</p><p></p><p>Hänsel ignoriert ihren Einwand und macht weiter. Gretel bleibt kurz stehen, hat aber keine andere Wahl, als ihm zu folgen.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel versucht trotzdem den Weg zu finden."^^xsd:string ;
-        foo:sceneHeader           "\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "33"^^xsd:int .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/b61c604b-f174-448b-898f-4cedc67cbba6>
@@ -162,9 +162,9 @@
         foo:identifier            "101"^^xsd:long ;
         foo:identifierDramaQueen  "b61c604b-f174-448b-898f-4cedc67cbba6"^^xsd:string ;
         foo:interiorExterior      "extint"^^xsd:string ;
-        foo:sceneContent          "Die Mutter hängt Wäsche zum Trocknen auf. Der Vater schleicht sich hinter einem Laken an, um sie zu überraschen - er hat ihr ein neues Kleid gekauft. Die Mutter nimmt es ihm ab.\n\nVATER\nProbier es an! Du wirst darin wunderschön aussehen?\n\nDie Mutter hält es sich an den Körper.\n\nVATER\nZieh's an.\n\nSie geht zum Haus.\n\nVATER\nNiemand wird dich hier sehen.\n\nSie zögert, aber versucht dann seiner guten Stimmung zu folgen. Sie zieht ihr altes Kleid aus und das neue an. Es ist einfach aber sehr schön. Der Vater strahlt sie an.\n\nVATER\nMein Gott, bist du schön!\n\nEr geht zu ihr und küsst sie. Sie erwidert seinen Kuss.\n\nVATER\nDu ziehst es nächsten Sonntag an, wenn wir deine Schwester besuchen. Es wird ihr die Sprache verschlagen. All ihre teuren Kleider werden ihr nicht helfen, es mit deiner Schönheit aufzunehmen.\n\nDas war zu viel! Die Mutter macht sich los und stürmt zum Haus zurück. Der Vater bleibt zurück und hängt die Wäsche auf. Aber nein, er rennt ihr wutentbrannt nach.\n\nVATER\nEs ist immer noch nicht genug, oder?\n\nMUTTER\nWas? Dieses billige Kleid? Man sollte es nicht mal ein Kleid nennen. Meine Schwester benutzt sowas, um ihr Silber zu polieren.\n\nVATER\nDeine Schwester! Sie hat einen reichen Langeweiler geheiratet. Einen hässlichen Langeweiler mit Mundgeruchsproblemen! Das ist es, was du gesagt hast!\n\nMUTTER\nAber wenigstens ist er fähig für sie zu sorgen und sie hat alles, was sie sich je gewünscht hat. Er macht sie glücklich!\n\nVATER\nTja, dann haben sie vielleicht etwas Glückseligkeit übrig und geben dir was davon ab. Weil ich kann es offensichtlich nicht!\n\nEr nimmt ihr altes Kleid vom Tisch und wirft es auf den Boden.\n\nVATER\nNimm dein billiges Kleid und zieh bei ihnen ein. Ich bin mir sicher, deine Schwester kann ein paar ihrer Putzlappen entbehren und dich einkleiden.\n\nDie Mutter starrt ihn fassungslos an. \n\nVATER\nGeh! Wir sind fertig! Ich dachte, unsere Liebe wäre genug für dich! Ich dachte unsere zwei wundervollen Kinder und unser Zuhause voller Liebe und Wärme wären genug für dich. Aber nein!Dies war auch nie ein Heim voller Liebe und Wärme, weil du es mit all deiner endlosen Verbitterung vergiftet hast. Wir werden dich nie glücklich machen könne! Also hau ab! Lass uns in Ruhe!\n\nSein Blick fällt ins leere Kinderzimmer. Er greift sich seine Jacke und stürmt zur Tür hinaus.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Die Mutter hängt Wäsche zum Trocknen auf. Der Vater schleicht sich hinter einem Laken an, um sie zu überraschen - er hat ihr ein neues Kleid gekauft. Die Mutter nimmt es ihm ab.</p><p></p><p>VATER</p><p>Probier es an! Du wirst darin wunderschön aussehen?</p><p></p><p>Die Mutter hält es sich an den Körper.</p><p></p><p>VATER</p><p>Zieh's an.</p><p></p><p>Sie geht zum Haus.</p><p></p><p>VATER</p><p>Niemand wird dich hier sehen.</p><p></p><p>Sie zögert, aber versucht dann seiner guten Stimmung zu folgen. Sie zieht ihr altes Kleid aus und das neue an. Es ist einfach aber sehr schön. Der Vater strahlt sie an.</p><p></p><p>VATER</p><p>Mein Gott, bist du schön!</p><p></p><p>Er geht zu ihr und küsst sie. Sie erwidert seinen Kuss.</p><p></p><p>VATER</p><p>Du ziehst es nächsten Sonntag an, wenn wir deine Schwester besuchen. Es wird ihr die Sprache verschlagen. All ihre teuren Kleider werden ihr nicht helfen, es mit deiner Schönheit aufzunehmen.</p><p></p><p>Das war zu viel! Die Mutter macht sich los und stürmt zum Haus zurück. Der Vater bleibt zurück und hängt die Wäsche auf. Aber nein, er rennt ihr wutentbrannt nach.</p><p></p><p>VATER</p><p>Es ist immer noch nicht genug, oder?</p><p></p><p>MUTTER</p><p>Was? Dieses billige Kleid? Man sollte es nicht mal ein Kleid nennen. Meine Schwester benutzt sowas, um ihr Silber zu polieren.</p><p></p><p>VATER</p><p>Deine Schwester! Sie hat einen reichen Langeweiler geheiratet. Einen hässlichen Langeweiler mit Mundgeruchsproblemen! Das ist es, was du gesagt hast!</p><p></p><p>MUTTER</p><p>Aber wenigstens ist er fähig für sie zu sorgen und sie hat alles, was sie sich je gewünscht hat. Er macht sie glücklich!</p><p></p><p>VATER</p><p>Tja, dann haben sie vielleicht etwas Glückseligkeit übrig und geben dir was davon ab. Weil ich kann es offensichtlich nicht!</p><p></p><p>Er nimmt ihr altes Kleid vom Tisch und wirft es auf den Boden.</p><p></p><p>VATER</p><p>Nimm dein billiges Kleid und zieh bei ihnen ein. Ich bin mir sicher, deine Schwester kann ein paar ihrer Putzlappen entbehren und dich einkleiden.</p><p></p><p>Die Mutter starrt ihn fassungslos an. </p><p></p><p>VATER</p><p>Geh! Wir sind fertig! Ich dachte, unsere Liebe wäre genug für dich! Ich dachte unsere zwei wundervollen Kinder und unser Zuhause voller Liebe und Wärme wären genug für dich. Aber nein!Dies war auch nie ein Heim voller Liebe und Wärme, weil du es mit all deiner endlosen Verbitterung vergiftet hast. Wir werden dich nie glücklich machen könne! Also hau ab! Lass uns in Ruhe!</p><p></p><p>Sein Blick fällt ins leere Kinderzimmer. Er greift sich seine Jacke und stürmt zur Tür hinaus.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Da erkennt er, was ihm wirklich wichtig ist."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tAußen/Innen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tAußen/Innen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "46"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -180,9 +180,9 @@
         foo:identifier            "67"^^xsd:long ;
         foo:identifierDramaQueen  "f7008883-b572-46db-956f-04c3c6bdb67e"^^xsd:string ;
         foo:interiorExterior      "intext"^^xsd:string ;
-        foo:sceneContent          "Die Hexe lädt mehr und mehr Essen auf Hänsels Tablett. Sie bringt es ihm jetzt selbst. Hänsel hat bereits viel an Gewicht zugenommen. Gretel sieht von weitem zu.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Die Hexe lädt mehr und mehr Essen auf Hänsels Tablett. Sie bringt es ihm jetzt selbst. Hänsel hat bereits viel an Gewicht zugenommen. Gretel sieht von weitem zu.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Die Hexe erhöht Hänsels Essensration."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tInnen/Außen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tInnen/Außen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "48"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -192,9 +192,9 @@
         foo:identifier            "93"^^xsd:long ;
         foo:identifierDramaQueen  "d5b1d8e6-bbdc-42d8-93a1-e01cd60c40fa"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Die Kinder und der Vater sitzen am Frühstückstisch und essen Haferbrei. Die Mutter ist nicht da. \n\nVATER\nDas ist doch richtig gut gelaufen. Nicht wahr? Ich wusste, du wirst den Weg zurück finden, Hänsel. Du bist immerhin mein Sohn! So - seid ihr bereit für die zweite Runde?\n\nGretel ist sich nicht sicher. Hänsel spielt wieder den Starken für beide.\n\nHÄNSEL\nNa klar! Wir sind in Null Komma Nix wieder da!\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Die Kinder und der Vater sitzen am Frühstückstisch und essen Haferbrei. Die Mutter ist nicht da. </p><p></p><p>VATER</p><p>Das ist doch richtig gut gelaufen. Nicht wahr? Ich wusste, du wirst den Weg zurück finden, Hänsel. Du bist immerhin mein Sohn! So - seid ihr bereit für die zweite Runde?</p><p></p><p>Gretel ist sich nicht sicher. Hänsel spielt wieder den Starken für beide.</p><p></p><p>HÄNSEL</p><p>Na klar! Wir sind in Null Komma Nix wieder da!</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater unternimmt einen zweiten Versuch, die Kinder auszusetzen."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "22"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -204,9 +204,9 @@
         foo:identifier            "80"^^xsd:long ;
         foo:identifierDramaQueen  "937dd8e8-ea25-45dd-a412-8aa928c18c05"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Hänsel und Gretel schlafen inmitten der Taschen. Hänsel träumt.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel und Gretel schlafen inmitten der Taschen. Hänsel träumt.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel träumt im Schlaf:"^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tInnen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tInnen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "57"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -221,14 +221,14 @@
         foo:identifier            "9"^^xsd:long ;
         foo:identifierDramaQueen  "4ee57858-c88a-4d06-8366-e7b0bdf3be11"^^xsd:string ;
         foo:name                  "Waldlichtung"^^xsd:string ;
-        foo:setDescription        "Wo der Vater die Kinder zurücklässt - ein Ort des Lichtes im Dunkeln - er hofft, dass sie dort sicher sind.\nFür Hänsel ist es ein Ort, wo er die Hoffnung und seine Bedürfnisse dem Vater gegenüber aufgibt - er sieht ihn gehen, geht ihm aber nicht nach.\n\n\n      "^^xsd:string .
+        foo:setDescription        "<p>Wo der Vater die Kinder zurücklässt - ein Ort des Lichtes im Dunkeln - er hofft, dass sie dort sicher sind.</p><p>Für Hänsel ist es ein Ort, wo er die Hoffnung und seine Bedürfnisse dem Vater gegenüber aufgibt - er sieht ihn gehen, geht ihm aber nicht nach.</p><p></p><p></p><p>      </p>"^^xsd:string .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/5ece5256-737f-41ee-bb18-d8858b54d9c9>
         a                         foo:Set ;
         foo:identifier            "12"^^xsd:long ;
         foo:identifierDramaQueen  "5ece5256-737f-41ee-bb18-d8858b54d9c9"^^xsd:string ;
         foo:name                  "Traum"^^xsd:string ;
-        foo:setDescription        "Hänsels Traum\n      "^^xsd:string .
+        foo:setDescription        "<p>Hänsels Traum</p><p>      </p>"^^xsd:string .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/bea41762-3a30-40c7-b547-32b75d9e5b99>
         a                         foo:Scene ;
@@ -236,9 +236,9 @@
         foo:identifier            "28"^^xsd:long ;
         foo:identifierDramaQueen  "bea41762-3a30-40c7-b547-32b75d9e5b99"^^xsd:string ;
         foo:interiorExterior      "intext"^^xsd:string ;
-        foo:sceneContent          "Gretel träumt von dem Ausflug und malt mit ihren Buntstiften auf Papierstückchen.\n\nGRETEL\n...Und dann werden wir in einem See schwimmen und mit den Meerjungfrauen zu Abend essen...\n\nHänsel schleicht sich raus und sammelt weiße Kieselsteine in seine Taschen.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel träumt von dem Ausflug und malt mit ihren Buntstiften auf Papierstückchen.</p><p></p><p>GRETEL</p><p>...Und dann werden wir in einem See schwimmen und mit den Meerjungfrauen zu Abend essen...</p><p></p><p>Hänsel schleicht sich raus und sammelt weiße Kieselsteine in seine Taschen.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel sammelt weiße Kieselsteine."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Außen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Außen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "11"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -254,9 +254,9 @@
         foo:identifier            "59"^^xsd:long ;
         foo:identifierDramaQueen  "39cbd9b6-bcc3-4a0e-8e00-7032dc91834b"^^xsd:string ;
         foo:interiorExterior      "intext"^^xsd:string ;
-        foo:sceneContent          "Gretel putzt das Haus. Ihr Gesicht ist verschmiert von Schmutz, Ruß und Tränen.\n\nSie kann Hänsels Käfig und seinen Befreiungsversuch vom Fenster aus sehen. Sie tritt näher ans Fenster, aber die Hexe macht ein missfälliges Geräusch vom Bett aus und Gretel gefriert. Sie fegt weiter.\n\nDie Hexe ist klein und schrumpelig. Sie liegt in einem großen Bett auf riesigen Samtkissen in Rot und Lila. Sie trinkt einen Martini und kichert in sich hinein.\n\nHEXE\nIst es nicht Zeit für mein zweites Frühstück? Was ist mit den Broten, die du vor einer Weile gemacht hast? Hast du sie selbst gegessen und gehofft ich würde es nicht merken?\n\nGretel schreit auf als die Hexe plötzlich neben ihr steht.\n\nHEXE\nAber ich kriege alles mit, meine Liebe. Alles. Mein Körper ist klein und alt, aber ich bin soviel mehr...\n\nUnd schon ist sie wieder im Bett. Gretel ist beinahe fasziniert von der Zauberkunst.\n\nGRETEL\nWie hast du..\n\nHEXE\n(sie unterbrechend)\nFrühstück!\n\nGretel tut was ihr befohlen. Auf dem Weg zum Küchentisch wirft sie einen letzten Blick auf Hänsel draußen, der noch immer versucht, sich zu befreien und immer verzweifelter wird.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel putzt das Haus. Ihr Gesicht ist verschmiert von Schmutz, Ruß und Tränen.</p><p></p><p>Sie kann Hänsels Käfig und seinen Befreiungsversuch vom Fenster aus sehen. Sie tritt näher ans Fenster, aber die Hexe macht ein missfälliges Geräusch vom Bett aus und Gretel gefriert. Sie fegt weiter.</p><p></p><p>Die Hexe ist klein und schrumpelig. Sie liegt in einem großen Bett auf riesigen Samtkissen in Rot und Lila. Sie trinkt einen Martini und kichert in sich hinein.</p><p></p><p>HEXE</p><p>Ist es nicht Zeit für mein zweites Frühstück? Was ist mit den Broten, die du vor einer Weile gemacht hast? Hast du sie selbst gegessen und gehofft ich würde es nicht merken?</p><p></p><p>Gretel schreit auf als die Hexe plötzlich neben ihr steht.</p><p></p><p>HEXE</p><p>Aber ich kriege alles mit, meine Liebe. Alles. Mein Körper ist klein und alt, aber ich bin soviel mehr...</p><p></p><p>Und schon ist sie wieder im Bett. Gretel ist beinahe fasziniert von der Zauberkunst.</p><p></p><p>GRETEL</p><p>Wie hast du..</p><p></p><p>HEXE</p><p>(sie unterbrechend)</p><p>Frühstück!</p><p></p><p>Gretel tut was ihr befohlen. Auf dem Weg zum Küchentisch wirft sie einen letzten Blick auf Hänsel draußen, der noch immer versucht, sich zu befreien und immer verzweifelter wird.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Die Hexe macht Gretel zu ihrer Sklavin."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tInnen/Außen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tInnen/Außen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "39"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -266,9 +266,9 @@
         foo:identifier            "96"^^xsd:long ;
         foo:identifierDramaQueen  "6c2aa74d-8c49-41cf-88d0-baaa4ec38602"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Es gibt nicht viel Essen auf dem Tisch, aber es sieht wunderbar lecker aus. Gretel kann nicht aufhören zu essen. Sogar die Eltern scheinen das Festmahl zu genießen. Hänsel ignoriert das Essen auf seinem Teller.\n\nHÄNSEL\nKann ich etwas Brot haben?\n\nAlle schauen überrascht auf.\n\nMUTTER\nEs ist noch etwas im Brotkasten, aber möchtest du nicht lieber...\n\nHänsel steht auf, nimmt sich das Brot und geht in sein Zimmer.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Es gibt nicht viel Essen auf dem Tisch, aber es sieht wunderbar lecker aus. Gretel kann nicht aufhören zu essen. Sogar die Eltern scheinen das Festmahl zu genießen. Hänsel ignoriert das Essen auf seinem Teller.</p><p></p><p>HÄNSEL</p><p>Kann ich etwas Brot haben?</p><p></p><p>Alle schauen überrascht auf.</p><p></p><p>MUTTER</p><p>Es ist noch etwas im Brotkasten, aber möchtest du nicht lieber...</p><p></p><p>Hänsel steht auf, nimmt sich das Brot und geht in sein Zimmer.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel verlässt das Festmahl mit einem Stück Brot."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "25"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -278,9 +278,9 @@
         foo:identifier            "65"^^xsd:long ;
         foo:identifierDramaQueen  "c04c7fab-c4ce-498b-91d9-23d4f9ba91d7"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Die Hexe steht vor Hänsels Käfig.\n\nHEXE\nSo, mein Lieber, lass mich deinen Finger sehen. Streck ihn heraus, so dass ich ihn fühlen kann.\n\nHänsel steckt den kleinen Knochen durch die Gitterstäbe.\n\nHEXE\nOh, nein! Das ist ja nichts als ein dünner Knochen!\n\nHänsel ist entsetzt. Sie hat ihn erwischt!\n\nHEXE\nTja, dann müssen wir dir wohl noch mehr zu essen geben. Immerhin bist du ein heranwachsender kleiner Junge, mein Lieber! Und kleine Jungen müssen viel essen! Und du wirst viel essen. Und du wirst rund und fett werden, mein Kleiner!\n\nSie schüttelt sich vor Lachen.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Die Hexe steht vor Hänsels Käfig.</p><p></p><p>HEXE</p><p>So, mein Lieber, lass mich deinen Finger sehen. Streck ihn heraus, so dass ich ihn fühlen kann.</p><p></p><p>Hänsel steckt den kleinen Knochen durch die Gitterstäbe.</p><p></p><p>HEXE</p><p>Oh, nein! Das ist ja nichts als ein dünner Knochen!</p><p></p><p>Hänsel ist entsetzt. Sie hat ihn erwischt!</p><p></p><p>HEXE</p><p>Tja, dann müssen wir dir wohl noch mehr zu essen geben. Immerhin bist du ein heranwachsender kleiner Junge, mein Lieber! Und kleine Jungen müssen viel essen! Und du wirst viel essen. Und du wirst rund und fett werden, mein Kleiner!</p><p></p><p>Sie schüttelt sich vor Lachen.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel täuscht die Hexe mit einem dünnen Knochen."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "43"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -289,7 +289,7 @@
         foo:identifier            "11"^^xsd:long ;
         foo:identifierDramaQueen  "e27a65ca-9bde-4fa9-84aa-8285b28932b2"^^xsd:string ;
         foo:name                  "Hexenhaus"^^xsd:string ;
-        foo:setDescription        "Ein kleines, windschiefes Haus, klappernde Dosen und Unrat am Boden. Ein länglicher betonierter Raum schließt sich an der Seite der Hütte an, ein gemauerter Schlot richtet sich vor ihm auf, gestützt mit Stahlseilen. Die Vorderseite des kleinen Häuschens ist bedeckt mit glitzerndem Süßkram, frischen, dampfenden Lebkuchen im XXL-Format.\n      "^^xsd:string .
+        foo:setDescription        "<p>Ein kleines, windschiefes Haus, klappernde Dosen und Unrat am Boden. Ein länglicher betonierter Raum schließt sich an der Seite der Hütte an, ein gemauerter Schlot richtet sich vor ihm auf, gestützt mit Stahlseilen. Die Vorderseite des kleinen Häuschens ist bedeckt mit glitzerndem Süßkram, frischen, dampfenden Lebkuchen im XXL-Format.</p><p>      </p>"^^xsd:string .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/8d7f534e-64fd-474e-9f79-34d1a31f4db5>
         a                         foo:Scene ;
@@ -297,9 +297,9 @@
         foo:identifier            "74"^^xsd:long ;
         foo:identifierDramaQueen  "8d7f534e-64fd-474e-9f79-34d1a31f4db5"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Die Hexe starrt in den Ofen. Das Feuer brennt nur sehr sacht.\n\nHEXE\nDu hast schon wieder einen großen Scheit drauf geworfen! Ich habe dir doch schon mehrfach gesagt, du sollst warten bis es richtig brennt.\n\nGRETEL\nDas ist doch aber ein kleiner Scheit!\n\nHEXE\nDu dumme Kuh! Ich kann es selbst mit meinen blinden Augen erkennen! Du musst es wieder rausholen, bevor du es nochmal entfachst.\n\nGRETEL\nWelchen Scheit meinst du? Ich kann nur kleine Zweige erkennen.\n\nHEXE\nSo jetzt reicht's! Ich bin am verhungern! Geh und bring schon mal die Brühe raus! Ich mach den Rest jetzt selbst! Mit meinen alten Knochen muss ich jetzt noch hier im Ofen herum klettern, weil die Jugend zu dämlich ist...\n\nGretel geht zum Haus. Als sie sich umdreht, sieht sie die Hexe im Ofen verschwinden, um an den Holzscheit heran zu kommen. Sie hat kurze Arme und muss sich weit hineinbegeben. Das ist der Moment - Gretel nimmt Anlauf und stößt die Hexe komplett hinein, schließt die Tür und verriegelt sie gut.\n\nDie Hexe ist was das Feuer brauchte - man kann die Flammen hochschlagen hören.\n\nGretel beobachtet das Ganze - sie kann nicht glauben, was sie da getan hat. Aber dann erblickt sie Hänsel und rennt zu ihm, um ihn zu befreien. Sie sehen zu wie das Feuer die Hexe verschlingt. Sie halten aneinander fest - entsetzt, erschöpft, frei...\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Die Hexe starrt in den Ofen. Das Feuer brennt nur sehr sacht.</p><p></p><p>HEXE</p><p>Du hast schon wieder einen großen Scheit drauf geworfen! Ich habe dir doch schon mehrfach gesagt, du sollst warten bis es richtig brennt.</p><p></p><p>GRETEL</p><p>Das ist doch aber ein kleiner Scheit!</p><p></p><p>HEXE</p><p>Du dumme Kuh! Ich kann es selbst mit meinen blinden Augen erkennen! Du musst es wieder rausholen, bevor du es nochmal entfachst.</p><p></p><p>GRETEL</p><p>Welchen Scheit meinst du? Ich kann nur kleine Zweige erkennen.</p><p></p><p>HEXE</p><p>So jetzt reicht's! Ich bin am verhungern! Geh und bring schon mal die Brühe raus! Ich mach den Rest jetzt selbst! Mit meinen alten Knochen muss ich jetzt noch hier im Ofen herum klettern, weil die Jugend zu dämlich ist...</p><p></p><p>Gretel geht zum Haus. Als sie sich umdreht, sieht sie die Hexe im Ofen verschwinden, um an den Holzscheit heran zu kommen. Sie hat kurze Arme und muss sich weit hineinbegeben. Das ist der Moment - Gretel nimmt Anlauf und stößt die Hexe komplett hinein, schließt die Tür und verriegelt sie gut.</p><p></p><p>Die Hexe ist was das Feuer brauchte - man kann die Flammen hochschlagen hören.</p><p></p><p>Gretel beobachtet das Ganze - sie kann nicht glauben, was sie da getan hat. Aber dann erblickt sie Hänsel und rennt zu ihm, um ihn zu befreien. Sie sehen zu wie das Feuer die Hexe verschlingt. Sie halten aneinander fest - entsetzt, erschöpft, frei...</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Als die Hexe selbst heizen will, stößt Gretel sie in den Ofen."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "53"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -309,9 +309,9 @@
         foo:identifier            "87"^^xsd:long ;
         foo:identifierDramaQueen  "793b0bd4-98c1-4a38-8df2-466bf107e587"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Das Haus ist blitzeblank. Der Tisch ist voller leckerer Speisen. Hänsel und Gretel sind bei den letzten Vorbereitungen.\n\nIhr Vater kommt nach Hause - er kann seinen Augen nicht trauen. Er rennt auf sie zu und umarmt und küsst sie wieder und wieder.\n\nVATER\nIch werde euch nie wieder gehen lassen. Nie wieder. Wo wart ihr? Wo wart ihr denn bloß? Schaut euch nur an!\n\nEr kann gar nicht mehr aufhören sie zu umarmen und an sich zu drücken.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Das Haus ist blitzeblank. Der Tisch ist voller leckerer Speisen. Hänsel und Gretel sind bei den letzten Vorbereitungen.</p><p></p><p>Ihr Vater kommt nach Hause - er kann seinen Augen nicht trauen. Er rennt auf sie zu und umarmt und küsst sie wieder und wieder.</p><p></p><p>VATER</p><p>Ich werde euch nie wieder gehen lassen. Nie wieder. Wo wart ihr? Wo wart ihr denn bloß? Schaut euch nur an!</p><p></p><p>Er kann gar nicht mehr aufhören sie zu umarmen und an sich zu drücken.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater ist überglücklich, als er seine Kinder wiedersieht."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "63"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -321,9 +321,9 @@
         foo:identifier            "27"^^xsd:long ;
         foo:identifierDramaQueen  "f1acc2aa-efa5-482e-bd01-876ce6b3a3f2"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Der Vater betritt das Kinderzimmer mit einem Frühstückstablett - es ist nicht viel, aber er hat sein bestes gegeben, es so liebevoll und köstlich aussehen zu lassen, wie nur möglich.\n\nVATER\n(singend)\nGuten Morgen, guten Morgen, guten Morgen Sonnenschein...\n\nHänsel weiß, was los ist und bleibt liegen. Gretel ist begeistert und springt aus dem Bett. Sie klettert auf den Schoß ihres Vaters. Hänsel hält sich fern.\n\nVATER\nDies wird ein wunderbarer Tag werden! Wir werden ein Abenteuer erleben!\n\nSeine Stimme bricht, als ihm Hänsels Blick begegnet. Aber er fährt gleich wieder fort, seine Idee zu verkaufen.\n\nGRETEL\nWo gehen wir hin?\n\nVATER \nDas ist ein Geheimnis.\n\nGRETEL\nWann gehen wir los? Nehmen wir Schokolade mit?\n\nVATER\nDas wirst du schon sehen. Das wirst du schon sehen. Ich werde es dir sagen, wenn es soweit ist. Erstmal muss ich Arbeiten gehen.\n\nEr küsst beide. Hänsel hat große Mühe, die Tränen zurückzuhalten. Der Vater geht.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater betritt das Kinderzimmer mit einem Frühstückstablett - es ist nicht viel, aber er hat sein bestes gegeben, es so liebevoll und köstlich aussehen zu lassen, wie nur möglich.</p><p></p><p>VATER</p><p>(singend)</p><p>Guten Morgen, guten Morgen, guten Morgen Sonnenschein...</p><p></p><p>Hänsel weiß, was los ist und bleibt liegen. Gretel ist begeistert und springt aus dem Bett. Sie klettert auf den Schoß ihres Vaters. Hänsel hält sich fern.</p><p></p><p>VATER</p><p>Dies wird ein wunderbarer Tag werden! Wir werden ein Abenteuer erleben!</p><p></p><p>Seine Stimme bricht, als ihm Hänsels Blick begegnet. Aber er fährt gleich wieder fort, seine Idee zu verkaufen.</p><p></p><p>GRETEL</p><p>Wo gehen wir hin?</p><p></p><p>VATER </p><p>Das ist ein Geheimnis.</p><p></p><p>GRETEL</p><p>Wann gehen wir los? Nehmen wir Schokolade mit?</p><p></p><p>VATER</p><p>Das wirst du schon sehen. Das wirst du schon sehen. Ich werde es dir sagen, wenn es soweit ist. Erstmal muss ich Arbeiten gehen.</p><p></p><p>Er küsst beide. Hänsel hat große Mühe, die Tränen zurückzuhalten. Der Vater geht.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater kündigt einen Abenteuerausflug für die Kinder an."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "10"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -333,9 +333,9 @@
         foo:identifier            "39"^^xsd:long ;
         foo:identifierDramaQueen  "290fe0d5-a22f-4290-868e-3eba5d1c3f54"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Gretel entdeckt das Licht ihres Elternhauses zwischen den Zweigen und läuft darauf zu.\n\nGRETEL\nPapa! Papa! Wir haben zurück gefunden! Wir sind zurück!\n\nHänsel bleibt etwas zurück, unsicher was er tun soll.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel entdeckt das Licht ihres Elternhauses zwischen den Zweigen und läuft darauf zu.</p><p></p><p>GRETEL</p><p>Papa! Papa! Wir haben zurück gefunden! Wir sind zurück!</p><p></p><p>Hänsel bleibt etwas zurück, unsicher was er tun soll.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Gretel freut sich über die Rückkehr, Hänsel weniger."^^xsd:string ;
-        foo:sceneHeader           "Waldrand\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Waldrand\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "19"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/82e0b36d-32fb-4216-a0e7-3b8a3135e961> .
 
@@ -351,9 +351,9 @@
         foo:identifier            "45"^^xsd:long ;
         foo:identifierDramaQueen  "9d7de2f2-b546-4043-8451-6af149d803c2"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Hänsel bleibt wieder etwas zurück und verteilt Brotkrumen hinter sich auf dem Weg.\n\nDer Vater sieht, was Hänsel tut und ignoriert es.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel bleibt wieder etwas zurück und verteilt Brotkrumen hinter sich auf dem Weg.</p><p></p><p>Der Vater sieht, was Hänsel tut und ignoriert es.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel legt Brotkrumen aus."^^xsd:string ;
-        foo:sceneHeader           "\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "29"^^xsd:int .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/27d18170-0ea4-4a5c-812b-7f317a640ea5>
@@ -362,9 +362,9 @@
         foo:identifier            "20"^^xsd:long ;
         foo:identifierDramaQueen  "27d18170-0ea4-4a5c-812b-7f317a640ea5"^^xsd:string ;
         foo:interiorExterior      "intext"^^xsd:string ;
-        foo:sceneContent          "Der Vater nähert sich dem Haus mit einer Pizzaschachtel. Bevor er die Tür öffnet, holt er nochmals tief Luft, um sich zu sammeln. Er setzt ein freudiges Gesicht auf, öffnet die Tür und tritt ein.\n\nVATER\nHat jemand Pizza bestellt?\n\nHänsel und Gretel kommen aus ihrem Zimmer gerannt.\n\nGRETEL\nJa, ich! Ich war das!\n\nDer Vater schneidet die Pizza in vier Teile. Er schaut immer wieder zur Schlafzimmertür, aber sie bleibt verschlossen.\n\nHänsel und Gretel verschlingen ihre Stücke. Der Vater tut so, als ob er sein Stück mit Genuss isst.\n\nVATER\nAch, ich bin so voll! Wer möchte noch mein Stück aufessen?\n\n\nGretel meldet sich wieder. Die Blicke des Vaters und Hänsel treffen sich - Hänsel weiß genau, was der Vater tut und der Vater weiß, dass Hänsel niemals um das Stück bitten würde.\n\nVATER\nOK, wir machen es so. Ich schneide den Rest in zwei Stücke und ihr beiden teilt es euch. Ich bring Mama ihr Stück.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater nähert sich dem Haus mit einer Pizzaschachtel. Bevor er die Tür öffnet, holt er nochmals tief Luft, um sich zu sammeln. Er setzt ein freudiges Gesicht auf, öffnet die Tür und tritt ein.</p><p></p><p>VATER</p><p>Hat jemand Pizza bestellt?</p><p></p><p>Hänsel und Gretel kommen aus ihrem Zimmer gerannt.</p><p></p><p>GRETEL</p><p>Ja, ich! Ich war das!</p><p></p><p>Der Vater schneidet die Pizza in vier Teile. Er schaut immer wieder zur Schlafzimmertür, aber sie bleibt verschlossen.</p><p></p><p>Hänsel und Gretel verschlingen ihre Stücke. Der Vater tut so, als ob er sein Stück mit Genuss isst.</p><p></p><p>VATER</p><p>Ach, ich bin so voll! Wer möchte noch mein Stück aufessen?</p><p></p><p></p><p>Gretel meldet sich wieder. Die Blicke des Vaters und Hänsel treffen sich - Hänsel weiß genau, was der Vater tut und der Vater weiß, dass Hänsel niemals um das Stück bitten würde.</p><p></p><p>VATER</p><p>OK, wir machen es so. Ich schneide den Rest in zwei Stücke und ihr beiden teilt es euch. Ich bring Mama ihr Stück.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater verzichtet auf sein Essen zugunsten seiner Familie."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Außen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Außen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "5"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -374,8 +374,8 @@
         foo:identifier            "23"^^xsd:long ;
         foo:identifierDramaQueen  "0dba11fe-610b-4613-9e05-206efe73457e"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Hänsel wälzt sich im Bett. Er kann einfach nicht einschlafen. Er schaut zu Gretel rüber, die tief schläft und sanft schnarcht. Er zieht ihre Bettdecke nach und verlässt das Zimmer.\n              "^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Nacht\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel wälzt sich im Bett. Er kann einfach nicht einschlafen. Er schaut zu Gretel rüber, die tief schläft und sanft schnarcht. Er zieht ihre Bettdecke nach und verlässt das Zimmer.</p><p>              </p>"^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "7"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -384,7 +384,7 @@
         foo:age                   "12"^^xsd:int ;
         foo:aliasName             "Bruder"^^xsd:string ;
         foo:appearance            "hager mit brauem Haar"^^xsd:string ;
-        foo:characterDescription  "Hänsel ist Gretels älterer Bruder und fühlt sich für sie verantwortlich. Er versucht, der Puffer zu sein zwischen seinen Eltern und ihr - zwischen dem harten Leben und der heilen Welt, die sie sich erträumt. Hänsel ist so mit seiner Beschützerrolle beschäftigt, dass er sich selbst und seine Bedürfnisse vernachlässigt.\n\n      "^^xsd:string ;
+        foo:characterDescription  "<p>Hänsel ist Gretels älterer Bruder und fühlt sich für sie verantwortlich. Er versucht, der Puffer zu sein zwischen seinen Eltern und ihr - zwischen dem harten Leben und der heilen Welt, die sie sich erträumt. Hänsel ist so mit seiner Beschützerrolle beschäftigt, dass er sich selbst und seine Bedürfnisse vernachlässigt.</p><p></p><p>      </p>"^^xsd:string ;
         foo:fullName              "Hänsel Holzmann"^^xsd:string ;
         foo:identifier            "2"^^xsd:long ;
         foo:identifierDramaQueen  "4cb48af3-b6cd-42fb-8da5-c256e2759878"^^xsd:string ;
@@ -397,9 +397,9 @@
         foo:identifier            "21"^^xsd:long ;
         foo:identifierDramaQueen  "ee799206-7929-4e09-9971-ddc9d90f300b"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Der Vater betritt vorsichtig das dunkle Schlafzimmer. Die Mutter liegt im Bett. Er setzt sich auf den Bettrand und macht die Nachttischlampe an. Leise stellt er den Teller ab.\n\nMUTTER\nMach das Licht aus.\n\nVATER\nIch habe dir dein Stück Pizza mitgebracht. Es schmeckt wirklich gut!\n\nMUTTER\nSprich nicht so mit mir als ob ich eine von ihnen wäre. Wie viel hat die Pizza gekostet? Hast du das ganze Geld für diese Woche verbraucht?\n\nVATER\nMach dir keine Sorgen. Es wird alles gut...\n\nMUTTER \n(ihn unterbrechend)\nNein, es wird nicht alles gut werden. Ich hab's dir bereits gesagt - ich bin kein Kind. Also rede nicht so mit mir!\n\nVATER\nLiebes. Dies ist einfach eine schwierige Zeit. Wir kommen schon irgendwie durch.\n\nMUTTER\nNein, das werden wir nicht. Dies ist keine schwere Zeit - das ist unser Leben! Das ist das Leben, was wir führen!\n\nBeide sind still für einen Moment.\n\nVATER\nIch weiß, dies ist nicht das Leben, das du wolltest...\n\nMUTTER\nIch wollte dich. Ich habe gedacht, Liebe reicht.\n\n\nDer Vater versucht sie zu küssen.\n\nMUTTER\n(schnell)\nSie reicht aber nicht.\n\nEr zieht sich wieder zurück...\n\nMUTTER\nIch kann nicht mehr.\n\nDer Vater setzt an zum Gehen.\n\nMUTTER\nDiesmal meine ich es wirklich. Wir können so nicht weitermachen. Du musst etwas tun.\n\nVATER \nIch tu' alles Menschenmögliche!\n\nMUTTER\nWir können sie uns nicht leisten.\n\nVATER\nVon wem redest du?\n\nMUTTER\nVon ihnen. Den Kindern. Wir können sie nicht weiter ernähren. Es war schwer genug bevor wir sie hatten...\n\nDer Vater stürmt raus.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater betritt vorsichtig das dunkle Schlafzimmer. Die Mutter liegt im Bett. Er setzt sich auf den Bettrand und macht die Nachttischlampe an. Leise stellt er den Teller ab.</p><p></p><p>MUTTER</p><p>Mach das Licht aus.</p><p></p><p>VATER</p><p>Ich habe dir dein Stück Pizza mitgebracht. Es schmeckt wirklich gut!</p><p></p><p>MUTTER</p><p>Sprich nicht so mit mir als ob ich eine von ihnen wäre. Wie viel hat die Pizza gekostet? Hast du das ganze Geld für diese Woche verbraucht?</p><p></p><p>VATER</p><p>Mach dir keine Sorgen. Es wird alles gut...</p><p></p><p>MUTTER </p><p>(ihn unterbrechend)</p><p>Nein, es wird nicht alles gut werden. Ich hab's dir bereits gesagt - ich bin kein Kind. Also rede nicht so mit mir!</p><p></p><p>VATER</p><p>Liebes. Dies ist einfach eine schwierige Zeit. Wir kommen schon irgendwie durch.</p><p></p><p>MUTTER</p><p>Nein, das werden wir nicht. Dies ist keine schwere Zeit - das ist unser Leben! Das ist das Leben, was wir führen!</p><p></p><p>Beide sind still für einen Moment.</p><p></p><p>VATER</p><p>Ich weiß, dies ist nicht das Leben, das du wolltest...</p><p></p><p>MUTTER</p><p>Ich wollte dich. Ich habe gedacht, Liebe reicht.</p><p></p><p></p><p>Der Vater versucht sie zu küssen.</p><p></p><p>MUTTER</p><p>(schnell)</p><p>Sie reicht aber nicht.</p><p></p><p>Er zieht sich wieder zurück...</p><p></p><p>MUTTER</p><p>Ich kann nicht mehr.</p><p></p><p>Der Vater setzt an zum Gehen.</p><p></p><p>MUTTER</p><p>Diesmal meine ich es wirklich. Wir können so nicht weitermachen. Du musst etwas tun.</p><p></p><p>VATER </p><p>Ich tu' alles Menschenmögliche!</p><p></p><p>MUTTER</p><p>Wir können sie uns nicht leisten.</p><p></p><p>VATER</p><p>Von wem redest du?</p><p></p><p>MUTTER</p><p>Von ihnen. Den Kindern. Wir können sie nicht weiter ernähren. Es war schwer genug bevor wir sie hatten...</p><p></p><p>Der Vater stürmt raus.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Die Mutter erklärt ihrem Mann, dass die Kinder gehen müssen."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "6"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -409,8 +409,8 @@
         foo:identifier            "16"^^xsd:long ;
         foo:identifierDramaQueen  "ad8a7b34-5367-4324-895f-04fc1e3225d5"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Gretel und Hänsel waschen sich ihre Hände am Waschbecken. Gretel weint leise. Hänsel versucht sie zu trösten und legt seinen Arm um sie. Ihr Weinen wird aber nur noch heftiger. Hänsel versucht es vor der MUTTER (30) zu verstecken.\n\nGRETEL\nIch bin so hungrig und es wird nichts von all dem geben.\n\nHÄNSEL\nPapa wird uns was Süßes mitbringen. Ich bin mir sicher. Er hat es doch versprochen.\n\nGretel glaubt ihm nicht wirklich, aber wischt sich die Tränen weg.\n              "^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Tag\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel und Hänsel waschen sich ihre Hände am Waschbecken. Gretel weint leise. Hänsel versucht sie zu trösten und legt seinen Arm um sie. Ihr Weinen wird aber nur noch heftiger. Hänsel versucht es vor der MUTTER (30) zu verstecken.</p><p></p><p>GRETEL</p><p>Ich bin so hungrig und es wird nichts von all dem geben.</p><p></p><p>HÄNSEL</p><p>Papa wird uns was Süßes mitbringen. Ich bin mir sicher. Er hat es doch versprochen.</p><p></p><p>Gretel glaubt ihm nicht wirklich, aber wischt sich die Tränen weg.</p><p>              </p>"^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "2"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -420,9 +420,9 @@
         foo:identifier            "35"^^xsd:long ;
         foo:identifierDramaQueen  "782c4b05-7b4a-4f08-96b7-9cc6208643a4"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Der Vater betritt das Haus in Tränen. Die Mutter hat am Küchentisch gewartet. Sie steht auf, um ihn zu begrüßen.\n\nMUTTER\nIst es vollbracht?\n\nEr kann ihr nicht in die Augen sehen und schließt sich im Schlafzimmer ein. Die Mutter ist geschockt von seinem Benehmen.\n\nMUTTER\nWir wissen doch beide, dass es so besser ist. Schließ mich nicht aus. Bitte, komm wieder raus. Jemand wird sie finden. Jemand, der ihnen mehr bieten kann als wir. Es ist besser so! Ich bin mir sicher.\n\nDer Vater öffnet die Tür und sie halten sich in den Armen - beide weinen.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater betritt das Haus in Tränen. Die Mutter hat am Küchentisch gewartet. Sie steht auf, um ihn zu begrüßen.</p><p></p><p>MUTTER</p><p>Ist es vollbracht?</p><p></p><p>Er kann ihr nicht in die Augen sehen und schließt sich im Schlafzimmer ein. Die Mutter ist geschockt von seinem Benehmen.</p><p></p><p>MUTTER</p><p>Wir wissen doch beide, dass es so besser ist. Schließ mich nicht aus. Bitte, komm wieder raus. Jemand wird sie finden. Jemand, der ihnen mehr bieten kann als wir. Es ist besser so! Ich bin mir sicher.</p><p></p><p>Der Vater öffnet die Tür und sie halten sich in den Armen - beide weinen.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater kommt aufgelöst nach Hause und wird von seiner Frau getröstet."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "16"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -432,9 +432,9 @@
         foo:identifier            "18"^^xsd:long ;
         foo:identifierDramaQueen  "bfa4957f-1144-4b78-8ab7-450c9b5c1195"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Die Mutter hantiert laut mit Töpfen und Pfannen auf dem Herd. Hänsel legt das Besteck auf. Gretel geht zur Mutter.\n\nGRETEL\nWas wird Papa heute mitbringen? Schokolade oder Kokoskekse?\n\nHänsel kriegt Angst - er weiß, wo das alles hinführen wird. Er wirft etwas Besteck auf den Boden, um die Aufmerksamkeit seiner Mutter auf sich zu lenken. Aber sie dreht sich Gretel zu.\n\nMUTTER\nNa beides! Und dann auch noch Eis und eine Torte und Säcke voller Gold für seine kleine verwöhnte Göre...\n\nGretel weicht zurück aber die Mutter drängt sie in die Ecke.\n\nMUTTER (WEITER)\nUnd dann wird er dein Pony satteln und deine goldene Krone polieren.\n\nDie Mutter fegt alle Töpfe und Pfannen vom Herd - sie verteilen sich mit lautem Knall in der ganzen Küche.\n\nMUTTER (WEITER)\nIch habe euch so satt. Ich habe euch alle so satt! Ich will, ich will, ich will. Und was will ich? Interessiert euch das überhaupt? Ich sag euch nur soviel - ich habe es nicht bekommen! Das ist das Leben! Gewöhnt euch dran! Man bekommt nie, was man will. Niemals.\n\nDie Mutter stürmt aus der Küche.\n\nHänsel rennt zu Gretel und nimmt sie in den Arm - sie zittert vor Schock.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Die Mutter hantiert laut mit Töpfen und Pfannen auf dem Herd. Hänsel legt das Besteck auf. Gretel geht zur Mutter.</p><p></p><p>GRETEL</p><p>Was wird Papa heute mitbringen? Schokolade oder Kokoskekse?</p><p></p><p>Hänsel kriegt Angst - er weiß, wo das alles hinführen wird. Er wirft etwas Besteck auf den Boden, um die Aufmerksamkeit seiner Mutter auf sich zu lenken. Aber sie dreht sich Gretel zu.</p><p></p><p>MUTTER</p><p>Na beides! Und dann auch noch Eis und eine Torte und Säcke voller Gold für seine kleine verwöhnte Göre...</p><p></p><p>Gretel weicht zurück aber die Mutter drängt sie in die Ecke.</p><p></p><p>MUTTER (WEITER)</p><p>Und dann wird er dein Pony satteln und deine goldene Krone polieren.</p><p></p><p>Die Mutter fegt alle Töpfe und Pfannen vom Herd - sie verteilen sich mit lautem Knall in der ganzen Küche.</p><p></p><p>MUTTER (WEITER)</p><p>Ich habe euch so satt. Ich habe euch alle so satt! Ich will, ich will, ich will. Und was will ich? Interessiert euch das überhaupt? Ich sag euch nur soviel - ich habe es nicht bekommen! Das ist das Leben! Gewöhnt euch dran! Man bekommt nie, was man will. Niemals.</p><p></p><p>Die Mutter stürmt aus der Küche.</p><p></p><p>Hänsel rennt zu Gretel und nimmt sie in den Arm - sie zittert vor Schock.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Die Mutter ist genervt und überfordert mit den Kindern."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "3"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -444,8 +444,8 @@
         foo:identifier            "82"^^xsd:long ;
         foo:identifierDramaQueen  "93bcdd0c-b871-43b7-8ce1-b3c74473a962"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Hänsel weckt Gretel.\n              "^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tInnen/Nacht\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel weckt Gretel.</p><p>              </p>"^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tInnen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "59"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -455,9 +455,9 @@
         foo:identifier            "36"^^xsd:long ;
         foo:identifierDramaQueen  "d4b0552c-9581-4efe-97e1-06951b12bb63"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Die Kinder hocken unter einer Tanne. Der Wind ist stärker geworden.\n\nDer Vater kommt nicht zurück.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Die Kinder hocken unter einer Tanne. Der Wind ist stärker geworden.</p><p></p><p>Der Vater kommt nicht zurück.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater bleibt verschwunden."^^xsd:string ;
-        foo:sceneHeader           "\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "17"^^xsd:int .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/1260af90-32ea-44f1-9d87-6e96a9749df5>
@@ -472,9 +472,9 @@
         foo:identifier            "47"^^xsd:long ;
         foo:identifierDramaQueen  "a8d70948-1361-43bc-b5f3-cf031e603413"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Der Vater rennt weiter bis er außer Atem ist und auf den Boden sackt. Er ist zerstört.\n\nVögel fressen Hänsels Brotkrumen.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater rennt weiter bis er außer Atem ist und auf den Boden sackt. Er ist zerstört.</p><p></p><p>Vögel fressen Hänsels Brotkrumen.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "...und rennt weg."^^xsd:string ;
-        foo:sceneHeader           "\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "31"^^xsd:int .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/43df50b0-3a78-4c4e-9fc0-c1bbe18d5621>
@@ -483,9 +483,9 @@
         foo:identifier            "61"^^xsd:long ;
         foo:identifierDramaQueen  "43df50b0-3a78-4c4e-9fc0-c1bbe18d5621"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Gretel bringt Hänsel ein Tablett voller Essen. Er verschlingt es in Sekunden. Die Hexe steht daneben und sieht glücklich zu.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel bringt Hänsel ein Tablett voller Essen. Er verschlingt es in Sekunden. Die Hexe steht daneben und sieht glücklich zu.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel verschlingt das Essen, das Gretel ihm bringen muss."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "40"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -495,9 +495,9 @@
         foo:identifier            "88"^^xsd:long ;
         foo:identifierDramaQueen  "40990576-ee90-4797-9fdb-4fc80da54bcb"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Die drei haben gut gegessen.\n\nGRETEL\n...Ich weiß auch nicht, was über mich kam. Aber ich wusste, ich musste sie hineinstoßen oder es wär unser Ende gewesen. Entweder sie oder wir...\n\nHänsel und der Vater lächeln.\n\nGRETEL\nWarum ist Mama gegangen?\n\nVATER\nIch habe ihr gesagt, sie soll gehen.\n\nGRETEL\nIch weiß. Aber sie ist doch vorher schon irgendwie gegangen, nicht wahr?\n\nVATER\nJa.\n\nGRETEL\nWollte sie uns nicht mehr?\n\nVATER\nUnser Leben hat sie einfach nicht glücklich machen können. Und ich habe endlich verstanden, dass es nichts gibt, was ich hätte tun können, um dies zu ändern. Es gibt nichts, was einer von uns tun könnte, um dies zu ändern. Es hat nämlich nichts mit uns zu tun. Es hat nur mit ihr zu tun.\n\nHÄNSEL\nDu hast uns in den Wald gebracht...\n\nVATER\nIch weiß. Als ich ein Junge war, habe ich davon geträumt, dass mich ein reiches Paar findet und adoptiert. Sie würden mir all das bieten, was meine Eltern mir niemals bieten konnten. Ich dachte, dass es auch das ist, was ihr wolltet. Aber wisst ihr, was ich wirklich wollte? Ich wollte kein reiches Zuhause. Ich wollte ein glückliches Zuhause. Und das hat wenig mit Geld zu tun. Ich habe euch jeden Tag gesucht. Ich habe gebetet. Ich habe jeden Tag mit euch gesprochen. Ich habe gebettelt um eine zweite Chance, dass wir einfach nur miteinander glücklich sein können...￼ ￼\n\nHänsel legt seine Arme um den Vater. Sie haben beide Tränen in den Augen.Toller Dialog!Das finde ich ehrlich gesagt nicht... zu erklärend. Braucht man das wirklich?\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Die drei haben gut gegessen.</p><p></p><p>GRETEL</p><p>...Ich weiß auch nicht, was über mich kam. Aber ich wusste, ich musste sie hineinstoßen oder es wär unser Ende gewesen. Entweder sie oder wir...</p><p></p><p>Hänsel und der Vater lächeln.</p><p></p><p>GRETEL</p><p>Warum ist Mama gegangen?</p><p></p><p>VATER</p><p>Ich habe ihr gesagt, sie soll gehen.</p><p></p><p>GRETEL</p><p>Ich weiß. Aber sie ist doch vorher schon irgendwie gegangen, nicht wahr?</p><p></p><p>VATER</p><p>Ja.</p><p></p><p>GRETEL</p><p>Wollte sie uns nicht mehr?</p><p></p><p>VATER</p><p>Unser Leben hat sie einfach nicht glücklich machen können. Und ich habe endlich verstanden, dass es nichts gibt, was ich hätte tun können, um dies zu ändern. Es gibt nichts, was einer von uns tun könnte, um dies zu ändern. Es hat nämlich nichts mit uns zu tun. Es hat nur mit ihr zu tun.</p><p></p><p>HÄNSEL</p><p>Du hast uns in den Wald gebracht...</p><p></p><p>VATER</p><p>Ich weiß. Als ich ein Junge war, habe ich davon geträumt, dass mich ein reiches Paar findet und adoptiert. Sie würden mir all das bieten, was meine Eltern mir niemals bieten konnten. Ich dachte, dass es auch das ist, was ihr wolltet. Aber wisst ihr, was ich wirklich wollte? Ich wollte kein reiches Zuhause. Ich wollte ein glückliches Zuhause. Und das hat wenig mit Geld zu tun. Ich habe euch jeden Tag gesucht. Ich habe gebetet. Ich habe jeden Tag mit euch gesprochen. Ich habe gebettelt um eine zweite Chance, dass wir einfach nur miteinander glücklich sein können...￼ ￼</p><p></p><p>Hänsel legt seine Arme um den Vater. Sie haben beide Tränen in den Augen.Toller Dialog!Das finde ich ehrlich gesagt nicht... zu erklärend. Braucht man das wirklich?</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater versucht seine Tat zu erklären."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "64"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -507,9 +507,9 @@
         foo:identifier            "43"^^xsd:long ;
         foo:identifierDramaQueen  "40ec34ff-69a6-4c10-a2b7-9567e675f210"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Sie verlassen das Haus und gehen in den Wald. Der Vater trägt die schlafende Gretel und singt ihr ein Schlaflied.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Sie verlassen das Haus und gehen in den Wald. Der Vater trägt die schlafende Gretel und singt ihr ein Schlaflied.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater trägt Gretel."^^xsd:string ;
-        foo:sceneHeader           "Waldrand\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Waldrand\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "28"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/82e0b36d-32fb-4216-a0e7-3b8a3135e961> .
 
@@ -519,9 +519,9 @@
         foo:identifier            "15"^^xsd:long ;
         foo:identifierDramaQueen  "510db490-3822-4a14-8c14-ff1d80d93b74"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "HÄNSEL (11) und GRETEL (9) warten auf die Rückkehr ihres Vaters.\n\nGRETEL\nWir werden Backkartoffeln mit Bohnen und Brot essen! Ja, genau - das ist es, was wir essen werden!\n\nHÄNSEL\nOder noch besser - geräucherten Lachs und Bratkartoffeln und Beerenmus.\n\nGRETEL\nUnd Pudding! Viel Pudding!￼ Vanille und Schokolade und Erdbeer. Und ganz viel Schlagsahne dazu!\n\nHÄNSEL\nUnd Eierkuchen mit Ahornsirup und Blaubeeren und Eis!\n\nGRETEL\nUnd eine große Torte mit buntem Zuckerguss - in Orange und Lila und Blau und Grün und dann noch...\n\nMUTTER (OFF)\n(brüllend)\nHört auf da draußen herumzuspinnen und macht euch hier drinnen nützlich.\n\nHänsel und Gretel schrecken zusammen und sind wieder in ihrer rauen Realität zurück. Sie gehen zurück ins Haus.Gab es denn damals schon Pudding?\n              "^^xsd:string ;
+        foo:sceneContent          "<p>HÄNSEL (11) und GRETEL (9) warten auf die Rückkehr ihres Vaters.</p><p></p><p>GRETEL</p><p>Wir werden Backkartoffeln mit Bohnen und Brot essen! Ja, genau - das ist es, was wir essen werden!</p><p></p><p>HÄNSEL</p><p>Oder noch besser - geräucherten Lachs und Bratkartoffeln und Beerenmus.</p><p></p><p>GRETEL</p><p>Und Pudding! Viel Pudding!￼ Vanille und Schokolade und Erdbeer. Und ganz viel Schlagsahne dazu!</p><p></p><p>HÄNSEL</p><p>Und Eierkuchen mit Ahornsirup und Blaubeeren und Eis!</p><p></p><p>GRETEL</p><p>Und eine große Torte mit buntem Zuckerguss - in Orange und Lila und Blau und Grün und dann noch...</p><p></p><p>MUTTER (OFF)</p><p>(brüllend)</p><p>Hört auf da draußen herumzuspinnen und macht euch hier drinnen nützlich.</p><p></p><p>Hänsel und Gretel schrecken zusammen und sind wieder in ihrer rauen Realität zurück. Sie gehen zurück ins Haus.Gab es denn damals schon Pudding?</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel und Gretel warten sehnsüchtig auf die Rückkehr des Vaters."^^xsd:string ;
-        foo:sceneHeader           "Waldrand\tAußen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Waldrand\tAußen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "1"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/82e0b36d-32fb-4216-a0e7-3b8a3135e961> .
 
@@ -543,9 +543,9 @@
         foo:identifier            "100"^^xsd:long ;
         foo:identifierDramaQueen  "b480558d-ee13-4422-9269-23b0b67d95cf"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "\nDer Vater schaut sich alte Fotos an. Die Mutter repariert den Saum an einem Kleid. Neben ihr liegt noch ein großer Stapel Wäsche.\n\nVATER\nSchau dir das an. Ich glaube, ich bin hier fünf oder sechs. Schau dir diese Hosen an! Sie gehörten meinem Bruder. Viel zu groß, aber meine Mutter meinte, ich würde schon bald reinwachsen...\n\nDie Mutter schaut nicht auf. Sie ist mit dem Kleid fertig und legt es zur Seite. Sie nimmt ein anderes Kleidungsstück vom Stapel und näht weiter in ihrer gewohnten Verbitterung. Der Vater bemerkt ihre Stimmung und Reaktion nicht.\n\nVATER\nIch hatte diesen Traum, dass mich eines Tages ein reiches und kinderloses Paar finden und meine Eltern anflehen würde, mich ihnen zu geben, so dass sie mich als ihren Sohn großziehen könnten. Und ich würde in ihre Kutsche steigen und wir würden davon fahren... Und natürlich würde ich von da an nur noch maßgeschneiderte Hosen tragen. Fragst du dich nicht auch, was die beiden dieser Tage tragen?\n\nEr schaut rüber zu seiner Frau, die die Nadel durch den Stoff jagt und schließlich den Faden durchbeißt.\n\nMUTTER\nSchlimmer als das hier kann es ja kaum sein.\n\nSie wirft das Kleidungsstück auf den Boden und geht aus dem Zimmer. Der Vater bleibt überrascht zurück. Er legt die Fotos zurück in die Kiste. Bevor er den Deckel drauflegt, nimmt er nochmal das oberste auf und schaut es sich an.\n              "^^xsd:string ;
+        foo:sceneContent          "<p></p><p>Der Vater schaut sich alte Fotos an. Die Mutter repariert den Saum an einem Kleid. Neben ihr liegt noch ein großer Stapel Wäsche.</p><p></p><p>VATER</p><p>Schau dir das an. Ich glaube, ich bin hier fünf oder sechs. Schau dir diese Hosen an! Sie gehörten meinem Bruder. Viel zu groß, aber meine Mutter meinte, ich würde schon bald reinwachsen...</p><p></p><p>Die Mutter schaut nicht auf. Sie ist mit dem Kleid fertig und legt es zur Seite. Sie nimmt ein anderes Kleidungsstück vom Stapel und näht weiter in ihrer gewohnten Verbitterung. Der Vater bemerkt ihre Stimmung und Reaktion nicht.</p><p></p><p>VATER</p><p>Ich hatte diesen Traum, dass mich eines Tages ein reiches und kinderloses Paar finden und meine Eltern anflehen würde, mich ihnen zu geben, so dass sie mich als ihren Sohn großziehen könnten. Und ich würde in ihre Kutsche steigen und wir würden davon fahren... Und natürlich würde ich von da an nur noch maßgeschneiderte Hosen tragen. Fragst du dich nicht auch, was die beiden dieser Tage tragen?</p><p></p><p>Er schaut rüber zu seiner Frau, die die Nadel durch den Stoff jagt und schließlich den Faden durchbeißt.</p><p></p><p>MUTTER</p><p>Schlimmer als das hier kann es ja kaum sein.</p><p></p><p>Sie wirft das Kleidungsstück auf den Boden und geht aus dem Zimmer. Der Vater bleibt überrascht zurück. Er legt die Fotos zurück in die Kiste. Bevor er den Deckel drauflegt, nimmt er nochmal das oberste auf und schaut es sich an.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Er erzählt von seiner Kindheit, aber die Mutter ist frustriert."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "45"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -554,7 +554,7 @@
         foo:age                   "38"^^xsd:int ;
         foo:aliasName             "Ernst, Ehemann, Mann"^^xsd:string ;
         foo:appearance            "verbraucht und müde"^^xsd:string ;
-        foo:characterDescription  "Ein Mann Ende dreißig. Aufgrund seiner schweren Arbeit sieht er älter aus als er ist.  Er hat nicht wirklich den Körper für einen Waldarbeiter, aber es gibt einfach keine andere Arbeit.\nEr möchte seine Familie glücklich machen. Dabei ist er sich des Opfers seiner Frau sehr bewusst (ihn zu heiraten ohne die Unterstützung ihrer Familie) und möchte es wieder gut machen. Er fühlt sich für ihr Glück verantwortlich und versucht jeden Tag sein Bestes. Aber er liebt auch seine Kinder und würde sie für nichts auf der Welt eintauschen. Er ist mit der Art und Weise seiner Frau im Umgang mit den Kindern nicht einverstanden, aber fühlt sich für ihr Unglücklichsein verantwortlich, da es ihm nicht möglich ist, für sie zu sorgen. \n      "^^xsd:string ;
+        foo:characterDescription  "<p>Ein Mann Ende dreißig. Aufgrund seiner schweren Arbeit sieht er älter aus als er ist.  Er hat nicht wirklich den Körper für einen Waldarbeiter, aber es gibt einfach keine andere Arbeit.</p><p>Er möchte seine Familie glücklich machen. Dabei ist er sich des Opfers seiner Frau sehr bewusst (ihn zu heiraten ohne die Unterstützung ihrer Familie) und möchte es wieder gut machen. Er fühlt sich für ihr Glück verantwortlich und versucht jeden Tag sein Bestes. Aber er liebt auch seine Kinder und würde sie für nichts auf der Welt eintauschen. Er ist mit der Art und Weise seiner Frau im Umgang mit den Kindern nicht einverstanden, aber fühlt sich für ihr Unglücklichsein verantwortlich, da es ihm nicht möglich ist, für sie zu sorgen. </p><p>      </p>"^^xsd:string ;
         foo:fullName              "Ernst Holzmann"^^xsd:string ;
         foo:identifier            "4"^^xsd:long ;
         foo:identifierDramaQueen  "3d71dfb5-040f-40e9-879a-56201b677058"^^xsd:string ;
@@ -570,9 +570,9 @@
         foo:identifier            "68"^^xsd:long ;
         foo:identifierDramaQueen  "63e11434-45fa-4e34-813a-d5087e1093fc"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Von Gretel begleitet nähert sich die Hexe Hänsels Käfig.\n\nHEXE\nDein Finger, mein guter Junge.\n\nHänsel reicht ihr wieder den Knochen. Die Hexe brüllt vor Wut und Frustration.\n\nHEXE\nWas ist los mit dir? Hast du hohle Beine?\n\nSie dreht sich zu Gretel.\n\nHEXE\nWas hast du mit seinem Essen gemacht? Dies ist alles deine Schuld! Geh rein und fang wieder an zu kochen. Nein, warte. Ich mache es lieber selbst. Du geh lieber und mach den großen Ofen da drüber sauber. Von jetzt an werde ich seine Mahlzeiten zubereiten und schon bald...\n\nSie kichert in freudiger Erwartung.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Von Gretel begleitet nähert sich die Hexe Hänsels Käfig.</p><p></p><p>HEXE</p><p>Dein Finger, mein guter Junge.</p><p></p><p>Hänsel reicht ihr wieder den Knochen. Die Hexe brüllt vor Wut und Frustration.</p><p></p><p>HEXE</p><p>Was ist los mit dir? Hast du hohle Beine?</p><p></p><p>Sie dreht sich zu Gretel.</p><p></p><p>HEXE</p><p>Was hast du mit seinem Essen gemacht? Dies ist alles deine Schuld! Geh rein und fang wieder an zu kochen. Nein, warte. Ich mache es lieber selbst. Du geh lieber und mach den großen Ofen da drüber sauber. Von jetzt an werde ich seine Mahlzeiten zubereiten und schon bald...</p><p></p><p>Sie kichert in freudiger Erwartung.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Als Hänsel dennoch nicht zunimmt, übernimmt sie auch das Kochen seiner Mahlzeiten selbst."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "49"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -582,9 +582,9 @@
         foo:identifier            "19"^^xsd:long ;
         foo:identifierDramaQueen  "66b897a3-9afb-486f-9364-cf361f7ffdeb"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Der VATER (38) sitzt am Küchentisch und trägt noch immer seine Jacke. Auf seinem Schoß sitzt Gretel und weint. Er versucht sie zu trösten, während Hänsel die Töpfe und Pfannen vom Boden sammelt.\n\nVATER\nEs wird alles wieder gut. Wie wär's mit Pizza? Wer möchte Pizza?\n\nGretel meldet sich, wie in der Schule. Hänsel lächelt seinem Vater zu.\n\nVATER\nNa, dann ist es wohl entschiedene Sache. Ich bin gleich zurück. Macht euch keine Sorgen. Hänsel bring deine Schwester in euer Zimmer. Ich glaube, es ist Zeit für eine Geschichte.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der VATER (38) sitzt am Küchentisch und trägt noch immer seine Jacke. Auf seinem Schoß sitzt Gretel und weint. Er versucht sie zu trösten, während Hänsel die Töpfe und Pfannen vom Boden sammelt.</p><p></p><p>VATER</p><p>Es wird alles wieder gut. Wie wär's mit Pizza? Wer möchte Pizza?</p><p></p><p>Gretel meldet sich, wie in der Schule. Hänsel lächelt seinem Vater zu.</p><p></p><p>VATER</p><p>Na, dann ist es wohl entschiedene Sache. Ich bin gleich zurück. Macht euch keine Sorgen. Hänsel bring deine Schwester in euer Zimmer. Ich glaube, es ist Zeit für eine Geschichte.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater kommt nach Hause und will schlichten."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "4"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -594,9 +594,9 @@
         foo:identifier            "34"^^xsd:long ;
         foo:identifierDramaQueen  "049d3bae-7980-4f5d-9229-b09b241d6abe"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Der Vater setzt Gretel ab.\n\nVATER\nWartet kurz hier, ich bin gleich zurück.\n\nGRETEL\nWo gehst du denn hin?\n\nVATER\nIch muss mal. Ich bin gleich zurück. Hänsel, pass auf deine Schwester auf. Versprich mir, dass du auf sie aufpasst.\n\nHänsel versteht die Aussage nur zu gut. Der Vater verschwindet in der Dunkelheit. Hänsel legt seinen Arm um Gretel, der das Ganze überhaupt nicht gefällt.\n\nDer Wind weht. Der Vater kommt nicht zurück.\n\nGRETEL\nWo ist denn Papa? Vielleicht hat er sich verlaufen? Sollten wir ihn nicht suchen?\n\nHÄNSEL\nNein, wir bleiben lieber hier. Wir sollten den Weg nicht verlassen.\n\nGRETEL\nAber Papa kommt nicht zurück! Er kommt nicht zurück. Ihm ist bestimmt was passiert. Es ist ihm bestimmt was passiert. Wir müssen ihm helfen.\n\nHÄNSEL\nEs wird alles gut werden. Bleib einfach nur hier.\n\nDer Wind weht die Laterne aus. Gretel schreit auf.\n\nHÄNSEL\nAlles OK. Ich habe doch die Taschenlampe mit. Es wird alles gut werden.\n\nGRETEL\nMach sie an, mach sie sofort an! Ich kann nichts sehen! Es ist so dunkel!\n\nHänsel wühlt in seinem Rucksack und findet die Taschenlampe. Sie funktioniert nicht. Er checkt die Batterien - sie sind weg.\n\nGRETEL\nWarum funktioniert sie nicht? Was ist los? Was machen wir jetzt?\n\nHÄNSEL\nIch muss wohl vergessen haben, Batterien rein zu machen.\n\nGRETEL\nWas machen wir denn jetzt? Wo ist Papa? Papa! Papa! Ich will meinen Papa!\n\nHänsel nimmt sie fest in den Arm.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater setzt Gretel ab.</p><p></p><p>VATER</p><p>Wartet kurz hier, ich bin gleich zurück.</p><p></p><p>GRETEL</p><p>Wo gehst du denn hin?</p><p></p><p>VATER</p><p>Ich muss mal. Ich bin gleich zurück. Hänsel, pass auf deine Schwester auf. Versprich mir, dass du auf sie aufpasst.</p><p></p><p>Hänsel versteht die Aussage nur zu gut. Der Vater verschwindet in der Dunkelheit. Hänsel legt seinen Arm um Gretel, der das Ganze überhaupt nicht gefällt.</p><p></p><p>Der Wind weht. Der Vater kommt nicht zurück.</p><p></p><p>GRETEL</p><p>Wo ist denn Papa? Vielleicht hat er sich verlaufen? Sollten wir ihn nicht suchen?</p><p></p><p>HÄNSEL</p><p>Nein, wir bleiben lieber hier. Wir sollten den Weg nicht verlassen.</p><p></p><p>GRETEL</p><p>Aber Papa kommt nicht zurück! Er kommt nicht zurück. Ihm ist bestimmt was passiert. Es ist ihm bestimmt was passiert. Wir müssen ihm helfen.</p><p></p><p>HÄNSEL</p><p>Es wird alles gut werden. Bleib einfach nur hier.</p><p></p><p>Der Wind weht die Laterne aus. Gretel schreit auf.</p><p></p><p>HÄNSEL</p><p>Alles OK. Ich habe doch die Taschenlampe mit. Es wird alles gut werden.</p><p></p><p>GRETEL</p><p>Mach sie an, mach sie sofort an! Ich kann nichts sehen! Es ist so dunkel!</p><p></p><p>Hänsel wühlt in seinem Rucksack und findet die Taschenlampe. Sie funktioniert nicht. Er checkt die Batterien - sie sind weg.</p><p></p><p>GRETEL</p><p>Warum funktioniert sie nicht? Was ist los? Was machen wir jetzt?</p><p></p><p>HÄNSEL</p><p>Ich muss wohl vergessen haben, Batterien rein zu machen.</p><p></p><p>GRETEL</p><p>Was machen wir denn jetzt? Wo ist Papa? Papa! Papa! Ich will meinen Papa!</p><p></p><p>Hänsel nimmt sie fest in den Arm.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater stiehlt sich davon."^^xsd:string ;
-        foo:sceneHeader           "\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "15"^^xsd:int .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/f45e6724-27f8-474c-a3bc-ee107f279ef5>
@@ -605,8 +605,8 @@
         foo:identifier            "83"^^xsd:long ;
         foo:identifierDramaQueen  "f45e6724-27f8-474c-a3bc-ee107f279ef5"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Sie treten aus dem Hexenhaus. Und da ist ihr Stern - sie nehmen ihr Gepäck und folgen seinem Licht.\n              "^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Sie treten aus dem Hexenhaus. Und da ist ihr Stern - sie nehmen ihr Gepäck und folgen seinem Licht.</p><p>              </p>"^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "60"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -616,9 +616,9 @@
         foo:identifier            "70"^^xsd:long ;
         foo:identifierDramaQueen  "e6f4b6a3-cb6a-4b2e-845b-22b0c3c36bbf"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Die Jahreszeit hat gewechselt.\n\nHänsel ist ihr immer noch zu dünn und die Hexe rastet aus und stürmt zurück ins Hause.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Die Jahreszeit hat gewechselt.</p><p></p><p>Hänsel ist ihr immer noch zu dünn und die Hexe rastet aus und stürmt zurück ins Hause.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Monate später verliert die Hexe endgültig die Geduld."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "50"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -640,9 +640,9 @@
         foo:identifier            "25"^^xsd:long ;
         foo:identifierDramaQueen  "304dff7a-b092-40c9-8caf-c815c683290c"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Er schleicht zurück in sein Zimmer, aber bleibt stehen, als er Stimmen aus dem elterlichen Schlafzimmer vernimmt. Er lauscht an der Tür.\n\n\nMUTTER (OFF)\nDu hast es versprochen. Du hast versprochen, mich glücklich zu machen.\n\nVATER (OFF)\nWarte doch einfach nur noch bis zum Sommer. Dann wird es einfacher sein. Ich werde unser Gartengemüse verkaufen und wir werden etwas Geld übrig haben. Du könntest dir sogar ein neues Kleid kaufen.\n\nMUTTER (OFF)\nWir wissen beide, dass es dazu nicht kommen wird. Hör auf dir was vorzumachen. Besser als jetzt wird es nicht werden!\n\nHänsel möchte schon gehen, aber lauscht dann weiter.\n\nMUTTER (OFF)\nWir müssen sie wegschicken.\n\nVATER (OFF)\nNein.\n\nMUTTER (OFF)\nHast du nicht selbst von einem besseren Zuhause geträumt, als du ein kleiner Junge warst? Warum möchtest du deinen Kindern eine bessere Chance vorenthalten.\n\nHänsel ist geschockt. Voller Angst rennt er zurück ins Bett.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Er schleicht zurück in sein Zimmer, aber bleibt stehen, als er Stimmen aus dem elterlichen Schlafzimmer vernimmt. Er lauscht an der Tür.</p><p></p><p></p><p>MUTTER (OFF)</p><p>Du hast es versprochen. Du hast versprochen, mich glücklich zu machen.</p><p></p><p>VATER (OFF)</p><p>Warte doch einfach nur noch bis zum Sommer. Dann wird es einfacher sein. Ich werde unser Gartengemüse verkaufen und wir werden etwas Geld übrig haben. Du könntest dir sogar ein neues Kleid kaufen.</p><p></p><p>MUTTER (OFF)</p><p>Wir wissen beide, dass es dazu nicht kommen wird. Hör auf dir was vorzumachen. Besser als jetzt wird es nicht werden!</p><p></p><p>Hänsel möchte schon gehen, aber lauscht dann weiter.</p><p></p><p>MUTTER (OFF)</p><p>Wir müssen sie wegschicken.</p><p></p><p>VATER (OFF)</p><p>Nein.</p><p></p><p>MUTTER (OFF)</p><p>Hast du nicht selbst von einem besseren Zuhause geträumt, als du ein kleiner Junge warst? Warum möchtest du deinen Kindern eine bessere Chance vorenthalten.</p><p></p><p>Hänsel ist geschockt. Voller Angst rennt er zurück ins Bett.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Er lauscht das Gespräch seiner Eltern mit."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "9"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -652,9 +652,9 @@
         foo:identifier            "64"^^xsd:long ;
         foo:identifierDramaQueen  "544e6a18-81e8-4682-831f-c98ba72e8e7a"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Hänsel beobachtet Gretel und die Hexe im Garten.\n\nEr bemerkt, dass die Hexe fast blind ist, dafür aber ein magisches Gehör hat.\n\nEr isst sein Tablett nicht leer, sondern knabbert nur an allem ein wenig. Den Rest wirft er zur anderen Seite des Käfigs hinaus, wo er von Vögeln aufgepickt wird.\n\nSeine Finger bleiben an etwas im Dreck zu seinen Füßen stecken. Es ist ein kleiner Knochen. Fast wirft er ihn angewidert dem Essen hinterher, besinnt sich dann aber doch eines anderen.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel beobachtet Gretel und die Hexe im Garten.</p><p></p><p>Er bemerkt, dass die Hexe fast blind ist, dafür aber ein magisches Gehör hat.</p><p></p><p>Er isst sein Tablett nicht leer, sondern knabbert nur an allem ein wenig. Den Rest wirft er zur anderen Seite des Käfigs hinaus, wo er von Vögeln aufgepickt wird.</p><p></p><p>Seine Finger bleiben an etwas im Dreck zu seinen Füßen stecken. Es ist ein kleiner Knochen. Fast wirft er ihn angewidert dem Essen hinterher, besinnt sich dann aber doch eines anderen.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel durchschaut den Plan der Hexe."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "42"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -663,7 +663,7 @@
         foo:age                   "30"^^xsd:int ;
         foo:aliasName             "Annegret, Ehefrau, Frau"^^xsd:string ;
         foo:appearance            "war mal sehr schön, aber jetzt verbraucht von Sorgen und Verbitterung"^^xsd:string ;
-        foo:characterDescription  "Sie hat aus Liebe geheiratet, während ihre Schwester eine Ehe aus materieller Sicherheit wählte. Als ihre finanzielle Situation immer schlimmer wird und es keine Besserung gibt, fängt die Mutter an, ihre Entscheidung zu bereuen und ihre Schwester zu beneiden. Sie gibt ihrem Mann und ihren Kindern die Schuld für ein Leben ohne die Annehmlichkeiten, die ihr eigentlich zustehen sollten - ein Leben in Saus und Braus. \n      "^^xsd:string ;
+        foo:characterDescription  "<p>Sie hat aus Liebe geheiratet, während ihre Schwester eine Ehe aus materieller Sicherheit wählte. Als ihre finanzielle Situation immer schlimmer wird und es keine Besserung gibt, fängt die Mutter an, ihre Entscheidung zu bereuen und ihre Schwester zu beneiden. Sie gibt ihrem Mann und ihren Kindern die Schuld für ein Leben ohne die Annehmlichkeiten, die ihr eigentlich zustehen sollten - ein Leben in Saus und Braus. </p><p>      </p>"^^xsd:string ;
         foo:fullName              "Annegret Holzmann"^^xsd:string ;
         foo:identifier            "5"^^xsd:long ;
         foo:identifierDramaQueen  "3cf832c5-976e-4d93-aa06-d17088c469ed"^^xsd:string ;
@@ -685,9 +685,9 @@
         foo:identifier            "46"^^xsd:long ;
         foo:identifierDramaQueen  "d4758119-efbd-455e-9f71-0f84f4d776d6"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Der Vater führt sie auf eine Lichtung. Er setzt Gretel ab.\nVATER\n(zittrige Stimme)\nWir sind da! Hier findet ihr den Pilz.\n\nGRETEL\nHilfst du uns nicht beim Suchen?\n\nVATER\nOh, nein. Das ist euer Spiel. Ich will es euch nicht verderben. Wer den ersten Pilz findet, bekommt einen Preis und wer die meisten Pilze findet, bekommt den Hauptpreis.\n\nGretel fängt an zu suchen. Hänsel hält sich wieder zurück, aber als Gretel den Boden nach dem magischen Pilz absucht, macht er für sie mit.\n\nVATER\nSo ist's gut. Wer den ersten Pilz findet...\n\nDer Vater rennt los, als er glaubt die Kinder sind zu sehr mit dem Suchen beschäftigt.\n\nHänsel sieht den Vater davon rennen und tut nichts.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater führt sie auf eine Lichtung. Er setzt Gretel ab.</p><p>VATER</p><p>(zittrige Stimme)</p><p>Wir sind da! Hier findet ihr den Pilz.</p><p></p><p>GRETEL</p><p>Hilfst du uns nicht beim Suchen?</p><p></p><p>VATER</p><p>Oh, nein. Das ist euer Spiel. Ich will es euch nicht verderben. Wer den ersten Pilz findet, bekommt einen Preis und wer die meisten Pilze findet, bekommt den Hauptpreis.</p><p></p><p>Gretel fängt an zu suchen. Hänsel hält sich wieder zurück, aber als Gretel den Boden nach dem magischen Pilz absucht, macht er für sie mit.</p><p></p><p>VATER</p><p>So ist's gut. Wer den ersten Pilz findet...</p><p></p><p>Der Vater rennt los, als er glaubt die Kinder sind zu sehr mit dem Suchen beschäftigt.</p><p></p><p>Hänsel sieht den Vater davon rennen und tut nichts.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater stiehlt sich erneut davon."^^xsd:string ;
-        foo:sceneHeader           "Waldlichtung\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Waldlichtung\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "30"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/4ee57858-c88a-4d06-8366-e7b0bdf3be11> .
 
@@ -697,9 +697,9 @@
         foo:identifier            "32"^^xsd:long ;
         foo:identifierDramaQueen  "bc105fdf-9084-4882-b99d-a1ab67917baf"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Gretel ist müde vom Laufen.\n\nGRETEL\nSind wir bald da?\n\nVATER\nNur noch ein bisschen. \n\nGRETEL\nIch mag nicht im Dunkeln laufen. Da sind komische Gnome im Laub und sie beißen mir gleich in die Zehen.\n\nVATER\nKomm her, Kleines. Ich trag' dich ein bisschen.\n\nEr nimmt Gretel hoch und hält sie fest im Arm. Er verbirgt sein Gesicht in ihren Haaren und umschließt sie noch fester. Hänsel beobachtet alles.\n\nDer Vater geht weiter.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel ist müde vom Laufen.</p><p></p><p>GRETEL</p><p>Sind wir bald da?</p><p></p><p>VATER</p><p>Nur noch ein bisschen. </p><p></p><p>GRETEL</p><p>Ich mag nicht im Dunkeln laufen. Da sind komische Gnome im Laub und sie beißen mir gleich in die Zehen.</p><p></p><p>VATER</p><p>Komm her, Kleines. Ich trag' dich ein bisschen.</p><p></p><p>Er nimmt Gretel hoch und hält sie fest im Arm. Er verbirgt sein Gesicht in ihren Haaren und umschließt sie noch fester. Hänsel beobachtet alles.</p><p></p><p>Der Vater geht weiter.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater kümmet sich um Gretel."^^xsd:string ;
-        foo:sceneHeader           "\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "14"^^xsd:int .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/c47c49e4-853d-4033-9aea-0df77dd2b91a>
@@ -708,9 +708,9 @@
         foo:identifier            "77"^^xsd:long ;
         foo:identifierDramaQueen  "c47c49e4-853d-4033-9aea-0df77dd2b91a"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Hänsel kommt zurück und findet Gretel Taschen packend vor.\n\nHÄNSEL\nWas tust du da?\n\nGRETEL\nSie wird das nicht mehr brauchen. Wir schon. Mit all diesen Sachen könnten wir es schaffen. Mama und Papa werden einsehen, dass es noch einen anderen Weg gibt, als uns wegzuschicken. Als Familie könnten wir es doch schaffen. Wir beiden packen einfach mit an.\n\nHÄNSEL\nSie wollen uns nicht mehr!\n\nGRETEL\nDas weißt du nicht. Ihr Leben war einfach nur schwer. Und nach Papas Unfall... Vielleicht haben sie einfach nur aufgegeben. Vielleicht hast du einfach nur aufgegeben. Ich jedenfalls nicht!\n\nHänsel erkennt seine kleine Schwester nicht wieder - voller Willensstärke und Bestimmtheit.\n\nGRETEL\nHast du?\n\nHÄNSEL\nWas?\n\nGRETEL\nAufgegeben? Möchtest du nicht auch, dass wir einfach wieder eine Familie sind?\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel kommt zurück und findet Gretel Taschen packend vor.</p><p></p><p>HÄNSEL</p><p>Was tust du da?</p><p></p><p>GRETEL</p><p>Sie wird das nicht mehr brauchen. Wir schon. Mit all diesen Sachen könnten wir es schaffen. Mama und Papa werden einsehen, dass es noch einen anderen Weg gibt, als uns wegzuschicken. Als Familie könnten wir es doch schaffen. Wir beiden packen einfach mit an.</p><p></p><p>HÄNSEL</p><p>Sie wollen uns nicht mehr!</p><p></p><p>GRETEL</p><p>Das weißt du nicht. Ihr Leben war einfach nur schwer. Und nach Papas Unfall... Vielleicht haben sie einfach nur aufgegeben. Vielleicht hast du einfach nur aufgegeben. Ich jedenfalls nicht!</p><p></p><p>Hänsel erkennt seine kleine Schwester nicht wieder - voller Willensstärke und Bestimmtheit.</p><p></p><p>GRETEL</p><p>Hast du?</p><p></p><p>HÄNSEL</p><p>Was?</p><p></p><p>GRETEL</p><p>Aufgegeben? Möchtest du nicht auch, dass wir einfach wieder eine Familie sind?</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Gretel will ihrer Familie noch eine Chance geben."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tInnen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tInnen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "55"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -732,8 +732,8 @@
         foo:identifier            "81"^^xsd:long ;
         foo:identifierDramaQueen  "cc7aa932-a7db-479c-98b6-8919e6b325fd"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Hänsel tritt aus dem Hexenhaus - der Wald ist hell erleuchtet. Kleine Sterne tanzen über die Dunkelheit der Bäume. Besonders ein Stern leuchtet besonders hell und umgibt Hänsel mit warmem Licht. Hänsel steigt empor und wird nach Hause getragen.\n              "^^xsd:string ;
-        foo:sceneHeader           "Traum\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel tritt aus dem Hexenhaus - der Wald ist hell erleuchtet. Kleine Sterne tanzen über die Dunkelheit der Bäume. Besonders ein Stern leuchtet besonders hell und umgibt Hänsel mit warmem Licht. Hänsel steigt empor und wird nach Hause getragen.</p><p>              </p>"^^xsd:string ;
+        foo:sceneHeader           "<p>Traum\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "58"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/5ece5256-737f-41ee-bb18-d8858b54d9c9> .
 
@@ -749,9 +749,9 @@
         foo:identifier            "31"^^xsd:long ;
         foo:identifierDramaQueen  "01cac583-6dd0-493a-b103-b70a5978601d"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Der Vater und die Kinder laufen durch den Wald. Der Vater trägt eine Laterne.\n\nHänsel bleibt zurück und lässt kleine Kieselsteine auf den Weg hinter sich fallen.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater und die Kinder laufen durch den Wald. Der Vater trägt eine Laterne.</p><p></p><p>Hänsel bleibt zurück und lässt kleine Kieselsteine auf den Weg hinter sich fallen.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel legt eine Spur aus seinen Kieselsteinen."^^xsd:string ;
-        foo:sceneHeader           "\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "13"^^xsd:int .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/61afe56e-0dd4-4e8d-8dc1-205c31a48b16>
@@ -766,9 +766,9 @@
         foo:identifier            "29"^^xsd:long ;
         foo:identifierDramaQueen  "2964b5e7-a9c4-42c5-b7c1-55d9cdb70ed8"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Hänsel und Gretel packen ihre Rucksäcke. Hänsel packt seine Taschenlampe ein. Er nimmt sie wieder raus und überprüft die Batterien. Das Licht ist etwas schwach. Er sucht in seinen Schubladen und findet neue Batterien. Er macht die Taschenlampe wieder an - sie funktioniert viel besser. Er packt sie zurück in den Rucksack.\n\nIhre Mutter beobachtet die beiden von der Tür aus. Als Hänsel aufblickt, treffen sich ihre Blicke. Die Mutter wendet sich ab und geht.\n\nGRETEL\nMami, kommst du auch mit?\n\nHÄNSEL\nNein, wird sie nicht. Sie ist zu müde von all der Arbeit.\n\nGRETEL\nAber wird es nicht schöner, wenn wir alle mitkommen? Was soll sie denn Zuhause machen so ganz allein?\n\nHÄNSEL\nSie wird sich ausruhen. Das ist schon OK. Es wird wahrscheinlich sowieso lustiger werden ohne sie.\n\nGRETEL\nDas stimmt... Arme Mami!\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel und Gretel packen ihre Rucksäcke. Hänsel packt seine Taschenlampe ein. Er nimmt sie wieder raus und überprüft die Batterien. Das Licht ist etwas schwach. Er sucht in seinen Schubladen und findet neue Batterien. Er macht die Taschenlampe wieder an - sie funktioniert viel besser. Er packt sie zurück in den Rucksack.</p><p></p><p>Ihre Mutter beobachtet die beiden von der Tür aus. Als Hänsel aufblickt, treffen sich ihre Blicke. Die Mutter wendet sich ab und geht.</p><p></p><p>GRETEL</p><p>Mami, kommst du auch mit?</p><p></p><p>HÄNSEL</p><p>Nein, wird sie nicht. Sie ist zu müde von all der Arbeit.</p><p></p><p>GRETEL</p><p>Aber wird es nicht schöner, wenn wir alle mitkommen? Was soll sie denn Zuhause machen so ganz allein?</p><p></p><p>HÄNSEL</p><p>Sie wird sich ausruhen. Das ist schon OK. Es wird wahrscheinlich sowieso lustiger werden ohne sie.</p><p></p><p>GRETEL</p><p>Das stimmt... Arme Mami!</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel und Gretel packen."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "12"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -778,9 +778,9 @@
         foo:identifier            "49"^^xsd:long ;
         foo:identifierDramaQueen  "8bc76708-daa9-4906-bd49-26414912417c"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Gretel und Hänsel suchen den Boden immer verzweifelter ab.\n\nGRETEL\nSie müssen doch hier irgendwo sein. Wo hast du den letzten Stein fallen lassen?\n\nHÄNSEL\nDiesmal war es Brot, nicht Steine.\n\nEin Vogel fliegt mit einem Stück Brot vor Gretels Füßen davon.\n\nGRETEL\nDie Vögel! Sie fressen unser Brot!\n\nHänsel jagt dem Vogel hinterher. Gretel versucht ihn aufzuhalten.\n\nGRETEL \nMach das nicht. Hör auf! Ich kann dich kaum noch sehen! Hänsel! Ohne dich...\n\nHänsel bleibt stehen und kehrt zurück zu seiner Schwester.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel und Hänsel suchen den Boden immer verzweifelter ab.</p><p></p><p>GRETEL</p><p>Sie müssen doch hier irgendwo sein. Wo hast du den letzten Stein fallen lassen?</p><p></p><p>HÄNSEL</p><p>Diesmal war es Brot, nicht Steine.</p><p></p><p>Ein Vogel fliegt mit einem Stück Brot vor Gretels Füßen davon.</p><p></p><p>GRETEL</p><p>Die Vögel! Sie fressen unser Brot!</p><p></p><p>Hänsel jagt dem Vogel hinterher. Gretel versucht ihn aufzuhalten.</p><p></p><p>GRETEL </p><p>Mach das nicht. Hör auf! Ich kann dich kaum noch sehen! Hänsel! Ohne dich...</p><p></p><p>Hänsel bleibt stehen und kehrt zurück zu seiner Schwester.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel gibt die Suche nach den Brotkrumen auf."^^xsd:string ;
-        foo:sceneHeader           "Waldlichtung\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Waldlichtung\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "32"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/4ee57858-c88a-4d06-8366-e7b0bdf3be11> .
 
@@ -796,9 +796,9 @@
         foo:identifier            "71"^^xsd:long ;
         foo:identifierDramaQueen  "cc112b8f-ab4b-4ec2-8e75-8170f7481bc7"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Gretel folgt ihr vorsichtig und findet sie Kochbücher wälzend in der Küche. Endlich scheint sie gefunden zu haben, was sie suchte - ein Diätkochbuch für Hexen.\n\nHEXE\n(laut lesend)\nMageres Fleisch...\n\nGretel ist entsetzt.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel folgt ihr vorsichtig und findet sie Kochbücher wälzend in der Küche. Endlich scheint sie gefunden zu haben, was sie suchte - ein Diätkochbuch für Hexen.</p><p></p><p>HEXE</p><p>(laut lesend)</p><p>Mageres Fleisch...</p><p></p><p>Gretel ist entsetzt.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Die Hexe sucht nach dem passenden Rezept für Hänsel."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tInnen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tInnen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "51"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -814,9 +814,9 @@
         foo:identifier            "102"^^xsd:long ;
         foo:identifierDramaQueen  "35a2129e-bf18-42d4-add6-f0695010eeb6"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Der Vater sitzt im Kinderzimmer. Der Boden ist mit Such-Flugblättern übersät. Von jedem Blatt starren ihn seine Kinder an. Der Vater sieht geschlagen aus.￼\n\nEr versucht das Zimmer mit Blumen und Blättern aus dem Wald zu schmücken.\n\nEr geht auf die Knie und spricht ein lautloses Gebet.Super Bild\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater sitzt im Kinderzimmer. Der Boden ist mit Such-Flugblättern übersät. Von jedem Blatt starren ihn seine Kinder an. Der Vater sieht geschlagen aus.￼</p><p></p><p>Er versucht das Zimmer mit Blumen und Blättern aus dem Wald zu schmücken.</p><p></p><p>Er geht auf die Knie und spricht ein lautloses Gebet.Super Bild</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Er hofft, seine Kinder zurückzubekommen."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tAußen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tAußen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "47"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -826,9 +826,9 @@
         foo:identifier            "56"^^xsd:long ;
         foo:identifierDramaQueen  "5b61775e-4de3-401f-9887-c24d07e45231"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Gretel kaut ein Stück Lakritze.\n\nGRETEL\nDas musst du probieren. Das ist die beste Lakritze, die ich je gegessen haben.\n\nHänsel antwortet nicht. Gretel geht ihn suchen.\n\nGRETEL\nHänsel? Wo bist du?\n\nSie hört ein Geräusch hinter sich, aber da ist es schon zu spät - eine alte HEXE (66) wirft einen Sack über sie und trägt sie ins Haus. All ihre Versuche sich zu wehren sind zwecklos. Die Hexe ist stärker.\n\nHänsel kann ihr nicht helfen. Er schläft. In der Hand hält er noch ein Stück Pfefferkuchen.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel kaut ein Stück Lakritze.</p><p></p><p>GRETEL</p><p>Das musst du probieren. Das ist die beste Lakritze, die ich je gegessen haben.</p><p></p><p>Hänsel antwortet nicht. Gretel geht ihn suchen.</p><p></p><p>GRETEL</p><p>Hänsel? Wo bist du?</p><p></p><p>Sie hört ein Geräusch hinter sich, aber da ist es schon zu spät - eine alte HEXE (66) wirft einen Sack über sie und trägt sie ins Haus. All ihre Versuche sich zu wehren sind zwecklos. Die Hexe ist stärker.</p><p></p><p>Hänsel kann ihr nicht helfen. Er schläft. In der Hand hält er noch ein Stück Pfefferkuchen.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Die Hexe fängt Gretel und betäubt Hänsel."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "37"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -838,18 +838,23 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa>
         a                         foo:Project ;
         foo:hasCharacter          <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/3cf832c5-976e-4d93-aa06-d17088c469ed> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/3a2cb853-e5ab-4a28-94b5-2b1e867a8d9a> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/4cb48af3-b6cd-42fb-8da5-c256e2759878> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/3d71dfb5-040f-40e9-879a-56201b677058> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/0ddf6d64-d7d7-4c2d-bec9-4276b884a0b4> ;
-        foo:hasEpisode            <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Episode/939e72b5-b533-4163-96ca-cba88defd1c6> ;
+        foo:hasEpisode            <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Episode/55749d1a-ee87-4ed9-9286-1a6b5fb038b5> ;
         foo:hasSet                <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/82e0b36d-32fb-4216-a0e7-3b8a3135e961> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/5ece5256-737f-41ee-bb18-d8858b54d9c9> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/4ee57858-c88a-4d06-8366-e7b0bdf3be11> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/845e66af-afff-4f3d-aea0-01ccc7937dc1> ;
         foo:identifier            "1"^^xsd:long ;
         foo:identifierDramaQueen  "9860f0bb-d9a6-45e4-9d03-79e7fefd16fa"^^xsd:string ;
-        foo:name                  "Hansel_Gretel_de.dq"^^xsd:string .
+        foo:title                 "Hansel_Gretel_de.dq"^^xsd:string .
+
+<http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Episode/55749d1a-ee87-4ed9-9286-1a6b5fb038b5>
+        a                  foo:Episode ;
+        foo:hasSceneGroup  <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/e608d021-3251-4738-b141-506733364bfe> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/d5295482-5356-4e32-bb56-3a2e20da1385> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/6b2aa4d9-863d-47f5-a8ab-be0aef6d7070> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/bc17f4fe-19f5-4554-9a00-c98c0c174a6d> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/e2d5e9f7-10fa-44d7-8831-d3962aabf2ce> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/1260af90-32ea-44f1-9d87-6e96a9749df5> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/4f2e606d-a7cc-49a3-ad2a-caca55200ca7> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/3390aaf5-ce00-44d6-9f5c-71d73670f6dd> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/189e0a4f-b97a-4eaa-9714-fbb529fb32a4> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/189defb5-abac-4c35-b686-86af621e489a> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/a54711d3-8f0d-4748-886a-f60c658c8d42> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/9d09b6ed-2040-4309-beaf-5b852528fd0e> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/61afe56e-0dd4-4e8d-8dc1-205c31a48b16> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/6eeb3786-43b1-491f-bb1c-c5ade3b941a2> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/a7b9cc28-58ee-4a3e-9e6d-0e3e008783b1> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/2f657f85-ec71-4afb-b0ea-28b0aba29675> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/7f8a6797-8943-479f-9d73-76372fbcb7cc> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/bb06563b-e937-4438-8713-af4076316705> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/08d356e5-2ab9-4e83-b0de-8cb620edf0d3> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/29d6de1a-f8b9-47ba-b652-aea13210a7ee> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/b80265cb-a8e6-47ae-a252-335f2019b078> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/c2468d90-6c79-41b9-8dcd-61476864f487> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/12fa6030-4e45-4524-a51c-105ca3eff48a> ;
+        foo:identifier     "13"^^xsd:long .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/3a2cb853-e5ab-4a28-94b5-2b1e867a8d9a>
         a                         foo:Character ;
         foo:age                   "9"^^xsd:int ;
         foo:aliasName             "Schwester, Schwesterherz"^^xsd:string ;
         foo:appearance            "zierlich, blond"^^xsd:string ;
-        foo:characterDescription  "Gretel ist das jüngere Kind. Sie liebt ihre Familie - sogar ihre kalte und distanzierte Mutter.  Auch wenn sie weiß, dass die Familie kein Geld hat, kann sie ihren Traum von einem besseren Leben wie im Märchen nicht aufgeben. \n\n      "^^xsd:string ;
+        foo:characterDescription  "<p>Gretel ist das jüngere Kind. Sie liebt ihre Familie - sogar ihre kalte und distanzierte Mutter.  Auch wenn sie weiß, dass die Familie kein Geld hat, kann sie ihren Traum von einem besseren Leben wie im Märchen nicht aufgeben. </p><p></p><p>      </p>"^^xsd:string ;
         foo:fullName              "Gretel Emily Holzmann"^^xsd:string ;
         foo:identifier            "3"^^xsd:long ;
         foo:identifierDramaQueen  "3a2cb853-e5ab-4a28-94b5-2b1e867a8d9a"^^xsd:string ;
@@ -862,9 +867,9 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "40"^^xsd:long ;
         foo:identifierDramaQueen  "58059196-ddb7-4985-bedb-6fd0a3d5a898"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Gretel stürmt ins Haus und findet ihre Eltern in Tränen aufgelöst vor - sie umarmt beide.\n\nGRETEL\nDas war vielleicht ein Spaß! Aber wir haben es zurück geschafft. Wir haben es geschafft.\n\nHänsel beobachtet die Reaktion seiner Eltern von der Tür aus und sieht, wie sie sich von Schock zu gespielter Freude verwandeln. Gretel bekommt davon nichts mit - sie ist einfach nur zu froh.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel stürmt ins Haus und findet ihre Eltern in Tränen aufgelöst vor - sie umarmt beide.</p><p></p><p>GRETEL</p><p>Das war vielleicht ein Spaß! Aber wir haben es zurück geschafft. Wir haben es geschafft.</p><p></p><p>Hänsel beobachtet die Reaktion seiner Eltern von der Tür aus und sieht, wie sie sich von Schock zu gespielter Freude verwandeln. Gretel bekommt davon nichts mit - sie ist einfach nur zu froh.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Gretel überrascht ihre Eltern mit ihrer Rückkehr."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "20"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -874,9 +879,9 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "92"^^xsd:long ;
         foo:identifierDramaQueen  "70173b5c-eb3f-467f-b727-9e6942387d6e"^^xsd:string ;
         foo:interiorExterior      "intext"^^xsd:string ;
-        foo:sceneContent          "Hänsel kann nicht schlafen. Gretel ist im Tiefschlaf.\n\nHänsel schleicht wieder zur Schlafzimmertür seiner Eltern. Die Mutter ist außer sich vor Wut.\n\nMUTTER (OFF)\nErzähl mir nicht, du hättest nicht gemerkt, was er getan hat! Wie hättest du das nicht bemerken können! Spiel hier nicht den Dummen!\n\nSie stürzt auf die Tür zu. Hänsel springt hinter den Tisch, gerade als die Zimmertür aufgerissen wird und die Mutter aus dem Haus rennt. Der Vater folgt ihr nicht.\n\nDas Geräusch von Steinen, die im Wasser landen. Hänsel schleicht zum Fenster und späht hinaus. Die Mutter sammelt alle weißen Kieselsteine auf und wirft sie in den Brunnen.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel kann nicht schlafen. Gretel ist im Tiefschlaf.</p><p></p><p>Hänsel schleicht wieder zur Schlafzimmertür seiner Eltern. Die Mutter ist außer sich vor Wut.</p><p></p><p>MUTTER (OFF)</p><p>Erzähl mir nicht, du hättest nicht gemerkt, was er getan hat! Wie hättest du das nicht bemerken können! Spiel hier nicht den Dummen!</p><p></p><p>Sie stürzt auf die Tür zu. Hänsel springt hinter den Tisch, gerade als die Zimmertür aufgerissen wird und die Mutter aus dem Haus rennt. Der Vater folgt ihr nicht.</p><p></p><p>Das Geräusch von Steinen, die im Wasser landen. Hänsel schleicht zum Fenster und späht hinaus. Die Mutter sammelt alle weißen Kieselsteine auf und wirft sie in den Brunnen.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel hört wieder den Streit seiner Eltern mit."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Außen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Außen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "21"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -886,9 +891,9 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "89"^^xsd:long ;
         foo:identifierDramaQueen  "5b8384a1-1644-47e8-8316-33005ac38a6f"^^xsd:string ;
         foo:interiorExterior      "intext"^^xsd:string ;
-        foo:sceneContent          "Gretel sitzt am Tisch und malt Märchenbilder. Die Wände sind bereits voll von ihren und des Vaters Bildern. Das Haus ist immer noch einfach eingerichtet, aber es strahlt jetzt eine Wärme und Liebe aus, die es vorher nicht hatte.\n\nGretel geht raus und findet Hänsel und den Vater beim Holzhacken.\n\nGRETEL\nPizza heute Abend?\n\nHÄNSEL\nIch helfe dir. Ich möcht meine mit grüner Paprika und Zwiebeln. Papa? Tomaten und Käse?\n\nVATER\nWie immer.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel sitzt am Tisch und malt Märchenbilder. Die Wände sind bereits voll von ihren und des Vaters Bildern. Das Haus ist immer noch einfach eingerichtet, aber es strahlt jetzt eine Wärme und Liebe aus, die es vorher nicht hatte.</p><p></p><p>Gretel geht raus und findet Hänsel und den Vater beim Holzhacken.</p><p></p><p>GRETEL</p><p>Pizza heute Abend?</p><p></p><p>HÄNSEL</p><p>Ich helfe dir. Ich möcht meine mit grüner Paprika und Zwiebeln. Papa? Tomaten und Käse?</p><p></p><p>VATER</p><p>Wie immer.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Sie führen fortan ein glückliches Leben."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Außen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Außen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "65"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -904,16 +909,11 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "62"^^xsd:long ;
         foo:identifierDramaQueen  "bc7f7a86-8f33-4a90-b32c-33786ace9fa4"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Gretel bringt ihm wieder ein Tablett - noch beladener als das am Vorabend. Hänsel kann sein Glück kaum fassen - soviel Essen. Und so lecker!\n\nGretel schaut sehr angespannt, während er es herunterschlingt.\n\nGRETEL\n(sehr leise)\nHänsel, nicht... Iss nur ein bisschen.\n\nHänsel versteht nicht.\n\nGRETEL\n(etwas lauter)\nIss nicht alles auf. Sie will...\n\nHEXE\nNur das Essen - keine Unterhaltung. Komm, meine Liebe. Zack, zack. Zurück ins Haus.\n\nHänsel bleibt verwirrt zurück.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Gretel bringt ihm wieder ein Tablett - noch beladener als das am Vorabend. Hänsel kann sein Glück kaum fassen - soviel Essen. Und so lecker!</p><p></p><p>Gretel schaut sehr angespannt, während er es herunterschlingt.</p><p></p><p>GRETEL</p><p>(sehr leise)</p><p>Hänsel, nicht... Iss nur ein bisschen.</p><p></p><p>Hänsel versteht nicht.</p><p></p><p>GRETEL</p><p>(etwas lauter)</p><p>Iss nicht alles auf. Sie will...</p><p></p><p>HEXE</p><p>Nur das Essen - keine Unterhaltung. Komm, meine Liebe. Zack, zack. Zurück ins Haus.</p><p></p><p>Hänsel bleibt verwirrt zurück.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Gretel versucht vergeblich, Hänsel zu warnen."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "41"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
-
-<http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Episode/939e72b5-b533-4163-96ca-cba88defd1c6>
-        a                  foo:Episode ;
-        foo:hasSceneGroup  <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/bc17f4fe-19f5-4554-9a00-c98c0c174a6d> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/3390aaf5-ce00-44d6-9f5c-71d73670f6dd> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/61afe56e-0dd4-4e8d-8dc1-205c31a48b16> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/4f2e606d-a7cc-49a3-ad2a-caca55200ca7> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/a54711d3-8f0d-4748-886a-f60c658c8d42> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/189e0a4f-b97a-4eaa-9714-fbb529fb32a4> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/c2468d90-6c79-41b9-8dcd-61476864f487> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/d5295482-5356-4e32-bb56-3a2e20da1385> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/bb06563b-e937-4438-8713-af4076316705> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/e2d5e9f7-10fa-44d7-8831-d3962aabf2ce> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/b80265cb-a8e6-47ae-a252-335f2019b078> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/12fa6030-4e45-4524-a51c-105ca3eff48a> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/e608d021-3251-4738-b141-506733364bfe> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/a7b9cc28-58ee-4a3e-9e6d-0e3e008783b1> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/189defb5-abac-4c35-b686-86af621e489a> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/29d6de1a-f8b9-47ba-b652-aea13210a7ee> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/6eeb3786-43b1-491f-bb1c-c5ade3b941a2> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/7f8a6797-8943-479f-9d73-76372fbcb7cc> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/9d09b6ed-2040-4309-beaf-5b852528fd0e> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/2f657f85-ec71-4afb-b0ea-28b0aba29675> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/1260af90-32ea-44f1-9d87-6e96a9749df5> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/08d356e5-2ab9-4e83-b0de-8cb620edf0d3> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/6b2aa4d9-863d-47f5-a8ab-be0aef6d7070> ;
-        foo:identifier     "13"^^xsd:long .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/c5d8a414-e6d3-4b03-aae6-919c19cb3026>
         a                         foo:Scene ;
@@ -921,9 +921,9 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "55"^^xsd:long ;
         foo:identifierDramaQueen  "c5d8a414-e6d3-4b03-aae6-919c19cb3026"^^xsd:string ;
         foo:interiorExterior      "intext"^^xsd:string ;
-        foo:sceneContent          "Während sie ihren Hunger am Haus stillen, werden sie von jemandem im Haus beobachtet.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Während sie ihren Hunger am Haus stillen, werden sie von jemandem im Haus beobachtet.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Sie werden von der Hexe beobachtet."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tInnen/Außen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tInnen/Außen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "36"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -933,9 +933,9 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "95"^^xsd:long ;
         foo:identifierDramaQueen  "63e6e6e5-c8e7-45e8-b84d-90906736e962"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Die Mutter bereit das Essen zu. Gretel tanzt um sie herum.\n\nGRETEL \nIch liebe dieses neue Spiel! Was kochst du für uns?\n\nMUTTER\nDas wird eine Überraschung. Geh und ruh dich etwas aus für heute Nacht.\n\nGretel umarmt die Mutter, die von der Geste so überrascht ist, dass sie sich erst nicht bewegen kann. Aber dann legt auch sie die Arme um ihre Tochter und drückt sie an sich.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Die Mutter bereit das Essen zu. Gretel tanzt um sie herum.</p><p></p><p>GRETEL </p><p>Ich liebe dieses neue Spiel! Was kochst du für uns?</p><p></p><p>MUTTER</p><p>Das wird eine Überraschung. Geh und ruh dich etwas aus für heute Nacht.</p><p></p><p>Gretel umarmt die Mutter, die von der Geste so überrascht ist, dass sie sich erst nicht bewegen kann. Aber dann legt auch sie die Arme um ihre Tochter und drückt sie an sich.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Die Mutter wird von Gretels liebevoller Umarmung überrascht."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "24"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -944,7 +944,7 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "7"^^xsd:long ;
         foo:identifierDramaQueen  "845e66af-afff-4f3d-aea0-01ccc7937dc1"^^xsd:string ;
         foo:name                  "Wald"^^xsd:string ;
-        foo:setDescription        "Dunkel, gefährlich, ein Platz des Verlustes - voll von Bösem und Mysteriösem (Hexenhaus), ein Ort des Verlassenwerdens\n\n\n      "^^xsd:string .
+        foo:setDescription        "<p>Dunkel, gefährlich, ein Platz des Verlustes - voll von Bösem und Mysteriösem (Hexenhaus), ein Ort des Verlassenwerdens</p><p></p><p></p><p>      </p>"^^xsd:string .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/c900a8ce-e29b-41e5-b0cf-21bdbe6f11a1>
         a                         foo:Scene ;
@@ -952,9 +952,9 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "42"^^xsd:long ;
         foo:identifierDramaQueen  "c900a8ce-e29b-41e5-b0cf-21bdbe6f11a1"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Der Vater weckt die Kinder mitten in der Nacht.\n\nVATER\n(versucht fröhlich zu klingen)\nKommt, meine kleinen Schlafmützen.Steht auf! Das Abenteuer geht gleich los!\n\nHänsel und Gretel finden es sehr schwer aufzuwachen. Gretel dreht sich sogar weg und versucht weiter zu schlafen.\n\nVATER\nEs gibt da einen besonderen Pilz, den man nur in der Nacht finden kann. Eure Mutter will uns ein besonderes Essen kochen - aber das geht nur mit diesem Pilz. Beeilt euch, der Pilz verschwindet wieder im Morgengrauen.\n\nHänsel steht auf und schiebt das Brotstück tief in seine Tasche. Gretel bewegt sich nicht. Der Vater nimmt sie hoch und hält sie im Arm.\n\nVATER\nKomm, mein kleines Dornröschen. Ich trage dich. Du wirst schon wachen werden an der frischen Luft!\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater weckt die Kinder mitten in der Nacht.</p><p></p><p>VATER</p><p>(versucht fröhlich zu klingen)</p><p>Kommt, meine kleinen Schlafmützen.Steht auf! Das Abenteuer geht gleich los!</p><p></p><p>Hänsel und Gretel finden es sehr schwer aufzuwachen. Gretel dreht sich sogar weg und versucht weiter zu schlafen.</p><p></p><p>VATER</p><p>Es gibt da einen besonderen Pilz, den man nur in der Nacht finden kann. Eure Mutter will uns ein besonderes Essen kochen - aber das geht nur mit diesem Pilz. Beeilt euch, der Pilz verschwindet wieder im Morgengrauen.</p><p></p><p>Hänsel steht auf und schiebt das Brotstück tief in seine Tasche. Gretel bewegt sich nicht. Der Vater nimmt sie hoch und hält sie im Arm.</p><p></p><p>VATER</p><p>Komm, mein kleines Dornröschen. Ich trage dich. Du wirst schon wachen werden an der frischen Luft!</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Vater und Kinder brechen erneut auf."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Nacht\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Nacht</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "27"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -977,9 +977,9 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "99"^^xsd:long ;
         foo:identifierDramaQueen  "9f12215a-a92f-4cfb-a6d4-4d5869bb023f"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Der Vater sitzt am Tisch und versucht die Zeitung zu lesen, während die Mutter den Abwasch macht. Wieder haut sie laut mit den Töpfen umher. Der Vater steht auf.\n\nVATER\nLass mich dir doch helfen.\n\nMUTTER\nLass. Es geht schneller, wenn ich es allein mache!\n\nEr versucht, den Arm um sie zu legen.\n\nVATER\nEs ist OK. Ich vermisse sie doch auch.\n\nDie Mutter antwortet nicht aber legt auch ihre Arme um ihren Mann. Ihre Nähe tröstet ihn. Ihr verbittertes Gesicht bleibt wie es ist.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Der Vater sitzt am Tisch und versucht die Zeitung zu lesen, während die Mutter den Abwasch macht. Wieder haut sie laut mit den Töpfen umher. Der Vater steht auf.</p><p></p><p>VATER</p><p>Lass mich dir doch helfen.</p><p></p><p>MUTTER</p><p>Lass. Es geht schneller, wenn ich es allein mache!</p><p></p><p>Er versucht, den Arm um sie zu legen.</p><p></p><p>VATER</p><p>Es ist OK. Ich vermisse sie doch auch.</p><p></p><p>Die Mutter antwortet nicht aber legt auch ihre Arme um ihren Mann. Ihre Nähe tröstet ihn. Ihr verbittertes Gesicht bleibt wie es ist.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Der Vater missversteht die Laune der Mutter."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "44"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -989,9 +989,9 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "52"^^xsd:long ;
         foo:identifierDramaQueen  "d3fb40da-ce35-4c14-8fed-816d8a5f6a41"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Hänsel sieht Licht zwischen den Bäumen und rennt darauf zu. Gretel folgt ihm.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel sieht Licht zwischen den Bäumen und rennt darauf zu. Gretel folgt ihm.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Sie entdecken ein Haus im Wald."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "34"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -1007,9 +1007,9 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "85"^^xsd:long ;
         foo:identifierDramaQueen  "519b33a0-ee4b-440f-8a27-3c917632ada0"^^xsd:string ;
         foo:interiorExterior      "intext"^^xsd:string ;
-        foo:sceneContent          "Sie kommen in den frühen Morgenstunden zu Hause an.\n\nDas Haus wirkt verlassen.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Sie kommen in den frühen Morgenstunden zu Hause an.</p><p></p><p>Das Haus wirkt verlassen.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Als sie zuhause ankommen, ist ihr Elternhaus verwaist."^^xsd:string ;
-        foo:sceneHeader           "Hänsels und Gretels Zuhause\tInnen/Außen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hänsels und Gretels Zuhause\tInnen/Außen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "61"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
@@ -1025,9 +1025,9 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "76"^^xsd:long ;
         foo:identifierDramaQueen  "ef35ea28-08a3-4102-878a-84025e561c9d"^^xsd:string ;
         foo:interiorExterior      "int"^^xsd:string ;
-        foo:sceneContent          "Hänsel und Gretel sitzen am Tisch der Hexe und genießen ein einfaches Essen in Ruhe.\n\nGRETEL\nMama und Papa werden so froh sein...\n\nHÄNSEL\n(sie unterbrechend)\nNein, werden sie nicht. Sie werden nicht froh sein, uns zu sehen, Gretel.\n\nGRETEL\nNatürlich werden sie froh sein! Was redest du da?\n\nHÄNSEL\nSie wollen uns nicht mehr! Sie können uns nicht weiter ernähren. Ich habe es selbst gehört. Warum glaubst du hat Papa uns im Wald zurück gelassen.\n\nGRETEL\nEs war ein Spiel! Papa hat es doch selbst gesagt.\n\nHÄNSEL\nNein, war es nicht! Mama wollte uns loswerden und Papa hat sich breitschlagen lassen!\n\nGRETEL\nAber sie haben uns doch lieb!\n\nHänsel antwortet nicht.\n\nGRETEL\nAlso möchtest du gar nicht zurück!?\n\nHÄNSEL\nWofür? Damit sie uns wieder fortschicken können?\n\nGRETEL\nUnd was willst du stattdessen tun?\n\nHÄNSEL\nKeine Ahnung.\n\nEr dreht sich um und geht aus dem Haus.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel und Gretel sitzen am Tisch der Hexe und genießen ein einfaches Essen in Ruhe.</p><p></p><p>GRETEL</p><p>Mama und Papa werden so froh sein...</p><p></p><p>HÄNSEL</p><p>(sie unterbrechend)</p><p>Nein, werden sie nicht. Sie werden nicht froh sein, uns zu sehen, Gretel.</p><p></p><p>GRETEL</p><p>Natürlich werden sie froh sein! Was redest du da?</p><p></p><p>HÄNSEL</p><p>Sie wollen uns nicht mehr! Sie können uns nicht weiter ernähren. Ich habe es selbst gehört. Warum glaubst du hat Papa uns im Wald zurück gelassen.</p><p></p><p>GRETEL</p><p>Es war ein Spiel! Papa hat es doch selbst gesagt.</p><p></p><p>HÄNSEL</p><p>Nein, war es nicht! Mama wollte uns loswerden und Papa hat sich breitschlagen lassen!</p><p></p><p>GRETEL</p><p>Aber sie haben uns doch lieb!</p><p></p><p>Hänsel antwortet nicht.</p><p></p><p>GRETEL</p><p>Also möchtest du gar nicht zurück!?</p><p></p><p>HÄNSEL</p><p>Wofür? Damit sie uns wieder fortschicken können?</p><p></p><p>GRETEL</p><p>Und was willst du stattdessen tun?</p><p></p><p>HÄNSEL</p><p>Keine Ahnung.</p><p></p><p>Er dreht sich um und geht aus dem Haus.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel erzählt Gretel die Wahrheit über ihre Eltern."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tInnen/Früher Morgen\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tInnen/Früher Morgen</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "54"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
@@ -1037,9 +1037,9 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:identifier            "58"^^xsd:long ;
         foo:identifierDramaQueen  "c3d21a18-6814-494a-95f5-a2fa6aa1199b"^^xsd:string ;
         foo:interiorExterior      "ext"^^xsd:string ;
-        foo:sceneContent          "Hänsel erwacht. Er befindet sich in einem Käfig vor dem Hexenhaus. Niemand ist zu sehen, aber er kann Gretels Weinen aus dem Haus hören.\n\nEr versucht sich aus dem Käfig zu befreien. Noch immer kann er Gretels Weinen hören, aber er ist gefangen und kommt nicht heraus.\n              "^^xsd:string ;
+        foo:sceneContent          "<p>Hänsel erwacht. Er befindet sich in einem Käfig vor dem Hexenhaus. Niemand ist zu sehen, aber er kann Gretels Weinen aus dem Haus hören.</p><p></p><p>Er versucht sich aus dem Käfig zu befreien. Noch immer kann er Gretels Weinen hören, aber er ist gefangen und kommt nicht heraus.</p><p>              </p>"^^xsd:string ;
         foo:sceneDescription      "Hänsel erwacht in einem Käfig und hört seine weinende Schwester."^^xsd:string ;
-        foo:sceneHeader           "Hexenhaus\tAußen/Tag\n              "^^xsd:string ;
+        foo:sceneHeader           "<p>Hexenhaus\tAußen/Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "38"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> .
 
