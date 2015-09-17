@@ -123,7 +123,7 @@ public abstract class RdfExporter {
 	 * @return	The query result set
 	 * 
 	 */
-	private ResultSet queryEndpoint(String queryString) {
+	public ResultSet queryEndpoint(String queryString) {
 		L.debug("Attempting to query remote SPARQL end point... ");
 		
 		Query query = QueryFactory.create(queryString);
