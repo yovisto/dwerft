@@ -43,3 +43,32 @@ select ?scene, ?dramaqueenID, ?preproducerID, ?number, ?header, ?intext, ?dayTim
 	?scene foo:dayTime ?dayTime .
 	?scene foo:sceneDescription ?desc .
 } ORDER BY ASC(?number)
+
+
+
+Retrieves all scenes that a located at a set with a certain name
+--------------------------------------------------------------------------
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX foo: <http://filmontology.org/ontology/1.0/>
+PREFIX for: <http://filmontology.org/resource/>
+
+select ?scene, ?number, ?header, ?dramaqueenID, ?preproducerID  where {
+	{?project foo:identifierDramaQueen ?id}
+	UNION
+	{?project foo:identifierPreProducer ?id}
+	FILTER(str(?id) = "9860f0bb-d9a6-45e4-9d03-79e7fefd16fa")
+	?project foo:hasEpisode ?episode .
+	?episode foo:hasSceneGroup ?sceneGroup .
+	?sceneGroup foo:hasScene ?scene .
+	OPTIONAL {?scene foo:identifierDramaQueen ?dramaqueenID }
+	OPTIONAL {?scene foo:identifierPreProducer ?preproducerID}
+	?scene foo:sceneNumber ?number .
+	?scene foo:sceneHeader ?header .
+	?scene foo:sceneSet ?set.
+	?set foo:name ?name.
+	FILTER(str(?name) = "Waldrand")
+	
+} ORDER BY ASC(?number)
+
