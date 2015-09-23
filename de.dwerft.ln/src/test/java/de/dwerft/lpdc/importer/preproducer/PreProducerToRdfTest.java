@@ -9,8 +9,8 @@ import de.dwerft.lpdc.sources.PreproducerSource;
 
 public class PreProducerToRdfTest {
 	
-	private static final String PREPRODUCER_CONFIG_FILE = "src/main/resource/config.properties";
-	private static final String PREPRODUCER_MAPPINGS_FILE = "src/main/resource/preproducer.mappings";
+	private static final String PREPRODUCER_CONFIG_FILE = "src/main/resources/config.properties";
+	private static final String PREPRODUCER_MAPPINGS_FILE = "src/main/resources/preproducer.mappings";
 	private static final String outputFile = "examples/preproducer_export_new.ttl";
 
 	@Test

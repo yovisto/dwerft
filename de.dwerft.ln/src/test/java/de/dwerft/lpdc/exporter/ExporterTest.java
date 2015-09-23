@@ -12,7 +12,7 @@ import de.dwerft.lpdc.sources.PreproducerSource;
 
 public class ExporterTest {
 
-	private static final String PREPRODUCER_CONFIG_FILE = "src/main/resource/config.properties";
+	private static final String PREPRODUCER_CONFIG_FILE = "src/main/resources/config.properties";
 
 //	private final String tmpDir = System.getProperty("java.io.tmpdir");
 	private final String tmpDir = "examples";

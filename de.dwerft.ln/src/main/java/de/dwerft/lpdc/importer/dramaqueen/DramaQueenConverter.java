@@ -223,7 +223,7 @@ public class DramaQueenConverter extends RdfGenerator {
 		attributeValueMappings.put("interiorExterior_2", "intext");
 		attributeValueMappings.put("interiorExterior_3", "extint");
 		
-		attributeValueMappings.put("sex_0", "männlich");
+		attributeValueMappings.put("sex_0", "mï¿½nnlich");
 		attributeValueMappings.put("sex_1", "weiblich");
 		
 		// Build attribute value id to value mappings for daytimes
@@ -545,7 +545,6 @@ public class DramaQueenConverter extends RdfGenerator {
 		ArrayList<Mapping> mappings = getMappingsForNode(node);
 
 		if (!mappings.isEmpty()) {
-
 			
 			Optional<Mapping> mapMapping = mappings.stream().filter(m -> m.getAction().equals(MappingAction.MAP)).findFirst();
 
