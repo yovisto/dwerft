@@ -34,7 +34,7 @@ public class ExporterTest {
 				outputPath, "9860f0bb-d9a6-45e4-9d03-79e7fefd16fa", "17621");
 		e.export();
 		
-		PreproducerSource prpSource = new PreproducerSource(new File(PREPRODUCER_CONFIG_FILE));
-		prpSource.send(new String(Files.readAllBytes(Paths.get(outputPath))));
+//		PreproducerSource prpSource = new PreproducerSource(new File(PREPRODUCER_CONFIG_FILE));
+//		prpSource.send(new String(Files.readAllBytes(Paths.get(outputPath))));
 	}
 }

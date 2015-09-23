@@ -35,7 +35,7 @@ public class PreproducerExporter extends RdfExporter {
 	private String outputPath;
 	private String projectID;
 	private String targetProjectID;
-	
+		
 	public PreproducerExporter(String sparqlEndpointUrl, String ontologyFileName, String outputPath, String projectID, String targetProjectID) {
 		super(sparqlEndpointUrl, ontologyFileName);
 		this.outputPath = outputPath;
@@ -225,6 +225,7 @@ public class PreproducerExporter extends RdfExporter {
 		return sceneGroupElement;
 	}
 
+	//TODO Adding content could be changed to an iterator using the mappings instead of hard coded values
 	private Element getSceneElement(Resource scene) {
 		
 		//Create the basic element
@@ -251,7 +252,7 @@ public class PreproducerExporter extends RdfExporter {
 			
 			sceneElement.setAttribute("insert", insertedBoolean);
 		}
-			
+					
 		//scene number
 		if (allEpisodeDataValues.containsKey("sceneNumber"))
 			sceneElement.addContent(new Element("number").setText(getSceneContentValue(allEpisodeDataValues, "sceneNumber")));
@@ -277,11 +278,26 @@ public class PreproducerExporter extends RdfExporter {
 		if (allEpisodeDataValues.containsKey("sceneShots"))
 			sceneElement.addContent(new Element("shots").setText(getSceneContentValue(allEpisodeDataValues, "sceneShots")));
 			
-		/*
 		//story time
 		if (allEpisodeDataValues.containsKey("storyTime"))
-			sceneElement.addContent(getSceneContent(allEpisodeDataValues, "sceneShots", "shots"));
-		*/
+			sceneElement.addContent(new Element("storytime").setText(getSceneContentValue(allEpisodeDataValues, "sceneShots")));
+		
+		//estimated time
+		if (allEpisodeDataValues.containsKey("estimatedTime"))
+			sceneElement.addContent(new Element("prestop").setText(getSceneContentValue(allEpisodeDataValues, "estimatedTime")));
+		
+		//pages
+		if (allEpisodeDataValues.containsKey("pages"))
+			sceneElement.addContent(new Element("pages").setText(getSceneContentValue(allEpisodeDataValues, "pages")));
+		
+		//page start
+		if (allEpisodeDataValues.containsKey("pageStart"))
+			sceneElement.addContent(new Element("pagefrom").setText(getSceneContentValue(allEpisodeDataValues, "pageStart")));
+		
+		//page end
+		if (allEpisodeDataValues.containsKey("pageEnd"))
+			sceneElement.addContent(new Element("pageto").setText(getSceneContentValue(allEpisodeDataValues, "pageEnd")));
+		
 		return sceneElement;
 	}
 	
