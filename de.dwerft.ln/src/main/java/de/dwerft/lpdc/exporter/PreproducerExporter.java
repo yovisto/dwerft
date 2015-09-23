@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -44,6 +45,13 @@ public class PreproducerExporter extends RdfExporter {
 	
 	@Override
 	public void export() {
+		exportScenes();
+	}
+	
+	/**
+	 * Exports all scenes for the projectID given in the constructor
+	 */
+	private void exportScenes() {
 		
 		//Prepare xml document template, including root, payload method, and project
 		Element root = new Element("root");
@@ -59,12 +67,15 @@ public class PreproducerExporter extends RdfExporter {
 		List<Resource> listOfProjectsWithSpecifiedID = getResourcesFilteredByLiteral("Project", "identifierPreProducer", projectID);
 		listOfProjectsWithSpecifiedID.addAll(getResourcesFilteredByLiteral("Project", "identifierDramaQueen", projectID));
 		Resource project = null;
+		
 		//If the the number of projects found is not equal to 1 throw an error
-		if (listOfProjectsWithSpecifiedID.size() == 1)
+		if (listOfProjectsWithSpecifiedID.size() == 1) {
+			L.info("Exporting scenes for projectID " + projectID);
 			project = listOfProjectsWithSpecifiedID.get(0);
-		else
+		} else {
 			L.error("List of projects found matching project ID " + projectID + " is empty or larger than one!");
-
+		}
+		
 		//Get all episodes of the current project
 		ArrayList<Resource> episodes = getLinkedResources(project, "hasEpisode");
 		
@@ -77,6 +88,7 @@ public class PreproducerExporter extends RdfExporter {
 			projectIdElement.addContent(episodeElement);
 		}
 		
+		//Add namespaces to all nodes starting with the root
 		addNameSpaces(root);
 		
 		//Print the final xml file
@@ -137,8 +149,57 @@ public class PreproducerExporter extends RdfExporter {
 		Element sceneGroupElement = new Element("scene-group");
 		
 		//Get all scenes of the scene group
-//		ArrayList<Resource> scenes = getLinkedResources(sceneGroup, "hasScene");
+		ArrayList<Resource> scenes = getLinkedResources(sceneGroup, "hasScene");
+		
+		//Sort scenes by number
+		scenes.sort(new Comparator<Resource>() {
 
+			//Custom comparator, since scene number may be in the form of 1a, 2b etc..
+			@Override
+			public int compare(Resource scene1, Resource scene2) {
+				String sceneNumber1 = getLinkedDataValues(scene1, "sceneNumber").get(0).getLexicalForm();
+				String sceneNumber2 = getLinkedDataValues(scene2, "sceneNumber").get(0).getLexicalForm();
+				
+				if (isNumberOnly(sceneNumber1) && isNumberOnly(sceneNumber2)) {
+					return (Integer.compare(Integer.parseInt(sceneNumber1), Integer.parseInt(sceneNumber2)));
+				} else {
+					int s1 = getCompoundNumberDigits(sceneNumber1);
+					int s2 = getCompoundNumberDigits(sceneNumber2);
+					if (Integer.compare(s1, s2) != 0) {
+						return (Integer.compare(s1, s2));
+					} else {
+						return getCompundNumberLetters(sceneNumber1).compareToIgnoreCase(getCompundNumberLetters(sceneNumber2));
+					}
+				}
+			}
+			
+			/**
+			 * Checks if a given String is an Integer or not
+			 * @param sceneNumber
+			 * 			the String to be checked
+			 * @return
+			 */
+			private Boolean isNumberOnly(String sceneNumber) {
+				try {
+					Integer.parseInt(sceneNumber);
+					return true;
+				} catch (NumberFormatException e) {
+					return false;
+				}
+			}
+			
+			//Gets the number part of a compound scene number
+			private int getCompoundNumberDigits(String sceneNumber) {
+				return Integer.parseInt(sceneNumber.replaceAll("[a-zA-Z]+", ""));
+			}
+			
+			//Gets the letter part of a compound scene number
+			private String getCompundNumberLetters(String sceneNumber) {
+				return sceneNumber.replaceAll("\\d+", "");
+			}	
+		});
+
+		/*
 		//////////////////////////////////////////////////////////////////////////////
 		//TODO Scenes must be in correct order for preproducer import. This is a hack, because ordering for scene numbers with letters does not work
 		ArrayList<Resource> scenes = new ArrayList<Resource>();
@@ -154,6 +215,7 @@ public class PreproducerExporter extends RdfExporter {
 			scenes.add(sol.getResource("scene"));
 		}
 		//////////////////////////////////////////////////////////////////////////////
+		*/
 		
 		//Iterating over each scene, append the scene element to the scene group element
 		for (Resource scene : scenes) {
@@ -235,7 +297,7 @@ public class PreproducerExporter extends RdfExporter {
 	private void addNameSpaces(Element root) {
 		
 	    if(root != null) {
-		    if (!hasNamespace(root))
+		    if (hasNamespace(root))
 	    		root.setNamespace(PRP_NAMESPACE);
 		    
 		    for (int index = 0; root.getChildren() != null &&  index < root.getChildren().size(); index++) {
@@ -252,7 +314,7 @@ public class PreproducerExporter extends RdfExporter {
 	 * @return
 	 */
 	private boolean hasNamespace(Element root) {
-		return root.getName().equals("title") || root.getName().equals("root") || root.getName().equals("payload");
+		return !(root.getName().equals("title") || root.getName().equals("root") || root.getName().equals("payload"));
 	}
 	
 	

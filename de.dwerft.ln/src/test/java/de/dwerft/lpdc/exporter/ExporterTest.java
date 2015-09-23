@@ -35,7 +35,6 @@ public class ExporterTest {
 		e.export();
 		
 		PreproducerSource prpSource = new PreproducerSource(new File(PREPRODUCER_CONFIG_FILE));
-		
 		prpSource.send(new String(Files.readAllBytes(Paths.get(outputPath))));
 	}
 }
