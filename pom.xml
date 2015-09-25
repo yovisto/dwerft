@@ -36,6 +36,9 @@
 	</dependencies>
 	<modules>
 		<module>de.dwerft.ln</module>
+		
+		
+		<module>server</module>
 	</modules>
 
  <build>
