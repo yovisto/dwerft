@@ -1,0 +1,12 @@
+###
+# ignore commen eclipse files
+# if you need them, create them with mvn eclipse:eclipse
+###
+.classpath
+.project
+.settings/
+
+###
+# ignore maven things
+###
+target/
