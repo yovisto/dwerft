@@ -7,18 +7,44 @@
   <display-name>DWERFT web service</display-name>
     
   <servlet>
-        <servlet-name>jersey-serlvet</servlet-name>
+        <servlet-name>dwerft-serlvet</servlet-name>
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
-             <param-name>jersey.config.server.provider.packages</param-name>
-             <param-value>de.dwerft.server.api</param-value>
+        	 <param-name>javax.ws.rs.Application</param-name>
+             <param-value>de.dwerft.server.app.DwerftApplication</param-value>
+        </init-param>
+        <init-param>
+        	<param-name>com.sun.jersey.spi.container.ResourceFilters</param-name>
+        	<param-value>org.secnod.shiro.ShiroResourceFilterFactory</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
-    </servlet>
+  </servlet>
    
-    <servlet-mapping>
-        <servlet-name>jersey-serlvet</servlet-name>
-        <url-pattern>/*</url-pattern>
-    </servlet-mapping>
-      
+  <servlet-mapping>
+    <servlet-name>dwerft-serlvet</servlet-name>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+    
+  <context-param>
+   	<param-name>shiroConfigLocations</param-name>
+   	<param-value>classpath:shiro.ini</param-value>
+  </context-param>
+
+  <listener>
+   	<listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
+  </listener>
+
+  <filter>
+   	<filter-name>ShiroFilter</filter-name>
+   	<filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
+  </filter>
+    
+  <filter-mapping>
+    <filter-name>ShiroFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+  </filter-mapping>
 </web-app>
