@@ -6,14 +6,45 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
+/**
+ * THIS CLASS IS CURRENTLY NOT IN USE
+ * 
+ * The Class RDFtoXMLconverter.
+ */
 public class RDFtoXMLconverter {
 
+	/** The Logger. */
+	private static final Logger L = Logger.getLogger(RDFtoXMLconverter.class.getName());
+	
+	/** The ont conn. */
 	protected OntologyConnector ontConn;
+	
+	/** The xml proc. */
 	protected XMLProcessor xmlProc;
+	
+	/** The mapper. */
 	protected Mapper mapper;
+	
+	/** The rdf proc. */
 	protected RdfProcessor rdfProc;
+	
+	/** The trip conn. */
 	protected TripleStoreConnector tripConn;
 	
+	/**
+	 * Instantiates a new RDF to xml converter.
+	 *
+	 * @param ontologyFileName 
+	 * 		the ontology file name
+	 * @param ontologyFormat 
+	 * 		the ontology format
+	 * @param mappingsFilename 
+	 * 		the mappings filename
+	 * @param sparqlEndpointUrl 
+	 * 		the sparql endpoint url
+	 */
 	public RDFtoXMLconverter(String ontologyFileName, String ontologyFormat, String mappingsFilename, String sparqlEndpointUrl) {
 		ontConn = new OntologyConnector(ontologyFileName, ontologyFormat);
 		mapper = new Mapper(mappingsFilename);
@@ -21,21 +52,12 @@ public class RDFtoXMLconverter {
 		tripConn = new TripleStoreConnector(ontConn, sparqlEndpointUrl);
 	}
 	
-//	public Map<String, String> getAvailableProjects() {
-//		Map<String, String> result = new HashMap<String, String>();
-//		
-//		ArrayList<Resource> resources = tripConn.getResourcesByType(OntologyConstants.ONTOLOGY_NAMESPACE+"Project");
-//
-//		for (Resource resource : resources) {
-//			resource.get
-//			
-//			
-//		}
-//		
-//		return result;
-//	}
-//	
-	
+	/**
+	 * Convert.
+	 *
+	 * @param projectIdentifier the project identifier
+	 * @param os the os
+	 */
 	public void convert(String projectIdentifier, OutputStream os) {
 		
 		xmlProc = new XMLProcessor();
@@ -55,25 +77,19 @@ public class RDFtoXMLconverter {
 				mappedOntologyElements.put(targetOntologyClass, properties);
 			}
 			
-			if (targetOntologyProperty != null && !"".equals(targetOntologyProperty)) {
+			if (targetOntologyProperty != null && !targetOntologyProperty.equals("")) {
 				properties.add(targetOntologyProperty);
 			}
 		}
-		
-//		Set<String> keySet = mappedOntologyElements.keySet();
-		
-		
-		
+
+		//Print all keys and their mapped ontology elements
 		for (String key : mappedOntologyElements.keySet()) {
 			Set<String> props = mappedOntologyElements.get(key);
 			
-			System.out.println(key);
+			L.debug(key);
 			for (String string : props) {
-				System.out.println("-- "+string);
-			}
-			
+				L.debug("-- " + string);
+			}	
 		}
-	
 	}
-
 }
