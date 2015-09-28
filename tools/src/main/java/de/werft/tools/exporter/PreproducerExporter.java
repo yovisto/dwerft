@@ -23,18 +23,43 @@ import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Resource;
 
-
+/**
+ * The Class PreproducerExporter.
+ * A reference implementation generating a valid XML file which can be read by the preproducer API.
+ * Currently the XML file only contains data concerning scenes.
+ * The data is fetched by querying the SPARQL endpoint and utilizing the methods provided in the parent abstract class.
+ */
 public class PreproducerExporter extends RdfExporter {
 
 	/** The Logger. */
 	private static final Logger L = Logger.getLogger(PreproducerExporter.class.getName());
 	
+	/** The prp namespace. */
 	private final Namespace PRP_NAMESPACE = Namespace.getNamespace("prp", "http://www.preproducer.com/");
 	
+	/** The output path. */
 	private String outputPath;
+	
+	/** The project id. */
 	private String projectID;
+	
+	/** The target project id. */
 	private String targetProjectID;
 		
+	/**
+	 * Instantiates a new preproducer exporter.
+	 *
+	 * @param sparqlEndpointUrl 
+	 * 			SPARQL endpoint url, typically http://sparql.filmontology.org
+	 * @param ontologyFileName 
+	 * 			file containing the ontology model
+	 * @param outputPath 
+	 * 			path to resulting XML file
+	 * @param projectID 
+	 * 			the project ID used internally by the LPDC
+	 * @param targetProjectID 
+	 * 			the project ID required by the preproducer API. Is only used in the resulting XML
+	 */
 	public PreproducerExporter(String sparqlEndpointUrl, String ontologyFileName, String outputPath, String projectID, String targetProjectID) {
 		super(sparqlEndpointUrl, ontologyFileName);
 		this.outputPath = outputPath;
@@ -42,13 +67,17 @@ public class PreproducerExporter extends RdfExporter {
 		this.targetProjectID = targetProjectID;
 	}
 	
+	/* (non-Javadoc)
+	 * @see de.werft.tools.exporter.RdfExporter#export()
+	 */
 	@Override
 	public void export() {
+		//In this example currently only a scene XMl is generated
 		exportScenes();
 	}
 	
 	/**
-	 * Exports all scenes for the projectID given in the constructor
+	 * Exports all scenes for the projectID given in the constructor.
 	 */
 	private void exportScenes() {
 		
@@ -67,7 +96,7 @@ public class PreproducerExporter extends RdfExporter {
 		listOfProjectsWithSpecifiedID.addAll(getResourcesFilteredByLiteral("Project", "identifierDramaQueen", projectID));
 		Resource project = null;
 		
-		//If the the number of projects found is not equal to 1 throw an error
+		//If the number of projects found is not equal to 1 throw an error
 		if (listOfProjectsWithSpecifiedID.size() == 1) {
 			L.info("Exporting scenes for projectID " + projectID);
 			project = listOfProjectsWithSpecifiedID.get(0);
@@ -95,14 +124,14 @@ public class PreproducerExporter extends RdfExporter {
 	}
 	
 	/**
-	 * Creates an xml element for a given episode resource, which has all its children alrady appended to it
-	 * 
-	 * @param episode
-	 * 				Episode resource which the element will resemble
-	 * @param projectTitle
-	 * 				Projects title which will in this case mark each episode
-	 * @return
-	 * 				The Element resembling the episode and it's subelements
+	 * Creates an xml element for a given episode resource, which has all its children already appended to it.
+	 *
+	 * @param episode 				
+	 * 			Episode resource which the element will resemble
+	 * @param projectTitle 				
+	 * 			Projects title which will in this case mark each episode
+	 * @return 				
+	 * 			The Element resembling the episode and it's subelements
 	 */
 	private Element getEpisodeElement(Resource episode, String projectTitle) {
 		
@@ -119,7 +148,7 @@ public class PreproducerExporter extends RdfExporter {
 //		ArrayList<Resource> sceneGroups = getLinkedResources(episode, "hasSceneGroup");
 
 		//////////////////////////////////////////////////////////////////////////////
-		//TODO Scenes must be in correct order for preproducer import. This is a hack, because ordering for scene numbers with letters does not work
+		//TODO Scene-Groups must be in correct order for preproducer import. This is a hack, because ordering for scene group is difficult right now
 		ArrayList<Resource> sceneGroups = new ArrayList<Resource>();
 		String orderByQuery = OntologyConstants.ONTOLOGY_PREFIXES
 				+ "select ?group where { "
@@ -142,6 +171,14 @@ public class PreproducerExporter extends RdfExporter {
 		return episodeElement;
 	}
 	
+	/**
+	 * Gets the scene group element.
+	 *
+	 * @param sceneGroup 
+	 * 			the scene group
+	 * @return 
+	 * 			the scene group element
+	 */
 	private Element getSceneGroupElement(Resource sceneGroup) {
 		
 		//Create the basic element
@@ -197,24 +234,6 @@ public class PreproducerExporter extends RdfExporter {
 				return sceneNumber.replaceAll("\\d+", "");
 			}	
 		});
-
-		/*
-		//////////////////////////////////////////////////////////////////////////////
-		//TODO Scenes must be in correct order for preproducer import. This is a hack, because ordering for scene numbers with letters does not work
-		ArrayList<Resource> scenes = new ArrayList<Resource>();
-		String orderByQuery = OntologyConstants.ONTOLOGY_PREFIXES 
-				+ "select ?scene where { "
-				+ "<"+sceneGroup.getURI()+"> "
-				+ OntologyConstants.ONTOLOGY_PREFIX+":hasScene ?scene. "
-				+ "?scene "+ OntologyConstants.ONTOLOGY_PREFIX+":identifier ?identifier ."
-				+ "}ORDER BY ASC(?identifier)";
-		ResultSet rs = queryEndpoint(orderByQuery);
-		while(rs.hasNext()) {
-			QuerySolution sol = rs.nextSolution();
-			scenes.add(sol.getResource("scene"));
-		}
-		//////////////////////////////////////////////////////////////////////////////
-		*/
 		
 		//Iterating over each scene, append the scene element to the scene group element
 		for (Resource scene : scenes) {
@@ -224,12 +243,18 @@ public class PreproducerExporter extends RdfExporter {
 		return sceneGroupElement;
 	}
 
-	//TODO Adding content could be changed to an iterator using the mappings instead of hard coded values
+	/**
+	 * Gets the scene element.
+	 * TODO Adding content could be changed to an iterator using the mappings instead of hard coded values
+	 *
+	 * @param scene the scene
+	 * @return the scene element
+	 */
 	private Element getSceneElement(Resource scene) {
 		
 		//Create the basic element
 		Element sceneElement = new Element("scene");
-		Map<String, ArrayList<Literal>> allEpisodeDataValues = getAllLinkedDataValues(scene);
+		Map<String, ArrayList<Literal>> allSceneDataValues = getAllLinkedDataValues(scene);
 		
 		//All elements are hard coded, might be better to find a generalized way of appending these
 		//It is assumed the Arraylist only contains one value for each key
@@ -241,10 +266,9 @@ public class PreproducerExporter extends RdfExporter {
 			sceneElement.setAttribute("decorationname", name);
 		}
 			
-		
 		//scene inserted | this is an attribute
-		if (allEpisodeDataValues.containsKey("sceneInserted")) {
-			String insertedText = getSceneContentValue(allEpisodeDataValues, "sceneInserted");
+		if (allSceneDataValues.containsKey("sceneInserted")) {
+			String insertedText = getSceneContentValue(allSceneDataValues, "sceneInserted");
 			String insertedBoolean = "true";
 			if (insertedText.equals("0"))
 				insertedBoolean = "false";
@@ -253,60 +277,70 @@ public class PreproducerExporter extends RdfExporter {
 		}
 					
 		//scene number
-		if (allEpisodeDataValues.containsKey("sceneNumber"))
-			sceneElement.addContent(new Element("number").setText(getSceneContentValue(allEpisodeDataValues, "sceneNumber")));
+		if (allSceneDataValues.containsKey("sceneNumber"))
+			sceneElement.addContent(new Element("number").setText(getSceneContentValue(allSceneDataValues, "sceneNumber")));
 		
 		//interior/exterior
-		if (allEpisodeDataValues.containsKey("interiorExterior"))
-			sceneElement.addContent(new Element("intext").setText(getSceneContentValue(allEpisodeDataValues, "interiorExterior")));
+		if (allSceneDataValues.containsKey("interiorExterior"))
+			sceneElement.addContent(new Element("intext").setText(getSceneContentValue(allSceneDataValues, "interiorExterior")));
 		
 		//day/night
-		if (allEpisodeDataValues.containsKey("dayTime"))
-			sceneElement.addContent(new Element("daynight").setText(getSceneContentValue(allEpisodeDataValues, "dayTime")));
+		if (allSceneDataValues.containsKey("dayTime"))
+			sceneElement.addContent(new Element("daynight").setText(getSceneContentValue(allSceneDataValues, "dayTime")));
 		
 		//description
-		if (allEpisodeDataValues.containsKey("sceneDescription"))
-			sceneElement.addContent(new Element("description").setText(getSceneContentValue(allEpisodeDataValues, "sceneDescription")));
+		if (allSceneDataValues.containsKey("sceneDescription"))
+			sceneElement.addContent(new Element("description").setText(getSceneContentValue(allSceneDataValues, "sceneDescription")));
 		
 		//script | is nested in preproducer but not in rdf
-		if (allEpisodeDataValues.containsKey("sceneContent")) {
-			Element scriptElement = new Element("script").addContent(new Element("formattedscript").setText(getSceneContentValue(allEpisodeDataValues, "sceneContent")));
+		if (allSceneDataValues.containsKey("sceneContent")) {
+			Element scriptElement = new Element("script").addContent(new Element("formattedscript").setText(getSceneContentValue(allSceneDataValues, "sceneContent")));
 			sceneElement.addContent(scriptElement);
 		}
 		//scene shots
-		if (allEpisodeDataValues.containsKey("sceneShots"))
-			sceneElement.addContent(new Element("shots").setText(getSceneContentValue(allEpisodeDataValues, "sceneShots")));
+		if (allSceneDataValues.containsKey("sceneShots"))
+			sceneElement.addContent(new Element("shots").setText(getSceneContentValue(allSceneDataValues, "sceneShots")));
 			
 		//story time
-		if (allEpisodeDataValues.containsKey("storyTime"))
-			sceneElement.addContent(new Element("storytime").setText(getSceneContentValue(allEpisodeDataValues, "sceneShots")));
+		if (allSceneDataValues.containsKey("storyTime"))
+			sceneElement.addContent(new Element("storytime").setText(getSceneContentValue(allSceneDataValues, "sceneShots")));
 		
 		//estimated time
-		if (allEpisodeDataValues.containsKey("estimatedTime"))
-			sceneElement.addContent(new Element("prestop").setText(getSceneContentValue(allEpisodeDataValues, "estimatedTime")));
+		if (allSceneDataValues.containsKey("estimatedTime"))
+			sceneElement.addContent(new Element("prestop").setText(getSceneContentValue(allSceneDataValues, "estimatedTime")));
 		
 		//pages
-		if (allEpisodeDataValues.containsKey("pages"))
-			sceneElement.addContent(new Element("pages").setText(getSceneContentValue(allEpisodeDataValues, "pages")));
+		if (allSceneDataValues.containsKey("pages"))
+			sceneElement.addContent(new Element("pages").setText(getSceneContentValue(allSceneDataValues, "pages")));
 		
 		//page start
-		if (allEpisodeDataValues.containsKey("pageStart"))
-			sceneElement.addContent(new Element("pagefrom").setText(getSceneContentValue(allEpisodeDataValues, "pageStart")));
+		if (allSceneDataValues.containsKey("pageStart"))
+			sceneElement.addContent(new Element("pagefrom").setText(getSceneContentValue(allSceneDataValues, "pageStart")));
 		
 		//page end
-		if (allEpisodeDataValues.containsKey("pageEnd"))
-			sceneElement.addContent(new Element("pageto").setText(getSceneContentValue(allEpisodeDataValues, "pageEnd")));
+		if (allSceneDataValues.containsKey("pageEnd"))
+			sceneElement.addContent(new Element("pageto").setText(getSceneContentValue(allSceneDataValues, "pageEnd")));
 		
 		return sceneElement;
 	}
 	
-	private String getSceneContentValue(Map<String, ArrayList<Literal>> allEpisodeDataValues, String ontologyIdentifier) {
-		return allEpisodeDataValues.get(ontologyIdentifier).get(0).getLexicalForm();
+	/**
+	 * Gets the actual value of a literal
+	 *
+	 * @param allSceneDataValues 
+	 * 			all literals of a scene
+	 * @param ontologyIdentifier 
+	 * 			the identifier of a certain literal 
+	 * @return 
+	 * 			the value of the given literal
+	 */
+	private String getSceneContentValue(Map<String, ArrayList<Literal>> allSceneDataValues, String ontologyIdentifier) {
+		return allSceneDataValues.get(ontologyIdentifier).get(0).getLexicalForm();
 	}
 
 	/**
-	 * recursively adds namespace prefixes to all elements
-	 * 
+	 * recursively adds namespace prefixes to all elements.
+	 *
 	 * @param root the root element
 	 */
 	private void addNameSpaces(Element root) {
@@ -322,11 +356,12 @@ public class PreproducerExporter extends RdfExporter {
 	}
 
 	/**
-	 * Returns true if the given element is supposed to have a namespace prefix and false otherwise
-	 * 
-	 * @param root
+	 * Returns true if the given element is supposed to have a namespace prefix and false otherwise.
+	 *
+	 * @param root 			
 	 * 			the element in question
-	 * @return
+	 * @return 
+	 * 			true, if successful
 	 */
 	private boolean hasNamespace(Element root) {
 		return !(root.getName().equals("title") || root.getName().equals("root") || root.getName().equals("payload"));
@@ -334,7 +369,10 @@ public class PreproducerExporter extends RdfExporter {
 	
 	
 	/**
-	 * Writes the xml document in pretty print to console and a file
+	 * Writes the xml document in pretty print to console and a file.
+	 *
+	 * @param prpXml 
+	 * 		the XML document to be printed
 	 */
 	private void writeXmlToFile(Document prpXml) {
 		try {
