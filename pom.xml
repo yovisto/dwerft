@@ -35,7 +35,7 @@
     	</dependency>
 	</dependencies>
 	<modules>
-		<module>de.dwerft.ln</module>
+		<module>tools</module>
 	</modules>
 
  <build>
