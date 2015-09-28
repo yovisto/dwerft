@@ -8,6 +8,13 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import de.werft.tools.exporter.ExporterTest;
 
+/**
+ * Dwerft test suite
+ *
+ * All test classes collected.
+ *
+ * @author Henrik (juerges.henrik@gmail.com)
+ */
 @RunWith(Suite.class)
 @SuiteClasses({ ExporterTest.class, DramaqueenToRdfTest.class, PreProducerToRdfTest.class})
 public class DwerftTestSuite { }

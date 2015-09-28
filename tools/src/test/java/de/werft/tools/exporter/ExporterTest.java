@@ -9,6 +9,14 @@ import de.werft.tools.general.OntologyConstants;
 
 import static org.junit.Assert.assertTrue;
 
+/**
+ * Test export functions.
+ *
+ * At this moment all tests are only execution tests.
+ * Please prove the results by hand.
+ *
+ * @author Henrik (juerges.henrik@gmail.com)
+ */
 public class ExporterTest {
 
 	private final String tmpDir = "examples";

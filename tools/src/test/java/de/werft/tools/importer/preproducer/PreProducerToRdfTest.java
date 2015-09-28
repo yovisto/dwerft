@@ -27,7 +27,9 @@ public class PreProducerToRdfTest {
 				OntologyConstants.ONTOLOGY_FILE,
 				OntologyConstants.ONTOLOGY_FORMAT,
 				PREPRODUCER_MAPPINGS_FILE);
-		
+
+        // the order is important, you have to create all classes before
+        // you can use them.
 		pprdf.convert(pps.get("info"));
 		pprdf.convert(pps.get("listCharacters"));
 		pprdf.convert(pps.get("listCrew"));
