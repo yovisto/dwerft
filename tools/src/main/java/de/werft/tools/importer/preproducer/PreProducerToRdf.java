@@ -10,6 +10,11 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 
+/**
+ * Actual xml to rdf implementation for preproducer.
+ * {@link XMLtoRDFconverter}
+ *
+ */
 public class PreProducerToRdf extends XMLtoRDFconverter {
 
 	public PreProducerToRdf(String ontologyFileName, String ontologyFormat,
@@ -23,23 +28,18 @@ public class PreProducerToRdf extends XMLtoRDFconverter {
 	 * @return Project identifier
 	 */
 	private String findProjectId() {
-		
-		String result = null;
-		
 		Element documentElement = xmlProc.getDocumentElement();
 		
 		NodeList elementsByTagName = documentElement.getElementsByTagName("prp:project");
 		Node item = elementsByTagName.item(0);
-		
-		result = XMLProcessor.getValueOfAttribute(item, "projectid");
 
-		return result;
-		
+		return XMLProcessor.getValueOfAttribute(item, "projectid");
 	}
 
 	@Override
 	public void processingBeforeConvert() {
-		String pid = findProjectId();
+		// try to find the given project
+        String pid = findProjectId();
 		if (pid != null) {
 			rdfProc.setUriIdentifierPrefix("Project/"+pid+"/");
 		}
@@ -47,18 +47,14 @@ public class PreProducerToRdf extends XMLtoRDFconverter {
 
 	@Override
 	public void processingAfterConvert() {
-		
+		// append the generated graph to the DWERFT model
 		Model generatedModel = rdfProc.getGeneratedModel();
-
 		Resource dwerft = generatedModel.getResource("http://filmontology.org/resource/DWERFT");
 
 		String projectId = findProjectId();
 		Resource project = rdfProc.getIdResourceMapping().get(projectId);
 		
 		Property property = generatedModel.getProperty("http://purl.org/dc/terms/hasPart");
-		
 		dwerft.addProperty(property, project);
-
 	}
-
 }

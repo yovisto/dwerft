@@ -11,6 +11,13 @@ import org.w3c.dom.Node;
 
 import com.hp.hpl.jena.rdf.model.Model;
 
+/**
+ * The xml to rdf converter.
+ *
+ * This class takes first the ontology file and its format.
+ * Second the mapping from xml to rdf. For the mapping format see README.md
+ *
+ */
 public abstract class XMLtoRDFconverter {
 	
 	/** The Logger. */
@@ -38,11 +45,14 @@ public abstract class XMLtoRDFconverter {
 		mapper = new Mapper(mappingsFilename);
 		rdfProc = new RdfProcessor(ontConn);
 	}
-	
+
+	/**
+	 * this methods starts the conversion.
+	 *
+	 * @param is the xml input stream
+	 */
 	public void convert(InputStream is) {
-		
 		xmlProc = new XMLProcessor(is);
-		
 		processingBeforeConvert();
 		
 		Node node;		
@@ -59,8 +69,14 @@ public abstract class XMLtoRDFconverter {
 	public Model getGeneratedModel() {
 		return rdfProc.getGeneratedModel();
 	}
-	
-	
+
+
+	/**
+	 * A helper method for writing the result int o a file.
+	 *
+	 * @param filename the resulting filename and directory
+	 * @param format the output format e.g. TTL
+	 */
 	public void writeRdfToFile(String filename, String format) {
 		OutputStream out;
 		try {
@@ -76,9 +92,16 @@ public abstract class XMLtoRDFconverter {
 	public void writeRdfToFile(String filename) {
 		writeRdfToFile(filename, "TTL");
 	}
-	
-	public abstract void processingBeforeConvert();
 
+    /**
+     * Override this hook to make some adjustments before
+     * we start the conversion.
+     */
+    public abstract void processingBeforeConvert();
+
+    /**
+     * Override the hook to make some clean ups after the conversion.
+     */
 	public abstract void processingAfterConvert();
 
 }
