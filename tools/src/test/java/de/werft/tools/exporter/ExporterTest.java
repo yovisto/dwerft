@@ -1,24 +1,25 @@
 package de.werft.tools.exporter;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.junit.Test;
 
 import de.werft.tools.general.OntologyConstants;
 
+import static org.junit.Assert.assertTrue;
+
 public class ExporterTest {
 
-	private static final String PREPRODUCER_CONFIG_FILE = "src/main/resources/config.properties";
-
-//	private final String tmpDir = System.getProperty("java.io.tmpdir");
 	private final String tmpDir = "examples";
 	
-//	@Test
-//	public void testLockitExporter() throws IOException {
-//		
-//		LockitExporter e = new LockitExporter(OntologyConstants.SPARQL_ENDPOINT, OntologyConstants.ONTOLOGY_FILE, tmpDir + "/lockit_filmontology_scenes.csv", "17621");
-//		e.export();
-//	}
+	@Test
+	public void testLockitExporter() throws IOException {
+		LockitExporter e = new LockitExporter(OntologyConstants.SPARQL_ENDPOINT,
+				OntologyConstants.ONTOLOGY_FILE, tmpDir + "/lockit_filmontology_scenes.csv", "17621");
+		e.export();
+        assertTrue(new File(tmpDir + "/lockit_filmontology.scenes.csv").exists());
+	}
 	
 	@Test
 	public void testPreproducerExporter() throws IOException {
@@ -29,8 +30,8 @@ public class ExporterTest {
 				OntologyConstants.ONTOLOGY_FILE,
 				outputPath, "9860f0bb-d9a6-45e4-9d03-79e7fefd16fa", "17621");
 		e.export();
-		
-//		PreproducerSource prpSource = new PreproducerSource(new File(PREPRODUCER_CONFIG_FILE));
-//		prpSource.send(new String(Files.readAllBytes(Paths.get(outputPath))));
+        assertTrue(new File(tmpDir + "/prepoducer_filmontology_scenes.xml").exists());
 	}
+
+
 }
