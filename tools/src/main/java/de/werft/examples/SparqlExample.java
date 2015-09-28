@@ -12,7 +12,7 @@ import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.query.ResultSetFormatter;
 
 /**
- * The Class SparqlExample.
+ * The Class SparqlExample make use of the Jena API.
  * In order to access the information stored in the linked production data cloud, queries must be send to a SPARQL endpoint.
  * This is an example demonstrating how to query the SPARQL endpoint. 
  * The query used fetches the URIs of all projects currently stored in the LPDC.

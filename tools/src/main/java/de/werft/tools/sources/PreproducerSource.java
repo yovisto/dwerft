@@ -1,14 +1,7 @@
 
 package de.werft.tools.sources;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
@@ -25,6 +18,16 @@ import javax.net.ssl.HttpsURLConnection;
 
 import org.apache.commons.codec.binary.Base64;
 
+/**
+ * This class provides api access to PreProducer.
+ *
+ * It implements both sides, the download of raw xml data from the service
+ * and the upload of newly generated xml files towards them.
+ * To grant yourself api access copy the "config.template" to "config.properties"
+ * and adjust it with your secrets.
+ *
+ * @author Henrik (juerges.henrik@gmail.com)
+ */
 public class PreproducerSource implements Source {
 	
 	private String key = "";
@@ -35,30 +38,25 @@ public class PreproducerSource implements Source {
 	
 	private static final String BASE_URL = "https://software.preproducer.com/api";
 	
-	public PreproducerSource(File propertyFile) {
+	public PreproducerSource(File propertyFile) throws FileNotFoundException {
 		getFromPropFile(propertyFile);
 	}
 	
 	
-	private void getFromPropFile(File propertyFile) {
+	private void getFromPropFile(File propertyFile) throws FileNotFoundException {
 		Properties prop = new Properties();
 		
 		try {
-//			InputStream is = getClass().getClassLoader().getResourceAsStream(propertyFile.getName());
 			InputStream is = new FileInputStream(propertyFile);
 		
 			if (is != null) {
 				prop.load(is);
-//			} else {
-//				System.err.println("File not found: " + propertyFile.getAbsolutePath());
+				this.key = prop.getProperty("pp.key");
+				this.secret = prop.getProperty("pp.secret");
+				this.appSecret = prop.getProperty("pp.appsecret");
 			}
-			
-			this.key = prop.getProperty("pp.key");
-			this.secret = prop.getProperty("pp.secret");
-			this.appSecret = prop.getProperty("pp.appsecret");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new FileNotFoundException(e.getMessage());
 		}
 	}
 	
@@ -110,11 +108,14 @@ public class PreproducerSource implements Source {
 	    }
 		return result;
 	}
-	
-	
 
-	/* (non-Javadoc)
-	 * @see sources.Source#get(java.lang.String)
+
+	/**
+	 *
+	 * @param source The different api source names.
+	 *               they are: info, listCharacter, listCrew, listDecorations, listExtras,
+	 *               listFigures, listScenes, listSchedule
+	 * @return the resulting input stream
 	 */
 	@Override
 	public BufferedInputStream get(String source) {
