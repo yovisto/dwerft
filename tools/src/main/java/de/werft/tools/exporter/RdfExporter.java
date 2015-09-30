@@ -14,7 +14,6 @@ import java.util.Set;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
-import org.apache.log4j.Logger;
 
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
@@ -35,6 +34,8 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.util.iterator.ExtendedIterator;
 
 import de.werft.tools.general.OntologyConstants;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * The Class RdfExporter.
@@ -44,7 +45,7 @@ import de.werft.tools.general.OntologyConstants;
 public abstract class RdfExporter {
 		
 	/** The Logger. */
-	private static final Logger L = Logger.getLogger(RdfExporter.class.getName());
+	private static final Logger L = LogManager.getLogger(RdfExporter.class);
 
 	/** The model. */
 	private Model model;

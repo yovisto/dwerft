@@ -88,7 +88,12 @@ public abstract class XMLtoRDFconverter {
 			L.error("Failed writing turtle file " + filename + ": " + e);
 		}
 	}
-	
+
+	/**
+	 * A helper method for writing results as ttl file.
+	 *
+	 * @param filename name and directory of the result file
+	 */
 	public void writeRdfToFile(String filename) {
 		writeRdfToFile(filename, "TTL");
 	}

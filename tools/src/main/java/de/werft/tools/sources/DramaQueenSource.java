@@ -1,5 +1,8 @@
 package de.werft.tools.sources;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,6 +11,8 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 public class DramaQueenSource implements Source {
+
+	private final static Logger L = LogManager.getLogger(DramaQueenSource.class);
 
 	/**
 	 * Creates an input stream of the given file name. Assumes that the project file is compressed.
@@ -32,6 +37,7 @@ public class DramaQueenSource implements Source {
 		try {
 			if (compressed) {
 				ZipFile zip = new ZipFile(source);
+
 				Enumeration<? extends ZipEntry> entries = zip.entries();
 
 				while (entries.hasMoreElements()) {
@@ -45,7 +51,7 @@ public class DramaQueenSource implements Source {
 			}
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			L.error(source + " is not reachable. " + e.getMessage());
 		}
 
 		return null;
