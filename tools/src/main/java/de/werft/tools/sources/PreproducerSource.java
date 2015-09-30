@@ -17,6 +17,8 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.net.ssl.HttpsURLConnection;
 
 import org.apache.commons.codec.binary.Base64;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * This class provides api access to PreProducer.
@@ -29,6 +31,8 @@ import org.apache.commons.codec.binary.Base64;
  * @author Henrik (juerges.henrik@gmail.com)
  */
 public class PreproducerSource implements Source {
+
+	private final static Logger L = LogManager.getLogger(PreproducerSource.class);
 	
 	private String key = "";
 	
@@ -49,13 +53,14 @@ public class PreproducerSource implements Source {
 		try {
 			InputStream is = new FileInputStream(propertyFile);
 		
-			if (is != null) {
-				prop.load(is);
-				this.key = prop.getProperty("pp.key");
-				this.secret = prop.getProperty("pp.secret");
-				this.appSecret = prop.getProperty("pp.appsecret");
-			}
+			prop.load(is);
+			this.key = prop.getProperty("pp.key");
+			this.secret = prop.getProperty("pp.secret");
+			this.appSecret = prop.getProperty("pp.appsecret");
+            close(is);
+
 		} catch (IOException e) {
+			L.error("Property File " + propertyFile.getPath() + " not found or loaded. " + e.getMessage());
 			throw new FileNotFoundException(e.getMessage());
 		}
 	}
@@ -104,7 +109,7 @@ public class PreproducerSource implements Source {
 			result = URLEncoder.encode(hash, "UTF-8");
 			
 	    } catch (Exception e) {
-	    	System.out.println(e);
+	    	L.error("Signature generation failed. " + e.getMessage());
 	    }
 		return result;
 	}
@@ -122,19 +127,18 @@ public class PreproducerSource implements Source {
 		Map<String, String> parameters = getBasicParameters(source);		
 		String signature = generateSignature(parameters);		
 		String restRequest = convertParametersToRequest(parameters);
-		
-		String url = "";
+
+        // if we an build a valid signature then we construct an inputstream
 		if (signature != null) {
-			url = BASE_URL + "?" + restRequest + "&signature=" + signature;
+            String url = BASE_URL + "?" + restRequest + "&signature=" + signature;
+
+			try {
+				return new BufferedInputStream(new URL(url).openStream());
+			} catch (IOException e) {
+				L.error("Api call " + source + " from preproducer is not reachable.");
+			}
 		}
-		
-		// construct an input stream
-		try {
-			return new BufferedInputStream(new URL(url).openStream());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 		
 		return null;
 	}
@@ -154,7 +158,7 @@ public class PreproducerSource implements Source {
 		parameters.put("signature", sig);
 		
 		try {
-			
+			// build http header
 			URL url = new URL(BASE_URL);
 			HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
 			conn.setDoOutput(true);
@@ -164,21 +168,22 @@ public class PreproducerSource implements Source {
 			
 			parameters.put("payload", content);
 			String paramRequest = convertParametersToRequest(parameters);
-			
+
+            // send data to api
 			OutputStream os = conn.getOutputStream();
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));		
 			writer.write(paramRequest);
 			writer.flush();
-			writer.close();
-			os.close();
-			
+			close(writer);
+			close(os);
+
             if (conn.getResponseCode() == HttpsURLConnection.HTTP_OK) {
                 result = true;
             }        
             conn.disconnect();   
 			
 		} catch (IOException e) {
-			System.out.println(e);
+			L.error("Could not send data to preproducer.");
 		}
 		
 		return result;
@@ -188,4 +193,20 @@ public class PreproducerSource implements Source {
 		byte[] encoded = Files.readAllBytes(Paths.get(path));
 		return new String(encoded, encoding);
 	}
+
+
+    /**
+     * Safely close streams and report errors
+     *
+     * @param c a closable
+     */
+    private void close(Closeable c) {
+        if (c != null) {
+            try {
+                c.close();
+            } catch (IOException e) {
+                L.error("Stream is not closed properly");
+            }
+        }
+    }
 }

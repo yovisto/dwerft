@@ -10,7 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 import de.werft.tools.general.OntologyConstants;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jdom2.Attribute;
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -32,7 +33,7 @@ import com.hp.hpl.jena.rdf.model.Resource;
 public class PreproducerExporter extends RdfExporter {
 
 	/** The Logger. */
-	private static final Logger L = Logger.getLogger(PreproducerExporter.class.getName());
+	private static final Logger L = LogManager.getLogger(PreproducerExporter.class);
 	
 	/** The prp namespace. */
 	private final Namespace PRP_NAMESPACE = Namespace.getNamespace("prp", "http://www.preproducer.com/");

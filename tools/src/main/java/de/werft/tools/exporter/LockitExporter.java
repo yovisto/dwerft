@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
-
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Resource;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * The Class LockitExporter.
@@ -20,7 +20,7 @@ import com.hp.hpl.jena.rdf.model.Resource;
 public class LockitExporter extends RdfExporter {
 	
 	/** The Logger. */
-	private static final Logger L = Logger.getLogger(LockitExporter.class.getName());
+	private static final Logger L = LogManager.getLogger(LockitExporter.class);
 	
 	/** The output path. */
 	private String outputPath;

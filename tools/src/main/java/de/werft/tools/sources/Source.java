@@ -13,14 +13,14 @@ import java.io.InputStream;
  * <br>
  */
 public interface Source {
-	
+
 	/**
 	 * Provides an input stream from a tool. a.k.a import.
 	 *
 	 * @param source e.g. api method name or else.
 	 * @return the input stream or null if we can't construct a working stream.
 	 */
-	public InputStream get(String source);
+	InputStream get(String source);
 	
 	/**
 	 * Sends the results to a tool. a.k.a. export
@@ -28,5 +28,5 @@ public interface Source {
 	 * @param content the content
 	 * @return true, if successful
 	 */
-	public boolean send(String content);
+	boolean send(String content);
 }

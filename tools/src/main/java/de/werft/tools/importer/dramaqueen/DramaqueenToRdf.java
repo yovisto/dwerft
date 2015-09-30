@@ -1,20 +1,18 @@
 package de.werft.tools.importer.dramaqueen;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.rdf.model.Resource;
+import de.werft.tools.general.OntologyConstants;
 import de.werft.tools.importer.general.XMLProcessor;
 import de.werft.tools.importer.general.XMLtoRDFconverter;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.Resource;
-
-import de.werft.tools.general.OntologyConstants;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DramaqueenToRdf extends XMLtoRDFconverter {
 	
