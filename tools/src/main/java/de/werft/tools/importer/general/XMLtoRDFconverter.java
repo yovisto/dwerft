@@ -97,6 +97,10 @@ public abstract class XMLtoRDFconverter {
 	public void writeRdfToFile(String filename) {
 		writeRdfToFile(filename, "TTL");
 	}
+	
+	public void writeRdfToConsole() {
+		getGeneratedModel().write(System.out, "TTL");
+	}
 
     /**
      * Override this hook to make some adjustments before

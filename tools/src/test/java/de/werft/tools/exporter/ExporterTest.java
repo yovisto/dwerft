@@ -21,7 +21,7 @@ public class ExporterTest {
 
 	private final String tmpDir = "examples";
 	
-	@Test
+	//@Test
 	public void testLockitExporter() throws IOException {
 		LockitExporter e = new LockitExporter(OntologyConstants.SPARQL_ENDPOINT,
 				OntologyConstants.ONTOLOGY_FILE, tmpDir + "/lockit_filmontology_scenes.csv", "17621");

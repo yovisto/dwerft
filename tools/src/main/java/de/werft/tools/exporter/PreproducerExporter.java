@@ -109,7 +109,9 @@ public class PreproducerExporter extends RdfExporter {
 		ArrayList<Resource> episodes = getLinkedResources(project, "hasEpisode");
 		
 		//And the projects title
-		String projectTitle = getLinkedDataValues(project, "title").get(0).getString();
+		String projectTitle = "";
+		if (!getLinkedDataValues(project, "title").isEmpty())
+			projectTitle = getLinkedDataValues(project, "title").get(0).getString();
 		
 		//Iterating over each episode, append the episode element to the project element
 		for (Resource episode : episodes) {	
