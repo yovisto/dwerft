@@ -12,7 +12,8 @@
   - [Tools](#tools)
 - [Installation](#installation)
 - [Structure](#structure)
-- [Sample workflow](sample-workflow)
+  - [Mapping](#mapping)
+- [Sample workflow](#sample-workflow)
 
 ## Introduction
 
@@ -59,6 +60,10 @@ Once these two steps are complete, run `mvn clean install` and you're good to go
 If you have never worked with Apache Jena before, a good start would be to take a look at the `SparqlExample` found in the package `examples`. It is a demonstration of how to issue requests to a known end point.
 
 The package `tools` contains sample code showing ways of how to transform various data formats like XML into valid RDF and vice versa. As this involves a few steps, each package is dedicated to one task. As with all conversions, one of the main problems is creating an exhaustive mapping. Conveniently, this has already been done for you. For now, mappings exist for Dramaqueen and PreProducer. 
+
+#### Mapping
+
+The DWERFT tools utilize a sophisticated mapping structure to ensure that as much XML can be converted to the LPDC and vice versa.
 
 ## Sample workflow
 
