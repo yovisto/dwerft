@@ -1,5 +1,20 @@
 package de.werft.tools.importer.general;
 
+
+/**
+ * A MappingDefinition exactly defines how a particular XML element will be
+ * converted to a particular RDF element.
+ * 
+ * In general, there are three types of mappings:
+ * - An XML tag will result in the creation of a new instance of an ontology class (a new individual)
+ * - An XML attribute value or XML text content value will result in the creation of a new property value belonging to a certain individual
+ * - An XML containment hierarchy or XML attribute value with a reference will result in the creation of a new object property linking
+ * 
+ * A MappingDefinition must have at least a xmlNodePath and a targetOntologyClass.
+ * 
+ * @author hagt
+ *
+ */
 public class MappingDefinition {
 	
 	public MappingDefinition(String xmlNodePath,

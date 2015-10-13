@@ -33,7 +33,7 @@ public class Mapper {
 	private Set<MappingDefinition> mappings;
 
 	/**
-	 * Creates a new mapping and loads mapping definitions from the mappings filename
+	 * Creates a new Mapper and loads mapping definitions from the mappings filename
 	 * 
 	 * @param mappingsFilename File containing mapping definitions
 	 */
@@ -72,9 +72,9 @@ public class Mapper {
 	 * Creates a new MappingDefinition based on the property values in the
 	 * properties and a certain index.
 	 * 
-	 * @param prop
-	 * @param index
-	 * @return
+	 * @param prop The complete set of properties
+	 * @param index The number of the mapping definition (the nth mapping)
+	 * @return A new MappingDefinition created from the properties
 	 */
 	private MappingDefinition buildMapping(Properties prop, int index) {
 		
