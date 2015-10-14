@@ -45,8 +45,14 @@ public class OntologyConstants {
 	 */
 	public static final String SPARQL_ENDPOINT = "http://sparql.filmontology.org/";
 
+	/*
+	 * htaccess user of the sparql endpoint
+	 */
 	public static final String SPARQL_ENDPOINT_USER = "dwerft";
 
+	/*
+	 * htaccess password of the sparql endpoint
+	 */
 	public static final String SPARQL_ENDPOINT_PASSWORD = "#dwerft";
 	
 	/*
