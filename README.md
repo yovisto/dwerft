@@ -11,7 +11,7 @@
   - [Linked Production Data Cloud](#linked-production-data-cloud)
   - [Tools](#tools)
 - [Installation](#installation)
-- [Structure](#structure)
+- [Package structure](#package-structure)
   - [Mapping](#mapping)
 - [Sample workflow](#sample-workflow)
 
@@ -55,11 +55,19 @@ If you'd like to try this out for yourself, start of by cloning the git reposito
 Since this is a Maven project, get Maven over [here](https://maven.apache.org/) if you haven't already done so.
 Once these two steps are complete, run `mvn clean install` and you're good to go.
 
-## Structure
+## Package structure
 
 If you have never worked with Apache Jena before, a good start would be to take a look at the `SparqlExample` found in the package `examples`. It is a demonstration of how to issue requests to a known end point.
 
 The package `tools` contains sample code showing ways of how to transform various data formats like XML into valid RDF and vice versa. As this involves a few steps, each package is dedicated to one task. As with all conversions, one of the main problems is creating an exhaustive mapping. Conveniently, this has already been done for you. For now, mappings exist for Dramaqueen and PreProducer. 
+
+`tools.exporter`: This package contains the abstract class 'RdfExporter', which provides helper methods useful when querying the triple store. As of now, two implementations of said class exist. `PreproducerExporter` generates an XML file and `LockitExporter` a CSV file.
+
+`tools.general`: The file `DwerftTools` contains a main method, required for running the DWerft Suite with arguments. `OntologyConstants` is simply a collection of immutable values, like the triple store URL.
+
+`tools.importer.general`: All classes responsible for mapping operations and parsing of XML files can be found in here. Import in this context means converting XML to valid RDF. It is planned to expand the import to upload the generated RDF directly into the triple store.
+
+`tools.sources`:Finally, the sources package contains an interface used for communicating with the APIs of the tools and implementations for Dramaqueen, PreProducer and the triple store. 
 
 #### Mapping
 
