@@ -18,14 +18,26 @@ import de.werft.tools.sources.DramaQueenSource;
 import de.werft.tools.sources.PreproducerSource;
 
 
+/**
+ * The Class DwerftTools.
+ * Contains the main method and handles command line arguments.
+ */
 public class DwerftTools {
 
 	/** The Logger. */
 	private static final Logger L = Logger.getLogger(DwerftTools.class.getName());
 	
-	private static String input, output, tmpDir;
+	/** The tmp dir. */
+	private static String input, output;
+	
+	/** The print to cli. */
 	private static boolean printToCLI;
 	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		
 		DwerftCLIArguments params = new DwerftCLIArguments();
@@ -36,9 +48,13 @@ public class DwerftTools {
 		try {
 			cmd.parse(args);
 			
-			printToCLI = params.isPrintToCli();
+			input = params.getInputFile();
+			output = params.getOutputFile();
+			printToCLI = params.isPrintToCli();			
+			
 			String conversionFrom = params.getConversion().get(0);
 			String conversionTo = params.getConversion().get(1);
+			String invalidConversionError = "Invalid conversion type \"" + conversionFrom + " to " + conversionTo + "\"";
 			
 			/**
 			 * (1) Export: Source is triple store - only output file required
@@ -53,64 +69,97 @@ public class DwerftTools {
 			 * IDs are hardcoded because we are only handling sample data at the moment.
 			 */
 			
-			if (conversionFrom.equals("ts")) {
-				
-				output = params.getOutputFile();
-				
-				/** triplestore -> preproducer */
-				if (conversionTo.equals("prp")) {
-					L.info("Exporting data from triple store to Preproducer XML");
-					
-					PreproducerExporter e = new PreproducerExporter(
-							OntologyConstants.SPARQL_ENDPOINT,
-							OntologyConstants.ONTOLOGY_FILE,
-							output, "9860f0bb-d9a6-45e4-9d03-79e7fefd16fa", "17621");
-					e.export();
-					
-					L.info("Preproducer XML file has been written to " + output);
-					
-				/** triplestore -> lockit network */	
-				} else if (conversionTo.equals("ln")) {
-					L.info("Exporting data from triple store to LockitNetwork CSV");
-					
-					LockitExporter e = new LockitExporter(OntologyConstants.SPARQL_ENDPOINT,
-							OntologyConstants.ONTOLOGY_FILE, output, "17621");
-					e.export();
-					
-					L.info("LockitNetwork CSV has been written to " + output);
+			if (params.isHelp()) {
+				cmd.usage();
+			} else if (conversionFrom.equals("ts")) {
+				if (!output.isEmpty()) {
+									
+					/** triplestore -> preproducer */
+					if (conversionTo.equals("prp")) {
+						tsToPrp(params.getProjectID());
+						
+					/** triplestore -> lockit network */	
+					} else if (conversionTo.equals("ln")) {
+						L.info("Exporting data from triple store to LockitNetwork CSV");
+						
+						LockitExporter e = new LockitExporter(OntologyConstants.SPARQL_ENDPOINT,
+								OntologyConstants.ONTOLOGY_FILE, output, "17621");
+						e.export();
+						
+						L.info("LockitNetwork CSV has been written to " + output);
+					} else {
+						L.error(invalidConversionError);
+					}
 				} else {
-					L.error("Invalid conversion type \"" + params.getConversion().get(0) + " to " + params.getConversion().get(1) + "\"");
-				}
-				
+					L.error("Please specify an output file.");
+				}		
 			} else if (conversionTo.equals("ts")) {
-				
-				tmpDir = params.getTmpDir();
 				
 				/** triplestore -> dramaqueen */
 				if (conversionFrom.equals("dq")) {
-					L.info("Converting dramaqueen XML to RDF");
-					dqToRdf(params.getInputFile(), params.getDqMapping());
-				
+										
+					//Make sure an input file has been specified
+					if (!(input.isEmpty() && output.isEmpty())) {
+						L.info("Converting dramaqueen XML to RDF");
+						dqToRdf(params.getDqMapping());
+					} else {
+						L.error("Please specify an input file.");
+					}
+					
 				/** triplestore -> preproducer */
 				} else if (conversionFrom.equals("prp")) {
-					L.info("Converting preproducer XML to RDF");
-					prpToRdf(params.getPrpConfigFile(), params.getPrpMapping());
 					
+					if (!output.isEmpty()) {
+						L.info("Converting preproducer XML to RDF");
+						prpToRdf(params.getPrpConfigFile(), params.getPrpMapping());
+					} else {
+						L.error("Please specify an ouput file");
+					}
 				} else {
-					L.error("Invalid conversion type \"" + params.getConversion().get(0) + " to " + params.getConversion().get(1) + "\"");
+					L.error(invalidConversionError);
 				}
 				
 			} else if (conversionFrom.equals("dq") && conversionTo.equals("prp")){
-				//TODO
-				L.info("DQ -> PRP is still in work.");
+				
+				if (!(input.isEmpty() && output.isEmpty())) {
+					L.info("Converting dramaqueen xml to preproducer xml via the triple store");
+					
+					dqToRdf(params.getDqMapping());
+					tsToPrp(params.getProjectID());
+				} else {
+					L.error("Please specify valid file paths");
+				}		
 			} else {
-				L.error("Invalid conversion type \"" + params.getConversion().get(0) + " to " + params.getConversion().get(1) + "\"");
+				L.error(invalidConversionError);
 			}
 		} catch (ParameterException e) {
 			L.error("Could not parse arguments : " + e);
 		}
 	}
 	
+	/**
+	 * Ts to prp.
+	 *
+	 * @param projectID the project id
+	 */
+	private static void tsToPrp(String projectID) {
+		L.info("Exporting data from triple store to Preproducer XML");
+		
+		PreproducerExporter e = new PreproducerExporter(
+				OntologyConstants.SPARQL_ENDPOINT,
+				OntologyConstants.ONTOLOGY_FILE,
+				output, projectID, "17621");
+		e.export();
+		
+		L.info("Preproducer XML file has been written to " + output);
+	}
+	
+	/**
+	 * Prp to rdf.
+	 *
+	 * @param prpConfig the prp config
+	 * @param prpMapping the prp mapping
+	 */
 	private static void prpToRdf(String prpConfig, String prpMapping) {
 		
 		try {
@@ -131,14 +180,12 @@ public class DwerftTools {
 			pprdf.convert(pps.get("listScenes"));
 			pprdf.convert(pps.get("listSchedule"));
 			
-			String prpRdfFile = tmpDir + "/preproducer_rdf.ttl";
-			System.out.println(prpRdfFile);
-			pprdf.writeRdfToFile(prpRdfFile);
+			pprdf.writeRdfToFile(output);
 			
 			if (printToCLI)
 				pprdf.writeRdfToConsole();
 			
-			L.info("Preproducer RDF has been written to " + prpRdfFile);
+			L.info("Preproducer RDF has been written to " + output);
 			
 		} catch (FileNotFoundException e) {
 			
@@ -147,7 +194,12 @@ public class DwerftTools {
 
 	}
 	
-	private static void dqToRdf(String input, String mappingFileName) {
+	/**
+	 * Dq to rdf.
+	 *
+	 * @param mappingFileName the mapping file name
+	 */
+	private static void dqToRdf(String mappingFileName) {
 		InputStream inputStream = new DramaQueenSource().get(input);
 
 		DramaqueenToRdf dqrdf = new DramaqueenToRdf(
@@ -157,12 +209,11 @@ public class DwerftTools {
 		
 		dqrdf.convert(inputStream);
 		
-		String dqRdfFile = tmpDir + "/dramaqueen_rdf.ttl";
-		dqrdf.writeRdfToFile(dqRdfFile);
+		dqrdf.writeRdfToFile(output);
 		
 		if (printToCLI)
 			dqrdf.writeRdfToConsole();
 		
-		L.info("Dramaqueen RDF has been written to " + dqRdfFile);
+		L.info("Dramaqueen RDF has been written to " + output);
 	}
 }

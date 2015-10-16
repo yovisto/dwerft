@@ -131,7 +131,9 @@ public class PreproducerSource implements Source {
         // if we an build a valid signature then we construct an inputstream
 		if (signature != null) {
             String url = BASE_URL + "?" + restRequest + "&signature=" + signature;
-
+            
+            System.out.println(url);
+            
 			try {
 				return new BufferedInputStream(new URL(url).openStream());
 			} catch (IOException e) {
