@@ -63,7 +63,20 @@ The package `tools` contains sample code showing ways of how to transform variou
 
 #### Mapping
 
-The DWERFT tools utilize a sophisticated mapping structure to ensure that as much XML can be converted to the LPDC and vice versa.
+The DWERFT tools utilize a sophisticated mapping structure to ensure that as much XML can be converted to the LPDC and vice versa. New mappings can easily be written using the template in the `resource` folder of the project. Let's take a look at the sample mapping for preproducer XML below:
+
+```
+map77.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:daynight
+map77.conditionalAttributeName=
+map77.conditionalAttributeValue=
+map77.contentSource=TEXT_CONTENT
+map77.contentElementName=
+map77.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
+map77.targetOntologyProperty=http://filmontology.org/ontology/1.0/dayTime
+map77.targetPropertyType=DATATYPE_PROPERTY
+```
+
+
 
 ## Sample workflow
 
