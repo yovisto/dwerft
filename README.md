@@ -53,7 +53,26 @@ If you'd like to try this out for yourself, start of by cloning the git reposito
   cd ~/dwerft_lpdc
   ```
 Since this is a Maven project, get Maven over [here](https://maven.apache.org/) if you haven't already done so.
-Once these two steps are complete, run `mvn clean install` and you're good to go.
+Once these two steps are complete, run 
+
+```
+mvn -Dmaven.test.skip=true clean install
+cd tools
+mvn exec:java -Dexec.mainClass="de.werft.tools.general.DwerftTools" -Dexec.args="*arguments of your choice*"
+```
+
+and you're good to go. Due to the nature of the dwerft tool package not all conversions are currently supported.
+The following conversions are valid for use with the -c argument. Please note that querying the Preproducer API requires valid credentials.
+ - Generating XML from RDF
+    - triple store -> preproducer (-c ts prp -o /path/to/output)
+    - triple store -> dramaqueen (-c ts dq -o /path/to/output)
+ - Generating RDF from XML 
+    - dramaqueen -> RDF (-c dq ts -i /path/to/dramaqueenXML -o /path/to/output)
+ - Generating RDF from preproducer tool.
+	  		preproducer -> RDF (-c prp ts -o /path/to/output)
+Other valid arguments are the following:
+ - -p : prints results to console
+ - -h : prints the help page
 
 ## Package structure
 
