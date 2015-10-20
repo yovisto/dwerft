@@ -1,7 +1,7 @@
 package de.werft.tools.importer.preproducer;
 
 import de.werft.tools.importer.general.XMLProcessor;
-import de.werft.tools.importer.general.XMLtoRDFconverter;
+import de.werft.tools.importer.general.AbstractXMLtoRDFconverter;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -12,10 +12,10 @@ import com.hp.hpl.jena.rdf.model.Resource;
 
 /**
  * Actual xml to rdf implementation for preproducer.
- * {@link XMLtoRDFconverter}
+ * {@link AbstractXMLtoRDFconverter}
  *
  */
-public class PreProducerToRdf extends XMLtoRDFconverter {
+public class PreProducerToRdf extends AbstractXMLtoRDFconverter {
 
 	public PreProducerToRdf(String ontologyFileName, String ontologyFormat,
 			String mappingsFilename) {

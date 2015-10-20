@@ -18,10 +18,10 @@ import com.hp.hpl.jena.rdf.model.Model;
  * Second the mapping from xml to rdf. For the mapping format see README.md
  *
  */
-public abstract class XMLtoRDFconverter {
+public abstract class AbstractXMLtoRDFconverter {
 	
 	/** The Logger. */
-	private static final Logger L = Logger.getLogger(XMLtoRDFconverter.class.getName());
+	private static final Logger L = Logger.getLogger(AbstractXMLtoRDFconverter.class.getName());
 	
 	protected OntologyConnector ontConn;
 	protected XMLProcessor xmlProc;
@@ -40,7 +40,7 @@ public abstract class XMLtoRDFconverter {
 	 * @param ontologyFormat Format, e.g., RDF/XML, of the ontology file.
 	 * @param mappingsFilename Filename of the mappings definitions.
 	 */
-	public XMLtoRDFconverter(String ontologyFileName, String ontologyFormat, String mappingsFilename) {
+	public AbstractXMLtoRDFconverter(String ontologyFileName, String ontologyFormat, String mappingsFilename) {
 		ontConn = new OntologyConnector(ontologyFileName, ontologyFormat);
 		mapper = new Mapper(mappingsFilename);
 		rdfProc = new RdfProcessor(ontConn);

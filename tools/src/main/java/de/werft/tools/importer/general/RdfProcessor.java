@@ -37,7 +37,7 @@ import com.hp.hpl.jena.rdf.model.Statement;
 public class RdfProcessor {
 	
 	/** The Logger. */
-	private static final Logger L = Logger.getLogger(XMLtoRDFconverter.class.getName());
+	private static final Logger L = Logger.getLogger(AbstractXMLtoRDFconverter.class.getName());
 	
 	/**
 	 * Connector to the ontology model

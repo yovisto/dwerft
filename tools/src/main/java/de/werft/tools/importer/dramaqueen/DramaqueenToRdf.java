@@ -5,7 +5,7 @@ import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 import de.werft.tools.general.OntologyConstants;
 import de.werft.tools.importer.general.XMLProcessor;
-import de.werft.tools.importer.general.XMLtoRDFconverter;
+import de.werft.tools.importer.general.AbstractXMLtoRDFconverter;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DramaqueenToRdf extends XMLtoRDFconverter {
+public class DramaqueenToRdf extends AbstractXMLtoRDFconverter {
 	
 	public DramaqueenToRdf(String ontologyFileName, String ontologyFormat, String mappingsFilename) {
 		super(ontologyFileName, ontologyFormat, mappingsFilename);
