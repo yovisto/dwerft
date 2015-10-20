@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script id="123456" version="1.0">
+	<name>Frog King the animated series</name>
+	<Episode id="XY10" number="10" name="Frog King returns">
+		<Scene id="S-01" number="1">
+			<Timeofday>day</Timeofday>
+			<Summary>Frog Kind sits on a lonely island</Summary>
+		</Scene>
+	</Episode>
+</Script>
