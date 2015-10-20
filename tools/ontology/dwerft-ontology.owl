@@ -204,6 +204,8 @@
     <owl:ObjectProperty rdf:about="&foo;hasScene">
         <rdfs:label>hasScene</rdfs:label>
         <rdfs:comment>Scene in a scene group</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:range rdf:resource="&foo;Scene"/>
         <rdfs:domain rdf:resource="&foo;SceneGroup"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
@@ -1065,6 +1067,18 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
+	
+	<!-- http://filmontology.org/ontology/ontology#internalIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="&foo;internalIdentifier">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>internalIdentifier</rdfs:label>
+        <rdfs:comment>An identifier used internally by the dwerft convertion tools.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;DataObject"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
 
 
 
