@@ -213,7 +213,7 @@ public class RdfProcessor {
 			Property typeProp = ontologyConnector.getProperty("rdf","type");
 			createdResource.addProperty(typeProp, ontologyClass);
 			
-			Property idProperty = generatedModel.getProperty(OntologyConstants.ONTOLOGY_NAMESPACE+"identifier");
+			Property idProperty = generatedModel.getProperty(OntologyConstants.ONTOLOGY_NAMESPACE+"internalIdentifier");
 			Statement stat = createdResource.getProperty(idProperty);
 			if (stat == null) {
 				internalIdentifier++;
