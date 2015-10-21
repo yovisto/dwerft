@@ -42,6 +42,12 @@ public class PreproducerSource implements Source {
 	
 	private static final String BASE_URL = "https://software.preproducer.com/api";
 	
+	/**
+	 * Constructor for use with the preproducer API
+	 * 
+	 * @param propertyFile
+	 * @throws FileNotFoundException
+	 */
 	public PreproducerSource(File propertyFile) throws FileNotFoundException {
 		getFromPropFile(propertyFile);
 	}
@@ -124,7 +130,9 @@ public class PreproducerSource implements Source {
 	 */
 	@Override
 	public BufferedInputStream get(String source) {
+		
 		Map<String, String> parameters = getBasicParameters(source);		
+		
 		String signature = generateSignature(parameters);		
 		String restRequest = convertParametersToRequest(parameters);
 
@@ -132,16 +140,13 @@ public class PreproducerSource implements Source {
 		if (signature != null) {
             String url = BASE_URL + "?" + restRequest + "&signature=" + signature;
             
-            System.out.println(url);
-            
 			try {
 				return new BufferedInputStream(new URL(url).openStream());
 			} catch (IOException e) {
 				L.error("Api call " + source + " from preproducer is not reachable.");
 			}
 		}
-
-		
+	
 		return null;
 	}
 
