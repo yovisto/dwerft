@@ -1,20 +1,15 @@
 package de.werft.tools.importer.general;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
-
-import com.hp.hpl.jena.ontology.DatatypeProperty;
-import com.hp.hpl.jena.ontology.ObjectProperty;
-import com.hp.hpl.jena.ontology.OntClass;
-import com.hp.hpl.jena.ontology.OntModel;
-import com.hp.hpl.jena.ontology.OntModelSpec;
-import com.hp.hpl.jena.ontology.OntProperty;
+import com.hp.hpl.jena.ontology.*;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.util.iterator.ExtendedIterator;
-
 import de.werft.tools.general.OntologyConstants;
+
+import java.io.InputStream;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
 
 /**
  * The OntologyConnector is responsible for retrieving ontology model elements based on the names and prefixes.
@@ -28,11 +23,10 @@ public class OntologyConnector {
 
 	/**
 	 * Creates a new OntologyConnector and reads the ontology from an URL.
-	 * 
-	 * @param url
+	 *  @param url
 	 * @param format
-	 */
-	public OntologyConnector(String url, String format) {
+     */
+	public OntologyConnector(InputStream url, String format) {
 		this.ontologyModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 		ontologyModel.read(url,format);
 	}

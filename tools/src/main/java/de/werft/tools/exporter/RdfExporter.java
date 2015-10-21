@@ -72,6 +72,23 @@ public abstract class RdfExporter {
 		this.ontologyModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 		ontologyModel.read(ontologyFilename, OntologyConstants.ONTOLOGY_FORMAT);
 	}
+
+    /**
+     * Constructor for querying a remote SPARQL endpoint.
+     *
+     * @param sparqlEndpointUrl
+     * 				the URL of the SPARQL end point
+     * @param ontologyFilename
+     * 				the file containing the model used with the RDF data
+     */
+    public RdfExporter(String sparqlEndpointUrl, InputStream ontologyFilename) {
+        L.info("Exporting RDF from SPARQL endpoint " + sparqlEndpointUrl);
+        this.sparqlEndpoint = sparqlEndpointUrl;
+
+        //Initializing the underlying ontology model of the lpdc
+        this.ontologyModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+        ontologyModel.read(ontologyFilename, OntologyConstants.ONTOLOGY_FORMAT);
+    }
 	
 	/**
 	 * This constructor is for use with a local RDF file. 

@@ -2,6 +2,7 @@ package de.werft.tools.exporter;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -30,17 +31,16 @@ public class LockitExporter extends RdfExporter {
 	
 	/**
 	 * Instantiates a new lockit exporter.
-	 *
-	 * @param sparqlEndpointUrl 
-	 * 			SPARQL endpoint url, typically http://sparql.filmontology.org
-	 * @param ontologyFileName 
+	 *  @param ontologyFileName
 	 * 			file containing the ontology model
-	 * @param outputPath 
-	 * 			path to resulting XML file
-	 * @param projectID 
-	 * 			the project ID used internally by the LPDC
-	 */
-	public LockitExporter(String sparqlEndpointUrl, String ontologyFilename, String outputPath, String projectId) {
+	 * @param projectID
+     * @param sparqlEndpointUrl
+ * 			SPARQL endpoint url, typically http://sparql.filmontology.org
+     * @param ontologyFilename
+     * @param outputPath
+     * 			path to resulting XML file
+     */
+	public LockitExporter(String sparqlEndpointUrl, InputStream ontologyFilename, String outputPath, String projectId) {
 		super(sparqlEndpointUrl, ontologyFilename);
 		this.outputPath = outputPath;
 		this.projectId = projectId;

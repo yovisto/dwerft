@@ -53,7 +53,7 @@ public class TripleStoreConnector {
 	public void updateEndpoint(String file) {
 		UpdateRequest request = UpdateFactory.create();
 		request.add("DROP ALL").add("CREATE GRAPH <http://filmontology.org>")
-			.add("LOAD <file:///examples/preproducer_export_new.ttl> INTO GRAPH <http://filmontology.org>") ;
+			.add("LOAD <file:///de.werft.tools.examples/preproducer_export_new.ttl> INTO GRAPH <http://filmontology.org>") ;
         	
 		System.out.println(request.toString());
 		

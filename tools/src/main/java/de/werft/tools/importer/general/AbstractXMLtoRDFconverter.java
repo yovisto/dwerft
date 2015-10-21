@@ -1,15 +1,14 @@
 package de.werft.tools.importer.general;
 
+import com.hp.hpl.jena.rdf.model.Model;
+import org.apache.log4j.Logger;
+import org.w3c.dom.Node;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
-
-import org.apache.log4j.Logger;
-import org.w3c.dom.Node;
-
-import com.hp.hpl.jena.rdf.model.Model;
 
 /**
  * The xml to rdf converter.
@@ -35,16 +34,21 @@ public abstract class AbstractXMLtoRDFconverter {
 	 * Specific XML converters inherit from this class and implement specific conversion
 	 * routines that are execute before and after the general conversion process based
 	 * on the mapping definitions.
-	 * 
-	 * @param ontologyFileName Filename of the OWL ontology to be used.
+	 *  @param ontologyFileName Filename of the OWL ontology to be used.
 	 * @param ontologyFormat Format, e.g., RDF/XML, of the ontology file.
-	 * @param mappingsFilename Filename of the mappings definitions.
-	 */
-	public AbstractXMLtoRDFconverter(String ontologyFileName, String ontologyFormat, String mappingsFilename) {
+     * @param mappingsFilename Filename of the mappings definitions.
+     */
+	public AbstractXMLtoRDFconverter(InputStream ontologyFileName, String ontologyFormat, String mappingsFilename) {
 		ontConn = new OntologyConnector(ontologyFileName, ontologyFormat);
 		mapper = new Mapper(mappingsFilename);
 		rdfProc = new RdfProcessor(ontConn);
 	}
+
+    public AbstractXMLtoRDFconverter(InputStream ontologyFileName, String ontologyFormat, InputStream mappingsFilename) {
+        ontConn = new OntologyConnector(ontologyFileName, ontologyFormat);
+        mapper = new Mapper(mappingsFilename);
+        rdfProc = new RdfProcessor(ontConn);
+    }
 
 	/**
 	 * this methods starts the conversion.

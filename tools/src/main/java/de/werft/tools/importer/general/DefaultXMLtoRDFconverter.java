@@ -1,8 +1,10 @@
 package de.werft.tools.importer.general;
 
+import java.io.InputStream;
+
 public class DefaultXMLtoRDFconverter extends AbstractXMLtoRDFconverter {
 
-	public DefaultXMLtoRDFconverter(String ontologyFileName,
+	public DefaultXMLtoRDFconverter(InputStream ontologyFileName,
 			String ontologyFormat, String mappingsFilename) {
 		super(ontologyFileName, ontologyFormat, mappingsFilename);
 	}

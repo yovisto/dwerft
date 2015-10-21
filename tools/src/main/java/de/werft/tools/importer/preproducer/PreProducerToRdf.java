@@ -10,6 +10,8 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 
+import java.io.InputStream;
+
 /**
  * Actual xml to rdf implementation for preproducer.
  * {@link AbstractXMLtoRDFconverter}
@@ -17,12 +19,16 @@ import com.hp.hpl.jena.rdf.model.Resource;
  */
 public class PreProducerToRdf extends AbstractXMLtoRDFconverter {
 
-	public PreProducerToRdf(String ontologyFileName, String ontologyFormat,
+	public PreProducerToRdf(InputStream ontologyFileName, String ontologyFormat,
 			String mappingsFilename) {
 		super(ontologyFileName, ontologyFormat, mappingsFilename);
 	}
-	
-	/**
+
+    public PreProducerToRdf(InputStream ontologyFile, String ontologyFormat, InputStream prpMapping) {
+        super(ontologyFile, ontologyFormat, prpMapping);
+    }
+
+    /**
 	 * Retrieves the identifier of the ScriptDocument element
 	 * 
 	 * @return Project identifier

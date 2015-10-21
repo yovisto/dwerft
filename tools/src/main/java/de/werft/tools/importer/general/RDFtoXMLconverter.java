@@ -1,12 +1,13 @@
 package de.werft.tools.importer.general;
 
+import org.apache.log4j.Logger;
+
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
-import org.apache.log4j.Logger;
 
 /**
  * THIS CLASS IS CURRENTLY NOT IN USE
@@ -45,7 +46,7 @@ public class RDFtoXMLconverter {
 	 * @param sparqlEndpointUrl 
 	 * 		the sparql endpoint url
 	 */
-	public RDFtoXMLconverter(String ontologyFileName, String ontologyFormat, String mappingsFilename, String sparqlEndpointUrl) {
+	public RDFtoXMLconverter(InputStream ontologyFileName, String ontologyFormat, String mappingsFilename, String sparqlEndpointUrl) {
 		ontConn = new OntologyConnector(ontologyFileName, ontologyFormat);
 		mapper = new Mapper(mappingsFilename);
 		rdfProc = new RdfProcessor(ontConn);

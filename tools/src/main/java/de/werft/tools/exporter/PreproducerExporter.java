@@ -2,6 +2,7 @@ package de.werft.tools.exporter;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -49,19 +50,17 @@ public class PreproducerExporter extends RdfExporter {
 		
 	/**
 	 * Instantiates a new preproducer exporter.
-	 *
-	 * @param sparqlEndpointUrl 
+	 *  @param sparqlEndpointUrl
 	 * 			SPARQL endpoint url, typically http://sparql.filmontology.org
-	 * @param ontologyFileName 
+	 * @param ontologyFileName
 	 * 			file containing the ontology model
-	 * @param outputPath 
-	 * 			path to resulting XML file
-	 * @param projectID 
-	 * 			the project ID used internally by the LPDC
-	 * @param targetProjectID 
-	 * 			the project ID required by the preproducer API. Is only used in the resulting XML
-	 */
-	public PreproducerExporter(String sparqlEndpointUrl, String ontologyFileName, String outputPath, String projectID, String targetProjectID) {
+     * @param outputPath
+ * 			path to resulting XML file
+     * @param projectID
+* 			the project ID used internally by the LPDC
+     * @param targetProjectID
+     */
+	public PreproducerExporter(String sparqlEndpointUrl, InputStream ontologyFileName, String outputPath, String projectID, String targetProjectID) {
 		super(sparqlEndpointUrl, ontologyFileName);
 		this.outputPath = outputPath;
 		this.projectID = projectID;

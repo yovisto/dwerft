@@ -1,24 +1,19 @@
 package de.werft.tools.general;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-
-import org.apache.jena.iri.impl.Main;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
-
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.ParameterException;
-
-import de.werft.tools.exporter.LockitExporter;
-import de.werft.tools.exporter.PreproducerExporter;
 import de.werft.tools.importer.dramaqueen.DramaqueenToRdf;
 import de.werft.tools.importer.general.AbstractXMLtoRDFconverter;
 import de.werft.tools.importer.preproducer.PreProducerToRdf;
 import de.werft.tools.sources.AbstractSource;
 import de.werft.tools.sources.DramaQueenSource;
 import de.werft.tools.sources.PreproducerSource;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 
 /**
@@ -31,7 +26,10 @@ public class DwerftTools {
 	private static final Logger L = Logger.getLogger(DwerftTools.class.getName());
 	
 	/** The tmp dir. */
-	private static String input, output, dqMapping, prpMapping;
+	private static String input;
+    private static String output;
+    private static InputStream dqMapping;
+    private static InputStream prpMapping;
 	
 	/** The print to cli. */
 	private static boolean printToCLI;
@@ -57,8 +55,8 @@ public class DwerftTools {
 			input = params.getInputFile();
 			output = params.getOutputFile();
 			printToCLI = params.isPrintToCli();			
-			dqMapping = Main.class.getResource("/src/main/resources/dramaqueen.mappings").getPath();
-			prpMapping = Main.class.getResource("/src/main/resources/preproducer.mappings").getPath();
+			dqMapping = loadFile("mappings/dramaqueen.mappings");
+			prpMapping = loadFile("mappings/preproducer.mappings");
 			
 			
 			//Assign local variables
@@ -87,12 +85,14 @@ public class DwerftTools {
 					genericXmlToRdf(params.getCustomMapping());
 				} else {
 					L.error(invalidInputType);
+                    cmd.usage();
 				}
 			
 			
 			}
 		} catch (ParameterException e) {
 			L.error("Could not parse arguments : " + e);
+            cmd.usage();
 		}
 	}
 
@@ -101,7 +101,6 @@ public class DwerftTools {
 	 * Prp to rdf.
 	 *
 	 * @param prpConfig the prp config
-	 * @param prpMapping the prp mapping
 	 */
 	private static void prpToRdf(String prpConfig) {
 		
@@ -140,7 +139,6 @@ public class DwerftTools {
 	/**
 	 * Dq to rdf.
 	 *
-	 * @param mappingFileName the mapping file name
 	 */
 	private static void dqToRdf() {
 		InputStream inputStream = new DramaQueenSource().get(input);
@@ -192,4 +190,9 @@ public class DwerftTools {
 		
 		L.info("Generic RDF has been written to " + output + " using " + input + " as input and " + customMapping + " as mapping");
 	}
+
+    private static InputStream loadFile(String filename) {
+        ClassLoader cl = ClassLoader.getSystemClassLoader();
+        return cl.getResourceAsStream(filename);
+    }
 }

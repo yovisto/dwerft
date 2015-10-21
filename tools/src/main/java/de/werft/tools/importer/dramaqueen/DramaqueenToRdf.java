@@ -10,18 +10,23 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class DramaqueenToRdf extends AbstractXMLtoRDFconverter {
 	
-	public DramaqueenToRdf(String ontologyFileName, String ontologyFormat, String mappingsFilename) {
+	public DramaqueenToRdf(InputStream ontologyFileName, String ontologyFormat, String mappingsFilename) {
 		super(ontologyFileName, ontologyFormat, mappingsFilename);
 	}
-	
-	
-	/**
+
+    public DramaqueenToRdf(InputStream ontologyFile, String ontologyFormat, InputStream dqMapping) {
+        super(ontologyFile, ontologyFormat, dqMapping);
+    }
+
+
+    /**
 	 * Retrieves the identifier of the ScriptDocument element
 	 * 
 	 * @return Project identifier

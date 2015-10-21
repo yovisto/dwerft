@@ -1,19 +1,14 @@
 package de.werft.tools.importer.general;
 
+import org.apache.log4j.Logger;
+import org.w3c.dom.Node;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Properties;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Stream;
-
-import org.apache.log4j.Logger;
-import org.w3c.dom.Node;
 
 /**
  * The mapper is responsible for loading and managing mapping definitions and
@@ -67,6 +62,28 @@ public class Mapper {
 		}
 		
 	}
+
+    public Mapper(InputStream mapping) {
+        mappings = new HashSet<MappingDefinition>();
+
+        Properties prop = new Properties();
+        try {
+            prop.load(mapping);
+            int counter = 1;
+            MappingDefinition def;
+
+            while ((def = buildMapping(prop, counter)) != null) {
+                mappings.add(def);
+                counter++;
+            }
+
+            L.info("Mapping with file " + mapping.toString() + " successful");
+            mapping.close();
+        } catch (IOException e) {
+            L.warn("Encountered error while reading with file " + mapping.toString() + ": " + e);
+        }
+
+    }
 	
 	/**
 	 * Creates a new MappingDefinition based on the property values in the

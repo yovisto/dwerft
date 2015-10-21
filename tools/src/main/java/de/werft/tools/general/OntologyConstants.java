@@ -1,5 +1,7 @@
 package de.werft.tools.general;
 
+import java.io.InputStream;
+
 /**
  * Collected constants for the dwerft ontology
  * 
@@ -7,13 +9,14 @@ package de.werft.tools.general;
  *
  */
 public class OntologyConstants {
-	
+
+
+
 	/*
 	 * Path to the ontology file
 	 */
-	public static final String ONTOLOGY_FILE = "file:ontology/dwerft-ontology.owl";
-	
-	
+	public static final InputStream ONTOLOGY_FILE = loadFile("ontology/dwerft-ontology.owl");
+
 	/*
 	 * Format of the ontology file
 	 */
@@ -65,5 +68,10 @@ public class OntologyConstants {
 			"PREFIX "+ONTOLOGY_PREFIX+": <"+ONTOLOGY_NAMESPACE+">" +
 			"PREFIX "+RESOURCE_PREFIX+": <"+RESOURCE_NAMESPACE+"> ";
 
+
+    private static InputStream loadFile(String filename) {
+        ClassLoader cl = ClassLoader.getSystemClassLoader();
+        return cl.getResourceAsStream(filename);
+    }
 
 }
