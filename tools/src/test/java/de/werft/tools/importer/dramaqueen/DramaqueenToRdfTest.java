@@ -17,7 +17,7 @@ import de.werft.tools.general.OntologyConstants;
 public class DramaqueenToRdfTest {
 	
 	private static final String dqFile = "examples/Hansel_Gretel_de.dq";
-	private static final String outputFile = "examples/Hansel_Gretel_de_new2.ttl";
+	private static final String outputFile = "examples/Hansel_Gretel_de.ttl";
 	private static final String DRAMAQUEEN_MAPPINGS_FILE = "src/main/resources/mappings/dramaqueen.mappings";
 
 	@Test
