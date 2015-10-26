@@ -8,12 +8,16 @@ import de.werft.tools.importer.preproducer.PreProducerToRdf;
 import de.werft.tools.sources.AbstractSource;
 import de.werft.tools.sources.DramaQueenSource;
 import de.werft.tools.sources.PreproducerSource;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFLanguages;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+
+;
 
 
 /**
@@ -30,6 +34,7 @@ public class DwerftTools {
     private static String output;
     private static InputStream dqMapping;
     private static InputStream prpMapping;
+    private static Lang outputFormat;
 	
 	/** The print to cli. */
 	private static boolean printToCLI;
@@ -67,16 +72,18 @@ public class DwerftTools {
 			if (params.isHelp()) {
 				cmd.usage();
 			}
-			
+
+
 			//Make sure input and output has been specified
 			else if (!(input.isEmpty() && output.isEmpty())) {
-				
-				/**
-				 * (1) dramaqueen to rdf
-				 * (2) preproducer to rdf		
-				 * (3) generic XML file to rdf. This requires a custom mapping file
-				 * 
-				 */
+                outputFormat = convertToRdfFormat("NT");
+
+                /**
+                 * (1) dramaqueen to rdf
+                 * (2) preproducer to rdf
+                 * (3) generic XML file to rdf. This requires a custom mapping file
+                 *
+                 */
 				if (inputType.equals("dq")) {
 					dqToRdf();
 				} else if (inputType.equals("prp")) {
@@ -93,7 +100,9 @@ public class DwerftTools {
 		} catch (ParameterException e) {
 			L.error("Could not parse arguments : " + e);
             cmd.usage();
-		}
+		} catch (IllegalArgumentException iae) {
+            L.error("Not a valid argument.", iae);
+        }
 	}
 
 	
@@ -125,7 +134,7 @@ public class DwerftTools {
 			pprdf.writeRdfToFile(output);
 			
 			if (printToCLI)
-				pprdf.writeRdfToConsole();
+				pprdf.writeRdfToConsole("TTL");
 			
 			L.info("Preproducer RDF has been written to " + output);
 			
@@ -144,15 +153,15 @@ public class DwerftTools {
 		InputStream inputStream = new DramaQueenSource().get(input);
 
 		DramaqueenToRdf dqrdf = new DramaqueenToRdf(
-				OntologyConstants.ONTOLOGY_FILE, 
-				OntologyConstants.ONTOLOGY_FORMAT, 
+				OntologyConstants.ONTOLOGY_FILE,
+				OntologyConstants.ONTOLOGY_FORMAT,
 				dqMapping);
 		
-		dqrdf.convert(inputStream);	
-		dqrdf.writeRdfToFile(output);
+		dqrdf.convert(inputStream);
+        dqrdf.writeRdfToFile(output, outputFormat);
 		
 		if (printToCLI)
-			dqrdf.writeRdfToConsole();
+			dqrdf.writeRdfToConsole("TTL");
 		
 		L.info("Dramaqueen RDF has been written to " + output);
 	}
@@ -186,7 +195,7 @@ public class DwerftTools {
 		abstractRdf.writeRdfToFile(output);
 		
 		if (printToCLI)
-			abstractRdf.writeRdfToConsole();
+			abstractRdf.writeRdfToConsole("TTL");
 		
 		L.info("Generic RDF has been written to " + output + " using " + input + " as input and " + customMapping + " as mapping");
 	}
@@ -194,5 +203,22 @@ public class DwerftTools {
     private static InputStream loadFile(String filename) {
         ClassLoader cl = ClassLoader.getSystemClassLoader();
         return cl.getResourceAsStream(filename);
+    }
+
+    /**
+     *  Converts a string to a Jena RDF Lang object.
+     *
+     *
+     * @param format the format string to convert
+     * @return a {@link org.apache.jena.riot.Lang} object representing the string
+     * @throws IllegalArgumentException if the format is not found or valid
+     */
+    private static Lang convertToRdfFormat(String format) throws IllegalArgumentException {
+        Lang lang = RDFLanguages.nameToLang(format);
+        if (lang == null) {
+            throw new IllegalArgumentException("Not a valid Jena RDF format. No extra spaces permitted.");
+        }
+
+        return lang;
     }
 }

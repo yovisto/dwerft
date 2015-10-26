@@ -1,6 +1,8 @@
 package de.werft.tools.importer.general;
 
 import com.hp.hpl.jena.rdf.model.Model;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Node;
 
@@ -81,11 +83,11 @@ public abstract class AbstractXMLtoRDFconverter {
 	 * @param filename the resulting filename and directory
 	 * @param format the output format e.g. TTL
 	 */
-	public void writeRdfToFile(String filename, String format) {
+	public void writeRdfToFile(String filename, Lang format) {
 		OutputStream out;
 		try {
 			out = new FileOutputStream(filename);
-			getGeneratedModel().write(out, format);
+            RDFDataMgr.write(out, getGeneratedModel(), format);
 			out.close();
 			L.info("Turtle file written: " + filename);
 		} catch (IOException e) {
@@ -99,11 +101,11 @@ public abstract class AbstractXMLtoRDFconverter {
 	 * @param filename name and directory of the result file
 	 */
 	public void writeRdfToFile(String filename) {
-		writeRdfToFile(filename, "TTL");
+		writeRdfToFile(filename, Lang.TTL);
 	}
 	
-	public void writeRdfToConsole() {
-		getGeneratedModel().write(System.out, "TTL");
+	public void writeRdfToConsole(String format) {
+		getGeneratedModel().write(System.out, format);
 	}
 
     /**
