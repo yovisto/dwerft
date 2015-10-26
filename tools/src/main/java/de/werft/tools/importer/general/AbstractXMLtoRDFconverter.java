@@ -89,9 +89,9 @@ public abstract class AbstractXMLtoRDFconverter {
 			out = new FileOutputStream(filename);
             RDFDataMgr.write(out, getGeneratedModel(), format);
 			out.close();
-			L.info("Turtle file written: " + filename);
+			L.info(format.getName() + " file written to " + filename);
 		} catch (IOException e) {
-			L.error("Failed writing turtle file " + filename + ": " + e);
+			L.error("Failed writing " + format.getName() + " file " + filename + ": " + e);
 		}
 	}
 
@@ -103,9 +103,21 @@ public abstract class AbstractXMLtoRDFconverter {
 	public void writeRdfToFile(String filename) {
 		writeRdfToFile(filename, Lang.TTL);
 	}
-	
-	public void writeRdfToConsole(String format) {
-		getGeneratedModel().write(System.out, format);
+
+	/**
+	 * Prints RDF to console in th specified format
+	 *
+	 * @param format the RDF format
+	 */
+	public void writeRdfToConsole(Lang format) {
+		RDFDataMgr.write(System.out, getGeneratedModel(), format);
+	}
+
+	/**
+	 * A helper method for writing turtle rdf to console
+	 */
+	public void writeRdfToConsole() {
+		writeRdfToConsole(Lang.TTL);
 	}
 
     /**

@@ -8,6 +8,8 @@ import de.werft.tools.importer.preproducer.PreProducerToRdf;
 import de.werft.tools.sources.AbstractSource;
 import de.werft.tools.sources.DramaQueenSource;
 import de.werft.tools.sources.PreproducerSource;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFLanguages;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
@@ -28,7 +30,7 @@ public class DwerftTools {
 	/** The tmp dir. */
 	private static String input;
     private static String output;
-	private static String outputFormat;
+	private static Lang outputFormat;
     private static InputStream dqMapping;
     private static InputStream prpMapping;
 	
@@ -56,7 +58,7 @@ public class DwerftTools {
 			input = params.getInputFile();
 			output = params.getOutputFile();
 			printToCLI = params.isPrintToCli();
-			outputFormat = params.getOutputFormat().toUpperCase();
+			outputFormat = RDFLanguages.nameToLang(params.getOutputFormat().toUpperCase());
 			dqMapping = loadFile("mappings/dramaqueen.mappings");
 			prpMapping = loadFile("mappings/preproducer.mappings");
 			
