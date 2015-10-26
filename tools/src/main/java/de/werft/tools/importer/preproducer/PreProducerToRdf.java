@@ -39,7 +39,12 @@ public class PreProducerToRdf extends AbstractXMLtoRDFconverter {
 		NodeList elementsByTagName = documentElement.getElementsByTagName("prp:project");
 		Node item = elementsByTagName.item(0);
 
-		return XMLProcessor.getValueOfAttribute(item, "projectid");
+		String projectId = XMLProcessor.getValueOfAttribute(item, "projectid");
+
+		if (projectId != null)
+			return projectId;
+		else
+			return "";
 	}
 
 	@Override
@@ -59,7 +64,7 @@ public class PreProducerToRdf extends AbstractXMLtoRDFconverter {
 
 		String projectId = findProjectId();
 		Resource project = rdfProc.getIdResourceMapping().get(projectId);
-		
+
 		Property property = generatedModel.getProperty("http://purl.org/dc/terms/hasPart");
 		dwerft.addProperty(property, project);
 	}

@@ -103,7 +103,11 @@ public abstract class AbstractXMLtoRDFconverter {
 	}
 	
 	public void writeRdfToConsole() {
-		getGeneratedModel().write(System.out, "TTL");
+		writeRdfToConsole("TTL");
+	}
+
+	public void writeRdfToConsole(String format) {
+		getGeneratedModel().write(System.out, format);
 	}
 
     /**

@@ -28,6 +28,7 @@ public class DwerftTools {
 	/** The tmp dir. */
 	private static String input;
     private static String output;
+	private static String outputFormat;
     private static InputStream dqMapping;
     private static InputStream prpMapping;
 	
@@ -54,7 +55,8 @@ public class DwerftTools {
 			//Assign global variables
 			input = params.getInputFile();
 			output = params.getOutputFile();
-			printToCLI = params.isPrintToCli();			
+			printToCLI = params.isPrintToCli();
+			outputFormat = params.getOutputFormat().toUpperCase();
 			dqMapping = loadFile("mappings/dramaqueen.mappings");
 			prpMapping = loadFile("mappings/preproducer.mappings");
 			
@@ -75,7 +77,6 @@ public class DwerftTools {
 				 * (1) dramaqueen to rdf
 				 * (2) preproducer to rdf		
 				 * (3) generic XML file to rdf. This requires a custom mapping file
-				 * 
 				 */
 				if (inputType.equals("dq")) {
 					dqToRdf();
@@ -87,9 +88,8 @@ public class DwerftTools {
 					L.error(invalidInputType);
                     cmd.usage();
 				}
-			
-			
 			}
+
 		} catch (ParameterException e) {
 			L.error("Could not parse arguments : " + e);
             cmd.usage();
@@ -122,15 +122,14 @@ public class DwerftTools {
 			pprdf.convert(pps.get("listScenes"));
 			pprdf.convert(pps.get("listSchedule"));
 			
-			pprdf.writeRdfToFile(output);
+			pprdf.writeRdfToFile(output, outputFormat);
 			
 			if (printToCLI)
-				pprdf.writeRdfToConsole();
+				pprdf.writeRdfToConsole(outputFormat);
 			
 			L.info("Preproducer RDF has been written to " + output);
 			
 		} catch (FileNotFoundException e) {
-			
 			L.error("Could not find config file at " + prpConfig + ". " + e.getMessage());
 		}
 
@@ -149,10 +148,10 @@ public class DwerftTools {
 				dqMapping);
 		
 		dqrdf.convert(inputStream);	
-		dqrdf.writeRdfToFile(output);
+		dqrdf.writeRdfToFile(output, outputFormat);
 		
 		if (printToCLI)
-			dqrdf.writeRdfToConsole();
+			dqrdf.writeRdfToConsole(outputFormat);
 		
 		L.info("Dramaqueen RDF has been written to " + output);
 	}
@@ -183,10 +182,10 @@ public class DwerftTools {
 		};
 		
 		abstractRdf.convert(inputStream);
-		abstractRdf.writeRdfToFile(output);
+		abstractRdf.writeRdfToFile(output, outputFormat);
 		
 		if (printToCLI)
-			abstractRdf.writeRdfToConsole();
+			abstractRdf.writeRdfToConsole(outputFormat);
 		
 		L.info("Generic RDF has been written to " + output + " using " + input + " as input and " + customMapping + " as mapping");
 	}
