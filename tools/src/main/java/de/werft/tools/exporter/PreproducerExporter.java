@@ -157,7 +157,7 @@ public class PreproducerExporter extends RdfExporter {
 				+ "<"+episode.getURI()+"> "
 				+ OntologyConstants.ONTOLOGY_PREFIX+":hasSceneGroup ?group. "
 				+ "?group "+ OntologyConstants.ONTOLOGY_PREFIX+":identifier ?identifier ."
-				+ "}ORDER BY ASC(?identifier)";
+				+ "}ORDER BY ASC(?internalIdentifier)";
 		ResultSet rs = queryEndpoint(orderByQuery);
 		while(rs.hasNext()) {
 			QuerySolution sol = rs.nextSolution();
