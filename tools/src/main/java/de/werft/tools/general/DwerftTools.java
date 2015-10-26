@@ -59,6 +59,11 @@ public class DwerftTools {
 			output = params.getOutputFile();
 			printToCLI = params.isPrintToCli();
 			outputFormat = RDFLanguages.nameToLang(params.getOutputFormat().toUpperCase());
+
+			if (outputFormat == null) {
+				outputFormat = Lang.TTL;
+			}
+
 			dqMapping = loadFile("mappings/dramaqueen.mappings");
 			prpMapping = loadFile("mappings/preproducer.mappings");
 			
