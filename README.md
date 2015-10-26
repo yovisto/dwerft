@@ -3,7 +3,7 @@
 **Table of Contents**
 - [Introduction](#introduction)
   - [Semantic Web](#semantic-web)
-  - [RDF](#rdf)
+  - [Resource Description Framework](#resource-description-framework)
   - [Apache Jena](#apache-jena)
   - [SPARQL](#sparql-syntax)
 - [Project details](#project-details)
@@ -17,14 +17,35 @@
 
 ## Introduction
 
+*Note: All text snippets in this section are taken from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page).*
+
 #### Semantic Web
 
-#### RDF
+The Semantic Web is an extension of the Web through standards by the World Wide Web Consortium (W3C). The standards promote common data formats and exchange protocols on the Web, most fundamentally the Resource Description Framework (RDF).
+
+According to the W3C, "The Semantic Web provides a common framework that allows data to be shared and reused across application, enterprise, and community boundaries". The term was coined by Tim Berners-Lee for a web of data that can be processed by machines.
+
+[Read more](https://en.wikipedia.org/wiki/Semantic_Web)
+
+#### Resource Description Framework
+
+The RDF data model is similar to classical conceptual modeling approaches such as entity–relationship or class diagrams, as it is based upon the idea of making statements about resources (in particular web resources) in the form of subject–predicate–object expressions. These expressions are known as triples in RDF terminology. The subject denotes the resource, and the predicate denotes traits or aspects of the resource and expresses a relationship between the subject and the object. For example, one way to represent the notion "The sky has the color blue" in RDF is as the triple: a subject denoting "the sky", a predicate denoting "has", and an object denoting "the color blue". Therefore, RDF swaps object for subject that would be used in the classical notation of an entity–attribute–value model within object-oriented design; Entity (sky), attribute (color) and value (blue). RDF is an abstract model with several serialization formats (i.e., file formats), and so the particular way in which a resource or triple is encoded varies from format to format.
+
+[Read more](https://en.wikipedia.org/wiki/Resource_Description_Framework)
 
 #### Apache Jena
 
+Apache Jena is an open source Semantic Web framework for Java. It provides an API to extract data from and write to RDF graphs. The graphs are represented as an abstract "model". A model can be sourced with data from files, databases, URLs or a combination of these. A Model can also be queried through SPARQL 1.1.
+
+[Read more](https://en.wikipedia.org/wiki/Jena_(framework))
+
+[Jena Project Page](https://jena.apache.org/index.html)
+
 #### SPARQL Syntax
 
+SPARQL [..] is an RDF query language, that is, a semantic query language for databases, able to retrieve and manipulate data stored in Resource Description Framework (RDF) format. It was made a standard by the RDF Data Access Working Group (DAWG) of the World Wide Web Consortium, and is recognized as one of the key technologies of the semantic web.
+
+[Read more](https://en.wikipedia.org/wiki/SPARQL)
 
 ## Project details
 
