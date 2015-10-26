@@ -88,9 +88,21 @@ public class DwerftTools {
 				if (inputType.equals("dq")) {
 					dqToRdf();
 				} else if (inputType.equals("prp")) {
-					prpToRdf();
+					String prpConfig = params.getPrpConfigFile();
+					if (!prpConfig.isEmpty()) {
+						prpToRdf(prpConfig);
+					} else {
+						L.error("Querying the preproducer API requires valid credentials.");
+						cmd.usage();
+					}
 				} else if (inputType.equals("g") && !params.getCustomMapping().isEmpty()) {
-					genericXmlToRdf(params.getCustomMapping());
+					String customMapping = params.getCustomMapping();
+					if (!customMapping.isEmpty()) {
+						genericXmlToRdf(customMapping);
+					} else {
+						L.error("Using the Generic XML parser requires a custom mapping file.");
+						cmd.usage();
+					}
 				} else {
 					L.error(invalidInputType);
                     cmd.usage();
@@ -154,17 +166,13 @@ public class DwerftTools {
 				OntologyConstants.ONTOLOGY_FORMAT, 
 				dqMapping);
 		
-		dqrdf.convert(inputStream);	
+		dqrdf.convert(inputStream);
 		dqrdf.writeRdfToFile(output, outputFormat);
 		
 		if (printToCLI)
 			dqrdf.writeRdfToConsole(outputFormat);
 		
 		L.info("Dramaqueen RDF has been written to " + output);
-	}
-	
-	private static void prpToRdf() {
-		
 	}
 	
 	private static void genericXmlToRdf(String customMapping) {

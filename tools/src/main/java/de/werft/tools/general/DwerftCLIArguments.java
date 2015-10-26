@@ -24,7 +24,10 @@ public class DwerftCLIArguments {
 	/** If the generic converter is used, a custom mapping must be specified. */
 	@Parameter (names = {"-m", "--mapping"}, description = "Specifiy a custom mapping file for use with the generic XML to RDF converter")
 	private String customMapping;
-	
+
+	@Parameter (names = {"-c", "--prpconfig"}, description = "Querying the PreProducer API requires valid credentials. Please specify a config file with said credentials.")
+	private String prpConfigFile;
+
 	/** Flag indicating if RDF should be printed to console */
 	@Parameter(names = {"-p", "--print"}, description = "Print output to console")
 	private boolean printToCli = false;
@@ -51,6 +54,10 @@ public class DwerftCLIArguments {
 
 	public String getCustomMapping() {
 		return customMapping;
+	}
+
+	public String getPrpConfigFile() {
+		return prpConfigFile;
 	}
 
 	public boolean isPrintToCli() {
