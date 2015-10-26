@@ -38,7 +38,7 @@ public class ExporterTest {
 				OntologyConstants.ONTOLOGY_FILE,
 				outputPath, "9860f0bb-d9a6-45e4-9d03-79e7fefd16fa", "17621");
 		e.export();
-        assertTrue(new File(tmpDir + "/prepoducer_filmontology_scenes.xml").exists());
+        assertTrue(new File(tmpDir + "/preproducer_filmontology_scenes.xml").exists());
 	}
 
 
