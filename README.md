@@ -67,20 +67,27 @@ The tools which have been integrated into the project thus far are as follows. W
 
 ## Installation
 
+#### Prepackaged Version
+
+This might be the easiest way to try the lpdc tools.
+We provide a prepackaged version [here](https://github.com/yovisto/dwerft/releases).  
+You only need a current Java version (1.8) to run the jar file.
+Unpack the downloaded file and run
+  ```
+  java -jar dwerft-tools-<version>.jar <your arguments>
+  ```
+For the available arguments see further down this readme.
+
+#### Manual Installation
+
+Since this is a Maven project, get Maven over [here](https://maven.apache.org/) if you haven't already done so.
 If you'd like to try this out for yourself, start of by cloning the git repository to a destination of your choice.
   ```
   mkdir ~/dwerft_lpdc
   git clone https://github.com/yovisto/dwerft.git ~/dwerft_lpdc
   cd ~/dwerft_lpdc
+  ./run.sh <your arguments>
   ```
-Since this is a Maven project, get Maven over [here](https://maven.apache.org/) if you haven't already done so.
-Once these two steps are complete, run 
-
-```
-mvn -Dmaven.test.skip=true clean install
-cd tools
-mvn exec:java -Dexec.mainClass="de.werft.tools.general.DwerftTools" -Dexec.args="*arguments of your choice*"
-```
 
 and you're good to go. Due to the nature of the dwerft tool package not all conversions are currently supported.
 All available options are listed below and can also be viewed by using the `-h` or `--help` option. Please note that querying the Preproducer API requires valid credentials.
