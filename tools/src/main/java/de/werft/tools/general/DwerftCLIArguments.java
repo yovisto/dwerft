@@ -10,7 +10,7 @@ import com.beust.jcommander.Parameter;
 public class DwerftCLIArguments {
 
 	/** The input file. */
-	@Parameter(names = {"-i", "--input"}, description = "Specify an XML input file", required = true)
+	@Parameter(names = {"-i", "--input"}, description = "Specify an XML input file. Required for DramaQueen and generic conversion")
 	private String inputFile;
 
 	/** The input type. */
