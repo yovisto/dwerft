@@ -4,7 +4,7 @@
 	<Episode id="XY10" number="10" name="Frog King returns">
 		<Scene id="S-01" number="1">
 			<Timeofday>day</Timeofday>
-			<Summary>Frog Kind sits on a lonely island</Summary>
+			<Summary>Frog King sits on a lonely island</Summary>
 		</Scene>
 	</Episode>
 </Script>

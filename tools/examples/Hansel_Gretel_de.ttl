@@ -958,14 +958,15 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:sceneNumber           "27"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
-<http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/0ddf6d64-d7d7-4c2d-bec9-4276b884a0b4>
+<http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/
+  Character/0ddf6d64-d7d7-4c2d-bec9-4276b884a0b4>
         a                         foo:Character ;
         foo:age                   "66"^^xsd:int ;
+        foo:name                  "Hexe"^^xsd:string ;
         foo:aliasName             "Weib"^^xsd:string ;
         foo:appearance            "alt aber zäh"^^xsd:string ;
         foo:identifierDramaQueen  "0ddf6d64-d7d7-4c2d-bec9-4276b884a0b4"^^xsd:string ;
         foo:internalIdentifier    "6"^^xsd:long ;
-        foo:name                  "Hexe"^^xsd:string ;
         foo:occupation            "Hexe"^^xsd:string ;
         foo:relationshipStatus    "lebt allein mit Katzen"^^xsd:string ;
         foo:sex                   "weiblich"^^xsd:string ;
