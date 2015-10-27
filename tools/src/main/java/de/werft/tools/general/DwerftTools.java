@@ -8,6 +8,7 @@ import de.werft.tools.importer.preproducer.PreProducerToRdf;
 import de.werft.tools.sources.AbstractSource;
 import de.werft.tools.sources.DramaQueenSource;
 import de.werft.tools.sources.PreproducerSource;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFLanguages;
 import org.apache.log4j.BasicConfigurator;
@@ -77,21 +78,21 @@ public class DwerftTools {
 			}
 			
 			//Make sure input and output has been specified
-			else if (!output.isEmpty()) {
+			else if (!StringUtils.isEmpty(output)) {
 				
 				/**
 				 * (1) dramaqueen to rdf
 				 * (2) preproducer to rdf		
 				 * (3) generic XML file to rdf. This requires a custom mapping file
 				 */
-				if (inputType.equals("dq")) {
+				if (StringUtils.equals(inputType, "dq")) {
 					if (!input.isEmpty()) {
 						dqToRdf();
 					} else {
 						L.error("DramaQueen conversion requires a valid input file");
 						cmd.usage();
 					}
-				} else if (inputType.equals("prp")) {
+				} else if (StringUtils.equals(inputType, "prp")) {
 					String prpConfig = params.getPrpConfigFile();
 					if (!prpConfig.isEmpty()) {
 						prpToRdf(prpConfig);
@@ -99,9 +100,9 @@ public class DwerftTools {
 						L.error("Querying the preproducer API requires valid credentials.");
 						cmd.usage();
 					}
-				} else if (inputType.equals("g")) {
+				} else if (StringUtils.equals(inputType, "g")) {
 					String customMapping = params.getCustomMapping();
-					if (!customMapping.isEmpty() && !input.isEmpty()) {
+					if (!StringUtils.isEmpty(customMapping) && StringUtils.isEmpty(input)) {
 						genericXmlToRdf(customMapping);
 					} else {
 						L.error("Using the Generic XML parser requires a valid input file and a custom mapping file.");
