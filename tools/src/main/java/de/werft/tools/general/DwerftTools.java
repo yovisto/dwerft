@@ -70,7 +70,6 @@ public class DwerftTools {
 			
 			//Assign local variables
 			String inputType = params.getInputType();
-			String invalidInputType = "Invalid input type \"" + inputType + "\"";
 			
 			//Print help
 			if (params.isHelp()) {
@@ -78,7 +77,7 @@ public class DwerftTools {
 			}
 			
 			//Make sure input and output has been specified
-			else if (!(input.isEmpty() && output.isEmpty())) {
+			else if (!output.isEmpty()) {
 				
 				/**
 				 * (1) dramaqueen to rdf
@@ -86,7 +85,12 @@ public class DwerftTools {
 				 * (3) generic XML file to rdf. This requires a custom mapping file
 				 */
 				if (inputType.equals("dq")) {
-					dqToRdf();
+					if (!input.isEmpty()) {
+						dqToRdf();
+					} else {
+						L.error("DramaQueen conversion requires a valid input file");
+						cmd.usage();
+					}
 				} else if (inputType.equals("prp")) {
 					String prpConfig = params.getPrpConfigFile();
 					if (!prpConfig.isEmpty()) {
@@ -95,20 +99,19 @@ public class DwerftTools {
 						L.error("Querying the preproducer API requires valid credentials.");
 						cmd.usage();
 					}
-				} else if (inputType.equals("g") && !params.getCustomMapping().isEmpty()) {
+				} else if (inputType.equals("g")) {
 					String customMapping = params.getCustomMapping();
-					if (!customMapping.isEmpty()) {
+					if (!customMapping.isEmpty() && !input.isEmpty()) {
 						genericXmlToRdf(customMapping);
 					} else {
-						L.error("Using the Generic XML parser requires a custom mapping file.");
+						L.error("Using the Generic XML parser requires a valid input file and a custom mapping file.");
 						cmd.usage();
 					}
 				} else {
-					L.error(invalidInputType);
+					L.error("Invalid input type \"" + inputType + "\"");
                     cmd.usage();
 				}
 			}
-
 		} catch (ParameterException e) {
 			L.error("Could not parse arguments : " + e);
             cmd.usage();
