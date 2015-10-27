@@ -17,7 +17,7 @@
 
 ## Introduction
 
-*Note: All text snippets in this section are taken from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page).*
+*Note: All text snippets in the introduction are taken from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page).*
 
 #### Semantic Web
 
@@ -83,17 +83,15 @@ mvn exec:java -Dexec.mainClass="de.werft.tools.general.DwerftTools" -Dexec.args=
 ```
 
 and you're good to go. Due to the nature of the dwerft tool package not all conversions are currently supported.
-The following conversions are valid for use with the -c argument. Please note that querying the Preproducer API requires valid credentials.
- - Generating XML from RDF
-    - triple store -> preproducer (-c ts prp -o /path/to/output)
-    - triple store -> dramaqueen (-c ts dq -o /path/to/output)
- - Generating RDF from XML 
-    - dramaqueen -> RDF (-c dq ts -i /path/to/dramaqueenXML -o /path/to/output)
- - Generating RDF from preproducer tool.
-	  		preproducer -> RDF (-c prp ts -o /path/to/output)
-Other valid arguments are the following:
- - -p : prints results to console
- - -h : prints the help page
+All available options are listed below and can also be viewed by using the `-h` or `--help` option. Please note that querying the Preproducer API requires valid credentials.
+
+ - `-i`, `--input`: Specify an XML input file
+ - `-o`, `--output`: Specify an RDF output file
+ - `-t`, `--type`: Specify an input type. Available options are PreProducer ('prp'), DramaQueen ('dq'), and Generic ('g')
+ - `-m`, `--mapping`: Specifiy a custom mapping file for use with the generic XML to RDF converter
+ - `-c`, `--prpconfig`: Querying the PreProducer API requires valid credentials. Please specify a config file with said credentials. A template config file is provided in the project.
+ - `-p` `--print`: Prints the RDF output to console. Does not replace writing RDF to file.
+ - `f`, `--format`: pecify an RDF output format. Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig'). Default is Turtle.
 
 ## Package structure
 
