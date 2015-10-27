@@ -17,7 +17,7 @@
 
 ## Introduction
 
-*Note: All text snippets in this section are taken from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page).*
+*Note: All text snippets in the introduction are taken from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page).*
 
 #### Semantic Web
 
