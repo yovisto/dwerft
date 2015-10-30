@@ -8,6 +8,7 @@ import de.werft.tools.importer.preproducer.PreProducerToRdf;
 import de.werft.tools.sources.AbstractSource;
 import de.werft.tools.sources.DramaQueenSource;
 import de.werft.tools.sources.PreproducerSource;
+import org.aeonbits.owner.ConfigFactory;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFLanguages;
@@ -51,7 +52,12 @@ public class DwerftTools {
 		
 		//Configure log4j2
 		BasicConfigurator.configure();
-		
+
+        DwerftConfig config = ConfigFactory.create(DwerftConfig.class);
+        System.out.println("mapping " + config.getMappingFolder() + " onto " + config.getOntologyFile());
+        System.out.println("pp " + config.getPreProducerSecret() + " " + config.getPreProducerKey());
+
+
 		try {
 			cmd.parse(args);
 			
