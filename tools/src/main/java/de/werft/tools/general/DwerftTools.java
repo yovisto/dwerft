@@ -15,9 +15,8 @@ import org.apache.jena.riot.RDFLanguages;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.security.InvalidKeyException;
 
 
 /**
@@ -54,8 +53,7 @@ public class DwerftTools {
 		BasicConfigurator.configure();
 
         DwerftConfig config = ConfigFactory.create(DwerftConfig.class);
-        System.out.println("mapping " + config.getMappingFolder() + " onto " + config.getOntologyFile());
-        System.out.println("pp " + config.getPreProducerSecret() + " " + config.getPreProducerKey());
+        OntologyConstants.setOntologyFile(config.getOntologyFile());
 
 
 		try {
@@ -71,8 +69,8 @@ public class DwerftTools {
 				outputFormat = Lang.TTL;
 			}
 
-			dqMapping = loadFile("mappings/dramaqueen.mappings");
-			prpMapping = loadFile("mappings/preproducer.mappings");
+			dqMapping = loadFile(config.getMappingFolder() + "dramaqueen.mappings");
+			prpMapping = loadFile(config.getMappingFolder() + "preproducer.mappings");
 			
 			
 			//Assign local variables
@@ -99,16 +97,10 @@ public class DwerftTools {
 						cmd.usage();
 					}
 				} else if (StringUtils.equals(inputType, "prp")) {
-					String prpConfig = params.getPrpConfigFile();
-					if (!prpConfig.isEmpty()) {
-						prpToRdf(prpConfig);
-					} else {
-						L.error("Querying the preproducer API requires valid credentials.");
-						cmd.usage();
-					}
+                    	prpToRdf(config);
 				} else if (StringUtils.equals(inputType, "g")) {
 					String customMapping = params.getCustomMapping();
-					if (!StringUtils.isEmpty(customMapping) && StringUtils.isEmpty(input)) {
+					if (!StringUtils.isEmpty(customMapping) && !StringUtils.isEmpty(input)) {
 						genericXmlToRdf(customMapping);
 					} else {
 						L.error("Using the Generic XML parser requires a valid input file and a custom mapping file.");
@@ -119,50 +111,61 @@ public class DwerftTools {
                     cmd.usage();
 				}
 			}
-		} catch (ParameterException e) {
+        } catch (ParameterException e) {
 			L.error("Could not parse arguments : " + e);
             cmd.usage();
-		}
+        } catch (InvalidKeyException e) {
+            L.error("A credentials problem. " + e.getMessage());
+        }
+    }
+
+    /**
+     *
+     * @param config the dwerft configuration
+     * @throws InvalidKeyException if ne credentials where found
+     */
+	private static void prpToRdf(DwerftConfig config) throws InvalidKeyException {
+		if (isEmptyKeys(config)) {
+            throw new InvalidKeyException("No PreProducer credentials found.");
+        }
+
+
+        PreproducerSource pps = new PreproducerSource(config.getPreProducerKey(),
+                config.getPreProducerSecret(), config.getPreProducerAppSecret());
+		PreProducerToRdf pprdf = new PreProducerToRdf(
+				OntologyConstants.ONTOLOGY_FILE,
+				OntologyConstants.ONTOLOGY_FORMAT,
+				prpMapping);
+
+	    // the order is important, you have to create all classes before
+	    // you can use them.
+		pprdf.convert(pps.get("info"));
+		pprdf.convert(pps.get("listCharacters"));
+		pprdf.convert(pps.get("listCrew"));
+		pprdf.convert(pps.get("listDecorations"));
+		pprdf.convert(pps.get("listExtras"));
+		pprdf.convert(pps.get("listFigures"));
+		pprdf.convert(pps.get("listScenes"));
+		pprdf.convert(pps.get("listSchedule"));
+
+		pprdf.writeRdfToFile(output, outputFormat);
+
+		if (printToCLI)
+			pprdf.writeRdfToConsole(outputFormat);
+			
+		L.info("Preproducer RDF has been written to " + output);
 	}
 
-	
-	/**
-	 * Prp to rdf.
-	 *
-	 * @param prpConfig the prp config
-	 */
-	private static void prpToRdf(String prpConfig) {
-		
-		try {
-			PreproducerSource pps = new PreproducerSource(new File(prpConfig));
-			PreProducerToRdf pprdf = new PreProducerToRdf(
-					OntologyConstants.ONTOLOGY_FILE,
-					OntologyConstants.ONTOLOGY_FORMAT,
-					prpMapping);
-
-	        // the order is important, you have to create all classes before
-	        // you can use them.
-			pprdf.convert(pps.get("info"));
-			pprdf.convert(pps.get("listCharacters"));
-			pprdf.convert(pps.get("listCrew"));
-			pprdf.convert(pps.get("listDecorations"));
-			pprdf.convert(pps.get("listExtras"));
-			pprdf.convert(pps.get("listFigures"));
-			pprdf.convert(pps.get("listScenes"));
-			pprdf.convert(pps.get("listSchedule"));
-			
-			pprdf.writeRdfToFile(output, outputFormat);
-			
-			if (printToCLI)
-				pprdf.writeRdfToConsole(outputFormat);
-			
-			L.info("Preproducer RDF has been written to " + output);
-			
-		} catch (FileNotFoundException e) {
-			L.error("Could not find config file at " + prpConfig + ". " + e.getMessage());
-		}
-
-	}
+    /**
+     * Checks weather all credentials are set in the config file or not.
+     *
+     * @param config - dwerft configuration file
+     * @return true iff all credentials are set
+     */
+    private static boolean isEmptyKeys(DwerftConfig config) {
+        return StringUtils.isEmpty(config.getPreProducerAppSecret()) || StringUtils.isEmpty(config.getPreProducerKey())
+                || StringUtils.isEmpty(config.getPreProducerSecret());
+    }
 	
 	/**
 	 * Dq to rdf.

@@ -5,8 +5,9 @@
 	<artifactId>de.werft</artifactId>
 	<packaging>pom</packaging>
 	<version>0.5</version>
-	<name>de.werft</name>
-	<url>http://maven.apache.org</url>
+
+    <name>Dwerft Linked Production Data Cloud</name>
+	<url>https://github.com/yovisto/dwerft</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -36,58 +37,23 @@
 			<type>pom</type>
 			<version>2.11.2</version>
 		</dependency>
-
-		<dependency>
-        	<groupId>org.apache.commons</groupId>
-        	<artifactId>commons-lang3</artifactId>
-        	<version>3.4</version>
-    	</dependency>
 	</dependencies>
 
 	<modules>
 		<module>tools</module>
 	</modules>
 
- <build>
-  <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.3</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-
-      <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.4.1</version>
-          <configuration>
-              <!-- get all project dependencies -->
-              <descriptorRefs>
-                  <descriptorRef>jar-with-dependencies</descriptorRef>
-              </descriptorRefs>
-              <!-- MainClass in mainfest make a executable jar -->
-              <archive>
-                  <manifest>
-                      <mainClass>de.werft.tools.general.DwerftTools</mainClass>
-                  </manifest>
-              </archive>
-
-          </configuration>
-          <executions>
-              <execution>
-                  <id>make-assembly</id>
-                  <!-- bind to the packaging phase -->
-                  <phase>package</phase>
-                  <goals>
-                      <goal>single</goal>
-                  </goals>
-              </execution>
-          </executions>
-      </plugin>
-    </plugins>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

@@ -1,19 +1,24 @@
 package de.werft.tools.general;
 
+import de.werft.tools.importer.general.DefaultXMLtoRDFconverter;
+import org.junit.Before;
+import org.junit.Test;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-
-import org.junit.Test;
-
-import de.werft.tools.importer.general.DefaultXMLtoRDFconverter;
 
 public class DefaultXMLtoRDFconverterTest {
 	
 	private static final String exampleXMLfile = "examples/generic_example.xml";
 	private static final String outputFile = "examples/generic_example.ttl";
-	private static final String MAPPINGS_FILE = "src/main/resources/generic_example.mappings";
-	
+	private static final String MAPPINGS_FILE = "mappings/generic_example.mappings";
+
+    @Before
+    public void setUp() {
+        OntologyConstants.setOntologyFile(new java.io.File("ontology/dwerft-ontology.owl"));
+    }
+
 	@Test
 	public void testConverter() {
 		
