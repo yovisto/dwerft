@@ -10,7 +10,10 @@
   - [Scope](#scope)
   - [Linked Production Data Cloud](#linked-production-data-cloud)
   - [Tools](#tools)
-- [Installation](#installation)
+- [Setting up the LPDC framework](#setting-up-the-lpdc-framework)
+  - [Prepackaged version](#prepackaged-version)
+  - [Manual setup](#manual-setup)
+  - [Valid arguments](#valid-arguments)
 - [Package structure](#package-structure)
   - [Mapping](#mapping)
 - [Sample workflow](#sample-workflow)
@@ -65,9 +68,9 @@ The tools which have been integrated into the project thus far are as follows. W
 * [Preproducer](http://www.preproducer.com/)
 * [LockitNetwork](http://lockitnetwork.com/)
 
-## Installation
+## Setting up the LPDC framework
 
-#### Prepackaged Version
+#### Prepackaged version
 
 This might be the easiest way to try the lpdc tools.
 We provide a prepackaged version [here](https://github.com/yovisto/dwerft/releases).  
@@ -78,18 +81,30 @@ Unpack the downloaded file and run
   ```
 For the available arguments see further down this readme.
 
-#### Manual Installation
+#### Manual setup
 
-Since this is a Maven project, get Maven over [here](https://maven.apache.org/) if you haven't already done so.
-If you'd like to try this out for yourself, start of by cloning the git repository to a destination of your choice.
+Manually setting up the framework requires Apache Maven. So start of by getting Maven over [here](https://maven.apache.org/) if you haven't already done so. Next, clone the git repository to a destination of your choice.
+  
   ```
   mkdir ~/dwerft_lpdc
   git clone https://github.com/yovisto/dwerft.git ~/dwerft_lpdc
+  ```
+
+That's it. You can now experiment with the LPDC framework by running the `run.sh` file delivered with the project.
+  
+  ```
   cd ~/dwerft_lpdc
   ./run.sh <your arguments>
   ```
 
-and you're good to go. Due to the nature of the dwerft tool package not all conversions are currently supported.
+The framework comes with a selection of available operations available for instant usage. However, due to the nature of the dwerft tool package not all conversions are currently supported. Up until now, the following three conversions are supported:
+
+  - DramaQueen XML to RDF
+  - PreProducer API to RDF
+  - Custom XML to RDF
+
+#### Valid arguments
+
 All available options are listed below and can also be viewed by using the `-h` or `--help` option. Please note that querying the Preproducer API requires valid credentials.
 
  - `-i`, `--input`: Specify an XML input file
