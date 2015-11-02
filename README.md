@@ -145,10 +145,10 @@ map77.targetPropertyType=DATATYPE_PROPERTY
 ```
 
 
-
 ## Sample workflow
 
-For the following example, let's say our aim is to store a script that has been written using Dramaqueen in the LPDC and later export all the information to XML readable by PreProducer. For each step there is a test within the `test` package, which should help comprehend the way the tasks are processed in detail.
+For the following example, let's say our aim is to store a script that has been written using Dramaqueen in the LPDC and later export all the information to XML readable by PreProducer. ~~For each step there is a test within the `test` package, which should help comprehend the way the tasks are processed in detail.~~
+Please note, that currently working implementations do not exist for each step mentioned below. 
 
 1. **Dramaqueen to RDF:** So firstly, the challenge is to convert a Dramaqueen script to valid RDF. In order to achieve this, we simply feed our source, destination and mappings file to the `DramaqueenToRdf` converter in the package `importer.dramaqueen`. It will traverse the whole script and convert all attributes into RDF, making use of the mapping along the way. Make sure to take a look at the resulting file, it will give you an understanding of what RDF looks like.
 
@@ -156,4 +156,6 @@ For the following example, let's say our aim is to store a script that has been 
 
 3. **Triple store to PreProducer XML:** Exporting RDF back to tool-specific formats basically boils down to issuing the right queries and generating valid XML. The abstract class `RdfExporter` found in the package `exporter` provides some handy methods for extracting information from the triple store. It is vital however, that the correct ontology file is provided and the queries are free of errors. The `PreproducerExporter` extends the aformentioned abstract class and builds XML in a recursive manner. Again, take a look at the generated XML.
 
-4. **PreProducer XML to PreProducer Tool:** Lastly, the XML file needs to be sent to the PreProducer API. As we learned before, the package `sources` contains all classes required for this kind of task. Since we can't publish any credentials you'll need your own. Simply add these to the `config.template` hidden in the `resources` folder and pass said file to the constructor of the `PreproducerSource`. Calling the method `send` will now upload the previously generated XML to Preproducer, where all the applicable data originally contained in the Dramaqueen script can now be viewed.
+4. **PreProducer XML to PreProducer Tool:** Now, the XML file needs to be sent to the PreProducer API. As we learned before, the package `sources` contains all classes required for this kind of task. Since we can't publish any credentials you'll need your own. Simply add these to the `config.template` hidden in the `resources` folder and pass said file to the constructor of the `PreproducerSource`. Calling the method `send` will now upload the previously generated XML to Preproducer.
+
+5. **Wrapping up** Lastly, log on to your PreProducer account to review your upload. The data you sent will require confirmation. Your script is now viewable in the PreProducer frontend. 
