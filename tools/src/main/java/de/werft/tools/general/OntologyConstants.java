@@ -1,6 +1,6 @@
 package de.werft.tools.general;
 
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * Collected constants for the dwerft ontology
@@ -15,7 +15,7 @@ public class OntologyConstants {
 	/*
 	 * Path to the ontology file
 	 */
-	public static final InputStream ONTOLOGY_FILE = loadFile("ontology/dwerft-ontology.owl");
+	public static InputStream ONTOLOGY_FILE = null;
 
 	/*
 	 * Format of the ontology file
@@ -69,9 +69,18 @@ public class OntologyConstants {
 			"PREFIX "+RESOURCE_PREFIX+": <"+RESOURCE_NAMESPACE+"> ";
 
 
-    private static InputStream loadFile(String filename) {
-        ClassLoader cl = ClassLoader.getSystemClassLoader();
-        return cl.getResourceAsStream(filename);
+    /**
+     * Sets the inputstream for the ontology file. this step is absolutly necessary
+     * and must be done before you use the constants.
+     *
+     * @param ontologyFile - path to ontology file.
+     */
+    public static void setOntologyFile(File ontologyFile) {
+        try {
+            ONTOLOGY_FILE = new BufferedInputStream(new FileInputStream(ontologyFile));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -18,5 +18,70 @@
 		<artifactId>jcommander</artifactId>
 		<version>1.48</version>
 	</dependency>
+    <dependency>
+        <groupId>org.aeonbits.owner</groupId>
+        <artifactId>owner-java8</artifactId>
+        <version>1.0.9</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.4</version>
+    </dependency>
   </dependencies>
+
+    <build>
+        <finalName>dwerft-tools</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <!-- do not build properties into the jar -->
+                    <excludes>
+                        <exclude>**/*.properties</exclude>
+                    </excludes>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>de.werft.tools.general.DwerftTools</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <CLass-Path>config/</CLass-Path>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- package as distribution -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.5.4</version>
+                <configuration>
+                    <!-- descriptor location -->
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <descriptors>
+                        <descriptor>src/main/assembly/bin.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                        <phase>package</phase> <!-- bind to the packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
 </project>

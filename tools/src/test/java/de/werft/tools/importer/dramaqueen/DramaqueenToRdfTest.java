@@ -1,11 +1,11 @@
 package de.werft.tools.importer.dramaqueen;
 
-import java.io.InputStream;
-
+import de.werft.tools.general.OntologyConstants;
 import de.werft.tools.sources.DramaQueenSource;
+import org.junit.Before;
 import org.junit.Test;
 
-import de.werft.tools.general.OntologyConstants;
+import java.io.InputStream;
 
 /**
  *  DramaQueen Tests
@@ -18,7 +18,12 @@ public class DramaqueenToRdfTest {
 	
 	private static final String dqFile = "examples/Hansel_Gretel_de.dq";
 	private static final String outputFile = "examples/Hansel_Gretel_de.ttl";
-	private static final String DRAMAQUEEN_MAPPINGS_FILE = "src/main/resources/mappings/dramaqueen.mappings";
+	private static final String DRAMAQUEEN_MAPPINGS_FILE = "mappings/dramaqueen.mappings";
+
+    @Before
+    public void setUp() {
+        OntologyConstants.setOntologyFile(new java.io.File("ontology/dwerft-ontology.owl"));
+    }
 
 	@Test
 	public void testConverter() {

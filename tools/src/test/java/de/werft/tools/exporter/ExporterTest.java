@@ -1,11 +1,11 @@
 package de.werft.tools.exporter;
 
-import java.io.File;
-import java.io.IOException;
-
+import de.werft.tools.general.OntologyConstants;
+import org.junit.Before;
 import org.junit.Test;
 
-import de.werft.tools.general.OntologyConstants;
+import java.io.File;
+import java.io.IOException;
 
 import static org.junit.Assert.assertTrue;
 
@@ -20,6 +20,11 @@ import static org.junit.Assert.assertTrue;
 public class ExporterTest {
 
 	private final String tmpDir = "examples";
+
+    @Before
+    public void setUp() {
+        OntologyConstants.setOntologyFile(new java.io.File("ontology/dwerft-ontology.owl"));
+    }
 	
 	//@Test
 	public void testLockitExporter() throws IOException {

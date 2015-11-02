@@ -22,13 +22,11 @@ import org.apache.logging.log4j.Logger;
 
 /**
  * This class provides api access to PreProducer.
- *
+ * <p>
  * It implements both sides, the download of raw xml data from the service
  * and the upload of newly generated xml files towards them.
- * To grant yourself api access copy the "config.template" to "config.properties"
- * and adjust it with your secrets.
  *
- * @author Henrik (juerges.henrik@gmail.com)
+ * @author Henrik Jürges (juerges.henrik@gmail.com)
  */
 public class PreproducerSource implements Source {
 
@@ -41,38 +39,28 @@ public class PreproducerSource implements Source {
 	private String appSecret = "" ;	
 	
 	private static final String BASE_URL = "https://software.preproducer.com/api";
-	
-	/**
-	 * Constructor for use with the preproducer API
-	 * 
-	 * @param propertyFile
-	 * @throws FileNotFoundException
-	 */
-	public PreproducerSource(File propertyFile) throws FileNotFoundException {
-		getFromPropFile(propertyFile);
-	}
-	
-	
-	private void getFromPropFile(File propertyFile) throws FileNotFoundException {
-		Properties prop = new Properties();
-		
-		try {
-			InputStream is = new FileInputStream(propertyFile);
-		
-			prop.load(is);
-			this.key = prop.getProperty("pp.key");
-			this.secret = prop.getProperty("pp.secret");
-			this.appSecret = prop.getProperty("pp.appsecret");
-            close(is);
 
-		} catch (IOException e) {
-			L.error("Property File " + propertyFile.getPath() + " not found or loaded. " + e.getMessage());
-			throw new FileNotFoundException(e.getMessage());
-		}
+    /**
+     * Constructor for use with the preproducer API
+     *
+     * @param key       the key
+     * @param secret    the secret
+     * @param appSecret the app secret
+     */
+    public PreproducerSource(String key, String secret, String appSecret) {
+		this.key = key;
+        this.secret = secret;
+        this.appSecret = appSecret;
 	}
-	
-	
-	public Map<String, String> getBasicParameters(String methodName) {
+
+
+    /**
+     * Gets basic parameters.
+     *
+     * @param methodName the method name
+     * @return the basic parameters
+     */
+    public Map<String, String> getBasicParameters(String methodName) {
 		Map<String, String> result = new LinkedHashMap<String, String>();
 		
 		result.put("key", key);
@@ -81,8 +69,14 @@ public class PreproducerSource implements Source {
 		
 		return result;		
 	}
-	
-	public String convertParametersToRequest(Map<String, String> parameters) {
+
+    /**
+     * Convert parameters to request string.
+     *
+     * @param parameters the parameters
+     * @return the string
+     */
+    public String convertParametersToRequest(Map<String, String> parameters) {
 		String result = "";
 		
 		for (String param : parameters.keySet()) {
@@ -96,9 +90,15 @@ public class PreproducerSource implements Source {
 		
 		return result;
 	}
-	
-	
-	public String generateSignature(Map<String, String> parameters) {
+
+
+    /**
+     * Generate signature string.
+     *
+     * @param parameters the parameters
+     * @return the string
+     */
+    public String generateSignature(Map<String, String> parameters) {
 		String result = "";
 		
 		try {	
@@ -195,8 +195,16 @@ public class PreproducerSource implements Source {
 		
 		return result;
 	}
-	
-	public static String readFile(String path, Charset encoding) throws IOException {
+
+    /**
+     * Read file string.
+     *
+     * @param path     the path
+     * @param encoding the encoding
+     * @return the string
+     * @throws IOException the io exception
+     */
+    public static String readFile(String path, Charset encoding) throws IOException {
 		byte[] encoded = Files.readAllBytes(Paths.get(path));
 		return new String(encoded, encoding);
 	}
