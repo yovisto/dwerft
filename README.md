@@ -75,9 +75,17 @@ The tools which have been integrated into the project thus far are as follows. W
 This might be the easiest way to try the lpdc tools.
 We provide a prepackaged version [here](https://github.com/yovisto/dwerft/releases).  
 You only need a current Java version (1.8) to run the jar file.
-Unpack the downloaded file and run
+
+The structure is as following:
+```
+config/ - contains DwerftConfig.properties
+examples/ - some examples to try the tool
+ontology/ - provides the ontology file
+mapping/ provides different mappings
+```
+To use it, run:
   ```
-  java -jar dwerft-tools-<version>.jar <your arguments>
+  java -jar dwerft-tools.jar <your arguments>
   ```
 For the available arguments see further down this readme.
 
@@ -89,14 +97,16 @@ Manually setting up the framework requires Apache Maven. So start of by getting 
   mkdir ~/dwerft_lpdc
   git clone https://github.com/yovisto/dwerft.git ~/dwerft_lpdc
   ```
-
+To avoid configuration problems:
+  ```
+  cp /tools/src/main/resources/DwerftConfig.properties /tools
+  ```
+Use your editor of choice and prepend mappings and ontology file with `tools/`.
 That's it. You can now experiment with the LPDC framework by running the `run.sh` file delivered with the project.
-  
   ```
   cd ~/dwerft_lpdc
   ./run.sh <your arguments>
   ```
-
 The framework comes with a selection of available operations available for instant usage. However, due to the nature of the dwerft tool package not all conversions are currently supported. Up until now, the following three conversions are supported:
 
   - DramaQueen XML to RDF
