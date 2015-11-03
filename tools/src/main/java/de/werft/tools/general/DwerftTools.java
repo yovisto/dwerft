@@ -15,7 +15,7 @@ import org.apache.jena.riot.RDFLanguages;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
-import java.io.InputStream;
+import java.io.*;
 import java.security.InvalidKeyException;
 
 
@@ -69,9 +69,15 @@ public class DwerftTools {
 				outputFormat = Lang.TTL;
 			}
 
-			dqMapping = loadFile(config.getMappingFolder() + "dramaqueen.mappings");
-			prpMapping = loadFile(config.getMappingFolder() + "preproducer.mappings");
-			
+            // load predefined mappings
+			try {
+                dqMapping = loadFile(new java.io.File(config.getMappingFolder(), "dramaqueen.mappings"));
+                prpMapping = loadFile(new java.io.File(config.getMappingFolder(), "preproducer.mappings"));
+            } catch (FileNotFoundException e) {
+                L.error(e.getMessage());
+                System.exit(1);
+            }
+
 			
 			//Assign local variables
 			String inputType = params.getInputType();
@@ -218,8 +224,18 @@ public class DwerftTools {
 		L.info("Generic RDF has been written to " + output + " using " + input + " as input and " + customMapping + " as mapping");
 	}
 
-    private static InputStream loadFile(String filename) {
-        ClassLoader cl = ClassLoader.getSystemClassLoader();
-        return cl.getResourceAsStream(filename);
+    private static InputStream loadFile(File filename) throws FileNotFoundException {
+        InputStream in = null;
+        try {
+            in = new BufferedInputStream(new FileInputStream(filename));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        if (in != null) {
+            return in;
+        } else {
+            throw new FileNotFoundException("File not found " + filename.getAbsolutePath());
+        }
     }
 }

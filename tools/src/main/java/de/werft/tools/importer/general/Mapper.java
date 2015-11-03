@@ -32,9 +32,9 @@ public class Mapper {
 	 * 
 	 * @param mappingsFilename File containing mapping definitions
 	 */
-	public Mapper(String mappingsFilename) {		
-		
-		mappings = new HashSet<MappingDefinition>();
+	public Mapper(String mappingsFilename) {
+        System.out.println(mappingsFilename);
+        mappings = new HashSet<MappingDefinition>();
 		
 		File mapFile = new File(mappingsFilename);
 		Properties prop = new Properties();
