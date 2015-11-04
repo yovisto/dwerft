@@ -9,7 +9,7 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://filmontology.org/resource/Project/123456>
+<http://filmontology.org/resource/Project/3298438>
         a                       foo:Project ;
-        foo:identifier          "123456"^^xsd:int ;
+        foo:identifier          "3298438"^^xsd:int ;
         foo:internalIdentifier  "1"^^xsd:long .
