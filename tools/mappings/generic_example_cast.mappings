@@ -1,4 +1,4 @@
-map1.xmlNodePath=/Script
+map1.xmlNodePath=/project
 map1.conditionalAttributeName=
 map1.conditionalAttributeValue=
 map1.contentSource=
@@ -7,7 +7,7 @@ map1.targetOntologyClass=http://filmontology.org/ontology/1.0/Project
 map1.targetOntologyProperty=
 map1.targetPropertyType=
 
-map2.xmlNodePath=/Script
+map2.xmlNodePath=/project
 map2.conditionalAttributeName=
 map2.conditionalAttributeValue=
 map2.contentSource=ATTRIBUTE
@@ -15,4 +15,3 @@ map2.contentElementName=id
 map2.targetOntologyClass=http://filmontology.org/ontology/1.0/Project
 map2.targetOntologyProperty=http://filmontology.org/ontology/1.0/identifier
 map2.targetPropertyType=DATATYPE_PROPERTY
-

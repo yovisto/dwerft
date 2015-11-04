@@ -72,3 +72,16 @@ select ?scene, ?number, ?header, ?dramaqueenID, ?preproducerID  where {
 	
 } ORDER BY ASC(?number)
 
+
+Retrieve all scenes together with their project name that are shot exterior.
+--------------------------------------------------------------------------
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foo: <http://filmontology.org/ontology/1.0/>
+select ?name ?scene ?intext WHERE {
+	?project foo:hasEpisode ?episode .
+	?episode foo:hasSceneGroup ?sceneGroup .
+	?sceneGroup foo:hasScene ?scene .
+	?scene foo:interiorExterior ?intext .
+	?project foo:title ?name .
+	FILTER(str(?intext) = "ext")
+}
