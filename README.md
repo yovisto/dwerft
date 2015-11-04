@@ -122,7 +122,7 @@ All available options are listed below and can also be viewed by using the `-h` 
  - `-t`, `--type`: Specify an input type. Available options are PreProducer ('prp'), DramaQueen ('dq'), and Generic ('g')
  - `-m`, `--mapping`: Specifiy a custom mapping file for use with the generic XML to RDF converter
  - `-p` `--print`: Prints the RDF output to console. Does not replace writing RDF to file.
- - `f`, `--format`: pecify an RDF output format. Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig'). Default is Turtle.
+ - `-f`, `--format`: pecify an RDF output format. Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig'). Default is Turtle.
 
 ## Package structure
 
