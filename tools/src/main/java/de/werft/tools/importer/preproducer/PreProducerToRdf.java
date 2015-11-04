@@ -11,6 +11,7 @@ import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 
 /**
  * Actual xml to rdf implementation for preproducer.
@@ -27,6 +28,21 @@ public class PreProducerToRdf extends AbstractXMLtoRDFconverter {
     public PreProducerToRdf(InputStream ontologyFile, String ontologyFormat, InputStream prpMapping) {
         super(ontologyFile, ontologyFormat, prpMapping);
     }
+
+	public ArrayList<String> getAPIMethodOrder() {
+		ArrayList<String> result = new ArrayList<>();
+
+		result.add("info");
+		result.add("listCharacters");
+		result.add("listCrew");
+		result.add("listDecorations");
+		result.add("listExtras");
+		result.add("listFigures");
+		result.add("listScenes");
+		result.add("listSchedule");
+
+		return result;
+	}
 
     /**
 	 * Retrieves the identifier of the ScriptDocument element

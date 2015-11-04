@@ -36,16 +36,12 @@ public class PreProducerToRdfTest {
 				OntologyConstants.ONTOLOGY_FORMAT,
 				PREPRODUCER_MAPPINGS_FILE);
 
-        // the order is important, you have to create all classes before
-        // you can use them.
-		pprdf.convert(pps.get("info"));
-		pprdf.convert(pps.get("listCharacters"));
-		pprdf.convert(pps.get("listCrew"));
-		pprdf.convert(pps.get("listDecorations"));
-		pprdf.convert(pps.get("listExtras"));
-		pprdf.convert(pps.get("listFigures"));
-		pprdf.convert(pps.get("listScenes"));
-		pprdf.convert(pps.get("listSchedule"));
+		// the order is important, you have to create all classes before
+		// you can use them.
+		for (String method : pprdf.getAPIMethodOrder()) {
+			pprdf.convert(pps.get(method));
+		}
+
 		pprdf.writeRdfToFile(outputFile);
 	}
 }
