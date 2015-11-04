@@ -97,17 +97,22 @@ Manually setting up the framework requires Apache Maven. So start of by getting 
   mkdir ~/dwerft_lpdc
   git clone https://github.com/yovisto/dwerft.git ~/dwerft_lpdc
   ```
-To avoid configuration problems:
+
+If you plan on using an operation which utilizes the Preproducer API, make sure to provide valid credentials. Simply copy the template to provided to the `tools` directory, and with an editor of your choice add your credentials. 
+  
   ```
-  cp /tools/src/main/resources/DwerftConfig.properties /tools
+  cd ~/dwerft_lpdc/tools
+  cp src/main/resources/DwerftConfig.properties .
+  vim DwerftConfig.properties
   ```
-Use your editor of choice and prepend mappings and ontology file with `tools/`.
-That's it. You can now experiment with the LPDC framework by running the `run.sh` file delivered with the project.
+
+Irrespective of whether you added credentials or not, you can now execute the lpdc project by running the build script provided. The various arguments available are listed in the next section.
+  
   ```
-  cd ~/dwerft_lpdc
   ./run.sh <your arguments>
   ```
-The framework comes with a selection of available operations available for instant usage. However, due to the nature of the dwerft tool package not all conversions are currently supported. Up until now, the following three conversions are supported:
+  
+The framework comes with a selection of available operations available for instant usage via the `run.sh`, which are listed below. However, due to the nature of the dwerft tool package not all conversions are currently supported.
 
   - DramaQueen XML to RDF
   - PreProducer API to RDF
@@ -122,7 +127,7 @@ All available options are listed below and can also be viewed by using the `-h` 
  - `-t`, `--type`: Specify an input type. Available options are PreProducer ('prp'), DramaQueen ('dq'), and Generic ('g')
  - `-m`, `--mapping`: Specifiy a custom mapping file for use with the generic XML to RDF converter
  - `-p` `--print`: Prints the RDF output to console. Does not replace writing RDF to file.
- - `-f`, `--format`: pecify an RDF output format. Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig'). Default is Turtle.
+ - `-f`, `--format`: Specify an RDF output format. Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig'). Default is Turtle.
 
 ## Package structure
 
@@ -153,18 +158,18 @@ map77.targetOntologyProperty=http://filmontology.org/ontology/1.0/dayTime
 map77.targetPropertyType=DATATYPE_PROPERTY
 ```
 
-
 ## Sample workflow
 
-For the following example, let's say our aim is to store a script that has been written using Dramaqueen in the LPDC and later export all the information to XML readable by PreProducer. ~~For each step there is a test within the `test` package, which should help comprehend the way the tasks are processed in detail.~~
-Please note, that currently working implementations do not exist for each step mentioned below. 
+*Note: While the framework does support numerous conversions, unfortunately not all are invokable via the CLI as mentioned above. The former are marked with an exlamation mark (!) in the workflow described below.*
 
-1. **Dramaqueen to RDF:** So firstly, the challenge is to convert a Dramaqueen script to valid RDF. In order to achieve this, we simply feed our source, destination and mappings file to the `DramaqueenToRdf` converter in the package `importer.dramaqueen`. It will traverse the whole script and convert all attributes into RDF, making use of the mapping along the way. Make sure to take a look at the resulting file, it will give you an understanding of what RDF looks like.
+For the following example, let's say our aim is to store a script that has been written using Dramaqueen in the LPDC, edit the script using Preproducer, and finally view the project in LockitNetwork. All interfaces work by storing generated RDF in the lpdc and generating tool specific XML. 
+
+1. **(!) Dramaqueen to RDF:** So firstly, the challenge is to convert a Dramaqueen script to valid RDF. In order to achieve this, we simply feed our source, destination and mappings file to the `DramaqueenToRdf` converter in the package `importer.dramaqueen`. It will traverse the whole script and convert all attributes into RDF, making use of the mapping along the way. Make sure to take a look at the resulting file, it will give you an understanding of what RDF looks like.
 
 2. **RDF to triple store:** Now that we have proper RDF, we still need to get this into the triple store mentioned earlier on. All classes responsible for uploading content to various APIs can be found in the package `sources` and implement the same interface. This interface consists of merely two methods, `get` and `send`. In our case, we'd send our RDF file to the triple store by utilizing the `send` method in the applicable class.
 
-3. **Triple store to PreProducer XML:** Exporting RDF back to tool-specific formats basically boils down to issuing the right queries and generating valid XML. The abstract class `RdfExporter` found in the package `exporter` provides some handy methods for extracting information from the triple store. It is vital however, that the correct ontology file is provided and the queries are free of errors. The `PreproducerExporter` extends the aformentioned abstract class and builds XML in a recursive manner. Again, take a look at the generated XML.
+3. **Triple store to PreProducer Tool:** Exporting RDF back to tool-specific formats basically boils down to issuing the right queries and generating valid XML. The abstract class `RdfExporter` found in the package `exporter` provides some handy methods for extracting information from the triple store. It is vital however, that the correct ontology file is provided and the queries are free of errors. The `PreproducerExporter` extends the aformentioned abstract class and builds XML in a recursive manner. Again, take a look at the generated XML. Now, the XML file needs to be sent to the PreProducer API. As we learned before, the package `sources` contains all classes required for this kind of task. Since we can't publish any credentials you'll need your own. Simply add these to the `DwerftConfig.properties` file hidden in the `resources` folder and pass said file to the constructor of the `PreproducerSource`. Calling the method `send` will now upload the previously generated XML to Preproducer. You can now log on to your PreProducer account and review your upload. The data you sent will require confirmation. Your script is now viewable in the PreProducer frontend. 
 
-4. **PreProducer XML to PreProducer Tool:** Now, the XML file needs to be sent to the PreProducer API. As we learned before, the package `sources` contains all classes required for this kind of task. Since we can't publish any credentials you'll need your own. Simply add these to the `config.template` hidden in the `resources` folder and pass said file to the constructor of the `PreproducerSource`. Calling the method `send` will now upload the previously generated XML to Preproducer.
+4. **(!) PreProducer API to triple store:** Assuming extensive project editing has taken place using PreProducer, it is now time to update the lpdc with the latest data. As mentioned before, this requires valid credentials. Firstly, the data from PreProducer has to be converted to RDF. The class `PreProducerToRdf` resembles an extension to the basic `AbstractXMLToRDFConverter`. In order for all linking operations to work, the PreProducer API methods must be queried in a special order, which is conveniently stored in the `PreProducerToRdf` class and accessible by a getter method. Once the RDF file has been generated, it can now be uploaded to the triple store. This step is not available for use with the CLI. However, there is a `TripleStoreSource` class within the `sources` package, which provides a `send` method for uploading the previously generated RDF file to the lpdc.
 
-5. **Wrapping up** Lastly, log on to your PreProducer account to review your upload. The data you sent will require confirmation. Your script is now viewable in the PreProducer frontend. 
+5. **Triple store to LockitNetwork:** This is probably the easiest of all steps. Log in to your LockitNetwork account, click the import button, and finally the `DWERFT` tab. Now, simply copy the project`s URI into the given field and enjoy editing the project data from within LockitNetwork. 
