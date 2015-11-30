@@ -191,11 +191,11 @@ public class Mapper {
 		
 		List<MappingDefinition> result = new ArrayList<MappingDefinition>();
 		
-		String xmlPath = XMLProcessor.getXmlPath(node);
+		String xmlPath = XMLProcessor.getXmlPath(node).toLowerCase();
 		
 		// First check mappings that target a class
 		Stream<MappingDefinition> classFilter = mappings.stream().filter(
-				m -> xmlPath.equals(m.getXmlNodePath()) && m.getTargetOntologyProperty() == null);
+				m -> xmlPath.equals(m.getXmlNodePath().toLowerCase()) && m.getTargetOntologyProperty() == null);
 		Iterator<MappingDefinition> classIterator = classFilter.iterator();
 		List<MappingDefinition> classMappings = checkAttributeConditions(classIterator, node);
 
