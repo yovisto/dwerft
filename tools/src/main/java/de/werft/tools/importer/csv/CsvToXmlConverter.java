@@ -27,23 +27,23 @@ import java.util.Arrays;
  * <p>
  * Shema:<br/>
  * <code>
- *     column1 column2 column3
- *     a        b       c
- *     d        e       f
+ * column1 column2 column3
+ * a        b       c
+ * d        e       f
  * </code>
  * translates into:
  * <code>
- *     <row>
- *        <column1>a</column1>
- *        <column2>b</column2>
- *        <column3>c</column3>
- *     </row>
- *     <row>
- *         and so forth
- *     </row>
+ * <row>
+ * <column1>a</column1>
+ * <column2>b</column2>
+ * <column3>c</column3>
+ * </row>
+ * <row>
+ * and so forth
+ * </row>
  * </code>
- *
- *</p>
+ * <p>
+ * </p>
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 public class CsvToXmlConverter {
@@ -58,6 +58,12 @@ public class CsvToXmlConverter {
 
     private Transformer transformer;
 
+    /**
+     * Instantiates a new Csv to xml converter.
+     *
+     * @throws ParserConfigurationException      the parser configuration exception
+     * @throws TransformerConfigurationException the transformer configuration exception
+     */
     public CsvToXmlConverter() throws ParserConfigurationException, TransformerConfigurationException {
         this.domFactory = DocumentBuilderFactory.newInstance();
         this.domBuilder = domFactory.newDocumentBuilder();
@@ -67,6 +73,13 @@ public class CsvToXmlConverter {
         this.transformer.setOutputProperty(OutputKeys.METHOD, "xml");
     }
 
+    /**
+     * Convert a normal csv file into a xml file.
+     *
+     * @param fileLocation the file location
+     * @param sepChar      the sep char
+     * @throws IOException the io exception
+     */
     public void convertToXml(String fileLocation, Character sepChar) throws IOException {
         try {
             // prepare xml document
@@ -77,12 +90,13 @@ public class CsvToXmlConverter {
 
             CSVReader reader = new CSVReader(new FileReader(fileLocation), sepChar);
             // get head line
-            String[] header = reader.readNext();
+            String[] header = getHeader(reader);
             if (header == null) {
                 throw new IOException("File " + fileLocation + " maybe empty. No first line found");
             }
 
             // iterate over all and create "xml rows"
+            skipToFirstDataLine(reader);
             String[] row = null;
             while((row = reader.readNext()) != null) {
                 Element rowElement = doc.createElement("row");
@@ -113,4 +127,22 @@ public class CsvToXmlConverter {
         File f = new File(file);
         return f.getName().substring(0, f.getName().lastIndexOf('.'));
     }
+
+    /**
+     * Get header row.
+     *
+     * @param reader the reader
+     * @return the string [ ]
+     * @throws IOException the io exception
+     */
+    protected String[] getHeader(CSVReader reader) throws IOException {
+        return reader.readNext();
+    }
+
+    /**
+     * Skip to first data line.
+     *
+     * @param reader the reader
+     */
+    protected void skipToFirstDataLine(CSVReader reader) throws IOException { }
 }

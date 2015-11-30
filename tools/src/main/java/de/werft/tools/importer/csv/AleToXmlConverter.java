@@ -1,0 +1,51 @@
+package de.werft.tools.importer.csv;
+
+import com.opencsv.CSVReader;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerConfigurationException;
+import java.io.IOException;
+
+/**
+ * This class converts .ale files a specialized csv version
+ * into a xml file.
+ *
+ * Created by Henrik Jürges (juerges.henrik@gmail.com)
+ */
+public class AleToXmlConverter extends CsvToXmlConverter {
+
+    /**
+     * Instantiates a new Csv to xml converter.
+     *
+     * @throws ParserConfigurationException      the parser configuration exception
+     * @throws TransformerConfigurationException the transformer configuration exception
+     */
+    public AleToXmlConverter() throws ParserConfigurationException, TransformerConfigurationException {
+        super();
+    }
+
+    @Override
+    protected String[] getHeader(CSVReader reader) throws IOException {
+        String[] row;
+        while ((row = reader.readNext()) != null) {
+            if (row.length > 0 && row[0].equalsIgnoreCase("column")) {
+                String[] header = reader.readNext();
+                for (int i = 0; i < header.length; i++) {
+                    header[i] = header[i].replace(' ', '_');
+                }
+                return header;
+            }
+        }
+        return new String[0];
+    }
+
+    @Override
+    protected void skipToFirstDataLine(CSVReader reader) throws IOException {
+        String[] row;
+        while ((row = reader.readNext()) != null) {
+            if (row.length > 0 && row[0].equalsIgnoreCase("data")) {
+                return;
+            }
+        }
+    }
+}
