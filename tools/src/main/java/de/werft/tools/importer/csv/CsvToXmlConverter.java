@@ -84,7 +84,8 @@ public class CsvToXmlConverter {
             // prepare xml document
             Document doc = domBuilder.newDocument();
             // add filename as root element
-            Element root = doc.createElement(getBaseName(fileLocation));
+            Element root = doc.createElement("csv");
+            root.setAttribute("src", new File(fileLocation).getName());
             doc.appendChild(root);
 
             CSVReader reader = new CSVReader(new FileReader(fileLocation), sepChar);
