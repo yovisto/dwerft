@@ -99,13 +99,7 @@ public class CsvToXmlConverter {
             skipToFirstDataLine(reader);
             String[] row = null;
             while((row = reader.readNext()) != null) {
-                Element rowElement = doc.createElement("row");
-
-                for (int i = 0; i < row.length; i++) {
-                    Element elem = doc.createElement(header[i]);
-                    elem.appendChild(doc.createTextNode(row[i]));
-                    rowElement.appendChild(elem);
-                }
+                Element rowElement = createRow(header, row, doc);
                 root.appendChild(rowElement);
             }
             reader.close();
@@ -126,6 +120,16 @@ public class CsvToXmlConverter {
     private String getBaseName(String file) {
         File f = new File(file);
         return f.getName().substring(0, f.getName().lastIndexOf('.'));
+    }
+
+    protected Element createRow(String[] header, String[] row, Document doc) {
+        Element rowElement = doc.createElement("row");
+        for (int i = 0; i < row.length; i++) {
+            Element elem = doc.createElement(header[i]);
+            elem.appendChild(doc.createTextNode(row[i]));
+            rowElement.appendChild(elem);
+        }
+        return rowElement;
     }
 
     /**

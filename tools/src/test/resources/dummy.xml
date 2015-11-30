@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<dummy>
+<csv src="dummy.csv">
 <row>
 <column1>a</column1>
 <column2>b</column2>
@@ -30,4 +30,4 @@
 <column3/>
 <column4/>
 </row>
-</dummy>
+</csv>

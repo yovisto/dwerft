@@ -1,6 +1,8 @@
 package de.werft.tools.importer.csv;
 
 import com.opencsv.CSVReader;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerConfigurationException;
@@ -47,5 +49,20 @@ public class AleToXmlConverter extends CsvToXmlConverter {
                 return;
             }
         }
+    }
+
+
+    @Override
+    protected Element createRow(String[] header, String[] row, Document doc) {
+        Element rowElement = doc.createElement("row");
+        for (int i = 0; i < row.length; i++) {
+            if (header[i].equalsIgnoreCase("uuid")) {
+                rowElement.setAttribute("uuid", row[i]);
+            }
+            Element elem = doc.createElement(header[i]);
+            elem.appendChild(doc.createTextNode(row[i]));
+            rowElement.appendChild(elem);
+        }
+        return rowElement;
     }
 }
