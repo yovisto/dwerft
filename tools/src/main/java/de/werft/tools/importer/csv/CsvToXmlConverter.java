@@ -16,7 +16,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 
 /**
  * The csv to xml converter is a generic preprocessing tool.
@@ -100,7 +99,7 @@ public class CsvToXmlConverter {
             String[] row = null;
             while((row = reader.readNext()) != null) {
                 Element rowElement = doc.createElement("row");
-                System.out.println(Arrays.toString(row));
+
                 for (int i = 0; i < row.length; i++) {
                     Element elem = doc.createElement(header[i]);
                     elem.appendChild(doc.createTextNode(row[i]));
