@@ -201,7 +201,7 @@ public class Mapper {
 
 		// Then check mappings that target properties
 		Stream<MappingDefinition> propFilter = mappings.stream().filter(
-				m -> xmlPath.equals(m.getXmlNodePath()) && m.getTargetOntologyProperty() != null);
+				m -> xmlPath.equals(m.getXmlNodePath().toLowerCase()) && m.getTargetOntologyProperty() != null);
 		Iterator<MappingDefinition> propIterator = propFilter.iterator();
 		List<MappingDefinition> propMappings = checkAttributeConditions(propIterator, node);
 
