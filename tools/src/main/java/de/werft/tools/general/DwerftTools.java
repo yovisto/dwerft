@@ -11,7 +11,6 @@ import de.werft.tools.sources.PreproducerSource;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.riot.Lang;
-import org.apache.jena.riot.RDFLanguages;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
@@ -58,16 +57,17 @@ public class DwerftTools {
 
 		try {
 			cmd.parse(args);
-			
+			if (params.isHelp()) {
+                cmd.usage();
+                System.exit(0);
+            }
+
+
 			//Assign global variables
 			input = params.getInputFile();
 			output = params.getOutputFile();
 			printToCLI = params.isPrintToCli();
-			outputFormat = RDFLanguages.nameToLang(params.getOutputFormat().toUpperCase());
-
-			if (outputFormat == null) {
-				outputFormat = Lang.TTL;
-			}
+			outputFormat = params.getFormat();
 
             // load predefined mappings
 			try {
@@ -81,14 +81,9 @@ public class DwerftTools {
 			
 			//Assign local variables
 			String inputType = params.getInputType();
-			
-			//Print help
-			if (params.isHelp()) {
-				cmd.usage();
-			}
-			
+
 			//Make sure input and output has been specified
-			else if (!StringUtils.isEmpty(output)) {
+			if (!StringUtils.isEmpty(output)) {
 				
 				/**
 				 * (1) dramaqueen to rdf

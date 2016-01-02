@@ -8,9 +8,9 @@ import java.io.File;
  * Implements the owner config system.
  * Extend this interface to implement more configuration properties.
  *
- * Created by Henrik Jürges on 30.10.15.
+ * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
-@Config.Sources({"file:tools/DwerftConfig.properties", "classpath:DwerftConfig.properties", ""})
+@Config.Sources({"file:tools/DwerftConfig.properties", "classpath:DwerftConfig.properties"})
 public interface DwerftConfig extends Config {
 
     @Key("pp.key")
@@ -30,4 +30,15 @@ public interface DwerftConfig extends Config {
 
     @Key("dwerft.ontology")
     File getOntologyFile();
+
+    @Key("remote.url")
+    String getRemoteUrl();
+
+    @Key("remote.pass")
+    @DefaultValue("")
+    String getRemotePass();
+
+    @Key("remote.user")
+    @DefaultValue("")
+    String getRemoteUser();
 }

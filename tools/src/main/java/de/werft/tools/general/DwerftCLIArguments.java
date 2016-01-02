@@ -1,6 +1,8 @@
 package de.werft.tools.general;
 
 import com.beust.jcommander.Parameter;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFLanguages;
 
 /**
  * The Class DwerftCLIArguments.
@@ -18,7 +20,7 @@ public class DwerftCLIArguments {
 	private String inputType;
 	
 	/** The output file. */
-	@Parameter(names = {"-o", "--output"}, description = "Specify an RDF output file", required = true)
+	@Parameter(names = {"-o", "--output"}, description = "Specify an RDF output file")
 	private String outputFile;
 
 	/** If the generic converter is used, a custom mapping must be specified. */
@@ -64,4 +66,13 @@ public class DwerftCLIArguments {
 	public boolean isHelp() {
 		return help;
 	}
+
+    public Lang getFormat() {
+        Lang format = RDFLanguages.nameToLang(outputFormat.toUpperCase());
+        // no language found for the specified format
+        if (format == null) {
+            format = Lang.TTL;
+        }
+        return format;
+    }
 }
