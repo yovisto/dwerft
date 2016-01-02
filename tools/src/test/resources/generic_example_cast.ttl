@@ -9,8 +9,18 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
+<http://filmontology.org/resource/Cast/12312>
+        a                       foo:Cast ;
+        foo:identifier          "12312"^^xsd:int ;
+        foo:internalIdentifier  "2"^^xsd:long .
+
+<http://filmontology.org/resource/Cast/984745>
+        a                       foo:Cast ;
+        foo:identifier          "984745"^^xsd:int ;
+        foo:internalIdentifier  "3"^^xsd:long .
+
 <http://filmontology.org/resource/Project/3298438>
         a                       foo:Project ;
-        foo:identifier          "3298438"^^xsd:int ;
+        foo:hasCast             <http://filmontology.org/resource/Cast/984745> , <http://filmontology.org/resource/Cast/12312> ;
         foo:internalIdentifier  "1"^^xsd:long ;
         foo:title               "Frog King Reloaded"^^xsd:string .
