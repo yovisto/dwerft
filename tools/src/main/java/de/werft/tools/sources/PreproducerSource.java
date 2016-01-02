@@ -1,6 +1,13 @@
 
 package de.werft.tools.sources;
 
+import org.apache.commons.codec.binary.Base64;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -10,15 +17,6 @@ import java.nio.file.Paths;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Properties;
-
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-import javax.net.ssl.HttpsURLConnection;
-
-import org.apache.commons.codec.binary.Base64;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  * This class provides api access to PreProducer.
@@ -153,7 +151,7 @@ public class PreproducerSource implements Source {
 	/**
 	 * Executes the upload of an XML file to preproducer
 	 * 
-	 * @param fileContent The content of the XML file as string
+	 * @param content The content of the XML file as string
 	 * @return Response of the webserver
 	 */
 	@Override

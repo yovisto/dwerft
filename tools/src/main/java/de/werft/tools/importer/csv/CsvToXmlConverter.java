@@ -122,6 +122,15 @@ public class CsvToXmlConverter {
         return f.getName().substring(0, f.getName().lastIndexOf('.'));
     }
 
+    /**
+     * Create a row element.
+     * Override if need some special treatments. see {@link AleToXmlConverter#createRow(String[], String[], Document)}
+     *
+     * @param header the header
+     * @param row    the row
+     * @param doc    the doc
+     * @return the element
+     */
     protected Element createRow(String[] header, String[] row, Document doc) {
         Element rowElement = doc.createElement("row");
         for (int i = 0; i < row.length; i++) {
@@ -147,6 +156,7 @@ public class CsvToXmlConverter {
      * Skip to first data line.
      *
      * @param reader the reader
+     * @throws IOException the io exception
      */
     protected void skipToFirstDataLine(CSVReader reader) throws IOException { }
 }
