@@ -1,0 +1,68 @@
+@prefix :      <http://filmontology.org/> .
+@prefix webprotege: <http://protege.stanford.edu/webprotege/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix filmontology: <http://filmontology.org/> .
+@prefix foo:   <http://filmontology.org/ontology/1.0/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix for:   <http://filmontology.org/resource/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+
+<http://filmontology.org/resource/Project/17621/Scene/44D5-14F46B11CC>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:estimatedTime          "20"^^xsd:int ;
+        foo:hasCharacter           <http://filmontology.org/resource/Project/17621/Character/44D5-14F46B0CAF> ;
+        foo:identifierPreProducer  "44D5-14F46B11CC"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "218"^^xsd:long ;
+        foo:pages                  "0.125"^^xsd:float ;
+        foo:sceneDescription       "Dornröschen entdeckt den alten Turm."^^xsd:string ;
+        foo:sceneHeader            "EXT. - Schloss / Turm - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "12"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/17621/Set/44D5-14F46B11CD> ;
+        foo:sceneShots             "2"^^xsd:int ;
+        foo:storyDay               "7"^^xsd:int .
+
+<http://filmontology.org/resource/Project/17621/Character/44D5-14F46B0CAF>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Project/17621/Cast/44D5-14F46B0F6F> ;
+        foo:characterNumber        "1"^^xsd:int ;
+        foo:identifierPreProducer  "44D5-14F46B0CAF"^^xsd:string ;
+        foo:internalIdentifier     "7"^^xsd:long ;
+        foo:name                   "Dornröschen"^^xsd:string .
+
+<http://filmontology.org/resource/Project/17621/Cast/44D5-14F46B0F6F>
+        a                       foo:Cast ;
+        foo:internalIdentifier  "8"^^xsd:long ;
+        foo:name                "Bettina Beispiel"^^xsd:string ;
+        foo:sex                 "female"^^xsd:string .
+
+<http://filmontology.org/resource/Project/17621/Set/44D5-14F46B11CD>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "44D5-14F46B11CD"^^xsd:string ;
+        foo:internalIdentifier     "161"^^xsd:long ;
+        foo:name                   "Schloss / Turm"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Project/17621/Location/44D5-14F46B108E> .
+
+<http://filmontology.org/resource/Project/17621/Location/44D5-14F46B108E>
+        a                          foo:Location ;
+        foo:address                <http://filmontology.org/resource/Project/17621/Address/fac0ad73-bc10-4acc-9199-aae633e61e23> , <http://filmontology.org/resource/Project/17621/Address/c28da8d8-af4d-42eb-a046-c3fdbf330c5f> ;
+        foo:identifierPreProducer  "44D5-14F46B108E"^^xsd:string ;
+        foo:internalIdentifier     "151"^^xsd:long ;
+        foo:name                   "Zwinger Dresden"^^xsd:string .
+
+<http://filmontology.org/resource/Project/17621/Address/fac0ad73-bc10-4acc-9199-aae633e61e23>
+        a                       foo:Address ;
+        foo:cityName            "Dresden"^^xsd:string ;
+        foo:internalIdentifier  "162"^^xsd:long ;
+        foo:zipCode             "1067"^^xsd:int .
+
+<http://filmontology.org/resource/Project/17621/Address/c28da8d8-af4d-42eb-a046-c3fdbf330c5f>
+        a                       foo:Address ;
+        foo:cityName            "Dresden"^^xsd:string ;
+        foo:internalIdentifier  "152"^^xsd:long ;
+        foo:zipCode             "1067"^^xsd:int .
