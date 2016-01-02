@@ -1,38 +1,34 @@
 package de.werft.tools.update;
 
 import com.hp.hpl.jena.query.*;
-import com.hp.hpl.jena.rdf.model.Model;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 
 /**
- *
  * An Updater is used to "update" data on an SPARQL endpoint.
  * It takes an rdf model an deletes from the root resources all nodes
  * in the subgraph in the remote model. the new subgraph is then inserted.
  * Configure your endpoint to allow updates via SPARQL!
- *
+ * <p>
  * TODO there should be a memento system.
- *
+ * <p>
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 public abstract class Updater {
 
-    abstract QueryExecution createQueryexecution(Query query);
+    /**
+     * Create queryexecution query execution.
+     *
+     * @param query the query
+     * @return the query execution
+     */
+    protected abstract QueryExecution createQueryexecution(Query query);
 
-    public static Updater createUpdater(String remoteService) {
-        return new RemoteUpdater(remoteService, null);
-    }
-
-    public static Updater createUpdater(String remoteService, HttpAuthenticator authenticator) {
-        return new RemoteUpdater(remoteService, authenticator);
-    }
-
-    public static Updater createUpdater(Model m) {
-        Dataset ds = DatasetFactory.create(m);
-        return new FileUpdater(ds);
-    }
-
-    public boolean testConnection() {
+        /**
+     * Test connection returns boolean and prints console output.
+     *
+     * @return the boolean
+     */
+    protected boolean testConnection() {
         String query = "select distinct ?Concept where {[] a ?Concept} LIMIT 10";
 
         Query q = QueryFactory.create(query);
@@ -43,33 +39,53 @@ public abstract class Updater {
         return true;
     }
 
-    static class FileUpdater extends Updater {
+    /**
+     * The type File updater.
+     * This subclass manages the model access through a file.
+     */
+    public static class FileUpdater extends Updater {
 
         private Dataset dataset;
 
+        /**
+         * Instantiates a new File updater.
+         *
+         * @param ds the ds
+         */
         public FileUpdater(Dataset ds) {
             this.dataset = ds;
         }
 
         @Override
-        QueryExecution createQueryexecution(Query query) {
+        protected QueryExecution createQueryexecution(Query query) {
             return QueryExecutionFactory.create(query, dataset);
         }
     }
 
-    static class RemoteUpdater extends Updater {
+    /**
+     * The type Remote updater.
+     * This subclass manages the model access through an SPARQL endpoint
+     * with out without authentication.
+     */
+    public static class RemoteUpdater extends Updater {
 
         private String serviceUrl;
 
         private HttpAuthenticator authenticator;
 
+        /**
+         * Instantiates a new Remote updater.
+         *
+         * @param serviceUrl    the service url
+         * @param authenticator the authenticator
+         */
         public RemoteUpdater(String serviceUrl, HttpAuthenticator authenticator) {
             this.serviceUrl = serviceUrl;
             this.authenticator = authenticator;
         }
 
         @Override
-        QueryExecution createQueryexecution(Query query) {
+        protected QueryExecution createQueryexecution(Query query) {
             if (authenticator != null) {
                 return QueryExecutionFactory.sparqlService(serviceUrl, query, authenticator);
             } else {
