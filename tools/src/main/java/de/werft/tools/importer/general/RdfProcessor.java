@@ -163,14 +163,30 @@ public class RdfProcessor {
 			// try to find another attribute that contains id / identifier
 			//TODO not very robust
 			NamedNodeMap attributes = node.getAttributes();
+			
 			for (int i = 0; i < attributes.getLength(); i++) {
 				Node item = attributes.item(i);
-				if (item.getNodeName().toLowerCase().contains("id") ||
-						item.getNodeName().toLowerCase().contains("identifier") ||
-						item.getNodeName().toLowerCase().contains("rel")
-						) {
+				if (
+						item.getNodeName().toLowerCase().equals("id") ||
+						item.getNodeName().toLowerCase().equals("projectid")
+					) {
 					idValue = item.getNodeValue();
 					break;
+				}
+			}
+			
+			if (idValue == null) {
+			
+				for (int i = 0; i < attributes.getLength(); i++) {
+					Node item = attributes.item(i);
+					if (
+							item.getNodeName().toLowerCase().contains("id") ||
+							item.getNodeName().toLowerCase().contains("identifier") ||
+							item.getNodeName().toLowerCase().contains("rel")
+							) {
+						idValue = item.getNodeValue();
+						break;
+					}
 				}
 			}
 			
@@ -336,6 +352,12 @@ public class RdfProcessor {
 		Resource result = null;
 		
 		if (mapping.getContentSource() == null && mapping.getTargetOntologyProperty() == null) {
+			
+			if (node.getNodeName().equals("prp:project")) {
+				System.out.println(node);
+				System.out.println(mapping);
+			}
+			
 			createOntologyClassInstance(node, mapping);
 		} else 
 		if (mapping.getTargetOntologyProperty() != null && mapping.getTargetPropertyType().equals(MappingDefinition.TargetPropertyType.DATATYPE_PROPERTY)) {
