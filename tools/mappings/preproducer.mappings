@@ -452,7 +452,7 @@ map50.conditionalAttributeValue=
 map50.contentSource=TEXT_CONTENT
 map50.contentElementName=
 map50.targetOntologyClass=http://filmontology.org/ontology/1.0/Crew
-map50.targetOntologyProperty=http://filmontology.org/ontology/1.0/typeCode
+map50.targetOntologyProperty=http://filmontology.org/ontology/1.0/crewCode
 map50.targetPropertyType=DATATYPE_PROPERTY
 
 map51.xmlNodePath=/root/return/prp:project/prp:function-group/prp:function/name
