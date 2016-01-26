@@ -1,0 +1,764 @@
+@prefix :      <http://filmontology.org/> .
+@prefix webprotege: <http://protege.stanford.edu/webprotege/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foo:   <http://filmontology.org/ontology/1.0/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix for:   <http://filmontology.org/resource/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B56>
+        a                          foo:Crew ;
+        foo:crewCode               "PRD002"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B56"^^xsd:string ;
+        foo:internalIdentifier     "17"^^xsd:long ;
+        foo:name                   "Maike albers"^^xsd:string , "Co-Produzent"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8E>
+        a                          foo:Crew ;
+        foo:crewCode               "KAM001"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B8E"^^xsd:string ;
+        foo:internalIdentifier     "31"^^xsd:long ;
+        foo:name                   "Robert Friebe"^^xsd:string , "Director of Photography"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B97>
+        a                          foo:Crew ;
+        foo:crewCode               "SST007"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B97"^^xsd:string ;
+        foo:internalIdentifier     "43"^^xsd:long ;
+        foo:name                   "Maike Albers"^^xsd:string , "Drehbuchautor"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC8>
+        a                          foo:Set ;
+        foo:identifierDramaQueen   "3fdb9064-11d9-416c-9a53-8939bda36399"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0AC8"^^xsd:string ;
+        foo:internalIdentifier     "57"^^xsd:long ;
+        foo:name                   "Rückblende See / Archivmaterial"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/b237324f-2a52-4f2d-b43e-57472902e07b>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "PRD"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B56> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B53> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0926> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0C28> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B88> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B7F> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0957> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B85> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0953> ;
+        foo:internalIdentifier  "14"^^xsd:long ;
+        foo:name                "Produktionsstab"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09EB>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "dd839747-f4fb-43ce-8c7d-97fba35d54b6"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B09EB"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "76"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Das Team macht Mittagspause am See. Das Catering wird ausgepackt bzw. die Requisite wird gegessen... Alle essen, liegen im Gras oder im Sand - nur einer filmt ;-)</p>"^^xsd:string ;
+        foo:sceneDescription       "Lichtung am See \r\nDas Team macht Mittagspause am See. Das Catering wird ausgepackt bzw. die Requisite wird gegessen... Alle essen, liegen im Gras oder im Sand - nur einer filmt ;-)"^^xsd:string ;
+        foo:sceneHeader            "EXT. - Lichtung am See - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "11"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2> .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/f2da85c1-c98f-4845-b490-d52a13d787ed>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "KST"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9F> ;
+        foo:internalIdentifier  "35"^^xsd:long ;
+        foo:name                "Kostümbild und Maske"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B91>
+        a                          foo:Crew ;
+        foo:crewCode               "PST001"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B91"^^xsd:string ;
+        foo:internalIdentifier     "40"^^xsd:long ;
+        foo:name                   "Arno"^^xsd:string , "Cutter / Editor"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2>
+        a                          foo:Set ;
+        foo:identifierDramaQueen   "29f9fa4b-4c67-471e-a291-bbed72fc4540"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0AC2"^^xsd:string ;
+        foo:internalIdentifier     "53"^^xsd:long ;
+        foo:name                   "Lichtung am See"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Project/18989/Location/4A2D-14F46B0BA3> .
+
+<http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B08>
+        a                          foo:Character ;
+        foo:characterNumber        "7"^^xsd:int ;
+        foo:identifierPreProducer  "4A2D-14F46B0B08"^^xsd:string ;
+        foo:internalIdentifier     "13"^^xsd:long ;
+        foo:name                   "Technikdienstleister"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/9150c4e3-e9ff-4caf-beb5-5f6831fca31d>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "REG"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9A> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8B> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B094F> ;
+        foo:internalIdentifier  "26"^^xsd:long ;
+        foo:name                "Regiestab"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A28>
+        a                          foo:Scene ;
+        foo:identifierDramaQueen   "0bf63192-2c14-4d20-a256-7623f3215ad2"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0A28"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "82"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Bilder stehen im Kontrast zur heutigen Zeit udn sollen den Wandel der Zeit beschreiben aber gleichzeitig eine parallele Dynamik entwickeln. Schnell geschnittene historische Aufnahmen vom Tempelhofer Feld: Flugzeuge landen und starten, Fluglotsen bei der Arbeit.</p>"^^xsd:string ;
+        foo:sceneDescription       "Tempelhofer Feld\r\nDas Team kommt am Drehort des zweiten Drehtages an. Die Technik wird in ein Lastenfahrrad verladen bzw. auf die Teammitglieder verteilt. Es soll unauffällig sein, weil keine Drehgenehmigung vorliegt."^^xsd:string ;
+        foo:sceneHeader            "EXT. - Rückblende Tempelhofer Feld - "^^xsd:string ;
+        foo:sceneInserted          true ;
+        foo:sceneNumber            "16.2"^^xsd:string ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0ADD> .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0957>
+        a                          foo:Crew ;
+        foo:crewCode               "PRD001"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0957"^^xsd:string ;
+        foo:internalIdentifier     "16"^^xsd:long ;
+        foo:name                   "Uli Kunz"^^xsd:string , "Produzent"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B02>
+        a                          foo:Character ;
+        foo:characterNumber        "5"^^xsd:int ;
+        foo:identifierPreProducer  "4A2D-14F46B0B02"^^xsd:string ;
+        foo:internalIdentifier     "11"^^xsd:long ;
+        foo:name                   "Skaterin"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989>
+        a                          foo:Project ;
+        foo:hasCast                <http://filmontology.org/resource/Project/18989/Cast/4A2D-14F46B0B0B> , <http://filmontology.org/resource/Project/18989/Cast/4A2D-14F46B0B36> ;
+        foo:hasCharacter           <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B02> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B00> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0AFE> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B01> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B03> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0AFF> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B08> ;
+        foo:hasCompany             <http://filmontology.org/resource/Project/18989/Company/fbce4ab5-706d-46b3-8fcf-22213d3541bd> ;
+        foo:hasCrew                <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9F> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9A> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B53> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B91> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0926> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B56> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0C28> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8B> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B94> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0957> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9C> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B82> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B88> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B094F> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8E> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B7F> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0953> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B97> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B85> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0960> ;
+        foo:hasCrewDepartment      <http://filmontology.org/resource/Project/18989/CrewDepartment/9150c4e3-e9ff-4caf-beb5-5f6831fca31d> , <http://filmontology.org/resource/Project/18989/CrewDepartment/0170fe74-edc6-43db-b2e9-5917e2a36e63> , <http://filmontology.org/resource/Project/18989/CrewDepartment/46950b26-e58b-4e6c-b235-ad5860d40626> , <http://filmontology.org/resource/Project/18989/CrewDepartment/dd7d5af2-0d3d-4b19-9466-91b56965f40e> , <http://filmontology.org/resource/Project/18989/CrewDepartment/b237324f-2a52-4f2d-b43e-57472902e07b> , <http://filmontology.org/resource/Project/18989/CrewDepartment/d005cc51-fa96-4e96-a4e7-dae273557d2d> , <http://filmontology.org/resource/Project/18989/CrewDepartment/aab96f19-911f-46eb-a3d4-1c00e7668dc9> , <http://filmontology.org/resource/Project/18989/CrewDepartment/e7ed15a2-85e4-4514-bc5b-676406eeb460> , <http://filmontology.org/resource/Project/18989/CrewDepartment/d3748b57-b1e3-4a80-a8ca-ed07fc954050> , <http://filmontology.org/resource/Project/18989/CrewDepartment/f2da85c1-c98f-4845-b490-d52a13d787ed> , <http://filmontology.org/resource/Project/18989/CrewDepartment/345f2255-fcde-4d4d-a1c1-f2c0d3573a59> ;
+        foo:hasEpisode             <http://filmontology.org/resource/Project/18989/Episode/4A2D-13532F7E01> ;
+        foo:hasSet                 <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AAD> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AE0> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AAA> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0ADA> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0ADD> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB3> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB9> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB6> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC8> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB0> ;
+        foo:hasShootingSchedule    <http://filmontology.org/resource/Project/18989/ShootingSchedule/4A2D-14F46B05B7> ;
+        foo:identifierDramaQueen   "e2c02b39-5aed-4f83-a425-4161cbff03c6"^^xsd:string ;
+        foo:identifierPreProducer  "18989"^^xsd:int ;
+        foo:internalIdentifier     "1"^^xsd:long ;
+        foo:title                  "dwerft Testdreh"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Company/fbce4ab5-706d-46b3-8fcf-22213d3541bd>
+        a                       foo:Company ;
+        foo:address             <http://filmontology.org/resource/Project/18989/Address/4dfbb404-d10a-4383-bce3-3bff740a01b7> ;
+        foo:internalIdentifier  "3"^^xsd:long ;
+        foo:name                "Filmuniversität Babelsberg Konrad Wolf"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Cast/4A2D-14F46B0B0B>
+        a                       foo:Cast ;
+        foo:internalIdentifier  "6"^^xsd:long ;
+        foo:name                "Olgu Caglar"^^xsd:string ;
+        foo:sex                 "male"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/e7ed15a2-85e4-4514-bc5b-676406eeb460>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "TON"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B94> ;
+        foo:internalIdentifier  "37"^^xsd:long ;
+        foo:name                "Tonabteilung"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09E0>
+        a                          foo:Scene ;
+        foo:identifierDramaQueen   "16d23934-857c-491d-90d0-94dceac4dfbc"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B09E0"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "75"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Ein herrlicher Sommertag am See. Stimmungsbilder: Familien tummeln sich am kleinen Sandstrand, Kinder essen Eis, Jugendliche toben im Wasser...</p>"^^xsd:string ;
+        foo:sceneDescription       "Lichtung am See\r\nDie junge Frau zieht sich die Schuhe aus und geht mit den Füßen ins Wasser. Sie sammelt Steine. Der Mann bereitet derweil das Picknick vor. Breitet die Decke aus, holt Weinflasche und Gläser aus dem Picknickkorb. Brot, Käse, Couscous Salat, Oliven, griechischen Bauernsalat, Köfte... Sie setzt sich zu ihm (und haut rein)"^^xsd:string ;
+        foo:sceneHeader            "EXT. - Rückblende See / Archivmaterial - "^^xsd:string ;
+        foo:sceneInserted          true ;
+        foo:sceneNumber            "10.2"^^xsd:string ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC8> .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9A>
+        a                          foo:Crew ;
+        foo:identifierPreProducer  "4A2D-14F46B0B9A"^^xsd:string ;
+        foo:internalIdentifier     "29"^^xsd:long ;
+        foo:name                   "Daniela Bleistift"^^xsd:string , "Dramaturg"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Facility/4e936492-985e-4cee-a3b5-b3a84f310000>
+        a                       foo:Facility ;
+        foo:internalIdentifier  "55"^^xsd:long ;
+        foo:name                "keine"^^xsd:string , "toilets"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B7F>
+        a                          foo:Crew ;
+        foo:crewCode               "PRD017"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B7F"^^xsd:string ;
+        foo:internalIdentifier     "20"^^xsd:long ;
+        foo:name                   "Franz Finanzheini"^^xsd:string , "Filmgeschäftsführung"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B88>
+        a                          foo:Crew ;
+        foo:crewCode               "PRD025"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B88"^^xsd:string ;
+        foo:internalIdentifier     "22"^^xsd:long ;
+        foo:name                   "Jörg Waitelonis"^^xsd:string , "Set-Praktikant"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB9>
+        a                          foo:Set ;
+        foo:identifierDramaQueen   "91fe3e77-8647-49a3-a2e8-6ce1484008df"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0AB9"^^xsd:string ;
+        foo:internalIdentifier     "52"^^xsd:long ;
+        foo:name                   "Waldweg"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/ShootingDay/4A2D-14F46B0969>
+        a                          foo:ShootingDay ;
+        foo:date                   "2015-08-27"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0969"^^xsd:string ;
+        foo:internalIdentifier     "86"^^xsd:long ;
+        foo:name                   "1. Drehtag: Do, 27. August 2015"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayScene       <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09AB> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0997> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0979> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B098D> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09CB> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09B5> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09C1> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A09> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09A1> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09D5> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0983> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09F5> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09EB> .
+
+<http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B01>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Project/18989/Cast/4A2D-14F46B0B36> ;
+        foo:characterNumber        "2"^^xsd:int ;
+        foo:identifierPreProducer  "4A2D-14F46B0B01"^^xsd:string ;
+        foo:internalIdentifier     "7"^^xsd:long ;
+        foo:name                   "Junge Frau"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AAA>
+        a                          foo:Set ;
+        foo:identifierDramaQueen   "68df2588-c2fe-4f64-8064-84fcc5a534e8"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0AAA"^^xsd:string ;
+        foo:internalIdentifier     "45"^^xsd:long ;
+        foo:name                   "Technikverleih"^^xsd:string ;
+        foo:setType                "locori"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB3>
+        a                          foo:Set ;
+        foo:identifierDramaQueen   "1b040a05-35d9-4b52-8446-f99a65d8a773"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0AB3"^^xsd:string ;
+        foo:internalIdentifier     "50"^^xsd:long ;
+        foo:name                   "Straße"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B82>
+        a                          foo:Crew ;
+        foo:crewCode               "PST012"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B82"^^xsd:string ;
+        foo:internalIdentifier     "41"^^xsd:long ;
+        foo:name                   "Uli Kunz"^^xsd:string , "Postproduktionsbetreuung"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/d3748b57-b1e3-4a80-a8ca-ed07fc954050>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "SZE"^^xsd:string ;
+        foo:internalIdentifier  "34"^^xsd:long ;
+        foo:name                "Szenographiestab"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/0170fe74-edc6-43db-b2e9-5917e2a36e63>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "RED"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0960> ;
+        foo:internalIdentifier  "24"^^xsd:long ;
+        foo:name                "Redaktion"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Extra/4A2D-14F46B0C03>
+        a                          foo:Extra ;
+        foo:identifierPreProducer  "4A2D-14F46B0C03"^^xsd:string ;
+        foo:internalIdentifier     "63"^^xsd:long ;
+        foo:name                   "Technikverleiher"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Location/4A2D-14F46B0BE1>
+        a                          foo:Location ;
+        foo:address                <http://filmontology.org/resource/Project/18989/Address/4d8eaecc-5837-4b52-b2cc-b644b75d9202> ;
+        foo:identifierPreProducer  "4A2D-14F46B0BE1"^^xsd:string ;
+        foo:internalIdentifier     "61"^^xsd:long ;
+        foo:name                   "Tempelhofer Feld"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9F>
+        a                          foo:Crew ;
+        foo:crewCode               "SZE023"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B9F"^^xsd:string ;
+        foo:internalIdentifier     "36"^^xsd:long ;
+        foo:name                   "Roger Pinsel"^^xsd:string , "Maskenbildner"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Address/4dfbb404-d10a-4383-bce3-3bff740a01b7>
+        a                       foo:Address ;
+        foo:cityName            "Potsdam"^^xsd:string ;
+        foo:houseNumber         "11"^^xsd:int ;
+        foo:internalIdentifier  "4"^^xsd:long ;
+        foo:streetName          "Marlene-Dietrich-Allee"^^xsd:string ;
+        foo:zipCode             "14482"^^xsd:int .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0997>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "87bd9def-a053-498b-a2ba-9d4d4ed8c3f6"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0997"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "68"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Fahraufnahmen: Subjektive aus dem Auto heraus. Fahrt durch die Straßenschluchten Stadt, Enge, gehetzte Fußgänger. Dann: die Häuser werden niedriger, immer weniger Menschen sind auf den Straßen. Die Straße wird zur Landstrasse, es wird grün, der Blick weitet sich auf Felder, Himmel und Baumalleen.</p>"^^xsd:string ;
+        foo:sceneDescription       "Straßenszenen\r\nFahraufnahmen: Subjektive aus dem Auto heraus. Fahrt durch die Straßenschluchten Stadt, Enge, gehetzte Fußgänger. Dann: die Häuser werden niedriger, immer weniger Menschen sind auf den Straßen. Die Straße wird zur Landstrasse, es wird grün, der Blick weitet sich auf Felder, Himmel und Baumalleen."^^xsd:string ;
+        foo:sceneHeader            "EXT. - Straße - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "4"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB3> .
+
+<http://filmontology.org/resource/Project/18989/Address/a24c1557-4643-4af4-8953-056a5ab7a028>
+        a                       foo:Address ;
+        foo:cityName            "Marienwerder"^^xsd:string ;
+        foo:contactPerson       "Beatrix Wager"^^xsd:string ;
+        foo:internalIdentifier  "56"^^xsd:long ;
+        foo:zipCode             "16348"^^xsd:int .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/dd7d5af2-0d3d-4b19-9466-91b56965f40e>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "SST"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B97> ;
+        foo:internalIdentifier  "42"^^xsd:long ;
+        foo:name                "sonstiger Stab"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0ADD>
+        a                          foo:Set ;
+        foo:identifierDramaQueen   "0e03200e-44a6-4375-8699-4ec3ff7b029d"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0ADD"^^xsd:string ;
+        foo:internalIdentifier     "59"^^xsd:long ;
+        foo:name                   "Rückblende Tempelhofer Feld"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A13>
+        a                          foo:Scene ;
+        foo:dayTime                "evening"^^xsd:string ;
+        foo:identifierDramaQueen   "89427481-e3b3-4b22-b305-c0ca4b3b992b"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0A13"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "80"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Drehschluß: das Team packt ein und geht zurück zum Wagen.</p>"^^xsd:string ;
+        foo:sceneDescription       "Lichtung am See\r\nDrehschluß: das Team packt ein und geht zurück zum Wagen."^^xsd:string ;
+        foo:sceneHeader            "EXT. - Lichtung am See - DÄMM. ABEND"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "15"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2> .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/345f2255-fcde-4d4d-a1c1-f2c0d3573a59>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "KAM"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8E> ;
+        foo:internalIdentifier  "30"^^xsd:long ;
+        foo:name                "Kamerastab"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A1D>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "846857bc-12c0-4216-aff9-0d7b155c21fc"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0A1D"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "81"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Teammitglieder kommen auf dem Feld an. Drehvorbereitungen.</p>"^^xsd:string ;
+        foo:sceneDescription       "Tempelhofer Feld\r\nDas Team kommt am Drehort des zweiten Drehtages an. Die Technik wird in ein Lastenfahrrad verladen bzw. auf die Teammitglieder verteilt. Es soll unauffällig sein, weil keine Drehgenehmigung vorliegt."^^xsd:string ;
+        foo:sceneHeader            "EXT. - Tempelhofer Feld heuted - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "16.1"^^xsd:string ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0ADA> .
+
+<http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B00>
+        a                          foo:Character ;
+        foo:characterCast          <http://filmontology.org/resource/Project/18989/Cast/4A2D-14F46B0B0B> ;
+        foo:characterNumber        "1"^^xsd:int ;
+        foo:identifierPreProducer  "4A2D-14F46B0B00"^^xsd:string ;
+        foo:internalIdentifier     "5"^^xsd:long ;
+        foo:name                   "Mann Mittleren Alters"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Episode/4A2D-13532F7E01>
+        a                          foo:Episode ;
+        foo:duration               "0"^^xsd:int ;
+        foo:hasSceneGroup          <http://filmontology.org/resource/Project/18989/SceneGroup/13e511a1-1ca6-415b-b4c3-b6df27aa3dcc> ;
+        foo:identifierPreProducer  "4A2D-13532F7E01"^^xsd:string ;
+        foo:internalIdentifier     "2"^^xsd:long .
+
+<http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AE0>
+        a                          foo:Set ;
+        foo:identifierDramaQueen   "f7b3910d-c7b4-4f6e-86a0-e7699a716825"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0AE0"^^xsd:string ;
+        foo:internalIdentifier     "60"^^xsd:long ;
+        foo:name                   "Tempelhofer Feld"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Project/18989/Location/4A2D-14F46B0BE1> .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/46950b26-e58b-4e6c-b235-ad5860d40626>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "MUS"^^xsd:string ;
+        foo:internalIdentifier  "44"^^xsd:long ;
+        foo:name                "Musiker"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B53>
+        a                          foo:Crew ;
+        foo:crewCode               "PRD008"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B53"^^xsd:string ;
+        foo:internalIdentifier     "19"^^xsd:long ;
+        foo:name                   "Mareike Graf"^^xsd:string , "Produktionsassistenz"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8B>
+        a                          foo:Crew ;
+        foo:crewCode               "REG007"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B8B"^^xsd:string ;
+        foo:internalIdentifier     "28"^^xsd:long ;
+        foo:name                   "Nadja Jankowski"^^xsd:string , "Script / Continuity"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B94>
+        a                          foo:Crew ;
+        foo:crewCode               "TON001"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B94"^^xsd:string ;
+        foo:internalIdentifier     "38"^^xsd:long ;
+        foo:name                   "Maike Albers"^^xsd:string , "Settonmeister"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A33>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "a5358c37-c865-479a-b286-adcc1ae51f87"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0A33"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "83"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Eine kleine Gruppe trifft sich auf dem Tempelhofer Feld. Es ist später Nachmittag. Longboards, Skateboards, Rollerblades, Kites. Buntes, fröhliches Treiben. Die Kamera nimmt die Dynamik auf und zeigt ausgelassenen Spaß im Freizeitsport. Es wird Trendsport Skateboarden geübt, Fahrrad gefahren, Drachen steigen gelassen usw. </p>"^^xsd:string ;
+        foo:sceneDescription       "Tempelhofer Feld\r\nEine kleine Gruppe trifft sich auf dem Tempelhofer Feld. Es ist später Nachmittag. Longboards, Skateboards, Rollerblades, Kites. Buntes, fröhliches Treiben. Die Kamera nimmt die Dynamik auf und zeigt ausgelassenen Spaß im Freizeitsport. Es wird Trendsport Skateboarden geübt, Fahrrad gefahren, Drachen steigen gelassen usw. "^^xsd:string ;
+        foo:sceneHeader            "EXT. - Tempelhofer Feld - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "17"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AE0> .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A3D>
+        a                          foo:Scene ;
+        foo:dayTime                "evening"^^xsd:string ;
+        foo:identifierDramaQueen   "7bfa33d8-ea6c-4712-82d8-744b75120164"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0A3D"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "84"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Der dynamische Teil der Szene geht über in eine Erkundung des Ortes, Weite, Fahrten, Szenerie des ehemaligen Flughafens. Dann Picknickstimmung - der Dreh ist beendet. Set und Realität verschwimmen wieder - Drehschluß. Prost. </p>"^^xsd:string ;
+        foo:sceneDescription       "Tempelhofer Feld\r\nDer dynamische Teil der Szene geht über in eine Erkundung des Ortes, Weite, Fahrten, Szenerie des ehemaligen Flughafens. Dann Picknickstimmung - der Dreh ist beendet. Set und Realität verschwimmen wieder - Drehschluß. Prost. \r\n\r\nENDE"^^xsd:string ;
+        foo:sceneHeader            "EXT. - Tempelhofer Feld - DÄMM. ABEND"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "18"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AE0> .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0983>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "49252729-71b3-4f46-8577-82431eaa9f1e"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0983"^^xsd:string ;
+        foo:interiorExterior       "int"^^xsd:string ;
+        foo:internalIdentifier     "66"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Kameratest: Kameramann und Assistenz bauen die Technik auf und beginnen mit dem Testen. Sie machen Aufnahmen, wechseln Objektive, gehen das Equipment in den Einzelteilen durch.</p>"^^xsd:string ;
+        foo:sceneDescription       "Labor\r\nKameratest: Kameramann und Assistenz bauen die Technik auf und beginnen mit dem Testen. Sie machen Aufnahmen, wechseln Objektive, gehen das Equipment in den Einzelteilen durch."^^xsd:string ;
+        foo:sceneHeader            "INT. - Labor Technikverleih - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "2"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AAD> .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B098D>
+        a                          foo:Scene ;
+        foo:dayTime                "evening"^^xsd:string ;
+        foo:identifierDramaQueen   "9275ef74-1b3d-495d-b781-8d7f7451f348"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B098D"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "67"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Verladen: Der Test ist beendet, Equipment eingepackt. Die Kisten werden in das Produktionsfahrzeug verladen. Fahren vom Hof bzw. parken den Wagen auf einem gesicherten Parkplatz</p>"^^xsd:string ;
+        foo:sceneDescription       "Parkplatz\r\nVerladen: Der Test ist beendet, Equipment eingepackt. Die Kisten werden in das Produktionsfahrzeug verladen. Fahren vom Hof bzw. parken den Wagen auf einem gesicherten Parkplatz"^^xsd:string ;
+        foo:sceneHeader            "EXT. - Parkplatz - DÄMM. ABEND"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "3"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB0> .
+
+<http://filmontology.org/resource/Project/18989/SceneGroup/13e511a1-1ca6-415b-b4c3-b6df27aa3dcc>
+        a                       foo:SceneGroup ;
+        foo:hasScene            <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09A1> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09CB> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A33> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09AB> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09B5> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09D5> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09EB> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0979> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A13> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09FF> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A3D> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B098D> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09E0> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09F5> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09C1> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A1D> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0983> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0997> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A28> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A09> ;
+        foo:internalIdentifier  "64"^^xsd:long ;
+        foo:lastModified        "2015-12-02T14:19:26"^^xsd:string ;
+        foo:revision            "Dramaqueen Import"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/aab96f19-911f-46eb-a3d4-1c00e7668dc9>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "LIG"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9C> ;
+        foo:internalIdentifier  "32"^^xsd:long ;
+        foo:name                "Licht und Bühne"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Address/452b7d77-26f0-48b9-900f-5b69f3474428>
+        a                       foo:Address ;
+        foo:internalIdentifier  "48"^^xsd:long .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0926>
+        a                          foo:Crew ;
+        foo:crewCode               "PRD006b"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0926"^^xsd:string ;
+        foo:internalIdentifier     "18"^^xsd:long ;
+        foo:name                   "Helga Herstellungsleitung"^^xsd:string , "Line Producer"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/ShootingSchedule/4A2D-14F46B05B7>
+        a                          foo:ShootingSchedule ;
+        foo:hasShootingDay         <http://filmontology.org/resource/Project/18989/ShootingDay/4A2D-14F46B096A> , <http://filmontology.org/resource/Project/18989/ShootingDay/4A2D-14F46B0969> ;
+        foo:identifierPreProducer  "4A2D-14F46B05B7"^^xsd:string ;
+        foo:internalIdentifier     "85"^^xsd:long ;
+        foo:lastModified           "2015-12-02T15:38:31"^^xsd:string ;
+        foo:revision               "1"^^xsd:int .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09B5>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "a6455908-8c65-4d9e-98da-98d809cd23c5"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B09B5"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "71"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Ein Mann mittleren Alters und eine junge Frau sitzen im Ludenbenz und fahren über einen Waldweg. Sie erreichen eine Lichtung und halten an.</p><p class=\"action\">Parken, Aussteigen, entnehmen Dinge aus dem Kofferraum</p><p class=\"action\">einen Rucksack, eine Decke, Picknickkorb mit Inhalt</p>"^^xsd:string ;
+        foo:sceneDescription       "Ludenbenz auf Waldweg\r\nEin Mann mittleren Alters und eine junge Frau sitzen im Ludenbenz und fahren über einen Waldweg. Sie erreichen eine Lichtung und halten an.\r\nParken, Aussteigen, entnehmen Dinge aus dem Kofferraum\r\neinen Rucksack, eine Decke, Picknickkorb mit Inhalt"^^xsd:string ;
+        foo:sceneHeader            "EXT. - Waldweg - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "7"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB9> .
+
+<http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0AFF>
+        a                          foo:Character ;
+        foo:characterNumber        "4"^^xsd:int ;
+        foo:identifierPreProducer  "4A2D-14F46B0AFF"^^xsd:string ;
+        foo:internalIdentifier     "10"^^xsd:long ;
+        foo:name                   "Kameraassistent"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Address/4d8eaecc-5837-4b52-b2cc-b644b75d9202>
+        a                       foo:Address ;
+        foo:internalIdentifier  "62"^^xsd:long .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09D5>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "b3731988-c257-48ae-8641-81a256da8391"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B09D5"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "74"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Die junge Frau zieht sich die Schuhe aus und geht mit den Füßen ins Wasser. Sie sammelt Steine. Der Mann bereitet derweil das Picknick vor. Breitet die Decke aus, holt Weinflasche und Gläser aus dem Picknickkorb. Brot, Käse, Couscous Salat, Oliven, griechischen Bauernsalat, Köfte... Sie setzt sich zu ihm (und haut rein)</p>"^^xsd:string ;
+        foo:sceneDescription       "Lichtung am See\r\nDie junge Frau zieht sich die Schuhe aus und geht mit den Füßen ins Wasser. Sie sammelt Steine. Der Mann bereitet derweil das Picknick vor. Breitet die Decke aus, holt Weinflasche und Gläser aus dem Picknickkorb. Brot, Käse, Couscous Salat, Oliven, griechischen Bauernsalat, Köfte... Sie setzt sich zu ihm (und haut rein)"^^xsd:string ;
+        foo:sceneHeader            "EXT. - Lichtung am See - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "10.1"^^xsd:string ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2> .
+
+<http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AAD>
+        a                          foo:Set ;
+        foo:identifierDramaQueen   "9cbb6db9-97a4-4ff8-8e19-0a2910300327"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0AAD"^^xsd:string ;
+        foo:internalIdentifier     "46"^^xsd:long ;
+        foo:name                   "Labor Technikverleih"^^xsd:string ;
+        foo:setLocation            <http://filmontology.org/resource/Project/18989/Location/4A2D-14F46B0BC3> .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B85>
+        a                          foo:Crew ;
+        foo:crewCode               "PRD023"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B85"^^xsd:string ;
+        foo:internalIdentifier     "21"^^xsd:long ;
+        foo:name                   "Tabea Tietz"^^xsd:string , "Set-Runner"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB6>
+        a                          foo:Set ;
+        foo:identifierPreProducer  "4A2D-14F46B0AB6"^^xsd:string ;
+        foo:internalIdentifier     "51"^^xsd:long .
+
+<http://filmontology.org/resource/Project/18989/Location/4A2D-14F46B0BA3>
+        a                          foo:Location ;
+        foo:address                <http://filmontology.org/resource/Project/18989/Address/a24c1557-4643-4af4-8953-056a5ab7a028> ;
+        foo:hasFacility            <http://filmontology.org/resource/Project/18989/Facility/4e936492-985e-4cee-a3b5-b3a84f310000> ;
+        foo:identifierPreProducer  "4A2D-14F46B0BA3"^^xsd:string ;
+        foo:internalIdentifier     "54"^^xsd:long ;
+        foo:name                   "Bernsteinsee"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0953>
+        a                          foo:Crew ;
+        foo:crewCode               "PRD001"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0953"^^xsd:string ;
+        foo:internalIdentifier     "15"^^xsd:long ;
+        foo:name                   "Martin Steyer"^^xsd:string , "Produzent"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A09>
+        a                          foo:Scene ;
+        foo:dayTime                "evening"^^xsd:string ;
+        foo:identifierDramaQueen   "39ecba03-b536-442b-8313-74b552a4658d"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0A09"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "79"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Es wird langsam Abend, die Sonne geht unter. Stimmungsbilder von junger Frau und Mann</p>"^^xsd:string ;
+        foo:sceneDescription       "Lichtung am See\r\nEs wird langsam Abend, die Sonne geht unter. Stimmungsbilder von junger Frau und Mann"^^xsd:string ;
+        foo:sceneHeader            "EXT. - Lichtung am See - DÄMM. ABEND"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "14"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2> .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09A1>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "5bb686ab-5a88-4bff-a9a5-15d356900de1"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B09A1"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "69"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Drehtag 1: Das Team trifft sich am ersten Drehtag und beginnt mit den Vorbereitungen. Aufriggen der Kamera, Verladen der Technik auf Rollwagen für Transport zum Drehort, packen der Rucksäcke, Hantieren mit Tontechnik</p>"^^xsd:string ;
+        foo:sceneDescription       "Wald\r\nDrehtag 1: Das Team trifft sich am ersten Drehtag und beginnt mit den Vorbereitungen. Aufriggen der Kamera, Verladen der Technik auf Rollwagen für Transport zum Drehort, packen der Rucksäcke, Hantieren mit Tontechnik"^^xsd:string ;
+        foo:sceneHeader            "EXT. - - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "5"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB6> .
+
+for:DWERFT  <http://purl.org/dc/terms/hasPart>
+                <http://filmontology.org/resource/Project/18989> .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09AB>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "b0e16c67-88a4-466d-a388-c7a3953638ff"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B09AB"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "70"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Das Team stiefelt durch den Wald, müht sich ab, die Technik durch das unwegsame Gelände zum Drehort zu transportieren. Drehvorbereitung erste Einstellung...</p>"^^xsd:string ;
+        foo:sceneDescription       "Waldweg\r\nDas Team stiefelt durch den Wald, müht sich ab, die Technik durch das unwegsame Gelände zum Drehort zu transportieren"^^xsd:string ;
+        foo:sceneHeader            "EXT. - Waldweg - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "6"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB9> .
+
+<http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB0>
+        a                          foo:Set ;
+        foo:identifierDramaQueen   "3a116d45-d850-43f8-b520-0f13752231c0"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0AB0"^^xsd:string ;
+        foo:internalIdentifier     "49"^^xsd:long ;
+        foo:name                   "Parkplatz"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0AFE>
+        a                          foo:Character ;
+        foo:characterNumber        "3"^^xsd:int ;
+        foo:identifierPreProducer  "4A2D-14F46B0AFE"^^xsd:string ;
+        foo:internalIdentifier     "9"^^xsd:long ;
+        foo:name                   "Kameramann"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09F5>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B09F5"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "77"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Das Paar spielt Frisbee oder pitscht Steine über den See. </p>"^^xsd:string ;
+        foo:sceneDescription       "Lichtung am See\r\nDas Paar spielt Frisbee oder pitscht Steine über den See. "^^xsd:string ;
+        foo:sceneHeader            "EXT. - Lichtung am See - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "12"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2> .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09FF>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "c929e923-b59c-4f4d-ba00-545182369eb7"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B09FF"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "78"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Die Kamera schwenkt vom Paar weg und filmt das Team hinter der Kamera und das Set drumherum</p>"^^xsd:string ;
+        foo:sceneDescription       "Lichtung am See\r\nDie Kamera schwenkt vom Paar weg und filmt das Team hinter der Kamera und das Set drumherum"^^xsd:string ;
+        foo:sceneHeader            "EXT. - Lichtung am See - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "13"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2> .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9C>
+        a                          foo:Crew ;
+        foo:crewCode               "LIG001"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B9C"^^xsd:string ;
+        foo:internalIdentifier     "33"^^xsd:long ;
+        foo:name                   "Friedrich Armleuchter"^^xsd:string , "Oberbeleuchter"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/ShootingDay/4A2D-14F46B096A>
+        a                          foo:ShootingDay ;
+        foo:date                   "2015-08-28"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B096A"^^xsd:string ;
+        foo:internalIdentifier     "87"^^xsd:long ;
+        foo:name                   "2. Drehtag: Fr, 28. August 2015"^^xsd:string ;
+        foo:shootingDayMode        "shoot"^^xsd:string ;
+        foo:shootingDayScene       <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A33> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A3D> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A1D> .
+
+<http://filmontology.org/resource/Project/18989/Location/4A2D-14F46B0BC3>
+        a                          foo:Location ;
+        foo:address                <http://filmontology.org/resource/Project/18989/Address/452b7d77-26f0-48b9-900f-5b69f3474428> ;
+        foo:identifierPreProducer  "4A2D-14F46B0BC3"^^xsd:string ;
+        foo:internalIdentifier     "47"^^xsd:long ;
+        foo:name                   "Camelot Technikverleih"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0960>
+        a                          foo:Crew ;
+        foo:crewCode               "RED004"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0960"^^xsd:string ;
+        foo:internalIdentifier     "25"^^xsd:long ;
+        foo:name                   "Rudi Redakteur"^^xsd:string , "Redakteur"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09C1>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "c8881be3-4e01-4b50-8439-30cf721b73b8"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B09C1"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "72"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Das Paar zieht los - ein fröhlicher, gelassener Spaziergang. Die Sonne funkelt durch das Blätterdach, Licht und Schatten spielen auf dem Waldboden. Nach kurzem Fußmarsch kommt das Paar an eine Lichtung, die auf einen See mündet</p>"^^xsd:string ;
+        foo:sceneDescription       "Waldweg\r\nDas Paar zieht los - ein fröhlicher, gelassener Spaziergang. Die Sonne funkelt durch das Blätterdach, Licht und Schatten spielen auf dem Waldboden. Nach kurzem Fußmarsch kommt das Paar an eine Lichtung, die auf einen See mündet"^^xsd:string ;
+        foo:sceneHeader            "EXT. - Waldweg - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "8"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB9> .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09CB>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:identifierDramaQueen   "8168b1fd-dfce-427c-9b9f-0bd4aefb5965"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B09CB"^^xsd:string ;
+        foo:interiorExterior       "ext"^^xsd:string ;
+        foo:internalIdentifier     "73"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Ankunft am See, das Team wird für die Mühen belohnt. Weißer Sand, Schilf, klares Wasser. Das Team beginnt mit dem Aufbau und Einrichten des Sets „Picknick“.</p>"^^xsd:string ;
+        foo:sceneDescription       "Lichtung am See\r\nAnkunft am See, das Team wird für die Mühen belohnt. Weißer Sand, Schilf, klares Wasser. Das Team beginnt mit dem Aufbau des Settings."^^xsd:string ;
+        foo:sceneHeader            "EXT. - Lichtung am See - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "9"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2> .
+
+<http://filmontology.org/resource/Project/18989/Cast/4A2D-14F46B0B36>
+        a                       foo:Cast ;
+        foo:internalIdentifier  "8"^^xsd:long ;
+        foo:name                "Stefanie Antonia Wermeling"^^xsd:string ;
+        foo:sex                 "female"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B094F>
+        a                          foo:Crew ;
+        foo:crewCode               "REG001"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B094F"^^xsd:string ;
+        foo:internalIdentifier     "27"^^xsd:long ;
+        foo:name                   "Cevat Maskar"^^xsd:string , "Regie"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0C28>
+        a                          foo:Crew ;
+        foo:crewCode               "PRD027"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0C28"^^xsd:string ;
+        foo:internalIdentifier     "23"^^xsd:long ;
+        foo:name                   "Henning Agt-Rickauer"^^xsd:string , "Produktion sonstige"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B03>
+        a                          foo:Character ;
+        foo:characterNumber        "6"^^xsd:int ;
+        foo:identifierPreProducer  "4A2D-14F46B0B03"^^xsd:string ;
+        foo:internalIdentifier     "12"^^xsd:long ;
+        foo:name                   "Drachenflieger"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0979>
+        a                          foo:Scene ;
+        foo:dayTime                "day"^^xsd:string ;
+        foo:hasCharacter           <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0AFF> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0AFE> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B08> ;
+        foo:identifierDramaQueen   "2191cde9-42ca-4b7e-bf71-e249895714e7"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0979"^^xsd:string ;
+        foo:interiorExterior       "intext"^^xsd:string ;
+        foo:internalIdentifier     "65"^^xsd:long ;
+        foo:sceneContent           "<p class=\"action\">Drehvorbereitung: Kameramann und sein Assistent fahren zum Technikverleih um das Equipment zu testen. Sie kommen an und plaudern erst einmal mit dem Angestellten des Technikdienstleisters - sie kennen sich bereits von anderen Projekten.</p>"^^xsd:string ;
+        foo:sceneDescription       "Technikverleih\r\nDrehvorbereitung: Kameramann und sein Assistent fahren zum Technikverleih um das Equipment zu testen. Sie kommen an und plaudern erst einmal mit dem Angestellten des Technikdienstleisters - sie kennen sich bereits von anderen Projekten."^^xsd:string ;
+        foo:sceneHeader            "INT.-EXT. - Technikverleih - TAG"^^xsd:string ;
+        foo:sceneInserted          false ;
+        foo:sceneNumber            "1"^^xsd:int ;
+        foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AAA> .
+
+<http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0ADA>
+        a                          foo:Set ;
+        foo:identifierDramaQueen   "6c159070-850e-425b-b439-12595b48a0a8"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0ADA"^^xsd:string ;
+        foo:internalIdentifier     "58"^^xsd:long ;
+        foo:name                   "Tempelhofer Feld heuted"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/d005cc51-fa96-4e96-a4e7-dae273557d2d>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "PST"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B82> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B91> ;
+        foo:internalIdentifier  "39"^^xsd:long ;
+        foo:name                "Postproduktion"^^xsd:string .
