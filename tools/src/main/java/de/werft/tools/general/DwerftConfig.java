@@ -10,7 +10,7 @@ import java.io.File;
  *
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
-@Config.Sources({"file:tools/DwerftConfig.properties", "classpath:DwerftConfig.properties"})
+@Config.Sources({"file:tools/DwerftConfig.properties", "file:DwerftConfig.properties", "classpath:DwerftConfig.properties"})
 public interface DwerftConfig extends Config {
 
     @Key("pp.key")

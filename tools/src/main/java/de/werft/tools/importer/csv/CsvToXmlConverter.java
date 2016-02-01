@@ -1,8 +1,6 @@
 package de.werft.tools.importer.csv;
 
 import com.opencsv.CSVReader;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -47,8 +45,6 @@ import java.io.IOException;
  */
 public class CsvToXmlConverter {
 
-    private final static Logger LOGGER = LogManager.getLogger(CsvToXmlConverter.class);
-
     private DocumentBuilderFactory domFactory;
 
     private DocumentBuilder domBuilder;
@@ -77,9 +73,10 @@ public class CsvToXmlConverter {
      *
      * @param fileLocation the file location
      * @param sepChar      the sep char
+     * @return the file    that denotes the converted xml file.
      * @throws IOException the io exception
      */
-    public void convertToXml(String fileLocation, Character sepChar) throws IOException {
+    public File convertToXml(String fileLocation, Character sepChar) throws IOException {
         try {
             // prepare xml document
             Document doc = domBuilder.newDocument();
@@ -115,6 +112,7 @@ public class CsvToXmlConverter {
         } catch (TransformerException e) {
             throw new IOException("Could not transform xml results. No xml file written. " + e.getMessage(), e);
         }
+        return new File(new File(fileLocation).getParent(), getBaseName(fileLocation)+ ".xml");
     }
 
     private String getBaseName(String file) {

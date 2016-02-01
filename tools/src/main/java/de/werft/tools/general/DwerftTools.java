@@ -2,6 +2,8 @@ package de.werft.tools.general;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.ParameterException;
+import de.werft.tools.importer.csv.AleToXmlConverter;
+import de.werft.tools.importer.csv.CsvToXmlConverter;
 import de.werft.tools.importer.dramaqueen.DramaqueenToRdf;
 import de.werft.tools.importer.general.AbstractXMLtoRDFconverter;
 import de.werft.tools.importer.preproducer.PreProducerToRdf;
@@ -14,6 +16,8 @@ import org.apache.jena.riot.Lang;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerConfigurationException;
 import java.io.*;
 import java.security.InvalidKeyException;
 
@@ -185,24 +189,24 @@ public class DwerftTools {
 	}
 	
 	private static void genericXmlToRdf(String customMapping) {
-		InputStream inputStream = new AbstractSource().get(input);
-		
-		AbstractXMLtoRDFconverter abstractRdf = new AbstractXMLtoRDFconverter(
+        InputStream inputStream = null;
+        try {
+            inputStream = getSource(input);
+        } catch (IOException | ParserConfigurationException | TransformerConfigurationException e) {
+            L.error("Could not preprocess the input file. Please check if you have provided" +
+                    "on of these: xml, csv, ale file. " + e.getMessage());
+        }
+
+        AbstractXMLtoRDFconverter abstractRdf = new AbstractXMLtoRDFconverter(
 				OntologyConstants.ONTOLOGY_FILE,
 				OntologyConstants.ONTOLOGY_FORMAT,
 				customMapping) {
 
 					@Override
-					public void processingBeforeConvert() {
-						// TODO Auto-generated method stub
-						
-					}
+					public void processingBeforeConvert() {	}
 
 					@Override
-					public void processingAfterConvert() {
-						// TODO Auto-generated method stub
-						
-					}		
+					public void processingAfterConvert() {	}
 		};
 		
 		abstractRdf.convert(inputStream);
@@ -213,6 +217,23 @@ public class DwerftTools {
 		
 		L.info("Generic RDF has been written to " + output + " using " + input + " as input and " + customMapping + " as mapping");
 	}
+
+    // preconverts a csv or ale file to an xml file for further processing or if it is already a xml get the stream
+    private static InputStream getSource(String input) throws IOException, ParserConfigurationException, TransformerConfigurationException {
+        if (StringUtils.endsWithIgnoreCase(input, ".csv")) {
+            File f = new CsvToXmlConverter().convertToXml(input, ';');
+            L.info("Converted csv to xml.");
+            return new AbstractSource().get(f.getAbsolutePath());
+
+        } else if (StringUtils.endsWithIgnoreCase(input, ".ale")) {
+            File f = new AleToXmlConverter().convertToXml(input, '\t');
+            L.info("converted ale to xml");
+            return new AbstractSource().get(f.getAbsolutePath());
+
+        } else {
+            return new AbstractSource().get(input);
+        }
+    }
 
     private static InputStream loadFile(File filename) throws FileNotFoundException {
         InputStream in = null;

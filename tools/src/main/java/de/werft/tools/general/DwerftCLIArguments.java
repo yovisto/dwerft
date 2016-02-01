@@ -12,11 +12,14 @@ import org.apache.jena.riot.RDFLanguages;
 public class DwerftCLIArguments {
 
 	/** The input file. */
-	@Parameter(names = {"-i", "--input"}, description = "Specify an XML input file. Required for DramaQueen and generic conversion")
+	@Parameter(names = {"-i", "--input"}, description = "Specify an input file. " +
+            "Required for DramaQueen and generic conversion. Use generic conversion and provide a *.csv oder *.ale file" +
+            "so we convert it to xml and then to rdf.")
 	private String inputFile;
 
 	/** The input type. */
-	@Parameter(names = {"-t", "--type"}, description = "Specify an input type. Available options are PreProducer ('prp'), DramaQueen ('dq'), and Generic ('g')", required = true)
+	@Parameter(names = {"-t", "--type"},
+            description = "Specify an input type. Available options are PreProducer ('prp'), DramaQueen ('dq'), Generic ('g')", required = true)
 	private String inputType;
 	
 	/** The output file. */

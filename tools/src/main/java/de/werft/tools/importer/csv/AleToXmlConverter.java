@@ -17,7 +17,7 @@ import java.io.IOException;
 public class AleToXmlConverter extends CsvToXmlConverter {
 
     /**
-     * Instantiates a new Csv to xml converter.
+     * Instantiates a new ALE csv to xml converter.
      *
      * @throws ParserConfigurationException      the parser configuration exception
      * @throws TransformerConfigurationException the transformer configuration exception

@@ -1,16 +1,16 @@
 package de.werft.tools.sources;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 public class AbstractSource implements Source {
 
 	private final static Logger L = LogManager.getLogger(AbstractSource.class);
-	
+
 	@Override
 	public InputStream get(String source) {
 		try {
