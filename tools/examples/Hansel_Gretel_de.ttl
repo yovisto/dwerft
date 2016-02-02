@@ -389,7 +389,12 @@
         foo:identifierDramaQueen  "4cb48af3-b6cd-42fb-8da5-c256e2759878"^^xsd:string ;
         foo:internalIdentifier    "2"^^xsd:long ;
         foo:name                  "Hänsel"^^xsd:string ;
-        foo:sex                   "mï¿½nnlich"^^xsd:string .
+        foo:sex                   "m�nnlich"^^xsd:string .
+
+<http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Episode/d1d41d77-67cf-4a62-8c27-de53f60b1fb0>
+        a                       foo:Episode ;
+        foo:hasSceneGroup       <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/6b2aa4d9-863d-47f5-a8ab-be0aef6d7070> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/4f2e606d-a7cc-49a3-ad2a-caca55200ca7> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/a7b9cc28-58ee-4a3e-9e6d-0e3e008783b1> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/3390aaf5-ce00-44d6-9f5c-71d73670f6dd> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/6eeb3786-43b1-491f-bb1c-c5ade3b941a2> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/29d6de1a-f8b9-47ba-b652-aea13210a7ee> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/d5295482-5356-4e32-bb56-3a2e20da1385> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/189defb5-abac-4c35-b686-86af621e489a> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/bc17f4fe-19f5-4554-9a00-c98c0c174a6d> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/b80265cb-a8e6-47ae-a252-335f2019b078> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/61afe56e-0dd4-4e8d-8dc1-205c31a48b16> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/2f657f85-ec71-4afb-b0ea-28b0aba29675> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/08d356e5-2ab9-4e83-b0de-8cb620edf0d3> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/e608d021-3251-4738-b141-506733364bfe> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/189e0a4f-b97a-4eaa-9714-fbb529fb32a4> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/a54711d3-8f0d-4748-886a-f60c658c8d42> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/7f8a6797-8943-479f-9d73-76372fbcb7cc> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/9d09b6ed-2040-4309-beaf-5b852528fd0e> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/c2468d90-6c79-41b9-8dcd-61476864f487> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/1260af90-32ea-44f1-9d87-6e96a9749df5> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/e2d5e9f7-10fa-44d7-8831-d3962aabf2ce> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/12fa6030-4e45-4524-a51c-105ca3eff48a> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/bb06563b-e937-4438-8713-af4076316705> ;
+        foo:internalIdentifier  "13"^^xsd:long .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/ee799206-7929-4e09-9971-ddc9d90f300b>
         a                         foo:Scene ;
@@ -561,7 +566,7 @@
         foo:name                  "Vater"^^xsd:string ;
         foo:occupation            "Waldarbeiter"^^xsd:string ;
         foo:relationshipStatus    "verheiratet, zwei Kinder"^^xsd:string ;
-        foo:sex                   "mï¿½nnlich"^^xsd:string ;
+        foo:sex                   "m�nnlich"^^xsd:string ;
         foo:socialStatus          "niedrig"^^xsd:string .
 
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/63e11434-45fa-4e34-813a-d5087e1093fc>
@@ -726,11 +731,6 @@
         foo:identifierDramaQueen  "12fa6030-4e45-4524-a51c-105ca3eff48a"^^xsd:string ;
         foo:internalIdentifier    "91"^^xsd:long .
 
-<http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Episode/701841f1-0e09-482a-862b-03c1b1d5a871>
-        a                       foo:Episode ;
-        foo:hasSceneGroup       <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/a7b9cc28-58ee-4a3e-9e6d-0e3e008783b1> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/b80265cb-a8e6-47ae-a252-335f2019b078> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/c2468d90-6c79-41b9-8dcd-61476864f487> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/6b2aa4d9-863d-47f5-a8ab-be0aef6d7070> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/189e0a4f-b97a-4eaa-9714-fbb529fb32a4> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/3390aaf5-ce00-44d6-9f5c-71d73670f6dd> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/bb06563b-e937-4438-8713-af4076316705> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/08d356e5-2ab9-4e83-b0de-8cb620edf0d3> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/9d09b6ed-2040-4309-beaf-5b852528fd0e> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/e608d021-3251-4738-b141-506733364bfe> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/61afe56e-0dd4-4e8d-8dc1-205c31a48b16> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/7f8a6797-8943-479f-9d73-76372fbcb7cc> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/6eeb3786-43b1-491f-bb1c-c5ade3b941a2> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/29d6de1a-f8b9-47ba-b652-aea13210a7ee> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/bc17f4fe-19f5-4554-9a00-c98c0c174a6d> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/12fa6030-4e45-4524-a51c-105ca3eff48a> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/4f2e606d-a7cc-49a3-ad2a-caca55200ca7> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/2f657f85-ec71-4afb-b0ea-28b0aba29675> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/d5295482-5356-4e32-bb56-3a2e20da1385> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/189defb5-abac-4c35-b686-86af621e489a> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/e2d5e9f7-10fa-44d7-8831-d3962aabf2ce> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/a54711d3-8f0d-4748-886a-f60c658c8d42> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/SceneGroup/1260af90-32ea-44f1-9d87-6e96a9749df5> ;
-        foo:internalIdentifier  "13"^^xsd:long .
-
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Scene/cc7aa932-a7db-479c-98b6-8919e6b325fd>
         a                         foo:Scene ;
         foo:dayTime               "Nacht"^^xsd:string ;
@@ -843,7 +843,7 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
 <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa>
         a                         foo:Project ;
         foo:hasCharacter          <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/3cf832c5-976e-4d93-aa06-d17088c469ed> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/3a2cb853-e5ab-4a28-94b5-2b1e867a8d9a> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/4cb48af3-b6cd-42fb-8da5-c256e2759878> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/3d71dfb5-040f-40e9-879a-56201b677058> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/0ddf6d64-d7d7-4c2d-bec9-4276b884a0b4> ;
-        foo:hasEpisode            <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Episode/701841f1-0e09-482a-862b-03c1b1d5a871> ;
+        foo:hasEpisode            <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Episode/d1d41d77-67cf-4a62-8c27-de53f60b1fb0> ;
         foo:hasSet                <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/82e0b36d-32fb-4216-a0e7-3b8a3135e961> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/e27a65ca-9bde-4fa9-84aa-8285b28932b2> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/5ece5256-737f-41ee-bb18-d8858b54d9c9> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/4ee57858-c88a-4d06-8366-e7b0bdf3be11> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> , <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/845e66af-afff-4f3d-aea0-01ccc7937dc1> ;
         foo:identifierDramaQueen  "9860f0bb-d9a6-45e4-9d03-79e7fefd16fa"^^xsd:string ;
         foo:internalIdentifier    "1"^^xsd:long ;
@@ -958,15 +958,14 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:sceneNumber           "27"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Set/c34ef9bc-1516-4444-8f11-23a234564a4a> .
 
-<http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/
-  Character/0ddf6d64-d7d7-4c2d-bec9-4276b884a0b4>
+<http://filmontology.org/resource/Project/9860f0bb-d9a6-45e4-9d03-79e7fefd16fa/Character/0ddf6d64-d7d7-4c2d-bec9-4276b884a0b4>
         a                         foo:Character ;
         foo:age                   "66"^^xsd:int ;
-        foo:name                  "Hexe"^^xsd:string ;
         foo:aliasName             "Weib"^^xsd:string ;
         foo:appearance            "alt aber zäh"^^xsd:string ;
         foo:identifierDramaQueen  "0ddf6d64-d7d7-4c2d-bec9-4276b884a0b4"^^xsd:string ;
         foo:internalIdentifier    "6"^^xsd:long ;
+        foo:name                  "Hexe"^^xsd:string ;
         foo:occupation            "Hexe"^^xsd:string ;
         foo:relationshipStatus    "lebt allein mit Katzen"^^xsd:string ;
         foo:sex                   "weiblich"^^xsd:string ;
