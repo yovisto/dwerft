@@ -352,12 +352,6 @@ public class RdfProcessor {
 		Resource result = null;
 		
 		if (mapping.getContentSource() == null && mapping.getTargetOntologyProperty() == null) {
-			
-			if (node.getNodeName().equals("prp:project")) {
-				System.out.println(node);
-				System.out.println(mapping);
-			}
-			
 			createOntologyClassInstance(node, mapping);
 		} else 
 		if (mapping.getTargetOntologyProperty() != null && mapping.getTargetPropertyType().equals(MappingDefinition.TargetPropertyType.DATATYPE_PROPERTY)) {
