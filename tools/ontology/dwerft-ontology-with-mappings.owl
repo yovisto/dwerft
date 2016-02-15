@@ -2,6 +2,7 @@
 
 
 <!DOCTYPE rdf:RDF [
+    <!ENTITY bmf "http://www.irt.de/bmf#" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY for "http://filmontology.org/resource/" >
@@ -10,15 +11,18 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY webprotege "http://protege.stanford.edu/webprotege/" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ebucore "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#" >
 ]>
 
 
 <rdf:RDF xmlns="http://filmontology.org/"
      xml:base="http://filmontology.org/"
+     xmlns:bmf="http://www.irt.de/bmf#"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:webprotege="http://protege.stanford.edu/webprotege/"
      xmlns:for="http://filmontology.org/resource/"
+     xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -26,6 +30,8 @@
     <owl:Ontology rdf:about="http://filmontology.org/ontology/ontology">
         <dc:date rdf:datatype="&xsd;dateTime">Jun 30, 2015 8:03:46 AM</dc:date>
         <dc:creator rdf:datatype="&xsd;string">hagt</dc:creator>
+        <owl:imports rdf:resource="http://bmf.irt.de/bmf"/>
+        <owl:imports rdf:resource="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore"/>
     </owl:Ontology>
     
 
@@ -53,6 +59,7 @@
 		<rdfs:domain rdf:resource="&foo;Institution"/>
         <rdfs:domain rdf:resource="&foo;Location"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+        <owl:equivalentProperty rdf:resource="&bmf;addressAndContact"/>
     </owl:ObjectProperty>
     
 
@@ -158,6 +165,7 @@
         <rdfs:range rdf:resource="&foo;Company"/>
         <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+        <owl:equivalentProperty rdf:resource="&bmf;productionCompanyReference"/>
     </owl:ObjectProperty>
     
 
@@ -440,11 +448,15 @@
     
 
 
+    <!-- http://www.irt.de/bmf#addressAndContact -->
 
+    <rdf:Description rdf:about="&bmf;addressAndContact"/>
     
 
 
+    <!-- http://www.irt.de/bmf#productionCompanyReference -->
 
+    <rdf:Description rdf:about="&bmf;productionCompanyReference"/>
     
 
 
@@ -553,6 +565,7 @@
         <rdfs:comment>Relationship between width and height that was used for recording.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&ebucore;aspectRatio"/>
         <rdfs:range rdf:resource="&xsd;float"/>
     </owl:DatatypeProperty>
     
@@ -745,6 +758,7 @@
         <rdfs:comment>Name of the city of an address</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Address"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&bmf;city"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -808,6 +822,7 @@
         <rdfs:comment>Name of the country of an address</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Address"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&bmf;countryName"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -926,6 +941,8 @@
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&ebucore;duration"/>
+        <owl:equivalentProperty rdf:resource="&bmf;duration"/>
         <rdfs:range rdf:resource="&xsd;int"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1078,6 +1095,8 @@
         <rdfs:comment>Frame rate of an episode</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&ebucore;frameRate"/>
+        <owl:equivalentProperty rdf:resource="&bmf;frameRate"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
@@ -1747,6 +1766,7 @@
         <rdfs:comment>Sequential number of a scene in a script. Can have letters (e.g., 5a, if split scene)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Scene"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&bmf;sceneNumber"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1979,6 +1999,7 @@
         <rdfs:comment>Name of the street of an address</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Address"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <owl:equivalentProperty rdf:resource="&bmf;streetName"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2201,39 +2222,57 @@
     
 
 
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#aspectRatio -->
 
+    <owl:DatatypeProperty rdf:about="&ebucore;aspectRatio"/>
     
 
 
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#duration -->
 
+    <owl:DatatypeProperty rdf:about="&ebucore;duration"/>
     
 
 
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameRate -->
 
+    <rdf:Description rdf:about="&ebucore;frameRate"/>
     
 
 
+    <!-- http://www.irt.de/bmf#city -->
 
+    <rdf:Description rdf:about="&bmf;city"/>
     
 
 
+    <!-- http://www.irt.de/bmf#countryName -->
 
+    <rdf:Description rdf:about="&bmf;countryName"/>
     
 
 
+    <!-- http://www.irt.de/bmf#duration -->
 
+    <rdf:Description rdf:about="&bmf;duration"/>
     
 
 
+    <!-- http://www.irt.de/bmf#frameRate -->
 
+    <rdf:Description rdf:about="&bmf;frameRate"/>
     
 
 
+    <!-- http://www.irt.de/bmf#sceneNumber -->
 
+    <rdf:Description rdf:about="&bmf;sceneNumber"/>
     
 
 
+    <!-- http://www.irt.de/bmf#streetName -->
 
+    <rdf:Description rdf:about="&bmf;streetName"/>
     
 
 
@@ -2262,6 +2301,7 @@
 
     <owl:Class rdf:about="&foo;Address">
         <rdfs:label>Address</rdfs:label>
+        <owl:equivalentClass rdf:resource="&bmf;AddressAndContactSet"/>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>Street address of a company, location, cast member, etc.</rdfs:comment>
     </owl:Class>
@@ -2302,6 +2342,7 @@
 
     <owl:Class rdf:about="&foo;Cast">
         <rdfs:label>Cast</rdfs:label>
+        <owl:equivalentClass rdf:resource="&ebucore;Cast"/>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>Person playing a character in a movie</rdfs:comment>
     </owl:Class>
@@ -2312,6 +2353,7 @@
 
     <owl:Class rdf:about="&foo;Character">
         <rdfs:label>Character</rdfs:label>
+        <owl:equivalentClass rdf:resource="&ebucore;Character"/>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>A fictitious person</rdfs:comment>
     </owl:Class>
@@ -2332,6 +2374,7 @@
 
     <owl:Class rdf:about="&foo;Company">
         <rdfs:label>Company</rdfs:label>
+        <owl:equivalentClass rdf:resource="&ebucore;Organisation"/>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>A business taking part in the film project (e.g., production company)</rdfs:comment>
     </owl:Class>
@@ -2352,6 +2395,7 @@
 
     <owl:Class rdf:about="&foo;Crew">
         <rdfs:label>Crew</rdfs:label>
+        <owl:equivalentClass rdf:resource="&ebucore;Staff"/>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>A person involved in the film production</rdfs:comment>
     </owl:Class>
@@ -2442,6 +2486,8 @@
 
     <owl:Class rdf:about="&foo;Location">
         <rdfs:label>Location</rdfs:label>
+        <owl:equivalentClass rdf:resource="&ebucore;Location"/>
+        <owl:equivalentClass rdf:resource="&bmf;LocationSet"/>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>Actual location where a shooting takes place.</rdfs:comment>
     </owl:Class>
@@ -2452,6 +2498,7 @@
 
     <owl:Class rdf:about="&foo;Project">
         <rdfs:label>Project</rdfs:label>
+        <owl:equivalentClass rdf:resource="&bmf;ProductionSet"/>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>A film production project</rdfs:comment>
     </owl:Class>
@@ -2472,6 +2519,7 @@
 
     <owl:Class rdf:about="&foo;Scene">
         <rdfs:label>Scene</rdfs:label>
+        <owl:equivalentClass rdf:resource="&bmf;SceneSet"/>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>Action taking place in one location.</rdfs:comment>
     </owl:Class>
@@ -2528,39 +2576,57 @@
     
 
 
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Cast -->
 
+    <owl:Class rdf:about="&ebucore;Cast"/>
     
 
 
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Character -->
 
+    <owl:Class rdf:about="&ebucore;Character"/>
     
 
 
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Location -->
 
+    <rdf:Description rdf:about="&ebucore;Location"/>
     
 
 
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Organisation -->
 
+    <rdf:Description rdf:about="&ebucore;Organisation"/>
     
 
 
+    <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Staff -->
 
+    <owl:Class rdf:about="&ebucore;Staff"/>
     
 
 
+    <!-- http://www.irt.de/bmf#AddressAndContactSet -->
 
+    <rdf:Description rdf:about="&bmf;AddressAndContactSet"/>
     
 
 
+    <!-- http://www.irt.de/bmf#LocationSet -->
 
+    <rdf:Description rdf:about="&bmf;LocationSet"/>
     
 
 
+    <!-- http://www.irt.de/bmf#ProductionSet -->
 
+    <rdf:Description rdf:about="&bmf;ProductionSet"/>
     
 
 
+    <!-- http://www.irt.de/bmf#SceneSet -->
 
+    <rdf:Description rdf:about="&bmf;SceneSet"/>
 </rdf:RDF>
 
 

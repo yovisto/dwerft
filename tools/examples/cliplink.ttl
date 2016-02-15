@@ -1,0 +1,15 @@
+@prefix :      <http://filmontology.org/> .
+@prefix webprotege: <http://protege.stanford.edu/webprotege/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foo:   <http://filmontology.org/ontology/1.0/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix for:   <http://filmontology.org/resource/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+
+for:DWERFT  <http://filmontology.org/ontology/1.0/hasClip>
+                <http://filmontology.org/resource/Clip/313b70bc-0000-4000-952c-ae2e00000000> , <http://filmontology.org/resource/Clip/b2bba60b-0000-4000-adf0-c5e800000000> .
+
+				
