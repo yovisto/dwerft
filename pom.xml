@@ -5,6 +5,7 @@
 	<artifactId>de.werft</artifactId>
 	<packaging>pom</packaging>
 	<version>0.5</version>
+    
 
     <name>Dwerft Linked Production Data Cloud</name>
 	<url>https://github.com/yovisto/dwerft</url>
@@ -31,12 +32,12 @@
 			<version>2.4</version>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>apache-jena-libs</artifactId>
 			<type>pom</type>
 			<version>3.0.1</version>
-		</dependency>
+		</dependency>-->
 	</dependencies>
 
 	<modules>
@@ -50,8 +51,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
             </plugin>
         </plugins>
