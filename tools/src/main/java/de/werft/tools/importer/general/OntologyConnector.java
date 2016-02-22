@@ -8,7 +8,6 @@ import de.werft.tools.general.OntologyConstants;
 
 import java.io.InputStream;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -40,9 +39,14 @@ public class OntologyConnector {
 	 */
 	public OntClass getOntologyClass(String uri) {
 		ExtendedIterator<OntClass> classes = ontologyModel.listClasses();
-		Optional<OntClass> firstClass = classes.toList().stream().filter(o -> o.getURI().equals(uri)).findFirst();
-		return firstClass.isPresent() ? firstClass.get() : null;
-	}
+        while (classes.hasNext()) {
+            OntClass next = classes.next();
+            if (uri.equals(next.getURI())) {
+                return next;
+            }
+        }
+        return null;
+    }
 	
 	/**
 	 * Gets a ontology datatype property.
@@ -52,9 +56,14 @@ public class OntologyConnector {
 	 */
 	public DatatypeProperty getOntologyDatatypeProperty(String uri) {
 		ExtendedIterator<DatatypeProperty> props = ontologyModel.listDatatypeProperties();
-		Optional<DatatypeProperty> firstProp = props.toList().stream().filter(o -> o.getURI().equals(uri)).findFirst();
-		return firstProp.isPresent() ? firstProp.get() : null;
-	}	
+        while (props.hasNext()) {
+            DatatypeProperty next = props.next();
+            if (uri.equals(next.getURI())) {
+                return next;
+            }
+        }
+        return null;
+    }
 	
 	/**
 	 * Gets a ontology datatype property.
@@ -88,9 +97,14 @@ public class OntologyConnector {
 	
 	public ObjectProperty getOntologyObjectProperty(String uri) {
 		ExtendedIterator<ObjectProperty> props = ontologyModel.listObjectProperties();
-		Optional<ObjectProperty> firstProp = props.toList().stream().filter(o -> o.getURI().equals(uri)).findFirst();
-		return firstProp.isPresent() ? firstProp.get() : null;
-	}
+        while (props.hasNext()) {
+            ObjectProperty next = props.next();
+            if (uri.equals(next.getURI())) {
+                return next;
+            }
+        }
+        return null;
+    }
 	
 	/**
 	 * Gets a ontology object property from the ontology model.
