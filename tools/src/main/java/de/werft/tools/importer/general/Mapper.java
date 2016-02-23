@@ -1,14 +1,18 @@
 package de.werft.tools.importer.general;
 
-import org.apache.log4j.Logger;
-import org.w3c.dom.Node;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Properties;
+import java.util.Set;
+
+import org.apache.log4j.Logger;
+import org.w3c.dom.Node;
 
 /**
  * The mapper is responsible for loading and managing mapping definitions and
@@ -194,17 +198,25 @@ public class Mapper {
 		String xmlPath = XMLProcessor.getXmlPath(node).toLowerCase();
 		
 		// First check mappings that target a class
-		Stream<MappingDefinition> classFilter = mappings.stream().filter(
-				m -> xmlPath.equals(m.getXmlNodePath().toLowerCase()) && m.getTargetOntologyProperty() == null);
-		Iterator<MappingDefinition> classIterator = classFilter.iterator();
+		List<MappingDefinition> tempClassMappings = new ArrayList<MappingDefinition>();
+		for (MappingDefinition m : mappings) {
+			if (xmlPath.equals(m.getXmlNodePath().toLowerCase()) && m.getTargetOntologyProperty() == null) {
+				tempClassMappings.add(m);
+			}
+		}
+		Iterator<MappingDefinition> classIterator = tempClassMappings.iterator();
 		List<MappingDefinition> classMappings = checkAttributeConditions(classIterator, node);
-
+		
 		// Then check mappings that target properties
-		Stream<MappingDefinition> propFilter = mappings.stream().filter(
-				m -> xmlPath.equals(m.getXmlNodePath().toLowerCase()) && m.getTargetOntologyProperty() != null);
-		Iterator<MappingDefinition> propIterator = propFilter.iterator();
+		List<MappingDefinition> tempPropMappings = new ArrayList<MappingDefinition>();
+		for (MappingDefinition m : mappings) {
+			if (xmlPath.equals(m.getXmlNodePath().toLowerCase()) && m.getTargetOntologyProperty() != null) {
+				tempPropMappings.add(m);
+			}
+		}
+		Iterator<MappingDefinition> propIterator = tempPropMappings.iterator();
 		List<MappingDefinition> propMappings = checkAttributeConditions(propIterator, node);
-
+		
 		result.addAll(classMappings);
 		result.addAll(propMappings);	
 		
