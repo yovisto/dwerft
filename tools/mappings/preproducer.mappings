@@ -461,7 +461,7 @@ map51.conditionalAttributeValue=
 map51.contentSource=TEXT_CONTENT
 map51.contentElementName=
 map51.targetOntologyClass=http://filmontology.org/ontology/1.0/Crew
-map51.targetOntologyProperty=http://filmontology.org/ontology/1.0/name
+map51.targetOntologyProperty=http://filmontology.org/ontology/1.0/crewRole
 map51.targetPropertyType=DATATYPE_PROPERTY
 
 map52.xmlNodePath=/root/return/prp:project/prp:function-group/prp:function/prp:team/name
