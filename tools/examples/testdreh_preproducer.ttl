@@ -11,23 +11,26 @@
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B56>
         a                          foo:Crew ;
         foo:crewCode               "PRD002"^^xsd:string ;
+        foo:crewRole               "Co-Produzent"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0B56"^^xsd:string ;
         foo:internalIdentifier     "17"^^xsd:long ;
-        foo:name                   "Maike albers"^^xsd:string , "Co-Produzent"^^xsd:string .
+        foo:name                   "Maike albers"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8E>
         a                          foo:Crew ;
         foo:crewCode               "KAM001"^^xsd:string ;
+        foo:crewRole               "Director of Photography"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0B8E"^^xsd:string ;
         foo:internalIdentifier     "31"^^xsd:long ;
-        foo:name                   "Robert Friebe"^^xsd:string , "Director of Photography"^^xsd:string .
+        foo:name                   "Robert Friebe"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B97>
         a                          foo:Crew ;
         foo:crewCode               "SST007"^^xsd:string ;
+        foo:crewRole               "Drehbuchautor"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0B97"^^xsd:string ;
         foo:internalIdentifier     "43"^^xsd:long ;
-        foo:name                   "Maike Albers"^^xsd:string , "Drehbuchautor"^^xsd:string .
+        foo:name                   "Maike Albers"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC8>
         a                          foo:Set ;
@@ -35,13 +38,6 @@
         foo:identifierPreProducer  "4A2D-14F46B0AC8"^^xsd:string ;
         foo:internalIdentifier     "57"^^xsd:long ;
         foo:name                   "Rückblende See / Archivmaterial"^^xsd:string .
-
-<http://filmontology.org/resource/Project/18989/CrewDepartment/b237324f-2a52-4f2d-b43e-57472902e07b>
-        a                       foo:CrewDepartment ;
-        foo:departmentCode      "PRD"^^xsd:string ;
-        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B56> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B53> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0926> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0C28> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B88> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B7F> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0957> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B85> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0953> ;
-        foo:internalIdentifier  "14"^^xsd:long ;
-        foo:name                "Produktionsstab"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09EB>
         a                          foo:Scene ;
@@ -57,19 +53,18 @@
         foo:sceneNumber            "11"^^xsd:int ;
         foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2> .
 
-<http://filmontology.org/resource/Project/18989/CrewDepartment/f2da85c1-c98f-4845-b490-d52a13d787ed>
-        a                       foo:CrewDepartment ;
-        foo:departmentCode      "KST"^^xsd:string ;
-        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9F> ;
-        foo:internalIdentifier  "35"^^xsd:long ;
-        foo:name                "Kostümbild und Maske"^^xsd:string .
+<http://filmontology.org/resource/Project/18989/Facility/647fea6c-667e-4d5a-b76e-e80304cfa4a4>
+        a                       foo:Facility ;
+        foo:internalIdentifier  "55"^^xsd:long ;
+        foo:name                "keine"^^xsd:string , "toilets"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B91>
         a                          foo:Crew ;
         foo:crewCode               "PST001"^^xsd:string ;
+        foo:crewRole               "Cutter / Editor"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0B91"^^xsd:string ;
         foo:internalIdentifier     "40"^^xsd:long ;
-        foo:name                   "Arno"^^xsd:string , "Cutter / Editor"^^xsd:string .
+        foo:name                   "Arno"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2>
         a                          foo:Set ;
@@ -79,6 +74,13 @@
         foo:name                   "Lichtung am See"^^xsd:string ;
         foo:setLocation            <http://filmontology.org/resource/Project/18989/Location/4A2D-14F46B0BA3> .
 
+<http://filmontology.org/resource/Project/18989/CrewDepartment/f85bf231-d68a-4863-9d00-ac6671d035ca>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "PRD"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B53> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B7F> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0957> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B88> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B56> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0C28> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0926> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B85> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0953> ;
+        foo:internalIdentifier  "14"^^xsd:long ;
+        foo:name                "Produktionsstab"^^xsd:string .
+
 <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B08>
         a                          foo:Character ;
         foo:characterNumber        "7"^^xsd:int ;
@@ -86,12 +88,18 @@
         foo:internalIdentifier     "13"^^xsd:long ;
         foo:name                   "Technikdienstleister"^^xsd:string .
 
-<http://filmontology.org/resource/Project/18989/CrewDepartment/9150c4e3-e9ff-4caf-beb5-5f6831fca31d>
+<http://filmontology.org/resource/Project/18989/CrewDepartment/03a1cf45-89a6-4497-a30c-40d50f69b332>
         a                       foo:CrewDepartment ;
-        foo:departmentCode      "REG"^^xsd:string ;
-        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9A> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8B> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B094F> ;
-        foo:internalIdentifier  "26"^^xsd:long ;
-        foo:name                "Regiestab"^^xsd:string .
+        foo:departmentCode      "TON"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B94> ;
+        foo:internalIdentifier  "37"^^xsd:long ;
+        foo:name                "Tonabteilung"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/5e583c80-3788-4520-9e55-7d2f0d587c26>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "SZE"^^xsd:string ;
+        foo:internalIdentifier  "34"^^xsd:long ;
+        foo:name                "Szenographiestab"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A28>
         a                          foo:Scene ;
@@ -109,9 +117,10 @@
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0957>
         a                          foo:Crew ;
         foo:crewCode               "PRD001"^^xsd:string ;
+        foo:crewRole               "Produzent"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0957"^^xsd:string ;
         foo:internalIdentifier     "16"^^xsd:long ;
-        foo:name                   "Uli Kunz"^^xsd:string , "Produzent"^^xsd:string .
+        foo:name                   "Uli Kunz"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B02>
         a                          foo:Character ;
@@ -124,35 +133,34 @@
         a                          foo:Project ;
         foo:hasCast                <http://filmontology.org/resource/Project/18989/Cast/4A2D-14F46B0B0B> , <http://filmontology.org/resource/Project/18989/Cast/4A2D-14F46B0B36> ;
         foo:hasCharacter           <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B02> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B00> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0AFE> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B01> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B03> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0AFF> , <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B08> ;
-        foo:hasCompany             <http://filmontology.org/resource/Project/18989/Company/fbce4ab5-706d-46b3-8fcf-22213d3541bd> ;
+        foo:hasCompany             <http://filmontology.org/resource/Project/18989/Company/fb4b4584-0f5e-408f-9acb-a737e1336e21> ;
         foo:hasCrew                <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9F> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9A> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B53> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B91> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0926> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B56> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0C28> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8B> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B94> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0957> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9C> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B82> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B88> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B094F> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8E> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B7F> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0953> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B97> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B85> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0960> ;
-        foo:hasCrewDepartment      <http://filmontology.org/resource/Project/18989/CrewDepartment/9150c4e3-e9ff-4caf-beb5-5f6831fca31d> , <http://filmontology.org/resource/Project/18989/CrewDepartment/0170fe74-edc6-43db-b2e9-5917e2a36e63> , <http://filmontology.org/resource/Project/18989/CrewDepartment/46950b26-e58b-4e6c-b235-ad5860d40626> , <http://filmontology.org/resource/Project/18989/CrewDepartment/dd7d5af2-0d3d-4b19-9466-91b56965f40e> , <http://filmontology.org/resource/Project/18989/CrewDepartment/b237324f-2a52-4f2d-b43e-57472902e07b> , <http://filmontology.org/resource/Project/18989/CrewDepartment/d005cc51-fa96-4e96-a4e7-dae273557d2d> , <http://filmontology.org/resource/Project/18989/CrewDepartment/aab96f19-911f-46eb-a3d4-1c00e7668dc9> , <http://filmontology.org/resource/Project/18989/CrewDepartment/e7ed15a2-85e4-4514-bc5b-676406eeb460> , <http://filmontology.org/resource/Project/18989/CrewDepartment/d3748b57-b1e3-4a80-a8ca-ed07fc954050> , <http://filmontology.org/resource/Project/18989/CrewDepartment/f2da85c1-c98f-4845-b490-d52a13d787ed> , <http://filmontology.org/resource/Project/18989/CrewDepartment/345f2255-fcde-4d4d-a1c1-f2c0d3573a59> ;
+        foo:hasCrewDepartment      <http://filmontology.org/resource/Project/18989/CrewDepartment/7561c6ca-a9f4-4ead-8f77-a9bbc83c175d> , <http://filmontology.org/resource/Project/18989/CrewDepartment/f85bf231-d68a-4863-9d00-ac6671d035ca> , <http://filmontology.org/resource/Project/18989/CrewDepartment/5e583c80-3788-4520-9e55-7d2f0d587c26> , <http://filmontology.org/resource/Project/18989/CrewDepartment/e69ad740-ac01-44ac-8020-7a36cd8ad6e8> , <http://filmontology.org/resource/Project/18989/CrewDepartment/767f28e3-59db-46de-acbe-7ed9bb0d9e79> , <http://filmontology.org/resource/Project/18989/CrewDepartment/03a1cf45-89a6-4497-a30c-40d50f69b332> , <http://filmontology.org/resource/Project/18989/CrewDepartment/18a86c2b-5ad5-4b3d-a9b2-5007f55203d9> , <http://filmontology.org/resource/Project/18989/CrewDepartment/dbdf705d-e050-40c4-b2bc-26b46a3b74bf> , <http://filmontology.org/resource/Project/18989/CrewDepartment/f22c5dbf-c055-4fad-8548-9040ca401deb> , <http://filmontology.org/resource/Project/18989/CrewDepartment/14f37659-301f-46ba-8015-563fd5d99e7a> , <http://filmontology.org/resource/Project/18989/CrewDepartment/460423aa-5405-4b8a-a621-8eeb02bf0898> ;
         foo:hasEpisode             <http://filmontology.org/resource/Project/18989/Episode/4A2D-13532F7E01> ;
         foo:hasSet                 <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AAD> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AE0> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AAA> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0ADA> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0ADD> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB3> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB9> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB6> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC8> , <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB0> ;
         foo:hasShootingSchedule    <http://filmontology.org/resource/Project/18989/ShootingSchedule/4A2D-14F46B05B7> ;
         foo:identifierDramaQueen   "e2c02b39-5aed-4f83-a425-4161cbff03c6"^^xsd:string ;
         foo:identifierPreProducer  "18989"^^xsd:int ;
         foo:internalIdentifier     "1"^^xsd:long ;
+        foo:productionNumber       "62120001_0834"^^xsd:string ;
         foo:title                  "dwerft Testdreh"^^xsd:string .
 
-<http://filmontology.org/resource/Project/18989/Company/fbce4ab5-706d-46b3-8fcf-22213d3541bd>
-        a                       foo:Company ;
-        foo:address             <http://filmontology.org/resource/Project/18989/Address/4dfbb404-d10a-4383-bce3-3bff740a01b7> ;
-        foo:internalIdentifier  "3"^^xsd:long ;
-        foo:name                "Filmuniversität Babelsberg Konrad Wolf"^^xsd:string .
+<http://filmontology.org/resource/Project/18989/Address/41ff41e1-ff50-498d-a8d2-2eab1a3d7723>
+        a                       foo:Address ;
+        foo:internalIdentifier  "62"^^xsd:long .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/767f28e3-59db-46de-acbe-7ed9bb0d9e79>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "SST"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B97> ;
+        foo:internalIdentifier  "42"^^xsd:long ;
+        foo:name                "sonstiger Stab"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Cast/4A2D-14F46B0B0B>
         a                       foo:Cast ;
         foo:internalIdentifier  "6"^^xsd:long ;
         foo:name                "Olgu Caglar"^^xsd:string ;
         foo:sex                 "male"^^xsd:string .
-
-<http://filmontology.org/resource/Project/18989/CrewDepartment/e7ed15a2-85e4-4514-bc5b-676406eeb460>
-        a                       foo:CrewDepartment ;
-        foo:departmentCode      "TON"^^xsd:string ;
-        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B94> ;
-        foo:internalIdentifier  "37"^^xsd:long ;
-        foo:name                "Tonabteilung"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09E0>
         a                          foo:Scene ;
@@ -169,28 +177,33 @@
 
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9A>
         a                          foo:Crew ;
+        foo:crewRole               "Dramaturg"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0B9A"^^xsd:string ;
         foo:internalIdentifier     "29"^^xsd:long ;
-        foo:name                   "Daniela Bleistift"^^xsd:string , "Dramaturg"^^xsd:string .
+        foo:name                   "Daniela Bleistift"^^xsd:string .
 
-<http://filmontology.org/resource/Project/18989/Facility/4e936492-985e-4cee-a3b5-b3a84f310000>
-        a                       foo:Facility ;
-        foo:internalIdentifier  "55"^^xsd:long ;
-        foo:name                "keine"^^xsd:string , "toilets"^^xsd:string .
+<http://filmontology.org/resource/Project/18989/Address/598e1821-b3df-48b4-8473-992c4c884402>
+        a                       foo:Address ;
+        foo:cityName            "Potsdam"^^xsd:string ;
+        foo:houseNumber         "11"^^xsd:int ;
+        foo:internalIdentifier  "4"^^xsd:long ;
+        foo:streetName          "Marlene-Dietrich-Allee"^^xsd:string ;
+        foo:zipCode             "14482"^^xsd:int .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/f22c5dbf-c055-4fad-8548-9040ca401deb>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "KST"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9F> ;
+        foo:internalIdentifier  "35"^^xsd:long ;
+        foo:name                "Kostümbild und Maske"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B7F>
         a                          foo:Crew ;
         foo:crewCode               "PRD017"^^xsd:string ;
+        foo:crewRole               "Filmgeschäftsführung"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0B7F"^^xsd:string ;
         foo:internalIdentifier     "20"^^xsd:long ;
-        foo:name                   "Franz Finanzheini"^^xsd:string , "Filmgeschäftsführung"^^xsd:string .
-
-<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B88>
-        a                          foo:Crew ;
-        foo:crewCode               "PRD025"^^xsd:string ;
-        foo:identifierPreProducer  "4A2D-14F46B0B88"^^xsd:string ;
-        foo:internalIdentifier     "22"^^xsd:long ;
-        foo:name                   "Jörg Waitelonis"^^xsd:string , "Set-Praktikant"^^xsd:string .
+        foo:name                   "Franz Finanzheini"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB9>
         a                          foo:Set ;
@@ -198,6 +211,21 @@
         foo:identifierPreProducer  "4A2D-14F46B0AB9"^^xsd:string ;
         foo:internalIdentifier     "52"^^xsd:long ;
         foo:name                   "Waldweg"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B88>
+        a                          foo:Crew ;
+        foo:crewCode               "PRD025"^^xsd:string ;
+        foo:crewRole               "Set-Praktikant"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B88"^^xsd:string ;
+        foo:internalIdentifier     "22"^^xsd:long ;
+        foo:name                   "Jörg Waitelonis"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/e69ad740-ac01-44ac-8020-7a36cd8ad6e8>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "KAM"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8E> ;
+        foo:internalIdentifier  "30"^^xsd:long ;
+        foo:name                "Kamerastab"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/ShootingDay/4A2D-14F46B0969>
         a                          foo:ShootingDay ;
@@ -224,6 +252,21 @@
         foo:name                   "Technikverleih"^^xsd:string ;
         foo:setType                "locori"^^xsd:string .
 
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B82>
+        a                          foo:Crew ;
+        foo:crewCode               "PST012"^^xsd:string ;
+        foo:crewRole               "Postproduktionsbetreuung"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0B82"^^xsd:string ;
+        foo:internalIdentifier     "41"^^xsd:long ;
+        foo:name                   "Uli Kunz"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/460423aa-5405-4b8a-a621-8eeb02bf0898>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "PST"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B82> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B91> ;
+        foo:internalIdentifier  "39"^^xsd:long ;
+        foo:name                "Postproduktion"^^xsd:string .
+
 <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB3>
         a                          foo:Set ;
         foo:identifierDramaQueen   "1b040a05-35d9-4b52-8446-f99a65d8a773"^^xsd:string ;
@@ -231,25 +274,9 @@
         foo:internalIdentifier     "50"^^xsd:long ;
         foo:name                   "Straße"^^xsd:string .
 
-<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B82>
-        a                          foo:Crew ;
-        foo:crewCode               "PST012"^^xsd:string ;
-        foo:identifierPreProducer  "4A2D-14F46B0B82"^^xsd:string ;
-        foo:internalIdentifier     "41"^^xsd:long ;
-        foo:name                   "Uli Kunz"^^xsd:string , "Postproduktionsbetreuung"^^xsd:string .
-
-<http://filmontology.org/resource/Project/18989/CrewDepartment/d3748b57-b1e3-4a80-a8ca-ed07fc954050>
-        a                       foo:CrewDepartment ;
-        foo:departmentCode      "SZE"^^xsd:string ;
-        foo:internalIdentifier  "34"^^xsd:long ;
-        foo:name                "Szenographiestab"^^xsd:string .
-
-<http://filmontology.org/resource/Project/18989/CrewDepartment/0170fe74-edc6-43db-b2e9-5917e2a36e63>
-        a                       foo:CrewDepartment ;
-        foo:departmentCode      "RED"^^xsd:string ;
-        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0960> ;
-        foo:internalIdentifier  "24"^^xsd:long ;
-        foo:name                "Redaktion"^^xsd:string .
+<http://filmontology.org/resource/Project/18989/Address/8909a143-d9ad-49df-b255-1ba6f2b3de51>
+        a                       foo:Address ;
+        foo:internalIdentifier  "48"^^xsd:long .
 
 <http://filmontology.org/resource/Project/18989/Extra/4A2D-14F46B0C03>
         a                          foo:Extra ;
@@ -259,7 +286,7 @@
 
 <http://filmontology.org/resource/Project/18989/Location/4A2D-14F46B0BE1>
         a                          foo:Location ;
-        foo:address                <http://filmontology.org/resource/Project/18989/Address/4d8eaecc-5837-4b52-b2cc-b644b75d9202> ;
+        foo:address                <http://filmontology.org/resource/Project/18989/Address/41ff41e1-ff50-498d-a8d2-2eab1a3d7723> ;
         foo:identifierPreProducer  "4A2D-14F46B0BE1"^^xsd:string ;
         foo:internalIdentifier     "61"^^xsd:long ;
         foo:name                   "Tempelhofer Feld"^^xsd:string .
@@ -267,17 +294,10 @@
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9F>
         a                          foo:Crew ;
         foo:crewCode               "SZE023"^^xsd:string ;
+        foo:crewRole               "Maskenbildner"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0B9F"^^xsd:string ;
         foo:internalIdentifier     "36"^^xsd:long ;
-        foo:name                   "Roger Pinsel"^^xsd:string , "Maskenbildner"^^xsd:string .
-
-<http://filmontology.org/resource/Project/18989/Address/4dfbb404-d10a-4383-bce3-3bff740a01b7>
-        a                       foo:Address ;
-        foo:cityName            "Potsdam"^^xsd:string ;
-        foo:houseNumber         "11"^^xsd:int ;
-        foo:internalIdentifier  "4"^^xsd:long ;
-        foo:streetName          "Marlene-Dietrich-Allee"^^xsd:string ;
-        foo:zipCode             "14482"^^xsd:int .
+        foo:name                   "Roger Pinsel"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0997>
         a                          foo:Scene ;
@@ -293,26 +313,19 @@
         foo:sceneNumber            "4"^^xsd:int ;
         foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB3> .
 
-<http://filmontology.org/resource/Project/18989/Address/a24c1557-4643-4af4-8953-056a5ab7a028>
-        a                       foo:Address ;
-        foo:cityName            "Marienwerder"^^xsd:string ;
-        foo:contactPerson       "Beatrix Wager"^^xsd:string ;
-        foo:internalIdentifier  "56"^^xsd:long ;
-        foo:zipCode             "16348"^^xsd:int .
-
-<http://filmontology.org/resource/Project/18989/CrewDepartment/dd7d5af2-0d3d-4b19-9466-91b56965f40e>
-        a                       foo:CrewDepartment ;
-        foo:departmentCode      "SST"^^xsd:string ;
-        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B97> ;
-        foo:internalIdentifier  "42"^^xsd:long ;
-        foo:name                "sonstiger Stab"^^xsd:string .
-
 <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0ADD>
         a                          foo:Set ;
         foo:identifierDramaQueen   "0e03200e-44a6-4375-8699-4ec3ff7b029d"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0ADD"^^xsd:string ;
         foo:internalIdentifier     "59"^^xsd:long ;
         foo:name                   "Rückblende Tempelhofer Feld"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/dbdf705d-e050-40c4-b2bc-26b46a3b74bf>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "REG"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9A> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8B> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B094F> ;
+        foo:internalIdentifier  "26"^^xsd:long ;
+        foo:name                "Regiestab"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A13>
         a                          foo:Scene ;
@@ -327,13 +340,6 @@
         foo:sceneInserted          false ;
         foo:sceneNumber            "15"^^xsd:int ;
         foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2> .
-
-<http://filmontology.org/resource/Project/18989/CrewDepartment/345f2255-fcde-4d4d-a1c1-f2c0d3573a59>
-        a                       foo:CrewDepartment ;
-        foo:departmentCode      "KAM"^^xsd:string ;
-        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8E> ;
-        foo:internalIdentifier  "30"^^xsd:long ;
-        foo:name                "Kamerastab"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A1D>
         a                          foo:Scene ;
@@ -360,9 +366,17 @@
 <http://filmontology.org/resource/Project/18989/Episode/4A2D-13532F7E01>
         a                          foo:Episode ;
         foo:duration               "0"^^xsd:int ;
-        foo:hasSceneGroup          <http://filmontology.org/resource/Project/18989/SceneGroup/13e511a1-1ca6-415b-b4c3-b6df27aa3dcc> ;
+        foo:hasSceneGroup          <http://filmontology.org/resource/Project/18989/SceneGroup/b4bc0a07-97d1-4112-b31a-f23374f67b44> ;
         foo:identifierPreProducer  "4A2D-13532F7E01"^^xsd:string ;
-        foo:internalIdentifier     "2"^^xsd:long .
+        foo:internalIdentifier     "2"^^xsd:long ;
+        foo:logline                "dwerft-Testdreh erzählt die Geschichte der technologischen Entwicklung von Vernetzung im Filmbereich. "^^xsd:string ;
+        foo:synopsis               "dwerft-Testdreh ist ein Film über die Vernetzung von verschiedenen Tools. Drehbuch-Software, Preproduction-Tools, technische Drehdaten, die Vernetzung mit der Postproduktion bis hin zu Rechtemanagement und Mastering werden zukünftig über die Linked Production Data Cloud abgebildet. Alle im Projekt liegenden Daten dienen diesem Ziel. "^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/Company/fb4b4584-0f5e-408f-9acb-a737e1336e21>
+        a                       foo:Company ;
+        foo:address             <http://filmontology.org/resource/Project/18989/Address/598e1821-b3df-48b4-8473-992c4c884402> ;
+        foo:internalIdentifier  "3"^^xsd:long ;
+        foo:name                "Filmuniversität Babelsberg Konrad Wolf"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AE0>
         a                          foo:Set ;
@@ -372,7 +386,7 @@
         foo:name                   "Tempelhofer Feld"^^xsd:string ;
         foo:setLocation            <http://filmontology.org/resource/Project/18989/Location/4A2D-14F46B0BE1> .
 
-<http://filmontology.org/resource/Project/18989/CrewDepartment/46950b26-e58b-4e6c-b235-ad5860d40626>
+<http://filmontology.org/resource/Project/18989/CrewDepartment/18a86c2b-5ad5-4b3d-a9b2-5007f55203d9>
         a                       foo:CrewDepartment ;
         foo:departmentCode      "MUS"^^xsd:string ;
         foo:internalIdentifier  "44"^^xsd:long ;
@@ -381,23 +395,26 @@
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B53>
         a                          foo:Crew ;
         foo:crewCode               "PRD008"^^xsd:string ;
+        foo:crewRole               "Produktionsassistenz"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0B53"^^xsd:string ;
         foo:internalIdentifier     "19"^^xsd:long ;
-        foo:name                   "Mareike Graf"^^xsd:string , "Produktionsassistenz"^^xsd:string .
+        foo:name                   "Mareike Graf"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B8B>
         a                          foo:Crew ;
         foo:crewCode               "REG007"^^xsd:string ;
+        foo:crewRole               "Script / Continuity"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0B8B"^^xsd:string ;
         foo:internalIdentifier     "28"^^xsd:long ;
-        foo:name                   "Nadja Jankowski"^^xsd:string , "Script / Continuity"^^xsd:string .
+        foo:name                   "Nadja Jankowski"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B94>
         a                          foo:Crew ;
         foo:crewCode               "TON001"^^xsd:string ;
+        foo:crewRole               "Settonmeister"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0B94"^^xsd:string ;
         foo:internalIdentifier     "38"^^xsd:long ;
-        foo:name                   "Maike Albers"^^xsd:string , "Settonmeister"^^xsd:string .
+        foo:name                   "Maike Albers"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A33>
         a                          foo:Scene ;
@@ -455,30 +472,13 @@
         foo:sceneNumber            "3"^^xsd:int ;
         foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB0> .
 
-<http://filmontology.org/resource/Project/18989/SceneGroup/13e511a1-1ca6-415b-b4c3-b6df27aa3dcc>
-        a                       foo:SceneGroup ;
-        foo:hasScene            <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09A1> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09CB> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A33> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09AB> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09B5> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09D5> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09EB> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0979> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A13> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09FF> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A3D> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B098D> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09E0> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09F5> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09C1> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A1D> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0983> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0997> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A28> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A09> ;
-        foo:internalIdentifier  "64"^^xsd:long ;
-        foo:lastModified        "2015-12-02T14:19:26"^^xsd:string ;
-        foo:revision            "Dramaqueen Import"^^xsd:string .
-
-<http://filmontology.org/resource/Project/18989/CrewDepartment/aab96f19-911f-46eb-a3d4-1c00e7668dc9>
-        a                       foo:CrewDepartment ;
-        foo:departmentCode      "LIG"^^xsd:string ;
-        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9C> ;
-        foo:internalIdentifier  "32"^^xsd:long ;
-        foo:name                "Licht und Bühne"^^xsd:string .
-
-<http://filmontology.org/resource/Project/18989/Address/452b7d77-26f0-48b9-900f-5b69f3474428>
-        a                       foo:Address ;
-        foo:internalIdentifier  "48"^^xsd:long .
-
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0926>
         a                          foo:Crew ;
         foo:crewCode               "PRD006b"^^xsd:string ;
+        foo:crewRole               "Line Producer"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0926"^^xsd:string ;
         foo:internalIdentifier     "18"^^xsd:long ;
-        foo:name                   "Helga Herstellungsleitung"^^xsd:string , "Line Producer"^^xsd:string .
+        foo:name                   "Helga Herstellungsleitung"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/ShootingSchedule/4A2D-14F46B05B7>
         a                          foo:ShootingSchedule ;
@@ -509,9 +509,12 @@
         foo:internalIdentifier     "10"^^xsd:long ;
         foo:name                   "Kameraassistent"^^xsd:string .
 
-<http://filmontology.org/resource/Project/18989/Address/4d8eaecc-5837-4b52-b2cc-b644b75d9202>
-        a                       foo:Address ;
-        foo:internalIdentifier  "62"^^xsd:long .
+<http://filmontology.org/resource/Project/18989/SceneGroup/b4bc0a07-97d1-4112-b31a-f23374f67b44>
+        a                       foo:SceneGroup ;
+        foo:hasScene            <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09FF> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09F5> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0997> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09A1> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A28> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09B5> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A13> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A3D> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A09> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A33> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09CB> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0983> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A1D> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B098D> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09E0> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09AB> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09D5> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09EB> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09C1> , <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0979> ;
+        foo:internalIdentifier  "64"^^xsd:long ;
+        foo:lastModified        "2015-12-02T14:19:26"^^xsd:string ;
+        foo:revision            "Dramaqueen Import"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09D5>
         a                          foo:Scene ;
@@ -538,9 +541,10 @@
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B85>
         a                          foo:Crew ;
         foo:crewCode               "PRD023"^^xsd:string ;
+        foo:crewRole               "Set-Runner"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0B85"^^xsd:string ;
         foo:internalIdentifier     "21"^^xsd:long ;
-        foo:name                   "Tabea Tietz"^^xsd:string , "Set-Runner"^^xsd:string .
+        foo:name                   "Tabea Tietz"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB6>
         a                          foo:Set ;
@@ -549,18 +553,11 @@
 
 <http://filmontology.org/resource/Project/18989/Location/4A2D-14F46B0BA3>
         a                          foo:Location ;
-        foo:address                <http://filmontology.org/resource/Project/18989/Address/a24c1557-4643-4af4-8953-056a5ab7a028> ;
-        foo:hasFacility            <http://filmontology.org/resource/Project/18989/Facility/4e936492-985e-4cee-a3b5-b3a84f310000> ;
+        foo:address                <http://filmontology.org/resource/Project/18989/Address/fd4d628a-e2ac-4ca5-aab8-ee42ac92a3c5> ;
+        foo:hasFacility            <http://filmontology.org/resource/Project/18989/Facility/647fea6c-667e-4d5a-b76e-e80304cfa4a4> ;
         foo:identifierPreProducer  "4A2D-14F46B0BA3"^^xsd:string ;
         foo:internalIdentifier     "54"^^xsd:long ;
         foo:name                   "Bernsteinsee"^^xsd:string .
-
-<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0953>
-        a                          foo:Crew ;
-        foo:crewCode               "PRD001"^^xsd:string ;
-        foo:identifierPreProducer  "4A2D-14F46B0953"^^xsd:string ;
-        foo:internalIdentifier     "15"^^xsd:long ;
-        foo:name                   "Martin Steyer"^^xsd:string , "Produzent"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B0A09>
         a                          foo:Scene ;
@@ -576,6 +573,14 @@
         foo:sceneNumber            "14"^^xsd:int ;
         foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AC2> .
 
+<http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0953>
+        a                          foo:Crew ;
+        foo:crewCode               "PRD001"^^xsd:string ;
+        foo:crewRole               "Produzent"^^xsd:string ;
+        foo:identifierPreProducer  "4A2D-14F46B0953"^^xsd:string ;
+        foo:internalIdentifier     "15"^^xsd:long ;
+        foo:name                   "Martin Steyer"^^xsd:string .
+
 <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09A1>
         a                          foo:Scene ;
         foo:dayTime                "day"^^xsd:string ;
@@ -589,6 +594,13 @@
         foo:sceneInserted          false ;
         foo:sceneNumber            "5"^^xsd:int ;
         foo:sceneSet               <http://filmontology.org/resource/Project/18989/Set/4A2D-14F46B0AB6> .
+
+<http://filmontology.org/resource/Project/18989/Address/fd4d628a-e2ac-4ca5-aab8-ee42ac92a3c5>
+        a                       foo:Address ;
+        foo:cityName            "Marienwerder"^^xsd:string ;
+        foo:contactPerson       "Beatrix Wager"^^xsd:string ;
+        foo:internalIdentifier  "56"^^xsd:long ;
+        foo:zipCode             "16348"^^xsd:int .
 
 for:DWERFT  <http://purl.org/dc/terms/hasPart>
                 <http://filmontology.org/resource/Project/18989> .
@@ -652,9 +664,10 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9C>
         a                          foo:Crew ;
         foo:crewCode               "LIG001"^^xsd:string ;
+        foo:crewRole               "Oberbeleuchter"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0B9C"^^xsd:string ;
         foo:internalIdentifier     "33"^^xsd:long ;
-        foo:name                   "Friedrich Armleuchter"^^xsd:string , "Oberbeleuchter"^^xsd:string .
+        foo:name                   "Friedrich Armleuchter"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/ShootingDay/4A2D-14F46B096A>
         a                          foo:ShootingDay ;
@@ -667,7 +680,7 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
 
 <http://filmontology.org/resource/Project/18989/Location/4A2D-14F46B0BC3>
         a                          foo:Location ;
-        foo:address                <http://filmontology.org/resource/Project/18989/Address/452b7d77-26f0-48b9-900f-5b69f3474428> ;
+        foo:address                <http://filmontology.org/resource/Project/18989/Address/8909a143-d9ad-49df-b255-1ba6f2b3de51> ;
         foo:identifierPreProducer  "4A2D-14F46B0BC3"^^xsd:string ;
         foo:internalIdentifier     "47"^^xsd:long ;
         foo:name                   "Camelot Technikverleih"^^xsd:string .
@@ -675,9 +688,17 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0960>
         a                          foo:Crew ;
         foo:crewCode               "RED004"^^xsd:string ;
+        foo:crewRole               "Redakteur"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0960"^^xsd:string ;
         foo:internalIdentifier     "25"^^xsd:long ;
-        foo:name                   "Rudi Redakteur"^^xsd:string , "Redakteur"^^xsd:string .
+        foo:name                   "Rudi Redakteur"^^xsd:string .
+
+<http://filmontology.org/resource/Project/18989/CrewDepartment/14f37659-301f-46ba-8015-563fd5d99e7a>
+        a                       foo:CrewDepartment ;
+        foo:departmentCode      "LIG"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B9C> ;
+        foo:internalIdentifier  "32"^^xsd:long ;
+        foo:name                "Licht und Bühne"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09C1>
         a                          foo:Scene ;
@@ -716,16 +737,18 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B094F>
         a                          foo:Crew ;
         foo:crewCode               "REG001"^^xsd:string ;
+        foo:crewRole               "Regie"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B094F"^^xsd:string ;
         foo:internalIdentifier     "27"^^xsd:long ;
-        foo:name                   "Cevat Maskar"^^xsd:string , "Regie"^^xsd:string .
+        foo:name                   "Cevat Maskar"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0C28>
         a                          foo:Crew ;
         foo:crewCode               "PRD027"^^xsd:string ;
+        foo:crewRole               "Produktion sonstige"^^xsd:string ;
         foo:identifierPreProducer  "4A2D-14F46B0C28"^^xsd:string ;
         foo:internalIdentifier     "23"^^xsd:long ;
-        foo:name                   "Henning Agt-Rickauer"^^xsd:string , "Produktion sonstige"^^xsd:string .
+        foo:name                   "Henning Agt-Rickauer"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Character/4A2D-14F46B0B03>
         a                          foo:Character ;
@@ -756,9 +779,9 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
         foo:internalIdentifier     "58"^^xsd:long ;
         foo:name                   "Tempelhofer Feld heuted"^^xsd:string .
 
-<http://filmontology.org/resource/Project/18989/CrewDepartment/d005cc51-fa96-4e96-a4e7-dae273557d2d>
+<http://filmontology.org/resource/Project/18989/CrewDepartment/7561c6ca-a9f4-4ead-8f77-a9bbc83c175d>
         a                       foo:CrewDepartment ;
-        foo:departmentCode      "PST"^^xsd:string ;
-        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B82> , <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0B91> ;
-        foo:internalIdentifier  "39"^^xsd:long ;
-        foo:name                "Postproduktion"^^xsd:string .
+        foo:departmentCode      "RED"^^xsd:string ;
+        foo:hasCrewMember       <http://filmontology.org/resource/Project/18989/Crew/4A2D-14F46B0960> ;
+        foo:internalIdentifier  "24"^^xsd:long ;
+        foo:name                "Redaktion"^^xsd:string .
