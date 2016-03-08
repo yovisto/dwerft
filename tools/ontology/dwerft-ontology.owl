@@ -50,7 +50,7 @@
         <rdfs:domain rdf:resource="&foo;Cast"/>
         <rdfs:domain rdf:resource="&foo;Company"/>
         <rdfs:domain rdf:resource="&foo;Emergency"/>
-		<rdfs:domain rdf:resource="&foo;Institution"/>
+        <rdfs:domain rdf:resource="&foo;Institution"/>
         <rdfs:domain rdf:resource="&foo;Location"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
@@ -1329,6 +1329,19 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/logline -->
+
+    <owl:DatatypeProperty rdf:about="&foo;logline">
+        <rdfs:label>logline</rdfs:label>
+        <rdfs:comment>Very brief summary (one sentence) of the film project / episode</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/lookBurnedIn -->
 
     <owl:DatatypeProperty rdf:about="&foo;lookBurnedIn">
@@ -1592,6 +1605,18 @@
         <rdfs:label>production</rdfs:label>
         <rdfs:comment>Production Name</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/productionNumber -->
+
+    <owl:DatatypeProperty rdf:about="&foo;productionNumber">
+        <rdfs:label>productionNumber</rdfs:label>
+        <rdfs:comment>Unique film production identifier</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -2015,7 +2040,8 @@
     <owl:DatatypeProperty rdf:about="&foo;synopsis">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>synopsis</rdfs:label>
-        <rdfs:comment>Summary of the film project</rdfs:comment>
+        <rdfs:comment>Summary of the most important or interesting parts of the film project / episode.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>

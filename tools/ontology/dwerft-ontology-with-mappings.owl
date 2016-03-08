@@ -56,10 +56,10 @@
         <rdfs:domain rdf:resource="&foo;Cast"/>
         <rdfs:domain rdf:resource="&foo;Company"/>
         <rdfs:domain rdf:resource="&foo;Emergency"/>
-		<rdfs:domain rdf:resource="&foo;Institution"/>
+        <rdfs:domain rdf:resource="&foo;Institution"/>
         <rdfs:domain rdf:resource="&foo;Location"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
-        <owl:equivalentProperty rdf:resource="&bmf;addressAndContact"/>
+        <owl:equivalentProperty rdf:resource="&bmf;AddressAndContact"/>
     </owl:ObjectProperty>
     
 
@@ -165,7 +165,7 @@
         <rdfs:range rdf:resource="&foo;Company"/>
         <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
-        <owl:equivalentProperty rdf:resource="&bmf;productionCompanyReference"/>
+        <owl:equivalentProperty rdf:resource="&bmf;ProductionCompanyReference"/>
     </owl:ObjectProperty>
     
 
@@ -448,15 +448,15 @@
     
 
 
-    <!-- http://www.irt.de/bmf#addressAndContact -->
+    <!-- http://www.irt.de/bmf#AddressAndContact -->
 
-    <rdf:Description rdf:about="&bmf;addressAndContact"/>
+    <rdf:Description rdf:about="&bmf;AddressAndContact"/>
     
 
 
-    <!-- http://www.irt.de/bmf#productionCompanyReference -->
+    <!-- http://www.irt.de/bmf#ProductionCompanyReference -->
 
-    <rdf:Description rdf:about="&bmf;productionCompanyReference"/>
+    <rdf:Description rdf:about="&bmf;ProductionCompanyReference"/>
     
 
 
@@ -758,7 +758,7 @@
         <rdfs:comment>Name of the city of an address</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Address"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <owl:equivalentProperty rdf:resource="&bmf;city"/>
+        <owl:equivalentProperty rdf:resource="&bmf;City"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -822,7 +822,7 @@
         <rdfs:comment>Name of the country of an address</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Address"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <owl:equivalentProperty rdf:resource="&bmf;countryName"/>
+        <owl:equivalentProperty rdf:resource="&bmf;CountryName"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -942,7 +942,7 @@
         <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <owl:equivalentProperty rdf:resource="&ebucore;duration"/>
-        <owl:equivalentProperty rdf:resource="&bmf;duration"/>
+        <owl:equivalentProperty rdf:resource="&bmf;Duration"/>
         <rdfs:range rdf:resource="&xsd;int"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1096,7 +1096,7 @@
         <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <owl:equivalentProperty rdf:resource="&ebucore;frameRate"/>
-        <owl:equivalentProperty rdf:resource="&bmf;frameRate"/>
+        <owl:equivalentProperty rdf:resource="&bmf;FrameRate"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
@@ -1342,6 +1342,19 @@
         <rdfs:label>location</rdfs:label>
         <rdfs:comment>Location</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/logline -->
+
+    <owl:DatatypeProperty rdf:about="&foo;logline">
+        <rdfs:label>logline</rdfs:label>
+        <rdfs:comment>Very brief summary (one sentence) of the film project / episode</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1617,6 +1630,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/productionNumber -->
+
+    <owl:DatatypeProperty rdf:about="&foo;productionNumber">
+        <rdfs:label>productionNumber</rdfs:label>
+        <rdfs:comment>Unique film production identifier</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/projectFps -->
 
     <owl:DatatypeProperty rdf:about="&foo;projectFps">
@@ -1766,7 +1791,7 @@
         <rdfs:comment>Sequential number of a scene in a script. Can have letters (e.g., 5a, if split scene)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Scene"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <owl:equivalentProperty rdf:resource="&bmf;sceneNumber"/>
+        <owl:equivalentProperty rdf:resource="&bmf;SceneNumber"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1999,7 +2024,7 @@
         <rdfs:comment>Name of the street of an address</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Address"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <owl:equivalentProperty rdf:resource="&bmf;streetName"/>
+        <owl:equivalentProperty rdf:resource="&bmf;StreetName"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2036,7 +2061,8 @@
     <owl:DatatypeProperty rdf:about="&foo;synopsis">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>synopsis</rdfs:label>
-        <rdfs:comment>Summary of the film project</rdfs:comment>
+        <rdfs:comment>Summary of the most important or interesting parts of the film project / episode.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -2240,39 +2266,39 @@
     
 
 
-    <!-- http://www.irt.de/bmf#city -->
+    <!-- http://www.irt.de/bmf#City -->
 
-    <rdf:Description rdf:about="&bmf;city"/>
+    <rdf:Description rdf:about="&bmf;City"/>
     
 
 
-    <!-- http://www.irt.de/bmf#countryName -->
+    <!-- http://www.irt.de/bmf#CountryName -->
 
-    <rdf:Description rdf:about="&bmf;countryName"/>
+    <rdf:Description rdf:about="&bmf;CountryName"/>
     
 
 
-    <!-- http://www.irt.de/bmf#duration -->
+    <!-- http://www.irt.de/bmf#Duration -->
 
-    <rdf:Description rdf:about="&bmf;duration"/>
+    <rdf:Description rdf:about="&bmf;Duration"/>
     
 
 
-    <!-- http://www.irt.de/bmf#frameRate -->
+    <!-- http://www.irt.de/bmf#FrameRate -->
 
-    <rdf:Description rdf:about="&bmf;frameRate"/>
+    <rdf:Description rdf:about="&bmf;FrameRate"/>
     
 
 
-    <!-- http://www.irt.de/bmf#sceneNumber -->
+    <!-- http://www.irt.de/bmf#SceneNumber -->
 
-    <rdf:Description rdf:about="&bmf;sceneNumber"/>
+    <rdf:Description rdf:about="&bmf;SceneNumber"/>
     
 
 
-    <!-- http://www.irt.de/bmf#streetName -->
+    <!-- http://www.irt.de/bmf#StreetName -->
 
-    <rdf:Description rdf:about="&bmf;streetName"/>
+    <rdf:Description rdf:about="&bmf;StreetName"/>
     
 
 
