@@ -1616,6 +1616,7 @@
     <owl:DatatypeProperty rdf:about="&foo;productionNumber">
         <rdfs:label>productionNumber</rdfs:label>
         <rdfs:comment>Unique film production identifier</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
