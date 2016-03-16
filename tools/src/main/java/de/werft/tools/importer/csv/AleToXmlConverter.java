@@ -33,7 +33,14 @@ public class AleToXmlConverter extends CsvToXmlConverter {
             if (row.length > 0 && row[0].equalsIgnoreCase("column")) {
                 String[] header = reader.readNext();
                 for (int i = 0; i < header.length; i++) {
-                    header[i] = header[i].replace(" ", "__");
+                    // do many replacement; because other tools are to stupid
+                    header[i] = header[i]
+                            .replace("#", " number")
+                            .replace("(", "open ").replace(")", " close")
+                            .replace("2nd", "second")
+                            .replace("/", " slash ")
+                            .trim()
+                            .replace(" ", "__");
                 }
                 return header;
             }
@@ -59,6 +66,11 @@ public class AleToXmlConverter extends CsvToXmlConverter {
             if (header[i].equalsIgnoreCase("uuid")) {
                 rowElement.setAttribute("uuid", row[i]);
             }
+            if (header[i].isEmpty()) {
+                continue;
+            }
+
+            System.out.println("header " + header[i]);
             Element elem = doc.createElement(header[i]);
             elem.appendChild(doc.createTextNode(row[i]));
             rowElement.appendChild(elem);

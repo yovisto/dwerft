@@ -300,6 +300,6 @@ public class DwerftTools {
     }
 
     private boolean hasExtension(String file, String extensions) {
-        return StringUtils.substringAfterLast(file, ".").matches(extensions);
+        return StringUtils.substringAfterLast(file, ".").toLowerCase().matches(extensions);
     }
 }
