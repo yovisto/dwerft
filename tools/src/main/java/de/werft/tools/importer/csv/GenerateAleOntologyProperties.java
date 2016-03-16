@@ -16,7 +16,7 @@ public class GenerateAleOntologyProperties {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(new File("mappings/ale-columns-properties.txt")));
 			
-			BufferedWriter wr = new BufferedWriter(new FileWriter(new File("mappings/generated-ale-properties.txt")));
+			BufferedWriter wr = new BufferedWriter(new FileWriter(new File("ontology/ale-properties-generated.txt")));
 			
 			String line = "";
 			
