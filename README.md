@@ -124,12 +124,13 @@ The framework comes with a selection of available operations available for insta
 All available options are listed below and can also be viewed by using the `-help` option. Please note that querying the Preproducer API requires valid credentials.
 
  - `-convert` : Converts from one format to another. We determine the right conversion from the file extensions.
-                Usage: <input> <output> <mapping>
-                Inputs: `*.dq` for dramaqueen (needs a rdf output file); 
-                `*.(csv|ale)` for csv (converts without output file to xml, otherwise to rdf with a mapping file)
-                `*.xml` for generic conversion (needs rdf output file and a mapping)
-                no input file for preproducer (needs a rdf output file)
-                valid output files are `*.(rdf|ttl|nt)`
+    + Usage: `<input> <output> <mapping>`
+    +  valid input files are 
+      * `*.dq` for dramaqueen (needs a rdf output file); 
+      * `*.(csv|ale)` for csv (converts without output file to xml, otherwise to rdf with a mapping file)
+      * `*.xml` for generic conversion (needs rdf output file and a mapping)
+      *  no input file for preproducer (needs a rdf output file)
+    + valid output files are `*.(rdf|ttl|nt)`
  - `-upload` : Uploads a rdf file to SPARQL endpoint (currently not supported).
  - `-print`: Prints the RDF output to console. Does not replace writing RDF to file.
  - `-format`: Specify an RDF output format. Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig'). Default is Turtle.
