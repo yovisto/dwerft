@@ -3,6 +3,7 @@ package de.werft.tools.sources;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -14,7 +15,7 @@ public class AbstractSource implements Source {
 	@Override
 	public InputStream get(String source) {
 		try {
-			return new FileInputStream(source);
+			return new BufferedInputStream( new FileInputStream(source));
 		} catch (FileNotFoundException e) {
 			L.error(source + " is not reachable. " + e.getMessage());
 		}
