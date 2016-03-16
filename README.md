@@ -98,7 +98,7 @@ Manually setting up the framework requires Apache Maven. So start of by getting 
   git clone https://github.com/yovisto/dwerft.git ~/dwerft_lpdc
   ```
 
-If you plan on using an operation which utilizes the Preproducer API, make sure to provide valid credentials. Simply copy the template to provided to the `tools` directory, and with an editor of your choice add your credentials. 
+If you plan on using an operation which utilizes the Preproducer API, make sure to provide valid credentials. Simply copy the template we provide to the `tools` directory, and with an editor of your choice add your credentials. Adjust other settings to your needs. 
   
   ```
   cd ~/dwerft_lpdc/tools
@@ -106,7 +106,7 @@ If you plan on using an operation which utilizes the Preproducer API, make sure 
   vim DwerftConfig.properties
   ```
 
-Irrespective of whether you added credentials or not, you can now execute the lpdc project by running the build script provided. The various arguments available are listed in the next section.
+Irrespective of whether you added credentials or not, you can now execute the lpdc project by running the run script provided. The various arguments available are listed in the next section.
   
   ```
   ./run.sh <your arguments>
@@ -117,17 +117,22 @@ The framework comes with a selection of available operations available for insta
   - DramaQueen XML to RDF
   - PreProducer API to RDF
   - Custom XML to RDF
+  - CSV/ALE to XML/RDF
 
 #### Valid arguments
 
-All available options are listed below and can also be viewed by using the `-h` or `--help` option. Please note that querying the Preproducer API requires valid credentials.
+All available options are listed below and can also be viewed by using the `-help` option. Please note that querying the Preproducer API requires valid credentials.
 
- - `-i`, `--input`: Specify an XML input file
- - `-o`, `--output`: Specify an RDF output file
- - `-t`, `--type`: Specify an input type. Available options are PreProducer ('prp'), DramaQueen ('dq'), and Generic ('g')
- - `-m`, `--mapping`: Specifiy a custom mapping file for use with the generic XML to RDF converter
- - `-p` `--print`: Prints the RDF output to console. Does not replace writing RDF to file.
- - `-f`, `--format`: Specify an RDF output format. Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig'). Default is Turtle.
+ - `-convert` : Converts from one format to another. We determine the right conversion from the file extensions.
+                Usage: <input> <output> <mapping>
+                Inputs: `*.dq` for dramaqueen (needs a rdf output file); 
+                `*.(csv|ale)` for csv (converts without output file to xml, otherwise to rdf with a mapping file)
+                `*.xml` for generic conversion (needs rdf output file and a mapping)
+                no input file for preproducer (needs a rdf output file)
+                valid output files are `*.(rdf|ttl|nt)`
+ - `-upload` : Uploads a rdf file to SPARQL endpoint (currently not supported).
+ - `-print`: Prints the RDF output to console. Does not replace writing RDF to file.
+ - `-format`: Specify an RDF output format. Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig'). Default is Turtle.
 
 ## Package structure
 
