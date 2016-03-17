@@ -7,8 +7,9 @@
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY for "http://filmontology.org/resource/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY foo "http://filmontology.org/ontology/1.0/" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY foo "http://filmontology.org/ontology/1.0/" >
     <!ENTITY webprotege "http://protege.stanford.edu/webprotege/" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY ebucore "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#" >
@@ -17,16 +18,17 @@
 
 <rdf:RDF xmlns="http://filmontology.org/"
      xml:base="http://filmontology.org/"
-     xmlns:bmf="http://www.irt.de/bmf#"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:webprotege="http://protege.stanford.edu/webprotege/"
-     xmlns:for="http://filmontology.org/resource/"
-     xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:foo="http://filmontology.org/ontology/1.0/"
+     xmlns:for="http://filmontology.org/resource/"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:foo="http://filmontology.org/ontology/1.0/">
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+     xmlns:bmf="http://www.irt.de/bmf#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://filmontology.org/ontology/ontology">
         <dc:date rdf:datatype="&xsd;dateTime">Jun 30, 2015 8:03:46 AM</dc:date>
         <dc:creator rdf:datatype="&xsd;string">hagt</dc:creator>
@@ -60,6 +62,18 @@
         <rdfs:domain rdf:resource="&foo;Location"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
         <owl:equivalentProperty rdf:resource="&bmf;AddressAndContact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/affectsArea -->
+
+    <owl:ObjectProperty rdf:about="&foo;affectsArea">
+        <rdfs:label>DRA_affectsArea</rdfs:label>
+        <rdfs:comment>A film&apos;s condition affects specific areas</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -100,6 +114,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/detectsCondition -->
+
+    <owl:ObjectProperty rdf:about="&foo;detectsCondition">
+        <rdfs:label>DRA_detectsCondition</rdfs:label>
+        <rdfs:comment>The condition analysis detects specific film conditions</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:range rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/dwerftObjectProperty -->
 
     <owl:ObjectProperty rdf:about="&foo;dwerftObjectProperty">
@@ -113,9 +139,21 @@
 
     <owl:ObjectProperty rdf:about="&foo;hasAnalysis">
         <rdfs:label>DRA_hasAnalysis</rdfs:label>
-        <rdfs:comment>The result of an analysis of the archival storage medium made by the Befundungstisch(tm)</rdfs:comment>
+        <rdfs:comment>The result of an analysis of the archival storage medium made by the Befundungstisch</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:range rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/hasBarcode -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasBarcode">
+        <rdfs:label>DRA_hasBarcode</rdfs:label>
+        <rdfs:comment>The medium is identified by a barcode at the institution it is kept at</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
+        <rdfs:range rdf:resource="&foo;InstitutionalIdentifier"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -356,7 +394,7 @@
 
     <owl:ObjectProperty rdf:about="&foo;hasStorageMedium">
         <rdfs:label>DRA_hasStorageMedium</rdfs:label>
-        <rdfs:comment>Archived content can be stored on a physical storage medium</rdfs:comment>
+        <rdfs:comment>Archived content is stored on a physical storage medium</rdfs:comment>
         <rdfs:range rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:domain rdf:resource="&foo;ArchivedEpisode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
@@ -371,6 +409,18 @@
         <rdfs:comment>A particular shot of a scene.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Scene"/>
         <rdfs:range rdf:resource="&foo;Take"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/ordersAnalysis -->
+
+    <owl:ObjectProperty rdf:about="&foo;ordersAnalysis">
+        <rdfs:label>DRA_ordersAnalysis</rdfs:label>
+        <rdfs:comment>The condition analysis is ordered by an institution</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:domain rdf:resource="&foo;Institution"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -436,13 +486,25 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/showsAbnormalArea -->
+
+    <owl:ObjectProperty rdf:about="&foo;showsAbnormalArea">
+        <rdfs:label>DRA_showsAbnormalArea</rdfs:label>
+        <rdfs:comment>An abnormal area is visible and annotated in the proxy file</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:domain rdf:resource="&foo;Proxy"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/usesArchivedMaterial -->
 
     <owl:ObjectProperty rdf:about="&foo;usesArchivedMaterial">
         <rdfs:label>DRA_usesArchivedMaterial</rdfs:label>
-        <rdfs:comment>The scene uses archival material</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;ArchivedEpisode"/>
-        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:comment>The project uses archival material</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;ArchivalMaterial"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -483,18 +545,6 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/actualDuration -->
-
-    <owl:DatatypeProperty rdf:about="&foo;actualDuration">
-        <rdfs:label>DRA_actualDuration</rdfs:label>
-        <rdfs:comment>The actual duration of the archived content stored on the medium detected by the Befundungstisch</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://filmontology.org/ontology/1.0/age -->
 
     <owl:DatatypeProperty rdf:about="&foo;age">
@@ -520,18 +570,6 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/anomalyCondition -->
-
-    <owl:DatatypeProperty rdf:about="&foo;anomalyCondition">
-        <rdfs:label>DRA_anomalyCondition</rdfs:label>
-        <rdfs:comment>A statement regarding the condition of the detected anomaly as benchmark (1 = worst, 10 = best)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://filmontology.org/ontology/1.0/appearance -->
 
     <owl:DatatypeProperty rdf:about="&foo;appearance">
@@ -539,18 +577,6 @@
         <rdfs:label>appearance</rdfs:label>
         <rdfs:comment>Description of the character look/appearance</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Character"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/archivalFormat -->
-
-    <owl:DatatypeProperty rdf:about="&foo;archivalFormat">
-        <rdfs:label>DRA_archivalFormat</rdfs:label>
-        <rdfs:comment>Material on which the film is recorded (e.g., 16 mm film)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -606,6 +632,18 @@
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/average -->
+
+    <owl:DatatypeProperty rdf:about="&foo;average">
+        <rdfs:label>DRA_average</rdfs:label>
+        <rdfs:comment>Average value of a film condition</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
     </owl:DatatypeProperty>
     
 
@@ -712,18 +750,6 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/chemicalCondition -->
-
-    <owl:DatatypeProperty rdf:about="&foo;chemicalCondition">
-        <rdfs:label>DRA_chemicalCondition</rdfs:label>
-        <rdfs:comment>A statement regarding the chemical condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://filmontology.org/ontology/1.0/cinematographer -->
 
     <owl:DatatypeProperty rdf:about="&foo;cinematographer">
@@ -802,6 +828,54 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/conditionMaterial -->
+
+    <owl:DatatypeProperty rdf:about="&foo;conditionMaterial">
+        <rdfs:label>DRA_conditionMaterial</rdfs:label>
+        <rdfs:comment>A statement regarding the material&apos;s condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/conditionOptical -->
+
+    <owl:DatatypeProperty rdf:about="&foo;conditionOptical">
+        <rdfs:label>DRA_conditionOptical</rdfs:label>
+        <rdfs:comment>A statement regarding the optical condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/conditionOverall -->
+
+    <owl:DatatypeProperty rdf:about="&foo;conditionOverall">
+        <rdfs:label>DRA_conditionOverall</rdfs:label>
+        <rdfs:comment>A statement regarding the overall condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/conditionRemark -->
+
+    <owl:DatatypeProperty rdf:about="&foo;conditionRemark">
+        <rdfs:label>DRA_conditionRemark</rdfs:label>
+        <rdfs:comment>Additional information regarding the storage medium provided by the condition analysis</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/contactPerson -->
 
     <owl:DatatypeProperty rdf:about="&foo;contactPerson">
@@ -824,6 +898,18 @@
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <owl:equivalentProperty rdf:resource="&bmf;CountryName"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/creationDate -->
+
+    <owl:DatatypeProperty rdf:about="&foo;creationDate">
+        <rdfs:label>DRA_creationDate</rdfs:label>
+        <rdfs:comment>DateTime of the analysis made by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
     
 
@@ -880,18 +966,6 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/dateOfAnalysis -->
-
-    <owl:DatatypeProperty rdf:about="&foo;dateOfAnalysis">
-        <rdfs:label>DRA_dateOfAnalysis</rdfs:label>
-        <rdfs:comment>DateTime of the analysis made by the Befundungstisch</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://filmontology.org/ontology/1.0/dayTime -->
 
     <owl:DatatypeProperty rdf:about="&foo;dayTime">
@@ -918,6 +992,150 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/detectedAspectRatio -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedAspectRatio">
+        <rdfs:label>DRA_detectedAspectRatio</rdfs:label>
+        <rdfs:comment>The actual aspect ratio of the archived content stored on the medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedColoration -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedColoration">
+        <rdfs:label>DRA_detectedColoration</rdfs:label>
+        <rdfs:comment>The coloration of the archived content stored on the medium detected by the Befundungstisch (e.g., black-and-white)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedDoublePerf -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedDoublePerf">
+        <rdfs:label>DRA_detectedDoublePerf</rdfs:label>
+        <rdfs:comment>Statement whether the archival medium is double-perf (true) or single-perf (false) as detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedDuration -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedDuration">
+        <rdfs:label>DRA_detectedDuration</rdfs:label>
+        <rdfs:comment>The actual duration of the archived content stored on the medium detected by the Befundungstisch in seconds</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedEmulsionLayer -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedEmulsionLayer">
+        <rdfs:label>DRA_detectedEmulsionLayer</rdfs:label>
+        <rdfs:comment>Information regarding the emulsion layer of the archival medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedFrames -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedFrames">
+        <rdfs:label>DRA_detectedFrames</rdfs:label>
+        <rdfs:comment>The total number of frames of the archived content stored on the medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedGauge -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedGauge">
+        <rdfs:label>DRA_detectedGauge</rdfs:label>
+        <rdfs:comment>The film gauge of the archival medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedLength -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedLength">
+        <rdfs:label>DRA_detectedLength</rdfs:label>
+        <rdfs:comment>The actual lenght of the film detected by the Befundungstisch in metres</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedMaterial -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedMaterial">
+        <rdfs:label>DRA_detectedMaterial</rdfs:label>
+        <rdfs:comment>The material of the archival medium detected by the Befundungstisch (e.g., reversal film, color negative film)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedPerforations -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedPerforations">
+        <rdfs:label>DRA_detectedPerforations</rdfs:label>
+        <rdfs:comment>The number of perforations of the archival medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedScenes -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedScenes">
+        <rdfs:label>DRA_detectedScenes</rdfs:label>
+        <rdfs:comment>Number of scenes of the archived content stored on the medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedWindingDirection -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedWindingDirection">
+        <rdfs:label>DRA_detectedWindingDirection</rdfs:label>
+        <rdfs:comment>The winding direction of the archival medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/director -->
 
     <owl:DatatypeProperty rdf:about="&foo;director">
@@ -936,8 +1154,8 @@
     <owl:DatatypeProperty rdf:about="&foo;duration">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>duration</rdfs:label>
-        <rdfs:comment>Duration</rdfs:comment>
         <rdfs:comment>Length of an episode in seconds</rdfs:comment>
+        <rdfs:comment>Duration</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
@@ -967,18 +1185,6 @@
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/endFrame -->
-
-    <owl:DatatypeProperty rdf:about="&foo;endFrame">
-        <rdfs:label>DRA_endFrame</rdfs:label>
-        <rdfs:comment>End of abnormal area</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
 
@@ -1035,6 +1241,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/fileURL -->
+
+    <owl:DatatypeProperty rdf:about="&foo;fileURL">
+        <rdfs:label>DRA_fileURL</rdfs:label>
+        <rdfs:comment>Link to proxy video file</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Proxy"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/focusDistanceUnit -->
 
     <owl:DatatypeProperty rdf:about="&foo;focusDistanceUnit">
@@ -1054,6 +1272,7 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>format</rdfs:label>
         <rdfs:comment>Material on which the film is recorded (e.g., DVCPRO)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1083,6 +1302,30 @@
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/frameIn -->
+
+    <owl:DatatypeProperty rdf:about="&foo;frameIn">
+        <rdfs:label>DRA_frameIn</rdfs:label>
+        <rdfs:comment>First frame of abnormal area</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/frameOut -->
+
+    <owl:DatatypeProperty rdf:about="&foo;frameOut">
+        <rdfs:label>DRA_frameOut</rdfs:label>
+        <rdfs:comment>Last frame of abnormal area</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
 
@@ -1309,6 +1552,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/length -->
+
+    <owl:DatatypeProperty rdf:about="&foo;length">
+        <rdfs:label>DRA_length</rdfs:label>
+        <rdfs:comment>Length of the film in metres</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/lensSn -->
 
     <owl:DatatypeProperty rdf:about="&foo;lensSn">
@@ -1400,6 +1655,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/los -->
+
+    <owl:DatatypeProperty rdf:about="&foo;los">
+        <rdfs:label>DRA_los</rdfs:label>
+        <rdfs:comment>Batch number</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/lutFileName -->
 
     <owl:DatatypeProperty rdf:about="&foo;lutFileName">
@@ -1439,14 +1706,38 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/materialCondition -->
+    <!-- http://filmontology.org/ontology/1.0/material -->
 
-    <owl:DatatypeProperty rdf:about="&foo;materialCondition">
-        <rdfs:label>DRA_materialCondition</rdfs:label>
-        <rdfs:comment>A statement regarding the material&apos;s condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+    <owl:DatatypeProperty rdf:about="&foo;material">
+        <rdfs:label>DRA_material</rdfs:label>
+        <rdfs:comment>The material of the archival medium (e.g., reversal film, color negative film)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/max -->
+
+    <owl:DatatypeProperty rdf:about="&foo;max">
+        <rdfs:label>DRA_max</rdfs:label>
+        <rdfs:comment>Maximal value of a film condition</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/min -->
+
+    <owl:DatatypeProperty rdf:about="&foo;min">
+        <rdfs:label>DRA_min</rdfs:label>
+        <rdfs:comment>Minimal value of a film condition</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
     </owl:DatatypeProperty>
     
 
@@ -1483,7 +1774,7 @@
 
     <owl:DatatypeProperty rdf:about="&foo;note">
         <rdfs:label>DRA_note</rdfs:label>
-        <rdfs:comment>Additional information regarding the storage medium</rdfs:comment>
+        <rdfs:comment>Additional information regarding the storage medium provided by the owner</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1516,18 +1807,6 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/opticalCondition -->
-
-    <owl:DatatypeProperty rdf:about="&foo;opticalCondition">
-        <rdfs:label>DRA_opticalCondition</rdfs:label>
-        <rdfs:comment>A statement regarding the optical condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://filmontology.org/ontology/1.0/originalAirDate -->
 
     <owl:DatatypeProperty rdf:about="&foo;originalAirDate">
@@ -1549,18 +1828,6 @@
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/overallCondition -->
-
-    <owl:DatatypeProperty rdf:about="&foo;overallCondition">
-        <rdfs:label>DRA_overallCondition</rdfs:label>
-        <rdfs:comment>A statement regarding the overall condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
 
@@ -1656,6 +1923,42 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/rating -->
+
+    <owl:DatatypeProperty rdf:about="&foo;rating">
+        <rdfs:label>DRA_rating</rdfs:label>
+        <rdfs:comment>Rating of the detected anomaly/film condition as benchmark (1 = worst, 10 = best)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/recommendedAction -->
+
+    <owl:DatatypeProperty rdf:about="&foo;recommendedAction">
+        <rdfs:label>DRA_recommendedAction</rdfs:label>
+        <rdfs:comment>Recommendation on further actions based on the film&apos;s condition</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/recommendedScan -->
+
+    <owl:DatatypeProperty rdf:about="&foo;recommendedScan">
+        <rdfs:label>DRA_recommendedScan</rdfs:label>
+        <rdfs:comment>Recommendation for the scanning of the content based on the film&apos;s condition</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/reelName -->
 
     <owl:DatatypeProperty rdf:about="&foo;reelName">
@@ -1689,18 +1992,6 @@
         <rdfs:label>remarks</rdfs:label>
         <rdfs:comment>Additional information wrt to a scene</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Scene"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/restaurationWorkload -->
-
-    <owl:DatatypeProperty rdf:about="&foo;restaurationWorkload">
-        <rdfs:label>DRA_restaurationWorkload</rdfs:label>
-        <rdfs:comment>Estimated hours of workload necessary to restore the archived content to usable condition</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1979,18 +2270,6 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/startFrame -->
-
-    <owl:DatatypeProperty rdf:about="&foo;startFrame">
-        <rdfs:label>DRA_startFrame</rdfs:label>
-        <rdfs:comment>Start of abnormal area</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://filmontology.org/ontology/1.0/storyDay -->
 
     <owl:DatatypeProperty rdf:about="&foo;storyDay">
@@ -2084,6 +2363,30 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/tcIn -->
+
+    <owl:DatatypeProperty rdf:about="&foo;tcIn">
+        <rdfs:label>DRA_tcIn</rdfs:label>
+        <rdfs:comment>Timecode for the start of an abnormal area</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/tcOut -->
+
+    <owl:DatatypeProperty rdf:about="&foo;tcOut">
+        <rdfs:label>DRA_tcOut</rdfs:label>
+        <rdfs:comment>Timecode for the end of an abnormal area</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/timeCamera -->
 
     <owl:DatatypeProperty rdf:about="&foo;timeCamera">
@@ -2118,18 +2421,6 @@
         <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/totalFrames -->
-
-    <owl:DatatypeProperty rdf:about="&foo;totalFrames">
-        <rdfs:label>DRA_totalFrames</rdfs:label>
-        <rdfs:comment>Total number of frames of the archived content stored on the medium detected by the Befundungstisch</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
 
@@ -2199,12 +2490,13 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/valueOfAnomaly -->
+    <!-- http://filmontology.org/ontology/1.0/value -->
 
-    <owl:DatatypeProperty rdf:about="&foo;valueOfAnomaly">
-        <rdfs:label>DRA_valueOfAnomaly</rdfs:label>
-        <rdfs:comment>Value of the detected anomaly (e.g., 2%)</rdfs:comment>
+    <owl:DatatypeProperty rdf:about="&foo;value">
+        <rdfs:label>DRA_value</rdfs:label>
+        <rdfs:comment>Value of the detected anomaly/film condition</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -2224,6 +2516,54 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/workloadCleaning -->
+
+    <owl:DatatypeProperty rdf:about="&foo;workloadCleaning">
+        <rdfs:label>DRA_workloadCleaning</rdfs:label>
+        <rdfs:comment>Estimated restauration workload to clean the film based on the analysed film&apos;s condition in minutes</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/workloadOverall -->
+
+    <owl:DatatypeProperty rdf:about="&foo;workloadOverall">
+        <rdfs:label>DRA_workloadOverall</rdfs:label>
+        <rdfs:comment>Overall estimated restauration workload based on the analysed film&apos;s condition in minutes</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/workloadPerforation -->
+
+    <owl:DatatypeProperty rdf:about="&foo;workloadPerforation">
+        <rdfs:label>DRA_workloadPerforation</rdfs:label>
+        <rdfs:comment>Estimated restauration workload to repair perforations based on the analysed film&apos;s condition in minutes</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/workloadSplices -->
+
+    <owl:DatatypeProperty rdf:about="&foo;workloadSplices">
+        <rdfs:label>DRA_workloadSplices</rdfs:label>
+        <rdfs:comment>Estimated restauration workload to repair splices based on the analysed film&apos;s condition in minutes</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/yearOfProduction -->
 
     <owl:DatatypeProperty rdf:about="&foo;yearOfProduction">
@@ -2231,7 +2571,7 @@
         <rdfs:comment>Year in which the archived content was produced</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;ArchivedEpisode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -2319,7 +2659,7 @@
     <owl:Class rdf:about="&foo;AbnormalArea">
         <rdfs:label>DRA_AbnormalArea</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
-        <rdfs:comment>A specific abnormal area on a storage medium</rdfs:comment>
+        <rdfs:comment>An area on a storage medium which is affected by a specific film condition. Identified by time code and frame number.</rdfs:comment>
     </owl:Class>
     
 
@@ -2361,6 +2701,24 @@
         <rdfs:label>DRA_ArchivedEpisode</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Episode"/>
         <rdfs:comment>Parts of an archived series film project (a single film always has exactly one episode)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/Artefact -->
+
+    <owl:Class rdf:about="&foo;Artefact">
+        <rdfs:label>DRA_Artefact</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/Bulge -->
+
+    <owl:Class rdf:about="&foo;Bulge">
+        <rdfs:label>DRA_Bulge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
     </owl:Class>
     
 
@@ -2413,7 +2771,16 @@
     <owl:Class rdf:about="&foo;ConditionAnalysis">
         <rdfs:label>DRA_ConditionAnalysis</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
-        <rdfs:comment>A result of an analysis of an archival storage medium made by the Befundungstisch(tm)</rdfs:comment>
+        <rdfs:comment>A result of an analysis of an archival storage medium made by the Befundungstisch</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/CopiedError -->
+
+    <owl:Class rdf:about="&foo;CopiedError">
+        <rdfs:label>DRA_CopiedError</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
     </owl:Class>
     
 
@@ -2469,6 +2836,15 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/ErrorOfPictureSteadiness -->
+
+    <owl:Class rdf:about="&foo;ErrorOfPictureSteadiness">
+        <rdfs:label>DRA_ErrorOfPictureSteadiness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/Extra -->
 
     <owl:Class rdf:about="&foo;Extra">
@@ -2485,6 +2861,34 @@
         <rdfs:label>Facility</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>Equipment at a shooting location (e.g., parking, toilets)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/FilmCondition -->
+
+    <owl:Class rdf:about="&foo;FilmCondition">
+        <rdfs:label>DRA_FilmCondition</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>Results of the condition analysis regarding specific conditions of the film, e.g. optical density, surface dirt, perforation damage, splices</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/FilmGrain -->
+
+    <owl:Class rdf:about="&foo;FilmGrain">
+        <rdfs:label>DRA_FilmGrain</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/FilmTear -->
+
+    <owl:Class rdf:about="&foo;FilmTear">
+        <rdfs:label>DRA_FilmTear</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
     </owl:Class>
     
 
@@ -2517,6 +2921,24 @@
         <owl:equivalentClass rdf:resource="&bmf;LocationSet"/>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>Actual location where a shooting takes place.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/Notch -->
+
+    <owl:Class rdf:about="&foo;Notch">
+        <rdfs:label>DRA_Notch</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/PerforationDamage -->
+
+    <owl:Class rdf:about="&foo;PerforationDamage">
+        <rdfs:label>DRA_PerforationDamage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
     </owl:Class>
     
 
@@ -2593,6 +3015,42 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/Shrinkage -->
+
+    <owl:Class rdf:about="&foo;Shrinkage">
+        <rdfs:label>DRA_Shrinkage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/Splice -->
+
+    <owl:Class rdf:about="&foo;Splice">
+        <rdfs:label>DRA_Splice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/SurfaceDamage -->
+
+    <owl:Class rdf:about="&foo;SurfaceDamage">
+        <rdfs:label>DRA_SurfaceDamage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/SurfaceDirt -->
+
+    <owl:Class rdf:about="&foo;SurfaceDirt">
+        <rdfs:label>DRA_SurfaceDirt</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/Take -->
 
     <owl:Class rdf:about="&foo;Take">
@@ -2658,5 +3116,5 @@
 
 
 
-<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
 
