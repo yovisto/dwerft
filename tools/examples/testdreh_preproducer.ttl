@@ -131,6 +131,7 @@
         foo:identifierPreProducer  "18989"^^xsd:int ;
         foo:internalIdentifier     "1"^^xsd:long ;
         foo:productionNumber       "62120001_0834"^^xsd:string ;
+        foo:workingTitle           "Making of Testdreh dwerft"^^xsd:string ;
         foo:title                  "dwerft Testdreh"^^xsd:string .
 
 <http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09E0>
