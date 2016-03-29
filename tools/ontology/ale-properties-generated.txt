@@ -547,9 +547,9 @@
 <rdfs:range rdf:resource="&xsd;string"/>
 </owl:DatatypeProperty>
 
-<owl:DatatypeProperty rdf:about="&foo;name">
+<owl:DatatypeProperty rdf:about="&foo;clipName">
 <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-<rdfs:label>name</rdfs:label>
+<rdfs:label>clipName</rdfs:label>
 <rdfs:comment>Clip name as created by camera</rdfs:comment>
 <rdfs:domain rdf:resource="&foo;Clip"/>
 <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
