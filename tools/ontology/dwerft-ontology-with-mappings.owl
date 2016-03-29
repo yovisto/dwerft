@@ -7,9 +7,8 @@
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY for "http://filmontology.org/resource/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY foo "http://filmontology.org/ontology/1.0/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY webprotege "http://protege.stanford.edu/webprotege/" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY ebucore "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#" >
@@ -18,17 +17,16 @@
 
 <rdf:RDF xmlns="http://filmontology.org/"
      xml:base="http://filmontology.org/"
-     xmlns:webprotege="http://protege.stanford.edu/webprotege/"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:foo="http://filmontology.org/ontology/1.0/"
-     xmlns:for="http://filmontology.org/resource/"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
      xmlns:bmf="http://www.irt.de/bmf#"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:webprotege="http://protege.stanford.edu/webprotege/"
+     xmlns:for="http://filmontology.org/resource/"
+     xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:foo="http://filmontology.org/ontology/1.0/">
     <owl:Ontology rdf:about="http://filmontology.org/ontology/ontology">
         <dc:date rdf:datatype="&xsd;dateTime">Jun 30, 2015 8:03:46 AM</dc:date>
         <dc:creator rdf:datatype="&xsd;string">hagt</dc:creator>
@@ -55,7 +53,7 @@
         <rdfs:label>address</rdfs:label>
         <rdfs:comment>An address of a location, company, emergency facility or belonging to a cast member</rdfs:comment>
         <rdfs:range rdf:resource="&foo;Address"/>
-        <rdfs:domain rdf:resource="&foo;Cast"/>
+        <rdfs:domain rdf:resource="&foo;Person"/>
         <rdfs:domain rdf:resource="&foo;Company"/>
         <rdfs:domain rdf:resource="&foo;Emergency"/>
         <rdfs:domain rdf:resource="&foo;Institution"/>
@@ -95,7 +93,7 @@
     <owl:ObjectProperty rdf:about="&foo;characterCast">
         <rdfs:label>characterCast</rdfs:label>
         <rdfs:comment>A character is played by a certain cast member.</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;Cast"/>
+        <rdfs:range rdf:resource="&foo;CastMember"/>
         <rdfs:domain rdf:resource="&foo;Character"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
@@ -164,7 +162,7 @@
     <owl:ObjectProperty rdf:about="&foo;hasCast">
         <rdfs:label>hasCast</rdfs:label>
         <rdfs:comment>Cast members of a project</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;Cast"/>
+        <rdfs:range rdf:resource="&foo;CastMember"/>
         <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
@@ -225,7 +223,7 @@
     <owl:ObjectProperty rdf:about="&foo;hasCrew">
         <rdfs:label>hasCrew</rdfs:label>
         <rdfs:comment>Crew members of a project</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;Crew"/>
+        <rdfs:range rdf:resource="&foo;CrewMember"/>
         <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
@@ -249,8 +247,8 @@
     <owl:ObjectProperty rdf:about="&foo;hasCrewMember">
         <rdfs:label>hasCrewMember</rdfs:label>
         <rdfs:comment>Crew member of a crew department</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;Crew"/>
         <rdfs:domain rdf:resource="&foo;CrewDepartment"/>
+        <rdfs:range rdf:resource="&foo;CrewMember"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -646,8 +644,6 @@
     
 
 
-
-
     <!-- http://filmontology.org/ontology/1.0/cityName -->
 
     <owl:DatatypeProperty rdf:about="&foo;cityName">
@@ -660,7 +656,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-
 
 
     <!-- http://filmontology.org/ontology/1.0/coloration -->
@@ -767,7 +762,7 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>crewCode</rdfs:label>
         <rdfs:comment>Additional identifier (typeCode) for a crew member.</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Crew"/>
+        <rdfs:domain rdf:resource="&foo;CrewMember"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -780,7 +775,7 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>crewRole</rdfs:label>
         <rdfs:comment>Kind of role (function) that the crew member possesses</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Crew"/>
+        <rdfs:domain rdf:resource="&foo;CrewMember"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -970,8 +965,6 @@
     
 
 
-
-
     <!-- http://filmontology.org/ontology/1.0/duration -->
 
     <owl:DatatypeProperty rdf:about="&foo;duration">
@@ -1033,6 +1026,7 @@
     </owl:DatatypeProperty>
     
 
+
     <!-- http://filmontology.org/ontology/1.0/format -->
 
     <owl:DatatypeProperty rdf:about="&foo;format">
@@ -1045,7 +1039,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-
 
 
     <!-- http://filmontology.org/ontology/1.0/frameIn -->
@@ -1087,7 +1080,6 @@
     
 
 
-
     <!-- http://filmontology.org/ontology/1.0/fullName -->
 
     <owl:DatatypeProperty rdf:about="&foo;fullName">
@@ -1099,7 +1091,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-
 
 
     <!-- http://filmontology.org/ontology/1.0/hobby -->
@@ -1243,7 +1234,6 @@
     
 
 
-
     <!-- http://filmontology.org/ontology/1.0/logline -->
 
     <owl:DatatypeProperty rdf:about="&foo;logline">
@@ -1257,7 +1247,6 @@
     
 
 
-
     <!-- http://filmontology.org/ontology/1.0/los -->
 
     <owl:DatatypeProperty rdf:about="&foo;los">
@@ -1268,7 +1257,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-
 
 
     <!-- http://filmontology.org/ontology/1.0/material -->
@@ -1320,7 +1308,6 @@
     
 
 
-
     <!-- http://filmontology.org/ontology/1.0/note -->
 
     <owl:DatatypeProperty rdf:about="&foo;note">
@@ -1345,7 +1332,6 @@
     
 
 
-
     <!-- http://filmontology.org/ontology/1.0/originalAirDate -->
 
     <owl:DatatypeProperty rdf:about="&foo;originalAirDate">
@@ -1356,8 +1342,6 @@
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
     
-
-
 
 
     <!-- http://filmontology.org/ontology/1.0/pageEnd -->
@@ -1399,8 +1383,6 @@
     
 
 
-
-
     <!-- http://filmontology.org/ontology/1.0/productionNumber -->
 
     <owl:DatatypeProperty rdf:about="&foo;productionNumber">
@@ -1412,7 +1394,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-
 
 
     <!-- http://filmontology.org/ontology/1.0/rating -->
@@ -1449,7 +1430,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-
 
 
     <!-- http://filmontology.org/ontology/1.0/relationshipStatus -->
@@ -1489,7 +1469,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-
 
 
     <!-- http://filmontology.org/ontology/1.0/sceneContent -->
@@ -1570,7 +1549,6 @@
     
 
 
-
     <!-- http://filmontology.org/ontology/1.0/setDescription -->
 
     <owl:DatatypeProperty rdf:about="&foo;setDescription">
@@ -1602,7 +1580,7 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>sex</rdfs:label>
         <rdfs:comment>Gender of a cast (male or female)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Cast"/>
+        <rdfs:domain rdf:resource="&foo;CastMember"/>
         <rdfs:domain rdf:resource="&foo;Character"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1649,7 +1627,6 @@
     
 
 
-
     <!-- http://filmontology.org/ontology/1.0/socialStatus -->
 
     <owl:DatatypeProperty rdf:about="&foo;socialStatus">
@@ -1673,8 +1650,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-
-
 
 
     <!-- http://filmontology.org/ontology/1.0/storyDay -->
@@ -1717,10 +1692,6 @@
     
 
 
-
- 
-
-
     <!-- http://filmontology.org/ontology/1.0/synopsis -->
 
     <owl:DatatypeProperty rdf:about="&foo;synopsis">
@@ -1733,7 +1704,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-
 
 
     <!-- http://filmontology.org/ontology/1.0/tcIn -->
@@ -1758,7 +1728,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-
 
 
     <!-- http://filmontology.org/ontology/1.0/timeLevel -->
@@ -1786,10 +1755,6 @@
     
 
 
-
-
-
-
     <!-- http://filmontology.org/ontology/1.0/value -->
 
     <owl:DatatypeProperty rdf:about="&foo;value">
@@ -1799,6 +1764,16 @@
         <rdfs:domain rdf:resource="&foo;FilmCondition"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/workingTitle -->
+
+    <owl:DatatypeProperty rdf:about="&foo;workingTitle">
+        <rdfs:label>workingTitle</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Working (temporary) title of the ffilm project</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
     </owl:DatatypeProperty>
     
 
@@ -2010,12 +1985,12 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/Cast -->
+    <!-- http://filmontology.org/ontology/1.0/CastMember -->
 
-    <owl:Class rdf:about="&foo;Cast">
+    <owl:Class rdf:about="&foo;CastMember">
         <rdfs:label>Cast</rdfs:label>
         <owl:equivalentClass rdf:resource="&ebucore;Cast"/>
-        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:subClassOf rdf:resource="&foo;Person"/>
         <rdfs:comment>Person playing a character in a movie</rdfs:comment>
     </owl:Class>
     
@@ -2072,23 +2047,23 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/Crew -->
-
-    <owl:Class rdf:about="&foo;Crew">
-        <rdfs:label>Crew</rdfs:label>
-        <owl:equivalentClass rdf:resource="&ebucore;Staff"/>
-        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
-        <rdfs:comment>A person involved in the film production</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://filmontology.org/ontology/1.0/CrewDepartment -->
 
     <owl:Class rdf:about="&foo;CrewDepartment">
         <rdfs:label>CrewDepartment</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>A group of staff/crew members (e.g., production staff)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/CrewMember -->
+
+    <owl:Class rdf:about="&foo;CrewMember">
+        <rdfs:label>Crew</rdfs:label>
+        <owl:equivalentClass rdf:resource="&ebucore;Staff"/>
+        <rdfs:subClassOf rdf:resource="&foo;Person"/>
+        <rdfs:comment>A person involved in the film production staff</rdfs:comment>
     </owl:Class>
     
 
@@ -2226,6 +2201,16 @@
     <owl:Class rdf:about="&foo;PerforationDamage">
         <rdfs:label>DRA_PerforationDamage</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/Person -->
+
+    <owl:Class rdf:about="&foo;Person">
+        <rdfs:label>Person</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>Person involved in the film project, currently either crew or cast member.</rdfs:comment>
     </owl:Class>
     
 
@@ -2403,5 +2388,5 @@
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 

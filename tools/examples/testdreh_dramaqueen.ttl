@@ -75,11 +75,6 @@
         foo:sceneNumber           "15"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> .
 
-<http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Episode/9bb93c23-69e8-4a04-84f4-3e77daf63a3f>
-        a                       foo:Episode ;
-        foo:hasSceneGroup       <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/SceneGroup/294f2ce5-5292-47ae-aa8e-529ac5dca272> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/SceneGroup/e2ee135b-4a52-4c09-b087-7870a4654d70> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/SceneGroup/ba778ab4-fd7d-43b1-b881-d0c370c84c28> ;
-        foo:internalIdentifier  "27"^^xsd:long .
-
 <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1>
         a                         foo:Scene ;
         foo:dayTime               "Vormittag"^^xsd:string ;
@@ -219,7 +214,7 @@
 <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6>
         a                         foo:Project ;
         foo:hasCharacter          <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/57be2f23-94b7-41de-87ab-660546fba9a6> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/762400dc-23c2-4981-b3b3-a9922b70e224> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/a062557c-a6dd-4b71-8f24-c58ceac35056> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/3cea68a0-6420-47a2-b465-34335bf925da> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/c3cbb55c-471d-4f4f-931b-3776f0e63edd> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/e41215f2-eb35-42d6-ae34-cb95314f5e46> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/84cf3715-96b2-41de-b81a-e433a49f192c> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Character/62442410-38a7-46b3-b17a-cc7cac2e4a0d> ;
-        foo:hasEpisode            <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Episode/9bb93c23-69e8-4a04-84f4-3e77daf63a3f> ;
+        foo:hasEpisode            <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Episode/57d027b3-98e3-4c24-a4db-719e64fc7241> ;
         foo:hasSet                <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/4a7b289a-1e11-4920-805c-25690c1e9264> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/91fe3e77-8647-49a3-a2e8-6ce1484008df> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/1b040a05-35d9-4b52-8446-f99a65d8a773> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/59992bf6-d413-4b40-a3c0-748341cfd400> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/68df2588-c2fe-4f64-8064-84fcc5a534e8> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/0e03200e-44a6-4375-8699-4ec3ff7b029d> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/3fdb9064-11d9-416c-9a53-8939bda36399> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/6c159070-850e-425b-b439-12595b48a0a8> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/3a116d45-d850-43f8-b520-0f13752231c0> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/9cbb6db9-97a4-4ff8-8e19-0a2910300327> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/f7b3910d-c7b4-4f6e-86a0-e7699a716825> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> ;
         foo:identifierDramaQueen  "e2c02b39-5aed-4f83-a425-4161cbff03c6"^^xsd:string ;
         foo:internalIdentifier    "1"^^xsd:long ;
@@ -268,6 +263,11 @@
         foo:sceneHeader           "<p>Labor Technikverleih Innen Tag</p><p>              </p>"^^xsd:string ;
         foo:sceneNumber           "2"^^xsd:int ;
         foo:sceneSet              <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Set/9cbb6db9-97a4-4ff8-8e19-0a2910300327> .
+
+<http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Episode/57d027b3-98e3-4c24-a4db-719e64fc7241>
+        a                       foo:Episode ;
+        foo:hasSceneGroup       <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/SceneGroup/294f2ce5-5292-47ae-aa8e-529ac5dca272> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/SceneGroup/e2ee135b-4a52-4c09-b087-7870a4654d70> , <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/SceneGroup/ba778ab4-fd7d-43b1-b881-d0c370c84c28> ;
+        foo:internalIdentifier  "27"^^xsd:long .
 
 <http://filmontology.org/resource/Project/e2c02b39-5aed-4f83-a425-4161cbff03c6/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965>
         a                         foo:Scene ;
