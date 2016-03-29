@@ -3,8 +3,8 @@
     <uri id="Imports Wizard Entry" name="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore" uri="ebucore_2015_05_20.rdf"/>
     <uri id="Imports Wizard Entry" name="http://bmf.irt.de/bmf" uri="BMF.rdf"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1459254361963" name="duplicate:http://filmontology.org/" uri="dwerft-ontology-with-mappings.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1459254361963" name="duplicate:http://filmontology.org/" uri="dwerft-ontology.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1459254361963" name="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore" uri="ebucore_2015_05_20.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1459257630820" name="duplicate:http://filmontology.org/" uri="dwerft-ontology-with-mappings.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1459257630820" name="duplicate:http://filmontology.org/" uri="dwerft-ontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1459257630820" name="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore" uri="ebucore_2015_05_20.rdf"/>
     </group>
 </catalog>
