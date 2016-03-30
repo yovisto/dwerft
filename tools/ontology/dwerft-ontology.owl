@@ -2830,6 +2830,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/takeNumber -->
+
+    <owl:DatatypeProperty rdf:about="&foo;takeNumber">
+        <rdfs:label>takeNumber</rdfs:label>
+        <rdfs:comment>Number of the successive attempts to film a shot.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Take"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/tapeIdentifier -->
 
     <owl:DatatypeProperty rdf:about="&foo;tapeIdentifier">
