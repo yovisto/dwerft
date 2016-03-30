@@ -68,14 +68,24 @@ public class AleToXmlConverter extends CsvToXmlConverter {
         String id = "";
         for (int i = 0; i < row.length; i++) {
         	if (header[i].equalsIgnoreCase("Source__File")) {
-            	id = row[i].substring(0, row[i].indexOf("."));
+        		if (!row[i].trim().isEmpty()) {
+        			id = row[i];
+        			if (id.contains(".")) {
+                    	id = id.substring(0, id.indexOf("."));
+        			}
+        		}
         	}
         }
         
         if (id.equals("")) {
             for (int i = 0; i < row.length; i++) {
             	if (header[i].equalsIgnoreCase("Name")) {
-                	id = row[i].substring(0, row[i].indexOf("."));
+            		if (!row[i].trim().isEmpty()) {
+            			id = row[i];
+            			if (id.contains(".")) {
+                        	id = id.substring(0, id.indexOf("."));
+            			}
+            		}
             	}
             }
         }
