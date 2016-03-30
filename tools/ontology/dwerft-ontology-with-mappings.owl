@@ -290,6 +290,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/hasFinalVideoFile -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasFinalVideoFile">
+        <rdfs:label>hasFinalVideoFile</rdfs:label>
+        <rdfs:comment>Link to the metadata about the final rendered video file (usually MXF)</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Clip"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/hasLocation -->
 
     <owl:ObjectProperty rdf:about="&foo;hasLocation">
