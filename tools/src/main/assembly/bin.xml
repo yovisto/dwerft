@@ -15,6 +15,7 @@
             <outputDirectory>/</outputDirectory>
             <includes>
                 <include>examples/*</include>
+                <include>examples/ale/*</include>
                 <include>mappings/*</include>
                 <include>ontology/*</include>
             </includes>
