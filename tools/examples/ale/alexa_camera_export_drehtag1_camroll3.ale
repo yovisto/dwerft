@@ -1,0 +1,11 @@
+Heading
+FIELD_DELIM	TABS
+VIDEO_FORMAT	1080
+AUDIO_FORMAT	48kHz
+FPS	24
+
+Column
+Name	Source File	Clip	Duration	Tracks	Start	End	Fps	Original_video	Audio_format	Audio_sr	Audio_bit	Soundroll	Frame_width	Frame_height	Uuid	Sup_version	Exposure_index	Gamma	White_balance	Cc_shift	Look_name	Look_burned_in	Sensor_fps	Shutter_angle	Image_orientation	Pixelaspectratio	Manufacturer	Camera_model	Camera_sn	Camera_id	Camera_index	Project_fps	Sxs_sn	Production	Cinematographer	Operator	Director	Location	Company	User_info1	User_info2	Date_camera	Time_camera	Master_slave	Eye_index	Reel_name	Umid	Lens_type	Focus_distance_unit	Lens_sn	Take	Scene	Circle
+
+Data
+A003C001_150827_R2GJ	A003C001_150827_R2GJ.mov	001	00:01:11:09	V	18:02:26:17	18:03:38:02	24	ProRes 4444 (HD1080p)				NONE	1920	1080	e25b0585-0000-4000-b23f-efa700000000	Alexa_11.0:29147	640	LOG-C	5600	+0	None	No	24.000	172.8	0	1.0	ARRI	Alexa Plus	3187	R2GJ	A	24.000	3a01000000000100	DWERFT_TESTDREH	ROBERT_FRIEBE	CEVAT_MASKAR	CEVAT_MASKAR	BERNSTEINSEE	FUB			20150827	18h00m03s	OFF	SINGLE	A003R2GJ	0x060A2B340101010501010F0013000000E25B058500004000B23FEFA700000000		Metric	0			No
