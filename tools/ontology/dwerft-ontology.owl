@@ -3070,6 +3070,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/videoBitRate -->
+
+    <owl:DatatypeProperty rdf:about="&foo;videoBitRate">
+        <rdfs:label>videoBitRate</rdfs:label>
+        <rdfs:comment>Bit rate of the video (usually in Mbps)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/videoCodec -->
 
     <owl:DatatypeProperty rdf:about="&foo;videoCodec">
