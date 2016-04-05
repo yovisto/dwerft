@@ -287,6 +287,8 @@
     <owl:ObjectProperty rdf:about="&foo;hasFinalVideoFile">
         <rdfs:label>hasFinalVideoFile</rdfs:label>
         <rdfs:comment>Link to the metadata about the final rendered video file (usually MXF)</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Clip"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -1245,6 +1247,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/detectedFramerate -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedFramerate">
+        <rdfs:label>DRA_detectedFramerate</rdfs:label>
+        <rdfs:comment>Frame rate of the archived content stored on the medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/detectedFrames -->
 
     <owl:DatatypeProperty rdf:about="&foo;detectedFrames">
@@ -1313,6 +1327,18 @@
         <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedSound -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedSound">
+        <rdfs:label>DRA_detectedSound</rdfs:label>
+        <rdfs:comment>Information regarding the sound of the archived content detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -3293,7 +3319,7 @@
     <owl:Class rdf:about="&foo;Clip">
         <rdfs:label>Clip</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
-        <rdfs:comment>A file produced by a camera for a recorded take.</rdfs:comment>
+        <rdfs:comment>A file produced by a camera for a recorded take</rdfs:comment>
     </owl:Class>
     
 
@@ -3566,6 +3592,15 @@
 
     <owl:Class rdf:about="&foo;Shrinkage">
         <rdfs:label>DRA_Shrinkage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/Smear -->
+
+    <owl:Class rdf:about="&foo;Smear">
+        <rdfs:label>DRA_Smear</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
     </owl:Class>
     
