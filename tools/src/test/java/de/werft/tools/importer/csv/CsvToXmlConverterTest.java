@@ -2,6 +2,8 @@ package de.werft.tools.importer.csv;
 
 import org.junit.Test;
 
+import java.io.File;
+
 /**
  * Test for the csv conversion, verify the correctness by hand.
  *
@@ -9,14 +11,21 @@ import org.junit.Test;
  */
 public class CsvToXmlConverterTest {
 
-    private String fileLocation = "src/test/resources/dummy.csv";
+    private String csvFileLocation = "src/test/resources/files/csv_dummy.csv";
 
-    private String aleFileLocation = "examples/A001R2GJ_AVID.ale";
+    private String aleFileLocation = "src/test/resources/files/ale_dummy.ale";
+
+    //@After
+    public void tearDown() {
+        new File(csvFileLocation).delete();
+        new File(aleFileLocation).delete();
+    }
+
 
     @Test
     public void testCsvConversion() throws Exception {
         CsvToXmlConverter csvConverter = new CsvToXmlConverter();
-        csvConverter.convertToXml(fileLocation, ';');
+        csvConverter.convertToXml(csvFileLocation, ';');
     }
 
     @Test

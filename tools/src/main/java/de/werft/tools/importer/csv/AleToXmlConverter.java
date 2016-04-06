@@ -33,7 +33,7 @@ public class AleToXmlConverter extends CsvToXmlConverter {
             if (row.length > 0 && row[0].equalsIgnoreCase("column")) {
                 String[] header = reader.readNext();
                 for (int i = 0; i < header.length; i++) {
-                    // do many replacement; because other tools are to stupid
+                    // do many replacements, because other tools are to stupid
                     header[i] = header[i]
                             .replace("#", " number")
                             .replace("(", "open ").replace(")", " close")
