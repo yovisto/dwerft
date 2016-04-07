@@ -8,9 +8,17 @@ import java.io.File;
  * Implements the owner config system.
  * Extend this interface to implement more configuration properties.
  *
+ * The configuration is split in two files. The
+ * DwerftConfig contains normal configuration options and
+ * DwerftKeys contains credentials. The files are merged after loading.
+ * The lookup place is either loaded from the classpath or from
+ * the file system.
+ *
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
-@Config.Sources({"file:tools/DwerftConfig.properties", "file:DwerftConfig.properties", "classpath:DwerftConfig.properties"})
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({"file:DwerftConfig.properties", "file:DwerftKeys.properties",
+        "classpath:DwerftConfig.properties", "classpath:DwerftKeys.properties"})
 public interface DwerftConfig extends Config {
 
     @Key("pp.key")

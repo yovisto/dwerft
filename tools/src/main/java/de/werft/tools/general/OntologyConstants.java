@@ -70,7 +70,7 @@ public class OntologyConstants {
 
 
     /**
-     * Sets the inputstream for the ontology file. this step is absolutly necessary
+     * Sets the ontology file from classpath. This step is absolutly necessary
      * and must be done before you use the constants.
      *
      * @param ontologyFile - path to ontology file.
