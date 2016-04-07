@@ -123,8 +123,8 @@ public class DwerftTools {
             L.info("Converted " + input + " to " + f);
         } else if (files.size() == 1 && hasExtension(output, "(rdf|nt|ttl)")) { // preproducer to rdf
             String mappingFile = determineMappingFile("preproducer.mappings", config.getMappingFolder());
-            converter = prpToRdf(config, input);
-
+            converter = prpToRdf(config, mappingFile);
+            input = "Preproducer";
         } else {
             // FIXME fix this messy workaround
             String secondOutput = files.get(1);
