@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<csv src="alexa_camera_export_drehtag1_camroll3.ale">
+<row uuid="A003C001_150827_R2GJ">
+<Name>A003C001_150827_R2GJ</Name>
+<Source__File>A003C001_150827_R2GJ.mov</Source__File>
+<Clip>001</Clip>
+<Duration>00:01:11:09</Duration>
+<Tracks>V</Tracks>
+<Start>18:02:26:17</Start>
+<End>18:03:38:02</End>
+<Fps>24</Fps>
+<Original_video>ProRes 4444 (HD1080p)</Original_video>
+<Soundroll>NONE</Soundroll>
+<Frame_width>1920</Frame_width>
+<Frame_height>1080</Frame_height>
+<Uuid>e25b0585-0000-4000-b23f-efa700000000</Uuid>
+<Sup_version>Alexa_11.0:29147</Sup_version>
+<Exposure_index>640</Exposure_index>
+<Gamma>LOG-C</Gamma>
+<White_balance>5600</White_balance>
+<Cc_shift>+0</Cc_shift>
+<Look_name>None</Look_name>
+<Look_burned_in>No</Look_burned_in>
+<Sensor_fps>24.000</Sensor_fps>
+<Shutter_angle>172.8</Shutter_angle>
+<Image_orientation>0</Image_orientation>
+<Pixelaspectratio>1.0</Pixelaspectratio>
+<Manufacturer>ARRI</Manufacturer>
+<Camera_model>Alexa Plus</Camera_model>
+<Camera_sn>3187</Camera_sn>
+<Camera_id>R2GJ</Camera_id>
+<Camera_index>A</Camera_index>
+<Project_fps>24.000</Project_fps>
+<Sxs_sn>3a01000000000100</Sxs_sn>
+<Production>DWERFT_TESTDREH</Production>
+<Cinematographer>ROBERT_FRIEBE</Cinematographer>
+<Operator>CEVAT_MASKAR</Operator>
+<Director>CEVAT_MASKAR</Director>
+<Location>BERNSTEINSEE</Location>
+<Company>FUB</Company>
+<Date_camera>20150827</Date_camera>
+<Time_camera>18h00m03s</Time_camera>
+<Master_slave>OFF</Master_slave>
+<Eye_index>SINGLE</Eye_index>
+<Reel_name>A003R2GJ</Reel_name>
+<Umid>0x060A2B340101010501010F0013000000E25B058500004000B23FEFA700000000</Umid>
+<Focus_distance_unit>Metric</Focus_distance_unit>
+<Lens_sn>0</Lens_sn>
+<Circle>No</Circle>
+</row>
+</csv>

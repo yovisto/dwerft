@@ -1,0 +1,1222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<csv src="silverstack_export_alexa_drehtag1.ale">
+<row uuid="A001C001_150827_R2GJ">
+<ASA>320</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>making of falscher W/B</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:20:02</Duration>
+<End>14:39:59:11</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>852686938</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C001_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>482</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C001_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C001_150827_R2GJ.mov</Source__File>
+<Start>14:39:39:09</Start>
+<UUID>6E4527BC-0D3D-43BC-BA38-8F7A19D6B4E0</UUID>
+<Whitepoint>3200</Whitepoint>
+</row>
+<row uuid="A001C002_150827_R2GJ">
+<ASA>320</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:21:01</Duration>
+<End>14:40:46:11</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>852686962</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C002_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>505</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C002_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C002_150827_R2GJ.mov</Source__File>
+<Start>14:40:25:10</Start>
+<UUID>17235402-41F0-49D9-BECF-D03566C6A4E6</UUID>
+<Whitepoint>3200</Whitepoint>
+</row>
+<row uuid="A001C003_150827_R2GJ">
+<ASA>320</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>waste</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:03:08</Duration>
+<End>14:45:29:12</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>214745754</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C003_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>80</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C003_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C003_150827_R2GJ.mov</Source__File>
+<Start>14:45:26:04</Start>
+<UUID>B47830F5-7172-44F7-BB51-DC855B4DFFE6</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C004_150827_R2GJ">
+<ASA>320</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>waste</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:02:07</Duration>
+<End>14:47:02:23</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>214745826</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C004_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>55</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C004_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C004_150827_R2GJ.mov</Source__File>
+<Start>14:47:00:16</Start>
+<UUID>E1A98AC1-9C17-470E-8931-6942E9748E3F</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C005_150827_R2GJ">
+<ASA>320</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>waste</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:02:08</Duration>
+<End>14:47:19:14</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>214745762</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C005_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>56</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C005_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C005_150827_R2GJ.mov</Source__File>
+<Start>14:47:17:06</Start>
+<UUID>BBC38A3C-99E0-41BB-A760-050AA7552E50</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C006_150827_R2GJ">
+<ASA>320</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>waste</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:03:15</Duration>
+<End>14:47:58:16</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>214745826</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C006_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>87</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C006_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C006_150827_R2GJ.mov</Source__File>
+<Start>14:47:55:01</Start>
+<UUID>0F087D7F-40A1-4043-8FE3-08459E3C6238</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C007_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>making of</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:01:01:11</Duration>
+<End>14:56:11:15</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>2234892898</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C007_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>1475</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C007_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C007_150827_R2GJ.mov</Source__File>
+<Start>14:55:10:04</Start>
+<UUID>274853D4-715E-43E7-B6CB-CD5489794037</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C008_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>waste</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:02:22</Duration>
+<End>15:04:37:11</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>214745762</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C008_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>70</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C008_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C008_150827_R2GJ.mov</Source__File>
+<Start>15:04:34:13</Start>
+<UUID>82326257-8434-4081-A4A8-1B612A37366A</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C009_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>making of</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:36:09</Duration>
+<End>15:10:01:06</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>1384304642</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C009_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>873</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C009_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C009_150827_R2GJ.mov</Source__File>
+<Start>15:09:24:21</Start>
+<UUID>5487A450-EB34-4961-A040-0CAAF3F43CC0</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C010_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:01:04:19</Duration>
+<End>15:14:47:02</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>2341216418</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C010_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>1555</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C010_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene>8 - 9</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C010_150827_R2GJ.mov</Source__File>
+<Start>15:13:42:07</Start>
+<Take>1</Take>
+<UUID>8551A779-4E47-4B5A-B704-C87CD0489B0D</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C011_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:01:16:19</Duration>
+<End>15:18:09:21</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>2766510514</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C011_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>1843</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C011_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene>8 - 9</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C011_150827_R2GJ.mov</Source__File>
+<Start>15:16:53:02</Start>
+<Take>2</Take>
+<UUID>04851D98-F124-4585-A6D0-0DE2AA831B10</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C012_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 422</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>leicht unscharf</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:01:25:22</Duration>
+<End>16:02:12:18</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>1418056558</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C012_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>2062</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C012_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene>10 - 1</Scene>
+<Sensor__Fps>60</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/125s</Shutter>
+<Source__File>A001C012_150827_R2GJ.mov</Source__File>
+<Start>16:00:46:20</Start>
+<Take>1</Take>
+<UUID>A6F00D53-6C18-49C9-AC0C-4EE3E630EC0A</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C013_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 422</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>SchÃ¤rfeschwimmer</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:01:21:12</Duration>
+<End>16:07:09:07</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>1418056602</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C013_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>1956</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C013_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene>10 - 1</Scene>
+<Sensor__Fps>60</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/125s</Shutter>
+<Source__File>A001C013_150827_R2GJ.mov</Source__File>
+<Start>16:05:47:19</Start>
+<Take>2</Take>
+<UUID>31E6F93F-025A-4F6D-A753-156EF7B99416</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C014_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 422</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>SchÃ¤rfeschwimmer</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:01:22:16</Duration>
+<End>16:14:18:04</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>1418056558</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C014_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>1984</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C014_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene>10 - 1</Scene>
+<Sensor__Fps>60</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/125s</Shutter>
+<Source__File>A001C014_150827_R2GJ.mov</Source__File>
+<Start>16:12:55:12</Start>
+<Take>3</Take>
+<UUID>E24356B0-92F6-4D2F-8F37-4D1EBD3C44C3</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C015_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 422</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>leichte SchÃ¤rfeschwimmer</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:01:34:15</Duration>
+<End>16:26:43:16</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>1536053130</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C015_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>2271</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C015_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene>10 - 2</Scene>
+<Sensor__Fps>60</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/125s</Shutter>
+<Source__File>A001C015_150827_R2GJ.mov</Source__File>
+<Start>16:25:09:01</Start>
+<Take>1</Take>
+<UUID>637B0F9A-E684-4327-8262-D409ADC64496</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C016_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 422</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>SchÃ¤rfeschwimmer</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:03:26:01</Duration>
+<End>16:40:35:12</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>3306001222</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C016_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>4945</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C016_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene>10 - 2</Scene>
+<Sensor__Fps>60</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/125s</Shutter>
+<Source__File>A001C016_150827_R2GJ.mov</Source__File>
+<Start>16:37:09:11</Start>
+<Take>2</Take>
+<UUID>58BDCEB6-2DAE-46FD-94D7-BE81BD3C336F</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C017_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>waste</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:00:20</Duration>
+<End>16:22:37:13</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>108422434</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C017_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>20</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C017_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C017_150827_R2GJ.mov</Source__File>
+<Start>16:22:36:17</Start>
+<UUID>A6F5E975-FD7D-4F53-9A54-9C243DC0034A</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C018_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>making of</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:07:11</Duration>
+<End>16:25:21:04</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>321069346</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C018_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>179</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C018_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C018_150827_R2GJ.mov</Source__File>
+<Start>16:25:13:17</Start>
+<UUID>2B49C172-0EED-469C-AB97-FA419424A00C</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C019_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>making of</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:14:14</Duration>
+<End>16:25:41:22</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>640039922</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C019_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>350</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C019_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C019_150827_R2GJ.mov</Source__File>
+<Start>16:25:27:08</Start>
+<UUID>5AD483F7-B7C9-43B4-8046-686A31F0DB5E</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C020_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>making of</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:09:11</Duration>
+<End>16:26:32:10</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>427392858</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C020_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>227</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C020_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C020_150827_R2GJ.mov</Source__File>
+<Start>16:26:22:23</Start>
+<UUID>462DC3A5-AB72-420E-9F6B-2C802D077A49</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C021_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>Schmutz auf Sensor oder Linse (Oben Rechts)</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:27:13</Duration>
+<End>16:27:42:08</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>1065334082</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C021_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>661</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C021_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene> - ?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C021_150827_R2GJ.mov</Source__File>
+<Start>16:27:14:19</Start>
+<UUID>3B2ADFEF-56A8-4211-B1F3-94A3B48AFBB6</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C022_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:01:01:18</Duration>
+<End>16:35:01:23</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>2234892810</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C022_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>1482</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C022_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene>10 - 3</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C022_150827_R2GJ.mov</Source__File>
+<Start>16:34:00:05</Start>
+<Take>1</Take>
+<UUID>1D3720EF-108C-4A83-A60E-A21F89C0EAC3</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A001C023_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A001R2GJ</Bin__Name>
+<CamRoll>A001R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:01:14:07</Duration>
+<End>16:42:26:16</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>2660186978</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C023_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>1783</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A001C023_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A001R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (A001R2GJ, HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene>10 - 4</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A001C023_150827_R2GJ.mov</Source__File>
+<Start>16:41:12:09</Start>
+<Take>1</Take>
+<UUID>7C937D5E-CD89-473F-8E2D-5C9534C4FC53</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A002C001_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A002R2GJ</Bin__Name>
+<CamRoll>A002R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:04:36:09</Duration>
+<End>17:18:36:19</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>9783863418</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C001_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>6633</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A002C001_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A002R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, A002R2GJ, HFF_2)</Resource__sumary>
+<Scene>10 - 5</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A002C001_150827_R2GJ.mov</Source__File>
+<Start>17:14:00:10</Start>
+<Take>1</Take>
+<UUID>2DFD678C-6FAA-4F8A-9D5B-5F31E19BB130</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A002C002_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A002R2GJ</Bin__Name>
+<CamRoll>A002R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:03:12:01</Duration>
+<End>17:31:19:22</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>6913140834</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C002_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>4609</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A002C002_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A002R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, A002R2GJ, HFF_2)</Resource__sumary>
+<Scene>10 - 6</Scene>
+<Sensor__Fps>40</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/83s</Shutter>
+<Source__File>A002C002_150827_R2GJ.mov</Source__File>
+<Start>17:28:07:21</Start>
+<Take>1</Take>
+<UUID>8447AA68-629E-4319-B90A-3E31F344BB74</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A002C003_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A002R2GJ</Bin__Name>
+<CamRoll>A002R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>SchÃ¤rfeschwimmer</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:03:19:19</Duration>
+<End>17:41:30:04</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>7090347098</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C003_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>4795</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A002C003_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A002R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, A002R2GJ, HFF_2)</Resource__sumary>
+<Scene>10 - 7</Scene>
+<Sensor__Fps>40</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/83s</Shutter>
+<Source__File>A002C003_150827_R2GJ.mov</Source__File>
+<Start>17:38:10:09</Start>
+<Take>1</Take>
+<UUID>F7B44F26-40F9-4471-8EC8-75D73E1099DD</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A002C004_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A002R2GJ</Bin__Name>
+<CamRoll>A002R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>Detail Schilf</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:24:10</Duration>
+<End>17:44:28:21</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>1065335490</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C004_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>586</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A002C004_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A002R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, A002R2GJ, HFF_2)</Resource__sumary>
+<Scene>10 - 8</Scene>
+<Sensor__Fps>40</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/83s</Shutter>
+<Source__File>A002C004_150827_R2GJ.mov</Source__File>
+<Start>17:44:04:11</Start>
+<Take>1</Take>
+<UUID>4E0D8C32-60E8-4CF4-842F-C2A9BF60A8D3</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A002C005_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A002R2GJ</Bin__Name>
+<CamRoll>A002R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>SchÃ¤rfeschwimmer</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:49:22</Duration>
+<End>17:47:11:01</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>1809598730</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C005_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>1198</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A002C005_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A002R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (HFF_1, HFF_3, projekte, A002R2GJ, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene>10 - 8</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A002C005_150827_R2GJ.mov</Source__File>
+<Start>17:46:21:03</Start>
+<Take>2</Take>
+<UUID>992B2712-B5B8-4F2E-9871-ECA0E382C9F3</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A002C006_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A002R2GJ</Bin__Name>
+<CamRoll>A002R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>Detail Wellen</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:01:13:23</Duration>
+<End>17:49:39:08</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>2660186906</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C006_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>1775</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A002C006_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A002R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (HFF_1, HFF_3, projekte, A002R2GJ, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2)</Resource__sumary>
+<Scene>10 - 9</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A002C006_150827_R2GJ.mov</Source__File>
+<Start>17:48:25:09</Start>
+<Take>1</Take>
+<UUID>F62E169B-2224-4F53-804C-2CBA63579F39</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A002C007_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A002R2GJ</Bin__Name>
+<CamRoll>A002R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>Detail Wellen</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:00:22:17</Duration>
+<End>17:50:21:06</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>852686962</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C007_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>545</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A002C007_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A002R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, A002R2GJ, HFF_2)</Resource__sumary>
+<Scene>10 - 9</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A002C007_150827_R2GJ.mov</Source__File>
+<Start>17:49:58:13</Start>
+<Take>2</Take>
+<UUID>F09D6A6E-6DB3-46F6-81EB-D5B14CBADE17</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+<row uuid="A003C001_150827_R2GJ">
+<ASA>640</ASA>
+<Bin__Name>A003R2GJ</Bin__Name>
+<CamRoll>A003R2GJ</CamRoll>
+<Camera>A</Camera>
+<Circled__Take>-</Circled__Take>
+<Codec>ProRes 4444</Codec>
+<Color__Label>No Label</Color__Label>
+<Colorspace>LogC</Colorspace>
+<DOP>ROBERT_FRIEBE</DOP>
+<Description>leicht unscharf</Description>
+<Director>CEVAT_MASKAR</Director>
+<Drive>LaCie</Drive>
+<Duration>00:01:11:09</Duration>
+<End>18:03:38:02</End>
+<F-Stop>0</F-Stop>
+<FPS>24</FPS>
+<File__Size>2553863450</File__Size>
+<File__path>/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A003R2GJ/A003R2GJ/A003C001_150827_R2GJ.mov</File__path>
+<Filetype>mov</Filetype>
+<Frame__count>1713</Frame__count>
+<Import__Plugin>ARRI Alexa Importer</Import__Plugin>
+<Location>BERNSTEINSEE</Location>
+<Name>A003C001_150827_R2GJ</Name>
+<Production>DWERFT_TESTDREH</Production>
+<Rating>Rating 0 of 5</Rating>
+<Reel__name>A003R2GJ</Reel__name>
+<Resolution>HD</Resolution>
+<Resource__count>7</Resource__count>
+<Resource__sumary>7 file resources (HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_2, A003R2GJ)</Resource__sumary>
+<Scene>10 - 11?</Scene>
+<Sensor__Fps>24</Sensor__Fps>
+<Shoot__Date>20150827</Shoot__Date>
+<Shutter>1/50s</Shutter>
+<Source__File>A003C001_150827_R2GJ.mov</Source__File>
+<Start>18:02:26:17</Start>
+<Take>3</Take>
+<UUID>D0FF0250-68B0-4D30-BE19-8378C3F2C2DC</UUID>
+<Whitepoint>5600</Whitepoint>
+</row>
+</csv>

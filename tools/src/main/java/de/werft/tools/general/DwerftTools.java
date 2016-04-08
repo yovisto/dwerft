@@ -1,7 +1,7 @@
 package de.werft.tools.general;
 
 import com.beust.jcommander.JCommander;
-import com.beust.jcommander.ParameterException;
+import com.beust.jcommander.Parameter;
 import de.werft.tools.importer.csv.AleToXmlConverter;
 import de.werft.tools.importer.csv.CsvToXmlConverter;
 import de.werft.tools.importer.dramaqueen.DramaqueenToRdf;
@@ -13,6 +13,7 @@ import de.werft.tools.sources.PreproducerSource;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFLanguages;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
@@ -20,6 +21,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerConfigurationException;
 import java.io.*;
 import java.security.InvalidKeyException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -28,110 +31,150 @@ import java.security.InvalidKeyException;
  */
 public class DwerftTools {
 
-	/** The Logger. */
-	private static final Logger L = Logger.getLogger(DwerftTools.class.getName());
-	
-	/** The tmp dir. */
-	private static String input;
-    private static String output;
-	private static Lang outputFormat;
-    private static InputStream dqMapping;
-    private static InputStream prpMapping;
-	
-	/** The print to cli. */
-	private static boolean printToCLI;
-	
+    /** The Logger. */
+    private static final Logger L = Logger.getLogger(DwerftTools.class.getName());
+
+    // main parameters
+    @Parameter(names = {"-convert"}, variableArity = true, description = "Starts conversion process. Based on the file extension we determine" +
+            " which converter is used. Available inputs are *.dp for dramaqueen; *.ale for ALE; *.csv for csv; *.xml for Generic;" +
+            " no input for preproducer. Available outputs are no output for csv, ale to xml conversion and *.(rdf|ttl|nt) for everything else." +
+            " Provide a mapping only for generic conversion. " +
+            " Usage: [<input>] <output> [<mapping>]")
+    private List<String> files = new ArrayList<>();
+
+    @Parameter(names = {"-upload"}, arity = 1, description = "Uploads a file to a specified sparql endpoint. Valid formats are" +
+            " *.(rdf|ttl|nt|jsonld)")
+    private String uploadFile = "";
+
+    // optional parameters
+    @Parameter(names = {"-format"}, arity = 1, description = "Specifies rdf output format. " +
+            "Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig'). Default is Turtle.")
+    private String format = "ttl";
+
+    @Parameter(names = {"-help"}, help = true, description = "Shows this help message.")
+    private boolean isHelp = false;
+
+    @Parameter(names = {"-print"}, description = "Print conversion output to console instead of file.")
+    private boolean printToCli = false;
+
+    private DwerftConfig config;
+
+    public DwerftTools() throws InvalidKeyException {
+        this.config = ConfigFactory.create(DwerftConfig.class);
+        OntologyConstants.setOntologyFile(config.getOntologyFile());
+    }
+
+    /**
+     * Main entry point
+     *
+     * @param args the program arguments
+     */
+    public void run(String[] args) throws InvalidKeyException {
+        //Parse cli arguments
+        JCommander cmd = new JCommander(this);
+        cmd.parse(args);
+
+        if (isHelp) {
+            cmd.usage();
+            System.exit(0);
+        }
+
+        boolean result = false;
+        if (!uploadFile.isEmpty() && files.isEmpty()) {
+            result = upload(cmd);
+        } else if (!files.isEmpty() && uploadFile.isEmpty()) {
+            result = convert(cmd);
+        } else {
+            beatUser(cmd);
+        }
+
+        if (result) {
+            System.exit(0);
+        }
+        System.exit(1);
+    }
+
+    // the user failed to give a valid cmd
+    private void beatUser(JCommander cmd) {
+        L.error("You failed to give valid command line.");
+        cmd.usage();
+        System.exit(1);
+    }
+
+    private boolean convert(JCommander cmd) throws InvalidKeyException {
+        if (files.size() > 3 && files.size() < 1) {
+            beatUser(cmd);
+        }
+
+        String input = files.get(0);
+        if (files.size() == 1 && hasExtension(input, "(rdf|nt|ttl)")) { // preproducer to rdf
+            prpToRdf(config, input);
+        } else if (files.size() == 1 && hasExtension(input, "(ale|csv)")) { // csv to xml
+            File f = convertCsvToXml(input);
+            L.info("Converted " + input + " to " + f);
+        } else {
+
+            String output = files.get(1);
+            if (!hasExtension(output, "(rdf|nt|ttl)")) {
+                beatUser(cmd);
+            }
+
+            if (hasExtension(input, "dq") && files.size() == 2) { // dramaqueen to rdf
+                dqToRdf(input, output);
+            } else if (hasExtension(input, "(ale|csv)") && files.size() == 3) { // csv to rdf
+                String file = convertCsvToXml(input).getAbsolutePath();
+                L.info("Converted " + input + " to " + file);
+                genericXmlToRdf(file, output, files.get(2));
+            } else if (hasExtension(input, "xml") && files.size() == 3) { // generic conversion
+                genericXmlToRdf(input, output, files.get(2));
+            } else {
+                beatUser(cmd);
+            }
+        }
+
+        return true;
+    }
+
+    private boolean upload(JCommander cmd) {
+        if (hasExtension(uploadFile, "(rdf|ttl|nt|jsonld)")) {
+            beatUser(cmd);
+        }
+
+        System.out.println("Here will be soon the upload.");
+        return false;
+    }
+
 	/**
 	 * The main method.
 	 *
 	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
-		
-		//Parse cli arguments
-		DwerftCLIArguments params = new DwerftCLIArguments();
-		JCommander cmd = new JCommander(params);
-		
-		//Configure log4j2
-		BasicConfigurator.configure();
+        //Configure log4j2
+        BasicConfigurator.configure();
 
-        DwerftConfig config = ConfigFactory.create(DwerftConfig.class);
-        OntologyConstants.setOntologyFile(config.getOntologyFile());
-
-
-		try {
-			cmd.parse(args);
-			if (params.isHelp()) {
-                cmd.usage();
-                System.exit(0);
-            }
-
-
-			//Assign global variables
-			input = params.getInputFile();
-			output = params.getOutputFile();
-			printToCLI = params.isPrintToCli();
-			outputFormat = params.getFormat();
-
-            // load predefined mappings
-			try {
-                dqMapping = loadFile(new java.io.File(config.getMappingFolder(), "dramaqueen.mappings"));
-                prpMapping = loadFile(new java.io.File(config.getMappingFolder(), "preproducer.mappings"));
-            } catch (FileNotFoundException e) {
-                L.error(e.getMessage());
-                System.exit(1);
-            }
-
-			
-			//Assign local variables
-			String inputType = params.getInputType();
-
-			//Make sure input and output has been specified
-			if (!StringUtils.isEmpty(output)) {
-				
-				/**
-				 * (1) dramaqueen to rdf
-				 * (2) preproducer to rdf		
-				 * (3) generic XML file to rdf. This requires a custom mapping file
-				 */
-				if (StringUtils.equals(inputType, "dq")) {
-					if (!input.isEmpty()) {
-						dqToRdf();
-					} else {
-						L.error("DramaQueen conversion requires a valid input file");
-						cmd.usage();
-					}
-				} else if (StringUtils.equals(inputType, "prp")) {
-                    	prpToRdf(config);
-				} else if (StringUtils.equals(inputType, "g")) {
-					String customMapping = params.getCustomMapping();
-					if (!StringUtils.isEmpty(customMapping) && !StringUtils.isEmpty(input)) {
-						genericXmlToRdf(customMapping);
-					} else {
-						L.error("Using the Generic XML parser requires a valid input file and a custom mapping file.");
-						cmd.usage();
-					}
-				} else {
-					L.error("Invalid input type \"" + inputType + "\"");
-                    cmd.usage();
-				}
-			}
-        } catch (ParameterException e) {
-			L.error("Could not parse arguments : " + e);
-            cmd.usage();
-        } catch (InvalidKeyException e) {
-            L.error("A credentials problem. " + e.getMessage());
+        try {
+            DwerftTools tools = new DwerftTools();
+            tools.run(args);
+        } catch (InvalidKeyException e1) {
+            L.error("Wrong keys configured. " + e1.getMessage());
         }
     }
 
     /**
      *
      * @param config the dwerft configuration
-     * @throws InvalidKeyException if ne credentials where found
      */
-	private static void prpToRdf(DwerftConfig config) throws InvalidKeyException {
+	private void prpToRdf(DwerftConfig config, String output) throws InvalidKeyException {
 		if (isEmptyKeys(config)) {
             throw new InvalidKeyException("No PreProducer credentials found.");
+        }
+
+        InputStream prpMapping = new AbstractSource().get(
+                new File(config.getMappingFolder(), "preproducer.mappings").getAbsolutePath());
+        if (prpMapping == null) {
+            L.error("Preproducer mapping not found in " + config.getMappingFolder());
+            System.exit(1);
         }
 
 
@@ -148,10 +191,10 @@ public class DwerftTools {
 			pprdf.convert(pps.get(method));
 		}
 
-		pprdf.writeRdfToFile(output, outputFormat);
+		pprdf.writeRdfToFile(output, getFormat());
 
-		if (printToCLI)
-			pprdf.writeRdfToConsole(outputFormat);
+		if (printToCli)
+			pprdf.writeRdfToConsole(getFormat());
 			
 		L.info("Preproducer RDF has been written to " + output);
 	}
@@ -171,8 +214,14 @@ public class DwerftTools {
 	 * Dq to rdf.
 	 *
 	 */
-	private static void dqToRdf() {
+	private void dqToRdf(String input, String output) {
 		InputStream inputStream = new DramaQueenSource().get(input);
+        InputStream dqMapping = new AbstractSource().get(
+                new File(config.getMappingFolder(), "dramaqueen.mappings").getAbsolutePath());
+        if (dqMapping == null) {
+            L.error("Dramaqueen mapping not found in " + config.getMappingFolder());
+            System.exit(1);
+        }
 
 		DramaqueenToRdf dqrdf = new DramaqueenToRdf(
 				OntologyConstants.ONTOLOGY_FILE, 
@@ -180,22 +229,16 @@ public class DwerftTools {
 				dqMapping);
 		
 		dqrdf.convert(inputStream);
-		dqrdf.writeRdfToFile(output, outputFormat);
+		dqrdf.writeRdfToFile(output, getFormat());
 		
-		if (printToCLI)
-			dqrdf.writeRdfToConsole(outputFormat);
+		if (printToCli)
+			dqrdf.writeRdfToConsole(getFormat());
 		
 		L.info("Dramaqueen RDF has been written to " + output);
 	}
 	
-	private static void genericXmlToRdf(String customMapping) {
-        InputStream inputStream = null;
-        try {
-            inputStream = getSource(input);
-        } catch (IOException | ParserConfigurationException | TransformerConfigurationException e) {
-            L.error("Could not preprocess the input file. Please check if you have provided" +
-                    "on of these: xml, csv, ale file. " + e.getMessage());
-        }
+	private void genericXmlToRdf(String input, String output, String customMapping) {
+        InputStream inputStream = new AbstractSource().get(input);
 
         AbstractXMLtoRDFconverter abstractRdf = new AbstractXMLtoRDFconverter(
 				OntologyConstants.ONTOLOGY_FILE,
@@ -210,32 +253,29 @@ public class DwerftTools {
 		};
 		
 		abstractRdf.convert(inputStream);
-		abstractRdf.writeRdfToFile(output, outputFormat);
+		abstractRdf.writeRdfToFile(output, getFormat());
 		
-		if (printToCLI)
-			abstractRdf.writeRdfToConsole(outputFormat);
+		if (printToCli)
+			abstractRdf.writeRdfToConsole(getFormat());
 		
 		L.info("Generic RDF has been written to " + output + " using " + input + " as input and " + customMapping + " as mapping");
 	}
 
-    // preconverts a csv or ale file to an xml file for further processing or if it is already a xml get the stream
-    private static InputStream getSource(String input) throws IOException, ParserConfigurationException, TransformerConfigurationException {
-        if (StringUtils.endsWithIgnoreCase(input, ".csv")) {
-            File f = new CsvToXmlConverter().convertToXml(input, ';');
-            L.info("Converted csv to xml.");
-            return new AbstractSource().get(f.getAbsolutePath());
-
-        } else if (StringUtils.endsWithIgnoreCase(input, ".ale")) {
-            File f = new AleToXmlConverter().convertToXml(input, '\t');
-            L.info("converted ale to xml");
-            return new AbstractSource().get(f.getAbsolutePath());
-
-        } else {
-            return new AbstractSource().get(input);
+    private File convertCsvToXml(String input) {
+        File f = null;
+        try {
+            if (hasExtension(input, "csv")) {
+                f = new CsvToXmlConverter().convertToXml(input, ';');
+            } else {
+                f = new AleToXmlConverter().convertToXml(input, '\t');
+            }
+        } catch (IOException | ParserConfigurationException | TransformerConfigurationException e) {
+            L.error("Csv or Ale conversion failed. " + e.getMessage());
         }
+        return f;
     }
 
-    private static InputStream loadFile(File filename) throws FileNotFoundException {
+    private InputStream loadFile(File filename) throws FileNotFoundException {
         InputStream in = null;
         try {
             in = new BufferedInputStream(new FileInputStream(filename));
@@ -248,5 +288,18 @@ public class DwerftTools {
         } else {
             throw new FileNotFoundException("File not found " + filename.getAbsolutePath());
         }
+    }
+
+    private Lang getFormat() {
+        Lang resultFormat = RDFLanguages.nameToLang(format.toUpperCase());
+        // no language found for the specified format
+        if (resultFormat == null) {
+            resultFormat = Lang.TTL;
+        }
+        return resultFormat;
+    }
+
+    private boolean hasExtension(String file, String extensions) {
+        return StringUtils.substringAfterLast(file, ".").toLowerCase().matches(extensions);
     }
 }
