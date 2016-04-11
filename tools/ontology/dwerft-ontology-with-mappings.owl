@@ -100,10 +100,10 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/detectsAnomaly -->
+    <!-- http://filmontology.org/ontology/1.0/detectsAbnormalArea -->
 
-    <owl:ObjectProperty rdf:about="&foo;detectsAnomaly">
-        <rdfs:label>DRA_detectsAnomaly</rdfs:label>
+    <owl:ObjectProperty rdf:about="&foo;detectsAbnormalArea">
+        <rdfs:label>DRA_detectsAbnormalArea</rdfs:label>
         <rdfs:comment>A specific abnormal area on the analyzed storage medium</rdfs:comment>
         <rdfs:range rdf:resource="&foo;AbnormalArea"/>
         <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
@@ -543,7 +543,19 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/IID -->
+    <!-- http://filmontology.org/ontology/1.0/detectedTimecode -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedTimecode">
+        <rdfs:label>DRA_detectedTimecode</rdfs:label>
+        <rdfs:comment>The actual duration of the archived content stored on the medium detected by the Befundungstisch as time code</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+	
+	
+	
+	<!-- http://filmontology.org/ontology/1.0/IID -->
 
     <owl:DatatypeProperty rdf:about="&foo;IID">
         <rdfs:label>DRA_IID</rdfs:label>
@@ -2341,16 +2353,24 @@
     <owl:DatatypeProperty rdf:about="&foo;rating">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>rating</rdfs:label>
-        <rdfs:label>DRA_rating</rdfs:label>
         <rdfs:comment>User-defined rating of a clip.</rdfs:comment>
-        <rdfs:comment>Rating of the detected anomaly/film condition as benchmark (1 = worst, 10 = best)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
+
+
+    <!-- http://filmontology.org/ontology/1.0/benchmark -->
+
+    <owl:DatatypeProperty rdf:about="&foo;benchmark">
+        <rdfs:label>DRA_benchmark</rdfs:label>
+        <rdfs:comment>Rating of the detected anomaly/film condition as benchmark (1 = worst, 10 = best)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+	
 
 
     <!-- http://filmontology.org/ontology/1.0/recommendedAction -->
@@ -3277,7 +3297,52 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/AbnormalArea -->
+    <!-- http://filmontology.org/ontology/1.0/Density -->
+
+    <owl:Class rdf:about="&foo;Density">
+        <rdfs:label>DRA_Density</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/DensityBlue -->
+
+    <owl:Class rdf:about="&foo;DensityBlue">
+        <rdfs:label>DRA_DensityBlue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;Density"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/DensityGreen -->
+
+    <owl:Class rdf:about="&foo;DensityGreen">
+        <rdfs:label>DRA_DensityGreen</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;Density"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/DensityRange -->
+
+    <owl:Class rdf:about="&foo;DensityRange">
+        <rdfs:label>DRA_DensityRange</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;Density"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/DensityRed -->
+
+    <owl:Class rdf:about="&foo;DensityRed">
+        <rdfs:label>DRA_DensityRed</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;Density"/>
+    </owl:Class>
+	
+	
+	
+	<!-- http://filmontology.org/ontology/1.0/AbnormalArea -->
 
     <owl:Class rdf:about="&foo;AbnormalArea">
         <rdfs:label>DRA_AbnormalArea</rdfs:label>
@@ -3324,15 +3389,6 @@
         <rdfs:label>DRA_ArchivedEpisode</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Episode"/>
         <rdfs:comment>Parts of an archived series film project (a single film always has exactly one episode)</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/Artefact -->
-
-    <owl:Class rdf:about="&foo;Artefact">
-        <rdfs:label>DRA_Artefact</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
     </owl:Class>
     
 
@@ -3654,16 +3710,7 @@
         <rdfs:label>DRA_Shrinkage</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
     </owl:Class>
-    
 
-
-    <!-- http://filmontology.org/ontology/1.0/Smear -->
-
-    <owl:Class rdf:about="&foo;Smear">
-        <rdfs:label>DRA_Smear</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
-    </owl:Class>
-    
 
 
     <!-- http://filmontology.org/ontology/1.0/Splice -->
