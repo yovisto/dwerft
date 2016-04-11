@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<csv src="avid_export_alexa_camera_drehtag1.ale">
+<row uuid="A001C001_150827_R2GJ">
+<Name>A001C001_150827_R2GJ.mov</Name>
+<Creation__Date>3/14/16 5:43:08 PM</Creation__Date>
+<Duration>00:00:20:02</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>14:39:59:11</End>
+<FPS>24.00</FPS>
+<KN__Dur>  30+02</KN__Dur>
+<Tracks>V</Tracks>
+<Start>14:39:39:09</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C001_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/14/16 5:43:24 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C001_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C002_150827_R2GJ">
+<Name>A001C002_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:15:33 PM</Creation__Date>
+<Duration>00:00:21:01</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>14:40:46:11</End>
+<FPS>24.00</FPS>
+<KN__Dur>  31+09</KN__Dur>
+<Tracks>V</Tracks>
+<Start>14:40:25:10</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C002_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:15:42 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C002_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C003_150827_R2GJ">
+<Name>A001C003_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:15:42 PM</Creation__Date>
+<Duration>00:00:03:08</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>14:45:29:12</End>
+<FPS>24.00</FPS>
+<KN__Dur>   5+00</KN__Dur>
+<Tracks>V</Tracks>
+<Start>14:45:26:04</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C003_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:15:43 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C003_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C004_150827_R2GJ">
+<Name>A001C004_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:15:43 PM</Creation__Date>
+<Duration>00:00:02:07</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>14:47:02:23</End>
+<FPS>24.00</FPS>
+<KN__Dur>   3+07</KN__Dur>
+<Tracks>V</Tracks>
+<Start>14:47:00:16</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C004_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:15:44 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C004_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C005_150827_R2GJ">
+<Name>A001C005_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:15:45 PM</Creation__Date>
+<Duration>00:00:02:08</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>14:47:19:14</End>
+<FPS>24.00</FPS>
+<KN__Dur>   3+08</KN__Dur>
+<Tracks>V</Tracks>
+<Start>14:47:17:06</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C005_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:15:45 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C005_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C006_150827_R2GJ">
+<Name>A001C006_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:15:46 PM</Creation__Date>
+<Duration>00:00:03:15</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>14:47:58:16</End>
+<FPS>24.00</FPS>
+<KN__Dur>   5+07</KN__Dur>
+<Tracks>V</Tracks>
+<Start>14:47:55:01</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C006_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:15:47 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C006_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C007_150827_R2GJ">
+<Name>A001C007_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:15:47 PM</Creation__Date>
+<Duration>00:01:01:11</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>14:56:11:15</End>
+<FPS>24.00</FPS>
+<KN__Dur>  92+03</KN__Dur>
+<Tracks>V</Tracks>
+<Start>14:55:10:04</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C007_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:16:11 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C007_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C008_150827_R2GJ">
+<Name>A001C008_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:16:12 PM</Creation__Date>
+<Duration>00:00:02:22</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>15:04:37:11</End>
+<FPS>24.00</FPS>
+<KN__Dur>   4+06</KN__Dur>
+<Tracks>V</Tracks>
+<Start>15:04:34:13</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C008_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:16:13 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C008_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C009_150827_R2GJ">
+<Name>A001C009_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:16:13 PM</Creation__Date>
+<Duration>00:00:36:09</Duration>
+<CFPS>24.00</CFPS>
+<Auxiliary__TC1>00:00:00:00</Auxiliary__TC1>
+<Drive>LaCie</Drive>
+<End>15:10:01:06</End>
+<FPS>24.00</FPS>
+<KN__Dur>  54+09</KN__Dur>
+<Tracks>V</Tracks>
+<Start>15:09:24:21</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C009_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:16:27 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C009_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C010_150827_R2GJ">
+<Name>A001C010_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:16:27 PM</Creation__Date>
+<Duration>00:01:04:19</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>15:14:47:02</End>
+<FPS>24.00</FPS>
+<KN__Dur>  97+03</KN__Dur>
+<Tracks>V</Tracks>
+<Start>15:13:42:07</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C010_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:16:53 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C010_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C011_150827_R2GJ">
+<Name>A001C011_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:16:53 PM</Creation__Date>
+<Duration>00:01:16:19</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>15:18:09:21</End>
+<FPS>24.00</FPS>
+<KN__Dur> 115+03</KN__Dur>
+<Tracks>V</Tracks>
+<Start>15:16:53:02</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C011_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:17:24 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C011_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C012_150827_R2GJ">
+<Name>A001C012_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:17:24 PM</Creation__Date>
+<Duration>00:01:25:22</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>16:02:12:18</End>
+<FPS>24.00</FPS>
+<KN__Dur> 128+14</KN__Dur>
+<Tracks>V</Tracks>
+<Start>16:00:46:20</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes (HD1080p)</Video>
+<Color__Space>YCbCr [video levels]</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C012_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:17:41 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C012_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C013_150827_R2GJ">
+<Name>A001C013_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:17:41 PM</Creation__Date>
+<Duration>00:01:21:12</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>16:07:09:07</End>
+<FPS>24.00</FPS>
+<KN__Dur> 122+04</KN__Dur>
+<Tracks>V</Tracks>
+<Start>16:05:47:19</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes (HD1080p)</Video>
+<Color__Space>YCbCr [video levels]</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C013_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:17:58 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C013_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C014_150827_R2GJ">
+<Name>A001C014_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:17:58 PM</Creation__Date>
+<Duration>00:01:22:16</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>16:14:18:04</End>
+<FPS>24.00</FPS>
+<KN__Dur> 124+00</KN__Dur>
+<Tracks>V</Tracks>
+<Start>16:12:55:12</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes (HD1080p)</Video>
+<Color__Space>YCbCr [video levels]</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C014_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:18:14 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C014_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C015_150827_R2GJ">
+<Name>A001C015_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:18:14 PM</Creation__Date>
+<Duration>00:01:34:15</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>16:26:43:16</End>
+<FPS>24.00</FPS>
+<KN__Dur> 141+15</KN__Dur>
+<Tracks>V</Tracks>
+<Start>16:25:09:01</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes (HD1080p)</Video>
+<Color__Space>YCbCr [video levels]</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C015_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:18:33 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C015_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C016_150827_R2GJ">
+<Name>A001C016_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:18:33 PM</Creation__Date>
+<Duration>00:03:26:01</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>16:40:35:12</End>
+<FPS>24.00</FPS>
+<KN__Dur> 309+01</KN__Dur>
+<Tracks>V</Tracks>
+<Start>16:37:09:11</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes (HD1080p)</Video>
+<Color__Space>YCbCr [video levels]</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C016_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:19:15 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C016_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C017_150827_R2GJ">
+<Name>A001C017_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:19:15 PM</Creation__Date>
+<Duration>00:00:00:20</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>16:22:37:13</End>
+<FPS>24.00</FPS>
+<KN__Dur>   1+04</KN__Dur>
+<Tracks>V</Tracks>
+<Start>16:22:36:17</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C017_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:19:16 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C017_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C018_150827_R2GJ">
+<Name>A001C018_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:19:16 PM</Creation__Date>
+<Duration>00:00:07:11</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>16:25:21:04</End>
+<FPS>24.00</FPS>
+<KN__Dur>  11+03</KN__Dur>
+<Tracks>V</Tracks>
+<Start>16:25:13:17</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C018_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:19:18 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C018_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C019_150827_R2GJ">
+<Name>A001C019_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:19:19 PM</Creation__Date>
+<Duration>00:00:14:14</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>16:25:41:22</End>
+<FPS>24.00</FPS>
+<KN__Dur>  21+14</KN__Dur>
+<Tracks>V</Tracks>
+<Start>16:25:27:08</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C019_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:19:24 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C019_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C020_150827_R2GJ">
+<Name>A001C020_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:19:24 PM</Creation__Date>
+<Duration>00:00:09:11</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>16:26:32:10</End>
+<FPS>24.00</FPS>
+<KN__Dur>  14+03</KN__Dur>
+<Tracks>V</Tracks>
+<Start>16:26:22:23</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C020_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:19:28 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C020_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C021_150827_R2GJ">
+<Name>A001C021_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:19:28 PM</Creation__Date>
+<Duration>00:00:27:13</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>16:27:42:08</End>
+<FPS>24.00</FPS>
+<KN__Dur>  41+05</KN__Dur>
+<Tracks>V</Tracks>
+<Start>16:27:14:19</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C021_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:19:39 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C021_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C022_150827_R2GJ">
+<Name>A001C022_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:19:39 PM</Creation__Date>
+<Duration>00:01:01:18</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>16:35:01:23</End>
+<FPS>24.00</FPS>
+<KN__Dur>  92+10</KN__Dur>
+<Tracks>V</Tracks>
+<Start>16:34:00:05</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C022_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:20:03 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C022_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A001C023_150827_R2GJ">
+<Name>A001C023_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 12:20:03 PM</Creation__Date>
+<Duration>00:01:14:07</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>16:42:26:16</End>
+<FPS>24.00</FPS>
+<KN__Dur> 111+07</KN__Dur>
+<Tracks>V</Tracks>
+<Start>16:41:12:09</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A001C023_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 12:20:32 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/A001C023_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A001R2GJ/A001R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A002C001_150827_R2GJ">
+<Name>A002C001_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 2:50:35 PM</Creation__Date>
+<Duration>00:04:36:09</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>17:18:36:19</End>
+<FPS>24.00</FPS>
+<KN__Dur> 414+09</KN__Dur>
+<Tracks>V</Tracks>
+<Start>17:14:00:10</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A002C001_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 2:55:21 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C001_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A002C002_150827_R2GJ">
+<Name>A002C002_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 2:55:21 PM</Creation__Date>
+<Duration>00:03:12:01</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>17:31:19:22</End>
+<FPS>24.00</FPS>
+<KN__Dur> 288+01</KN__Dur>
+<Tracks>V</Tracks>
+<Start>17:28:07:21</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A002C002_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 2:58:30 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C002_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A002C003_150827_R2GJ">
+<Name>A002C003_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 2:58:30 PM</Creation__Date>
+<Duration>00:03:19:19</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>17:41:30:04</End>
+<FPS>24.00</FPS>
+<KN__Dur> 299+11</KN__Dur>
+<Tracks>V</Tracks>
+<Start>17:38:10:09</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A002C003_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 3:01:37 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C003_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A002C004_150827_R2GJ">
+<Name>A002C004_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 3:01:37 PM</Creation__Date>
+<Duration>00:00:24:10</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>17:44:28:21</End>
+<FPS>24.00</FPS>
+<KN__Dur>  36+10</KN__Dur>
+<Tracks>V</Tracks>
+<Start>17:44:04:11</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A002C004_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 3:02:00 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C004_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A002C005_150827_R2GJ">
+<Name>A002C005_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 3:02:00 PM</Creation__Date>
+<Duration>00:00:49:22</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>17:47:11:01</End>
+<FPS>24.00</FPS>
+<KN__Dur>  74+14</KN__Dur>
+<Tracks>V</Tracks>
+<Start>17:46:21:03</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A002C005_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 3:02:46 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C005_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A002C006_150827_R2GJ">
+<Name>A002C006_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 3:02:47 PM</Creation__Date>
+<Duration>00:01:13:23</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>17:49:39:08</End>
+<FPS>24.00</FPS>
+<KN__Dur> 110+15</KN__Dur>
+<Tracks>V</Tracks>
+<Start>17:48:25:09</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A002C006_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 3:03:53 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C006_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A002C007_150827_R2GJ">
+<Name>A002C007_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 3:03:53 PM</Creation__Date>
+<Duration>00:00:22:17</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>17:50:21:06</End>
+<FPS>24.00</FPS>
+<KN__Dur>  34+01</KN__Dur>
+<Tracks>V</Tracks>
+<Start>17:49:58:13</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A002C007_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 3:04:08 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/A002C007_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A002R2GJ/A002R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+<row uuid="A003C001_150827_R2GJ">
+<Name>A003C001_150827_R2GJ.mov</Name>
+<Creation__Date>3/15/16 3:04:53 PM</Creation__Date>
+<Duration>00:01:11:09</Duration>
+<CFPS>24.00</CFPS>
+<Drive>LaCie</Drive>
+<End>18:03:38:02</End>
+<FPS>24.00</FPS>
+<KN__Dur> 107+01</KN__Dur>
+<Tracks>V</Tracks>
+<Start>18:02:26:17</Start>
+<Project>LockIt_workaround</Project>
+<Video>Apple ProRes 4444 (HD1080p)</Video>
+<Color__Space>RGB 709</Color__Space>
+<Pixel__Aspect__Ratio>1.000</Pixel__Aspect__Ratio>
+<Source__File>A003C001_150827_R2GJ.mov</Source__File>
+<Reformat>Stretch</Reformat>
+<S3D__Alignment>NONE</S3D__Alignment>
+<Modified__Date>3/15/16 3:06:01 PM</Modified__Date>
+<Cadence>NORM</Cadence>
+<Video__File__Format>MXF</Video__File__Format>
+<Field__Motion>Progressive</Field__Motion>
+<Format>1080p/24</Format>
+<S3D__Channel>MONO</S3D__Channel>
+<Image__Size>1920 x 1080</Image__Size>
+<Image__Aspect__Ratio>16:9</Image__Aspect__Ratio>
+<UNC__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A003R2GJ/A003R2GJ/A003C001_150827_R2GJ.mov</UNC__Path>
+<Source__Path>/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_1/alexa/A003R2GJ/A003R2GJ/</Source__Path>
+<Raster__Dimension>1920x1080p</Raster__Dimension>
+</row>
+</csv>

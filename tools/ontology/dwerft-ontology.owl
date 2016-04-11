@@ -15,15 +15,15 @@
 
 <rdf:RDF xmlns="http://filmontology.org/"
      xml:base="http://filmontology.org/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:webprotege="http://protege.stanford.edu/webprotege/"
-     xmlns:for="http://filmontology.org/resource/"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:foo="http://filmontology.org/ontology/1.0/">
-    <owl:Ontology rdf:about="http://filmontology.org/ontology/ontology">
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:foo="http://filmontology.org/ontology/1.0/"
+     xmlns:for="http://filmontology.org/resource/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://filmontology.org/ontology/1.0">
         <dc:date rdf:datatype="&xsd;dateTime">Jun 30, 2015 8:03:46 AM</dc:date>
         <dc:creator rdf:datatype="&xsd;string">hagt</dc:creator>
     </owl:Ontology>
@@ -47,11 +47,23 @@
         <rdfs:label>address</rdfs:label>
         <rdfs:comment>An address of a location, company, emergency facility or belonging to a cast member</rdfs:comment>
         <rdfs:range rdf:resource="&foo;Address"/>
-        <rdfs:domain rdf:resource="&foo;Cast"/>
         <rdfs:domain rdf:resource="&foo;Company"/>
         <rdfs:domain rdf:resource="&foo;Emergency"/>
         <rdfs:domain rdf:resource="&foo;Institution"/>
         <rdfs:domain rdf:resource="&foo;Location"/>
+        <rdfs:domain rdf:resource="&foo;Person"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/affectsArea -->
+
+    <owl:ObjectProperty rdf:about="&foo;affectsArea">
+        <rdfs:label>DRA_affectsArea</rdfs:label>
+        <rdfs:comment>A film&apos;s condition affects specific areas</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -74,20 +86,32 @@
     <owl:ObjectProperty rdf:about="&foo;characterCast">
         <rdfs:label>characterCast</rdfs:label>
         <rdfs:comment>A character is played by a certain cast member.</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;Cast"/>
+        <rdfs:range rdf:resource="&foo;CastMember"/>
         <rdfs:domain rdf:resource="&foo;Character"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/detectsAnomaly -->
+    <!-- http://filmontology.org/ontology/1.0/detectsAbnormalArea -->
 
-    <owl:ObjectProperty rdf:about="&foo;detectsAnomaly">
-        <rdfs:label>DRA_detectsAnomaly</rdfs:label>
+    <owl:ObjectProperty rdf:about="&foo;detectsAbnormalArea">
+        <rdfs:label>DRA_detectsAbnormalArea</rdfs:label>
         <rdfs:comment>A specific abnormal area on the analyzed storage medium</rdfs:comment>
         <rdfs:range rdf:resource="&foo;AbnormalArea"/>
         <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectsCondition -->
+
+    <owl:ObjectProperty rdf:about="&foo;detectsCondition">
+        <rdfs:label>DRA_detectsCondition</rdfs:label>
+        <rdfs:comment>The condition analysis detects specific film conditions</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:range rdf:resource="&foo;FilmCondition"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -106,9 +130,21 @@
 
     <owl:ObjectProperty rdf:about="&foo;hasAnalysis">
         <rdfs:label>DRA_hasAnalysis</rdfs:label>
-        <rdfs:comment>The result of an analysis of the archival storage medium made by the Befundungstisch(tm)</rdfs:comment>
+        <rdfs:comment>The result of an analysis of the archival storage medium made by the Befundungstisch</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:range rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/hasBarcode -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasBarcode">
+        <rdfs:label>DRA_hasBarcode</rdfs:label>
+        <rdfs:comment>The medium is identified by a barcode at the institution it is kept at</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
+        <rdfs:range rdf:resource="&foo;InstitutionalIdentifier"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -119,7 +155,7 @@
     <owl:ObjectProperty rdf:about="&foo;hasCast">
         <rdfs:label>hasCast</rdfs:label>
         <rdfs:comment>Cast members of a project</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;Cast"/>
+        <rdfs:range rdf:resource="&foo;CastMember"/>
         <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
@@ -179,7 +215,7 @@
     <owl:ObjectProperty rdf:about="&foo;hasCrew">
         <rdfs:label>hasCrew</rdfs:label>
         <rdfs:comment>Crew members of a project</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;Crew"/>
+        <rdfs:range rdf:resource="&foo;CrewMember"/>
         <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
@@ -203,8 +239,8 @@
     <owl:ObjectProperty rdf:about="&foo;hasCrewMember">
         <rdfs:label>hasCrewMember</rdfs:label>
         <rdfs:comment>Crew member of a crew department</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;Crew"/>
         <rdfs:domain rdf:resource="&foo;CrewDepartment"/>
+        <rdfs:range rdf:resource="&foo;CrewMember"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -241,6 +277,18 @@
         <rdfs:comment>Associated facilities / equipment at a set</rdfs:comment>
         <rdfs:range rdf:resource="&foo;Facility"/>
         <rdfs:domain rdf:resource="&foo;Set"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/hasFinalVideoFile -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasFinalVideoFile">
+        <rdfs:label>hasFinalVideoFile</rdfs:label>
+        <rdfs:comment>Link to the metadata about the final rendered video file (usually MXF)</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Clip"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -348,7 +396,7 @@
 
     <owl:ObjectProperty rdf:about="&foo;hasStorageMedium">
         <rdfs:label>DRA_hasStorageMedium</rdfs:label>
-        <rdfs:comment>Archived content can be stored on a physical storage medium</rdfs:comment>
+        <rdfs:comment>Archived content is stored on a physical storage medium</rdfs:comment>
         <rdfs:range rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:domain rdf:resource="&foo;ArchivedEpisode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
@@ -363,6 +411,18 @@
         <rdfs:comment>A particular shot of a scene.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Scene"/>
         <rdfs:range rdf:resource="&foo;Take"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/ordersAnalysis -->
+
+    <owl:ObjectProperty rdf:about="&foo;ordersAnalysis">
+        <rdfs:label>DRA_ordersAnalysis</rdfs:label>
+        <rdfs:comment>The condition analysis is ordered by an institution</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:domain rdf:resource="&foo;Institution"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -428,23 +488,27 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/usesArchivedMaterial -->
+    <!-- http://filmontology.org/ontology/1.0/showsAbnormalArea -->
 
-    <owl:ObjectProperty rdf:about="&foo;usesArchivedMaterial">
-        <rdfs:label>DRA_usesArchivedMaterial</rdfs:label>
-        <rdfs:comment>The scene uses archival material</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;ArchivedEpisode"/>
-        <rdfs:domain rdf:resource="&foo;Scene"/>
+    <owl:ObjectProperty rdf:about="&foo;showsAbnormalArea">
+        <rdfs:label>DRA_showsAbnormalArea</rdfs:label>
+        <rdfs:comment>An abnormal area is visible and annotated in the proxy file</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:domain rdf:resource="&foo;Proxy"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/usesArchivedMaterial -->
 
-    
-
-
-
+    <owl:ObjectProperty rdf:about="&foo;usesArchivedMaterial">
+        <rdfs:label>DRA_usesArchivedMaterial</rdfs:label>
+        <rdfs:comment>The project uses archival material</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;ArchivalMaterial"/>
+        <rdfs:domain rdf:resource="&foo;Project"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
     
 
 
@@ -465,18 +529,6 @@
         <rdfs:label>DRA_IID</rdfs:label>
         <rdfs:comment>Internally unique institutional identifier to identify content and storage media</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;InstitutionalIdentifier"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/actualDuration -->
-
-    <owl:DatatypeProperty rdf:about="&foo;actualDuration">
-        <rdfs:label>DRA_actualDuration</rdfs:label>
-        <rdfs:comment>The actual duration of the archived content stored on the medium detected by the Befundungstisch</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -508,14 +560,15 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/anomalyCondition -->
+    <!-- http://filmontology.org/ontology/1.0/amaPlugin -->
 
-    <owl:DatatypeProperty rdf:about="&foo;anomalyCondition">
-        <rdfs:label>DRA_anomalyCondition</rdfs:label>
-        <rdfs:comment>A statement regarding the condition of the detected anomaly as benchmark (1 = worst, 10 = best)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
+    <owl:DatatypeProperty rdf:about="&foo;amaPlugin">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>amaPlugin</rdfs:label>
+        <rdfs:comment>Used external AMA plug-in for transcoding in AVID</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -527,18 +580,6 @@
         <rdfs:label>appearance</rdfs:label>
         <rdfs:comment>Description of the character look/appearance</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Character"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/archivalFormat -->
-
-    <owl:DatatypeProperty rdf:about="&foo;archivalFormat">
-        <rdfs:label>DRA_archivalFormat</rdfs:label>
-        <rdfs:comment>Material on which the film is recorded (e.g., 16 mm film)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -558,12 +599,12 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/audioBit -->
+    <!-- http://filmontology.org/ontology/1.0/audioBitDepth -->
 
-    <owl:DatatypeProperty rdf:about="&foo;audioBit">
+    <owl:DatatypeProperty rdf:about="&foo;audioBitDepth">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>audioBit</rdfs:label>
-        <rdfs:comment>Audio_bit</rdfs:comment>
+        <rdfs:label>audioBitDepth</rdfs:label>
+        <rdfs:comment>Sampling depth of the audio signal in bit</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -576,7 +617,7 @@
     <owl:DatatypeProperty rdf:about="&foo;audioFormat">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>audioFormat</rdfs:label>
-        <rdfs:comment>Audio_format</rdfs:comment>
+        <rdfs:comment>Format of the recorded audio signal (e.g. WAVE)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -584,12 +625,62 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/audioSr -->
+    <!-- http://filmontology.org/ontology/1.0/audioSamplingRate -->
 
-    <owl:DatatypeProperty rdf:about="&foo;audioSr">
+    <owl:DatatypeProperty rdf:about="&foo;audioSamplingRate">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>audioSr</rdfs:label>
-        <rdfs:comment>Audio_sr</rdfs:comment>
+        <rdfs:label>audioSamplingRate</rdfs:label>
+        <rdfs:comment>Sampling rate of the audio signal in kHz</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/auxiliaryTimecode -->
+
+    <owl:DatatypeProperty rdf:about="&foo;auxiliaryTimecode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>auxiliaryTimecode</rdfs:label>
+        <rdfs:comment>Auxiliary timecode (e.g., from external audio recorder)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/average -->
+
+    <owl:DatatypeProperty rdf:about="&foo;average">
+        <rdfs:label>DRA_average</rdfs:label>
+        <rdfs:comment>Average value of a film condition</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/benchmark -->
+
+    <owl:DatatypeProperty rdf:about="&foo;benchmark">
+        <rdfs:label>DRA_benchmark</rdfs:label>
+        <rdfs:comment>Rating of the detected anomaly/film condition as benchmark (1 = worst, 10 = best)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/binName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;binName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>binName</rdfs:label>
+        <rdfs:comment>Folder name containing the clips</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -609,12 +700,38 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/cameraId -->
+    <!-- http://filmontology.org/ontology/1.0/cameraAssistant -->
 
-    <owl:DatatypeProperty rdf:about="&foo;cameraId">
+    <owl:DatatypeProperty rdf:about="&foo;cameraAssistant">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>cameraId</rdfs:label>
-        <rdfs:comment>CameraID Prefix (L or R, R is default) plus camera serial number translated to Base36.</rdfs:comment>
+        <rdfs:label>cameraAssistant</rdfs:label>
+        <rdfs:comment>Name of the camera assistant</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/cameraFps -->
+
+    <owl:DatatypeProperty rdf:about="&foo;cameraFps">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>cameraFps</rdfs:label>
+        <rdfs:comment>Camera framerate for the clip in frames per second.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/cameraIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="&foo;cameraIdentifier">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>cameraIdentifier</rdfs:label>
+        <rdfs:comment>Camera identifier. (e.g. Alexa camera: ID Prefix (L or R, R is default) plus camera serial number.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -627,7 +744,7 @@
     <owl:DatatypeProperty rdf:about="&foo;cameraIndex">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>cameraIndex</rdfs:label>
-        <rdfs:comment>User defined camera index A-Z</rdfs:comment>
+        <rdfs:comment>User defined camera index A-Z, in case multiple cameras are used on set</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -640,7 +757,7 @@
     <owl:DatatypeProperty rdf:about="&foo;cameraModel">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>cameraModel</rdfs:label>
-        <rdfs:comment>Two numerical values (&apos;CameraProduct&apos; and &apos;CameraSubProduct&apos;) are added together with a text field &apos;CameraModel&apos; to specify the name of the camera model. The text field is a combination of the fixed prefix &apos;Alexa&apos; followed by possible combinations of the product type and product sub type as strings. A possible value is &apos;Alexa Studio XT&apos;.</rdfs:comment>
+        <rdfs:comment>Name of the camera model (e.g., for Alexa cameras, prefix &apos;Alexa&apos; followed by possible combinations of the product type and product sub type as strings)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -648,12 +765,38 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/cameraSn -->
+    <!-- http://filmontology.org/ontology/1.0/cameraRoll -->
 
-    <owl:DatatypeProperty rdf:about="&foo;cameraSn">
+    <owl:DatatypeProperty rdf:about="&foo;cameraRoll">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>cameraSn</rdfs:label>
-        <rdfs:comment>Camera serial number</rdfs:comment>
+        <rdfs:label>cameraRoll</rdfs:label>
+        <rdfs:comment>Identifies current reel using camera index letter (e.g., A, B) and the reel number.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/cameraSerialNumber -->
+
+    <owl:DatatypeProperty rdf:about="&foo;cameraSerialNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>cameraSerialNumber</rdfs:label>
+        <rdfs:comment>Serial number of the camera</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/captionInfo -->
+
+    <owl:DatatypeProperty rdf:about="&foo;captionInfo">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>captionInfo</rdfs:label>
+        <rdfs:comment>Information about captions</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -666,7 +809,7 @@
     <owl:DatatypeProperty rdf:about="&foo;ccShift">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>ccShift</rdfs:label>
-        <rdfs:comment>GreenTintFactor</rdfs:comment>
+        <rdfs:comment>Color effect. Value of a color shift to green or magenta (GreenTintFactor)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -699,24 +842,12 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/chemicalCondition -->
-
-    <owl:DatatypeProperty rdf:about="&foo;chemicalCondition">
-        <rdfs:label>DRA_chemicalCondition</rdfs:label>
-        <rdfs:comment>A statement regarding the chemical condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://filmontology.org/ontology/1.0/cinematographer -->
 
     <owl:DatatypeProperty rdf:about="&foo;cinematographer">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>cinematographer</rdfs:label>
-        <rdfs:comment>Cinematographer Name</rdfs:comment>
+        <rdfs:comment>Name of the cinematographer (director of photography - DOP)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -724,12 +855,12 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/circle -->
+    <!-- http://filmontology.org/ontology/1.0/circledTake -->
 
-    <owl:DatatypeProperty rdf:about="&foo;circle">
+    <owl:DatatypeProperty rdf:about="&foo;circledTake">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>circle</rdfs:label>
-        <rdfs:comment>Flag for marking good takes.</rdfs:comment>
+        <rdfs:label>circledTake</rdfs:label>
+        <rdfs:comment>Flag for marking good takes</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -750,12 +881,77 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/clip -->
+    <!-- http://filmontology.org/ontology/1.0/clipDuration -->
 
-    <owl:DatatypeProperty rdf:about="&foo;clip">
+    <owl:DatatypeProperty rdf:about="&foo;clipDuration">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>clip</rdfs:label>
-        <rdfs:comment>Clip</rdfs:comment>
+        <rdfs:label>clipDuration</rdfs:label>
+        <rdfs:comment>Duration of the clip</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/clipName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;clipName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>clipName</rdfs:label>
+        <rdfs:comment>Clip name as created by camera.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/clipNumber -->
+
+    <owl:DatatypeProperty rdf:about="&foo;clipNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>clipNumber</rdfs:label>
+        <rdfs:comment>Clip number on a camera magazine (cam roll)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/codec -->
+
+    <owl:DatatypeProperty rdf:about="&foo;codec">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>codec</rdfs:label>
+        <rdfs:comment>Video codec used by the camera for recording </rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/colorLabel -->
+
+    <owl:DatatypeProperty rdf:about="&foo;colorLabel">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>colorLabel</rdfs:label>
+        <rdfs:comment>User defined colored rating of a clip</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/colorSpace -->
+
+    <owl:DatatypeProperty rdf:about="&foo;colorSpace">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>colorSpace</rdfs:label>
+        <rdfs:comment>Color space (gamma) of the clip (e.g., LogC, Rec 709)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -775,13 +971,87 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/colorspace -->
+
+    <owl:DatatypeProperty rdf:about="&foo;colorspace">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>colorspace</rdfs:label>
+        <rdfs:comment>Color space (gamma) of the clip (e.g., LogC, Rec 709)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/comments -->
+
+    <owl:DatatypeProperty rdf:about="&foo;comments">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>comments</rdfs:label>
+        <rdfs:comment>User-defined comments</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/company -->
 
     <owl:DatatypeProperty rdf:about="&foo;company">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>company</rdfs:label>
-        <rdfs:comment>Production Company Name</rdfs:comment>
+        <rdfs:comment>Production company name</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/conditionMaterial -->
+
+    <owl:DatatypeProperty rdf:about="&foo;conditionMaterial">
+        <rdfs:label>DRA_conditionMaterial</rdfs:label>
+        <rdfs:comment>A statement regarding the material&apos;s condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/conditionOptical -->
+
+    <owl:DatatypeProperty rdf:about="&foo;conditionOptical">
+        <rdfs:label>DRA_conditionOptical</rdfs:label>
+        <rdfs:comment>A statement regarding the optical condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/conditionOverall -->
+
+    <owl:DatatypeProperty rdf:about="&foo;conditionOverall">
+        <rdfs:label>DRA_conditionOverall</rdfs:label>
+        <rdfs:comment>A statement regarding the overall condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/conditionRemark -->
+
+    <owl:DatatypeProperty rdf:about="&foo;conditionRemark">
+        <rdfs:label>DRA_conditionRemark</rdfs:label>
+        <rdfs:comment>Additional information regarding the storage medium provided by the condition analysis</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -813,13 +1083,30 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/creationDate -->
+
+    <owl:DatatypeProperty rdf:about="&foo;creationDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>creationDate</rdfs:label>
+        <rdfs:label>DRA_creationDate</rdfs:label>
+        <rdfs:comment>Creation date of the video file</rdfs:comment>
+        <rdfs:comment>DateTime of the analysis made by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/crewCode -->
 
     <owl:DatatypeProperty rdf:about="&foo;crewCode">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>crewCode</rdfs:label>
         <rdfs:comment>Additional identifier (typeCode) for a crew member.</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Crew"/>
+        <rdfs:domain rdf:resource="&foo;CrewMember"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -832,7 +1119,7 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>crewRole</rdfs:label>
         <rdfs:comment>Kind of role (function) that the crew member possesses</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Crew"/>
+        <rdfs:domain rdf:resource="&foo;CrewMember"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -857,22 +1144,10 @@
     <owl:DatatypeProperty rdf:about="&foo;dateCamera">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>dateCamera</rdfs:label>
-        <rdfs:comment>Image creation date.</rdfs:comment>
+        <rdfs:comment>Date set on camera</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/dateOfAnalysis -->
-
-    <owl:DatatypeProperty rdf:about="&foo;dateOfAnalysis">
-        <rdfs:label>DRA_dateOfAnalysis</rdfs:label>
-        <rdfs:comment>DateTime of the analysis made by the Befundungstisch</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
     
 
@@ -903,12 +1178,218 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/director -->
+    <!-- http://filmontology.org/ontology/1.0/description -->
 
-    <owl:DatatypeProperty rdf:about="&foo;director">
+    <owl:DatatypeProperty rdf:about="&foo;description">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>director</rdfs:label>
-        <rdfs:comment>Director Name</rdfs:comment>
+        <rdfs:label>description</rdfs:label>
+        <rdfs:comment>Additional notes on the clip</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedAspectRatio -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedAspectRatio">
+        <rdfs:label>DRA_detectedAspectRatio</rdfs:label>
+        <rdfs:comment>The actual aspect ratio of the archived content stored on the medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedColoration -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedColoration">
+        <rdfs:label>DRA_detectedColoration</rdfs:label>
+        <rdfs:comment>The coloration of the archived content stored on the medium detected by the Befundungstisch (e.g., black-and-white)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedDoublePerf -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedDoublePerf">
+        <rdfs:label>DRA_detectedDoublePerf</rdfs:label>
+        <rdfs:comment>Statement whether the archival medium is double-perf (true) or single-perf (false) as detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedDuration -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedDuration">
+        <rdfs:label>DRA_detectedDuration</rdfs:label>
+        <rdfs:comment>The actual duration of the archived content stored on the medium detected by the Befundungstisch in seconds</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedEmulsionLayer -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedEmulsionLayer">
+        <rdfs:label>DRA_detectedEmulsionLayer</rdfs:label>
+        <rdfs:comment>Information regarding the emulsion layer of the archival medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedFramerate -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedFramerate">
+        <rdfs:label>DRA_detectedFramerate</rdfs:label>
+        <rdfs:comment>Frame rate of the archived content stored on the medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedFrames -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedFrames">
+        <rdfs:label>DRA_detectedFrames</rdfs:label>
+        <rdfs:comment>The total number of frames of the archived content stored on the medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedGauge -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedGauge">
+        <rdfs:label>DRA_detectedGauge</rdfs:label>
+        <rdfs:comment>The film gauge of the archival medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedLength -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedLength">
+        <rdfs:label>DRA_detectedLength</rdfs:label>
+        <rdfs:comment>The actual lenght of the film detected by the Befundungstisch in metres</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedMaterial -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedMaterial">
+        <rdfs:label>DRA_detectedMaterial</rdfs:label>
+        <rdfs:comment>The material of the archival medium detected by the Befundungstisch (e.g., reversal film, color negative film)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedPerforations -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedPerforations">
+        <rdfs:label>DRA_detectedPerforations</rdfs:label>
+        <rdfs:comment>The number of perforations of the archival medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedScenes -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedScenes">
+        <rdfs:label>DRA_detectedScenes</rdfs:label>
+        <rdfs:comment>Number of scenes of the archived content stored on the medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedSound -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedSound">
+        <rdfs:label>DRA_detectedSound</rdfs:label>
+        <rdfs:comment>Information regarding the sound of the archived content detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedTimecode -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedTimecode">
+        <rdfs:label>DRA_detectedTimecode</rdfs:label>
+        <rdfs:comment>The actual duration of the archived content stored on the medium detected by the Befundungstisch as time code</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/detectedWindingDirection -->
+
+    <owl:DatatypeProperty rdf:about="&foo;detectedWindingDirection">
+        <rdfs:label>DRA_detectedWindingDirection</rdfs:label>
+        <rdfs:comment>The winding direction of the archival medium detected by the Befundungstisch</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/directorName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;directorName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>directorName</rdfs:label>
+        <rdfs:comment>Name of the director</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/driveName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;driveName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>driveName</rdfs:label>
+        <rdfs:comment>Name of the volume containing the clip after copying</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -921,13 +1402,10 @@
     <owl:DatatypeProperty rdf:about="&foo;duration">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>duration</rdfs:label>
-        <rdfs:comment>Duration</rdfs:comment>
         <rdfs:comment>Length of an episode in seconds</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;int"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -941,27 +1419,15 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/end -->
+    <!-- http://filmontology.org/ontology/1.0/endTimecode -->
 
-    <owl:DatatypeProperty rdf:about="&foo;end">
+    <owl:DatatypeProperty rdf:about="&foo;endTimecode">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>end</rdfs:label>
-        <rdfs:comment>End</rdfs:comment>
+        <rdfs:label>endTimecode</rdfs:label>
+        <rdfs:comment>End time code of the clip (SMPTE RP188)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/endFrame -->
-
-    <owl:DatatypeProperty rdf:about="&foo;endFrame">
-        <rdfs:label>DRA_endFrame</rdfs:label>
-        <rdfs:comment>End of abnormal area</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
 
@@ -984,7 +1450,7 @@
     <owl:DatatypeProperty rdf:about="&foo;exposureIndex">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>exposureIndex</rdfs:label>
-        <rdfs:comment>Value of the exposure index in ASA rating</rdfs:comment>
+        <rdfs:comment>Value of the sensor exposure index in ASA rating</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -997,7 +1463,7 @@
     <owl:DatatypeProperty rdf:about="&foo;eyeIndex">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>eyeIndex</rdfs:label>
-        <rdfs:comment>Image channel information</rdfs:comment>
+        <rdfs:comment>Image channel information for stereoscopic productions (single / left / right)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1018,12 +1484,76 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/fieldOrdering -->
+
+    <owl:DatatypeProperty rdf:about="&foo;fieldOrdering">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>fieldOrdering</rdfs:label>
+        <rdfs:comment>Field order for interlaced video</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/filePath -->
+
+    <owl:DatatypeProperty rdf:about="&foo;filePath">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>filePath</rdfs:label>
+        <rdfs:comment>Full file path to the copied original clip file</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/fileSize -->
+
+    <owl:DatatypeProperty rdf:about="&foo;fileSize">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>fileSize</rdfs:label>
+        <rdfs:comment>Size of the clip file in bytes</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/fileType -->
+
+    <owl:DatatypeProperty rdf:about="&foo;fileType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>fileType</rdfs:label>
+        <rdfs:comment>File type of the clip (e.g., mov, mp4)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/fileURL -->
+
+    <owl:DatatypeProperty rdf:about="&foo;fileURL">
+        <rdfs:label>DRA_fileURL</rdfs:label>
+        <rdfs:comment>Link to proxy video file</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Proxy"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/focusDistanceUnit -->
 
     <owl:DatatypeProperty rdf:about="&foo;focusDistanceUnit">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>focusDistanceUnit</rdfs:label>
-        <rdfs:comment>Lens Focus unit flag</rdfs:comment>
+        <rdfs:comment>Unit of the lens focus distance (metric / imperial)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1036,7 +1566,10 @@
     <owl:DatatypeProperty rdf:about="&foo;format">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>format</rdfs:label>
+        <rdfs:comment>Video format (combination of pixel width and frames per second)</rdfs:comment>
         <rdfs:comment>Material on which the film is recorded (e.g., DVCPRO)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1044,12 +1577,12 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/fps -->
+    <!-- http://filmontology.org/ontology/1.0/frameCount -->
 
-    <owl:DatatypeProperty rdf:about="&foo;fps">
+    <owl:DatatypeProperty rdf:about="&foo;frameCount">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>fps</rdfs:label>
-        <rdfs:comment>Time base in Fps.</rdfs:comment>
+        <rdfs:label>frameCount</rdfs:label>
+        <rdfs:comment>Number of frames of a clip</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1066,6 +1599,30 @@
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/frameIn -->
+
+    <owl:DatatypeProperty rdf:about="&foo;frameIn">
+        <rdfs:label>DRA_frameIn</rdfs:label>
+        <rdfs:comment>First frame of abnormal area</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/frameOut -->
+
+    <owl:DatatypeProperty rdf:about="&foo;frameOut">
+        <rdfs:label>DRA_frameOut</rdfs:label>
+        <rdfs:comment>Last frame of abnormal area</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
 
@@ -1096,6 +1653,19 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/fstop -->
+
+    <owl:DatatypeProperty rdf:about="&foo;fstop">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>fstop</rdfs:label>
+        <rdfs:comment>Ratio of the lens&apos;s focal length to the diameter of the entrance pupil.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/fullName -->
 
     <owl:DatatypeProperty rdf:about="&foo;fullName">
@@ -1103,19 +1673,6 @@
         <rdfs:label>fullName</rdfs:label>
         <rdfs:comment>Complete name of a character</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Character"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/gamma -->
-
-    <owl:DatatypeProperty rdf:about="&foo;gamma">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>gamma</rdfs:label>
-        <rdfs:comment>ID of the desired target color space.</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1199,6 +1756,19 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/imageAspectRatio -->
+
+    <owl:DatatypeProperty rdf:about="&foo;imageAspectRatio">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>imageAspectRatio</rdfs:label>
+        <rdfs:comment>Aspect ratio of the clip (e.g., 16:9)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/imageDetail -->
 
     <owl:DatatypeProperty rdf:about="&foo;imageDetail">
@@ -1231,6 +1801,32 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>imageSharpness</rdfs:label>
         <rdfs:comment>Field represents which Image Sharpness was applied during recording.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/importPlugin -->
+
+    <owl:DatatypeProperty rdf:about="&foo;importPlugin">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>importPlugin</rdfs:label>
+        <rdfs:comment>Used external plug-in for copying in Silverstack</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/inOut -->
+
+    <owl:DatatypeProperty rdf:about="&foo;inOut">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>inOut</rdfs:label>
+        <rdfs:comment>In-point and out-point in a clip</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1277,6 +1873,32 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/knDuration -->
+
+    <owl:DatatypeProperty rdf:about="&foo;knDuration">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>knDuration</rdfs:label>
+        <rdfs:comment>Duration for original camera negative identification</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/knStart -->
+
+    <owl:DatatypeProperty rdf:about="&foo;knStart">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>knStart</rdfs:label>
+        <rdfs:comment>Value for original camera negative identification</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/lastModified -->
 
     <owl:DatatypeProperty rdf:about="&foo;lastModified">
@@ -1290,11 +1912,23 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/lensSn -->
+    <!-- http://filmontology.org/ontology/1.0/length -->
 
-    <owl:DatatypeProperty rdf:about="&foo;lensSn">
+    <owl:DatatypeProperty rdf:about="&foo;length">
+        <rdfs:label>DRA_length</rdfs:label>
+        <rdfs:comment>Length of the film in metres</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/lensSerialNumber -->
+
+    <owl:DatatypeProperty rdf:about="&foo;lensSerialNumber">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>lensSn</rdfs:label>
+        <rdfs:label>lensSerialNumber</rdfs:label>
         <rdfs:comment>Lens serial number</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
@@ -1308,7 +1942,7 @@
     <owl:DatatypeProperty rdf:about="&foo;lensType">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>lensType</rdfs:label>
-        <rdfs:comment>Lens model</rdfs:comment>
+        <rdfs:comment>Lens mode (type, focal distance)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1321,7 +1955,7 @@
     <owl:DatatypeProperty rdf:about="&foo;location">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>location</rdfs:label>
-        <rdfs:comment>Location</rdfs:comment>
+        <rdfs:comment>Location of where the clip is shot</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1347,7 +1981,7 @@
     <owl:DatatypeProperty rdf:about="&foo;lookBurnedIn">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>lookBurnedIn</rdfs:label>
-        <rdfs:comment>Determines whether an ARRI Look File has been burned in during recording</rdfs:comment>
+        <rdfs:comment>Determines whether a Look File has been burned in during recording</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1360,7 +1994,7 @@
     <owl:DatatypeProperty rdf:about="&foo;lookName">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>lookName</rdfs:label>
-        <rdfs:comment>String for the ARRI Look File file name, up to 32 characters.</rdfs:comment>
+        <rdfs:comment>String for the look file name, up to 32 characters.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1373,8 +2007,20 @@
     <owl:DatatypeProperty rdf:about="&foo;lookUserLut">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>lookUserLut</rdfs:label>
-        <rdfs:comment>Indicating whether the selected look file contains a Custom 3DLUT.</rdfs:comment>
+        <rdfs:comment>Whether a user-defined 3DLUT is used</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/los -->
+
+    <owl:DatatypeProperty rdf:about="&foo;los">
+        <rdfs:label>DRA_los</rdfs:label>
+        <rdfs:comment>Batch number</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1399,7 +2045,33 @@
     <owl:DatatypeProperty rdf:about="&foo;manufacturer">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>manufacturer</rdfs:label>
-        <rdfs:comment>Manufacturer</rdfs:comment>
+        <rdfs:comment>Name of the camera or software manufacturer</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/markIn -->
+
+    <owl:DatatypeProperty rdf:about="&foo;markIn">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>markIn</rdfs:label>
+        <rdfs:comment>Timecode of a user-defined in-point</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/markOut -->
+
+    <owl:DatatypeProperty rdf:about="&foo;markOut">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>markOut</rdfs:label>
+        <rdfs:comment>Timecode of a user-defined out-point</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1412,7 +2084,7 @@
     <owl:DatatypeProperty rdf:about="&foo;masterSlave">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>masterSlave</rdfs:label>
-        <rdfs:comment>Flag for indicating if the camera is master or slave in a multi-camera setup.</rdfs:comment>
+        <rdfs:comment>Flag for indicating if the camera is master or slave in a multi-camera setup (on/off)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1420,14 +2092,38 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/materialCondition -->
+    <!-- http://filmontology.org/ontology/1.0/material -->
 
-    <owl:DatatypeProperty rdf:about="&foo;materialCondition">
-        <rdfs:label>DRA_materialCondition</rdfs:label>
-        <rdfs:comment>A statement regarding the material&apos;s condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+    <owl:DatatypeProperty rdf:about="&foo;material">
+        <rdfs:label>DRA_material</rdfs:label>
+        <rdfs:comment>The material of the archival medium (e.g., reversal film, color negative film)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/max -->
+
+    <owl:DatatypeProperty rdf:about="&foo;max">
+        <rdfs:label>DRA_max</rdfs:label>
+        <rdfs:comment>Maximal value of a film condition</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/min -->
+
+    <owl:DatatypeProperty rdf:about="&foo;min">
+        <rdfs:label>DRA_min</rdfs:label>
+        <rdfs:comment>Minimal value of a film condition</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
     </owl:DatatypeProperty>
     
 
@@ -1438,8 +2134,6 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>name</rdfs:label>
         <rdfs:comment>Name of a data object</rdfs:comment>
-        <rdfs:comment>Clip name as created by camera</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;DataObject"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1452,7 +2146,7 @@
     <owl:DatatypeProperty rdf:about="&foo;ndFilterdensity">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>ndFilterdensity</rdfs:label>
-        <rdfs:comment>Optical density of ND filter.</rdfs:comment>
+        <rdfs:comment>Optical density of the neutral-density (ND) filter.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1464,7 +2158,7 @@
 
     <owl:DatatypeProperty rdf:about="&foo;note">
         <rdfs:label>DRA_note</rdfs:label>
-        <rdfs:comment>Additional information regarding the storage medium</rdfs:comment>
+        <rdfs:comment>Additional information regarding the storage medium provided by the owner</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1484,27 +2178,15 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/operator -->
+    <!-- http://filmontology.org/ontology/1.0/operatorName -->
 
-    <owl:DatatypeProperty rdf:about="&foo;operator">
+    <owl:DatatypeProperty rdf:about="&foo;operatorName">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>operator</rdfs:label>
-        <rdfs:comment>Operator Name</rdfs:comment>
+        <rdfs:label>operatorName</rdfs:label>
+        <rdfs:comment>Name of the camera operator</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/opticalCondition -->
-
-    <owl:DatatypeProperty rdf:about="&foo;opticalCondition">
-        <rdfs:label>DRA_opticalCondition</rdfs:label>
-        <rdfs:comment>A statement regarding the optical condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
 
@@ -1521,27 +2203,15 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/originalVideo -->
+    <!-- http://filmontology.org/ontology/1.0/originalVideoCodec -->
 
-    <owl:DatatypeProperty rdf:about="&foo;originalVideo">
+    <owl:DatatypeProperty rdf:about="&foo;originalVideoCodec">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>originalVideo</rdfs:label>
-        <rdfs:comment>Original_video</rdfs:comment>
+        <rdfs:label>originalVideoCodec</rdfs:label>
+        <rdfs:comment>Video codec and resolution used by the camera for recording </rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/overallCondition -->
-
-    <owl:DatatypeProperty rdf:about="&foo;overallCondition">
-        <rdfs:label>DRA_overallCondition</rdfs:label>
-        <rdfs:comment>A statement regarding the overall condition of the storage medium as benchmark (1 = worst, 10 = best)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
 
@@ -1590,7 +2260,7 @@
     <owl:DatatypeProperty rdf:about="&foo;pixelaspectratio">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>pixelaspectratio</rdfs:label>
-        <rdfs:comment>The lens squeeze factor is settable in the camera GUI Project menu to display visual correct pixel aspect ratio of images recorded with anamorphic lenses.</rdfs:comment>
+        <rdfs:comment>The lens squeeze factor for visual correct pixel aspect ratio of images recorded with anamorphic lenses.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1598,12 +2268,25 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/production -->
+    <!-- http://filmontology.org/ontology/1.0/producerName -->
 
-    <owl:DatatypeProperty rdf:about="&foo;production">
+    <owl:DatatypeProperty rdf:about="&foo;producerName">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>production</rdfs:label>
-        <rdfs:comment>Production Name</rdfs:comment>
+        <rdfs:label>producerName</rdfs:label>
+        <rdfs:comment>Name of the producer</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/productionName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;productionName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>productionName</rdfs:label>
+        <rdfs:comment>Name of the production</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1629,8 +2312,58 @@
     <owl:DatatypeProperty rdf:about="&foo;projectFps">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>projectFps</rdfs:label>
-        <rdfs:comment>Playback/Timecode framerate in FPS.</rdfs:comment>
+        <rdfs:comment>General project playback/timecode framerate in frames per second.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/projectName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;projectName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>projectName</rdfs:label>
+        <rdfs:comment>Name of the project (e.g., Avid Project)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/rating -->
+
+    <owl:DatatypeProperty rdf:about="&foo;rating">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>rating</rdfs:label>
+        <rdfs:comment>User-defined rating of a clip.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/recommendedAction -->
+
+    <owl:DatatypeProperty rdf:about="&foo;recommendedAction">
+        <rdfs:label>DRA_recommendedAction</rdfs:label>
+        <rdfs:comment>Recommendation on further actions based on the film&apos;s condition</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/recommendedScan -->
+
+    <owl:DatatypeProperty rdf:about="&foo;recommendedScan">
+        <rdfs:label>DRA_recommendedScan</rdfs:label>
+        <rdfs:comment>Recommendation for the scanning of the content based on the film&apos;s condition</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1643,6 +2376,19 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>reelName</rdfs:label>
         <rdfs:comment>Reel Name</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/reformat -->
+
+    <owl:DatatypeProperty rdf:about="&foo;reformat">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>reformat</rdfs:label>
+        <rdfs:comment>Reformatting options for the clip (Strech, Pillarbox / Letterbox, Center Crop, Center Keep Size)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1676,12 +2422,39 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/restaurationWorkload -->
+    <!-- http://filmontology.org/ontology/1.0/resolution -->
 
-    <owl:DatatypeProperty rdf:about="&foo;restaurationWorkload">
-        <rdfs:label>DRA_restaurationWorkload</rdfs:label>
-        <rdfs:comment>Estimated hours of workload necessary to restore the archived content to usable condition</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+    <owl:DatatypeProperty rdf:about="&foo;resolution">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>resolution</rdfs:label>
+        <rdfs:comment>Camera resolution (e.g. HD, 4K)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/resourceCount -->
+
+    <owl:DatatypeProperty rdf:about="&foo;resourceCount">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>resourceCount</rdfs:label>
+        <rdfs:comment>Number of resources in a Silverstack project</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/resourceSummary -->
+
+    <owl:DatatypeProperty rdf:about="&foo;resourceSummary">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>resourceSummary</rdfs:label>
+        <rdfs:comment>List of resources associated to a Silverstack project</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1695,19 +2468,6 @@
         <rdfs:label>revision</rdfs:label>
         <rdfs:comment>Revision number of a data object, in case several versions exist</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;DataObject"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/scene -->
-
-    <owl:DatatypeProperty rdf:about="&foo;scene">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>scene</rdfs:label>
-        <rdfs:comment>Scene Name</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1771,6 +2531,8 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>sceneNumber</rdfs:label>
         <rdfs:comment>Sequential number of a scene in a script. Can have letters (e.g., 5a, if split scene)</rdfs:comment>
+        <rdfs:comment>Number or name of the scene as used in the clapperboard</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Scene"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1796,7 +2558,7 @@
     <owl:DatatypeProperty rdf:about="&foo;sensorFps">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>sensorFps</rdfs:label>
-        <rdfs:comment>Sensor speed for this image in FPS.</rdfs:comment>
+        <rdfs:comment>Sensor speed for the clip in frames per second.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1835,8 +2597,21 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>sex</rdfs:label>
         <rdfs:comment>Gender of a cast (male or female)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Cast"/>
+        <rdfs:domain rdf:resource="&foo;CastMember"/>
         <rdfs:domain rdf:resource="&foo;Character"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/shootDate -->
+
+    <owl:DatatypeProperty rdf:about="&foo;shootDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>shootDate</rdfs:label>
+        <rdfs:comment>Date of the shoot</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1887,7 +2662,20 @@
     <owl:DatatypeProperty rdf:about="&foo;shutterAngle">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>shutterAngle</rdfs:label>
-        <rdfs:comment>Shutter angle in degree. Shutter Angle = (ExposureTime * SensorFps)/1E9 * 360.0</rdfs:comment>
+        <rdfs:comment>Exposure time in terms of a shutter angle (e.g., 1728 for 172,8 degree, equivalent to 1/50s - 24fps).</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/shutterSpeed -->
+
+    <owl:DatatypeProperty rdf:about="&foo;shutterSpeed">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>shutterSpeed</rdfs:label>
+        <rdfs:comment>Exposure time in terms of a shutter speed (e.g. 1/50s)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1933,12 +2721,25 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/sourceBitDepth -->
+
+    <owl:DatatypeProperty rdf:about="&foo;sourceBitDepth">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>sourceBitDepth</rdfs:label>
+        <rdfs:comment>Sample rate of the video signal</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/sourceFile -->
 
     <owl:DatatypeProperty rdf:about="&foo;sourceFile">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>sourceFile</rdfs:label>
-        <rdfs:comment>Source File</rdfs:comment>
+        <rdfs:comment>Name of the original source file</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1946,12 +2747,12 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/start -->
+    <!-- http://filmontology.org/ontology/1.0/sourceFilePath -->
 
-    <owl:DatatypeProperty rdf:about="&foo;start">
+    <owl:DatatypeProperty rdf:about="&foo;sourceFilePath">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>start</rdfs:label>
-        <rdfs:comment>Time code SMPTE RP188</rdfs:comment>
+        <rdfs:label>sourceFilePath</rdfs:label>
+        <rdfs:comment>Path to the original source file</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1959,14 +2760,28 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/startFrame -->
+    <!-- http://filmontology.org/ontology/1.0/sourceResolution -->
 
-    <owl:DatatypeProperty rdf:about="&foo;startFrame">
-        <rdfs:label>DRA_startFrame</rdfs:label>
-        <rdfs:comment>Start of abnormal area</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
+    <owl:DatatypeProperty rdf:about="&foo;sourceResolution">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>sourceResolution</rdfs:label>
+        <rdfs:comment>Resolution (Width x Height) of the original source file</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/startTimecode -->
+
+    <owl:DatatypeProperty rdf:about="&foo;startTimecode">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>startTimecode</rdfs:label>
+        <rdfs:comment>Start time code of the clip (SMPTE RP188)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -2063,12 +2878,61 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/takeNumber -->
+
+    <owl:DatatypeProperty rdf:about="&foo;takeNumber">
+        <rdfs:label>takeNumber</rdfs:label>
+        <rdfs:comment>Number of the successive attempts to film a shot.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Take"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/tapeIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="&foo;tapeIdentifier">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>tapeIdentifier</rdfs:label>
+        <rdfs:comment>Identifies current tape</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/tcIn -->
+
+    <owl:DatatypeProperty rdf:about="&foo;tcIn">
+        <rdfs:label>DRA_tcIn</rdfs:label>
+        <rdfs:comment>Timecode for the start of an abnormal area</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/tcOut -->
+
+    <owl:DatatypeProperty rdf:about="&foo;tcOut">
+        <rdfs:label>DRA_tcOut</rdfs:label>
+        <rdfs:comment>Timecode for the end of an abnormal area</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/timeCamera -->
 
     <owl:DatatypeProperty rdf:about="&foo;timeCamera">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>timeCamera</rdfs:label>
-        <rdfs:comment>Image creation time.</rdfs:comment>
+        <rdfs:comment>Time set on camera</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -2101,24 +2965,38 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/totalFrames -->
-
-    <owl:DatatypeProperty rdf:about="&foo;totalFrames">
-        <rdfs:label>DRA_totalFrames</rdfs:label>
-        <rdfs:comment>Total number of frames of the archived content stored on the medium detected by the Befundungstisch</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://filmontology.org/ontology/1.0/tracks -->
 
     <owl:DatatypeProperty rdf:about="&foo;tracks">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>tracks</rdfs:label>
-        <rdfs:comment>Tracks</rdfs:comment>
+        <rdfs:comment>Information on which tracks have been recorded (V - Video; A1, A2, Ax for audio tracks)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/trk1 -->
+
+    <owl:DatatypeProperty rdf:about="&foo;trk1">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>trk1</rdfs:label>
+        <rdfs:comment>Additional information in the audio tracks (e.g. MixL, MixR)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/trk2 -->
+
+    <owl:DatatypeProperty rdf:about="&foo;trk2">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>trk2</rdfs:label>
+        <rdfs:comment>Additional information in the audio tracks (e.g. MixL, MixR)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -2131,7 +3009,20 @@
     <owl:DatatypeProperty rdf:about="&foo;umid">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>umid</rdfs:label>
-        <rdfs:comment>SMPTE 330M UMID</rdfs:comment>
+        <rdfs:comment>Unique material identifier (SMPTE 330M UMID)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/uncPath -->
+
+    <owl:DatatypeProperty rdf:about="&foo;uncPath">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>uncPath</rdfs:label>
+        <rdfs:comment>Path to the video in UNC format</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -2170,7 +3061,7 @@
     <owl:DatatypeProperty rdf:about="&foo;uuid">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>uuid</rdfs:label>
-        <rdfs:comment>UUID created by camera for each clip. Same UUID is stored in Quicktimes recorded on camera SxS cards.</rdfs:comment>
+        <rdfs:comment>UUID created by camera for each clip</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -2178,12 +3069,38 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/valueOfAnomaly -->
+    <!-- http://filmontology.org/ontology/1.0/value -->
 
-    <owl:DatatypeProperty rdf:about="&foo;valueOfAnomaly">
-        <rdfs:label>DRA_valueOfAnomaly</rdfs:label>
-        <rdfs:comment>Value of the detected anomaly (e.g., 2%)</rdfs:comment>
+    <owl:DatatypeProperty rdf:about="&foo;value">
+        <rdfs:label>DRA_value</rdfs:label>
+        <rdfs:comment>Value of the detected anomaly/film condition</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/videoBitRate -->
+
+    <owl:DatatypeProperty rdf:about="&foo;videoBitRate">
+        <rdfs:label>videoBitRate</rdfs:label>
+        <rdfs:comment>Bit rate of the video (usually in Mbps)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/videoCodec -->
+
+    <owl:DatatypeProperty rdf:about="&foo;videoCodec">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>videoCodec</rdfs:label>
+        <rdfs:comment>Video codec and resolution</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -2203,6 +3120,64 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/workingTitle -->
+
+    <owl:DatatypeProperty rdf:about="&foo;workingTitle">
+        <rdfs:label>workingTitle</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Working (temporary) title of the ffilm project</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/workloadCleaning -->
+
+    <owl:DatatypeProperty rdf:about="&foo;workloadCleaning">
+        <rdfs:label>DRA_workloadCleaning</rdfs:label>
+        <rdfs:comment>Estimated restauration workload to clean the film based on the analysed film&apos;s condition in minutes</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/workloadOverall -->
+
+    <owl:DatatypeProperty rdf:about="&foo;workloadOverall">
+        <rdfs:label>DRA_workloadOverall</rdfs:label>
+        <rdfs:comment>Overall estimated restauration workload based on the analysed film&apos;s condition in minutes</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/workloadPerforation -->
+
+    <owl:DatatypeProperty rdf:about="&foo;workloadPerforation">
+        <rdfs:label>DRA_workloadPerforation</rdfs:label>
+        <rdfs:comment>Estimated restauration workload to repair perforations based on the analysed film&apos;s condition in minutes</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/workloadSplices -->
+
+    <owl:DatatypeProperty rdf:about="&foo;workloadSplices">
+        <rdfs:label>DRA_workloadSplices</rdfs:label>
+        <rdfs:comment>Estimated restauration workload to repair splices based on the analysed film&apos;s condition in minutes</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/yearOfProduction -->
 
     <owl:DatatypeProperty rdf:about="&foo;yearOfProduction">
@@ -2210,7 +3185,7 @@
         <rdfs:comment>Year in which the archived content was produced</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;ArchivedEpisode"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -2225,42 +3200,6 @@
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
     
 
 
@@ -2280,7 +3219,7 @@
     <owl:Class rdf:about="&foo;AbnormalArea">
         <rdfs:label>DRA_AbnormalArea</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
-        <rdfs:comment>A specific abnormal area on a storage medium</rdfs:comment>
+        <rdfs:comment>An area on a storage medium which is affected by a specific film condition. Identified by time code and frame number.</rdfs:comment>
     </owl:Class>
     
 
@@ -2325,11 +3264,20 @@
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/Cast -->
+    <!-- http://filmontology.org/ontology/1.0/Bulge -->
 
-    <owl:Class rdf:about="&foo;Cast">
+    <owl:Class rdf:about="&foo;Bulge">
+        <rdfs:label>DRA_Bulge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/CastMember -->
+
+    <owl:Class rdf:about="&foo;CastMember">
         <rdfs:label>Cast</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:subClassOf rdf:resource="&foo;Person"/>
         <rdfs:comment>Person playing a character in a movie</rdfs:comment>
     </owl:Class>
     
@@ -2350,7 +3298,7 @@
     <owl:Class rdf:about="&foo;Clip">
         <rdfs:label>Clip</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
-        <rdfs:comment>A file produced by a camera for a recorded take.</rdfs:comment>
+        <rdfs:comment>A file produced by a camera for a recorded take</rdfs:comment>
     </owl:Class>
     
 
@@ -2370,17 +3318,16 @@
     <owl:Class rdf:about="&foo;ConditionAnalysis">
         <rdfs:label>DRA_ConditionAnalysis</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
-        <rdfs:comment>A result of an analysis of an archival storage medium made by the Befundungstisch(tm)</rdfs:comment>
+        <rdfs:comment>A result of an analysis of an archival storage medium made by the Befundungstisch</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://filmontology.org/ontology/1.0/Crew -->
+    <!-- http://filmontology.org/ontology/1.0/CopiedError -->
 
-    <owl:Class rdf:about="&foo;Crew">
-        <rdfs:label>Crew</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
-        <rdfs:comment>A person involved in the film production</rdfs:comment>
+    <owl:Class rdf:about="&foo;CopiedError">
+        <rdfs:label>DRA_CopiedError</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
     </owl:Class>
     
 
@@ -2395,12 +3342,67 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/CrewMember -->
+
+    <owl:Class rdf:about="&foo;CrewMember">
+        <rdfs:label>Crew</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;Person"/>
+        <rdfs:comment>A person involved in the film production staff</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/DataObject -->
 
     <owl:Class rdf:about="&foo;DataObject">
         <rdfs:label>DataObject</rdfs:label>
         <rdfs:subClassOf rdf:resource="&owl;Thing"/>
         <rdfs:comment>An abstract class to capture general information about data objects of film projects, such as identifier, versions, modify dates.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/Density -->
+
+    <owl:Class rdf:about="&foo;Density">
+        <rdfs:label>DRA_Density</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/DensityBlue -->
+
+    <owl:Class rdf:about="&foo;DensityBlue">
+        <rdfs:label>DRA_DensityBlue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;Density"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/DensityGreen -->
+
+    <owl:Class rdf:about="&foo;DensityGreen">
+        <rdfs:label>DRA_DensityGreen</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;Density"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/DensityRange -->
+
+    <owl:Class rdf:about="&foo;DensityRange">
+        <rdfs:label>DRA_DensityRange</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;Density"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/DensityRed -->
+
+    <owl:Class rdf:about="&foo;DensityRed">
+        <rdfs:label>DRA_DensityRed</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;Density"/>
     </owl:Class>
     
 
@@ -2425,6 +3427,15 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/ErrorOfPictureSteadiness -->
+
+    <owl:Class rdf:about="&foo;ErrorOfPictureSteadiness">
+        <rdfs:label>DRA_ErrorOfPictureSteadiness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/Extra -->
 
     <owl:Class rdf:about="&foo;Extra">
@@ -2441,6 +3452,34 @@
         <rdfs:label>Facility</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>Equipment at a shooting location (e.g., parking, toilets)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/FilmCondition -->
+
+    <owl:Class rdf:about="&foo;FilmCondition">
+        <rdfs:label>DRA_FilmCondition</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>Results of the condition analysis regarding specific conditions of the film, e.g. optical density, surface dirt, perforation damage, splices</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/FilmGrain -->
+
+    <owl:Class rdf:about="&foo;FilmGrain">
+        <rdfs:label>DRA_FilmGrain</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/FilmTear -->
+
+    <owl:Class rdf:about="&foo;FilmTear">
+        <rdfs:label>DRA_FilmTear</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
     </owl:Class>
     
 
@@ -2471,6 +3510,34 @@
         <rdfs:label>Location</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>Actual location where a shooting takes place.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/Notch -->
+
+    <owl:Class rdf:about="&foo;Notch">
+        <rdfs:label>DRA_Notch</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/PerforationDamage -->
+
+    <owl:Class rdf:about="&foo;PerforationDamage">
+        <rdfs:label>DRA_PerforationDamage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/Person -->
+
+    <owl:Class rdf:about="&foo;Person">
+        <rdfs:label>Person</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
+        <rdfs:comment>Person involved in the film project, currently either crew or cast member.</rdfs:comment>
     </owl:Class>
     
 
@@ -2545,6 +3612,42 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/Shrinkage -->
+
+    <owl:Class rdf:about="&foo;Shrinkage">
+        <rdfs:label>DRA_Shrinkage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/Splice -->
+
+    <owl:Class rdf:about="&foo;Splice">
+        <rdfs:label>DRA_Splice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/SurfaceDamage -->
+
+    <owl:Class rdf:about="&foo;SurfaceDamage">
+        <rdfs:label>DRA_SurfaceDamage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/SurfaceDirt -->
+
+    <owl:Class rdf:about="&foo;SurfaceDirt">
+        <rdfs:label>DRA_SurfaceDirt</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+    </owl:Class>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/Take -->
 
     <owl:Class rdf:about="&foo;Take">
@@ -2552,45 +3655,9 @@
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>A single continuous recorded performance..</rdfs:comment>
     </owl:Class>
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
 

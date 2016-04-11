@@ -1,0 +1,723 @@
+@prefix :      <http://filmontology.org/> .
+@prefix webprotege: <http://protege.stanford.edu/webprotege/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foo:   <http://filmontology.org/ontology/1.0/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix for:   <http://filmontology.org/resource/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://filmontology.org/resource/Clip/A002C005_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:49:22"^^xsd:string ;
+        foo:clipName            "A002C005_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 3:02:00 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "17:47:11:01"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "28"^^xsd:long ;
+        foo:knDuration          "  74+14"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A002C005_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "17:46:21:03"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C007_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:01:01:11"^^xsd:string ;
+        foo:clipName            "A001C007_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:15:47 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "14:56:11:15"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "7"^^xsd:long ;
+        foo:knDuration          "  92+03"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C007_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "14:55:10:04"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A002C001_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:04:36:09"^^xsd:string ;
+        foo:clipName            "A002C001_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 2:50:35 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "17:18:36:19"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "24"^^xsd:long ;
+        foo:knDuration          " 414+09"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A002C001_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "17:14:00:10"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C003_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:03:08"^^xsd:string ;
+        foo:clipName            "A001C003_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:15:42 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "14:45:29:12"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "3"^^xsd:long ;
+        foo:knDuration          "   5+00"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C003_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "14:45:26:04"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C016_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:03:26:01"^^xsd:string ;
+        foo:clipName            "A001C016_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "YCbCr [video levels]"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:18:33 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "16:40:35:12"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "16"^^xsd:long ;
+        foo:knDuration          " 309+01"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C016_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "16:37:09:11"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C012_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:01:25:22"^^xsd:string ;
+        foo:clipName            "A001C012_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "YCbCr [video levels]"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:17:24 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "16:02:12:18"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "12"^^xsd:long ;
+        foo:knDuration          " 128+14"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C012_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "16:00:46:20"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C021_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:27:13"^^xsd:string ;
+        foo:clipName            "A001C021_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:19:28 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "16:27:42:08"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "21"^^xsd:long ;
+        foo:knDuration          "  41+05"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C021_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "16:27:14:19"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C018_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:07:11"^^xsd:string ;
+        foo:clipName            "A001C018_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:19:16 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "16:25:21:04"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "18"^^xsd:long ;
+        foo:knDuration          "  11+03"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C018_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "16:25:13:17"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A002C004_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:24:10"^^xsd:string ;
+        foo:clipName            "A002C004_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 3:01:37 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "17:44:28:21"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "27"^^xsd:long ;
+        foo:knDuration          "  36+10"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A002C004_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "17:44:04:11"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C006_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:03:15"^^xsd:string ;
+        foo:clipName            "A001C006_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:15:46 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "14:47:58:16"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "6"^^xsd:long ;
+        foo:knDuration          "   5+07"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C006_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "14:47:55:01"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C002_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:21:01"^^xsd:string ;
+        foo:clipName            "A001C002_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:15:33 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "14:40:46:11"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "2"^^xsd:long ;
+        foo:knDuration          "  31+09"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C002_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "14:40:25:10"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C015_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:01:34:15"^^xsd:string ;
+        foo:clipName            "A001C015_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "YCbCr [video levels]"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:18:14 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "16:26:43:16"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "15"^^xsd:long ;
+        foo:knDuration          " 141+15"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C015_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "16:25:09:01"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C011_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:01:16:19"^^xsd:string ;
+        foo:clipName            "A001C011_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:16:53 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "15:18:09:21"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "11"^^xsd:long ;
+        foo:knDuration          " 115+03"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C011_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "15:16:53:02"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A002C007_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:22:17"^^xsd:string ;
+        foo:clipName            "A002C007_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 3:03:53 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "17:50:21:06"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "30"^^xsd:long ;
+        foo:knDuration          "  34+01"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A002C007_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "17:49:58:13"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C009_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:auxiliaryTimecode   "00:00:00:00"^^xsd:string ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:36:09"^^xsd:string ;
+        foo:clipName            "A001C009_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:16:13 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "15:10:01:06"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "9"^^xsd:long ;
+        foo:knDuration          "  54+09"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C009_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "15:09:24:21"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C020_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:09:11"^^xsd:string ;
+        foo:clipName            "A001C020_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:19:24 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "16:26:32:10"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "20"^^xsd:long ;
+        foo:knDuration          "  14+03"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C020_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "16:26:22:23"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A003C001_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:01:11:09"^^xsd:string ;
+        foo:clipName            "A003C001_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 3:04:53 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "18:03:38:02"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "31"^^xsd:long ;
+        foo:knDuration          " 107+01"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A003C001_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "18:02:26:17"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A002C003_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:03:19:19"^^xsd:string ;
+        foo:clipName            "A002C003_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 2:58:30 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "17:41:30:04"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "26"^^xsd:long ;
+        foo:knDuration          " 299+11"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A002C003_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "17:38:10:09"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C005_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:02:08"^^xsd:string ;
+        foo:clipName            "A001C005_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:15:45 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "14:47:19:14"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "5"^^xsd:long ;
+        foo:knDuration          "   3+08"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C005_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "14:47:17:06"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C001_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:20:02"^^xsd:string ;
+        foo:clipName            "A001C001_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/14/16 5:43:08 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "14:39:59:11"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "1"^^xsd:long ;
+        foo:knDuration          "  30+02"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C001_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "14:39:39:09"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C014_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:01:22:16"^^xsd:string ;
+        foo:clipName            "A001C014_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "YCbCr [video levels]"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:17:58 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "16:14:18:04"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "14"^^xsd:long ;
+        foo:knDuration          " 124+00"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C014_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "16:12:55:12"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C010_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:01:04:19"^^xsd:string ;
+        foo:clipName            "A001C010_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:16:27 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "15:14:47:02"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "10"^^xsd:long ;
+        foo:knDuration          "  97+03"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C010_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "15:13:42:07"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C023_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:01:14:07"^^xsd:string ;
+        foo:clipName            "A001C023_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:20:03 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "16:42:26:16"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "23"^^xsd:long ;
+        foo:knDuration          " 111+07"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C023_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "16:41:12:09"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A002C006_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:01:13:23"^^xsd:string ;
+        foo:clipName            "A002C006_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 3:02:47 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "17:49:39:08"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "29"^^xsd:long ;
+        foo:knDuration          " 110+15"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A002C006_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "17:48:25:09"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C008_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:02:22"^^xsd:string ;
+        foo:clipName            "A001C008_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:16:12 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "15:04:37:11"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "8"^^xsd:long ;
+        foo:knDuration          "   4+06"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C008_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "15:04:34:13"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A002C002_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:03:12:01"^^xsd:string ;
+        foo:clipName            "A002C002_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 2:55:21 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "17:31:19:22"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "25"^^xsd:long ;
+        foo:knDuration          " 288+01"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A002C002_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "17:28:07:21"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C004_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:02:07"^^xsd:string ;
+        foo:clipName            "A001C004_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:15:43 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "14:47:02:23"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "4"^^xsd:long ;
+        foo:knDuration          "   3+07"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C004_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "14:47:00:16"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C017_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:00:20"^^xsd:string ;
+        foo:clipName            "A001C017_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:19:15 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "16:22:37:13"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "17"^^xsd:long ;
+        foo:knDuration          "   1+04"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C017_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "16:22:36:17"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C013_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:01:21:12"^^xsd:string ;
+        foo:clipName            "A001C013_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "YCbCr [video levels]"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:17:41 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "16:07:09:07"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "13"^^xsd:long ;
+        foo:knDuration          " 122+04"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C013_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "16:05:47:19"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C022_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:01:01:18"^^xsd:string ;
+        foo:clipName            "A001C022_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:19:39 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "16:35:01:23"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "22"^^xsd:long ;
+        foo:knDuration          "  92+10"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C022_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "16:34:00:05"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A001C019_150827_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraFps           "24.00"^^xsd:string ;
+        foo:clipDuration        "00:00:14:14"^^xsd:string ;
+        foo:clipName            "A001C019_150827_R2GJ.mov"^^xsd:string ;
+        foo:colorSpace          "RGB 709"^^xsd:string ;
+        foo:creationDate        "3/15/16 12:19:19 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "16:25:41:22"^^xsd:string ;
+        foo:format              "1080p/24"^^xsd:string ;
+        foo:imageAspectRatio    "16:9"^^xsd:string ;
+        foo:internalIdentifier  "19"^^xsd:long ;
+        foo:knDuration          "  21+14"^^xsd:string ;
+        foo:pixelaspectratio    "1.0"^^xsd:float ;
+        foo:projectFps          "24.00"^^xsd:string ;
+        foo:projectName         "LockIt_workaround"^^xsd:string ;
+        foo:reformat            "Stretch"^^xsd:string ;
+        foo:sourceFile          "A001C019_150827_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920 x 1080"^^xsd:string ;
+        foo:startTimecode       "16:25:27:08"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .

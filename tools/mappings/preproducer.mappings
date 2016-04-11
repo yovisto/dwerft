@@ -241,7 +241,7 @@ map27.conditionalAttributeName=
 map27.conditionalAttributeValue=
 map27.contentSource=
 map27.contentElementName=
-map27.targetOntologyClass=http://filmontology.org/ontology/1.0/Cast
+map27.targetOntologyClass=http://filmontology.org/ontology/1.0/CastMember
 map27.targetOntologyProperty=
 map27.targetPropertyType=
 
@@ -250,7 +250,7 @@ map28.conditionalAttributeName=
 map28.conditionalAttributeValue=
 map28.contentSource=TEXT_CONTENT
 map28.contentElementName=
-map28.targetOntologyClass=http://filmontology.org/ontology/1.0/Cast
+map28.targetOntologyClass=http://filmontology.org/ontology/1.0/CastMember
 map28.targetOntologyProperty=http://filmontology.org/ontology/1.0/name
 map28.targetPropertyType=DATATYPE_PROPERTY
 
@@ -277,7 +277,7 @@ map31.conditionalAttributeName=
 map31.conditionalAttributeValue=
 map31.contentSource=TEXT_CONTENT
 map31.contentElementName=
-map31.targetOntologyClass=http://filmontology.org/ontology/1.0/Cast
+map31.targetOntologyClass=http://filmontology.org/ontology/1.0/CastMember
 map31.targetOntologyProperty=http://filmontology.org/ontology/1.0/sex
 map31.targetPropertyType=DATATYPE_PROPERTY
 
@@ -314,7 +314,7 @@ map35.conditionalAttributeName=
 map35.conditionalAttributeValue=
 map35.contentSource=
 map35.contentElementName=
-map35.targetOntologyClass=http://filmontology.org/ontology/1.0/Cast
+map35.targetOntologyClass=http://filmontology.org/ontology/1.0/CastMember
 map35.targetOntologyProperty=
 map35.targetPropertyType=
 
@@ -332,7 +332,7 @@ map37.conditionalAttributeName=
 map37.conditionalAttributeValue=
 map37.contentSource=TEXT_CONTENT
 map37.contentElementName=
-map37.targetOntologyClass=http://filmontology.org/ontology/1.0/Cast
+map37.targetOntologyClass=http://filmontology.org/ontology/1.0/CastMember
 map37.targetOntologyProperty=http://filmontology.org/ontology/1.0/name
 map37.targetPropertyType=DATATYPE_PROPERTY
 
@@ -341,7 +341,7 @@ map38.conditionalAttributeName=
 map38.conditionalAttributeValue=
 map38.contentSource=TEXT_CONTENT
 map38.contentElementName=
-map38.targetOntologyClass=http://filmontology.org/ontology/1.0/Cast
+map38.targetOntologyClass=http://filmontology.org/ontology/1.0/CastMember
 map38.targetOntologyProperty=http://filmontology.org/ontology/1.0/sex
 map38.targetPropertyType=DATATYPE_PROPERTY
 
@@ -350,7 +350,7 @@ map39.conditionalAttributeName=
 map39.conditionalAttributeValue=
 map39.contentSource=
 map39.contentElementName=
-map39.targetOntologyClass=http://filmontology.org/ontology/1.0/Cast
+map39.targetOntologyClass=http://filmontology.org/ontology/1.0/CastMember
 map39.targetOntologyProperty=
 map39.targetPropertyType=
 
@@ -368,7 +368,7 @@ map41.conditionalAttributeName=
 map41.conditionalAttributeValue=
 map41.contentSource=TEXT_CONTENT
 map41.contentElementName=
-map41.targetOntologyClass=http://filmontology.org/ontology/1.0/Cast
+map41.targetOntologyClass=http://filmontology.org/ontology/1.0/CastMember
 map41.targetOntologyProperty=http://filmontology.org/ontology/1.0/name
 map41.targetPropertyType=DATATYPE_PROPERTY
 
@@ -415,7 +415,7 @@ map46.conditionalAttributeName=
 map46.conditionalAttributeValue=
 map46.contentSource=
 map46.contentElementName=
-map46.targetOntologyClass=http://filmontology.org/ontology/1.0/Crew
+map46.targetOntologyClass=http://filmontology.org/ontology/1.0/CrewMember
 map46.targetOntologyProperty=
 map46.targetPropertyType=
 
@@ -442,7 +442,7 @@ map49.conditionalAttributeName=
 map49.conditionalAttributeValue=
 map49.contentSource=ATTRIBUTE
 map49.contentElementName=id
-map49.targetOntologyClass=http://filmontology.org/ontology/1.0/Crew
+map49.targetOntologyClass=http://filmontology.org/ontology/1.0/CrewMember
 map49.targetOntologyProperty=http://filmontology.org/ontology/1.0/identifierPreProducer
 map49.targetPropertyType=DATATYPE_PROPERTY
 
@@ -451,7 +451,7 @@ map50.conditionalAttributeName=
 map50.conditionalAttributeValue=
 map50.contentSource=TEXT_CONTENT
 map50.contentElementName=
-map50.targetOntologyClass=http://filmontology.org/ontology/1.0/Crew
+map50.targetOntologyClass=http://filmontology.org/ontology/1.0/CrewMember
 map50.targetOntologyProperty=http://filmontology.org/ontology/1.0/crewCode
 map50.targetPropertyType=DATATYPE_PROPERTY
 
@@ -460,7 +460,7 @@ map51.conditionalAttributeName=
 map51.conditionalAttributeValue=
 map51.contentSource=TEXT_CONTENT
 map51.contentElementName=
-map51.targetOntologyClass=http://filmontology.org/ontology/1.0/Crew
+map51.targetOntologyClass=http://filmontology.org/ontology/1.0/CrewMember
 map51.targetOntologyProperty=http://filmontology.org/ontology/1.0/crewRole
 map51.targetPropertyType=DATATYPE_PROPERTY
 
@@ -469,7 +469,7 @@ map52.conditionalAttributeName=
 map52.conditionalAttributeValue=
 map52.contentSource=TEXT_CONTENT
 map52.contentElementName=
-map52.targetOntologyClass=http://filmontology.org/ontology/1.0/Crew
+map52.targetOntologyClass=http://filmontology.org/ontology/1.0/CrewMember
 map52.targetOntologyProperty=http://filmontology.org/ontology/1.0/name
 map52.targetPropertyType=DATATYPE_PROPERTY
 

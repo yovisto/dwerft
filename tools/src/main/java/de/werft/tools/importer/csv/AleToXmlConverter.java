@@ -1,11 +1,13 @@
 package de.werft.tools.importer.csv;
 
 import com.opencsv.CSVReader;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerConfigurationException;
+
 import java.io.IOException;
 
 /**
@@ -62,15 +64,41 @@ public class AleToXmlConverter extends CsvToXmlConverter {
     @Override
     protected Element createRow(String[] header, String[] row, Document doc) {
         Element rowElement = doc.createElement("row");
+
+        String id = "";
         for (int i = 0; i < row.length; i++) {
-            if (header[i].equalsIgnoreCase("uuid")) {
-                rowElement.setAttribute("uuid", row[i]);
+        	if (header[i].equalsIgnoreCase("Source__File")) {
+        		if (!row[i].trim().isEmpty()) {
+        			id = row[i];
+        			if (id.contains(".")) {
+                    	id = id.substring(0, id.indexOf("."));
+        			}
+        		}
+        	}
+        }
+        
+        if (id.equals("")) {
+            for (int i = 0; i < row.length; i++) {
+            	if (header[i].equalsIgnoreCase("Name")) {
+            		if (!row[i].trim().isEmpty()) {
+            			id = row[i];
+            			if (id.contains(".")) {
+                        	id = id.substring(0, id.indexOf("."));
+            			}
+            		}
+            	}
             }
-            if (header[i].isEmpty()) {
+        }
+        
+        if (!id.equals("")) {
+        	rowElement.setAttribute("uuid", id);
+        }
+
+        for (int i = 0; i < row.length; i++) {
+            if (header[i].isEmpty() || row[i].trim().isEmpty()) {
                 continue;
             }
 
-            System.out.println("header " + header[i]);
             Element elem = doc.createElement(header[i]);
             elem.appendChild(doc.createTextNode(row[i]));
             rowElement.appendChild(elem);
