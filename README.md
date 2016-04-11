@@ -123,7 +123,7 @@ The framework comes with a selection of available operations available for insta
 
 All available options are listed below and can also be viewed by using the `-help` option. Please note that querying the Preproducer API requires valid credentials.
 
- - `-convert` : Converts from one format to another. We determine the right conversion from the file extensions.
+ - `convert` : Converts from one format to another. We determine the right conversion from the file extensions.
     + Usage: `<input> <output> <mapping>`
     +  valid input files are 
       * `*.dq` for dramaqueen (needs a rdf output file); 
@@ -131,9 +131,14 @@ All available options are listed below and can also be viewed by using the `-hel
       * `*.xml` for generic conversion (needs rdf output file and a mapping)
       *  no input file for preproducer (needs a rdf output file)
     + valid output files are `*.(rdf|ttl|nt)`
- - `-upload` : Uploads a rdf file to SPARQL endpoint (currently not supported).
- - `-print`: Prints the RDF output to console. Does not replace writing RDF to file.
- - `-format`: Specify an RDF output format. Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig'). Default is Turtle.
+    + `-print`: Prints the RDF output to console. Does not replace writing RDF to file.
+    + `-format`: Specify an RDF output format. Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig').            Default is Turtle.
+
+- `upload` : Uploads a rdf file to SPARQL endpoint.
+  + Usage: `-g <granularity> -graph <graphname> <file>`
+  + `-g`: Provide a granularity. Possible options are LEVEL_0, LEVEL_1, LEVEL_2 (currently not supported),
+         where LEVEL_0 deletes from remote graph; LEVEL_1 inserts into remote graph and LEVEL_2 inserts a diff
+  + `-graph`: Provide a graph name (uri) where to store the uploaded data.
 
 ## Package structure
 
