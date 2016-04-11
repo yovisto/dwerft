@@ -49,16 +49,6 @@ public class OntologyConstants {
 	public static final String SPARQL_ENDPOINT = "http://sparql.filmontology.org/";
 
 	/*
-	 * htaccess user of the sparql endpoint
-	 */
-	public static final String SPARQL_ENDPOINT_USER = "dwerft";
-
-	/*
-	 * htaccess password of the sparql endpoint
-	 */
-	public static final String SPARQL_ENDPOINT_PASSWORD = "#dwerft";
-	
-	/*
 	 * URI Prefixes for sparql queries
 	 */
 	public static final String ONTOLOGY_PREFIXES = 
@@ -70,7 +60,7 @@ public class OntologyConstants {
 
 
     /**
-     * Sets the inputstream for the ontology file. this step is absolutly necessary
+     * Sets the ontology file from classpath. This step is absolutly necessary
      * and must be done before you use the constants.
      *
      * @param ontologyFile - path to ontology file.
