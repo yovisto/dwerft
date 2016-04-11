@@ -18,6 +18,8 @@ import de.werft.tools.update.UpdateFactory;
 import de.werft.tools.update.Uploader;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.jena.atlas.web.auth.HttpAuthenticator;
+import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
@@ -162,8 +164,9 @@ public class DwerftTools {
         }
         Model m = RDFDataMgr.loadModel(upload.getUploadFile());
         Update u = UpdateFactory.createUpdate(upload.getGranularity(), m);
+        HttpAuthenticator auth = new SimpleAuthenticator(config.getRemoteUser(), config.getRemotePass().toCharArray());
         Uploader uploader = new Uploader(config.getRemoteUrl());
-        uploader.uploadModel(u, upload.getGraphName());
+        uploader.uploadModel(u, upload.getGraphName(), auth);
         return true;
     }
 
