@@ -53,10 +53,10 @@ public class PreproducerSource implements Source {
 
 
     /**
-     * Gets basic parameters.
+     * Gets basic commands.
      *
      * @param methodName the method name
-     * @return the basic parameters
+     * @return the basic commands
      */
     public Map<String, String> getBasicParameters(String methodName) {
 		Map<String, String> result = new LinkedHashMap<String, String>();
@@ -69,9 +69,9 @@ public class PreproducerSource implements Source {
 	}
 
     /**
-     * Convert parameters to request string.
+     * Convert commands to request string.
      *
-     * @param parameters the parameters
+     * @param parameters the commands
      * @return the string
      */
     public String convertParametersToRequest(Map<String, String> parameters) {
@@ -93,7 +93,7 @@ public class PreproducerSource implements Source {
     /**
      * Generate signature string.
      *
-     * @param parameters the parameters
+     * @param parameters the commands
      * @return the string
      */
     public String generateSignature(Map<String, String> parameters) {

@@ -30,10 +30,7 @@ public class RDFtoXMLconverter {
 	
 	/** The rdf proc. */
 	protected RdfProcessor rdfProc;
-	
-	/** The trip conn. */
-	protected TripleStoreConnector tripConn;
-	
+
 	/**
 	 * Instantiates a new RDF to xml converter.
 	 *
@@ -50,8 +47,7 @@ public class RDFtoXMLconverter {
 		ontConn = new OntologyConnector(ontologyFileName, ontologyFormat);
 		mapper = new Mapper(mappingsFilename);
 		rdfProc = new RdfProcessor(ontConn);
-		tripConn = new TripleStoreConnector(ontConn, sparqlEndpointUrl);
-	}
+    }
 	
 	/**
 	 * Convert.

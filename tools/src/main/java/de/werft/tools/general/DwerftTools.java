@@ -2,6 +2,9 @@ package de.werft.tools.general;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+import com.hp.hpl.jena.rdf.model.Model;
+import de.werft.tools.general.commands.ConvertCommand;
+import de.werft.tools.general.commands.UploadCommand;
 import de.werft.tools.importer.csv.AleToXmlConverter;
 import de.werft.tools.importer.csv.CsvToXmlConverter;
 import de.werft.tools.importer.dramaqueen.DramaqueenToRdf;
@@ -10,10 +13,12 @@ import de.werft.tools.importer.preproducer.PreProducerToRdf;
 import de.werft.tools.sources.AbstractSource;
 import de.werft.tools.sources.DramaQueenSource;
 import de.werft.tools.sources.PreproducerSource;
+import de.werft.tools.update.Update;
+import de.werft.tools.update.UpdateFactory;
+import de.werft.tools.update.Uploader;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.jena.riot.Lang;
-import org.apache.jena.riot.RDFLanguages;
+import org.apache.jena.riot.RDFDataMgr;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
@@ -23,7 +28,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.InvalidKeyException;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -36,28 +40,9 @@ public class DwerftTools {
     /** The Logger. */
     private static final Logger L = Logger.getLogger(DwerftTools.class.getName());
 
-    // main parameters
-    @Parameter(names = {"-convert"}, variableArity = true, description = "Starts conversion process. Based on the file extension we determine" +
-            " which converter is used. Available inputs are *.dp for dramaqueen; *.ale for ALE; *.csv for csv; *.xml for Generic;" +
-            " no input for preproducer. Available outputs are no output for csv, ale to xml conversion and *.(rdf|ttl|nt) for everything else." +
-            " Provide a mapping only for generic conversion. " +
-            " Usage: [<input>] <output> [<mapping>]")
-    private List<String> files = new ArrayList<>();
-
-    @Parameter(names = {"-upload"}, arity = 1, description = "Uploads a file to a specified sparql endpoint. Valid formats are" +
-            " *.(rdf|ttl|nt|jsonld)")
-    private String uploadFile = "";
-
-    // optional parameters
-    @Parameter(names = {"-format"}, arity = 1, description = "Specifies rdf output format. " +
-            "Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig'). Default is Turtle.")
-    private String format = "ttl";
-
     @Parameter(names = {"-help"}, help = true, description = "Shows this help message.")
     private boolean isHelp = false;
 
-    @Parameter(names = {"-print"}, description = "Print conversion output to console instead of file.")
-    private boolean printToCli = false;
 
     private DwerftConfig config;
 
@@ -90,7 +75,11 @@ public class DwerftTools {
      */
     public void run(String[] args) throws InvalidKeyException {
         //Parse cli arguments
+        ConvertCommand convert = new ConvertCommand();
+        UploadCommand upload = new UploadCommand();
         JCommander cmd = new JCommander(this);
+        cmd.addCommand("convert", convert);
+        cmd.addCommand("upload", upload);
         cmd.parse(args);
 
         if (isHelp) {
@@ -98,10 +87,10 @@ public class DwerftTools {
             System.exit(0);
         }
 
-        if (!uploadFile.isEmpty() && files.isEmpty()) {
-            upload(cmd);
-        } else if (!files.isEmpty() && uploadFile.isEmpty()) {
-            convert(cmd);
+        if ("convert".equals(cmd.getParsedCommand())) {
+            convert(convert);
+        } else if ("upload".equals(cmd.getParsedCommand())) {
+            upload(upload);
         } else {
             beatUser(cmd);
         }
@@ -110,10 +99,11 @@ public class DwerftTools {
     }
 
     // this method does the actual conversion with some guessing magic based on file extensions and file count
-    private void convert(JCommander cmd) throws InvalidKeyException {
-        if (files.size() > 3 && files.size() < 1) {
-            beatUser(cmd);
+    private void convert(ConvertCommand cmd) throws InvalidKeyException {
+        if (cmd.getFiles().size() > 3 || cmd.getFiles().size() < 1) {
+            beatUser("Invalid amount of files given.");
         }
+        List<String> files = cmd.getFiles();
 
         AbstractXMLtoRDFconverter converter = null;
         String input = files.get(0);
@@ -129,7 +119,7 @@ public class DwerftTools {
             // FIXME fix this messy workaround
             String secondOutput = files.get(1);
             if (!hasExtension(secondOutput, "(rdf|nt|ttl)")) {
-                beatUser(cmd);
+                beatUser("You failed to give a valid cli");
             } else {
                 output = secondOutput;
             }
@@ -149,29 +139,32 @@ public class DwerftTools {
                 converter = genericXmlToRdf(input, mappingFile);
 
             } else {
-                beatUser(cmd);
+                beatUser("You failed to give a valid cli");
             }
 
         }
 
         // write to cli or fs
         if (converter != null) {
-            if (printToCli) {
-                converter.writeRdfToConsole(getFormat(format));
+            if (cmd.isPrintToCli()) {
+                converter.writeRdfToConsole(cmd.getFormat());
             } else {
-                converter.writeRdfToFile(output, getFormat(format));
+                converter.writeRdfToFile(output, cmd.getFormat());
             }
             L.info("File " + input + " converted to " + output + " successfully.");
         }
     }
 
-    private boolean upload(JCommander cmd) {
-        if (hasExtension(uploadFile, "(rdf|ttl|nt|jsonld)")) {
-            beatUser(cmd);
+    //FIXME file extension handling
+    private boolean upload(UploadCommand upload) {
+        if (!hasExtension(upload.getUploadFile(), "(rdf|ttl|nt|jsonld)")) {
+            beatUser("No valid upload file given.");
         }
-
-        System.out.println("Here will be soon the upload.");
-        return false;
+        Model m = RDFDataMgr.loadModel(upload.getUploadFile());
+        Update u = UpdateFactory.createUpdate(upload.getGranularity(), m);
+        Uploader uploader = new Uploader(config.getRemoteUrl());
+        uploader.uploadModel(u, upload.getGraphName());
+        return true;
     }
 
 
@@ -295,16 +288,6 @@ public class DwerftTools {
     private void beatUser(String message) {
         L.error(message);
         System.exit(1);
-    }
-
-    // get the Lang object for a specified format
-    private Lang getFormat(String format) {
-        Lang resultFormat = RDFLanguages.nameToLang(format.toUpperCase());
-        // no language found for the specified format
-        if (resultFormat == null) {
-            resultFormat = Lang.TTL;
-        }
-        return resultFormat;
     }
 
     // test if a file has a certain extension
