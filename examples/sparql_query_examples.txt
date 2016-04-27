@@ -6,32 +6,24 @@ http://sparql.filmontology.org/
 List all projects
 -----------------
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX foo: <http://filmontology.org/ontology/1.0/>
-PREFIX for: <http://filmontology.org/resource/>
 
-select ?project, ?name, ?dramaqueenID, ?preproducerID  where {
-	for:DWERFT <http://purl.org/dc/terms/hasPart> ?project .
+select ?project ?title ?workingTitle ?dramaqueenID ?preproducerID where {
 	?project rdf:type foo:Project .
 	OPTIONAL {?project foo:identifierDramaQueen ?dramaqueenID }
 	OPTIONAL {?project foo:identifierPreProducer ?preproducerID}
-	?project foo:name ?name.
+	OPTIONAL {?project foo:title ?title}
+	OPTIONAL {?project foo:workingTitle ?workingTitle} .
 }
 
 Retrieves an ordered list of scenes for a specific project
 --------------------------------------------------------------------------
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX foo: <http://filmontology.org/ontology/1.0/>
-PREFIX for: <http://filmontology.org/resource/>
 
-select ?scene, ?dramaqueenID, ?preproducerID, ?number, ?header, ?intext, ?dayTime, ?desc where  {
-	{?project foo:identifierDramaQueen ?id}
-	UNION
+select ?scene ?dramaqueenID ?preproducerID ?number ?header ?intext ?dayTime ?desc where  {
 	{?project foo:identifierPreProducer ?id}
-	FILTER(str(?id) = "9860f0bb-d9a6-45e4-9d03-79e7fefd16fa")
+	FILTER(str(?id) = "18989")
 	?project foo:hasEpisode ?episode .
 	?episode foo:hasSceneGroup ?sceneGroup .
 	?sceneGroup foo:hasScene ?scene .
@@ -45,6 +37,24 @@ select ?scene, ?dramaqueenID, ?preproducerID, ?number, ?header, ?intext, ?dayTim
 } ORDER BY ASC(?number)
 
 
+PREFIX foo: <http://filmontology.org/ontology/1.0/>
+
+select str(?number) as ?number str(?header) as ?header
+       str(?intext) as ?intext str(?dayTime) as ?dayTime
+       str(?desc) as ?desc ?scene where  {
+    {?project foo:identifierPreProducer ?id}
+    FILTER(str(?id) = "18989")
+    ?project foo:hasEpisode ?episode .
+    ?episode foo:hasSceneGroup ?sceneGroup .
+    ?sceneGroup foo:hasScene ?scene .
+    ?scene foo:sceneNumber ?number .
+    ?scene foo:sceneHeader ?header .
+    ?scene foo:interiorExterior ?intext .
+    ?scene foo:dayTime ?dayTime .
+    ?scene foo:sceneDescription ?desc .
+} ORDER BY ASC(xsd:double(?number))
+
+
 
 Retrieves all scenes that a located at a set with a certain name
 --------------------------------------------------------------------------
@@ -54,7 +64,7 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX foo: <http://filmontology.org/ontology/1.0/>
 PREFIX for: <http://filmontology.org/resource/>
 
-select ?scene, ?number, ?header, ?dramaqueenID, ?preproducerID  where {
+select ?scene ?number ?header ?dramaqueenID ?preproducerID  where {
 	{?project foo:identifierDramaQueen ?id}
 	UNION
 	{?project foo:identifierPreProducer ?id}
@@ -85,3 +95,37 @@ select ?name ?scene ?intext WHERE {
 	?project foo:title ?name .
 	FILTER(str(?intext) = "ext")
 }
+
+
+Retrieve title, working title, duration, final video codec of a certain project
+-------------------------------------------------------------------------------
+PREFIX foo: <http://filmontology.org/ontology/1.0/>
+
+select str(?title) as ?title str(?workingTitle) as ?workingTitle
+       str(?duration) as ?duration str(?codec) as ?codec
+       ?project WHERE {
+	{?project foo:identifierPreProducer ?id}
+	FILTER(str(?id) = "18989")
+	?project foo:title ?title .
+	?project foo:workingTitle ?workingTitle .
+	?project foo:hasFinalVideoFile ?finalVideo .
+	?finalVideo foo:clipDuration ?duration .
+	?finalVideo foo:codec ?codec .
+}
+
+Retrieve a list of crew members and their roles
+-----------------------------------------------
+
+PREFIX foo: <http://filmontology.org/ontology/1.0/>
+
+select str(?name) as ?name str(?crewRole) as ?crewRole
+       str(?crewCode) as ?crewCode ?crewMember
+       WHERE {
+	{?project foo:identifierPreProducer ?id}
+	FILTER(str(?id) = "18989")
+	?project foo:hasCrew ?crewMember .
+	?crewMember foo:name ?name .
+	?crewMember foo:crewRole ?crewRole .
+	?crewMember foo:crewCode ?crewCode .
+}
+
