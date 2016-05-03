@@ -15,15 +15,15 @@
 
 <rdf:RDF xmlns="http://filmontology.org/"
      xml:base="http://filmontology.org/"
-     xmlns:webprotege="http://protege.stanford.edu/webprotege/"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:foo="http://filmontology.org/ontology/1.0/"
-     xmlns:for="http://filmontology.org/resource/"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://filmontology.org/ontology/1.0">
+     xmlns:webprotege="http://protege.stanford.edu/webprotege/"
+     xmlns:for="http://filmontology.org/resource/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:foo="http://filmontology.org/ontology/1.0/">
+    <owl:Ontology rdf:about="http://filmontology.org/ontology/ontology">
         <dc:date rdf:datatype="&xsd;dateTime">Jun 30, 2015 8:03:46 AM</dc:date>
         <dc:creator rdf:datatype="&xsd;string">hagt</dc:creator>
     </owl:Ontology>
@@ -512,6 +512,14 @@
     
 
 
+
+    
+
+
+
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -765,6 +773,19 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/cameraName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;cameraName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>cameraName</rdfs:label>
+        <rdfs:comment>User-defined label of the camera</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/cameraRoll -->
 
     <owl:DatatypeProperty rdf:about="&foo;cameraRoll">
@@ -899,7 +920,7 @@
     <owl:DatatypeProperty rdf:about="&foo;clipName">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>clipName</rdfs:label>
-        <rdfs:comment>Clip name as created by camera.</rdfs:comment>
+        <rdfs:comment>Clip name as created by camera</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1089,8 +1110,8 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>creationDate</rdfs:label>
         <rdfs:label>DRA_creationDate</rdfs:label>
-        <rdfs:comment>Creation date of the video file</rdfs:comment>
         <rdfs:comment>DateTime of the analysis made by the Befundungstisch</rdfs:comment>
+        <rdfs:comment>Creation date of the video file</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
@@ -1152,12 +1173,26 @@
     
 
 
+    <!-- http://filmontology.org/ontology/1.0/dayOfShooting -->
+
+    <owl:DatatypeProperty rdf:about="&foo;dayOfShooting">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>dayOfShooting</rdfs:label>
+        <rdfs:comment>Sequential number of the day of shooting</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/1.0/dayTime -->
 
     <owl:DatatypeProperty rdf:about="&foo;dayTime">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>dayTime</rdfs:label>
-        <rdfs:comment>Daytime of the scene (e.g., day, night, morning, etc). Should be modeled as enumeration (not possible with Webprotege).</rdfs:comment>
+        <rdfs:comment>Daytime of the scene (e.g., day, night, morning, etc)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Scene"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1566,8 +1601,8 @@
     <owl:DatatypeProperty rdf:about="&foo;format">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>format</rdfs:label>
-        <rdfs:comment>Video format (combination of pixel width and frames per second)</rdfs:comment>
         <rdfs:comment>Material on which the film is recorded (e.g., DVCPRO)</rdfs:comment>
+        <rdfs:comment>Video format (combination of pixel width and frames per second)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Episode"/>
@@ -1839,7 +1874,8 @@
     <owl:DatatypeProperty rdf:about="&foo;interiorExterior">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>interiorExterior</rdfs:label>
-        <rdfs:comment>Scene takes place indoor or outdoor, possible values int, ext, int/ext, ext/int. Should be modeled as enumeration (not possible with Webprotege).</rdfs:comment>
+        <rdfs:comment>Information on whether a scene (and/or associated clip) is shot interior, exterior, or both</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Scene"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -2530,8 +2566,8 @@
     <owl:DatatypeProperty rdf:about="&foo;sceneNumber">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>sceneNumber</rdfs:label>
-        <rdfs:comment>Sequential number of a scene in a script. Can have letters (e.g., 5a, if split scene)</rdfs:comment>
         <rdfs:comment>Number or name of the scene as used in the clapperboard</rdfs:comment>
+        <rdfs:comment>Sequential number of a scene in a script. Can have letters (e.g., 5a, if split scene)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Scene"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
@@ -2572,6 +2608,19 @@
         <rdfs:label>setDescription</rdfs:label>
         <rdfs:comment>Long description of a set (setting)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Set"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/setName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;setName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>setName</rdfs:label>
+        <rdfs:comment>Name of set where the clip is shot</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -2676,6 +2725,19 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>shutterSpeed</rdfs:label>
         <rdfs:comment>Exposure time in terms of a shutter speed (e.g. 1/50s)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/slate -->
+
+    <owl:DatatypeProperty rdf:about="&foo;slate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>slate</rdfs:label>
+        <rdfs:comment>Number or label of the clapperboard</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -3061,7 +3123,7 @@
     <owl:DatatypeProperty rdf:about="&foo;uuid">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>uuid</rdfs:label>
-        <rdfs:comment>UUID created by camera for each clip</rdfs:comment>
+        <rdfs:comment>UUID identifier created by camera or processing tool for each clip</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -3200,6 +3262,42 @@
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
     
 
 
@@ -3655,9 +3753,45 @@
         <rdfs:subClassOf rdf:resource="&foo;DataObject"/>
         <rdfs:comment>A single continuous recorded performance..</rdfs:comment>
     </owl:Class>
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 

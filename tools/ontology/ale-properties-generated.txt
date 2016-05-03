@@ -847,7 +847,7 @@
 <owl:DatatypeProperty rdf:about="&foo;uuid">
 <rdf:type rdf:resource="&owl;FunctionalProperty"/>
 <rdfs:label>uuid</rdfs:label>
-<rdfs:comment>UUID created by camera for each clip</rdfs:comment>
+<rdfs:comment>UUID identifier created by camera or processing tool for each clip</rdfs:comment>
 <rdfs:domain rdf:resource="&foo;Clip"/>
 <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
 <rdfs:range rdf:resource="&xsd;string"/>
@@ -920,6 +920,60 @@
 <rdf:type rdf:resource="&owl;FunctionalProperty"/>
 <rdfs:label>imageAspectRatio</rdfs:label>
 <rdfs:comment>Aspect ratio of the clip (e.g., 16:9)</rdfs:comment>
+<rdfs:domain rdf:resource="&foo;Clip"/>
+<rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+<rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&foo;slate">
+<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+<rdfs:label>slate</rdfs:label>
+<rdfs:comment>Number or label of the clapperboard</rdfs:comment>
+<rdfs:domain rdf:resource="&foo;Clip"/>
+<rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+<rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&foo;dayOfShooting">
+<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+<rdfs:label>dayOfShooting</rdfs:label>
+<rdfs:comment>Sequential number of the day of shooting</rdfs:comment>
+<rdfs:domain rdf:resource="&foo;Clip"/>
+<rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+<rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&foo;interiorExterior">
+<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+<rdfs:label>interiorExterior</rdfs:label>
+<rdfs:comment>Information on whether the scene is shot interior or exterior</rdfs:comment>
+<rdfs:domain rdf:resource="&foo;Clip"/>
+<rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+<rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&foo;dayTime">
+<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+<rdfs:label>dayTime</rdfs:label>
+<rdfs:comment>Information on whether the scene is shot at day or night</rdfs:comment>
+<rdfs:domain rdf:resource="&foo;Clip"/>
+<rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+<rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&foo;cameraName">
+<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+<rdfs:label>cameraName</rdfs:label>
+<rdfs:comment>User-defined label of the camera</rdfs:comment>
+<rdfs:domain rdf:resource="&foo;Clip"/>
+<rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+<rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&foo;setName">
+<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+<rdfs:label>setName</rdfs:label>
+<rdfs:comment>Name of set where the clip is shot</rdfs:comment>
 <rdfs:domain rdf:resource="&foo;Clip"/>
 <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
 <rdfs:range rdf:resource="&xsd;string"/>
