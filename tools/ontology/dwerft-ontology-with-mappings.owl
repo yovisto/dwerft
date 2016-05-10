@@ -3414,7 +3414,7 @@
     <!-- http://filmontology.org/ontology/1.0/CastMember -->
 
     <owl:Class rdf:about="&foo;CastMember">
-        <rdfs:label>Cast</rdfs:label>
+        <rdfs:label>CastMember</rdfs:label>
         <owl:equivalentClass rdf:resource="&ebucore;Cast"/>
         <rdfs:subClassOf rdf:resource="&foo;Person"/>
         <rdfs:comment>Person playing a character in a movie</rdfs:comment>
@@ -3486,7 +3486,7 @@
     <!-- http://filmontology.org/ontology/1.0/CrewMember -->
 
     <owl:Class rdf:about="&foo;CrewMember">
-        <rdfs:label>Crew</rdfs:label>
+        <rdfs:label>CrewMember</rdfs:label>
         <owl:equivalentClass rdf:resource="&ebucore;Staff"/>
         <rdfs:subClassOf rdf:resource="&foo;Person"/>
         <rdfs:comment>A person involved in the film production staff</rdfs:comment>
@@ -3802,8 +3802,6 @@
         <rdfs:comment>A single continuous recorded performance..</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Cast -->
 
     <owl:Class rdf:about="&ebucore;Cast"/>
