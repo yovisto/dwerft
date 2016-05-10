@@ -960,7 +960,7 @@
 
     <owl:DatatypeProperty rdf:about="&foo;clipProperty">
         <rdfs:label>clipProperty</rdfs:label>
-        <rdfs:comment>Abstract data property for clip properties to structure the dwerft properties.</rdfs:comment>
+        <rdfs:comment>Abstract data property for clip properties to structure the dwerft properties</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
     </owl:DatatypeProperty>
     
@@ -1012,19 +1012,6 @@
         <rdfs:comment>Information regarding the coloration of the archived content (e.g., black-and-white)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/1.0/colorspace -->
-
-    <owl:DatatypeProperty rdf:about="&foo;colorspace">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>colorspace</rdfs:label>
-        <rdfs:comment>Color space (gamma) of the clip (e.g., LogC, Rec 709)</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     

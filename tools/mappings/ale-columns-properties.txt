@@ -54,8 +54,8 @@ Frame count	http://filmontology.org/ontology/1.0/frameCount	Number of frames of 
 Frame_height	http://filmontology.org/ontology/1.0/frameHeight	Total vertical pixel count of the image area (e.g. including overscan and non-image pixels) that is stored in the file.
 Frame_width	http://filmontology.org/ontology/1.0/frameWidth	Total horizontal pixel count of the image area (e.g. including overscan and non-image pixels) that is stored in the file.
 F-Stop	http://filmontology.org/ontology/1.0/fstop	Ratio of the lens's focal length to the diameter of the entrance pupil.
-Gamma	http://filmontology.org/ontology/1.0/colorspace	Color space (gamma) of the clip (e.g., LogC, Rec 709)
-Gamma Space	http://filmontology.org/ontology/1.0/colorspace	Color space (gamma) of the clip (e.g., LogC, Rec 709)
+Gamma	http://filmontology.org/ontology/1.0/colorSpace	Color space (gamma) of the clip (e.g., LogC, Rec 709)
+Gamma Space	http://filmontology.org/ontology/1.0/colorSpace	Color space (gamma) of the clip (e.g., LogC, Rec 709)
 Image_detail	http://filmontology.org/ontology/1.0/imageDetail	Field represents which Image Detail was applied during recording.
 Image_orientatio	http://filmontology.org/ontology/1.0/imageOrientation	Flag indicating whether the image is horizontally and/or vertically flipped.
 Image_orientation	http://filmontology.org/ontology/1.0/imageOrientation	Flag indicating whether the image is horizontally and/or vertically flipped.
@@ -142,8 +142,8 @@ Takecomment	http://filmontology.org/ontology/1.0/comments	User-defined comments
 Cam Roll	http://filmontology.org/ontology/1.0/cameraRoll	Identifies current reel using camera index letter (e.g., A, B) and the reel number.
 Clipname	http://filmontology.org/ontology/1.0/clipName	Clip name as created by camera
 Day of Shooting	http://filmontology.org/ontology/1.0/dayOfShooting	Sequential number of the day of shooting
-INT / EXT	http://filmontology.org/ontology/1.0/interiorExterior	Information on whether the scene is shot interior or exterior
-DAY / NIGHT	http://filmontology.org/ontology/1.0/dayTime	Information on whether the scene is shot at day or night
+INT / EXT	http://filmontology.org/ontology/1.0/interiorExterior	Information on whether a scene (and/or associated clip) is shot interior, exterior, or both
+DAY / NIGHT	http://filmontology.org/ontology/1.0/dayTime	Daytime of the scene (e.g., day, night, morning, etc)
 Camera Model	http://filmontology.org/ontology/1.0/cameraModel	Name of the camera model (e.g., for Alexa cameras, prefix 'Alexa' followed by possible combinations of the product type and product sub type as strings)
 Camera Name	http://filmontology.org/ontology/1.0/cameraName	User-defined label of the camera
 IDclip	http://filmontology.org/ontology/1.0/uuid	UUID identifier created by camera or processing tool for each clip
