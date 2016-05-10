@@ -41,7 +41,7 @@ public class GenerateAleOntologyProperties {
 			    	wr.write("<rdfs:label>"+propName+"</rdfs:label>\n");
 			    	wr.write("<rdfs:comment>"+desc+"</rdfs:comment>\n");
 			    	wr.write("<rdfs:domain rdf:resource=\"&foo;Clip\"/>\n");
-			    	wr.write("<rdfs:subPropertyOf rdf:resource=\"&foo;dwerftDataProperty\"/>\n");
+			    	wr.write("<rdfs:subPropertyOf rdf:resource=\"&foo;clipProperty\"/>\n");
 			    	wr.write("<rdfs:range rdf:resource=\"&xsd;string\"/>\n");
 			    	wr.write("</owl:DatatypeProperty>\n");
 			    	wr.write("\n");
