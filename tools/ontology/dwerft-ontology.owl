@@ -575,7 +575,7 @@
         <rdfs:label>amaPlugin</rdfs:label>
         <rdfs:comment>Used external AMA plug-in for transcoding in AVID</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -614,7 +614,7 @@
         <rdfs:label>audioBitDepth</rdfs:label>
         <rdfs:comment>Sampling depth of the audio signal in bit</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -627,7 +627,7 @@
         <rdfs:label>audioFormat</rdfs:label>
         <rdfs:comment>Format of the recorded audio signal (e.g. WAVE)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -640,7 +640,7 @@
         <rdfs:label>audioSamplingRate</rdfs:label>
         <rdfs:comment>Sampling rate of the audio signal in kHz</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -653,7 +653,7 @@
         <rdfs:label>auxiliaryTimecode</rdfs:label>
         <rdfs:comment>Auxiliary timecode (e.g., from external audio recorder)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -690,6 +690,7 @@
         <rdfs:label>binName</rdfs:label>
         <rdfs:comment>Folder name containing the clips</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -715,7 +716,7 @@
         <rdfs:label>cameraAssistant</rdfs:label>
         <rdfs:comment>Name of the camera assistant</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -728,7 +729,7 @@
         <rdfs:label>cameraFps</rdfs:label>
         <rdfs:comment>Camera framerate for the clip in frames per second.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -741,7 +742,7 @@
         <rdfs:label>cameraIdentifier</rdfs:label>
         <rdfs:comment>Camera identifier. (e.g. Alexa camera: ID Prefix (L or R, R is default) plus camera serial number.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -754,7 +755,7 @@
         <rdfs:label>cameraIndex</rdfs:label>
         <rdfs:comment>User defined camera index A-Z, in case multiple cameras are used on set</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -767,7 +768,7 @@
         <rdfs:label>cameraModel</rdfs:label>
         <rdfs:comment>Name of the camera model (e.g., for Alexa cameras, prefix &apos;Alexa&apos; followed by possible combinations of the product type and product sub type as strings)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -780,7 +781,7 @@
         <rdfs:label>cameraName</rdfs:label>
         <rdfs:comment>User-defined label of the camera</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -793,7 +794,7 @@
         <rdfs:label>cameraRoll</rdfs:label>
         <rdfs:comment>Identifies current reel using camera index letter (e.g., A, B) and the reel number.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -806,7 +807,7 @@
         <rdfs:label>cameraSerialNumber</rdfs:label>
         <rdfs:comment>Serial number of the camera</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -819,7 +820,7 @@
         <rdfs:label>captionInfo</rdfs:label>
         <rdfs:comment>Information about captions</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -832,7 +833,7 @@
         <rdfs:label>ccShift</rdfs:label>
         <rdfs:comment>Color effect. Value of a color shift to green or magenta (GreenTintFactor)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -870,7 +871,7 @@
         <rdfs:label>cinematographer</rdfs:label>
         <rdfs:comment>Name of the cinematographer (director of photography - DOP)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -883,7 +884,7 @@
         <rdfs:label>circledTake</rdfs:label>
         <rdfs:comment>Flag for marking good takes</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -909,7 +910,7 @@
         <rdfs:label>clipDuration</rdfs:label>
         <rdfs:comment>Duration of the clip</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -922,7 +923,7 @@
         <rdfs:label>clipName</rdfs:label>
         <rdfs:comment>Clip name as created by camera</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -935,8 +936,18 @@
         <rdfs:label>clipNumber</rdfs:label>
         <rdfs:comment>Clip number on a camera magazine (cam roll)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/1.0/clipProperty -->
+
+    <owl:DatatypeProperty rdf:about="&foo;clipProperty">
+        <rdfs:label>clipProperty</rdfs:label>
+        <rdfs:comment>Abstract data property for clip properties to structure the dwerft properties.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
     </owl:DatatypeProperty>
     
 
@@ -948,7 +959,7 @@
         <rdfs:label>codec</rdfs:label>
         <rdfs:comment>Video codec used by the camera for recording </rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -961,7 +972,7 @@
         <rdfs:label>colorLabel</rdfs:label>
         <rdfs:comment>User defined colored rating of a clip</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -974,7 +985,7 @@
         <rdfs:label>colorSpace</rdfs:label>
         <rdfs:comment>Color space (gamma) of the clip (e.g., LogC, Rec 709)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -999,7 +1010,7 @@
         <rdfs:label>colorspace</rdfs:label>
         <rdfs:comment>Color space (gamma) of the clip (e.g., LogC, Rec 709)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1012,7 +1023,7 @@
         <rdfs:label>comments</rdfs:label>
         <rdfs:comment>User-defined comments</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1025,7 +1036,7 @@
         <rdfs:label>company</rdfs:label>
         <rdfs:comment>Production company name</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1114,7 +1125,7 @@
         <rdfs:comment>Creation date of the video file</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1167,7 +1178,7 @@
         <rdfs:label>dateCamera</rdfs:label>
         <rdfs:comment>Date set on camera</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1180,7 +1191,7 @@
         <rdfs:label>dayOfShooting</rdfs:label>
         <rdfs:comment>Sequential number of the day of shooting</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1194,7 +1205,7 @@
         <rdfs:comment>Daytime of the scene (e.g., day, night, morning, etc)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Scene"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1220,7 +1231,7 @@
         <rdfs:label>description</rdfs:label>
         <rdfs:comment>Additional notes on the clip</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1413,7 +1424,7 @@
         <rdfs:label>directorName</rdfs:label>
         <rdfs:comment>Name of the director</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1426,7 +1437,7 @@
         <rdfs:label>driveName</rdfs:label>
         <rdfs:comment>Name of the volume containing the clip after copying</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1461,7 +1472,7 @@
         <rdfs:label>endTimecode</rdfs:label>
         <rdfs:comment>End time code of the clip (SMPTE RP188)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1487,7 +1498,7 @@
         <rdfs:label>exposureIndex</rdfs:label>
         <rdfs:comment>Value of the sensor exposure index in ASA rating</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1500,7 +1511,7 @@
         <rdfs:label>eyeIndex</rdfs:label>
         <rdfs:comment>Image channel information for stereoscopic productions (single / left / right)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1526,7 +1537,7 @@
         <rdfs:label>fieldOrdering</rdfs:label>
         <rdfs:comment>Field order for interlaced video</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1539,7 +1550,7 @@
         <rdfs:label>filePath</rdfs:label>
         <rdfs:comment>Full file path to the copied original clip file</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1552,7 +1563,7 @@
         <rdfs:label>fileSize</rdfs:label>
         <rdfs:comment>Size of the clip file in bytes</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1565,7 +1576,7 @@
         <rdfs:label>fileType</rdfs:label>
         <rdfs:comment>File type of the clip (e.g., mov, mp4)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1590,7 +1601,7 @@
         <rdfs:label>focusDistanceUnit</rdfs:label>
         <rdfs:comment>Unit of the lens focus distance (metric / imperial)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1606,7 +1617,7 @@
         <rdfs:domain rdf:resource="&foo;ArchivalMedium"/>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Episode"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1619,7 +1630,7 @@
         <rdfs:label>frameCount</rdfs:label>
         <rdfs:comment>Number of frames of a clip</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1632,7 +1643,7 @@
         <rdfs:label>frameHeight</rdfs:label>
         <rdfs:comment>Total vertical pixel count of the image area (e.g. including overscan and non-image pixels) that is stored in the file.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1682,7 +1693,7 @@
         <rdfs:label>frameWidth</rdfs:label>
         <rdfs:comment>Total horizontal pixel count of the image area (e.g. including overscan and non-image pixels) that is stored in the file.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1695,7 +1706,7 @@
         <rdfs:label>fstop</rdfs:label>
         <rdfs:comment>Ratio of the lens&apos;s focal length to the diameter of the entrance pupil.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1798,7 +1809,7 @@
         <rdfs:label>imageAspectRatio</rdfs:label>
         <rdfs:comment>Aspect ratio of the clip (e.g., 16:9)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1811,7 +1822,7 @@
         <rdfs:label>imageDetail</rdfs:label>
         <rdfs:comment>Field represents which Image Detail was applied during recording.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1824,7 +1835,7 @@
         <rdfs:label>imageOrientation</rdfs:label>
         <rdfs:comment>Flag indicating whether the image is horizontally and/or vertically flipped.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1837,7 +1848,7 @@
         <rdfs:label>imageSharpness</rdfs:label>
         <rdfs:comment>Field represents which Image Sharpness was applied during recording.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1850,7 +1861,7 @@
         <rdfs:label>importPlugin</rdfs:label>
         <rdfs:comment>Used external plug-in for copying in Silverstack</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1863,7 +1874,7 @@
         <rdfs:label>inOut</rdfs:label>
         <rdfs:comment>In-point and out-point in a clip</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1877,7 +1888,7 @@
         <rdfs:comment>Information on whether a scene (and/or associated clip) is shot interior, exterior, or both</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Scene"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1916,7 +1927,7 @@
         <rdfs:label>knDuration</rdfs:label>
         <rdfs:comment>Duration for original camera negative identification</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1929,7 +1940,7 @@
         <rdfs:label>knStart</rdfs:label>
         <rdfs:comment>Value for original camera negative identification</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1967,6 +1978,7 @@
         <rdfs:label>lensSerialNumber</rdfs:label>
         <rdfs:comment>Lens serial number</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1980,7 +1992,7 @@
         <rdfs:label>lensType</rdfs:label>
         <rdfs:comment>Lens mode (type, focal distance)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1993,7 +2005,7 @@
         <rdfs:label>location</rdfs:label>
         <rdfs:comment>Location of where the clip is shot</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2019,7 +2031,7 @@
         <rdfs:label>lookBurnedIn</rdfs:label>
         <rdfs:comment>Determines whether a Look File has been burned in during recording</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2032,7 +2044,7 @@
         <rdfs:label>lookName</rdfs:label>
         <rdfs:comment>String for the look file name, up to 32 characters.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2045,7 +2057,7 @@
         <rdfs:label>lookUserLut</rdfs:label>
         <rdfs:comment>Whether a user-defined 3DLUT is used</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2070,7 +2082,7 @@
         <rdfs:label>lutFileName</rdfs:label>
         <rdfs:comment>The name of the LUT file if a user-defined 3DLUT is used in the look.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2083,7 +2095,7 @@
         <rdfs:label>manufacturer</rdfs:label>
         <rdfs:comment>Name of the camera or software manufacturer</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2096,7 +2108,7 @@
         <rdfs:label>markIn</rdfs:label>
         <rdfs:comment>Timecode of a user-defined in-point</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2109,7 +2121,7 @@
         <rdfs:label>markOut</rdfs:label>
         <rdfs:comment>Timecode of a user-defined out-point</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2122,7 +2134,7 @@
         <rdfs:label>masterSlave</rdfs:label>
         <rdfs:comment>Flag for indicating if the camera is master or slave in a multi-camera setup (on/off)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2184,7 +2196,7 @@
         <rdfs:label>ndFilterdensity</rdfs:label>
         <rdfs:comment>Optical density of the neutral-density (ND) filter.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2221,7 +2233,7 @@
         <rdfs:label>operatorName</rdfs:label>
         <rdfs:comment>Name of the camera operator</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2246,7 +2258,7 @@
         <rdfs:label>originalVideoCodec</rdfs:label>
         <rdfs:comment>Video codec and resolution used by the camera for recording </rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2298,7 +2310,7 @@
         <rdfs:label>pixelaspectratio</rdfs:label>
         <rdfs:comment>The lens squeeze factor for visual correct pixel aspect ratio of images recorded with anamorphic lenses.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2311,7 +2323,7 @@
         <rdfs:label>producerName</rdfs:label>
         <rdfs:comment>Name of the producer</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2324,7 +2336,7 @@
         <rdfs:label>productionName</rdfs:label>
         <rdfs:comment>Name of the production</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2350,7 +2362,7 @@
         <rdfs:label>projectFps</rdfs:label>
         <rdfs:comment>General project playback/timecode framerate in frames per second.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2363,7 +2375,7 @@
         <rdfs:label>projectName</rdfs:label>
         <rdfs:comment>Name of the project (e.g., Avid Project)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2376,7 +2388,7 @@
         <rdfs:label>rating</rdfs:label>
         <rdfs:comment>User-defined rating of a clip.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2413,7 +2425,7 @@
         <rdfs:label>reelName</rdfs:label>
         <rdfs:comment>Reel Name</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2426,7 +2438,7 @@
         <rdfs:label>reformat</rdfs:label>
         <rdfs:comment>Reformatting options for the clip (Strech, Pillarbox / Letterbox, Center Crop, Center Keep Size)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2465,7 +2477,7 @@
         <rdfs:label>resolution</rdfs:label>
         <rdfs:comment>Camera resolution (e.g. HD, 4K)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2478,7 +2490,7 @@
         <rdfs:label>resourceCount</rdfs:label>
         <rdfs:comment>Number of resources in a Silverstack project</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2491,7 +2503,7 @@
         <rdfs:label>resourceSummary</rdfs:label>
         <rdfs:comment>List of resources associated to a Silverstack project</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2570,7 +2582,7 @@
         <rdfs:comment>Sequential number of a scene in a script. Can have letters (e.g., 5a, if split scene)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;Scene"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2596,7 +2608,7 @@
         <rdfs:label>sensorFps</rdfs:label>
         <rdfs:comment>Sensor speed for the clip in frames per second.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2621,7 +2633,7 @@
         <rdfs:label>setName</rdfs:label>
         <rdfs:comment>Name of set where the clip is shot</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2661,7 +2673,7 @@
         <rdfs:label>shootDate</rdfs:label>
         <rdfs:comment>Date of the shoot</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2713,7 +2725,7 @@
         <rdfs:label>shutterAngle</rdfs:label>
         <rdfs:comment>Exposure time in terms of a shutter angle (e.g., 1728 for 172,8 degree, equivalent to 1/50s - 24fps).</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2726,7 +2738,7 @@
         <rdfs:label>shutterSpeed</rdfs:label>
         <rdfs:comment>Exposure time in terms of a shutter speed (e.g. 1/50s)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2739,7 +2751,7 @@
         <rdfs:label>slate</rdfs:label>
         <rdfs:comment>Number or label of the clapperboard</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2777,7 +2789,7 @@
         <rdfs:label>soundroll</rdfs:label>
         <rdfs:comment>Sound roll name</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2790,7 +2802,7 @@
         <rdfs:label>sourceBitDepth</rdfs:label>
         <rdfs:comment>Sample rate of the video signal</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2803,7 +2815,7 @@
         <rdfs:label>sourceFile</rdfs:label>
         <rdfs:comment>Name of the original source file</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2816,7 +2828,7 @@
         <rdfs:label>sourceFilePath</rdfs:label>
         <rdfs:comment>Path to the original source file</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2829,7 +2841,7 @@
         <rdfs:label>sourceResolution</rdfs:label>
         <rdfs:comment>Resolution (Width x Height) of the original source file</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2842,7 +2854,7 @@
         <rdfs:label>startTimecode</rdfs:label>
         <rdfs:comment>Start time code of the clip (SMPTE RP188)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2894,7 +2906,7 @@
         <rdfs:label>supVersion</rdfs:label>
         <rdfs:comment>Name of installed camera software update package.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2907,7 +2919,7 @@
         <rdfs:label>sxsSn</rdfs:label>
         <rdfs:comment>Storage media serial number.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2934,7 +2946,7 @@
         <rdfs:label>take</rdfs:label>
         <rdfs:comment>Take number/name</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2959,7 +2971,7 @@
         <rdfs:label>tapeIdentifier</rdfs:label>
         <rdfs:comment>Identifies current tape</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2996,7 +3008,7 @@
         <rdfs:label>timeCamera</rdfs:label>
         <rdfs:comment>Time set on camera</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3034,7 +3046,7 @@
         <rdfs:label>tracks</rdfs:label>
         <rdfs:comment>Information on which tracks have been recorded (V - Video; A1, A2, Ax for audio tracks)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3047,7 +3059,7 @@
         <rdfs:label>trk1</rdfs:label>
         <rdfs:comment>Additional information in the audio tracks (e.g. MixL, MixR)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3060,7 +3072,7 @@
         <rdfs:label>trk2</rdfs:label>
         <rdfs:comment>Additional information in the audio tracks (e.g. MixL, MixR)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3073,7 +3085,7 @@
         <rdfs:label>umid</rdfs:label>
         <rdfs:comment>Unique material identifier (SMPTE 330M UMID)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3086,7 +3098,7 @@
         <rdfs:label>uncPath</rdfs:label>
         <rdfs:comment>Path to the video in UNC format</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3099,7 +3111,7 @@
         <rdfs:label>userInfo1</rdfs:label>
         <rdfs:comment>User Info 1 Note</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3112,7 +3124,7 @@
         <rdfs:label>userInfo2</rdfs:label>
         <rdfs:comment>User Info 2 Note</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3125,7 +3137,7 @@
         <rdfs:label>uuid</rdfs:label>
         <rdfs:comment>UUID identifier created by camera or processing tool for each clip</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3163,7 +3175,7 @@
         <rdfs:label>videoCodec</rdfs:label>
         <rdfs:comment>Video codec and resolution</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3176,7 +3188,7 @@
         <rdfs:label>whiteBalance</rdfs:label>
         <rdfs:comment>Value of the white balance in Kelvin, calculated from the R, G and B factors</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3754,6 +3766,8 @@
         <rdfs:comment>A single continuous recorded performance..</rdfs:comment>
     </owl:Class>
     
+
+
 
     
 
