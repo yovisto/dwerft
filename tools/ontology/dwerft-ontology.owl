@@ -3185,8 +3185,10 @@
 
     <owl:DatatypeProperty rdf:about="&foo;workingTitle">
         <rdfs:label>workingTitle</rdfs:label>
-        <rdfs:comment rdf:datatype="&xsd;string">Working (temporary) title of the ffilm project</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string">Working (temporary) title of the film project</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Project"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
