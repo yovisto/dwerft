@@ -240,13 +240,15 @@ public class DwerftTools {
 				OntologyConstants.ONTOLOGY_FILE,
 				OntologyConstants.ONTOLOGY_FORMAT,
 				mapping) {
+            @Override
+            public void processingBeforeConvert() {
+            }
 
-					@Override
-					public void processingBeforeConvert() {	}
+            @Override
+            public void processingAfterConvert() {
 
-					@Override
-					public void processingAfterConvert() {	}
-		};
+            }
+        };
 		
 		abstractRdf.convert(inputStream);
 	    return abstractRdf;

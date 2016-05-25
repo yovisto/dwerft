@@ -11,9 +11,6 @@ import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -193,20 +190,6 @@ public class PreproducerSource implements Source {
 		
 		return result;
 	}
-
-    /**
-     * Read file string.
-     *
-     * @param path     the path
-     * @param encoding the encoding
-     * @return the string
-     * @throws IOException the io exception
-     */
-    public static String readFile(String path, Charset encoding) throws IOException {
-		byte[] encoded = Files.readAllBytes(Paths.get(path));
-		return new String(encoded, encoding);
-	}
-
 
     /**
      * Safely close streams and report errors
