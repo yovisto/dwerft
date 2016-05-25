@@ -49,4 +49,8 @@ public interface DwerftConfig extends Config {
     @Key("remote.user")
     @DefaultValue("")
     String getRemoteUser();
+
+    @Key("tailr.token")
+    @DefaultValue("")
+    String getTailrToken();
 }
