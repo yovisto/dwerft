@@ -10,21 +10,21 @@ import org.junit.Test;
 /**
  * Created by ratzeputz on 25.05.16.
  */
-public class VersioningTest {
+public class TailrTest {
 
 
-    private Versioning v;
+    private Tailr tailr;
 
     @Before
     public void setUp() {
         DwerftConfig conf = ConfigFactory.create(DwerftConfig.class);
-        v = new Versioning(conf.getTailrToken());
+        tailr = new Tailr(conf.getTailrToken());
     }
 
     @Test
     public void testPush() {
         Model m = RDFDataMgr.loadModel("src/test/resources/generic_example_cast.ttl");
-        
+
 
     }
 }
