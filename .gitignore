@@ -1,8 +1,17 @@
+# ide specific
 .classpath
 .project
 .settings
 *.iml
 .idea
-target
+
+# build files
+build/
+target/
 tools/DwerftConfig.properties
 dwerft-tools*
+
+# test files
+/tools/src/test/resources/fuseki
+/tools/src/test/resources/giles/ale_dummy.xml
+/tools/src/test/resources/giles/csv_dummy.xml
