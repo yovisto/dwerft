@@ -15,10 +15,12 @@ public class TailrTest {
 
     private Tailr tailr;
 
+    private String repoUrl = "http://tailr.s16a.org/api/santifa/dwerft?";
+
     @Before
     public void setUp() {
         DwerftConfig conf = ConfigFactory.create(DwerftConfig.class);
-        tailr = new Tailr(conf.getTailrToken());
+        tailr = new Tailr(conf.getTailrToken(), repoUrl);
     }
 
     @Test
