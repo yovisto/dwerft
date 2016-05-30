@@ -1,8 +1,12 @@
 package de.werft.tools.general.commands;
 
 import com.beust.jcommander.Parameter;
+import com.beust.jcommander.ParameterException;
 import com.beust.jcommander.Parameters;
+import com.hp.hpl.jena.rdf.model.Model;
 import de.werft.tools.update.Update;
+import org.apache.commons.lang.StringUtils;
+import org.apache.jena.riot.RDFDataMgr;
 
 import java.util.List;
 
@@ -27,26 +31,20 @@ public class UploadCommand {
             description = "Provide a graph name to store the rdf.")
     private String graphName = "";
 
-    /* FIXME nested class
-    public static class GranularityConverter implements IStringConverter<Update.Granularity> {
 
-        @Override
-        public Update.Granularity convert(String g) {
-            try {
-                return Update.Granularity.valueOf(g);
-            } catch (IllegalArgumentException e) {
-                return Update.Granularity.LEVEL_1;
-            }
+    public Model getUploadModel() throws ParameterException {
+        if (StringUtils.substringAfterLast(uploadFile.get(0), ".").toLowerCase().matches("(rdf|ttl|nt|jsonld)")) {
+            return RDFDataMgr.loadModel(uploadFile.get(0));
+        } else {
+            throw new ParameterException("Only (rdf|ttl|nt|jsonld) are valid file endings.");
         }
-    }*/
-
-    public String getUploadFile() {
-        return uploadFile.get(0);
     }
 
     public Update.Granularity getGranularity() {
         try {
-            return Update.Granularity.valueOf(granularity);
+            String s = StringUtils.substringAfterLast(granularity, "_");
+
+            return Update.Granularity.valueOf(s);
         } catch (IllegalArgumentException e) {
             return Update.Granularity.LEVEL_1;
         }

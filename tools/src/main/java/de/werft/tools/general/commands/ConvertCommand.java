@@ -2,6 +2,7 @@ package de.werft.tools.general.commands;
 
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFLanguages;
 
@@ -12,8 +13,6 @@ import java.util.List;
  * This class specifies the convert subcommand used by the
  * dwerft tools. It takes care of converting format string to
  * {@link Lang}.
- *
- * FIXME file extension handling
  *
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
@@ -36,21 +35,6 @@ public class ConvertCommand {
     @Parameter(names = {"-print"}, description = "Print conversion output to console instead of file.")
     private boolean printToCli = false;
 
-    /* FIXME nested class
-    protected class LangConverter implements IStringConverter<Lang> {
-
-        @Override
-        public Lang convert(String format) {
-            System.out.println(format);
-            Lang resultFormat = RDFLanguages.nameToLang(format.toUpperCase());
-            // no language found for the specified format
-            if (resultFormat == null) {
-                resultFormat = Lang.TTL;
-            }
-            return resultFormat;
-        }
-    }*/
-
     public List<String> getFiles() {
         return files;
     }
@@ -66,5 +50,69 @@ public class ConvertCommand {
 
     public boolean isPrintToCli() {
         return printToCli;
+    }
+
+    public boolean hasIncorrectFilesCount() {
+        return files.size() > 3 || files.size() < 1;
+    }
+
+    public boolean isCorrectFileOrder() {
+        if (files.size() == 1) {
+            return hasExtension(files.get(0), "(ale|csv|rdf|nt|ttl)");
+        } else if (files.size() == 2 || files.size() == 3) {
+            return hasExtension(files.get(0), "(dq|xml|ale|csv)") &&
+                    hasExtension(files.get(1), "(rdf|nt|ttl)");
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isConvertDramaqueen() {
+        return files.size() == 2 && hasExtension(files.get(0), "dq");
+    }
+
+    public boolean isCsvToXml() {
+        return files.size() == 1 && hasExtension(files.get(0), "(ale|csv)");
+    }
+
+    public boolean isConvertPreproducer() {
+        return files.size() == 1 && hasExtension(files.get(0), "(rdf|nt|ttl)");
+    }
+
+    public boolean isCsvToRdf() {
+        return files.size() == 3 && hasExtension(files.get(0), "(ale|csv)");
+    }
+
+    public boolean isConvertGeneric() {
+        return files.size() == 3 && hasExtension(files.get(0), "xml");
+    }
+
+    public String getMapping() {
+        if (isCsvToRdf() || isConvertGeneric()) {
+            return files.get(2);
+        } else {
+            return "";
+        }
+    }
+
+    public String getInput() {
+        if (isConvertPreproducer()) {
+            return "";
+        } else {
+            return files.get(0);
+        }
+    }
+
+    public String getOutput() {
+        if (isConvertPreproducer()) {
+            return files.get(0);
+        } else {
+            return files.get(1);
+        }
+    }
+
+    // test if a file has a certain extension
+    private boolean hasExtension(String file, String extensions) {
+        return StringUtils.substringAfterLast(file, ".").toLowerCase().matches(extensions);
     }
 }

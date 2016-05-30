@@ -21,10 +21,4 @@ public class AbstractSource implements Source {
 		}
 		return null;
 	}
-
-	@Override
-	public boolean send(String content) {
-		// TODO Auto-generated method stub
-		return false;
-	}	
 }

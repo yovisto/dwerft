@@ -56,10 +56,4 @@ public class DramaQueenSource implements Source {
 
 		return null;
 	}
-
-	@Override
-	public boolean send(String content) {
-		return false;
-	}
-
 }

@@ -21,12 +21,4 @@ public interface Source {
 	 * @return the input stream or null if we can't construct a working stream.
 	 */
 	InputStream get(String source);
-	
-	/**
-	 * Sends the results to a tool. a.k.a. export
-	 *
-	 * @param content the content
-	 * @return true, if successful
-	 */
-	boolean send(String content);
 }

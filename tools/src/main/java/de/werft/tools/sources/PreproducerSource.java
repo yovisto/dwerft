@@ -7,8 +7,8 @@ import org.apache.logging.log4j.Logger;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import javax.net.ssl.HttpsURLConnection;
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Date;
@@ -144,65 +144,4 @@ public class PreproducerSource implements Source {
 	
 		return null;
 	}
-
-	/**
-	 * Executes the upload of an XML file to preproducer
-	 * 
-	 * @param content The content of the XML file as string
-	 * @return Response of the webserver
-	 */
-	@Override
-	public boolean send(String content) {
-		boolean result = false;
-
-		Map<String, String> parameters = getBasicParameters("postScript");
-		String sig = generateSignature(parameters);		
-		parameters.put("signature", sig);
-		
-		try {
-			// build http header
-			URL url = new URL(BASE_URL);
-			HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
-			conn.setDoOutput(true);
-			conn.setDoInput(true);
-			conn.setRequestMethod("POST");
-			conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded");
-			
-			parameters.put("payload", content);
-			String paramRequest = convertParametersToRequest(parameters);
-
-            // send data to api
-			OutputStream os = conn.getOutputStream();
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));		
-			writer.write(paramRequest);
-			writer.flush();
-			close(writer);
-			close(os);
-
-            if (conn.getResponseCode() == HttpsURLConnection.HTTP_OK) {
-                result = true;
-            }        
-            conn.disconnect();   
-			
-		} catch (IOException e) {
-			L.error("Could not send data to preproducer.");
-		}
-		
-		return result;
-	}
-
-    /**
-     * Safely close streams and report errors
-     *
-     * @param c a closable
-     */
-    private void close(Closeable c) {
-        if (c != null) {
-            try {
-                c.close();
-            } catch (IOException e) {
-                L.error("Stream is not closed properly");
-            }
-        }
-    }
 }
