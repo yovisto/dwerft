@@ -8,14 +8,17 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created by ratzeputz on 25.05.16.
+ * Live test of the tailr versioning.
+ *
+ * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 public class TailrTest {
-
 
     private Tailr tailr;
 
     private String repoUrl = "http://tailr.s16a.org/api/santifa/dwerft?";
+
+    private String graphName = "http://example.org";
 
     @Before
     public void setUp() {
@@ -26,7 +29,6 @@ public class TailrTest {
     @Test
     public void testPush() {
         Model m = RDFDataMgr.loadModel("src/test/resources/generic_example_cast.ttl");
-
-
+        tailr.addRevision(m, graphName);
     }
 }
