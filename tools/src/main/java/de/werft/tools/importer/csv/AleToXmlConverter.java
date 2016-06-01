@@ -24,8 +24,8 @@ public class AleToXmlConverter extends CsvToXmlConverter {
      * @throws ParserConfigurationException      the parser configuration exception
      * @throws TransformerConfigurationException the transformer configuration exception
      */
-    public AleToXmlConverter() throws ParserConfigurationException, TransformerConfigurationException {
-        super();
+    public AleToXmlConverter(Character sepChar) throws ParserConfigurationException, TransformerConfigurationException {
+        super(sepChar);
     }
 
     @Override

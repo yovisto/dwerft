@@ -1,15 +1,13 @@
 package de.werft.tools.importer.general;
 
 import com.hp.hpl.jena.rdf.model.Model;
-import org.apache.jena.riot.Lang;
-import org.apache.jena.riot.RDFDataMgr;
+import de.werft.tools.sources.AbstractSource;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Node;
 
-import java.io.FileOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.List;
 
 /**
@@ -19,15 +17,15 @@ import java.util.List;
  * Second the mapping from xml to rdf. For the mapping format see README.md
  *
  */
-public abstract class AbstractXMLtoRDFconverter {
+public abstract class AbstractXMLtoRDFconverter implements Converter<Model> {
 	
-	/** The Logger. */
-	private static final Logger L = Logger.getLogger(AbstractXMLtoRDFconverter.class.getName());
+	protected final Logger L = Logger.getLogger(this.getClass().getName());
 	
 	protected OntologyConnector ontConn;
 	protected XMLProcessor xmlProc;
 	protected Mapper mapper;
 	protected RdfProcessor rdfProc;
+    private Converter<File> preConverter;
 
 	/**
 	 * The XMLtoRDFconverter is the controller of the OntologyConnector, XMLProcessor,
@@ -46,19 +44,23 @@ public abstract class AbstractXMLtoRDFconverter {
 		rdfProc = new RdfProcessor(ontConn);
 	}
 
-    public AbstractXMLtoRDFconverter(InputStream ontologyFileName, String ontologyFormat, InputStream mappingsFilename) {
-        ontConn = new OntologyConnector(ontologyFileName, ontologyFormat);
-        mapper = new Mapper(mappingsFilename);
-        rdfProc = new RdfProcessor(ontConn);
+    public void setPreConverter(Converter<File> preConverter) {
+        this.preConverter = preConverter;
     }
 
 	/**
-	 * this methods starts the conversion.
+	 * This methods starts the conversion.
 	 *
-	 * @param is the xml input stream
+	 * @param input the xml input stream
 	 */
-	public void convert(InputStream is) {
-		xmlProc = new XMLProcessor(is);
+	public void convert(String input) throws IOException {
+        String file = input;
+        if (preConverter != null) {
+            preConverter.convert(input);
+            file = preConverter.getResult().getAbsolutePath();
+        }
+
+		xmlProc = getInputProcessor(file);
 		processingBeforeConvert();
 		
 		Node node;		
@@ -71,53 +73,13 @@ public abstract class AbstractXMLtoRDFconverter {
 		
 		processingAfterConvert();
 	}
+
+    protected XMLProcessor getInputProcessor(String input) {
+        return new XMLProcessor(new AbstractSource().get(input));
+    }
 	
-	public Model getGeneratedModel() {
+	public Model getResult() {
 		return rdfProc.getGeneratedModel();
-	}
-
-
-	/**
-	 * A helper method for writing the result int o a file.
-	 *
-	 * @param filename the resulting filename and directory
-	 * @param format the output format e.g. TTL
-	 */
-	public void writeRdfToFile(String filename, Lang format) {
-		OutputStream out;
-		try {
-			out = new FileOutputStream(filename);
-            RDFDataMgr.write(out, getGeneratedModel(), format);
-			out.close();
-			L.info(format.getName() + " file written to " + filename);
-		} catch (IOException e) {
-			L.error("Failed writing " + format.getName() + " file " + filename + ": " + e);
-		}
-	}
-
-	/**
-	 * A helper method for writing results as ttl file.
-	 *
-	 * @param filename name and directory of the result file
-	 */
-	public void writeRdfToFile(String filename) {
-		writeRdfToFile(filename, Lang.TTL);
-	}
-
-	/**
-	 * Prints RDF to console in th specified format
-	 *
-	 * @param format the RDF format
-	 */
-	public void writeRdfToConsole(Lang format) {
-		RDFDataMgr.write(System.out, getGeneratedModel(), format);
-	}
-
-	/**
-	 * A helper method for writing turtle rdf to console
-	 */
-	public void writeRdfToConsole() {
-		writeRdfToConsole(Lang.TTL);
 	}
 
     /**

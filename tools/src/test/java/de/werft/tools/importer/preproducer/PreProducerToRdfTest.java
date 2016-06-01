@@ -1,9 +1,11 @@
 package de.werft.tools.importer.preproducer;
 
+import de.werft.tools.DwerftUtils;
 import de.werft.tools.general.DwerftConfig;
 import de.werft.tools.general.OntologyConstants;
 import de.werft.tools.sources.PreproducerSource;
 import org.aeonbits.owner.ConfigFactory;
+import org.apache.jena.riot.Lang;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -34,14 +36,8 @@ public class PreProducerToRdfTest {
 		PreProducerToRdf pprdf = new PreProducerToRdf(
 				OntologyConstants.ONTOLOGY_FILE,
 				OntologyConstants.ONTOLOGY_FORMAT,
-				PREPRODUCER_MAPPINGS_FILE);
+				PREPRODUCER_MAPPINGS_FILE, pps);
 
-		// the order is important, you have to create all classes before
-		// you can use them.
-		for (String method : pprdf.getAPIMethodOrder()) {
-			pprdf.convert(pps.get(method));
-		}
-
-		pprdf.writeRdfToFile(outputFile);
+        DwerftUtils.writeRdfToConsole(pprdf.getResult(), Lang.TTL);
 	}
 }

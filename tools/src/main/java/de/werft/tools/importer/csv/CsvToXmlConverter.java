@@ -1,6 +1,7 @@
 package de.werft.tools.importer.csv;
 
 import com.opencsv.CSVReader;
+import de.werft.tools.importer.general.Converter;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -43,7 +44,7 @@ import java.io.IOException;
  * </p>
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
-public class CsvToXmlConverter {
+public class CsvToXmlConverter implements Converter<File> {
 
     private DocumentBuilderFactory domFactory;
 
@@ -53,19 +54,24 @@ public class CsvToXmlConverter {
 
     private Transformer transformer;
 
+    private Character sepChar;
+
+    private File result;
+
     /**
      * Instantiates a new Csv to xml converter.
      *
      * @throws ParserConfigurationException      the parser configuration exception
      * @throws TransformerConfigurationException the transformer configuration exception
      */
-    public CsvToXmlConverter() throws ParserConfigurationException, TransformerConfigurationException {
+    public CsvToXmlConverter(Character sepChar) throws ParserConfigurationException, TransformerConfigurationException {
         this.domFactory = DocumentBuilderFactory.newInstance();
         this.domBuilder = domFactory.newDocumentBuilder();
         this.transformerFactory = TransformerFactory.newInstance();
         this.transformer = transformerFactory.newTransformer();
         this.transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         this.transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+        this.sepChar = sepChar;
     }
 
     /**
@@ -76,7 +82,10 @@ public class CsvToXmlConverter {
      * @return the file    that denotes the converted xml file.
      * @throws IOException the io exception
      */
-    public File convertToXml(String fileLocation, Character sepChar) throws IOException {
+    public void convert(String fileLocation) throws IOException {
+        // null result and be more functional
+        result = null;
+
         try {
             // prepare xml document
             Document doc = domBuilder.newDocument();
@@ -112,7 +121,16 @@ public class CsvToXmlConverter {
         } catch (TransformerException e) {
             throw new IOException("Could not transform xml results. No xml file written. " + e.getMessage(), e);
         }
-        return new File(new File(fileLocation).getParent(), getBaseName(fileLocation)+ ".xml");
+        result = new File(new File(fileLocation).getParent(), getBaseName(fileLocation)+ ".xml");
+    }
+
+    public File getResult() {
+        return result;
+    }
+
+    @Override
+    public void setPreConverter(Converter<File> c) {
+        // do nothing; because csv to xml conversion is always the first step
     }
 
     private String getBaseName(String file) {

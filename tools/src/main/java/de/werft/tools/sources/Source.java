@@ -4,13 +4,9 @@ import java.io.InputStream;
 
 
 /**
- * The Interface Source.
- * The interfaces is designed to be a two way connection to a single tool.
- * Each class implementing this interfaces holds the contract that it receives or imports
- * data from that tool, also as exporting data to that tool.
- * <br>
- * There are classes that break this rule to show something on the terminal and gets nothing.
- * <br>
+ * The class defines a way of recieving data from somewhere.
+ * This can be a file a API or a archive.
+ *
  */
 public interface Source {
 

@@ -1,15 +1,16 @@
 package de.werft.tools.importer.preproducer;
 
-import de.werft.tools.importer.general.XMLProcessor;
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.rdf.model.Resource;
 import de.werft.tools.importer.general.AbstractXMLtoRDFconverter;
+import de.werft.tools.importer.general.XMLProcessor;
+import de.werft.tools.sources.Source;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.Resource;
-
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
@@ -20,14 +21,13 @@ import java.util.ArrayList;
  */
 public class PreProducerToRdf extends AbstractXMLtoRDFconverter {
 
-	public PreProducerToRdf(InputStream ontologyFileName, String ontologyFormat,
-			String mappingsFilename) {
-		super(ontologyFileName, ontologyFormat, mappingsFilename);
-	}
+    private Source source;
 
-    public PreProducerToRdf(InputStream ontologyFile, String ontologyFormat, InputStream prpMapping) {
-        super(ontologyFile, ontologyFormat, prpMapping);
-    }
+	public PreProducerToRdf(InputStream ontologyFileName, String ontologyFormat,
+			String mappingsFilename, Source source) {
+		super(ontologyFileName, ontologyFormat, mappingsFilename);
+        this.source = source;
+	}
 
 	public ArrayList<String> getAPIMethodOrder() {
 		ArrayList<String> result = new ArrayList<>();
@@ -40,9 +40,20 @@ public class PreProducerToRdf extends AbstractXMLtoRDFconverter {
 		result.add("listFigures");
 		result.add("listScenes");
 		result.add("listSchedule");
-
 		return result;
 	}
+
+    @Override
+    public void convert(String input) throws IOException {
+        for (String method : getAPIMethodOrder()) {
+            super.convert(method);
+        }
+    }
+
+    @Override
+    protected XMLProcessor getInputProcessor(String input) {
+        return new XMLProcessor(source.get(input));
+    }
 
     /**
 	 * Retrieves the identifier of the ScriptDocument element

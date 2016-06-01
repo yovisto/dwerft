@@ -6,6 +6,7 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import de.werft.tools.general.OntologyConstants;
 import de.werft.tools.importer.general.XMLProcessor;
 import de.werft.tools.importer.general.AbstractXMLtoRDFconverter;
+import de.werft.tools.sources.DramaQueenSource;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -21,10 +22,10 @@ public class DramaqueenToRdf extends AbstractXMLtoRDFconverter {
 		super(ontologyFileName, ontologyFormat, mappingsFilename);
 	}
 
-    public DramaqueenToRdf(InputStream ontologyFile, String ontologyFormat, InputStream dqMapping) {
-        super(ontologyFile, ontologyFormat, dqMapping);
+    @Override
+    protected XMLProcessor getInputProcessor(String input) {
+        return new XMLProcessor(new DramaQueenSource().get(input));
     }
-
 
     /**
 	 * Retrieves the identifier of the ScriptDocument element

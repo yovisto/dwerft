@@ -1,12 +1,11 @@
 package de.werft.tools.general;
 
+import de.werft.tools.DwerftUtils;
 import de.werft.tools.importer.general.DefaultXMLtoRDFconverter;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.IOException;
 
 public class DefaultXMLtoRDFconverterTest {
 	
@@ -20,26 +19,14 @@ public class DefaultXMLtoRDFconverterTest {
     }
 
 	@Test
-	public void testConverter() {
-		
-		InputStream inputStream = null;
-		
-		try {
-			inputStream = new FileInputStream(exampleXMLfile);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		
+	public void testConverter() throws IOException {
 		DefaultXMLtoRDFconverter converter = new DefaultXMLtoRDFconverter(
 				OntologyConstants.ONTOLOGY_FILE, 
 				OntologyConstants.ONTOLOGY_FORMAT, 
 				MAPPINGS_FILE);
 		
-		converter.convert(inputStream);
-		
-		converter.writeRdfToFile(outputFile);
-		
-		
+		converter.convert(exampleXMLfile);
+        DwerftUtils.writeRdfToConsole(converter.getResult());
 	}
 
 

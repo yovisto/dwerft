@@ -1,11 +1,11 @@
 package de.werft.tools.importer.dramaqueen;
 
+import de.werft.tools.DwerftUtils;
 import de.werft.tools.general.OntologyConstants;
-import de.werft.tools.sources.DramaQueenSource;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.InputStream;
+import java.io.IOException;
 
 /**
  *  DramaQueen Tests
@@ -26,19 +26,18 @@ public class DramaqueenToRdfTest {
     }
 
 	@Test
-	public void testConverter() {
+	public void testConverter() throws IOException {
 		// test the convertion and validate the result by hand
-		InputStream inputStream = new DramaQueenSource().get(dqFile);
+		//InputStream inputStream = new DramaQueenSource().get(dqFile);
 
 		DramaqueenToRdf dqrdf = new DramaqueenToRdf(
 				OntologyConstants.ONTOLOGY_FILE, 
 				OntologyConstants.ONTOLOGY_FORMAT, 
 				DRAMAQUEEN_MAPPINGS_FILE);
 		
-		dqrdf.convert(inputStream);
-		dqrdf.writeRdfToFile(outputFile);
-
-//		Model generatedModel = dqrdf.getGeneratedModel();
+		dqrdf.convert(dqFile);
+        DwerftUtils.writeRdfToConsole(dqrdf.getResult());
+//		Model generatedModel = dqrdf.getResult();
 //		generatedModel.write(System.out, "TTL");
 	}
 

@@ -24,14 +24,14 @@ public class CsvToXmlConverterTest {
 
     @Test
     public void testCsvConversion() throws Exception {
-        CsvToXmlConverter csvConverter = new CsvToXmlConverter();
-        csvConverter.convertToXml(csvFileLocation, ';');
+        CsvToXmlConverter csvConverter = new CsvToXmlConverter(';');
+        csvConverter.convert(csvFileLocation);
     }
 
     @Test
     public void testAleConversion() throws Exception {
-        AleToXmlConverter aleConverter = new AleToXmlConverter();
-        aleConverter.convertToXml(aleFileLocation, '\t');
+        AleToXmlConverter aleConverter = new AleToXmlConverter('\t');
+        aleConverter.convert(aleFileLocation);
     }
 
 }

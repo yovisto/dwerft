@@ -4,14 +4,18 @@ import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
 import com.beust.jcommander.Parameters;
 import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.update.UpdateException;
 import de.werft.tools.update.Update;
+import de.werft.tools.update.UpdateFactory;
 import org.apache.commons.lang.StringUtils;
 import org.apache.jena.riot.RDFDataMgr;
 
 import java.util.List;
 
 /**
- * FIXME file extension handling
+ * this class specifies the upload command used for
+ * uploading rdf files to a triple store. It provides the
+ * update based on the input granularity and the provided rdf file.
  *
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
@@ -31,8 +35,7 @@ public class UploadCommand {
             description = "Provide a graph name to store the rdf.")
     private String graphName = "";
 
-
-    public Model getUploadModel() throws ParameterException {
+    private Model getUploadModel() throws ParameterException {
         if (StringUtils.substringAfterLast(uploadFile.get(0), ".").toLowerCase().matches("(rdf|ttl|nt|jsonld)")) {
             return RDFDataMgr.loadModel(uploadFile.get(0));
         } else {
@@ -40,10 +43,9 @@ public class UploadCommand {
         }
     }
 
-    public Update.Granularity getGranularity() {
+    private Update.Granularity getGranularity() {
         try {
             String s = StringUtils.substringAfterLast(granularity, "_");
-
             return Update.Granularity.valueOf(s);
         } catch (IllegalArgumentException e) {
             return Update.Granularity.LEVEL_1;
@@ -52,5 +54,13 @@ public class UploadCommand {
 
     public String getGraphName() {
         return graphName;
+    }
+
+    public Update getUpdate() throws UpdateException {
+        try {
+            return UpdateFactory.createUpdate(getGranularity(), getUploadModel());
+        } catch (ParameterException e) {
+            throw new UpdateException("Update could not be done. " + e.getMessage());
+        }
     }
 }
