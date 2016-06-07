@@ -1,4 +1,4 @@
-package de.werft.tools.general;
+package de.werft.tools.importer;
 
 import de.werft.tools.importer.general.Mapper;
 import de.werft.tools.importer.general.MappingDefinition;

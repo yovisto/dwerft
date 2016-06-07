@@ -1,15 +1,13 @@
 package de.werft.tools.importer.preproducer;
 
 import de.werft.tools.DwerftUtils;
-import de.werft.tools.general.DwerftConfig;
+import de.werft.tools.general.AbstractTest;
 import de.werft.tools.general.OntologyConstants;
 import de.werft.tools.sources.PreproducerSource;
-import org.aeonbits.owner.ConfigFactory;
 import org.apache.jena.riot.Lang;
-import org.junit.Before;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * PreProducer Tests
@@ -18,26 +16,30 @@ import java.io.FileNotFoundException;
  *
  * @author Henrik Jürges (juerges.henrik@gmail.com)
  */
-public class PreProducerToRdfTest {
+public class PreProducerToRdfTest extends AbstractTest {
 	
-	private static final String PREPRODUCER_MAPPINGS_FILE = "mappings/preproducer.mappings";
-	private static final String outputFile = "examples/preproducer_export.ttl";
+	private static final String mapping = "mappings/preproducer.mappings";
 
-    @Before
+    @Override
     public void setUp() {
-        OntologyConstants.setOntologyFile(new java.io.File("ontology/dwerft-ontology.owl"));
+        OntologyConstants.setOntologyFile(conf.getOntologyFile());
     }
 
-	@Test
-    public void testConverter() throws FileNotFoundException {
-        DwerftConfig config = ConfigFactory.create(DwerftConfig.class);
-		PreproducerSource pps = new PreproducerSource(config.getPreProducerKey(), config.getPreProducerSecret(),
-            config.getPreProducerAppSecret());
+    @Override
+    public void tearDown() { }
+
+    @Test
+    public void testConverter() throws IOException {
+        PreproducerSource pps = new PreproducerSource(conf.getPreProducerKey(), conf.getPreProducerSecret(),
+            conf.getPreProducerAppSecret());
 		PreProducerToRdf pprdf = new PreProducerToRdf(
 				OntologyConstants.ONTOLOGY_FILE,
 				OntologyConstants.ONTOLOGY_FORMAT,
-				PREPRODUCER_MAPPINGS_FILE, pps);
+				mapping, pps);
 
+        // since the conversion precess generates uuids a formal verification is a
+        // bit tricky and not done. the result is printed on a console for validations by hand.
+        pprdf.convert("");
         DwerftUtils.writeRdfToConsole(pprdf.getResult(), Lang.TTL);
 	}
 }

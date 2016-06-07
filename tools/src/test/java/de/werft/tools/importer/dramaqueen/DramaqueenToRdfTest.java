@@ -1,8 +1,8 @@
 package de.werft.tools.importer.dramaqueen;
 
 import de.werft.tools.DwerftUtils;
+import de.werft.tools.general.AbstractTest;
 import de.werft.tools.general.OntologyConstants;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -14,31 +14,30 @@ import java.io.IOException;
  *
  * @author
  */
-public class DramaqueenToRdfTest {
-	
-	private static final String dqFile = "examples/Hansel_Gretel_de.dq";
-	private static final String outputFile = "examples/Hansel_Gretel_de.ttl";
-	private static final String DRAMAQUEEN_MAPPINGS_FILE = "mappings/dramaqueen.mappings";
+public class DramaqueenToRdfTest extends AbstractTest {
 
-    @Before
+    private final String inputFile = testFolder + "hansel_gretel.dq";
+
+    private static final String mapping = "mappings/dramaqueen.mappings";
+
+    @Override
     public void setUp() {
-        OntologyConstants.setOntologyFile(new java.io.File("ontology/dwerft-ontology.owl"));
+        OntologyConstants.setOntologyFile(conf.getOntologyFile());
     }
 
-	@Test
-	public void testConverter() throws IOException {
-		// test the convertion and validate the result by hand
-		//InputStream inputStream = new DramaQueenSource().get(dqFile);
+    @Override
+    public void tearDown() { }
 
+    @Test
+	public void testConverter() throws IOException {
 		DramaqueenToRdf dqrdf = new DramaqueenToRdf(
 				OntologyConstants.ONTOLOGY_FILE, 
 				OntologyConstants.ONTOLOGY_FORMAT, 
-				DRAMAQUEEN_MAPPINGS_FILE);
+				mapping);
 		
-		dqrdf.convert(dqFile);
+		dqrdf.convert(inputFile);
+        // since the conversion precess generates uuids a formal verification is a
+        // bit tricky and not done. the result is printed on a console for validations by hand.
         DwerftUtils.writeRdfToConsole(dqrdf.getResult());
-//		Model generatedModel = dqrdf.getResult();
-//		generatedModel.write(System.out, "TTL");
 	}
-
 }
