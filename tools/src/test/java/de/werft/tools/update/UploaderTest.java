@@ -5,6 +5,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
+import de.werft.tools.general.AbstractTest;
 import de.werft.tools.general.DwerftConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
@@ -22,11 +23,11 @@ import java.io.IOException;
  *
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
-public class UploaderTest {
+public class UploaderTest extends AbstractTest {
 
     private String graphUri = "http://example.com/g1";
 
-    private Model expectedModel = RDFDataMgr.loadModel("src/test/resources/generic_example_cast.ttl");
+    private Model expectedModel = RDFDataMgr.loadModel(verificationFolder + "generic_example.ttl");
 
     @Test
     public void testInsertToLocalServer() throws IOException {
@@ -115,4 +116,10 @@ public class UploaderTest {
         qexec.close();
         return m;
     }
+
+    @Override
+    public void setUp() { }
+
+    @Override
+    public void tearDown() { }
 }

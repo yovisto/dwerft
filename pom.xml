@@ -14,13 +14,7 @@
     </properties>
 
 	<dependencies>
-		<dependency>
-  			<groupId>junit</groupId>
-  			<artifactId>junit</artifactId>
-  			<version>4.12</version>
-  			<scope>test</scope>
-  		</dependency>
-
+        <!-- general logging system -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
@@ -32,12 +26,19 @@
 			<version>2.4</version>
 		</dependency>
 
-		<!--<dependency>
-			<groupId>org.apache.jena</groupId>
-			<artifactId>apache-jena-libs</artifactId>
-			<type>pom</type>
-			<version>3.0.1</version>
-		</dependency>-->
+        <!-- general test dependency -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.0.54-beta</version>
+        </dependency>
 	</dependencies>
 
 	<modules>

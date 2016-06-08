@@ -1,7 +1,8 @@
 package de.werft.tools.update;
 
 import com.hp.hpl.jena.rdf.model.Model;
-import com.thoughtworks.xstream.InitializationException;
+import com.hp.hpl.jena.update.UpdateException;
+import de.werft.tools.general.AbstractTest;
 import org.apache.jena.riot.RDFDataMgr;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -21,25 +22,30 @@ import static org.junit.Assert.assertEquals;
  *
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
-public class UpdateTest {
+public class UpdateTest extends AbstractTest {
 
+    private Model localModel = RDFDataMgr.loadModel(verificationFolder + "generic_example.ttl");
 
-    private Model localModel = RDFDataMgr.loadModel("src/test/resources/generic_example_cast.ttl");
-
-    private Model remoteModel = RDFDataMgr.loadModel("src/test/resources/generic_example_cast_changed.ttl");
+    private Model remoteModel = RDFDataMgr.loadModel(verificationFolder + "generic_example_cast_changed.ttl");
 
     private static String graph = "http://example.com/g1";
 
     @BeforeClass
-    public static void setUp() {
+    public static void setUpBefore() {
         Model m = RDFDataMgr.loadModel("src/test/resources/generic_example_cast_changed.ttl");
         Update u = UpdateFactory.createUpdate(Update.Granularity.LEVEL_1, m);
         Uploader uploader = new Uploader("http://localhost:3030/ds/update");
         uploader.uploadModel(u, graph);
     }
 
+    @Override
+    public void setUp() { }
 
-    @Test(expected = InitializationException.class)
+    @Override
+    public void tearDown() { }
+
+
+    @Test(expected = UpdateException.class)
     public void testWrongInitialization() {
         createUpdate(Update.Granularity.LEVEL_2, localModel);
     }

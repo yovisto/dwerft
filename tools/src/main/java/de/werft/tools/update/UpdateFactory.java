@@ -1,7 +1,7 @@
 package de.werft.tools.update;
 
 import com.hp.hpl.jena.rdf.model.Model;
-import com.thoughtworks.xstream.InitializationException;
+import com.hp.hpl.jena.update.UpdateException;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 
 /**
@@ -12,9 +12,9 @@ import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 public class UpdateFactory {
 
 
-    public static Update createUpdate(Update.Granularity g, Model local) throws InitializationException {
+    public static Update createUpdate(Update.Granularity g, Model local) throws UpdateException {
         if (Update.Granularity.LEVEL_2.equals(g)) {
-            throw new InitializationException("For a complete diff, a remote Model is needed");
+            throw new UpdateException("For a complete diff, a remote Model is needed");
         } else {
             return new Update(g, local);
         }
