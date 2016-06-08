@@ -2,7 +2,6 @@ package de.werft.tools.update;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.update.UpdateException;
-import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 
 /**
  * Creates updates for the uploader.
@@ -20,20 +19,10 @@ public class UpdateFactory {
         }
     }
 
-    public static Update createUpdate(Update.Granularity g, Model local, Model remote) {
+    public static Update createUpdate(Update.Granularity g, Model local, Model remote) throws UpdateException {
+        if (Update.Granularity.LEVEL_0.equals(g) || Update.Granularity.LEVEL_1.equals(g)) {
+            throw new UpdateException("Method could not applied on two models.");
+        }
         return new Update(g, local, remote);
     }
-
-    //TODO create diff queries
-    public static Update createUpdate(Update.Granularity g, Model local, String remoteAdress,
-                                      String graphName) {
-        return null;
-    }
-
-    //TODO create diff queries
-    public static Update createUpdate(Update.Granularity g, Model local, String remoteAdress,
-                                      HttpAuthenticator auth, String graphName) {
-        return null;
-    }
-
 }

@@ -5,6 +5,7 @@ import de.werft.tools.general.AbstractTest;
 import de.werft.tools.general.OntologyConstants;
 import de.werft.tools.sources.PreproducerSource;
 import org.apache.jena.riot.Lang;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -20,13 +21,10 @@ public class PreProducerToRdfTest extends AbstractTest {
 	
 	private static final String mapping = "mappings/preproducer.mappings";
 
-    @Override
+    @Before
     public void setUp() {
         OntologyConstants.setOntologyFile(conf.getOntologyFile());
     }
-
-    @Override
-    public void tearDown() { }
 
     @Test
     public void testConverter() throws IOException {

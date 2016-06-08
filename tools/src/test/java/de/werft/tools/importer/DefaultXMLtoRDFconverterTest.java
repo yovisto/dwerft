@@ -5,6 +5,7 @@ import de.werft.tools.general.AbstractTest;
 import de.werft.tools.general.OntologyConstants;
 import de.werft.tools.importer.general.DefaultXMLtoRDFconverter;
 import org.apache.jena.riot.RDFDataMgr;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -19,13 +20,10 @@ public class DefaultXMLtoRDFconverterTest extends AbstractTest {
 
 	private static final String MAPPINGS_FILE = "mappings/generic_example_cast.mappings";
 
-    @Override
+    @Before
     public void setUp() {
         OntologyConstants.setOntologyFile(conf.getOntologyFile());
     }
-
-    @Override
-    public void tearDown() { }
 
     @Test
 	public void testConverter() throws IOException {

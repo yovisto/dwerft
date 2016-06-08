@@ -6,6 +6,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import de.werft.tools.DwerftUtils;
 import de.werft.tools.general.commands.ConvertCommand;
 import de.werft.tools.general.commands.UploadCommand;
+import de.werft.tools.general.commands.VersioningCommand;
 import de.werft.tools.importer.general.Converter;
 import de.werft.tools.update.Uploader;
 import org.aeonbits.owner.ConfigFactory;
@@ -59,9 +60,11 @@ public class DwerftTools {
         //Parse cli arguments
         ConvertCommand convert = new ConvertCommand();
         UploadCommand upload = new UploadCommand();
+        VersioningCommand version = new VersioningCommand();
         JCommander cmd = new JCommander(this);
         cmd.addCommand("convert", convert);
         cmd.addCommand("upload", upload);
+        cmd.addCommand("version", version);
         cmd.parse(args);
 
         if (isHelp) {
@@ -73,11 +76,23 @@ public class DwerftTools {
             convert(convert);
         } else if ("upload".equals(cmd.getParsedCommand())) {
             upload(upload);
+        } else if ("version".equals(cmd.getParsedCommand())) {
+            version(version);
         } else {
             beatUser(cmd);
         }
 
         System.exit(0);
+    }
+
+    private void version(VersioningCommand version) {
+        if (version.isList()) {
+            System.out.println(version.getTimemap(config));
+        } else if (version.isShow()) {
+
+        } else {
+            beatUser("No versioning option specified or recognized");
+        }
     }
 
     // this method does the actual conversion

@@ -70,7 +70,7 @@ public class Uploader {
      * @param auth      the auth
      */
     protected void createGraph(String graphName, HttpAuthenticator... auth) {
-        String query = "DROP SILENT GRAPH <" + graphName + ">";
+        String query = "CREATE GRAPH <" + graphName + ">";
         UpdateRequest request = UpdateFactory.create();
         request.add(query);
 

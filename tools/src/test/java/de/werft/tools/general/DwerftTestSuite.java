@@ -5,6 +5,7 @@ import de.werft.tools.importer.csv.CsvToXmlConverterTest;
 import de.werft.tools.importer.dramaqueen.DramaqueenToRdfTest;
 import de.werft.tools.importer.general.DefaultXMLtoRDFconverter;
 import de.werft.tools.importer.preproducer.PreProducerToRdfTest;
+import de.werft.tools.update.UpdateTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -18,5 +19,5 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses({ MapperTest.class, CsvToXmlConverterTest.class, DefaultXMLtoRDFconverter.class,
-        PreProducerToRdfTest.class, DramaqueenToRdfTest.class})
+        PreProducerToRdfTest.class, DramaqueenToRdfTest.class, UpdateTest.class})
 public class DwerftTestSuite { }

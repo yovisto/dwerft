@@ -2,7 +2,6 @@ package de.werft.tools.general;
 
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.commons.lang.StringUtils;
-import org.junit.Before;
 
 /**
  * This class is used as a basic template
@@ -23,22 +22,6 @@ public abstract class AbstractTest {
     protected String testFolder = "src/test/resources/files/";
 
     protected String verificationFolder = "src/test/resources/verification/";
-
-    /**
-     * Every class needs a setup method for
-     * integration testing.
-     */
-    @Before
-    public abstract void setUp();
-
-
-    /**
-     * Every class needs a tear down method
-     * for integration testing.
-     */
-    @Before
-    public abstract void tearDown();
-
 
     /**
      * A simple filename suffix replacement operation.

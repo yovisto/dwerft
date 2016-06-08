@@ -51,11 +51,6 @@ public class MapperTest {
         assertThat(md.getTargetPropertyType(), is(targetPropertyType));
     }
 
-    @Test
-    public void testFileMapper() {
-
-    }
-
     private String getSampleMapping() {
 
         StringBuilder sb = new StringBuilder();

@@ -15,6 +15,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 
+import static junit.framework.TestCase.assertTrue;
+
 /**
  * Test the upload via a local Model.
  *
@@ -37,27 +39,25 @@ public class UploaderTest extends AbstractTest {
         Update u = UpdateFactory.createUpdate(Update.Granularity.LEVEL_1, expectedModel);
         uploader.uploadModel(u, graphUri);
         Model remoteModel = getRemoteModel(endpoint);
-        System.out.println(remoteModel); /* should be filled */
-
         uploader.deleteGraph(graphUri);
-        //assertTrue("Models are not isomorph. Lists are always not isomorph.", expectedModel.isIsomorphicWith(remoteModel));
-    }
 
+        assertTrue("Models are not isomorph. Lists are always not isomorph.", expectedModel.isIsomorphicWith(remoteModel));
+    }
 
     @Test
     public void testDeleteToLocalServer() throws IOException {
         String endpoint ="http://localhost:3030/ds";
         Uploader uploader = new Uploader(endpoint + "/update");
 
+        // upload something before deleting
         Update u = UpdateFactory.createUpdate(Update.Granularity.LEVEL_1, expectedModel);
         uploader.uploadModel(u, graphUri);
         u = UpdateFactory.createUpdate(Update.Granularity.LEVEL_0, expectedModel);
         uploader.uploadModel(u, graphUri);
         Model remoteModel = getRemoteModel(endpoint);
-        System.out.println(remoteModel); /* should be empty */
-
         uploader.deleteGraph(graphUri);
-        //assertTrue("Models are not isomorph. Lists are always not isomorph.", expectedModel.isIsomorphicWith(remoteModel));
+
+        assertTrue("Models are not isomorph. Lists are always not isomorph.", remoteModel.isEmpty());
     }
 
     //@Test
@@ -116,10 +116,4 @@ public class UploaderTest extends AbstractTest {
         qexec.close();
         return m;
     }
-
-    @Override
-    public void setUp() { }
-
-    @Override
-    public void tearDown() { }
 }

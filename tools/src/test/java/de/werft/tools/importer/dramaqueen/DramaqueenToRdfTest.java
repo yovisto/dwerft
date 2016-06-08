@@ -3,6 +3,7 @@ package de.werft.tools.importer.dramaqueen;
 import de.werft.tools.DwerftUtils;
 import de.werft.tools.general.AbstractTest;
 import de.werft.tools.general.OntologyConstants;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -20,13 +21,10 @@ public class DramaqueenToRdfTest extends AbstractTest {
 
     private static final String mapping = "mappings/dramaqueen.mappings";
 
-    @Override
+    @Before
     public void setUp() {
         OntologyConstants.setOntologyFile(conf.getOntologyFile());
     }
-
-    @Override
-    public void tearDown() { }
 
     @Test
 	public void testConverter() throws IOException {

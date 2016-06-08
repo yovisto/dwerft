@@ -4,7 +4,6 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.update.UpdateException;
 import de.werft.tools.general.AbstractTest;
 import org.apache.jena.riot.RDFDataMgr;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static de.werft.tools.update.UpdateFactory.createUpdate;
@@ -26,44 +25,36 @@ public class UpdateTest extends AbstractTest {
 
     private Model localModel = RDFDataMgr.loadModel(verificationFolder + "generic_example.ttl");
 
-    private Model remoteModel = RDFDataMgr.loadModel(verificationFolder + "generic_example_cast_changed.ttl");
+    private Model remoteModel = RDFDataMgr.loadModel(verificationFolder + "generic_example_changed.ttl");
 
     private static String graph = "http://example.com/g1";
 
-    @BeforeClass
-    public static void setUpBefore() {
+    //@Before
+    public void setUp() {
         Model m = RDFDataMgr.loadModel("src/test/resources/generic_example_cast_changed.ttl");
         Update u = UpdateFactory.createUpdate(Update.Granularity.LEVEL_1, m);
         Uploader uploader = new Uploader("http://localhost:3030/ds/update");
         uploader.uploadModel(u, graph);
     }
 
-    @Override
-    public void setUp() { }
-
-    @Override
-    public void tearDown() { }
-
-
     @Test(expected = UpdateException.class)
     public void testWrongInitialization() {
         createUpdate(Update.Granularity.LEVEL_2, localModel);
     }
 
+
+    @Test(expected = UpdateException.class)
+    public void testWrongInitializationDiff() {
+        createUpdate(Update.Granularity.LEVEL_0, localModel, remoteModel);
+    }
+
+
     @Test
     public void testRemoveQuery() throws Exception {
         Update u = UpdateFactory.createUpdate(Update.Granularity.LEVEL_0, localModel);
         String expected = "DELETE DATA { GRAPH <http://example.com/g1> { " +
-                "<http://filmontology.org/resource/Cast/12312> <http://filmontology.org/ontology/1.0/internalIdentifier> \"2\"^^<http://www.w3.org/2001/XMLSchema#long> . " +
-                "<http://filmontology.org/resource/Cast/12312> <http://filmontology.org/ontology/1.0/identifier> \"12312\"^^<http://www.w3.org/2001/XMLSchema#int> . " +
-                "<http://filmontology.org/resource/Cast/12312> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/1.0/Cast> . " +
-                "<http://filmontology.org/resource/Cast/984745> <http://filmontology.org/ontology/1.0/internalIdentifier> \"3\"^^<http://www.w3.org/2001/XMLSchema#long> . " +
-                "<http://filmontology.org/resource/Cast/984745> <http://filmontology.org/ontology/1.0/identifier> \"984745\"^^<http://www.w3.org/2001/XMLSchema#int> . " +
-                "<http://filmontology.org/resource/Cast/984745> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/1.0/Cast> . " +
-                "<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/title> \"Frog King Reloaded\"^^<http://www.w3.org/2001/XMLSchema#string> . " +
                 "<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/internalIdentifier> \"1\"^^<http://www.w3.org/2001/XMLSchema#long> . " +
-                "<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/hasCast> <http://filmontology.org/resource/Cast/12312> . " +
-                "<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/hasCast> <http://filmontology.org/resource/Cast/984745> . " +
+                "<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/identifier> \"3298438\"^^<http://www.w3.org/2001/XMLSchema#int> . " +
                 "<http://filmontology.org/resource/Project/3298438> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/1.0/Project> . } }";
         assertEquals(expected, u.convertToQuery(graph));
     }
@@ -72,28 +63,10 @@ public class UpdateTest extends AbstractTest {
     public void testInsertQuery() throws Exception {
         Update u = createUpdate(Update.Granularity.LEVEL_1, localModel);
         String expected = "INSERT DATA { GRAPH <http://example.com/g1> { " +
-                "<http://filmontology.org/resource/Cast/12312> <http://filmontology.org/ontology/1.0/internalIdentifier> \"2\"^^<http://www.w3.org/2001/XMLSchema#long> . " +
-                "<http://filmontology.org/resource/Cast/12312> <http://filmontology.org/ontology/1.0/identifier> \"12312\"^^<http://www.w3.org/2001/XMLSchema#int> . " +
-                "<http://filmontology.org/resource/Cast/12312> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/1.0/Cast> . " +
-                "<http://filmontology.org/resource/Cast/984745> <http://filmontology.org/ontology/1.0/internalIdentifier> \"3\"^^<http://www.w3.org/2001/XMLSchema#long> . " +
-                "<http://filmontology.org/resource/Cast/984745> <http://filmontology.org/ontology/1.0/identifier> \"984745\"^^<http://www.w3.org/2001/XMLSchema#int> . " +
-                "<http://filmontology.org/resource/Cast/984745> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/1.0/Cast> . " +
-                "<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/title> \"Frog King Reloaded\"^^<http://www.w3.org/2001/XMLSchema#string> . " +
                 "<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/internalIdentifier> \"1\"^^<http://www.w3.org/2001/XMLSchema#long> . " +
-                "<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/hasCast> <http://filmontology.org/resource/Cast/12312> . " +
-                "<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/hasCast> <http://filmontology.org/resource/Cast/984745> . " +
+                "<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/identifier> \"3298438\"^^<http://www.w3.org/2001/XMLSchema#int> . " +
                 "<http://filmontology.org/resource/Project/3298438> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/1.0/Project> . } }";
         assertEquals(expected, u.convertToQuery(graph));
-    }
-
-    @Test(expected = UnsupportedOperationException.class)
-    public void testUnsupportedException() {
-        Update u = createUpdate(Update.Granularity.LEVEL_2, localModel, remoteModel);
-        u.convertToQuery(graph);
-
-        u = createUpdate(Update.Granularity.LEVEL_1, localModel, remoteModel);
-        u.convertToDiffQuery(graph);
-
     }
 
     @Test
@@ -101,11 +74,4 @@ public class UpdateTest extends AbstractTest {
         Update u = createUpdate(Update.Granularity.LEVEL_2, localModel, remoteModel);
         System.out.println(u.convertToDiffQuery(graph));
     }
-
-    @Test
-    public void testFetchDiffFromRemoteQuery() throws Exception {
-        Update u = createUpdate(Update.Granularity.LEVEL_2, localModel, "http://localhost:3030/ds/", "http://example.com/g1");
-        System.out.println(u.convertToDiffQuery(graph));
-    }
-
 }

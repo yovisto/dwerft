@@ -94,9 +94,6 @@ public class Update {
      * @throws UnsupportedOperationException if you call this with granularity level2
      */
     public String convertToQuery(String graphName) throws UnsupportedOperationException {
-        if (Granularity.LEVEL_2.equals(g)) {
-            throw new UnsupportedOperationException("Method could not applied on diff queries.");
-        }
         StringBuilder query = new StringBuilder();
 
         query.append(g.operation).append(" { GRAPH <").append(graphName).append("> { ");
@@ -112,9 +109,6 @@ public class Update {
      * @throws UnsupportedOperationException if called with granularity level 0 or 1
      */
     public String[] convertToDiffQuery(String gaphName) throws UnsupportedOperationException {
-        if (Granularity.LEVEL_0.equals(g) || Granularity.LEVEL_1.equals(g)) {
-            throw new UnsupportedOperationException("Method could not applied on simple queries.");
-        }
         //TODO generate diff
         return new String[] {"", ""};
     }

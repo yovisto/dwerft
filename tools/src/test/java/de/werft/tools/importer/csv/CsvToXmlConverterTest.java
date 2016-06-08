@@ -16,10 +16,7 @@ public class CsvToXmlConverterTest extends AbstractTest {
 
     private String aleFileLocation = testFolder + "ale_dummy.ale";
 
-    @Override
-    public void setUp() { }
-
-    //@Override
+    //@After
     public void tearDown() {
         new File(replaceSuffix(csvFileLocation, "xml")).deleteOnExit();
         new File(replaceSuffix(aleFileLocation, "xml")).deleteOnExit();
