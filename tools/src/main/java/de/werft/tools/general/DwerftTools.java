@@ -8,14 +8,18 @@ import de.werft.tools.general.commands.ConvertCommand;
 import de.werft.tools.general.commands.UploadCommand;
 import de.werft.tools.general.commands.VersioningCommand;
 import de.werft.tools.importer.general.Converter;
+import de.werft.tools.tailr.Tailr;
 import de.werft.tools.update.Uploader;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
+import java.util.List;
 
 
 /**
@@ -86,9 +90,25 @@ public class DwerftTools {
     }
 
     private void version(VersioningCommand version) {
+        Tailr t = version.getTailrConnector(config);
         if (version.isList()) {
-            System.out.println(version.getTimemap(config));
+            List<String> revisions = t.getListOfRevisions(version.getKey());
+            L.info(version.prettifyTimemap(revisions));
         } else if (version.isShow()) {
+            if (version.isLatest()) {
+                Model m = t.getLatestRevision(version.getKey());
+                RDFDataMgr.write(System.out, m, Lang.TTL);
+            } else {
+                Model m = t.getRevision(version.getRev(), version.getKey());
+                RDFDataMgr.write(System.out, m, Lang.TTL);
+            }
+
+        } else if (version.isDelta()) {
+            if (version.isLatest()) {
+                L.info(t.getLatestDelta(version.getKey()));
+            } else {
+                L.info(t.getDelta(version.getDelta(), version.getKey()));
+            }
 
         } else {
             beatUser("No versioning option specified or recognized");

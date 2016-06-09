@@ -7,7 +7,6 @@ import de.werft.tools.tailr.Tailr;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,33 +35,57 @@ public class VersioningCommand {
     private boolean list = false;
 
     @Parameter(names = {"-show"}, arity = 1,
-            description = "Provide a revision date from tailr. See version -list")
+            description = "Provide a revision date from tailr. See version -list or use \"latest\" for the latest revision.")
     private String revision = "";
 
-    public String getTimemap(DwerftConfig conf) {
-        Tailr t = new Tailr(conf.getTailrToken(), conf.getTailrRepo());
-        try {
-            List<String> revisions = t.getListOfRevisions(keyName.get(0));
-            StringBuilder builder = new StringBuilder();
-            builder.append("<------- Timemap ------->\n");
+    @Parameter(names = {"-show-delta"}, arity = 1,
+            description = "Provide a revision date from tailr. See version -list or use \"latest\" for the latest revision.")
+    private String delta = "";
+    
+    public Tailr getTailrConnector(DwerftConfig conf) {
+        return new Tailr(conf.getTailrToken(), conf.getTailrRepo());
+    }
+    
+    public String prettifyTimemap(List<String> revisions) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("\n<------- Timemap ------->\n");
 
+        if (revisions.isEmpty()) {
+            builder.append("No revision found.\n");
+        } else {
             for (int i = 0; i < revisions.size(); i++) {
                 builder.append("Revision ").append(i).append(": ")
                         .append(revisions.get(i)).append("\n");
             }
-
-            return builder.toString();
-        } catch (IOException e) {
-            L.error("No Revision recieved. ", e);
         }
-        return "<------- Timemap ------->\nSee the error log.";
+        return builder.toString();
+    }
+    
+    public String getKey() {
+        return keyName.get(0);
     }
 
+    public String getRev() {
+        return revision;
+    }
+    
     public boolean isList() {
         return list;
     }
 
     public boolean isShow() {
-        return !list && !revision.isEmpty();
+        return !list && !revision.isEmpty() && delta.isEmpty();
+    }
+    
+    public boolean isDelta() {
+        return !list && !delta.isEmpty() && revision.isEmpty();
+    }
+    
+    public boolean isLatest() {
+        return "latest".equals(delta) || "latest".equals(revision);
+    }
+
+    public String getDelta() {
+        return delta;
     }
 }

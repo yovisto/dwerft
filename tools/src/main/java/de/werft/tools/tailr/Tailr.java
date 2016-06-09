@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
 import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
@@ -18,6 +20,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,11 +36,13 @@ public class Tailr {
 
     private static final Logger L = LogManager.getLogger(Tailr.class);
 
-    private String token = "";
+    private String token = "token ";
 
     private String repoUrl = "";
 
     private JsonFactory factory = new JsonFactory();
+
+    private HttpClient client = new DefaultHttpClient();
 
     /**
      * Instantiates a new connector to the Tailr system.
@@ -47,7 +52,7 @@ public class Tailr {
      */
     public Tailr(String token, String repoUrl) {
         this.repoUrl = repoUrl;
-        this.token = token;
+        this.token = this.token + token;
     }
 
     /**
@@ -60,12 +65,11 @@ public class Tailr {
     public boolean addRevision(Model m, String keyName) {
         try {
             File file = toNtriplesBinary(m);
-            String uri = repoUrl + "key=" + keyName;
+            String uri = TailrApiCall.ADD.getHttpRequestUri(repoUrl, keyName);
 
             // new client and header informations
-            HttpClient client = new DefaultHttpClient();
             HttpPut put = new HttpPut(uri);
-            put.setHeader(HeaderConstants.AUTHORIZATION, "token " + token);
+            put.setHeader(HeaderConstants.AUTHORIZATION, token);
             put.setHeader("Content-Type", "application/n-triples");
 
             // create put request
@@ -75,13 +79,10 @@ public class Tailr {
 
             // get response
             HttpResponse response = client.execute(put);
-            if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-                return true;
-            } else {
-                return false;
-            }
+            L.info("Tailr respond with " + response.getStatusLine());
+            return response.getStatusLine().getStatusCode() == HttpStatus.SC_OK;
         } catch (IOException e) {
-            L.error("Could not write binary file for Tailr transmission.\n", e);
+            L.error("Could not write binary file for submit.\n", e);
         }
 
         return false;
@@ -93,23 +94,22 @@ public class Tailr {
      * @param keyName the graph name uri
      * @return the list of revisions
      */
-    public List<String> getListOfRevisions(String keyName) throws IOException {
-        List<String> timemap = null;
+    public List<String> getListOfRevisions(String keyName) {
+        List<String> timemap = new ArrayList<>();
 
         try {
-            String uri = repoUrl + "key=" + keyName + "&timemap=true";
+            String uri = TailrApiCall.LIST.getHttpRequestUri(repoUrl, keyName);
 
             // new client and header information
-            HttpClient client = new DefaultHttpClient();
             HttpGet get = new HttpGet(uri);
-            get.setHeader(HeaderConstants.AUTHORIZATION, "token " + token);
+            get.setHeader(HeaderConstants.AUTHORIZATION, token);
 
             // get response
             HttpResponse response = client.execute(get);
             L.info("Request to tailr responsed with " + response.getStatusLine());
             timemap = convertTimemap(response.getEntity().getContent());
         } catch (IOException e) {
-            throw new IOException("Could not read response from Tailr.\n" + e.getMessage());
+            L.error("Could not read response from tailr.", e);
         }
 
         return timemap;
@@ -121,9 +121,50 @@ public class Tailr {
      * @param date the revision date
      * @return the revision
      */
-    public Model getRevision(String date) {
+    public Model getRevision(String date, String keyName) {
+        Model m = ModelFactory.createDefaultModel();
 
-        return null;
+        try {
+            String uri = TailrApiCall.GET.getHttpRequestUri(repoUrl, keyName, date);
+
+            // new client and header information
+            HttpGet get = new HttpGet(uri);
+            get.setHeader(HeaderConstants.AUTHORIZATION, token);
+
+            // get response
+            HttpResponse response = client.execute(get);
+            L.info("Request to tailr responsed with " + response.getStatusLine());
+            if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+                RDFDataMgr.read(m, response.getEntity().getContent(), Lang.NT);
+            }
+        } catch (IOException e) {
+            L.error("Could not read response from tailr.", e);
+        }
+        return m;
+    }
+
+    public Model getLatestRevision(String keyName) {
+        return getRevision("", keyName);
+    }
+
+    public String getDelta(String date, String keyName) {
+        try {
+            String uri = TailrApiCall.DELTA.getHttpRequestUri(repoUrl, keyName, date);
+
+            HttpGet get = new HttpGet(uri);
+            get.setHeader(HeaderConstants.AUTHORIZATION, token);
+
+            HttpResponse response = client.execute(get);
+            L.info("Request to tailr responsed with " + response.getStatusLine());
+            return convertStreamToString(response.getEntity());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public String getLatestDelta(String keyName) {
+        return getDelta("", keyName);
     }
 
     // converts a model into a n triples file
@@ -139,6 +180,7 @@ public class Tailr {
 
     // converts a json timemap to a list of dates
     private List<String> convertTimemap(InputStream is) throws IOException {
+        JSONP
         JsonParser parser = factory.createParser(is);
         List<String> timemap = new ArrayList<>();
 
@@ -154,5 +196,17 @@ public class Tailr {
         }
 
         return timemap;
+    }
+
+    private String convertStreamToString(HttpEntity entity) throws IOException {
+        StringBuilder builder = new StringBuilder();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(entity.getContent(), Charset.forName("UTF-8")));
+
+        String line = reader.readLine();
+        while (line != null && !line.isEmpty()) {
+            builder.append(line).append("\n");
+            line = reader.readLine();
+        }
+        return builder.toString();
     }
 }
