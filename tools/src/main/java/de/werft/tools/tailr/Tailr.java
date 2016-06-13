@@ -180,7 +180,6 @@ public class Tailr {
 
     // converts a json timemap to a list of dates
     private List<String> convertTimemap(InputStream is) throws IOException {
-        JSONP
         JsonParser parser = factory.createParser(is);
         List<String> timemap = new ArrayList<>();
 
