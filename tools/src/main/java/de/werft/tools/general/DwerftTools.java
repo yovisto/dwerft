@@ -2,13 +2,14 @@ package de.werft.tools.general;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
-import com.hp.hpl.jena.rdf.model.Model;
+import de.hpi.rdf.tailrapi.Memento;
+import de.hpi.rdf.tailrapi.Repository;
+import de.hpi.rdf.tailrapi.TailrClient;
 import de.werft.tools.DwerftUtils;
 import de.werft.tools.general.commands.ConvertCommand;
 import de.werft.tools.general.commands.UploadCommand;
 import de.werft.tools.general.commands.VersioningCommand;
 import de.werft.tools.importer.general.Converter;
-import de.werft.tools.tailr.Tailr;
 import de.werft.tools.update.Uploader;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
@@ -17,8 +18,11 @@ import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
+import org.joda.time.DateTime;
+import org.apache.jena.rdf.model.Model;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 
@@ -81,7 +85,11 @@ public class DwerftTools {
         } else if ("upload".equals(cmd.getParsedCommand())) {
             upload(upload);
         } else if ("version".equals(cmd.getParsedCommand())) {
-            version(version);
+            try {
+                version(version);
+            } catch (URISyntaxException | IOException e) {
+                L.error("Failed to use the tailr versioning.", e);
+            }
         } else {
             beatUser(cmd);
         }
@@ -89,25 +97,28 @@ public class DwerftTools {
         System.exit(0);
     }
 
-    private void version(VersioningCommand version) {
-        Tailr t = version.getTailrConnector(config);
+    private void version(VersioningCommand version) throws URISyntaxException, IOException {
+        TailrClient t = version.getClient(config);
+        Repository repo = new Repository(config.getTailrUser(), config.getTailrRepo());
+
         if (version.isList()) {
-            List<String> revisions = t.getListOfRevisions(version.getKey());
+            List<Memento> revisions = t.getMementos(repo, version.getKey());
             L.info(version.prettifyTimemap(revisions));
         } else if (version.isShow()) {
             if (version.isLatest()) {
-                Model m = t.getLatestRevision(version.getKey());
-                RDFDataMgr.write(System.out, m, Lang.TTL);
+                Memento m = t.getLatestMemento(repo, version.getKey());
+                RDFDataMgr.write(System.out, m.resolve(), Lang.TTL);
             } else {
-                Model m = t.getRevision(version.getRev(), version.getKey());
-                RDFDataMgr.write(System.out, m, Lang.TTL);
+                Memento m = new Memento(repo, version.getKey(), new DateTime(version.getRev()));
+                RDFDataMgr.write(System.out, m.resolve(), Lang.TTL);
             }
 
         } else if (version.isDelta()) {
             if (version.isLatest()) {
-                L.info(t.getLatestDelta(version.getKey()));
+                L.info(t.getLatestDelta(repo, version.getKey()));
             } else {
-                L.info(t.getDelta(version.getDelta(), version.getKey()));
+                Memento m = new Memento(repo, version.getKey(), new DateTime(version.getDelta()));
+                L.info(t.getDelta(m));
             }
 
         } else {

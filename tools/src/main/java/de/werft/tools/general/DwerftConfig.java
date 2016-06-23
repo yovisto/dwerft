@@ -54,7 +54,15 @@ public interface DwerftConfig extends Config {
     @DefaultValue("")
     String getTailrToken();
 
-    @Key("tailr.url")
+    @Key("tailr.base")
+    @DefaultValue("")
+    String getTailrBase();
+
+    @Key("tailr.user")
+    @DefaultValue("")
+    String getTailrUser();
+
+    @Key("tailr.repo")
     @DefaultValue("")
     String getTailrRepo();
 }

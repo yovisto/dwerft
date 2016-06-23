@@ -1,10 +1,10 @@
 package de.werft.tools.update;
 
-import com.hp.hpl.jena.update.UpdateExecutionFactory;
-import com.hp.hpl.jena.update.UpdateFactory;
-import com.hp.hpl.jena.update.UpdateProcessor;
-import com.hp.hpl.jena.update.UpdateRequest;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
+import org.apache.jena.update.UpdateExecutionFactory;
+import org.apache.jena.update.UpdateProcessor;
+import org.apache.jena.update.UpdateRequest;
+import org.apache.jena.update.UpdateFactory;
 
 /**
  * Basic upload tool which takes an URI and simply uploads a model

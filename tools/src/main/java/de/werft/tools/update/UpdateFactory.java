@@ -1,7 +1,8 @@
 package de.werft.tools.update;
 
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.update.UpdateException;
+
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.update.UpdateException;
 
 /**
  * Creates updates for the uploader.

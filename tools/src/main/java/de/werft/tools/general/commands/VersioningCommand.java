@@ -2,11 +2,13 @@ package de.werft.tools.general.commands;
 
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
+import de.hpi.rdf.tailrapi.Memento;
+import de.hpi.rdf.tailrapi.TailrClient;
 import de.werft.tools.general.DwerftConfig;
-import de.werft.tools.tailr.Tailr;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,12 +43,12 @@ public class VersioningCommand {
     @Parameter(names = {"-show-delta"}, arity = 1,
             description = "Provide a revision date from tailr. See version -list or use \"latest\" for the latest revision.")
     private String delta = "";
-    
-    public Tailr getTailrConnector(DwerftConfig conf) {
-        return new Tailr(conf.getTailrToken(), conf.getTailrRepo());
+
+    public TailrClient getClient(DwerftConfig conf) throws URISyntaxException {
+        return TailrClient.getInstance(conf.getTailrBase(), conf.getTailrUser(), conf.getTailrToken());
     }
     
-    public String prettifyTimemap(List<String> revisions) {
+    public String prettifyTimemap(List<Memento> revisions) {
         StringBuilder builder = new StringBuilder();
         builder.append("\n<------- Timemap ------->\n");
 
@@ -55,7 +57,7 @@ public class VersioningCommand {
         } else {
             for (int i = 0; i < revisions.size(); i++) {
                 builder.append("Revision ").append(i).append(": ")
-                        .append(revisions.get(i)).append("\n");
+                        .append(revisions.get(i).getDateTime()).append("\n");
             }
         }
         return builder.toString();
