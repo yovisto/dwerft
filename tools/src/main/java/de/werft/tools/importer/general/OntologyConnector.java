@@ -1,10 +1,10 @@
 package de.werft.tools.importer.general;
 
-import com.hp.hpl.jena.ontology.*;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.util.iterator.ExtendedIterator;
 import de.werft.tools.general.OntologyConstants;
+import org.apache.jena.ontology.*;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.util.iterator.ExtendedIterator;
 
 import java.io.InputStream;
 import java.util.HashSet;

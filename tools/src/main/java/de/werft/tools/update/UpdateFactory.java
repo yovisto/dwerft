@@ -1,6 +1,7 @@
 package de.werft.tools.update;
 
 
+import de.hpi.rdf.tailrapi.Delta;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.update.UpdateException;
 
@@ -20,10 +21,10 @@ public class UpdateFactory {
         }
     }
 
-    public static Update createUpdate(Update.Granularity g, Model local, Model remote) throws UpdateException {
+    public static Update createUpdate(Update.Granularity g, Delta d) throws UpdateException {
         if (Update.Granularity.LEVEL_0.equals(g) || Update.Granularity.LEVEL_1.equals(g)) {
             throw new UpdateException("Method could not applied on two models.");
         }
-        return new Update(g, local, remote);
+        return new Update(g, d);
     }
 }

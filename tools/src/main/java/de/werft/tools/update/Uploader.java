@@ -41,7 +41,11 @@ public class Uploader {
             request.add(u.convertToQuery(graphUri));
             update(request, auth);
         } else {
-            //TODO upload diff
+            String[] queries = u.convertToDiffQuery(graphUri);
+            UpdateRequest request = UpdateFactory.create();
+            request.add(queries[0]);
+            request.add(queries[1]);
+            update(request, auth);
         }
     }
 
@@ -58,7 +62,11 @@ public class Uploader {
             request.add(u.convertToQuery(graphUri));
             update(request);
         } else {
-            //TODO upload diff
+            String[] queries = u.convertToDiffQuery(graphUri);
+            UpdateRequest request = UpdateFactory.create();
+            request.add(queries[0]);
+            request.add(queries[1]);
+            update(request);
         }
     }
 

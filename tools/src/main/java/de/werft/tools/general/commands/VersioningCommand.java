@@ -44,7 +44,7 @@ public class VersioningCommand {
             description = "Provide a revision date from tailr. See version -list or use \"latest\" for the latest revision.")
     private String delta = "";
 
-    public TailrClient getClient(DwerftConfig conf) throws URISyntaxException {
+    public static TailrClient getClient(DwerftConfig conf) throws URISyntaxException {
         return TailrClient.getInstance(conf.getTailrBase(), conf.getTailrUser(), conf.getTailrToken());
     }
     

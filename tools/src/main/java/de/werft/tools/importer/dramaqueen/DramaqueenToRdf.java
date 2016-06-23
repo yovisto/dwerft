@@ -1,12 +1,12 @@
 package de.werft.tools.importer.dramaqueen;
 
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.Resource;
 import de.werft.tools.general.OntologyConstants;
-import de.werft.tools.importer.general.XMLProcessor;
 import de.werft.tools.importer.general.AbstractXMLtoRDFconverter;
+import de.werft.tools.importer.general.XMLProcessor;
 import de.werft.tools.sources.DramaQueenSource;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.Resource;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;

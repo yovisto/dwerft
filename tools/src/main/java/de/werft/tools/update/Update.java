@@ -1,8 +1,11 @@
 package de.werft.tools.update;
 
+import de.hpi.rdf.tailrapi.Delta;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
+
+import static org.apache.jena.vocabulary.DB.graphName;
 
 /**
  * An update is a sparql query for uploading to an sparql endpoint.
@@ -50,7 +53,7 @@ public class Update {
 
     private Model local;
 
-    private Model remote;
+    private Delta d;
 
     /**
      * Instantiates a new insert/delete Update.
@@ -63,17 +66,10 @@ public class Update {
         this.local = m;
     }
 
-    /**
-     * Instantiates a new diff Update.
-     *
-     * @param g      the g
-     * @param local  the local
-     * @param remote the remote
-     */
-    public Update(Granularity g, Model local, Model remote) {
+
+    public Update(Granularity g, Delta d) {
         this.g = g;
-        this.local = local;
-        this.remote = remote;
+        this.d = d;
     }
 
 
@@ -96,7 +92,11 @@ public class Update {
     public String convertToQuery(String graphName) throws UnsupportedOperationException {
         StringBuilder query = new StringBuilder();
 
-        query.append(g.operation).append(" { GRAPH <").append(graphName).append("> { ");
+        if ("".equals(graphName)) {
+            query.append(g.operation).append(" ");
+        } else {
+            query.append(g.operation).append(" { GRAPH <").append(graphName).append("> { ");
+        }
         query.append(convertModelToQuery(local));
         return query.toString();
     }
@@ -108,9 +108,12 @@ public class Update {
      * @return the query string array with two elements (insert + delete)
      * @throws UnsupportedOperationException if called with granularity level 0 or 1
      */
-    public String[] convertToDiffQuery(String gaphName) throws UnsupportedOperationException {
-        //TODO generate diff
-        return new String[] {"", ""};
+    public String[] convertToDiffQuery(String graphName) throws UnsupportedOperationException {
+        if ("".equals(graphName)) {
+            return new String[] {d.getDeleteQuery(), d.getInsertQuery()};
+        } else {
+            return new String[] {d.getDeleteQuery(graphName), d.getInsertQuery(graphName)};
+        }
     }
 
     /* convert a all model elements to tuples */

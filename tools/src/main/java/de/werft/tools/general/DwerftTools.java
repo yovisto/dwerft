@@ -2,6 +2,7 @@ package de.werft.tools.general;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+import de.hpi.rdf.tailrapi.Delta;
 import de.hpi.rdf.tailrapi.Memento;
 import de.hpi.rdf.tailrapi.Repository;
 import de.hpi.rdf.tailrapi.TailrClient;
@@ -14,12 +15,12 @@ import de.werft.tools.update.Uploader;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
+import org.apache.jena.rdf.model.Model;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
-import org.apache.jena.rdf.model.Model;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -80,25 +81,24 @@ public class DwerftTools {
             System.exit(0);
         }
 
-        if ("convert".equals(cmd.getParsedCommand())) {
-            convert(convert);
-        } else if ("upload".equals(cmd.getParsedCommand())) {
-            upload(upload);
-        } else if ("version".equals(cmd.getParsedCommand())) {
-            try {
+        try {
+            if ("convert".equals(cmd.getParsedCommand())) {
+                convert(convert);
+            } else if ("upload".equals(cmd.getParsedCommand())) {
+                upload(upload);
+            } else if ("version".equals(cmd.getParsedCommand())) {
                 version(version);
-            } catch (URISyntaxException | IOException e) {
-                L.error("Failed to use the tailr versioning.", e);
+            } else {
+                beatUser(cmd);
             }
-        } else {
-            beatUser(cmd);
+        } catch (URISyntaxException | IOException e) {
+            L.error("Failed to use the tailr versioning.", e);
         }
-
         System.exit(0);
     }
 
     private void version(VersioningCommand version) throws URISyntaxException, IOException {
-        TailrClient t = version.getClient(config);
+        TailrClient t = VersioningCommand.getClient(config);
         Repository repo = new Repository(config.getTailrUser(), config.getTailrRepo());
 
         if (version.isList()) {
@@ -154,10 +154,18 @@ public class DwerftTools {
 
     }
 
-    private void upload(UploadCommand upload) {
-        HttpAuthenticator auth = new SimpleAuthenticator(config.getRemoteUser(), config.getRemotePass().toCharArray());
-        Uploader uploader = new Uploader(config.getRemoteUrl());
-        uploader.uploadModel(upload.getUpdate(), upload.getGraphName(), auth);
+    private void upload(UploadCommand upload) throws URISyntaxException {
+        TailrClient client = VersioningCommand.getClient(config);
+        Repository repo = new Repository(config.getTailrUser(), config.getTailrRepo());
+        String key = upload.getKey();
+        try {
+            Delta d = client.putMemento(repo, key, upload.getFile());
+            HttpAuthenticator auth = new SimpleAuthenticator(config.getRemoteUser(), config.getRemotePass().toCharArray());
+            Uploader uploader = new Uploader(config.getRemoteUrl());
+            uploader.uploadModel(upload.getUpdate(d), upload.getGraphName(), auth);
+        } catch (IOException e) {
+            beatUser("Versioning failed: " + e.getMessage());
+        }
     }
 
     // the user failed

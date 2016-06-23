@@ -3,13 +3,15 @@ package de.werft.tools.general.commands;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
 import com.beust.jcommander.Parameters;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.update.UpdateException;
+import de.hpi.rdf.tailrapi.Delta;
 import de.werft.tools.update.Update;
 import de.werft.tools.update.UpdateFactory;
 import org.apache.commons.lang.StringUtils;
+import org.apache.jena.rdf.model.Model;
 import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.update.UpdateException;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -31,9 +33,17 @@ public class UploadCommand {
             "0 deletes the given model; 1 inserts a given model; 2 creates a diff with the remote endpoint. Default is 1.")
     private String granularity = "1";
 
-    @Parameter(names = {"-graph"}, arity = 1, required = true,
+    @Parameter(names = {"-graph"}, arity = 1,
             description = "Provide a graph name to store the rdf.")
     private String graphName = "";
+
+    @Parameter(names = {"-key"}, arity = 1, required = true,
+            description = "Provide the key name for versioning.")
+    private String keyName = "";
+
+    @Parameter(names = {"-tool"}, arity = 1, required = true,
+            description = "Provide the tool name for versioning.")
+    private String toolName = "";
 
     private Model getUploadModel() throws ParameterException {
         if (StringUtils.substringAfterLast(uploadFile.get(0), ".").toLowerCase().matches("(rdf|ttl|nt|jsonld)")) {
@@ -56,11 +66,27 @@ public class UploadCommand {
         return graphName;
     }
 
-    public Update getUpdate() throws UpdateException {
+    public Update getUpdate(Delta d) throws UpdateException {
         try {
-            return UpdateFactory.createUpdate(getGranularity(), getUploadModel());
+            if (Update.Granularity.LEVEL_2.equals(granularity)) {
+                return UpdateFactory.createUpdate(getGranularity(), d);
+            } else {
+                return UpdateFactory.createUpdate(getGranularity(), getUploadModel());
+            }
         } catch (ParameterException e) {
             throw new UpdateException("Update could not be done. " + e.getMessage());
+        }
+    }
+
+    public String getKey() {
+        return keyName + "/" + toolName;
+    }
+
+    public File getFile() {
+        if (StringUtils.substringAfterLast(uploadFile.get(0), ".").toLowerCase().matches("(rdf|ttl|nt|jsonld)")) {
+            return new File(uploadFile.get(0));
+        } else {
+            throw new ParameterException("Only (rdf|ttl|nt|jsonld) are valid file endings.");
         }
     }
 }

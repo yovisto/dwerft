@@ -1,7 +1,7 @@
 package de.werft.tools.importer.general;
 
-import com.hp.hpl.jena.rdf.model.Model;
 import de.werft.tools.sources.AbstractSource;
+import org.apache.jena.rdf.model.Model;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Node;
 

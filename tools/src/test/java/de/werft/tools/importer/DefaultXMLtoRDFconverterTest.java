@@ -1,9 +1,9 @@
 package de.werft.tools.importer;
 
-import com.hp.hpl.jena.rdf.model.Model;
 import de.werft.tools.general.AbstractTest;
 import de.werft.tools.general.OntologyConstants;
 import de.werft.tools.importer.general.DefaultXMLtoRDFconverter;
+import org.apache.jena.rdf.model.Model;
 import org.apache.jena.riot.RDFDataMgr;
 import org.junit.Before;
 import org.junit.Test;

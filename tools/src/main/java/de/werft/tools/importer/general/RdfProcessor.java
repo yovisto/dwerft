@@ -1,10 +1,13 @@
 package de.werft.tools.importer.general;
 
-import java.io.StringWriter;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
-import java.util.UUID;
+import de.werft.tools.general.OntologyConstants;
+import org.apache.jena.ontology.DatatypeProperty;
+import org.apache.jena.ontology.ObjectProperty;
+import org.apache.jena.ontology.OntClass;
+import org.apache.jena.rdf.model.*;
+import org.apache.log4j.Logger;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -12,20 +15,12 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.io.StringWriter;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+import java.util.UUID;
 
-import de.werft.tools.general.OntologyConstants;
-import org.apache.log4j.Logger;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-
-import com.hp.hpl.jena.ontology.DatatypeProperty;
-import com.hp.hpl.jena.ontology.ObjectProperty;
-import com.hp.hpl.jena.ontology.OntClass;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.Statement;
 
 /**
  * The RdfProcessor is responsible for creating the appropriate RDF statements

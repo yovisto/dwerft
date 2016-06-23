@@ -3,13 +3,8 @@ package de.werft.examples;
 
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
+import org.apache.jena.query.*;
 
-import com.hp.hpl.jena.query.Query;
-import com.hp.hpl.jena.query.QueryExecution;
-import com.hp.hpl.jena.query.QueryExecutionFactory;
-import com.hp.hpl.jena.query.QueryFactory;
-import com.hp.hpl.jena.query.ResultSet;
-import com.hp.hpl.jena.query.ResultSetFormatter;
 
 /**
  * The Class SparqlExample make use of the Jena API.
@@ -31,7 +26,7 @@ public class SparqlExample {
 		HttpAuthenticator authenticator = new SimpleAuthenticator("dwerft", "#dwerft".toCharArray());
         
 		//Setting up the objects required by jena 
-		Query query = QueryFactory.create(sparqlQuery); 
+		Query query = QueryFactory.create(sparqlQuery);
         QueryExecution queryExecution = QueryExecutionFactory.sparqlService(endpoint, query , authenticator);
         
         //Executes the prepared query. A query always returns a result set
