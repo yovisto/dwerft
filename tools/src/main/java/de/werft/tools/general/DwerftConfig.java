@@ -50,6 +50,10 @@ public interface DwerftConfig extends Config {
     @DefaultValue("")
     String getRemoteUser();
 
+    @Key("remote.graph")
+    @DefaultValue("")
+    String getDefaultGraph();
+
     @Key("tailr.token")
     @DefaultValue("")
     String getTailrToken();

@@ -34,7 +34,7 @@ public class UploadCommand {
     private String granularity = "1";
 
     @Parameter(names = {"-graph"}, arity = 1,
-            description = "Provide a graph name to store the rdf.")
+            description = "Provide a graph name to store the rdf. Otherwise the default graph is used.")
     private String graphName = "";
 
     @Parameter(names = {"-key"}, arity = 1, required = true,

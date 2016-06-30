@@ -162,7 +162,12 @@ public class DwerftTools {
             Delta d = client.putMemento(repo, key, upload.getFile());
             HttpAuthenticator auth = new SimpleAuthenticator(config.getRemoteUser(), config.getRemotePass().toCharArray());
             Uploader uploader = new Uploader(config.getRemoteUrl());
-            uploader.uploadModel(upload.getUpdate(d), upload.getGraphName(), auth);
+
+            if ("".equals(upload.getGraphName())) {
+                uploader.uploadModel(upload.getUpdate(d), config.getDefaultGraph(), auth);
+            } else {
+                uploader.uploadModel(upload.getUpdate(d), upload.getGraphName(), auth);
+            }
         } catch (IOException e) {
             beatUser("Versioning failed: " + e.getMessage());
         }
