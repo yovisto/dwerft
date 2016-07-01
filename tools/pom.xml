@@ -3,7 +3,7 @@
   <parent>
     <groupId>de.werft</groupId>
     <artifactId>de.werft</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${dwerft.version}</version>
   </parent>
   <artifactId>tools</artifactId>
 
@@ -39,12 +39,6 @@
     </dependency>
 
     <dependency>
-        <groupId>org.apache.jena</groupId>
-        <artifactId>jena-core</artifactId>
-        <version>3.1.0</version>
-    </dependency>
-
-    <dependency>
         <groupId>de.hpi.rdf</groupId>
         <artifactId>tailr-api</artifactId>
         <version>1.0-SNAPSHOT</version>
@@ -55,7 +49,6 @@
 
     <build>
         <finalName>dwerft-tools</finalName>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -104,6 +97,22 @@
                 </executions>
             </plugin>
 
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <id>dwerft-tools</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>de.werft.tools.general.DwerftTools</mainClass>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
