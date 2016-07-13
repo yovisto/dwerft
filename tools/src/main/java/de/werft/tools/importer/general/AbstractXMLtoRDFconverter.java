@@ -1,14 +1,16 @@
 package de.werft.tools.importer.general;
 
-import de.werft.tools.sources.AbstractSource;
-import org.apache.jena.rdf.model.Model;
-import org.apache.log4j.Logger;
-import org.w3c.dom.Node;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+
+import org.apache.jena.rdf.model.Model;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.w3c.dom.Node;
+
+import de.werft.tools.sources.AbstractSource;
 
 /**
  * The xml to rdf converter.
@@ -19,7 +21,7 @@ import java.util.List;
  */
 public abstract class AbstractXMLtoRDFconverter implements Converter<Model> {
 	
-	protected final Logger L = Logger.getLogger(this.getClass().getName());
+	private static Logger L = LogManager.getLogger();
 	
 	protected OntologyConnector ontConn;
 	protected XMLProcessor xmlProc;

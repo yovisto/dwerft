@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Node;
 
 /**
@@ -24,7 +25,7 @@ import org.w3c.dom.Node;
 public class Mapper {
 	
 	/** The Logger. */
-	private static final Logger L = Logger.getLogger(Mapper.class.getName());
+	private static Logger L = LogManager.getLogger();
 	
 	/**
 	 * All mapping definitions

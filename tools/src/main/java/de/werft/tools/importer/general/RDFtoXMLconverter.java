@@ -1,13 +1,14 @@
 package de.werft.tools.importer.general;
 
-import org.apache.log4j.Logger;
-
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * THIS CLASS IS CURRENTLY NOT IN USE
@@ -17,7 +18,7 @@ import java.util.Set;
 public class RDFtoXMLconverter {
 
 	/** The Logger. */
-	private static final Logger L = Logger.getLogger(RDFtoXMLconverter.class.getName());
+	private static Logger L = LogManager.getLogger();
 	
 	/** The ont conn. */
 	protected OntologyConnector ontConn;

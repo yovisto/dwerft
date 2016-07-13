@@ -1,7 +1,22 @@
 package de.werft.tools.general;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.List;
+
+import org.aeonbits.owner.ConfigFactory;
+import org.apache.jena.atlas.web.auth.HttpAuthenticator;
+import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.joda.time.DateTime;
+
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+
 import de.hpi.rdf.tailrapi.Delta;
 import de.hpi.rdf.tailrapi.Memento;
 import de.hpi.rdf.tailrapi.Repository;
@@ -12,19 +27,6 @@ import de.werft.tools.general.commands.UploadCommand;
 import de.werft.tools.general.commands.VersioningCommand;
 import de.werft.tools.importer.general.Converter;
 import de.werft.tools.update.Uploader;
-import org.aeonbits.owner.ConfigFactory;
-import org.apache.jena.atlas.web.auth.HttpAuthenticator;
-import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.riot.Lang;
-import org.apache.jena.riot.RDFDataMgr;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.List;
 
 
 /**
@@ -34,8 +36,8 @@ import java.util.List;
 public class DwerftTools {
 
     /** The Logger. */
-    private static final Logger L = Logger.getLogger(DwerftTools.class.getName());
-
+	private static Logger L = LogManager.getLogger(DwerftTools.class);
+    		
     @Parameter(names = {"-help"}, help = true, description = "Shows this help message.")
     private boolean isHelp = false;
 
@@ -54,7 +56,7 @@ public class DwerftTools {
      */
     public static void main(String[] args) {
         //Configure log4j2
-        BasicConfigurator.configure();
+//        BasicConfigurator.configure();
         DwerftTools tools = new DwerftTools();
         tools.run(args);
         System.exit(0);

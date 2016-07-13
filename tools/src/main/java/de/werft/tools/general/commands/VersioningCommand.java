@@ -1,16 +1,18 @@
 package de.werft.tools.general.commands;
 
-import com.beust.jcommander.Parameter;
-import com.beust.jcommander.Parameters;
-import de.hpi.rdf.tailrapi.Memento;
-import de.hpi.rdf.tailrapi.TailrClient;
-import de.werft.tools.general.DwerftConfig;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.beust.jcommander.Parameter;
+import com.beust.jcommander.Parameters;
+
+import de.hpi.rdf.tailrapi.Memento;
+import de.hpi.rdf.tailrapi.TailrClient;
+import de.werft.tools.general.DwerftConfig;
 
 /**
  * This command takes care of the connection to the tailr
@@ -26,7 +28,7 @@ import java.util.List;
 @Parameters(commandDescription = "Access the tailr versioning system.")
 public class VersioningCommand {
 
-    private static final Logger L = LogManager.getLogger(VersioningCommand.class);
+	private static Logger L = LogManager.getLogger();
 
     @Parameter(arity = 1, required = true,
             description = "Provide a key name used in tailr.")
