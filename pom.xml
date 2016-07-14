@@ -16,8 +16,10 @@
         <log4j.version>2.4</log4j.version>
         <junit.version>4.12</junit.version>
         <owner.version>1.0.9</owner.version>
+        <tlr.version>1.0-SNAPSHOT</tlr.version>
     </properties>
 
+    <!-- general dependencies used in all projects -->
 	<dependencies>
         <!-- config loading -->
         <dependency>
@@ -26,12 +28,18 @@
             <version>${owner.version}</version>
         </dependency>
 
-
         <!-- rdf library -->
         <dependency>
             <groupId>org.apache.jena</groupId>
             <artifactId>jena-core</artifactId>
             <version>${jena.version}</version>
+        </dependency>
+
+        <!-- rdf version control -->
+        <dependency>
+            <groupId>de.hpi.rdf</groupId>
+            <artifactId>tailr-api</artifactId>
+            <version>${tlr.version}</version>
         </dependency>
 
         <!-- general logging system -->

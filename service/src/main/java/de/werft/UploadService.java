@@ -2,6 +2,7 @@ package de.werft;
 
 import de.hpi.rdf.tailrapi.Tailr;
 import de.hpi.rdf.tailrapi.TailrClient;
+import de.werft.update.Uploader;
 import io.swagger.jaxrs.config.BeanConfig;
 import io.swagger.jaxrs.listing.ApiListingResource;
 import io.swagger.jaxrs.listing.SwaggerSerializers;
@@ -11,8 +12,6 @@ import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
 
 import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Feature;
-import javax.ws.rs.core.FeatureContext;
 import java.net.URISyntaxException;
 
 /**
@@ -38,6 +37,7 @@ public class UploadService extends ResourceConfig {
                 try {
                     bind(TailrClient.getInstance(conf.getTailrBase(), conf.getTailrUser(), conf.getTailrToken()))
                     .to(Tailr.class);
+                    bind(new Uploader(conf.getRemoteUrl())).to(Uploader.class);
                 } catch (URISyntaxException e) {
                     L.error("Tailr URI not valid.", e);
                 }
@@ -45,6 +45,7 @@ public class UploadService extends ResourceConfig {
         });
     }
 
+    /* custom binders for testing */
     protected UploadService(AbstractBinder binder) {
         final ServiceConfig conf = org.aeonbits.owner.ConfigFactory.create(ServiceConfig.class);
 
@@ -53,20 +54,12 @@ public class UploadService extends ResourceConfig {
         register(SwaggerSerializers.class);
 
         registerSwagger();
-        register(new Feature() {
-            @Override
-            public boolean configure(FeatureContext featureContext) {
-                featureContext.register(conf);
-                return true;
-            }
-        });
         register(new AbstractBinder() {
             @Override
             protected void configure() {
                 bind(conf).to(ServiceConfig.class);
             }
         });
-
         register(binder);
     }
 

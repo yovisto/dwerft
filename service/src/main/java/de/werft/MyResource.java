@@ -3,6 +3,8 @@ package de.werft;
 import de.hpi.rdf.tailrapi.Delta;
 import de.hpi.rdf.tailrapi.Repository;
 import de.hpi.rdf.tailrapi.Tailr;
+import de.werft.update.Update;
+import de.werft.update.Uploader;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
 import org.apache.jena.rdf.model.Model;
@@ -40,6 +42,9 @@ public class MyResource {
     @Inject
     Tailr tailrClient;
 
+    @Inject
+    Uploader uploader;
+
     @PUT
     @Consumes(MediaType.APPLICATION_OCTET_STREAM)
     public Response uploadFile(byte[] fileBytes,
@@ -49,6 +54,7 @@ public class MyResource {
                                    @DefaultValue("ttl") @QueryParam(value = "lang") String lang) {
         // handle failure cases
         Lang format = RDFLanguages.nameToLang(lang);
+        Update.Granularity g = Update.Granularity.valueOf("" + level);
         if (fileBytes == null || fileBytes.length == 0) {
             return Response.status(Response.Status.NO_CONTENT).build();
         } else if ("".equals(tailrKey) || format == null) {
@@ -63,15 +69,14 @@ public class MyResource {
             return Response.status(Response.Status.NOT_MODIFIED).build();
         }
 
+        if ("".equals(graphName)) {
+            graphName = "http://filmontology.org";
+        }
+
         /* create authentication */
         HttpAuthenticator auth = new SimpleAuthenticator(conf.getRemoteUser(), conf.getRemotePass().toCharArray());
+        uploader.uploadModel(new Update(g, d), graphName);
 
-
-
-        System.out.println("got " + tailrKey);
-        System.out.println("got " + graphName);
-        System.out.println("got " + level);
-        System.out.println("got " + format);
         return Response.ok(fileBytes, MediaType.APPLICATION_OCTET_STREAM).build();
 
     }

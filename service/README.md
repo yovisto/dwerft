@@ -33,7 +33,7 @@ A full documentation is given via swagger json and yaml. These can be found unde
 [localhost:8080/api/swagger.json](localhost:8080/api/swagger.json) and 
 [localhost:8080/api/swagger.yaml](localhost:8080/api/swagger.yaml).
    
-The API consists of one action at the moment.  
+The API consists of one action at the moment.   
 
 * `/upload` - Is a PUT request accepting `application/octet-stream`  
     + `?key=` - Is required for uploading the provided byte stream to tailr
@@ -49,11 +49,16 @@ The API consists of one action at the moment.
     + `&lang` - is optional and specifies the rdf format (see [Apache Jena](https://jena.apache.org/documentation/io/rdf-input.html) for 
         more Information). Default is `ttl`.  
 *   Possible Responses are:
-    + 200 - Ok, indicating that the upload and storage request succeds
-    + 204 - No Content, indicating that there is no uploaded content
-    + 206 - Not Acceptable, indicating that the provided file is not valid rdf
+    + 200 - Ok, indicating that the upload and storage request succeeds.
+    + 204 - No Content, indicating that there is no uploaded content.
+    + 206 - Not Acceptable, indicating that the provided file is not valid rdf.
+    + 306 - Not Modified, indicating that Tailr is not reachable or returns error messages. The process stops there and returns.
 
 ### Remarks
 Here are some remarks and examples.  
 
 An example for a Java client can be found under `src/test/de/werft/MyResourceTest.java`.  
+
+
+Remarks:  
+- Due to the Jena implementation there is no feedback if an upload was successfully.  
