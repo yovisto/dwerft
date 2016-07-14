@@ -2,16 +2,16 @@
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 <servlet>
-    <servlet-name>de.werft.UploadApp</servlet-name>
+    <servlet-name>de.werft.UploadService</servlet-name>
     <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>javax.ws.rs.Application</param-name>
-            <param-value>de.werft.UploadApp</param-value>
+            <param-value>de.werft.UploadService</param-value>
         </init-param>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>de.werft.UploadApp</servlet-name>
+        <servlet-name>de.werft.UploadService</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 

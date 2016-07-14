@@ -1,33 +1,35 @@
 package de.werft;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.Authorization;
+import de.hpi.rdf.tailrapi.TailrClient;
 
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 /**
- * Root resource (exposed at "myresource" path)
+ * Root resource exposed at "/upload".
+ * This class handles the file uploads as a restful
+ * service. All API calls are documented via swagger.
+ *
+ * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 @Path("/upload")
-@Api(value = "stores", authorizations = {
-        @Authorization(value = "username+passphrase", scopes = {})
-})
-@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 public class MyResource {
 
-    /**
-     * Method handling HTTP GET requests. The returned object will be sent
-     * to the client as "text/plain" media type.
-     *
-     * @return String that will be returned as a text/plain response.
-     */
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getIt() {
-        return "Got it!";
+    @Inject
+    TailrClient tailr;
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_OCTET_STREAM)
+    public Response testUploadFile(byte[] fileBytes,
+                                   @QueryParam(value = "key") String tailrKey) {
+
+        System.out.println("got " + tailrKey);
+        return Response.ok(fileBytes, MediaType.APPLICATION_OCTET_STREAM).build();
+
     }
 }
