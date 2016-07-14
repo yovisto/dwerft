@@ -15,6 +15,12 @@ import java.util.List;
  */
 public class TailrStub implements Tailr {
 
+    private boolean error = false;
+
+    protected void setError(boolean error) {
+        this.error = error;
+    }
+
 
     @Override
     public List<Repository> getUserRepositories() throws IOException {
@@ -58,6 +64,10 @@ public class TailrStub implements Tailr {
 
     @Override
     public Delta putMemento(Repository repository, String s, String s1) throws IOException, URISyntaxException {
-        return null;
+        if (error) {
+            throw new IOException();
+        } else {
+            return new Delta();
+        }
     }
 }
