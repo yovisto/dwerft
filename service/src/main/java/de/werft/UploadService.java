@@ -1,13 +1,19 @@
 package de.werft;
 
+import de.hpi.rdf.tailrapi.Tailr;
+import de.hpi.rdf.tailrapi.TailrClient;
 import io.swagger.jaxrs.config.BeanConfig;
 import io.swagger.jaxrs.listing.ApiListingResource;
 import io.swagger.jaxrs.listing.SwaggerSerializers;
-import org.glassfish.jersey.media.multipart.MultiPart;
-import org.glassfish.jersey.media.multipart.MultiPartFeature;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
 
 import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Feature;
+import javax.ws.rs.core.FeatureContext;
+import java.net.URISyntaxException;
 
 /**
  * Created by ratzeputz on 14.07.16.
@@ -15,13 +21,56 @@ import javax.ws.rs.ApplicationPath;
 @ApplicationPath("/")
 public class UploadService extends ResourceConfig {
 
+    final static Logger L = LogManager.getLogger(UploadService.class);
+
     public UploadService() {
+        final ServiceConfig conf = org.aeonbits.owner.ConfigFactory.create(ServiceConfig.class);
+
         packages("de.werft");
-        register(MultiPart.class);
-        register(MultiPartFeature.class);
+        register(ApiListingResource.class);
+        register(SwaggerSerializers.class);
+        registerSwagger();
+
+        register(new AbstractBinder() {
+            @Override
+            protected void configure() {
+                bind(conf).to(ServiceConfig.class);
+                try {
+                    bind(TailrClient.getInstance(conf.getTailrBase(), conf.getTailrUser(), conf.getTailrToken()))
+                    .to(Tailr.class);
+                } catch (URISyntaxException e) {
+                    L.error("Tailr URI not valid.", e);
+                }
+            }
+        });
+    }
+
+    protected UploadService(AbstractBinder binder) {
+        final ServiceConfig conf = org.aeonbits.owner.ConfigFactory.create(ServiceConfig.class);
+
+        packages("de.werft");
         register(ApiListingResource.class);
         register(SwaggerSerializers.class);
 
+        registerSwagger();
+        register(new Feature() {
+            @Override
+            public boolean configure(FeatureContext featureContext) {
+                featureContext.register(conf);
+                return true;
+            }
+        });
+        register(new AbstractBinder() {
+            @Override
+            protected void configure() {
+                bind(conf).to(ServiceConfig.class);
+            }
+        });
+
+        register(binder);
+    }
+
+    private void registerSwagger() {
         // init swagger core
         BeanConfig beanConfig = new BeanConfig();
         beanConfig.setVersion("0.5");

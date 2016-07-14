@@ -1,0 +1,14 @@
+@prefix :      <http://filmontology.org/> .
+@prefix webprotege: <http://protege.stanford.edu/webprotege/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org
+<http://filmontology.org/r"12312"^^xsd:int ;
+        foo2"^^xsd:long .
+
+<http://filmontology.org/resource/Cast/984745>
+        a                       foo:Cast ;
+        foo:identifier          "984745"^^xsd:int ;
+        foo:internalIdentifier  "
+
+<http://filmontology.ifier  "1"^^xsd:long ;
+        foo:title               "Frog King Reloaded"^^xsd:string .
