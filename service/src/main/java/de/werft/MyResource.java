@@ -54,7 +54,7 @@ public class MyResource {
                                    @DefaultValue("ttl") @QueryParam(value = "lang") String lang) {
         // handle failure cases
         Lang format = RDFLanguages.nameToLang(lang);
-        Update.Granularity g = Update.Granularity.valueOf("" + level);
+        Update.Granularity g = Update.Granularity.valueOf("LEVEL_" + level);
         if (fileBytes == null || fileBytes.length == 0) {
             return Response.status(Response.Status.NO_CONTENT).build();
         } else if ("".equals(tailrKey) || format == null) {
@@ -75,7 +75,7 @@ public class MyResource {
 
         /* create authentication */
         HttpAuthenticator auth = new SimpleAuthenticator(conf.getRemoteUser(), conf.getRemotePass().toCharArray());
-        uploader.uploadModel(new Update(g, d), graphName);
+        uploader.uploadModel(new Update(g, d), graphName, auth);
 
         return Response.ok(fileBytes, MediaType.APPLICATION_OCTET_STREAM).build();
 

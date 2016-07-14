@@ -11,7 +11,9 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 /**
- * Created by ratzeputz on 14.07.16.
+ * A simple class for testing, can throw errors.
+ *
+ * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 public class TailrStub implements Tailr {
 
