@@ -145,7 +145,7 @@ public class ConvertCommand {
             if (isEmptyKeys(conf)) {
                 throw new InstantiationException("No PreProducer credentials found.");
             }
-            String mappingFile = determineMappingFile("preproducer.mappings", mappingFolder);
+            String mappingFile = determineMappingFile(conf.getPreProducerMappingName(), mappingFolder);
             PreproducerSource pps = new PreproducerSource(conf.getPreProducerKey(),
                     conf.getPreProducerSecret(), conf.getPreProducerAppSecret());
 
@@ -155,7 +155,7 @@ public class ConvertCommand {
                     mappingFile, pps);
 
         } else if (isConvertDramaqueen()) { // dramaqueen to rdf
-            String mappingFile = determineMappingFile("dramaqueen.mappings", mappingFolder);
+            String mappingFile = determineMappingFile(conf.getDramaQueenMappingName(), mappingFolder);
             c = new DramaqueenToRdf(
                     OntologyConstants.ONTOLOGY_FILE,
                     OntologyConstants.ONTOLOGY_FORMAT,

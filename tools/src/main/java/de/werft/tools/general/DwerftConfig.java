@@ -36,6 +36,12 @@ public interface DwerftConfig extends Config {
     @Key("dwerft.mappings")
     File getMappingFolder();
 
+    @Key("dwerft.mappings.pp")
+    String getPreProducerMappingName();
+
+    @Key("dwerft.mappings.dq")
+    String getDramaQueenMappingName();
+
     @Key("dwerft.ontology")
     File getOntologyFile();
 
