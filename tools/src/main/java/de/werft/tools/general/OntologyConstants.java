@@ -30,7 +30,7 @@ public class OntologyConstants {
 	/*
 	 * Namespace for the ontology model
 	 */
-	public static final String ONTOLOGY_NAMESPACE = "http://filmontology.org/ontology/1.0/";
+	public static final String ONTOLOGY_NAMESPACE = "http://filmontology.org/ontology/2.0/";
 
 	/*
 	 * Namespace prefix for resources

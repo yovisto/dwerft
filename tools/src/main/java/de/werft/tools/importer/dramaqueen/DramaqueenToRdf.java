@@ -113,7 +113,7 @@ public class DramaqueenToRdf extends AbstractXMLtoRDFconverter {
 	public void processingBeforeConvert() {
 		String pid = findProjectId();
 		if (pid != null) {
-			rdfProc.setUriIdentifierPrefix("Project/"+pid+"/");
+			rdfProc.setUriIdentifierPrefix("Script/"+pid+"/");
 		}
 		
 		buildAttributeValueMappings();
@@ -186,7 +186,7 @@ public class DramaqueenToRdf extends AbstractXMLtoRDFconverter {
 		
 //		String archiveId = findArchiveId();
 		
-		buildSceneNumbering(xmlProc.getDocumentElement());
+//		buildSceneNumbering(xmlProc.getDocumentElement());
 		
 		Model generatedModel = rdfProc.getGeneratedModel();
 
