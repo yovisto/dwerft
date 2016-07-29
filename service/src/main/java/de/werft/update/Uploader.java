@@ -1,5 +1,6 @@
 package de.werft.update;
 
+
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.update.UpdateExecutionFactory;
 import org.apache.jena.update.UpdateFactory;
@@ -81,7 +82,7 @@ public class Uploader {
         String query = "CREATE GRAPH <" + graphName + ">";
         UpdateRequest request = UpdateFactory.create();
         request.add(query);
-
+        update(request, auth);
     }
 
     /**

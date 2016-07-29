@@ -23,12 +23,7 @@ public class UploadService extends ResourceConfig {
     final static Logger L = LogManager.getLogger(UploadService.class);
 
     public UploadService() {
-        final ServiceConfig conf = org.aeonbits.owner.ConfigFactory.create(ServiceConfig.class);
-
-        packages("de.werft");
-        register(ApiListingResource.class);
-        register(SwaggerSerializers.class);
-        registerSwagger();
+        final ServiceConfig conf = initSystem();
 
         register(new AbstractBinder() {
             @Override
@@ -46,12 +41,8 @@ public class UploadService extends ResourceConfig {
     }
 
     /* custom binders for testing */
-    protected UploadService(AbstractBinder binder) {
-        final ServiceConfig conf = org.aeonbits.owner.ConfigFactory.create(ServiceConfig.class);
-
-        packages("de.werft");
-        register(ApiListingResource.class);
-        register(SwaggerSerializers.class);
+    UploadService(AbstractBinder binder) {
+        final ServiceConfig conf = initSystem();
 
         registerSwagger();
         register(new AbstractBinder() {
@@ -61,6 +52,14 @@ public class UploadService extends ResourceConfig {
             }
         });
         register(binder);
+    }
+
+    private ServiceConfig initSystem() {
+        packages("de.werft");
+        register(ApiListingResource.class);
+        register(SwaggerSerializers.class);
+        registerSwagger();
+        return org.aeonbits.owner.ConfigFactory.create(ServiceConfig.class);
     }
 
     private void registerSwagger() {

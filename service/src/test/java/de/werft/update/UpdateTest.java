@@ -11,12 +11,6 @@ import static org.junit.Assert.assertEquals;
  * This class test the different created update queries
  * that are used by the {@link Uploader}<br/>
  *
- * For the later tests run a local Fuseki instance and upload
- * the generic_example_cast_changed.ttl<br/>
- *
- * Download Fuseki from Jena and run with:<br/>
- * fuseki-server --mem --localhost --update /ds
- *
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 public class UpdateTest {

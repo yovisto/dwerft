@@ -53,6 +53,7 @@ The API consists of one action at the moment.
     + 204 - No Content, indicating that there is no uploaded content.
     + 206 - Not Acceptable, indicating that the provided file is not valid rdf.
     + 306 - Not Modified, indicating that Tailr is not reachable or returns error messages. The process stops there and returns.
+    + 400 - Bad Request, indicating that the parameters provided are not valid or empty.
 
 ### Remarks
 Here are some remarks and examples.  

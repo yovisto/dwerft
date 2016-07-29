@@ -54,10 +54,16 @@ public class MyResource {
                                    @DefaultValue("ttl") @QueryParam(value = "lang") String lang) {
         // handle failure cases
         Lang format = RDFLanguages.nameToLang(lang);
-        Update.Granularity g = Update.Granularity.valueOf("LEVEL_" + level);
+        Update.Granularity g = null;
+        try {
+            g = Update.Granularity.valueOf("LEVEL_" + level);
+        } catch (IllegalArgumentException e) {
+            L.error("Illegal granularity level.", e);
+        }
+
         if (fileBytes == null || fileBytes.length == 0) {
             return Response.status(Response.Status.NO_CONTENT).build();
-        } else if ("".equals(tailrKey) || format == null) {
+        } else if ("".equals(tailrKey) || format == null || g == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         } else if (!isRdfFile(new ByteArrayInputStream(fileBytes), format)) {
             return Response.status(Response.Status.NOT_ACCEPTABLE).build();

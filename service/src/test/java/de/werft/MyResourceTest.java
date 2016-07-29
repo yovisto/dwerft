@@ -100,6 +100,20 @@ public class MyResourceTest extends JerseyTest {
     }
 
     /**
+     * Test upload with illegal granularity level.
+     *
+     * @throws IOException the io exception
+     */
+    @Test
+    public void testUploadIllegalGranularity() throws IOException {
+        Invocation.Builder builder = target("upload").queryParam("key", "http://example.org")
+                .queryParam("level", "4").request();
+
+        Response resp = builder.put(Entity.entity(getStream(), MediaType.APPLICATION_OCTET_STREAM));
+        Assert.assertEquals(HttpStatus.BAD_REQUEST_400, resp.getStatus());
+    }
+
+    /**
      * Test upload file with bad format.
      *
      * @throws IOException the io exception
