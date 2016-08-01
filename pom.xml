@@ -4,23 +4,61 @@
 	<groupId>de.werft</groupId>
 	<artifactId>de.werft</artifactId>
 	<packaging>pom</packaging>
-	<version>0.5</version>
+	<version>0.6</version>
     
 
     <name>Dwerft Linked Production Data Cloud</name>
 	<url>https://github.com/yovisto/dwerft</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jena.version>3.1.0</jena.version>
+        <jersey.version>2.23.1</jersey.version>
+        <log4j.version>2.4</log4j.version>
+        <junit.version>4.12</junit.version>
+        <owner.version>1.0.9</owner.version>
+        <tlr.version>1.0-SNAPSHOT</tlr.version>
     </properties>
 
+    <!-- general dependencies used in all projects -->
 	<dependencies>
+        <!-- config loading -->
+        <dependency>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>${owner.version}</version>
+        </dependency>
+
+        <!-- rdf library -->
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-core</artifactId>
+            <version>${jena.version}</version>
+        </dependency>
+
+        <!-- rdf version control -->
+        <dependency>
+            <groupId>de.hpi.rdf</groupId>
+            <artifactId>tailr-api</artifactId>
+            <version>${tlr.version}</version>
+        </dependency>
+
         <!-- general logging system -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
 
         <!-- general test dependency -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -33,6 +71,7 @@
 
 	<modules>
 		<module>tools</module>
+        <module>service</module>
 	</modules>
 
     <build>

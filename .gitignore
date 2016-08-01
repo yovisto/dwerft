@@ -12,6 +12,7 @@ tools/DwerftConfig.properties
 dwerft-tools*
 
 # test files
+service/src/test/resources/fuseki
 tools/src/test/resources/fuseki
 tools/src/test/resources/giles/ale_dummy.xml
 tools/src/test/resources/giles/csv_dummy.xml
