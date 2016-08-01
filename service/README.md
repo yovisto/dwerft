@@ -59,7 +59,9 @@ The API consists of one action at the moment.
 Here are some remarks and examples.  
 
 An example for a Java client can be found under `src/test/de/werft/MyResourceTest.java`.  
+An curl example is:
 
+    curl -v -H "Content-Type: application/octet-stream" -X PUT --data-binary @src/test/resources/test.ttl "localhost:8080/api/upload?key=http://example.org&graph=http://filmontology.org&level=2"
 
 Remarks:  
 - Due to the Jena implementation there is no feedback if an upload was successfully.  

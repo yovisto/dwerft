@@ -1,10 +1,10 @@
 package de.werft.update;
 
+import de.hpi.rdf.tailrapi.Delta;
 import org.apache.jena.query.*;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.RDFNode;
-import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.*;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
 import org.junit.*;
 
 import java.io.File;
@@ -17,6 +17,8 @@ import java.io.IOException;
  *
  * Download manually from https://jena.apache.org/download/index.cgi
  *
+ * Automatic assertions are difficult, so verify the output by hand.
+ *
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 public class UploaderTest {
@@ -25,12 +27,16 @@ public class UploaderTest {
 
     private static Uploader uploader;
 
+    private static String endpoint = "http://localhost:3030/ds";
+
     private String graphName = "http://example.org";
+
+    private Model expectedModel = RDFDataMgr.loadModel("src/test/resources/test.ttl");
 
     @BeforeClass
     public static void setUpBefore() throws IOException, InterruptedException {
         fuseki = Runtime.getRuntime().exec("./fuseki-server --mem --localhost --update /ds", null, new File("src/test/resources/fuseki"));
-        uploader = new Uploader("http://localhost:3030/ds/update");
+        uploader = new Uploader(endpoint + "/update");
         Thread.sleep(6000); // wait for fuseki to be ready
     }
 
@@ -51,11 +57,49 @@ public class UploaderTest {
 
     @Test
     public void testUpload() throws InterruptedException {
-        //fuseki.waitFor();
-        getRemoteModel("http://localhost:3030/ds").write(System.out);
+        /* test the basic upload mechanism */
+        Delta d = convertModelToDelta(expectedModel);
+        Update u = new Update(Update.Granularity.LEVEL_1, d);
+        uploader.uploadModel(u, graphName);
+        Model remoteModel = getRemoteModel(endpoint);
+
+        Assert.assertTrue("Some failure in the isomorphism function", remoteModel.equals(expectedModel));
     }
 
-    // returns a model from a remote endpoint containing all triples
+    @Test
+    public void testRemove() {
+        prepareEndpoint(convertModelToDelta(expectedModel));
+        Delta d = new Delta();
+        d.getRemovedTriples().add("<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/title> \"Frog King Reloaded\" .");
+        d.getRemovedTriples().add("<http://filmontology.org/resource/Cast/984745> <http://filmontology.org/ontology/1.0/identifier> \"984745^^http://www.w3.org/2001/XMLSchema#int\" .");
+        Update u = new Update(Update.Granularity.LEVEL_0, d);
+        uploader.uploadModel(u, graphName);
+        Model remote = getRemoteModel(endpoint);
+
+        RDFDataMgr.write(System.out, remote, Lang.NT);
+    }
+
+    @Test
+    public void testDiff() {
+        prepareEndpoint(convertModelToDelta(expectedModel));
+        Delta d = new Delta();
+        d.getRemovedTriples().add("<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/title> \"Frog King Reloaded\" .");
+        d.getRemovedTriples().add("<http://filmontology.org/resource/Cast/984745> <http://filmontology.org/ontology/1.0/identifier> \"984745^^http://www.w3.org/2001/XMLSchema#int\" .");
+        d.getAddedTriples().add("<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/title> \"Frog King Reloaded II^^http://www.w3.org/2001/XMLSchema#string\" .");
+        Update u = new Update(Update.Granularity.LEVEL_2, d);
+        uploader.uploadModel(u, graphName);
+        Model remote = getRemoteModel(endpoint);
+
+        RDFDataMgr.write(System.out, remote, Lang.NT);
+    }
+
+    /* upload data to a triple store */
+    private void prepareEndpoint(Delta d) {
+        Update u = new Update(Update.Granularity.LEVEL_1, d);
+        uploader.uploadModel(u, graphName);
+    }
+
+    /* returns a model from a remote endpoint containing all triples */
     private Model getRemoteModel(String endpoint) {
         String queryString = "SELECT ?subject ?predicate ?object\n" +
                 "FROM <" + graphName + "> WHERE { ?subject ?predicate ?object }";
@@ -73,5 +117,26 @@ public class UploaderTest {
         }
         qexec.close();
         return m;
+    }
+
+    private Delta convertModelToDelta(Model m) {
+        Delta d = new Delta();
+        StmtIterator itr = m.listStatements();
+
+        while (itr.hasNext()) {
+            StringBuilder builder = new StringBuilder();
+            Statement s = itr.nextStatement();
+            builder.append("<").append(s.getSubject().toString()).append("> ");
+            builder.append(" <").append(s.getPredicate().toString()).append("> ");
+
+            if (s.getObject() instanceof Resource) {
+                builder.append("<").append(s.getObject().toString()).append("> .");
+            } else {
+                builder.append("\"").append(s.getObject().asLiteral()).append("\" .");
+            }
+            d.getAddedTriples().add(builder.toString());
+        }
+
+        return d;
     }
 }
