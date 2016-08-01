@@ -33,8 +33,6 @@
     </dependency>
   </dependencies>
 
-
-
     <build>
         <finalName>dwerft-tools</finalName>
         <plugins>

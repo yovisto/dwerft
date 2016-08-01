@@ -5,6 +5,7 @@ import de.hpi.rdf.tailrapi.Repository;
 import de.hpi.rdf.tailrapi.Tailr;
 import de.werft.update.Update;
 import de.werft.update.Uploader;
+import io.swagger.annotations.*;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
 import org.apache.jena.rdf.model.Model;
@@ -31,7 +32,16 @@ import java.net.URISyntaxException;
  *
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
+@SwaggerDefinition(
+        info = @Info(
+                description = "Upload and store rdf data",
+                version = "0.5",
+                title = "DWERFT Upload Service"
+        ),
+        externalDocs = @ExternalDocs(value = "Dwerft", url = "https://github.com/yovisto/dwerft")
+)
 @Path("/upload")
+@Api()
 public class MyResource {
 
     private final static Logger L = org.apache.logging.log4j.LogManager.getLogger("UploadService.class");
@@ -47,12 +57,24 @@ public class MyResource {
 
     @PUT
     @Consumes(MediaType.APPLICATION_OCTET_STREAM)
+    @ApiOperation(value = "Stores RDF files.",
+            notes = "Receives RDF files and adds them to version control and stores them into a triple store.",
+            consumes = "application/octet-stream"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Everything is fine."),
+            @ApiResponse(code = 204, message = "No content provided."),
+            @ApiResponse(code = 206, message = "Provided content is not valid RDF."),
+            @ApiResponse(code = 306, message = "Not modified due to an error with tailr or the triple store."),
+            @ApiResponse(code = 400, message = "Not enough or the wrong parameters provided.")
+    })
+
     public Response uploadFile(byte[] fileBytes,
-                                   @QueryParam(value = "key") String tailrKey,
-                                   @QueryParam(value = "graph") String graphName,
-                                   @DefaultValue("2") @QueryParam(value = "level") int level,
-                                   @DefaultValue("ttl") @QueryParam(value = "lang") String lang) {
-        // handle failure cases
+                               @ApiParam(value = "The key used in tailr", required = true) @QueryParam(value = "key") String tailrKey,
+                               @ApiParam(value = "The triple store graph name", required = true) @QueryParam(value = "graph") String graphName,
+                               @ApiParam(value = "The used upload procedure.") @DefaultValue("2") @QueryParam(value = "level") int level,
+                               @ApiParam(value = "The rdf language.") @DefaultValue("ttl") @QueryParam(value = "lang") String lang) {
+        /* handle failure cases */
         Lang format = RDFLanguages.nameToLang(lang);
         Update.Granularity g = null;
         try {
@@ -87,6 +109,7 @@ public class MyResource {
 
     }
 
+    /* store the uploaded rdf file and retrieve the delta determined by tailr */
     private Delta getDelta(byte[] fileBytes, @QueryParam(value = "key") String tailrKey) {
         try {
             Repository repo = new Repository(conf.getTailrUser(), conf.getTailrRepo());
