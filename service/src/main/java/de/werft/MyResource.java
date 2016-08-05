@@ -40,7 +40,7 @@ import java.net.URISyntaxException;
         ),
         externalDocs = @ExternalDocs(value = "Dwerft", url = "https://github.com/yovisto/dwerft")
 )
-@Path("/upload")
+@Path("/")
 @Api()
 public class MyResource {
 
