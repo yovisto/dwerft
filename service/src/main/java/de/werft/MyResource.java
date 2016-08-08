@@ -23,6 +23,7 @@ import javax.ws.rs.core.Response;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringWriter;
 import java.net.URISyntaxException;
 
 /**
@@ -65,7 +66,7 @@ public class MyResource {
             @ApiResponse(code = 200, message = "Everything is fine."),
             @ApiResponse(code = 204, message = "No content provided."),
             @ApiResponse(code = 206, message = "Provided content is not valid RDF."),
-            @ApiResponse(code = 306, message = "Not modified due to an error with tailr or the triple store."),
+            @ApiResponse(code = 304, message = "Not modified due to an error with tailr or the triple store."),
             @ApiResponse(code = 400, message = "Not enough or the wrong parameters provided.")
     })
 
@@ -92,7 +93,13 @@ public class MyResource {
         }
 
         /* create new memento and retrieve delta from tailr anyway */
-        Delta d = getDelta(fileBytes, tailrKey);
+        String input = convertToNTriplesRdfFile(new ByteArrayInputStream(fileBytes), format);
+        if ("".equals(input)) {
+            return Response.status(Response.Status.NOT_MODIFIED).build();
+        }
+
+        L.error("input ist " + input);
+        Delta d = getDelta(input, tailrKey);
         if (d == null) {
             return Response.status(Response.Status.NOT_MODIFIED).build();
         }
@@ -106,14 +113,12 @@ public class MyResource {
         uploader.uploadModel(new Update(g, d), graphName, auth);
 
         return Response.ok(fileBytes, MediaType.APPLICATION_OCTET_STREAM).build();
-
     }
 
     /* store the uploaded rdf file and retrieve the delta determined by tailr */
-    private Delta getDelta(byte[] fileBytes, @QueryParam(value = "key") String tailrKey) {
+    private Delta getDelta(String input, @QueryParam(value = "key") String tailrKey) {
         try {
             Repository repo = new Repository(conf.getTailrUser(), conf.getTailrRepo());
-            String input = new String(fileBytes);
             return tailrClient.putMemento(repo, tailrKey, input);
         } catch (IOException | URISyntaxException e) {
             L.error("Returning not modified.", e);
@@ -130,5 +135,18 @@ public class MyResource {
             return false;
         }
         return true;
+    }
+
+    /* check if a inputstream is valid rdf */
+    private String convertToNTriplesRdfFile(InputStream stream, Lang format) {
+        StringWriter writer = new StringWriter();
+        try {
+            Model m = ModelFactory.createDefaultModel();
+            RDFDataMgr.read(m, stream, format);
+            RDFDataMgr.write(writer, m, Lang.NT);
+        } catch (RiotException e) {
+            L.error("Failed to convert the input.", e);
+        }
+        return writer.toString();
     }
 }

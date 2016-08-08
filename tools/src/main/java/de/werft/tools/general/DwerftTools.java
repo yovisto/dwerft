@@ -1,23 +1,7 @@
 package de.werft.tools.general;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.List;
-
-import org.aeonbits.owner.ConfigFactory;
-import org.apache.jena.atlas.web.auth.HttpAuthenticator;
-import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.riot.Lang;
-import org.apache.jena.riot.RDFDataMgr;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.joda.time.DateTime;
-
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
-
-import de.hpi.rdf.tailrapi.Delta;
 import de.hpi.rdf.tailrapi.Memento;
 import de.hpi.rdf.tailrapi.Repository;
 import de.hpi.rdf.tailrapi.TailrClient;
@@ -26,7 +10,27 @@ import de.werft.tools.general.commands.ConvertCommand;
 import de.werft.tools.general.commands.UploadCommand;
 import de.werft.tools.general.commands.VersioningCommand;
 import de.werft.tools.importer.general.Converter;
-import de.werft.tools.update.Uploader;
+import org.aeonbits.owner.ConfigFactory;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPut;
+import org.apache.http.entity.FileEntity;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.joda.time.DateTime;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.List;
 
 
 /**
@@ -156,22 +160,29 @@ public class DwerftTools {
 
     }
 
-    private void upload(UploadCommand upload) throws URISyntaxException {
-        TailrClient client = VersioningCommand.getClient(config);
-        Repository repo = new Repository(config.getTailrUser(), config.getTailrRepo());
-        String key = upload.getKey();
-        try {
-            Delta d = client.putMemento(repo, key, upload.getFile());
-            HttpAuthenticator auth = new SimpleAuthenticator(config.getRemoteUser(), config.getRemotePass().toCharArray());
-            Uploader uploader = new Uploader(config.getRemoteUrl());
+    private void upload(UploadCommand upload) {
+        CredentialsProvider provider = new BasicCredentialsProvider();
+        UsernamePasswordCredentials cred = new UsernamePasswordCredentials(config.getRemoteUser(), config.getRemotePass());
+        provider.setCredentials(AuthScope.ANY, cred);
 
-            if ("".equals(upload.getGraphName())) {
-                uploader.uploadModel(upload.getUpdate(d), config.getDefaultGraph(), auth);
-            } else {
-                uploader.uploadModel(upload.getUpdate(d), upload.getGraphName(), auth);
+        HttpClient client = HttpClientBuilder.create().setDefaultCredentialsProvider(provider).build();
+
+        String url = config.getRemoteUrl()
+                + "key=" + upload.getKey()
+                + "&graph=" + upload.getGraphName(config)
+                + "&level=" + upload.getGranularity().ordinal();
+
+        HttpPut put = new HttpPut(url);
+        put.addHeader("Content-Type", "application/octet-stream");
+        put.setEntity(new FileEntity(upload.getFile()));
+
+        try {
+            HttpResponse resp = client.execute(put);
+            if (resp.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
+                L.error("Response was: " + resp.getStatusLine());
             }
         } catch (IOException e) {
-            beatUser("Versioning failed: " + e.getMessage());
+            L.error("Upload request failed.", e);
         }
     }
 

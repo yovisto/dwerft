@@ -3,13 +3,8 @@ package de.werft.tools.general.commands;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
 import com.beust.jcommander.Parameters;
-import de.hpi.rdf.tailrapi.Delta;
-import de.werft.tools.update.Update;
-import de.werft.tools.update.UpdateFactory;
+import de.werft.tools.general.DwerftConfig;
 import org.apache.commons.lang.StringUtils;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.riot.RDFDataMgr;
-import org.apache.jena.update.UpdateException;
 
 import java.io.File;
 import java.util.List;
@@ -45,37 +40,17 @@ public class UploadCommand {
             description = "Provide the tool name for versioning.")
     private String toolName = "";
 
-    private Model getUploadModel() throws ParameterException {
-        if (StringUtils.substringAfterLast(uploadFile.get(0), ".").toLowerCase().matches("(rdf|ttl|nt|jsonld)")) {
-            return RDFDataMgr.loadModel(uploadFile.get(0));
-        } else {
-            throw new ParameterException("Only (rdf|ttl|nt|jsonld) are valid file endings.");
-        }
-    }
-
-    private Update.Granularity getGranularity() {
+    public Granularity getGranularity() {
         try {
             String s = StringUtils.substringAfterLast(granularity, "_");
-            return Update.Granularity.valueOf(s);
+            return Granularity.valueOf(s);
         } catch (IllegalArgumentException e) {
-            return Update.Granularity.LEVEL_1;
+            return Granularity.LEVEL_1;
         }
     }
 
-    public String getGraphName() {
-        return graphName;
-    }
-
-    public Update getUpdate(Delta d) throws UpdateException {
-        try {
-            if (Update.Granularity.LEVEL_2.equals(granularity)) {
-                return UpdateFactory.createUpdate(getGranularity(), d);
-            } else {
-                return UpdateFactory.createUpdate(getGranularity(), getUploadModel());
-            }
-        } catch (ParameterException e) {
-            throw new UpdateException("Update could not be done. " + e.getMessage());
-        }
+    public String getGraphName(DwerftConfig conf) {
+        return "".equals(graphName) ? conf.getDefaultGraph() : graphName;
     }
 
     public String getKey() {
@@ -88,5 +63,23 @@ public class UploadCommand {
         } else {
             throw new ParameterException("Only (rdf|ttl|nt|jsonld) are valid file endings.");
         }
+    }
+
+    /**
+     * The Granularity.
+     */
+    public enum Granularity {
+        /**
+         * The Level 0 deletes data.
+         */
+        LEVEL_0 ,
+        /**
+         * The Level 1 inserts data.
+         */
+        LEVEL_1 ,
+        /**
+         * Level 2 creates a diff.
+         */
+        LEVEL_2 ;
     }
 }
