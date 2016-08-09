@@ -68,13 +68,22 @@ The tools which have been integrated into the project thus far are as follows. W
 * [Preproducer](http://www.preproducer.com/)
 * [LockitNetwork](http://lockitnetwork.com/)
 
+#### Webservice
+
+If you want to use your own conversion tools we provided a web service for the tailr versioning and
+triplestore upload. Please see `service/README.md` for further details.
+
+#### Tailr
+
+For version control we use tailr. Further informations can be found at [tailr](http://tailr.s16a.org/).
+
 ## Setting up the LPDC framework
 
 #### Prepackaged version
 
 This might be the easiest way to try the lpdc tools.
 We provide a prepackaged version [here](https://github.com/yovisto/dwerft/releases).  
-You only need a current Java version (1.8) to run the jar file.
+You only need a current Java version (1.7) to run the jar file.
 
 The structure is as following:
 ```
@@ -134,12 +143,20 @@ All available options are listed below and can also be viewed by using the `-hel
     + `-print`: Prints the RDF output to console. Does not replace writing RDF to file.
     + `-format`: Specify an RDF output format. Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig').            Default is Turtle.
 
+- `version` : Inspect the tailr versioning system
+  + Usage : `-(list|show|show-delta) <key>`
+  + `-list` : List revisions in tailr
+  + `-show` : Show a specific revisions
+  + `-show-delta` : Shows the diff between the given and previous revision
+
 - `upload` : Uploads a rdf file to SPARQL endpoint.
-  + Usage: `-g <granularity> -graph <graphname> <file>`
-  + `-g`: Provide a granularity. Possible options are LEVEL_0, LEVEL_1, LEVEL_2 (currently not supported),
+  + Usage: `-key <tailr-key> -tool <source-tool> -g <granularity> -graph <graphname> <file>`
+  + `-g`: Provide a granularity. Possible options are LEVEL_0, LEVEL_1, LEVEL_2,
          where LEVEL_0 deletes from remote graph; LEVEL_1 inserts into remote graph and LEVEL_2 inserts a diff
   + `-graph`: Provide a graph name (uri) where to store the uploaded data.
-
+  + `-key`: Provide a key for tailr. In most cases this might be the project base URI.
+  + `-tool`: Provide the name of the tool the uploaded rdf data comes from.
+  
 ## Package structure
 
 If you have never worked with Apache Jena before, a good start would be to take a look at the `SparqlExample` found in the package `examples`. It is a demonstration of how to issue requests to a known end point.
