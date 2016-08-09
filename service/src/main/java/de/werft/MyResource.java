@@ -98,7 +98,6 @@ public class MyResource {
             return Response.status(Response.Status.NOT_MODIFIED).build();
         }
 
-        L.error("input ist " + input);
         Delta d = getDelta(input, tailrKey);
         if (d == null) {
             return Response.status(Response.Status.NOT_MODIFIED).build();
