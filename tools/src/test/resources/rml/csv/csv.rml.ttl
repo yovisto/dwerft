@@ -1,0 +1,38 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix foo: <http://filmontology.org/ontology/2.0/> .
+@prefix schema: <http://schema.org/>.
+@prefix csvw: <http://www.w3.org/ns/csvw#>.
+
+
+<#DummyMapping>
+    rml:logicalSource [
+    rml:source [
+    a csvw:Table;
+        csvw:dialect [
+        a csvw:Dialect;
+        csvw:delimiter ";";
+        #default
+        csvw:encoding "UTF-8";
+        csvw:header "1"^^xsd:boolean;
+        csvw:headerRowCount "1"^^xsd:nonNegativeInteger;
+        csvw:trim "1"^^xsd:boolean;
+    ] ];
+    rml:referenceFormulation ql:CSV
+    ];
+
+    rr:subjectMap [
+	 rr:template "http://filmontology.org/resource/Cast/{Column1}";
+	 rr:class foo:Cast
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:identifier;
+        rr:objectMap [
+            rml:reference "column2";
+        ]
+    ].
