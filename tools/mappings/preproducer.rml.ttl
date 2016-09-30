@@ -1,0 +1,803 @@
+@prefix rr:  <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql:  <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foo: <http://filmontology.org/ontology/2.0/> .
+
+<#project>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/SeriesProduction/{@projectid}";
+        rr:class foo:SeriesProduction;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasShootingSchedule;
+        rr:objectMap [ rr:parentTriplesMap <#schedule>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasEpisode;
+        rr:objectMap [ rr:parentTriplesMap <#episode>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasTitle;
+        rr:objectMap [ rr:parentTriplesMap <#title>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasCrewDepartment;
+        rr:objectMap [ rr:parentTriplesMap <#crewdepartment>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:crewMember;
+        rr:objectMap [ rr:parentTriplesMap <#crewmember>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:castMember;
+        rr:objectMap [ rr:parentTriplesMap <#cast>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasScript;
+        rr:objectMap [ rr:parentTriplesMap <#script>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasLocation;
+        rr:objectMap [ rr:parentTriplesMap <#location>; ]
+    ].
+
+<#title>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/title";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:termType rr:BlankNode;
+        rr:class foo:Title
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:titleType;
+        rr:objectMap [ rml:reference "@temptitle" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:titleText;
+        rr:objectMap [ rml:reference "." ];
+    ].
+
+
+<#episode>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/episode";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Episode/{@id}";
+        rr:class foo:Episode;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:preproducerIdentifier;
+        rr:objectMap [ rml:reference "@id" ];
+     ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:dramaqueenIdentifier;
+        rr:objectMap [ rml:reference "@dramaqueenid"; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:logline;
+        rr:objectMap [ rml:reference "logline" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:synopsis;
+        rr:objectMap [ rml:reference "synopsis/formattedscript" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:shootingRatio;
+        rr:objectMap [ rml:reference "ratio" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:aspectRatio;
+        rr:objectMap [ rml:reference "aspect" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:filmMaterial;
+        rr:objectMap [ rml:reference "material" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:shootingRatio;
+        rr:objectMap [ rml:reference "framerate" ];
+    ];
+
+    rr:predicateObjectMap [
+      	rr:predicate foo:duration;
+        rr:objectMap [ rml:reference "length-in-sec" ];
+    ].
+
+<#script>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        # only one per project
+        # define on top since child triples have to be lower in hierarchy
+        rml:iterator "/root/return/project";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:termType rr:BlankNode;
+        rr:class foo:Script;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:revision;
+        rr:objectMap [ rml:reference "version" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:lastModified;
+        rr:objectMap [ rml:reference "lastModified" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasScene;
+        rr:objectMap [ rr:parentTriplesMap <#scene>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasCharacter;
+        rr:objectMap [ rr:parentTriplesMap <#charref> ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasSet;
+        rr:objectMap [ rr:parentTriplesMap <#setref> ];
+    ].
+
+# prevent redefinition, use template generation only and other triples for extraction
+<#charref>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/character";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Character/{@id}";
+        rr:class foo:Character;
+    ].
+
+<#setref>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/decoration";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Set/{@id}";
+        rr:class foo:Set;
+    ].
+
+<#scene>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/episode/scene-group/scene";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Scene/{@id}";
+        rr:class foo:Scene;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:preproducerIdentifier;
+        rr:objectMap [ rml:reference "@id" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:dramaqueenIdentifier;
+        rr:objectMap [ rml:reference "@dramaqueenid" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneNumber;
+        rr:objectMap [ rml:reference "number" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneInserted;
+        rr:objectMap [ rml:reference "@insert" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneCancelled;
+        rr:objectMap [ rml:reference "@cancelled" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneHeader;
+        rr:objectMap [ rml:reference "head" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:interiorExterior;
+        rr:objectMap [ rml:reference "intext" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:dayTime;
+        rr:objectMap [ rml:reference "daynight" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneDescription;
+        rr:objectMap [ rml:reference "description" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneContent;
+        rr:objectMap [ rml:reference "script/formattedscript" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneSet;
+        rr:objectMap [ rr:parentTriplesMap <#sceneDecoration>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneCharacter;
+        rr:objectMap [ rr:parentTriplesMap <#sceneCharacters>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneExtra;
+        rr:objectMap [ rr:parentTriplesMap <#sceneExtras>; ]
+    ].
+
+# reference from scene to decoration
+<#sceneDecoration>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/episode/scene-group/scene/decoration";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Set/{@ref}";
+        rr:class foo:Set;
+    ].
+
+# reference from scene to characters
+<#sceneCharacters>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/episode/scene-group/scene/character";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Character/{@ref}";
+        rr:class foo:Character;
+    ].
+
+# reference from scene to extra
+<#sceneExtras>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/episode/scene-group/scene/figur";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Extra/{@ref}";
+        rr:class foo:Extra;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:extraType;
+        rr:objectMap [ rml:reference "@type" ];
+    ].
+
+
+<#company>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/company";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:termType rr:BlankNode;
+        rr:class foo:Company;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "name" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:address;
+        rr:objectMap [ rr:parentTriplesMap <#address>; ]
+    ].
+
+# company address
+<#address>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/company/adress";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:termType rr:BlankNode;
+        rr:class foo:Address;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "co" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:streetName;
+        rr:objectMap [ rml:reference "street" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:zipCode;
+        rr:objectMap [ rml:reference "zipcode" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:cityName;
+        rr:objectMap [ rml:reference "city" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:countryName;
+        rr:objectMap [ rml:reference "country" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:houseNumber;
+        rr:objectMap [ rml:reference "housenumber" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:contactPerson;
+        rr:objectMap [ rml:reference "contact" ];
+    ].
+
+<#character>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/character";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Character/{@id}";
+        rr:class foo:Character;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:preproducerIdentifier;
+        rr:objectMap [ rml:reference "@id" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:characterNumber;
+        rr:objectMap [ rml:reference "number" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:fullName;
+        rr:objectMap [ rml:reference "name" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:characterCast;
+        rr:objectMap [ rr:parentTriplesMap <#cast>; ]
+    ].
+
+
+<#cast>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/character/cast";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/CastMember/{@rel}";
+        rr:class foo:CastMember;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:preproducerIdentifier;
+        rr:objectMap [ rml:reference "@rel" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "name" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sex;
+        rr:objectMap [ rml:reference "sex" ];
+    ].
+
+<#crewdepartment>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/function-group";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/CrewDepartment/{code}";
+        rr:class foo:CrewDepartment;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:departementCode;
+        rr:objectMap [ rml:reference "code" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "name" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasCrewMember;
+        rr:objectMap [ rr:parentTriplesMap <#crewmember>; ]
+    ].
+
+<#crewmember>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/function-group/function";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/CrewMember/{@id}";
+        rr:class foo:CrewMember;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:preproducerIdentifier;
+        rr:objectMap [ rml:reference "@id" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:crewCode;
+        rr:objectMap [ rml:reference "typeCode" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:crewType;
+        rr:objectMap [ rml:reference "name" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "team/name" ];
+    ].
+
+<#decoration>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/decoration";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Set/{@id}";
+        rr:class foo:Set;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:preproducerIdentifier;
+        rr:objectMap [ rml:reference "@id" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:dramaqueenIdentifier;
+        rr:objectMap [ rml:reference "@dramaqueenid" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "name" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasLocation;
+        rr:objectMap [ rr:parentTriplesMap <#location>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasFacility;
+        rr:objectMap [ rr:parentTriplesMap <#facility>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasEmergency;
+        rr:objectMap [ rr:parentTriplesMap <#emergency>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:address;
+        rr:objectMap [ rr:parentTriplesMap <#locationAddress>; ]
+    ].
+
+<#location>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/decoration/location";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Location/{@rel}";
+        rr:class foo:Location;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "name" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:contactPerson;
+        rr:objectMap [ rml:reference "contact" ];
+    ].
+
+<#emergency>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/decoration/location/emergency";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:termtype rr:BlankNode;
+        rr:class foo:Emergency;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "." ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:emergencyType;
+        rr:objectMap [ rml:reference "@label" ];
+    ].
+
+<#facility>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/decoration/location/facility";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:termType rr:BlankNode;
+        rr:class foo:Facility;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "." ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:facilityType;
+        rr:objectMap [ rml:reference "@type" ];
+    ].
+
+<#locationAddress>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/decoration/location/adress";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:termType rr:BlankNode;
+        rr:class foo:Address;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "co" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:streetName;
+        rr:objectMap [ rml:reference "street" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:zipCode;
+        rr:objectMap [ rml:reference "zipcode" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:cityName;
+        rr:objectMap [ rml:reference "city" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:countryName;
+        rr:objectMap [ rml:reference "country" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:houseNumber;
+        rr:objectMap [ rml:reference "housenumber" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:contactPerson;
+        rr:objectMap [ rml:reference "contact" ];
+    ].
+
+<#extras>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/extras";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Extra/{@id}";
+        rr:class foo:Extra;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:preproducerIdentifier;
+        rr:objectMap [ rml:reference "@id" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "name" ];
+    ].
+
+<#figure>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/figur";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Extra/{@id}";
+        rr:class foo:Extra;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:preproducerIdentifier;
+        rr:objectMap [ rml:reference "@id" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:dramaqueenIdentifier;
+        rr:objectMap [ rml:reference "@dramaqueenid" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "name" ];
+    ].
+
+<#schedule>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/shooting-board";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/ShootingSchedule/{@id}";
+        rr:class foo:ShootingSchedule;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:preproducerIdentifier;
+        rr:objectMap [ rml:reference "@id" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:revision;
+        rr:objectMap [ rml:reference "version" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:lastModified;
+        rr:objectMap [ rml:reference "lastModified" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasShootingDay;
+        rr:objectMap [ rr:parentTriplesMap <#shootingday>; ]
+    ].
+
+<#shootingday>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/shooting-board/shooting-day";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/ShootingDay/{@id}";
+        rr:class foo:ShootingDay;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:preproducerIdentifier;
+        rr:objectMap [ rml:reference "@id" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:shootingDayMode;
+        rr:objectMap [ rml:reference "@mode" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "name" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:date;
+        rr:objectMap [ rml:reference "date" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:shootingDayScene;
+        rr:objectMap [ rr:parentTriplesMap <#shootingSceneReference>; ]
+    ].
+
+# build references fpr shooting day
+<#shootingSceneReference>
+    rml:logicalSource [
+        rml:source "/tmp/prepro7569150280661069441.xml";
+        rml:iterator "/root/return/project/shooting-board/shooting-day/scene";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Scene/{@ref}";
+        rr:class foo:Scene;
+    ].

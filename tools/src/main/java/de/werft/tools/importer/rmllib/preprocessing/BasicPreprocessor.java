@@ -1,10 +1,7 @@
 package de.werft.tools.importer.rmllib.preprocessing;
 
 import de.werft.tools.importer.rmllib.Document;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.Resource;
-import org.apache.jena.rdf.model.Statement;
-import org.apache.jena.rdf.model.StmtIterator;
+import org.apache.jena.rdf.model.*;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 
@@ -36,11 +33,9 @@ public class BasicPreprocessor implements Preprocessor {
     @Override
     public Document preprocess(Document doc) {
         doc.setInputFile(preprocessInput(doc));
-
         if (doc.getInputFile() != null) {
             doc.setMappingFile(preprocessMapping(doc.getMappingFile(), doc.getInputFile()));
         }
-;
         return doc;
     }
 
@@ -52,7 +47,12 @@ public class BasicPreprocessor implements Preprocessor {
     private URL preprocessMapping(URL mapping, URL file) {
         Model partialModel = loadModel(mapping);
         Set<Resource> bnodes = getStartingNodes(partialModel);
-        partialModel.add(bnodes.iterator().next(), partialModel.createProperty(getProperty()), partialModel.createLiteral(file.getFile()));
+        Property sourceProp = partialModel.createProperty(getProperty());
+        Literal sourceLit = partialModel.createLiteral(file.getFile());
+
+        for (Resource bnode : bnodes) {
+            partialModel.add(bnode, sourceProp, sourceLit);
+        }
 
         try {
             Path tmpFile = Files.createTempFile("blah", ".ttl");
@@ -71,7 +71,6 @@ public class BasicPreprocessor implements Preprocessor {
 
         while (itr.hasNext()) {
             Statement stmt = itr.nextStatement();
-
             if (getParentNode().equals(stmt.getPredicate().getURI())) {
                 headResources.add(stmt.getObject().asResource());
             }
@@ -80,7 +79,7 @@ public class BasicPreprocessor implements Preprocessor {
         return headResources;
     }
 
-    private org.apache.jena.rdf.model.Model loadModel(URL mapping) {
+    private Model loadModel(URL mapping) {
         return RDFDataMgr.loadModel(mapping.toString());
     }
 }
