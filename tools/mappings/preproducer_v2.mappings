@@ -213,6 +213,7 @@ map23.targetOntologyClass=http://filmontology.org/ontology/2.0/Company
 map23.targetOntologyProperty=http://filmontology.org/ontology/2.0/countryName
 map23.targetPropertyType=DATATYPE_PROPERTY
 
+########################################################## state
 # script
 map24.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group
 map24.conditionalAttributeName=

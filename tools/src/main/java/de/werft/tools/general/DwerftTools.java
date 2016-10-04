@@ -9,7 +9,7 @@ import de.werft.tools.DwerftUtils;
 import de.werft.tools.general.commands.ConvertCommand;
 import de.werft.tools.general.commands.UploadCommand;
 import de.werft.tools.general.commands.VersioningCommand;
-import de.werft.tools.importer.general.Converter;
+import de.werft.tools.old.sources.general.Converter;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;

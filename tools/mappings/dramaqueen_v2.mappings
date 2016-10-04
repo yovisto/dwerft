@@ -142,8 +142,6 @@ map16.targetOntologyClass=http://filmontology.org/ontology/2.0/Script
 map16.targetOntologyProperty=http://filmontology.org/ontology/2.0/hasScene
 map16.targetPropertyType=OBJECT_PROPERTY
 
-
-
 map17.xmlNodePath=/ScriptDocument/sequences/Step/children/Scene/children/Frame/Property
 map17.conditionalAttributeName=id
 map17.conditionalAttributeValue=168
@@ -161,7 +159,6 @@ map18.contentElementName=value
 map18.targetOntologyClass=http://filmontology.org/ontology/2.0/Scene
 map18.targetOntologyProperty=http://filmontology.org/ontology/2.0/sceneSet
 map18.targetPropertyType=OBJECT_PROPERTY
-
 
 map19.xmlNodePath=/ScriptDocument/sequences/Step/children/Scene/children/Frame/Property
 map19.conditionalAttributeName=id
@@ -198,6 +195,8 @@ map22.contentElementName=
 map22.targetOntologyClass=http://filmontology.org/ontology/2.0/Scene
 map22.targetOntologyProperty=http://filmontology.org/ontology/2.0/sceneHeader
 map22.targetPropertyType=DATATYPE_PROPERTY
+
+
 
 
 

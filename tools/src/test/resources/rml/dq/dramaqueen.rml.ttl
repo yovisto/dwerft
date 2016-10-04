@@ -1,0 +1,166 @@
+@prefix rr:  <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql:  <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foo: <http://filmontology.org/ontology/2.0/> .
+
+<#script>
+    rml:logicalSource [
+        rml:iterator "/ScriptDocument";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Script/{@id}";
+        rr:class foo:Script;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:identifierDramaqueen;
+        rr:objectMap [ rml:reference "@id" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasScene;
+        rr:objectMap [ rr:parentTriplesMap <#scene>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasSet;
+        rr:objectMap [ rr:parentTriplesMap <#location>; ]
+    ].
+
+
+<#character>
+    rml:logicalSource [
+        rml:iterator "/ScriptDocument/characters/Character";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Character/{@id}";
+        rr:class foo:Character;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:identifierDramaqueen;
+        rr:objectMap [ rml:reference "@id" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "Property[@id='name']" ];
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate foo:fullName;
+        rr:objectMap [ rml:reference "Property[@id='character_full_name']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:aliasName;
+        rr:objectMap [ rml:reference "Property[@id='character_alias_name']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sex;
+        rr:objectMap [ rml:reference "Property[@id='character_gender']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:appearance;
+        rr:objectMap [ rml:reference "Property[@id='character_look']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:relationshipstatus;
+        rr:objectMap [ rml:reference "Property[@id='character_relationship_status']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:socialStatus;
+        rr:objectMap [ rml:reference "Property[@id='character_social_status']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:occupation;
+        rr:objectMap [ rml:reference "Property[@id='character_occupation']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:characterDescription;
+        rr:objectMap [ rml:reference "Property[@id='text']" ];
+    ].
+
+
+<#scene>
+    rml:logicalSource [
+        rml:iterator "/ScriptDocument/sequences/Step/children/Scene/children/Frame";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Scene/{@id}";
+        rr:class foo:Scene;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:identifierDramaqueen;
+        rr:objectMap [ rml:reference "@id" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:interiorExterior;
+        rr:objectMap [ rml:reference "Property[@id='inside_outside']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:dayTime;
+        rr:objectMap [ rml:reference "Property[@id='dynamic_time_of_day']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneDescription;
+        rr:objectMap [ rml:reference "Property[@id='outline']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneContent;
+        rr:objectMap [ rml:reference "Property[@id='text']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneHeader;
+        rr:objectMap [ rml:reference "Property[@id='scene_heading']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneSet;
+        rr:objectMap [ rr:template "http://filmontology.org/resource/Set/{Property[@id='location']}"; ]
+    ].
+
+<#location>
+    rml:logicalSource [
+        rml:iterator "/ScriptDocument/locations/Location";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Set/{@id}";
+        rr:class foo:Set;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:identifierDramaqueen;
+        rr:objectMap [ rml:reference "@id" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "Property[@id='name']" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:setDescription;
+        rr:objectMap [ rml:reference "Property[@id='text']" ];
+    ].

@@ -1,10 +1,10 @@
 package de.werft.tools.general;
 
-import de.werft.tools.importer.MapperTest;
-import de.werft.tools.importer.csv.CsvToXmlConverterTest;
-import de.werft.tools.importer.dramaqueen.DramaqueenToRdfTest;
-import de.werft.tools.importer.general.DefaultXMLtoRDFconverter;
-import de.werft.tools.importer.preproducer.PreProducerToRdfTest;
+import de.werft.tools.old.sources.MapperTest;
+import de.werft.tools.old.sources.csv.CsvToXmlConverterTest;
+import de.werft.tools.old.sources.dramaqueen.DramaqueenToRdfTest;
+import de.werft.tools.old.sources.general.DefaultXMLtoRDFconverter;
+import de.werft.tools.old.sources.preproducer.PreProducerToRdfTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
