@@ -6,6 +6,7 @@ import de.hpi.rdf.tailrapi.Memento;
 import de.hpi.rdf.tailrapi.Repository;
 import de.hpi.rdf.tailrapi.TailrClient;
 import de.werft.tools.DwerftUtils;
+import de.werft.tools.exporter.OntologyConstants;
 import de.werft.tools.general.commands.ConvertCommand;
 import de.werft.tools.general.commands.UploadCommand;
 import de.werft.tools.general.commands.VersioningCommand;

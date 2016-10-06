@@ -40,7 +40,7 @@ public class RmlMapper {
     /**
      * Instantiates a new Rml mapper.
      *
-     * @param config the {@link DwerftConfig}
+     * @param config the {@link DwerftConfig} for credentials
      */
     public RmlMapper(DwerftConfig config) {
         this.mappingFactory = new StdRMLMappingFactory();

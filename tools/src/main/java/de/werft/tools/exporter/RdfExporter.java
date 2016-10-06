@@ -1,6 +1,5 @@
 package de.werft.tools.exporter;
 
-import de.werft.tools.general.OntologyConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;

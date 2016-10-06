@@ -1,6 +1,5 @@
 package de.werft.tools.exporter;
 
-import de.werft.tools.general.OntologyConstants;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.rdf.model.Literal;

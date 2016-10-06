@@ -1,6 +1,5 @@
 package de.werft.tools.exporter;
 
-import de.werft.tools.general.OntologyConstants;
 import org.junit.Before;
 import org.junit.Test;
 

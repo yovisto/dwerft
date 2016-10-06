@@ -3,7 +3,7 @@ package de.werft.tools.general.commands;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
 import de.werft.tools.general.DwerftConfig;
-import de.werft.tools.general.OntologyConstants;
+import de.werft.tools.exporter.OntologyConstants;
 import de.werft.tools.old.sources.csv.AleToXmlConverter;
 import de.werft.tools.old.sources.csv.CsvToXmlConverter;
 import de.werft.tools.old.sources.dramaqueen.DramaqueenToRdf;

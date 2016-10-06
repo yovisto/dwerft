@@ -1,4 +1,4 @@
-package de.werft.tools.importer;
+package de.werft.tools.rmllib;
 
 import de.werft.tools.general.DwerftConfig;
 import de.werft.tools.rmllib.Document;
