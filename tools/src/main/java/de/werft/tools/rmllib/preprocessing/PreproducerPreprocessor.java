@@ -9,8 +9,10 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
-import java.io.*;
-import java.net.MalformedURLException;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
@@ -21,7 +23,11 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by ratzeputz on 14.09.16.
+ * This preprocessor fetches the xml files from the
+ * preproducer api and stores them as a combined xml file
+ * in the temp folder.
+ * <p>
+ * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 public class PreproducerPreprocessor extends BasicPreprocessor {
 
@@ -37,6 +43,13 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
 
     private String appSecret;
 
+    /**
+     * Instantiates a new Preproducer preprocessor.
+     *
+     * @param key       the key by preproducer
+     * @param secret    the secret provided by preproducer
+     * @param appSecret the app secret provided by preproducer
+     */
     public PreproducerPreprocessor(String key, String secret, String appSecret) {
         this.key = key;
         this.secret = secret;
@@ -45,47 +58,40 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
 
     @Override
     protected URL preprocessInput(Document doc) {
-        XmlCombiner combiner = null;
+        XmlCombiner combiner;
+        Path tmpFile;
+
         try {
             combiner = new XmlCombiner();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        }
-        String parameters;
-        Path tmpFile = null;
 
-        try {
-            tmpFile = Files.createTempFile("prepro", ".xml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        for (String method : methodOrder) {
-            parameters = getBasicParameters(method);
-            String signature = generateSignature(parameters);
-
-            // if we an build a valid signature then we construct an inputstream
-            if (signature != null) {
-                try {
-                    URL url = new URL(BASE_URL + "?" + parameters + "&signature=" + signature);
-                    String cleanedContent = removePrefixes(readContent(url));
-
-                    combiner.combine(new ByteArrayInputStream(cleanedContent.getBytes()));
-
-                } catch (IOException | SAXException e) {
-                    e.printStackTrace();
-                }
+            /* fetch all xml files and combine them */
+            for (String method : methodOrder) {
+                String parameters = getBasicParameters(method);
+                String signature = generateSignature(parameters);
+                fetchAndCombine(parameters, signature, combiner);
             }
-        }
-        try {
+
+            tmpFile = Files.createTempFile("prepro", ".xml");
             combiner.buildDocument(tmpFile);
             return tmpFile.toUri().toURL();
-        } catch (MalformedURLException | FileNotFoundException | TransformerException e) {
+        } catch (ParserConfigurationException | IOException | TransformerException | SAXException e) {
+            //TODO tinylogger
             e.printStackTrace();
         }
+
         return null;
     }
 
+    /* fetch and clean xml file then combine */
+    private void fetchAndCombine(String signature, String parameters, XmlCombiner combiner) throws IOException, SAXException {
+        if (signature != null) {
+            URL url = new URL(BASE_URL + "?" + parameters + "&signature=" + signature);
+            String cleanedContent = removePrefixes(readContent(url));
+            combiner.combine(new ByteArrayInputStream(cleanedContent.getBytes()));
+        }
+    }
+
+    /* read xml file from a url connection */
     private String readContent(URL url) {
         StringBuilder builder = new StringBuilder();
         try {
@@ -97,9 +103,9 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
                 builder.append(line);
             }
         } catch (IOException e) {
+            //TODO tinylogger
             e.printStackTrace();
         }
-
 
         return builder.toString();
     }
@@ -125,7 +131,6 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
 
         try {
             String hmacSecret = appSecret + secret;
-            //String restRequest = convertParametersToRequest(parameters);
 
             //HMAC generation
             Mac sha256_HMAC = Mac.getInstance("HmacSHA256");
@@ -137,12 +142,14 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             result = URLEncoder.encode(hash, "UTF-8");
 
         } catch (Exception e) {
-            //       L.error("Signature generation failed. " + e.getMessage());
+            //TODO tinylog
             e.printStackTrace();
         }
         return result;
     }
 
+    /* remove namespaces from an xml file, this is maybe unnecessary if rml fixed the utf8 problem,
+     * code taken from https://stackoverflow.com/a/15996472 */
     private static String removePrefixes(String input1) {
         String ret = null;
         int strStart = 0;

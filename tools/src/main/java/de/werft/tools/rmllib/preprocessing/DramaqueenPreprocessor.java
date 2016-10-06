@@ -25,57 +25,62 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 /**
- * Created by ratzeputz on 30.09.16.
+ * This preprocessor takes a dramaqueen file and unzips the xml
+ * file. In a second step the xml file is adjusted to match
+ * the capabilities of rml.
+ *
+ * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 public class DramaqueenPreprocessor extends BasicPreprocessor {
 
 
     @Override
     protected URL preprocessInput(Document doc) {
-        /* decompress dq files, which are just ordinary zip files */
         try {
+            /* decompress dq files, which are just ordinary zip files */
             ZipFile zip = new ZipFile(doc.getInputFile().getFile());
-
             Enumeration<? extends ZipEntry> entries = zip.entries();
 
             while (entries.hasMoreElements()) {
                 ZipEntry ze = entries.nextElement();
                 if ("document.xml".equals(ze.getName())) {
                     Path tmp = Files.createTempFile("dq", ".xml");
-                    replaceAttributes(zip.getInputStream(ze), tmp);
+                    replacePropertyAttributes(zip.getInputStream(ze), tmp);
                     return tmp.toUri().toURL();
                 }
             }
 
         } catch (IOException e) {
+            //TODO tinylogger
             e.printStackTrace();
         }
-
         return null;
     }
 
     /* replace property ids with real string values */
-    private void replaceAttributes(InputStream io, Path outputFile) {
+    private void replacePropertyAttributes(InputStream io, Path outputFile) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
+            /* get all property nodes */
             DocumentBuilder builder = factory.newDocumentBuilder();
             org.w3c.dom.Document doc = builder.parse(io);
             NodeList properties = doc.getElementsByTagName("Property");
 
             for (int i = 0; i < properties.getLength(); i++) {
-                NamedNodeMap prop = properties.item(i).getAttributes();
+                NamedNodeMap attributes = properties.item(i).getAttributes();
                 /* replace integer value with string representation */
-                Integer idValue = Integer.valueOf(prop.getNamedItem("id").getTextContent());
+                Integer idValue = Integer.valueOf(attributes.getNamedItem("id").getTextContent());
                 String replacement = idMappings.get(idValue);
-                prop.getNamedItem("id").setTextContent(replacement);
+                attributes.getNamedItem("id").setTextContent(replacement);
 
                 /* set the value attribute as node content */
-                if (prop.getNamedItem("value") != null) {
-                    String value = prop.getNamedItem("value").getTextContent();
+                if (attributes.getNamedItem("value") != null) {
+                    String value = attributes.getNamedItem("value").getTextContent();
                     properties.item(i).setTextContent(value);
                 }
             }
 
+            /* store the changed xml in a temporary file */
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
@@ -83,6 +88,7 @@ public class DramaqueenPreprocessor extends BasicPreprocessor {
             transformer.transform(source, result);
 
         } catch (ParserConfigurationException | SAXException | TransformerException | IOException e) {
+            //TODO tinylogger
             e.printStackTrace();
         }
 

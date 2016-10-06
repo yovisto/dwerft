@@ -9,11 +9,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by ratzeputz on 09.09.16.
+ * This class serves as a basic extension point for all preprocessor
+ * implementations. It provides some basic functionality like adding
+ * the RML source files to the mapping at runtime.
+ *
+ * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 public class BasicPreprocessor implements Preprocessor {
 
@@ -22,11 +25,21 @@ public class BasicPreprocessor implements Preprocessor {
 
     private static final String RML_SOURCE = "http://semweb.mmlab.be/ns/rml#source";
 
-    protected String getProperty() {
+    /**
+     * Gets the source property.
+     *
+     * @return the rml source property
+     */
+    protected String getSourceProperty() {
         return RML_SOURCE;
     }
 
-    protected String getParentNode() {
+    /**
+     * Gets parent node for the source property.
+     *
+     * @return the parent node
+     */
+    protected String getSourceParentNode() {
         return RML_RESOURCE;
     }
 
@@ -39,47 +52,55 @@ public class BasicPreprocessor implements Preprocessor {
         return doc;
     }
 
+    /**
+     * The basic preprocessor does not manipulate the input file.
+     * This is left to more specialized preprocessors.
+     *
+     * @param doc the {@link Document}
+     * @return the url of the new input file, which is assumed to be on the
+     *          systems hard drive or freely accessible in the web.
+     */
     protected URL preprocessInput(Document doc) {
         return doc.getInputFile();
     }
 
 
-    private URL preprocessMapping(URL mapping, URL file) {
+    /* load the template mapping and insert the input files to every triples map */
+    URL preprocessMapping(URL mapping, URL file) {
         Model partialModel = loadModel(mapping);
-        Set<Resource> bnodes = getStartingNodes(partialModel);
-        Property sourceProp = partialModel.createProperty(getProperty());
+        Set<Statement> logicalSources = getStartingNodes(partialModel);
+        Property sourceProp = partialModel.createProperty(getSourceProperty());
         Literal sourceLit = partialModel.createLiteral(file.getFile());
 
-        for (Resource bnode : bnodes) {
-            partialModel.add(bnode, sourceProp, sourceLit);
+        for (Statement logicalSource : logicalSources) {
+            partialModel.add(logicalSource.getObject().asResource(), sourceProp, sourceLit);
         }
 
+        /* store the new mapping in a temporary file for the real conversion process */
         try {
-            Path tmpFile = Files.createTempFile("blah", ".ttl");
+            Path tmpFile = Files.createTempFile("mapping", ".ttl");
             RDFDataMgr.write(Files.newOutputStream(tmpFile), partialModel, Lang.TURTLE);
             return tmpFile.toUri().toURL();
         } catch (IOException e) {
+            //TODO tinylogger
             e.printStackTrace();
         }
         return null;
     }
 
 
-    private Set<Resource> getStartingNodes(Model partialModel) {
-        Set<Resource> headResources = new HashSet<>();
-        StmtIterator itr = partialModel.listStatements();
-
-        while (itr.hasNext()) {
-            Statement stmt = itr.nextStatement();
-            if (getParentNode().equals(stmt.getPredicate().getURI())) {
-                headResources.add(stmt.getObject().asResource());
+    /* search for all rml parent resources in order to add the input source */
+    private Set<Statement> getStartingNodes(Model partialModel) {
+        return partialModel.listStatements(new SimpleSelector() {
+            @Override
+            public boolean test(Statement s) {
+                return getSourceParentNode().equals(s.getPredicate().getURI());
             }
-        }
-
-        return headResources;
+        }).toSet();
     }
 
-    private Model loadModel(URL mapping) {
-        return RDFDataMgr.loadModel(mapping.toString());
+    /* load rdf models from files on the system drive or the web */
+    private Model loadModel(URL model) {
+        return RDFDataMgr.loadModel(model.toString());
     }
 }
