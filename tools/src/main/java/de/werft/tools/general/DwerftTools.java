@@ -5,12 +5,10 @@ import com.beust.jcommander.Parameter;
 import de.hpi.rdf.tailrapi.Memento;
 import de.hpi.rdf.tailrapi.Repository;
 import de.hpi.rdf.tailrapi.TailrClient;
-import de.werft.tools.DwerftUtils;
 import de.werft.tools.exporter.OntologyConstants;
 import de.werft.tools.general.commands.ConvertCommand;
 import de.werft.tools.general.commands.UploadCommand;
 import de.werft.tools.general.commands.VersioningCommand;
-import de.werft.tools.old.sources.general.Converter;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -22,9 +20,9 @@ import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.FileEntity;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.jena.rdf.model.Model;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
+import org.apache.log4j.BasicConfigurator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.joda.time.DateTime;
@@ -61,7 +59,7 @@ public class DwerftTools {
      */
     public static void main(String[] args) {
         //Configure log4j2
-//        BasicConfigurator.configure();
+        BasicConfigurator.configure();
         DwerftTools tools = new DwerftTools();
         tools.run(args);
         System.exit(0);
@@ -72,11 +70,12 @@ public class DwerftTools {
      *
      * @param args the program arguments
      */
-    public void run(String[] args) {
+    private void run(String[] args) {
         //Parse cli arguments
         ConvertCommand convert = new ConvertCommand();
         UploadCommand upload = new UploadCommand();
         VersioningCommand version = new VersioningCommand();
+
         JCommander cmd = new JCommander(this);
         cmd.addCommand("convert", convert);
         cmd.addCommand("upload", upload);
@@ -101,7 +100,6 @@ public class DwerftTools {
         } catch (URISyntaxException | IOException e) {
             L.error("Failed to use the tailr versioning.", e);
         }
-        System.exit(0);
     }
 
     private void version(VersioningCommand version) throws URISyntaxException, IOException {
@@ -138,27 +136,16 @@ public class DwerftTools {
         if (cmd.hasIncorrectFilesCount() || !cmd.isCorrectFileOrder()) {
             beatUser("Invalid amount or order of files given.");
         }
-        Converter c;
 
         try {
-            c = cmd.getConverter(config);
-            c.convert(cmd.getInput());
-            Object result = c.getResult();
-
-            if (result instanceof Model && cmd.isPrintToCli()) {
-                DwerftUtils.writeRdfToConsole((Model) result, cmd.getFormat());
-            } else if (result instanceof Model) {
-                DwerftUtils.writeRdfToFile(cmd.getOutput(), (Model) result, cmd.getFormat());
-            }
-
+            cmd.convert(config);
         } catch (InstantiationException e) {
             L.error("Instantiation failed. " + e.getMessage());
         } catch (IOException e) {
-            L.error("Failed to convert " + cmd.getInput() + " . " +e.getMessage());
+            L.error("Failed to convert " + cmd.getInput() + " . " + e.getMessage());
         }
 
         L.info("File " + cmd.getInput() + " converted to " + cmd.getOutput() + " successfully.");
-
     }
 
     private void upload(UploadCommand upload) {
@@ -194,7 +181,7 @@ public class DwerftTools {
         System.exit(1);
     }
 
-    // again
+    // again but with individual message
     private void beatUser(String message) {
         L.error(message);
         System.exit(1);

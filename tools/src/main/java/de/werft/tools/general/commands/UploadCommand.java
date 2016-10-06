@@ -7,6 +7,7 @@ import de.werft.tools.general.DwerftConfig;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public class UploadCommand {
 
     @Parameter(arity = 1, required = true, description = "Uploads a file to a specified sparql endpoint. Valid formats are" +
             " *.(rdf|ttl|nt|jsonld)")
-    private List<String> uploadFile;
+    private List<String> uploadFile = Collections.emptyList();
 
     @Parameter(names = {"-g"}, /*converter = GranularityConverter.class,*/ arity = 1,
             description = "Give a granularity for the upload command. Possible options are 0, 1, 2 where" +

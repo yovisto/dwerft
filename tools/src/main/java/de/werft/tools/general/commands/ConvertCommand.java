@@ -1,25 +1,25 @@
 package de.werft.tools.general.commands;
 
+import be.ugent.mmlab.rml.model.dataset.RMLDataset;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
 import de.werft.tools.general.DwerftConfig;
-import de.werft.tools.exporter.OntologyConstants;
-import de.werft.tools.old.sources.csv.AleToXmlConverter;
-import de.werft.tools.old.sources.csv.CsvToXmlConverter;
-import de.werft.tools.old.sources.dramaqueen.DramaqueenToRdf;
-import de.werft.tools.old.sources.general.Converter;
-import de.werft.tools.old.sources.general.DefaultXMLtoRDFconverter;
-import de.werft.tools.old.sources.preproducer.PreProducerToRdf;
-import de.werft.tools.old.sources.PreproducerSource;
+import de.werft.tools.rmllib.Document;
+import de.werft.tools.rmllib.RmlMapper;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFLanguages;
+import org.openrdf.rio.RDFFormat;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerConfigurationException;
-import java.io.File;
+import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.apache.jena.vocabulary.LocationMappingVocab.mapping;
 
 /**
  * This class specifies the convert sub command used by the
@@ -134,75 +134,60 @@ public class ConvertCommand {
      * @return the array of converters, most of the times with only one element
      * @throws InstantiationException the instantiation exception
      */
-    public Converter getConverter(DwerftConfig conf) throws InstantiationException {
-        Converter c;
+    public void convert(DwerftConfig conf) throws InstantiationException, IOException {
+        RMLDataset dataset;
+        RmlMapper mapper = new RmlMapper(conf);
         File mappingFolder = conf.getMappingFolder();
+        Document doc = new Document(new File(getInput()).toURI().toURL(),
+                new File(getMapping()).toURI().toURL(),
+                new File (getOutput()).toURI().toURL());
 
-        if (isCsvToXml()) { // csv to xml
-            c = getCsvConverter(getInput());
 
-        } else if (isConvertPreproducer()) { // preproducer to rdf
+        if (isConvertPreproducer()) { // preproducer to rdf
             if (isEmptyKeys(conf)) {
                 throw new InstantiationException("No PreProducer credentials found.");
             }
-            String mappingFile = determineMappingFile(conf.getPreProducerMappingName(), mappingFolder);
-            PreproducerSource pps = new PreproducerSource(conf.getPreProducerKey(),
-                    conf.getPreProducerSecret(), conf.getPreProducerAppSecret());
 
-            c = new PreProducerToRdf(
-                    OntologyConstants.ONTOLOGY_FILE,
-                    OntologyConstants.ONTOLOGY_FORMAT,
-                    mappingFile, pps);
+            File mappingFile = determineMappingFile(conf.getPreProducerMappingName(), mappingFolder);
+            doc.setMappingFile(mappingFile.toURI().toURL());
+            dataset = mapper.convertPreproducer(doc);
 
         } else if (isConvertDramaqueen()) { // dramaqueen to rdf
-            String mappingFile = determineMappingFile(conf.getDramaQueenMappingName(), mappingFolder);
-            c = new DramaqueenToRdf(
-                    OntologyConstants.ONTOLOGY_FILE,
-                    OntologyConstants.ONTOLOGY_FORMAT,
-                    mappingFile);
+            File mappingFile = determineMappingFile(conf.getDramaQueenMappingName(), mappingFolder);
+            doc.setMappingFile(mappingFile.toURI().toURL());
+            dataset = mapper.convertDramaqueen(doc);
 
         } else if (isCsvToRdf()) { // csv to rdf
-            String mappingFile = determineMappingFile(getMapping(), mappingFolder);
-            c = new DefaultXMLtoRDFconverter(
-                    OntologyConstants.ONTOLOGY_FILE,
-                    OntologyConstants.ONTOLOGY_FORMAT,
-                    mappingFile);
-            c.setPreConverter(getCsvConverter(getInput()));
+            File mappingFile = determineMappingFile(getMapping(), mappingFolder);
+            doc.setMappingFile(mappingFile.toURI().toURL());
+            dataset = convertCsv(mapper, doc);
 
         } else if (isConvertGeneric()) { // generic conversion
-            String mappingFile = determineMappingFile(getMapping(), mappingFolder);
-            c = new DefaultXMLtoRDFconverter(
-                    OntologyConstants.ONTOLOGY_FILE,
-                    OntologyConstants.ONTOLOGY_FORMAT,
-                    mappingFile);
+            File mappingFile = determineMappingFile(getMapping(), mappingFolder);
+            doc.setMappingFile(mappingFile.toURI().toURL());
+            dataset = mapper.convertGeneric(doc);
         } else {
             throw new InstantiationException("Failed to choose the correct converter.");
         }
 
-        return c;
+        if (isPrintToCli()) {
+            showResult(dataset);
+        } else {
+            try {
+                writeResult(dataset, doc.getOutputFile());
+            } catch (FileNotFoundException e) {
+                throw new IOException("Result could not be written to output file.", e);
+            }
+        }
     }
 
-    private Converter<File> getCsvConverter(String input) throws InstantiationException {
-        Converter<File> c = null;
-        try {
-            if (hasExtension(input, "csv")) {
-                c = new CsvToXmlConverter(';');
-            } else {
-                c = new AleToXmlConverter('\t');
-            }
-        } catch (ParserConfigurationException | TransformerConfigurationException e) {
-            throw new InstantiationException("Failed to create CSV or ALE converter. " + e.getMessage());
-        }
-        return c;
+    private RMLDataset convertCsv(RmlMapper mapper, Document doc) throws InstantiationException {
+        return hasExtension(getInput(), "csv") ? mapper.convertCsv(doc) : mapper.convertAle(doc);
     }
 
     // here happens the guesssing magic based on file endings and the amount of provided files
     private boolean isConvertDramaqueen() {
         return files.size() == 2 && hasExtension(files.get(0), "dq");
-    }
-
-    private boolean isCsvToXml() {
-        return files.size() == 1 && hasExtension(files.get(0), "(ale|csv)");
     }
 
     private boolean isConvertPreproducer() {
@@ -225,26 +210,43 @@ public class ConvertCommand {
         }
     }
 
-    // Checks weather all credentials are set in the config file or not.
+    /* Checks weather all credentials are set in the config file or not. */
     private static boolean isEmptyKeys(DwerftConfig config) {
         return StringUtils.isEmpty(config.getPreProducerAppSecret()) || StringUtils.isEmpty(config.getPreProducerKey())
                 || StringUtils.isEmpty(config.getPreProducerSecret());
     }
 
-    // test if a file has a certain extension
+    /* test if a file has a certain extension */
     private boolean hasExtension(String file, String extensions) {
         return StringUtils.substringAfterLast(file, ".").toLowerCase().matches(extensions);
     }
 
-    // choose the mapping from classpath or external folder
-    private String determineMappingFile(String file, File internalFolder) {
+    /* choose the mapping from classpath or external folder */
+    private File determineMappingFile(String file, File internalFolder) {
         File[] mappings = internalFolder.listFiles();
 
-        for (int i = 0; i < mappings.length; i++) {
+        for (int i = 0; mapping == null || i < mappings.length; i++) {
             if (StringUtils.equalsIgnoreCase(file, mappings[i].getName())) {
-                return mappings[i].getAbsolutePath(); // inside classpath
+                return mappings[i]; // inside classpath
             }
         }
-        return file;
+        return new File(file);
+    }
+
+    /* dump the dataset to a file */
+    private void writeResult(RMLDataset dataset, URL out) throws FileNotFoundException {
+        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(out.getFile()));
+        dataset.dumpRDF(stream, RDFFormat.TURTLE);
+    }
+
+    /* helper which prints the dataset on screen with jena, because openrdf doesn't pretty print */
+    private void showResult(RMLDataset dataset) throws FileNotFoundException {
+        dataset.dumpRDF(new FileOutputStream("/tmp/file.ttl"), RDFFormat.TURTLE);
+
+        Model m = ModelFactory.createDefaultModel();
+        RDFDataMgr.read(m, "/tmp/file.ttl");
+        m.setNsPrefix("for", "http://filmontology.org/resource/");
+        m.setNsPrefix("foo", "http://filmontology.org/ontology/2.0/");
+        RDFDataMgr.write(System.out, m, Lang.TTL);
     }
 }

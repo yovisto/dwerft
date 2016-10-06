@@ -8,17 +8,9 @@ import be.ugent.mmlab.rml.model.RMLMapping;
 import be.ugent.mmlab.rml.model.dataset.RMLDataset;
 import de.werft.tools.general.DwerftConfig;
 import de.werft.tools.rmllib.preprocessing.*;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 import org.openrdf.repository.Repository;
-import org.openrdf.rio.RDFFormat;
-
-import java.io.BufferedOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.net.URL;
 
 /**
  * The RmlMapper takes care of the actual conversion process.
@@ -55,8 +47,8 @@ public class RmlMapper {
      *
      * @param doc the the {@link Document}
      */
-    public void convertGeneric(Document doc) {
-        convert(doc, new BasicPreprocessor());
+    public RMLDataset convertGeneric(Document doc) {
+        return convert(doc, new BasicPreprocessor());
     }
 
     /**
@@ -64,8 +56,8 @@ public class RmlMapper {
      *
      * @param doc the the {@link Document}
      */
-    public void convertCsv(Document doc) {
-        convert(doc, new CsvPreprocessor());
+    public RMLDataset convertCsv(Document doc) {
+        return convert(doc, new CsvPreprocessor());
     }
 
     /**
@@ -73,8 +65,8 @@ public class RmlMapper {
      *
      * @param doc the the {@link Document}
      */
-    public void convertAle(Document doc) {
-        convert(doc, new AlePreprocessor());
+    public RMLDataset convertAle(Document doc) {
+        return convert(doc, new AlePreprocessor());
     }
 
     /**
@@ -83,8 +75,8 @@ public class RmlMapper {
      *
      * @param doc the {@link Document} without an input file
      */
-    public void convertPreproducer(Document doc) {
-        convert(doc, new PreproducerPreprocessor(config.getPreProducerKey(),
+    public RMLDataset convertPreproducer(Document doc) {
+        return convert(doc, new PreproducerPreprocessor(config.getPreProducerKey(),
                 config.getPreProducerSecret(), config.getPreProducerAppSecret()));
     }
 
@@ -93,8 +85,8 @@ public class RmlMapper {
      *
      * @param doc the {@link Document}
      */
-    public void convertDramaqueen(Document doc) {
-        convert(doc, new DramaqueenPreprocessor());
+    public RMLDataset convertDramaqueen(Document doc) {
+        return convert(doc, new DramaqueenPreprocessor());
     }
 
     /**
@@ -104,8 +96,8 @@ public class RmlMapper {
      * @param doc          the {@link Document}
      * @param preprocessor a implementation of {@link Preprocessor}
      */
-    public void convert(Document doc, Preprocessor preprocessor) {
-        convert(preprocessor.preprocess(doc));
+    public RMLDataset convert(Document doc, Preprocessor preprocessor) {
+        return convert(preprocessor.preprocess(doc));
     }
 
     /**
@@ -115,45 +107,16 @@ public class RmlMapper {
      *
      * @param doc the {@link Document}
      */
-    public void convert(Document doc) {
+    public RMLDataset convert(Document doc) {
         Repository repo = docRetrieval.getMappingDoc(doc.getMappingFile().getFile(), org.openrdf.rio.RDFFormat.TURTLE);
         RMLMapping mapping = mappingFactory.extractRMLMapping(repo);
         RMLDataset dataset = engine.chooseSesameDataSet("dataset", null, null);
-        dataset = engine.runRMLMapping(dataset, mapping, "http://example.com", null, null);
-
-        try {
-            writeResult(dataset, doc.getOutputFile());
-        } catch (FileNotFoundException e) {
-            //TODO tinylogger
-            e.printStackTrace();
-        }
+        return engine.runRMLMapping(dataset, mapping, "http://example.com", null, null);
     }
 
-    /* dump the dataset to a file */
-    private void writeResult(RMLDataset dataset, URL out) throws FileNotFoundException {
-        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(out.getFile()));
-        dataset.dumpRDF(stream, RDFFormat.TURTLE);
-    }
 
     /* helper which shows the actual rml mapping on screen */
     private void showMapping(String location) {
         RDFDataMgr.write(System.out, RDFDataMgr.loadModel(location), Lang.TURTLE);
     }
-
-    /* helper which prints the dataset on screen with jena, because openrdf doesn't pretty print */
-    private void showResult(RMLDataset dataset) {
-        try {
-            dataset.dumpRDF(new FileOutputStream("/tmp/file.ttl"), RDFFormat.TURTLE);
-        } catch (FileNotFoundException e) {
-            //TODO tinylogger
-            e.printStackTrace();
-        }
-        Model m = ModelFactory.createDefaultModel();
-        RDFDataMgr.read(m, "/tmp/file.ttl");
-        m.setNsPrefix("for", "http://filmontology.org/resource/");
-        m.setNsPrefix("foo", "http://filmontology.org/ontology/2.0/");
-        RDFDataMgr.write(System.out, m, Lang.TTL);
-    }
-
-
 }

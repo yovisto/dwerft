@@ -7,10 +7,7 @@
         <version>0.6</version>
     </parent>
     <artifactId>upload-service</artifactId>
-
-    <properties>
-    </properties>
-
+    
     <dependencyManagement>
         <dependencies>
             <dependency>
