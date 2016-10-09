@@ -51,8 +51,7 @@ public class DramaqueenPreprocessor extends BasicPreprocessor {
             }
 
         } catch (IOException e) {
-            //TODO tinylogger
-            e.printStackTrace();
+            logger.error("Could not unzip dramaqueen file.");
         }
         return null;
     }
@@ -88,8 +87,7 @@ public class DramaqueenPreprocessor extends BasicPreprocessor {
             transformer.transform(source, result);
 
         } catch (ParserConfigurationException | SAXException | TransformerException | IOException e) {
-            //TODO tinylogger
-            e.printStackTrace();
+            logger.error("Could not preprocess dramaqueen xml.");
         }
 
     }

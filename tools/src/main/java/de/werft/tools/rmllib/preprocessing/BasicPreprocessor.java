@@ -4,6 +4,8 @@ import de.werft.tools.rmllib.Document;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,6 +22,7 @@ import java.util.Set;
  */
 public class BasicPreprocessor implements Preprocessor {
 
+    protected final Logger logger = LogManager.getLogger(this.getClass().getName());
 
     private static final String RML_RESOURCE = "http://semweb.mmlab.be/ns/rml#logicalSource";
 
@@ -82,8 +85,7 @@ public class BasicPreprocessor implements Preprocessor {
             RDFDataMgr.write(Files.newOutputStream(tmpFile), partialModel, Lang.TURTLE);
             return tmpFile.toUri().toURL();
         } catch (IOException e) {
-            //TODO tinylogger
-            e.printStackTrace();
+            logger.error("Could not rewrite mapping file.");
         }
         return null;
     }

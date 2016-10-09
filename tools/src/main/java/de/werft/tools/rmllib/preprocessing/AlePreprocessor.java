@@ -46,8 +46,7 @@ public class AlePreprocessor extends CsvPreprocessor {
             Files.write(newInput, content.getBytes());
             return newInput.toUri().toURL();
         } catch (IOException | URISyntaxException e) {
-            //TODO tinylogger
-            e.printStackTrace();
+            logger.error("Could not replace ale tabs with semicolons.");
         }
         return null;
     }

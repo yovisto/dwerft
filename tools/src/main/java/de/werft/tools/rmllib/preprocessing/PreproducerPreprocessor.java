@@ -79,8 +79,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             combiner.buildDocument(tmpFile);
             return tmpFile.toUri().toURL();
         } catch (ParserConfigurationException | IOException | TransformerException | SAXException e) {
-            //TODO tinylogger
-            e.printStackTrace();
+            logger.error("Could not fetch and preprocess Preproducer xml.");
         }
 
         return null;
@@ -98,8 +97,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
                 builder.append(line);
             }
         } catch (IOException e) {
-            //TODO tinylogger
-            e.printStackTrace();
+            logger.error("Could not fetch content from " + url + ".");
         }
 
         return builder.toString();
@@ -137,8 +135,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             result = URLEncoder.encode(hash, "UTF-8");
 
         } catch (Exception e) {
-            //TODO tinylog
-            e.printStackTrace();
+            logger.error("Could not generate Preproducer credentials.");
         }
         return result;
     }
