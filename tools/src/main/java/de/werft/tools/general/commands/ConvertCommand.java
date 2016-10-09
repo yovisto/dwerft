@@ -87,7 +87,7 @@ public class ConvertCommand {
      */
     public boolean isCorrectFileOrder() {
         if (files.size() == 1) {
-            return hasExtension(files.get(0), "(ale|csv|rdf|nt|ttl)");
+            return hasExtension(files.get(0), "(rdf|nt|ttl)");
         } else if (files.size() == 2 || files.size() == 3) {
             return hasExtension(files.get(0), "(dq|xml|ale|csv)") &&
                     hasExtension(files.get(1), "(rdf|nt|ttl)");
@@ -138,8 +138,8 @@ public class ConvertCommand {
         RMLDataset dataset;
         RmlMapper mapper = new RmlMapper(conf);
         File mappingFolder = conf.getMappingFolder();
-        Document doc = new Document(new File(getInput()).toURI().toURL(),
-                new File(getMapping()).toURI().toURL(),
+        Document doc = new Document(new File(getMapping()).toURI().toURL(),
+                new File(getInput()).toURI().toURL(),
                 new File (getOutput()).toURI().toURL());
 
 
@@ -223,14 +223,19 @@ public class ConvertCommand {
 
     /* choose the mapping from classpath or external folder */
     private File determineMappingFile(String file, File internalFolder) {
+        File searchFile = new File(file);
+
+        if (searchFile.isFile()) {
+            return searchFile;
+        }
         File[] mappings = internalFolder.listFiles();
 
         for (int i = 0; mapping == null || i < mappings.length; i++) {
             if (StringUtils.equalsIgnoreCase(file, mappings[i].getName())) {
-                return mappings[i]; // inside classpath
+                searchFile = mappings[i]; // inside classpath
             }
         }
-        return new File(file);
+        return searchFile;
     }
 
     /* dump the dataset to a file */

@@ -68,7 +68,11 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             for (String method : methodOrder) {
                 String parameters = getBasicParameters(method);
                 String signature = generateSignature(parameters);
-                fetchAndCombine(parameters, signature, combiner);
+                if (signature != null) {
+                    URL url = new URL(BASE_URL + "?" + parameters + "&signature=" + signature);
+                    String cleanedContent = removePrefixes(readContent(url));
+                    combiner.combine(new ByteArrayInputStream(cleanedContent.getBytes()));
+                }
             }
 
             tmpFile = Files.createTempFile("prepro", ".xml");
@@ -80,15 +84,6 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
         }
 
         return null;
-    }
-
-    /* fetch and clean xml file then combine */
-    private void fetchAndCombine(String signature, String parameters, XmlCombiner combiner) throws IOException, SAXException {
-        if (signature != null) {
-            URL url = new URL(BASE_URL + "?" + parameters + "&signature=" + signature);
-            String cleanedContent = removePrefixes(readContent(url));
-            combiner.combine(new ByteArrayInputStream(cleanedContent.getBytes()));
-        }
     }
 
     /* read xml file from a url connection */

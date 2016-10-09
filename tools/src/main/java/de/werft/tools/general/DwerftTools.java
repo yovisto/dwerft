@@ -5,7 +5,6 @@ import com.beust.jcommander.Parameter;
 import de.hpi.rdf.tailrapi.Memento;
 import de.hpi.rdf.tailrapi.Repository;
 import de.hpi.rdf.tailrapi.TailrClient;
-import de.werft.tools.exporter.OntologyConstants;
 import de.werft.tools.general.commands.ConvertCommand;
 import de.werft.tools.general.commands.UploadCommand;
 import de.werft.tools.general.commands.VersioningCommand;
@@ -49,7 +48,7 @@ public class DwerftTools {
 
     public DwerftTools() {
         this.config = ConfigFactory.create(DwerftConfig.class);
-        OntologyConstants.setOntologyFile(config.getOntologyFile());
+        //OntologyConstants.setOntologyFile(config.getOntologyFile());
     }
 
     /**

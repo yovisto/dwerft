@@ -1,8 +1,6 @@
 package de.werft.tools.rmllib;
 
 import de.werft.tools.general.DwerftConfig;
-import de.werft.tools.rmllib.Document;
-import de.werft.tools.rmllib.RmlMapper;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.Test;
 

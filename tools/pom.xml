@@ -32,12 +32,6 @@
       <!-- rml tools -->
       <dependency>
           <groupId>be.ugent.mmlab.rml</groupId>
-          <artifactId>RML-Mapper</artifactId>
-          <version>1.1</version>
-      </dependency>
-
-      <dependency>
-          <groupId>be.ugent.mmlab.rml</groupId>
           <artifactId>RML-Processor</artifactId>
           <version>0.3</version>
       </dependency>
@@ -47,26 +41,6 @@
           <artifactId>xml-combiner</artifactId>
           <version>2.2</version>
       </dependency>
-
-      <!-- tiny logger -->
-      <dependency>
-          <groupId>org.tinylog</groupId>
-          <artifactId>tinylog</artifactId>
-          <version>1.1</version>
-      </dependency>
-
-      <dependency>
-          <groupId>org.tinylog</groupId>
-          <artifactId>log4j-facade</artifactId>
-          <version>1.1</version>
-      </dependency>
-
-      <dependency>
-          <groupId>org.tinylog</groupId>
-          <artifactId>slf4j-binding</artifactId>
-          <version>1.1</version>
-      </dependency>
-
   </dependencies>
 
     <build>
