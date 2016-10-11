@@ -15,6 +15,12 @@
           <version>1.48</version>
       </dependency>
 
+      <dependency>
+          <groupId>io.airlift</groupId>
+          <artifactId>airline</artifactId>
+          <version>0.7</version>
+      </dependency>
+
       <!-- exporter xml generation -->
       <dependency>
         <groupId>org.jdom</groupId>
