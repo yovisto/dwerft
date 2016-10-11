@@ -1,6 +1,6 @@
 package de.werft.tools.rmllib.preprocessing;
 
-import de.werft.tools.rmllib.Document;
+import de.werft.tools.general.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;

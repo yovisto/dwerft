@@ -1,6 +1,6 @@
 package de.werft.tools.rmllib.preprocessing;
 
-import de.werft.tools.rmllib.Document;
+import de.werft.tools.general.Document;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.IOException;

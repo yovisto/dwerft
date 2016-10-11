@@ -1,9 +1,9 @@
 package de.werft.tools.general.commands;
 
 import be.ugent.mmlab.rml.model.dataset.RMLDataset;
+import de.werft.tools.general.Document;
 import de.werft.tools.general.DwerftConfig;
 import de.werft.tools.general.DwerftTools;
-import de.werft.tools.rmllib.Document;
 import de.werft.tools.rmllib.RmlMapper;
 import de.werft.tools.rmllib.preprocessing.*;
 import io.airlift.airline.Arguments;
@@ -65,8 +65,10 @@ public class Convert extends DwerftTools {
             RMLDataset dataset = mapper.convert(d, p);
             writeResult(dataset, d.getOutputFile(), format);
 
+            logger.info("Successfully converted " + d.getInputFile() + " to rdf " + d.getOutputFile());
         } catch (InstantiationException e) {
             logger.error("Instantiation failed. " + e.getMessage());
+            help.call();
         } catch (MalformedURLException e) {
             logger.error("Could not convert given files to urls. " + e.getMessage());
         } catch (FileNotFoundException e) {

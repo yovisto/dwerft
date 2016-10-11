@@ -1,5 +1,6 @@
 package de.werft.tools.general;
 
+import com.google.inject.Inject;
 import de.werft.tools.general.commands.Convert;
 import de.werft.tools.general.commands.Upload;
 import de.werft.tools.general.commands.Version;
@@ -23,9 +24,11 @@ public class DwerftTools implements Runnable {
 
     protected DwerftConfig config;
 
+    @Inject
+    protected Help help;
+
     @Option(type = OptionType.GLOBAL, name = "-v", description = "Enables more verbose output.")
     protected boolean verbose;
-
 
     public DwerftTools() {
         this.config = ConfigFactory.create(DwerftConfig.class);

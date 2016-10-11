@@ -1,6 +1,6 @@
 package de.werft.tools.rmllib.preprocessing;
 
-import de.werft.tools.rmllib.Document;
+import de.werft.tools.general.Document;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;

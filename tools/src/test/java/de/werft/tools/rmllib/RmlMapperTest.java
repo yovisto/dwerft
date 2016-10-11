@@ -1,6 +1,7 @@
 package de.werft.tools.rmllib;
 
 import de.werft.tools.general.DwerftConfig;
+import de.werft.tools.general.Document;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.Test;
 

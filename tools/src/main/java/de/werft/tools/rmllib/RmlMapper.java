@@ -7,6 +7,7 @@ import be.ugent.mmlab.rml.mapdochandler.retrieval.RMLDocRetrieval;
 import be.ugent.mmlab.rml.model.RMLMapping;
 import be.ugent.mmlab.rml.model.dataset.RMLDataset;
 import de.werft.tools.general.DwerftConfig;
+import de.werft.tools.general.Document;
 import de.werft.tools.rmllib.preprocessing.*;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;

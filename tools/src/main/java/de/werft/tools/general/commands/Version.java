@@ -109,5 +109,4 @@ public class Version extends DwerftTools {
     private boolean isLatest() {
         return "latest".equals(delta) || "latest".equals(revision);
     }
-
 }

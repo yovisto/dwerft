@@ -1,4 +1,4 @@
-package de.werft.tools.rmllib;
+package de.werft.tools.general;
 
 import java.net.URL;
 

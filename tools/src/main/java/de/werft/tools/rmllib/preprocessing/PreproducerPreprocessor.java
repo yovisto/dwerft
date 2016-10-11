@@ -1,6 +1,6 @@
 package de.werft.tools.rmllib.preprocessing;
 
-import de.werft.tools.rmllib.Document;
+import de.werft.tools.general.Document;
 import org.apache.commons.codec.binary.Base64;
 import org.atteo.xmlcombiner.XmlCombiner;
 import org.xml.sax.SAXException;

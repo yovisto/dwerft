@@ -69,6 +69,7 @@ public class Upload extends DwerftTools {
             }
         } catch (IOException e) {
             logger.error("Upload request failed.", e);
+            help.call();
         }
     }
 

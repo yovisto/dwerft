@@ -1,6 +1,6 @@
 package de.werft.tools.rmllib.preprocessing;
 
-import de.werft.tools.rmllib.Document;
+import de.werft.tools.general.Document;
 
 /**
  * Interface for apply a preprocess on a document.
