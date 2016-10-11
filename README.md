@@ -13,7 +13,7 @@
 - [Setting up the LPDC framework](#setting-up-the-lpdc-framework)
   - [Prepackaged version](#prepackaged-version)
   - [Manual setup](#manual-setup)
-  - [Valid arguments](#valid-arguments)
+  - [Command Line arguments](#command-line-arguments)
 - [Package structure](#package-structure)
   - [Mapping](#mapping)
 - [Sample workflow](#sample-workflow)
@@ -106,6 +106,20 @@ Manually setting up the framework requires Apache Maven. So start of by getting 
   mkdir ~/dwerft_lpdc
   git clone https://github.com/yovisto/dwerft.git ~/dwerft_lpdc
   ```
+  
+Since there is a bug within rml you have to checkout the rml repository and 
+fix one line.
+ 
+  ```
+  git clone --recursive https://github.com/RMLio/RML-Mapper.git
+  git submodule update --init --recursive 
+  nano  RML-LogicalSourceHandler/src/main/java/be/ugent/mmlab/rml/logicalsourcehandler/termmap/concrete/XPathTermMapProcessor.java
+  Change:
+  StringBufferInputStream input = new StringBufferInputStream(node.toXML().toString());
+  To:
+  ByteArrayInputStream input = new ByteArrayInputStream(node.toXML().getBytes());
+  ```
+Lastly provide rml with `mvn clean install`.
 
 If you plan on using an operation which utilizes the Preproducer API, make sure to provide valid credentials. Simply copy the template we provide to the `tools` directory, and with an editor of your choice add your credentials. Adjust other settings to your needs. 
   
@@ -120,71 +134,35 @@ Irrespective of whether you added credentials or not, you can now execute the lp
   ```
   ./run.sh <your arguments>
   ```
-  
-The framework comes with a selection of available operations available for instant usage via the `run.sh`, which are listed below. However, due to the nature of the dwerft tool package not all conversions are currently supported.
 
-  - DramaQueen XML to RDF
-  - PreProducer API to RDF
-  - Custom XML to RDF
-  - CSV/ALE to XML/RDF
+#### Command line arguments
 
-#### Valid arguments
+For all possible arguments see the [cli](https://github.com/yovisto/dwerft/wiki/Command-Line-Arguments)
+wiki page.
 
-All available options are listed below and can also be viewed by using the `-help` option. Please note that querying the Preproducer API requires valid credentials.
-
- - `convert` : Converts from one format to another. We determine the right conversion from the file extensions.
-    + Usage: `<input> <output> <mapping>`
-    +  valid input files are 
-      * `*.dq` for dramaqueen (needs a rdf output file); 
-      * `*.(csv|ale)` for csv (converts without output file to xml, otherwise to rdf with a mapping file)
-      * `*.xml` for generic conversion (needs rdf output file and a mapping)
-      *  no input file for preproducer (needs a rdf output file)
-    + valid output files are `*.(rdf|ttl|nt)`
-    + `-print`: Prints the RDF output to console. Does not replace writing RDF to file.
-    + `-format`: Specify an RDF output format. Available options are Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig').            Default is Turtle.
-
-- `version` : Inspect the tailr versioning system
-  + Usage : `-(list|show|show-delta) <key>`
-  + `-list` : List revisions in tailr
-  + `-show` : Show a specific revisions
-  + `-show-delta` : Shows the diff between the given and previous revision
-
-- `upload` : Uploads a rdf file to SPARQL endpoint.
-  + Usage: `-key <tailr-key> -tool <source-tool> -g <granularity> -graph <graphname> <file>`
-  + `-g`: Provide a granularity. Possible options are LEVEL_0, LEVEL_1, LEVEL_2,
-         where LEVEL_0 deletes from remote graph; LEVEL_1 inserts into remote graph and LEVEL_2 inserts a diff
-  + `-graph`: Provide a graph name (uri) where to store the uploaded data.
-  + `-key`: Provide a key for tailr. In most cases this might be the project base URI.
-  + `-tool`: Provide the name of the tool the uploaded rdf data comes from.
-  
 ## Package structure
 
 If you have never worked with Apache Jena before, a good start would be to take a look at the `SparqlExample` found in the package `examples`. It is a demonstration of how to issue requests to a known end point.
 
 The package `tools` contains sample code showing ways of how to transform various data formats like XML into valid RDF and vice versa. As this involves a few steps, each package is dedicated to one task. As with all conversions, one of the main problems is creating an exhaustive mapping. Conveniently, this has already been done for you. For now, mappings exist for Dramaqueen and PreProducer. 
 
-`tools.exporter`: This package contains the abstract class 'RdfExporter', which provides helper methods useful when querying the triple store. As of now, two implementations of said class exist. `PreproducerExporter` generates an XML file and `LockitExporter` a CSV file.
+`tools.general`: The file `DwerftTools` contains a main method, required for running the DWerft Suite with arguments. 
+The sub commands can be found within `tools.general.commands`. Every sub command implements a runnable and is called
+directly from the airlift cli processor.
 
-`tools.general`: The file `DwerftTools` contains a main method, required for running the DWerft Suite with arguments. `OntologyConstants` is simply a collection of immutable values, like the triple store URL.
-
-`tools.importer.general`: All classes responsible for mapping operations and parsing of XML files can be found in here. Import in this context means converting XML to valid RDF. It is planned to expand the import to upload the generated RDF directly into the triple store.
-
-`tools.sources`:Finally, the sources package contains an interface used for communicating with the APIs of the tools and implementations for Dramaqueen, PreProducer and the triple store. 
+`tools.rmllib`: This package provides access to the rml processor. Although there is a bunch of preprocessors
+for the various input tools, see `tools.rmllib.preprocessor`.
 
 #### Mapping
 
-The DWERFT tools utilize a sophisticated mapping structure to ensure that as much XML can be converted to the LPDC and vice versa. New mappings can easily be written using the template in the `resource` folder of the project. Let's take a look at the sample mapping for preproducer XML below:
+The DWERFT tools utilize the rml processor which takes care of converting numerous structured formats into
+rdf. Some examples can be found in the `resource/rml` folder and in the `mappings` folder. All rml mappings
+ends with `.rml.ttl`. For more detailed information see [RML examples](http://rml.io/RML_examples.html).
+At the state of writing we support Preproducer and Dramaqueen to rdf as well as CSV, ALE, XML, JSON to RDF.
 
-```
-map77.xmlNodePath=/root/return/prp:project/prp:episode/prp:scene-group/prp:scene/prp:daynight
-map77.conditionalAttributeName=
-map77.conditionalAttributeValue=
-map77.contentSource=TEXT_CONTENT
-map77.contentElementName=
-map77.targetOntologyClass=http://filmontology.org/ontology/1.0/Scene
-map77.targetOntologyProperty=http://filmontology.org/ontology/1.0/dayTime
-map77.targetPropertyType=DATATYPE_PROPERTY
-```
+Some current limitations are:
+* we set the input files in the mapping -> no intermixing of different file formats
+* no axis within XPath and the mappings are always relativ to the iterator path
 
 ## Sample workflow
 
