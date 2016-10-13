@@ -17,7 +17,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:identifierDramaqueen;
-        rr:objectMap [ rml:reference "@id" ];
+        rr:objectMap [ rml:reference "lower-case(@id)" ];
     ];
 
     rr:predicateObjectMap [
@@ -28,6 +28,16 @@
     rr:predicateObjectMap [
         rr:predicate foo:hasSet;
         rr:objectMap [ rr:parentTriplesMap <#location>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasCharacter;
+        rr:objectMap [ rr:parentTriplesMap <#character>; ]
+    ];
+    
+	rr:predicateObjectMap [
+        rr:predicate foo:workingTitle;
+        rr:objectMap [ rml:reference "Property[@id='name']" ];
     ].
 
 
