@@ -1,14 +1,20 @@
 package de.werft.tools.general.commands;
 
-import be.ugent.mmlab.rml.model.dataset.RMLDataset;
-import de.werft.tools.general.Document;
-import de.werft.tools.general.DwerftConfig;
-import de.werft.tools.general.DwerftTools;
-import de.werft.tools.rmllib.RmlMapper;
-import de.werft.tools.rmllib.preprocessing.*;
 import io.airlift.airline.Arguments;
 import io.airlift.airline.Command;
 import io.airlift.airline.Option;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -16,13 +22,17 @@ import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFLanguages;
 import org.openrdf.rio.RDFFormat;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+import be.ugent.mmlab.rml.model.dataset.RMLDataset;
+import de.werft.tools.general.Document;
+import de.werft.tools.general.DwerftConfig;
+import de.werft.tools.general.DwerftTools;
+import de.werft.tools.rmllib.RmlMapper;
+import de.werft.tools.rmllib.preprocessing.AlePreprocessor;
+import de.werft.tools.rmllib.preprocessing.BasicPreprocessor;
+import de.werft.tools.rmllib.preprocessing.CsvPreprocessor;
+import de.werft.tools.rmllib.preprocessing.DramaqueenPreprocessor;
+import de.werft.tools.rmllib.preprocessing.Preprocessor;
+import de.werft.tools.rmllib.preprocessing.PreproducerPreprocessor;
 
 /**
  * The convert command provides access to the rml library responsible for
@@ -71,7 +81,7 @@ public class Convert extends DwerftTools {
             help.call();
         } catch (MalformedURLException e) {
             logger.error("Could not convert given files to urls. " + e.getMessage());
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             logger.error("Could present results: " + e.getMessage());
         }
     }
@@ -127,7 +137,7 @@ public class Convert extends DwerftTools {
     private URL getOutputFile() throws MalformedURLException {
         if (!print && files.size() > 1) {
             return new File(files.get(1)).toURI().toURL();
-        } else if (files.size() == 1 && !print) {
+        } else if (files.size() == 1 && !print && !hasExtension(files.get(0), "dq") ) {
             /* we have preproducer with normal output */
             return new File(files.get(0)).toURI().toURL();
         }
@@ -178,11 +188,12 @@ public class Convert extends DwerftTools {
     }
 
     /* dump the dataset to a file or on screen */
-    private void writeResult(RMLDataset dataset, URL out, String format) throws FileNotFoundException {
-        dataset.dumpRDF(new FileOutputStream("/tmp/file.ttl"), RDFFormat.TURTLE);
+    private void writeResult(RMLDataset dataset, URL out, String format) throws IOException {
+    	Path tmp = Files.createTempFile("tmp", ".ttl");
+    	dataset.dumpRDF(new FileOutputStream(tmp.toFile()), RDFFormat.TURTLE);
 
         Model m = ModelFactory.createDefaultModel();
-        RDFDataMgr.read(m, "/tmp/file.ttl");
+        RDFDataMgr.read(m, tmp.toUri().toString());
         m.setNsPrefix("for", "http://filmontology.org/resource/");
         m.setNsPrefix("foo", "http://filmontology.org/ontology/2.0/");
 
