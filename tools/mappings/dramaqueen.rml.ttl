@@ -17,7 +17,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:identifierDramaqueen;
-        rr:objectMap [ rml:reference "lower-case(@id)" ];
+        rr:objectMap [ rml:reference "@id" ];
     ];
 
     rr:predicateObjectMap [
