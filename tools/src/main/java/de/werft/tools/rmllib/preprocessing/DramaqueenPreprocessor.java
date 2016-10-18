@@ -74,17 +74,7 @@ public class DramaqueenPreprocessor extends BasicPreprocessor {
                 String replacement = idMappings.get(idValue);
                 attributes.getNamedItem("id").setTextContent(replacement);
 
-                /* handle gender attribute */
-                if (attributes.getNamedItem("id").getTextContent().equals("character_gender")
-                        && attributes.getNamedItem("value") != null) {
-                    Node value = attributes.getNamedItem("value");
-                    value.setTextContent(genderMapping.get(Integer.valueOf(value.getTextContent())));
-
-                } else if (attributes.getNamedItem("value") != null) {
-                    /* set the value attribute as node content */
-                    String value = attributes.getNamedItem("value").getTextContent();
-                    properties.item(i).setTextContent(value);
-                }
+                handleAttriubteValues(attributes, properties.item(i));
             }
 
             /* store the changed xml in a temporary file */
@@ -99,10 +89,43 @@ public class DramaqueenPreprocessor extends BasicPreprocessor {
         }
     }
 
+    /* replace or move the property attributes */
+    private void handleAttriubteValues(NamedNodeMap attributes, Node property) {
+        if (attributes.getNamedItem("id").getTextContent().equals("character_gender")
+                && attributes.getNamedItem("value") != null) {
+            /* handle gender attribute */
+            Node value = attributes.getNamedItem("value");
+            Integer idValue = Integer.valueOf(value.getTextContent());
+            value.setTextContent(genderMapping.get(idValue));
+            property.setTextContent(genderMapping.get(idValue));
+
+        } else if (attributes.getNamedItem("id").getTextContent().equals("inside_outside")
+                && attributes.getNamedItem("value") != null) {
+            /* handle interior and exterior */
+            Node value = attributes.getNamedItem("value");
+            Integer idValue = Integer.valueOf(value.getTextContent());
+            value.setTextContent(intextMapping.get(idValue));
+            property.setTextContent(intextMapping.get(idValue));
+
+        } else if (attributes.getNamedItem("value") != null) {
+            /* set the value attribute as node content */
+            String value = attributes.getNamedItem("value").getTextContent();
+            property.setTextContent(value);
+        }
+    }
+
     /* mappings for gender informations */
     private final static HashMap<Integer, String> genderMapping = new HashMap<Integer, String>() {{
         put(0, "male");
         put(1, "female");
+    }};
+
+    /* mappings for gender informations */
+    private final static HashMap<Integer, String> intextMapping = new HashMap<Integer, String>() {{
+        put(0, "inside");
+        put(1, "outside");
+        put(2, "inside-outside");
+        put(3, "outside-inside");
     }};
 
     /* too many mappings for dramaqueen properties */
