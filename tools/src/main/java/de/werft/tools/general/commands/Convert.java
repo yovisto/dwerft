@@ -1,11 +1,25 @@
 package de.werft.tools.general.commands;
 
+import be.ugent.mmlab.rml.model.dataset.RMLDataset;
+import de.werft.tools.general.Document;
+import de.werft.tools.general.DwerftConfig;
+import de.werft.tools.general.DwerftTools;
+import de.werft.tools.rmllib.RmlMapper;
+import de.werft.tools.rmllib.postprocessing.BasicPostprocessor;
+import de.werft.tools.rmllib.postprocessing.DramaqueenPostprocessor;
+import de.werft.tools.rmllib.postprocessing.Postprocessor;
+import de.werft.tools.rmllib.preprocessing.*;
 import io.airlift.airline.Arguments;
 import io.airlift.airline.Command;
 import io.airlift.airline.Option;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.RDFLanguages;
+import org.openrdf.rio.RDFFormat;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -14,25 +28,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.commons.lang3.StringUtils;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.riot.RDFDataMgr;
-import org.apache.jena.riot.RDFLanguages;
-import org.openrdf.rio.RDFFormat;
-
-import be.ugent.mmlab.rml.model.dataset.RMLDataset;
-import de.werft.tools.general.Document;
-import de.werft.tools.general.DwerftConfig;
-import de.werft.tools.general.DwerftTools;
-import de.werft.tools.rmllib.RmlMapper;
-import de.werft.tools.rmllib.preprocessing.AlePreprocessor;
-import de.werft.tools.rmllib.preprocessing.BasicPreprocessor;
-import de.werft.tools.rmllib.preprocessing.CsvPreprocessor;
-import de.werft.tools.rmllib.preprocessing.DramaqueenPreprocessor;
-import de.werft.tools.rmllib.preprocessing.Preprocessor;
-import de.werft.tools.rmllib.preprocessing.PreproducerPreprocessor;
 
 /**
  * The convert command provides access to the rml library responsible for
@@ -52,7 +47,7 @@ public class Convert extends DwerftTools {
     private List<String> files = new ArrayList<>(10);
 
     @Option(name = {"-f", "--format"}, description = "Specifies rdf output format. Available options are " +
-            "Turtle ('ttl'), N-Triples ('nt'), and TriG ('trig'). Default is Turtle.")
+            "all provided by Jena. Default is Turtle.")
     private String format = "ttl";
 
     @Option(name = {"-p", "--print"}, description = "Print conversion output to console instead of file.")
@@ -65,14 +60,16 @@ public class Convert extends DwerftTools {
         logger.debug("Convert files " + files);
 
         try {
-            Preprocessor p = choosePreprocessor();
-            logger.debug("Choosen preprocessor: " + p);
+            Preprocessor pre = choosePreprocessor();
+            Postprocessor post = choosePostprocessor();
+            logger.debug("Choosen preprocessor: " + pre);
+            logger.debug("Choosen postprocessor: " + post);
             Document d = new Document(getMappingFile(), getInputFile(), getOutputFile());
             logger.debug("Build document: " + d);
-            verifyChoosing(d, p);
+            verifyChoosing(d, pre);
 
             RmlMapper mapper = new RmlMapper(config);
-            RMLDataset dataset = mapper.convert(d, p);
+            RMLDataset dataset = mapper.convert(d, pre, post);
             writeResult(dataset, d.getOutputFile(), format);
 
             logger.info("Successfully converted " + d.getInputFile() + " to rdf " + d.getOutputFile());
@@ -121,6 +118,15 @@ public class Convert extends DwerftTools {
             return new BasicPreprocessor();
         } else {
             throw new InstantiationException("Failed to choose the correct preprocessor. Check the file order.");
+        }
+    }
+
+    private Postprocessor choosePostprocessor() throws InstantiationException {
+        /* at the moment there is only dq which needs post processing */
+        if (files.size() > 0 && hasExtension(files.get(0), "dq")) {
+            return new DramaqueenPostprocessor();
+        } else {
+            return new BasicPostprocessor();
         }
     }
 

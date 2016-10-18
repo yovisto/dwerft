@@ -30,13 +30,13 @@ public class Version extends DwerftTools {
     @Arguments(description = "Provide a key name from tailr.")
     private String key = "";
 
-    @Option(name = "-l", description = "Shows the time map for a key.")
+    @Option(name = {"-l", "--list" }, description = "Shows the time map for a key.")
     private boolean isList = false;
 
-    @Option(name = "-s", description = "Shows a specific revision or the latest when latest keyword provided.")
+    @Option(name = {"-s", "--show"}, description = "Shows a specific revision or the latest when latest keyword provided.")
     private String revision = "";
 
-    @Option(name = "-d", description = "Shows the delta for a specific revision or the latest when latest keyword provided.")
+    @Option(name = {"-d", "--delta"}, description = "Shows the delta for a specific revision or the latest when latest keyword provided.")
     private String delta = "";
 
     @Override

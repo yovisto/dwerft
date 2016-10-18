@@ -6,8 +6,9 @@ import be.ugent.mmlab.rml.mapdochandler.extraction.std.StdRMLMappingFactory;
 import be.ugent.mmlab.rml.mapdochandler.retrieval.RMLDocRetrieval;
 import be.ugent.mmlab.rml.model.RMLMapping;
 import be.ugent.mmlab.rml.model.dataset.RMLDataset;
-import de.werft.tools.general.DwerftConfig;
 import de.werft.tools.general.Document;
+import de.werft.tools.general.DwerftConfig;
+import de.werft.tools.rmllib.postprocessing.Postprocessor;
 import de.werft.tools.rmllib.preprocessing.*;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
@@ -102,6 +103,20 @@ public class RmlMapper {
     }
 
     /**
+     * Manipulate the conversion before and after the process to add additional
+     * information the the model.
+     *
+     * @param doc - the {@link Document}
+     * @param preprocessor - a implementation of {@link Preprocessor}
+     * @param postprocessor - a implementation of {@link Postprocessor}
+     * @return a changed {@link RMLDataset}
+     */
+    public RMLDataset convert(Document doc, Preprocessor preprocessor, Postprocessor postprocessor) {
+        RMLDataset dataset = convert(doc, preprocessor);
+        return postprocessor.postprocess(dataset, doc);
+    }
+
+    /**
      * This convert method is called by all other similar methods.
      * It takes a {@link Document} with a non null output and mapping file.
      * Due to rml specifications the mapping file needs to contain the input files as source triple.
@@ -114,7 +129,6 @@ public class RmlMapper {
         RMLDataset dataset = engine.chooseSesameDataSet("dataset", null, null);
         return engine.runRMLMapping(dataset, mapping, "http://example.com", null, null);
     }
-
 
     /* helper which shows the actual rml mapping on screen */
     private void showMapping(String location) {

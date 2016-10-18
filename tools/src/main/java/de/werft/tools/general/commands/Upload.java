@@ -33,14 +33,14 @@ public class Upload extends DwerftTools {
     @Arguments(description = "Uploads a file to a specified sparql endpoint. Valid formats are *.(rdf|ttl|nt|jsonld)")
     private String file = "";
 
-    @Option(name = "-g", description = "Give a granularity for the upload command. Possible options are 0, 1, 2 where" +
+    @Option(name = {"-g", "--granularity"}, description = "Give a granularity for the upload command. Possible options are 0, 1, 2 where" +
             "0 deletes the given model; 1 inserts a given model; 2 creates a diff with the remote endpoint. Default is 1.")
     private String granularity = "1";
 
-    @Option(name = "-graph", description = "Provide a graph name to store the rdf. Otherwise the default graph is used.")
+    @Option(name = {"-n", "--name"}, description = "Provide a graph name to store the rdf. Otherwise the default graph is used.")
     private String graph = "";
 
-    @Option(name = "-k", description = "Provide the key name for versioning which should include the original tool name.")
+    @Option(name = {"-k", "--key"}, description = "Provide the key name for versioning which should include the original tool name.")
     private String key = "";
 
     @Override

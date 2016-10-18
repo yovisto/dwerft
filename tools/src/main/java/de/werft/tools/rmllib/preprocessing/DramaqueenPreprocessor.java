@@ -51,7 +51,8 @@ public class DramaqueenPreprocessor extends BasicPreprocessor {
             }
 
         } catch (IOException e) {
-            logger.error("Could not unzip dramaqueen file.");
+            logger.error("Could not unzip dramaqueen file. " + e.getMessage());
+            e.printStackTrace();
         }
         return null;
     }
