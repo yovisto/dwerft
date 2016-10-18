@@ -2,6 +2,7 @@ package de.werft.tools.rmllib.preprocessing;
 
 import de.werft.tools.general.Document;
 import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -73,8 +74,14 @@ public class DramaqueenPreprocessor extends BasicPreprocessor {
                 String replacement = idMappings.get(idValue);
                 attributes.getNamedItem("id").setTextContent(replacement);
 
-                /* set the value attribute as node content */
-                if (attributes.getNamedItem("value") != null) {
+                /* handle gender attribute */
+                if (attributes.getNamedItem("id").getTextContent().equals("character_gender")
+                        && attributes.getNamedItem("value") != null) {
+                    Node value = attributes.getNamedItem("value");
+                    value.setTextContent(genderMapping.get(Integer.valueOf(value.getTextContent())));
+
+                } else if (attributes.getNamedItem("value") != null) {
+                    /* set the value attribute as node content */
                     String value = attributes.getNamedItem("value").getTextContent();
                     properties.item(i).setTextContent(value);
                 }
@@ -90,8 +97,13 @@ public class DramaqueenPreprocessor extends BasicPreprocessor {
         } catch (ParserConfigurationException | SAXException | TransformerException | IOException e) {
             logger.error("Could not preprocess dramaqueen xml.");
         }
-
     }
+
+    /* mappings for gender informations */
+    private final static HashMap<Integer, String> genderMapping = new HashMap<Integer, String>() {{
+        put(0, "male");
+        put(1, "female");
+    }};
 
     /* too many mappings for dramaqueen properties */
     private final static HashMap<Integer, String> idMappings = new HashMap<Integer, String>() {{
