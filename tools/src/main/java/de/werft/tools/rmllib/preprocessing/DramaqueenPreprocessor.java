@@ -34,7 +34,6 @@ import java.util.zip.ZipFile;
  */
 public class DramaqueenPreprocessor extends BasicPreprocessor {
 
-
     @Override
     protected URL preprocessInput(Document doc) {
         try {
@@ -65,6 +64,9 @@ public class DramaqueenPreprocessor extends BasicPreprocessor {
             /* get all property nodes */
             DocumentBuilder builder = factory.newDocumentBuilder();
             org.w3c.dom.Document doc = builder.parse(io);
+            HashMap<String, String> timesOfDays = getTimeOfDay(doc);
+
+
             NodeList properties = doc.getElementsByTagName("Property");
 
             for (int i = 0; i < properties.getLength(); i++) {
@@ -74,8 +76,9 @@ public class DramaqueenPreprocessor extends BasicPreprocessor {
                 String replacement = idMappings.get(idValue);
                 attributes.getNamedItem("id").setTextContent(replacement);
 
-                handleAttriubteValues(attributes, properties.item(i));
+                handleAttributeValues(attributes, properties.item(i), timesOfDays);
             }
+
 
             /* store the changed xml in a temporary file */
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -89,9 +92,39 @@ public class DramaqueenPreprocessor extends BasicPreprocessor {
         }
     }
 
+
+    /* store the time of day with id for later replacement within dynamic time of day */
+    private HashMap<String, String> getTimeOfDay(org.w3c.dom.Document doc) {
+        HashMap<String, String> timesOfDays = new HashMap<>();
+        NodeList nodes = doc.getElementsByTagName("TimeOfDay");
+
+        for (int i = 0; i < nodes.getLength(); i++) {
+            Node node = nodes.item(i);
+            String id = node.getAttributes().getNamedItem("id").getTextContent();
+
+            /* search for a child node which contains the name of the time of day*/
+            for (int j = 0; j < node.getChildNodes().getLength(); j++) {
+                NamedNodeMap child = node.getChildNodes().item(j).getAttributes();
+
+                if (child != null && child.getNamedItem("id").getTextContent().equals("0")) {
+                    timesOfDays.put(id, child.getNamedItem("value").getTextContent());
+                }
+            }
+        }
+
+        return timesOfDays;
+    }
+
     /* replace or move the property attributes */
-    private void handleAttriubteValues(NamedNodeMap attributes, Node property) {
-        if (attributes.getNamedItem("id").getTextContent().equals("character_gender")
+    private void handleAttributeValues(NamedNodeMap attributes, Node property, HashMap<String, String> timesOfDays) {
+        if (attributes.getNamedItem("id").getTextContent().equals("dynamic_time_of_day")
+                && attributes.getNamedItem("value") != null) {
+            /* set the time of day */
+            Node value = attributes.getNamedItem("value");
+            value.setTextContent(timesOfDays.get(value.getTextContent()));
+            property.setTextContent(timesOfDays.get(value.getTextContent()));
+
+        } else if (attributes.getNamedItem("id").getTextContent().equals("character_gender")
                 && attributes.getNamedItem("value") != null) {
             /* handle gender attribute */
             Node value = attributes.getNamedItem("value");
