@@ -135,9 +135,13 @@ public class Convert extends DwerftTools {
     }
 
     /* choose the first input file if we have one */
-    private URL getInputFile() throws MalformedURLException {
+    private URL getInputFile() throws MalformedURLException, InstantiationException {
         if (files.size() != 0 && !hasExtension(files.get(0), RDF_SUFFIX)) {
-            /* check that we have no preproducer input */
+            /* check that we have no preproducer input and the input file exists */
+            if (!new File(files.get(0)).exists()) {
+                throw new InstantiationException("The input file is not found on disk");
+            }
+
             return new File(files.get(0)).toURI().toURL();
         }
         return null;

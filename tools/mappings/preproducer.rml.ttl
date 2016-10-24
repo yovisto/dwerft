@@ -11,7 +11,7 @@
     ];
 
     rr:subjectMap [
-        rr:template "http://filmontology.org/resource/SeriesProduction/{@projectid}";
+        rr:template "http://filmontology.org/resource/SeriesProduction/{@id}";
         rr:class foo:SeriesProduction;
     ];
 
@@ -68,12 +68,12 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:titleType;
-        rr:objectMap [ rml:reference "@temptitle" ];
+        rr:objectMap [ rml:reference "@temptitle"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:titleText;
-        rr:objectMap [ rml:reference "." ];
+        rr:objectMap [ rml:reference "."; rr:datatype xsd:string ];
     ].
 
 
@@ -90,47 +90,47 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id" ];
+        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
      ];
 
     rr:predicateObjectMap [
         rr:predicate foo:dramaqueenIdentifier;
-        rr:objectMap [ rml:reference "@dramaqueenid"; ]
+        rr:objectMap [ rml:reference "@dramaqueenid"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:logline;
-        rr:objectMap [ rml:reference "logline" ];
+        rr:objectMap [ rml:reference "logline"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:synopsis;
-        rr:objectMap [ rml:reference "synopsis/formattedscript" ];
+        rr:objectMap [ rml:reference "synopsis/formattedscript"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:shootingRatio;
-        rr:objectMap [ rml:reference "ratio" ];
+        rr:objectMap [ rml:reference "ratio"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:aspectRatio;
-        rr:objectMap [ rml:reference "aspect" ];
+        rr:objectMap [ rml:reference "aspect"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:filmMaterial;
-        rr:objectMap [ rml:reference "material" ];
+        rr:objectMap [ rml:reference "material"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:shootingRatio;
-        rr:objectMap [ rml:reference "framerate" ];
+        rr:objectMap [ rml:reference "framerate"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
       	rr:predicate foo:duration;
-        rr:objectMap [ rml:reference "length-in-sec" ];
+        rr:objectMap [ rml:reference "length-in-sec"; rr:datatype xsd:float ];
     ].
 
 <#script>
@@ -148,12 +148,12 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:revision;
-        rr:objectMap [ rml:reference "version" ];
+        rr:objectMap [ rml:reference "version"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:lastModified;
-        rr:objectMap [ rml:reference "lastModified" ];
+        rr:objectMap [ rml:reference "lastModified"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -207,52 +207,52 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id" ];
+        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:dramaqueenIdentifier;
-        rr:objectMap [ rml:reference "@dramaqueenid" ];
+        rr:objectMap [ rml:reference "@dramaqueenid"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:sceneNumber;
-        rr:objectMap [ rml:reference "number" ];
+        rr:objectMap [ rml:reference "number"; rr:datatype xsd:float ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:sceneInserted;
-        rr:objectMap [ rml:reference "@insert" ];
+        rr:objectMap [ rml:reference "@insert"; rr:datatype xsd:boolean ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:sceneCancelled;
-        rr:objectMap [ rml:reference "@cancelled" ];
+        rr:objectMap [ rml:reference "@cancelled"; rr:datatype xsd:boolean ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:sceneHeader;
-        rr:objectMap [ rml:reference "head" ];
+        rr:objectMap [ rml:reference "head"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:interiorExterior;
-        rr:objectMap [ rml:reference "intext" ];
+        rr:objectMap [ rml:reference "intext"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:dayTime;
-        rr:objectMap [ rml:reference "daynight" ];
+        rr:objectMap [ rml:reference "daynight"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:sceneDescription;
-        rr:objectMap [ rml:reference "description" ];
+        rr:objectMap [ rml:reference "description"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:sceneContent;
-        rr:objectMap [ rml:reference "script/formattedscript" ];
+        rr:objectMap [ rml:reference "script/formattedscript"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -308,7 +308,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:extraType;
-        rr:objectMap [ rml:reference "@type" ];
+        rr:objectMap [ rml:reference "@type"; rr:datatype xsd:string ];
     ].
 
 
@@ -325,7 +325,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "name" ];
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -341,43 +341,43 @@
     ];
 
     rr:subjectMap [
-        rr:termType rr:BlankNode;
+        rr:template "http://filmontology.org/resource/Address/{@id}";
         rr:class foo:Address;
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "co" ];
+        rr:objectMap [ rml:reference "co"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:streetName;
-        rr:objectMap [ rml:reference "street" ];
+        rr:objectMap [ rml:reference "street"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:zipCode;
-        rr:objectMap [ rml:reference "zipcode" ];
+        rr:objectMap [ rml:reference "zipcode"; rr:datatype xsd:int ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:cityName;
-        rr:objectMap [ rml:reference "city" ];
+        rr:objectMap [ rml:reference "city"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:countryName;
-        rr:objectMap [ rml:reference "country" ];
+        rr:objectMap [ rml:reference "country"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:houseNumber;
-        rr:objectMap [ rml:reference "housenumber" ];
+        rr:objectMap [ rml:reference "housenumber"; rr:datatype xsd:int ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:contactPerson;
-        rr:objectMap [ rml:reference "contact" ];
+        rr:objectMap [ rml:reference "contact"; rr:datatype xsd:string ];
     ].
 
 <#character>
@@ -393,17 +393,17 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id" ];
+        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:characterNumber;
-        rr:objectMap [ rml:reference "number" ];
+        rr:objectMap [ rml:reference "number"; rr:datatype xsd:int ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:fullName;
-        rr:objectMap [ rml:reference "name" ];
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -425,17 +425,17 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@rel" ];
+        rr:objectMap [ rml:reference "@rel"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "name" ];
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:sex;
-        rr:objectMap [ rml:reference "sex" ];
+        rr:objectMap [ rml:reference "sex"; rr:datatype xsd:string ];
     ].
 
 <#crewdepartment>
@@ -451,12 +451,12 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:departementCode;
-        rr:objectMap [ rml:reference "code" ];
+        rr:objectMap [ rml:reference "code"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "name" ];
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -477,22 +477,22 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id" ];
+        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:crewCode;
-        rr:objectMap [ rml:reference "typeCode" ];
+        rr:objectMap [ rml:reference "typeCode"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:crewType;
-        rr:objectMap [ rml:reference "name" ];
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "team/name" ];
+        rr:objectMap [ rml:reference "team/name"; rr:datatype xsd:string ];
     ].
 
 <#decoration>
@@ -508,17 +508,17 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id" ];
+        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:dramaqueenIdentifier;
-        rr:objectMap [ rml:reference "@dramaqueenid" ];
+        rr:objectMap [ rml:reference "@dramaqueenid"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "name" ];
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -554,12 +554,12 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "name" ];
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:contactPerson;
-        rr:objectMap [ rml:reference "contact" ];
+        rr:objectMap [ rml:reference "contact"; rr:datatype xsd:string ];
     ].
 
 <#emergency>
@@ -575,12 +575,12 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "." ];
+        rr:objectMap [ rml:reference "."; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:emergencyType;
-        rr:objectMap [ rml:reference "@label" ];
+        rr:objectMap [ rml:reference "@label"; rr:datatype xsd:string ];
     ].
 
 <#facility>
@@ -596,12 +596,12 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "." ];
+        rr:objectMap [ rml:reference "."; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:facilityType;
-        rr:objectMap [ rml:reference "@type" ];
+        rr:objectMap [ rml:reference "@type"; rr:datatype xsd:string ];
     ].
 
 <#locationAddress>
@@ -611,43 +611,43 @@
     ];
 
     rr:subjectMap [
-        rr:termType rr:BlankNode;
+        rr:template "http://filmontology.org/resource/Address/{@id}";
         rr:class foo:Address;
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "co" ];
+        rr:objectMap [ rml:reference "co"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:streetName;
-        rr:objectMap [ rml:reference "street" ];
+        rr:objectMap [ rml:reference "street"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:zipCode;
-        rr:objectMap [ rml:reference "zipcode" ];
+        rr:objectMap [ rml:reference "zipcode"; rr:datatype xsd:int ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:cityName;
-        rr:objectMap [ rml:reference "city" ];
+        rr:objectMap [ rml:reference "city"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:countryName;
-        rr:objectMap [ rml:reference "country" ];
+        rr:objectMap [ rml:reference "country"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:houseNumber;
-        rr:objectMap [ rml:reference "housenumber" ];
+        rr:objectMap [ rml:reference "housenumber"; rr:datatype xsd:int ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:contactPerson;
-        rr:objectMap [ rml:reference "contact" ];
+        rr:objectMap [ rml:reference "contact"; rr:datatype xsd:string ];
     ].
 
 <#extras>
@@ -663,12 +663,12 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id" ];
+        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "name" ];
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
     ].
 
 <#figure>
@@ -684,17 +684,17 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id" ];
+        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:dramaqueenIdentifier;
-        rr:objectMap [ rml:reference "@dramaqueenid" ];
+        rr:objectMap [ rml:reference "@dramaqueenid"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "name" ];
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
     ].
 
 <#schedule>
@@ -710,17 +710,17 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id" ];
+        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:revision;
-        rr:objectMap [ rml:reference "version" ];
+        rr:objectMap [ rml:reference "version"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:lastModified;
-        rr:objectMap [ rml:reference "lastModified" ];
+        rr:objectMap [ rml:reference "lastModified"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -741,22 +741,22 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id" ];
+        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:shootingDayMode;
-        rr:objectMap [ rml:reference "@mode" ];
+        rr:objectMap [ rml:reference "@mode"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "name" ];
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:date;
-        rr:objectMap [ rml:reference "date" ];
+        rr:objectMap [ rml:reference "date"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [

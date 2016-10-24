@@ -3,12 +3,18 @@ package de.werft.tools.rmllib.preprocessing;
 import de.werft.tools.general.Document;
 import org.apache.commons.codec.binary.Base64;
 import org.atteo.xmlcombiner.XmlCombiner;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -18,9 +24,11 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * This preprocessor fetches the xml files from the
@@ -75,14 +83,32 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
                 }
             }
 
+            org.w3c.dom.Document result = generateUuidsForAdresses(combiner.buildDocument());
+            /* write to disk */
             tmpFile = Files.createTempFile("prepro", ".xml");
-            combiner.buildDocument(tmpFile);
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(result);
+            StreamResult streamer = new StreamResult(Files.newOutputStream(tmpFile, StandardOpenOption.TRUNCATE_EXISTING));
+            transformer.transform(source, streamer);
+
             return tmpFile.toUri().toURL();
         } catch (ParserConfigurationException | IOException | TransformerException | SAXException e) {
             logger.error("Could not fetch and preprocess Preproducer xml.");
         }
 
         return null;
+    }
+
+    private org.w3c.dom.Document generateUuidsForAdresses(org.w3c.dom.Document doc) {
+        NodeList adresses = doc.getElementsByTagName("adress");
+        for (int i = 0; i < adresses.getLength(); i++) {
+            Element adress = (Element) adresses.item(i);
+            UUID uuid = UUID.randomUUID();
+            adress.setAttribute("id", uuid.toString());
+        }
+
+        return doc;
     }
 
     /* read xml file from a url connection */
