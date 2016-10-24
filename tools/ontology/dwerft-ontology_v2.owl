@@ -4,10 +4,10 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
-    <!ENTITY for "http://filmontology.org/resource/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY foo "http://filmontology.org/ontology/2.0/" >
+    <!ENTITY for "http://filmontology.org/resource/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
@@ -17,11 +17,11 @@
      xml:base="http://filmontology.org/ontology/ontology"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:for="http://filmontology.org/resource/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:foo="http://filmontology.org/ontology/2.0/"
+     xmlns:for="http://filmontology.org/resource/"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="http://filmontology.org/ontology/ontology">
         <dc:creator rdf:datatype="&xsd;string">Henning Agt-Rickauer</dc:creator>
@@ -41,44 +41,9 @@
     
 
 
-    <!-- http://filmontology.org/ontology/2.0/com -->
-
-    <owl:AnnotationProperty rdf:about="&foo;com">
-        <rdfs:label>com</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
     <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
 
     <owl:AnnotationProperty rdf:about="&skos;altLabel"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#duratio -->
-
-    <rdfs:Datatype rdf:about="&xsd;duratio">
-        <rdfs:label>xsd:duratio</rdfs:label>
-    </rdfs:Datatype>
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#duration -->
-
-    <rdfs:Datatype rdf:about="&xsd;duration">
-        <rdfs:label>xsd:duration</rdfs:label>
-    </rdfs:Datatype>
     
 
 
@@ -314,6 +279,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/hasCrewMember -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasCrewMember">
+        <rdfs:label>hasCrewMember</rdfs:label>
+        <rdfs:comment>The members of a crew department.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;CrewDepartment"/>
+        <rdfs:range rdf:resource="&foo;CrewMember"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/hasEmergency -->
 
     <owl:ObjectProperty rdf:about="&foo;hasEmergency">
@@ -369,17 +346,6 @@
         <rdfs:comment>The generated audiovisual content is stored as digital file</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Essence"/>
         <rdfs:range rdf:resource="&foo;File"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/2.0/hasFinalVideoFile -->
-
-    <owl:ObjectProperty rdf:about="&foo;hasFinalVideoFile">
-        <rdfs:label>hasFinalVideoFile</rdfs:label>
-        <rdfs:comment>Link to the metadata about the final rendered video file (usually MXF)</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -904,8 +870,10 @@
         <rdfs:label>aspectRatio</rdfs:label>
         <rdfs:comment>Relationship between width and height that was used for recording (e.g., 16:9)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:domain rdf:resource="&foo;VideoTrack"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;length"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1490,6 +1458,7 @@
     <owl:DatatypeProperty rdf:about="&foo;contactPerson">
         <rdfs:label>contactPerson</rdfs:label>
         <rdfs:comment>Contact person of a location</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Address"/>
         <rdfs:domain rdf:resource="&foo;Location"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1598,6 +1567,18 @@
         <rdfs:domain rdf:resource="&foo;CrewMember"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/crewType -->
+
+    <owl:DatatypeProperty rdf:about="&foo;crewType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>crewType</rdfs:label>
+        <rdfs:domain rdf:resource="&foo;CrewMember"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -1767,6 +1748,7 @@
         <rdfs:comment>Length of a piece of audio or audiovisual media</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:domain rdf:resource="&foo;CreationUseContract"/>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:domain rdf:resource="&foo;Essence"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1790,6 +1772,18 @@
         <rdfs:label>electroSpatialFormulation</rdfs:label>
         <rdfs:comment>Spatial composition (e.g., mono)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;AudioTrack"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/emergencyType -->
+
+    <owl:DatatypeProperty rdf:about="&foo;emergencyType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>emergencyType</rdfs:label>
+        <rdfs:domain rdf:resource="&foo;Emergency"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1883,6 +1877,19 @@
         <rdfs:comment>Value of the sensor exposure index in ASA rating</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/extraType -->
+
+    <owl:DatatypeProperty rdf:about="&foo;extraType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>extraType</rdfs:label>
+        <rdfs:comment>The type of a figur, like non speaking.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Extra"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -2038,6 +2045,7 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>filmMaterial</rdfs:label>
         <rdfs:comment>Material of film (e.g. reversal film, color negative film)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:domain rdf:resource="&foo;Medium"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -2170,8 +2178,10 @@
         <rdfs:label>frameRate</rdfs:label>
         <rdfs:comment>General project playback/timecode framerate in frames per second.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:domain rdf:resource="&foo;VideoTrack"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;filmLength"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3859,6 +3869,19 @@
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/sceneCancelled -->
+
+    <owl:DatatypeProperty rdf:about="&foo;sceneCancelled">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>sceneCancelled</rdfs:label>
+        <rdfs:comment>Indicates if a scene is cancelled</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/sceneContent -->
 
     <owl:DatatypeProperty rdf:about="&foo;sceneContent">
@@ -5029,12 +5052,6 @@
     <owl:Class rdf:about="&foo;ChargeRepetitionRight">
         <rdfs:label>ChargeRepetitionRight</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Rights"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idChargeRepetitionRight"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <skos:altLabel xml:lang="de">Wiederholungshonorar</skos:altLabel>
         <rdfs:comment>claim for payment for the rebroadcast of a movie production</rdfs:comment>
     </owl:Class>
@@ -5056,18 +5073,6 @@
     <owl:Class rdf:about="&foo;CoProductionContract">
         <rdfs:label>CoProductionContract</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Contract"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idCoProductionContract"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;mainProducerAddress"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>contract between multiple companies about the coproduction of a movie</rdfs:comment>
         <skos:altLabel xml:lang="de">Koproduktionsvertrag</skos:altLabel>
     </owl:Class>
@@ -5099,42 +5104,6 @@
     <owl:Class rdf:about="&foo;Contract">
         <rdfs:label>Contract</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;name"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;standardCurrency"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;periodEnd"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;periodStart"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;comment"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idContract"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <skos:altLabel xml:lang="de">Vertrag</skos:altLabel>
         <rdfs:comment>an agreement (enforceable by law) between two or more parties for the doing or not doing of something specified</rdfs:comment>
     </owl:Class>
@@ -5146,24 +5115,6 @@
     <owl:Class rdf:about="&foo;ContractPartner">
         <rdfs:label>ContractPartner</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idContractPartner"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;participationType"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;partner"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>an individual as part of an agreement</rdfs:comment>
         <skos:altLabel xml:lang="de">Vertragspartner</skos:altLabel>
     </owl:Class>
@@ -5185,30 +5136,6 @@
     <owl:Class rdf:about="&foo;CopyRight">
         <rdfs:label>CopyRight</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Rights"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;registeredWith"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idCopyRight"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;registeredFrom"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;participation"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>right that grants the creator of an original work exclusive rights for its use and distribution</rdfs:comment>
         <skos:altLabel xml:lang="de">Urheberrecht</skos:altLabel>
     </owl:Class>
@@ -5220,48 +5147,6 @@
     <owl:Class rdf:about="&foo;CreationUseContract">
         <rdfs:label>CreationUseContract</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Contract"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;workTitle"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;duration"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;licenseFee"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;contractDescription"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;creationType"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idCreationUseContract"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;amount"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>contract which arranges the use of an art work</rdfs:comment>
         <skos:altLabel>Werknutzungsvertrag</skos:altLabel>
     </owl:Class>
@@ -5414,18 +5299,6 @@
     <owl:Class rdf:about="&foo;EvaluationRight">
         <rdfs:label>EvaluationRight</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Rights"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idEvaluationRight"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;coordinatedBy"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>right of the production company (or producer) to conclude a license contract with third-party companies</rdfs:comment>
         <skos:altLabel xml:lang="de">Auswertungsrecht</skos:altLabel>
     </owl:Class>
@@ -5497,36 +5370,6 @@
     <owl:Class rdf:about="&foo;FinancingContract">
         <rdfs:label>FinancingContract</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Contract"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;financingAmount"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;paymentEnd"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;paymentStart"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idFinancingContract"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;rate"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <skos:altLabel xml:lang="de">Finanzierungsvertrag</skos:altLabel>
         <rdfs:comment>contract handling third-party involvement of factory costs</rdfs:comment>
     </owl:Class>
@@ -5538,48 +5381,6 @@
     <owl:Class rdf:about="&foo;FurtherInvestment">
         <rdfs:label>FurtherInvestment</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;paymentDate"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;isCompletelyDistributed"/>
-                <owl:someValuesFrom rdf:resource="&xsd;boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idRecoupmentFurtherInvestment"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;comment"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;investmentPercent"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;criterion"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;investmentAmount"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>expanded features of a recoupment plan concerning investments</rdfs:comment>
     </owl:Class>
     
@@ -5610,72 +5411,6 @@
     <owl:Class rdf:about="&foo;LicenceReceipt">
         <rdfs:label>LicenceReceipt</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;proceedsTotal"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;numberOfSubscribers"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;minimumHAP"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;pricePerPiece"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;initialCosts"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;subscriptionPrice"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idLicenceReceipt"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;subscriptionRate"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;subscriptionShare"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;numberOfCopies"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;streamedMinProduction"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <skos:altLabel xml:lang="de">Abrechnung</skos:altLabel>
         <rdfs:comment>information about proceeds, subscriptions</rdfs:comment>
     </owl:Class>
@@ -5687,18 +5422,6 @@
     <owl:Class rdf:about="&foo;LicenseContract">
         <rdfs:label>LicenseContract</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Contract"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;paymentDate"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idLicenseContract"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>contract about the usage of a movie for the purpose of exploitation</rdfs:comment>
         <skos:altLabel xml:lang="de">Lizenzvertrag</skos:altLabel>
     </owl:Class>
@@ -5710,24 +5433,6 @@
     <owl:Class rdf:about="&foo;LicenseRight">
         <rdfs:label>LicenseRight</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Rights"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;minimumGuarantee"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;licenseeSharePercent"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;areInitialCostsDeductible"/>
-                <owl:someValuesFrom rdf:resource="&xsd;boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <skos:altLabel>Lizenzrecht</skos:altLabel>
         <rdfs:comment>the transfer of a license right means the licensee grants the licensor permission to use his right(s) for a license fee</rdfs:comment>
     </owl:Class>
@@ -5739,42 +5444,6 @@
     <owl:Class rdf:about="&foo;LoanContract">
         <rdfs:label>LoanContract</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Contract"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;paymentEnd"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;ownContribution"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;paymentStart"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;rate"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idLoanContract"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;loanAmount"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <skos:altLabel xml:lang="de">Darlehensvertrag</skos:altLabel>
         <rdfs:comment>a contract partner grants loan to a production company which is repayed by the income of the production</rdfs:comment>
     </owl:Class>
@@ -5816,12 +5485,6 @@
     <owl:Class rdf:about="&foo;OptionContract">
         <rdfs:label>OptionContract</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Contract"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idOptionContract"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>contract which arranges option rights</rdfs:comment>
         <skos:altLabel xml:lang="de">Optionsvertrag</skos:altLabel>
     </owl:Class>
@@ -5833,18 +5496,6 @@
     <owl:Class rdf:about="&foo;OrderProductionContract">
         <rdfs:label>OrderProductionContract</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Contract"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;selfExpansionDate"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idOrderProductionContract"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <skos:altLabel xml:lang="de">Auftragsproduktionsvertrag</skos:altLabel>
         <rdfs:comment>contract between broadcasting organization and third party to manufacture a television production</rdfs:comment>
     </owl:Class>
@@ -5856,12 +5507,6 @@
     <owl:Class rdf:about="&foo;OtherContract">
         <rdfs:label>OtherContract</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Contract"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idOtherContract"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>other agreements, not directly assigned to a contract</rdfs:comment>
         <skos:altLabel xml:lang="de">Sonstige Vereinbarung</skos:altLabel>
     </owl:Class>
@@ -5873,12 +5518,6 @@
     <owl:Class rdf:about="&foo;OtherRight">
         <rdfs:label>OtherRight</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Rights"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idOtherRight"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>other agreements, not directly assigned to a right</rdfs:comment>
         <skos:altLabel xml:lang="de">Sonstiges Recht</skos:altLabel>
     </owl:Class>
@@ -5890,30 +5529,6 @@
     <owl:Class rdf:about="&foo;ParticipationContract">
         <rdfs:label>ParticipationContract</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Contract"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;days"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;dailyRate"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;participationSum"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idParticipationContract"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <skos:altLabel xml:lang="de">Mitwirkungsvertrag</skos:altLabel>
         <rdfs:comment>agreement between production company and director, actors, crew and other participating member</rdfs:comment>
     </owl:Class>
@@ -5965,36 +5580,6 @@
     <owl:Class rdf:about="&foo;RecoupmentParticipant">
         <rdfs:label>RecoupmentParticipant</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;ContractPartner"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;isCompletelyDistributed"/>
-                <owl:someValuesFrom rdf:resource="&xsd;boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;comment"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idRecoupmentPositionParticipant"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;investmentAmount"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;investmentPercent"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>a participant of a recoupment plan</rdfs:comment>
         <skos:altLabel>Beteiligter</skos:altLabel>
     </owl:Class>
@@ -6006,42 +5591,6 @@
     <owl:Class rdf:about="&foo;RecoupmentPlan">
         <rdfs:label>RecoupmentPlan</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;recoupmentIdentifier"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;area"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;evaluationType"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;notExclusive"/>
-                <owl:someValuesFrom rdf:resource="&xsd;boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idRecoupmentplan"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;comment"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>plan about the agreed distribution of receipts</rdfs:comment>
     </owl:Class>
     
@@ -6052,36 +5601,6 @@
     <owl:Class rdf:about="&foo;RecoupmentPosition">
         <rdfs:label>RecoupmentPosition</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idRecoupmentPosition"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;isCompletelyDistributed"/>
-                <owl:someValuesFrom rdf:resource="&xsd;boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;position"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;investmentSum"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;threshold"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>gives information about the order in which the receipts are distributed</rdfs:comment>
     </owl:Class>
     
@@ -6092,30 +5611,6 @@
     <owl:Class rdf:about="&foo;RightOption">
         <rdfs:label>RightOption</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;periodEnd"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;charge"/>
-                <owl:someValuesFrom rdf:resource="&xsd;float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;option"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idRightOption"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>extends the class Rights by a certain amount of time or charges</rdfs:comment>
     </owl:Class>
     
@@ -6126,66 +5621,6 @@
     <owl:Class rdf:about="&foo;Rights">
         <rdfs:label>Rights</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;idRight"/>
-                <owl:someValuesFrom rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;notExclusive"/>
-                <owl:someValuesFrom rdf:resource="&xsd;boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;rightType"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;periodStart"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;periodEnd"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;name"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;evaluationType"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;area"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;notCommercial"/>
-                <owl:someValuesFrom rdf:resource="&xsd;boolean"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foo;comment"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <skos:altLabel xml:lang="de">Rechte</skos:altLabel>
         <rdfs:comment>an agreement to what extent a contract partner particpates in the exploitation of a film</rdfs:comment>
     </owl:Class>
@@ -6338,20 +5773,6 @@
         <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
         <rdfs:comment>The recorded visual information of a film or video recording</rdfs:comment>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="&foo;IRItest">
-        <rdfs:label>IRItest</rdfs:label>
-    </rdf:Description>
 </rdf:RDF>
 
 
