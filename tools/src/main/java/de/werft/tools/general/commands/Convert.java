@@ -1,6 +1,10 @@
 package de.werft.tools.general.commands;
 
 import be.ugent.mmlab.rml.model.dataset.RMLDataset;
+import com.github.rvesse.airline.annotations.Arguments;
+import com.github.rvesse.airline.annotations.Command;
+import com.github.rvesse.airline.annotations.Option;
+import com.github.rvesse.airline.annotations.help.ProseSection;
 import de.werft.tools.general.Document;
 import de.werft.tools.general.DwerftConfig;
 import de.werft.tools.general.DwerftTools;
@@ -9,9 +13,6 @@ import de.werft.tools.rmllib.postprocessing.BasicPostprocessor;
 import de.werft.tools.rmllib.postprocessing.DramaqueenPostprocessor;
 import de.werft.tools.rmllib.postprocessing.Postprocessor;
 import de.werft.tools.rmllib.preprocessing.*;
-import io.airlift.airline.Arguments;
-import io.airlift.airline.Command;
-import io.airlift.airline.Option;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -37,13 +38,16 @@ import java.util.List;
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 @Command(name="convert",description="Convert XML, CSV, ALE, JSON files to RDF.")
+@ProseSection(title = "Additional Information",
+    paragraphs = {"This command is used to start the conversion process." +
+        "The used conversion procedure is determined through the file suffixes and ordering." +
+        "Available inputs are *.ale, *.csv, *.xml, *.json, *.dq and nothing for Preproducer." +
+        "Available outputs are everything provided by Jena (ttl, n3, rdf/xml, nt ...), but the file suffixes are limited to",
+        "*.rdf, *.ttl, *.n3, *.nt ."})
 public class Convert extends DwerftTools {
 
-    @Arguments(description = "Starts conversion process. Based on the file extension we determine" +
-            " which converter is used.\n Available inputs are *.dp for dramaqueen; *.ale for ALE; *.csv for csv; *.xml for Generic;" +
-            " no input for preproducer.\n Available outputs are no output for csv, ale to xml conversion and *.(rdf|ttl|nt) for everything else.\n" +
-            " Provide a mapping only for generic conversion. " +
-            " Usage: [<input>] [<output>] [<mapping>]")
+    @Arguments(description = "input, output and mapping file for the conversion process.",
+    title = {"<input>", "<output>", "<mapping>"})
     private List<String> files = new ArrayList<>(10);
 
     @Option(name = {"-f", "--format"}, description = "Specifies rdf output format. Available options are " +
@@ -57,6 +61,7 @@ public class Convert extends DwerftTools {
 
     @Override
     public void run() {
+        super.run();
         logger.debug("Convert files " + files);
 
         try {
@@ -75,7 +80,6 @@ public class Convert extends DwerftTools {
             logger.info("Successfully converted " + d.getInputFile() + " to rdf " + d.getOutputFile());
         } catch (InstantiationException e) {
             logger.error("Instantiation failed. " + e.getMessage());
-            help.call();
         } catch (MalformedURLException e) {
             logger.error("Could not convert given files to urls. " + e.getMessage());
         } catch (IOException e) {

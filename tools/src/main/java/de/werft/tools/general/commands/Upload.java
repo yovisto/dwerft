@@ -1,10 +1,12 @@
 package de.werft.tools.general.commands;
 
 import com.beust.jcommander.ParameterException;
+import com.github.rvesse.airline.annotations.Arguments;
+import com.github.rvesse.airline.annotations.Command;
+import com.github.rvesse.airline.annotations.Option;
+import com.github.rvesse.airline.annotations.restrictions.Path;
+import com.github.rvesse.airline.annotations.restrictions.Required;
 import de.werft.tools.general.DwerftTools;
-import io.airlift.airline.Arguments;
-import io.airlift.airline.Command;
-import io.airlift.airline.Option;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -31,6 +33,8 @@ import java.io.IOException;
 public class Upload extends DwerftTools {
 
     @Arguments(description = "Uploads a file to a specified sparql endpoint. Valid formats are *.(rdf|ttl|nt|jsonld)")
+    @Required
+    @Path(mustExist = true)
     private String file = "";
 
     @Option(name = {"-g", "--granularity"}, description = "Give a granularity for the upload command. Possible options are 0, 1, 2 where" +
@@ -41,10 +45,12 @@ public class Upload extends DwerftTools {
     private String graph = "";
 
     @Option(name = {"-k", "--key"}, description = "Provide the key name for versioning which should include the original tool name.")
+    @Required
     private String key = "";
 
     @Override
     public void run() {
+        super.run();
         logger.debug("Upload the file " + file);
 
         CredentialsProvider provider = new BasicCredentialsProvider();
@@ -69,7 +75,6 @@ public class Upload extends DwerftTools {
             }
         } catch (IOException e) {
             logger.error("Upload request failed.", e);
-            help.call();
         }
     }
 

@@ -1,12 +1,14 @@
 package de.werft.tools.general.commands;
 
+import com.github.rvesse.airline.annotations.Arguments;
+import com.github.rvesse.airline.annotations.Command;
+import com.github.rvesse.airline.annotations.Option;
+import com.github.rvesse.airline.annotations.restrictions.RequireOnlyOne;
+import com.github.rvesse.airline.annotations.restrictions.Required;
 import de.hpi.rdf.tailrapi.Memento;
 import de.hpi.rdf.tailrapi.Repository;
 import de.hpi.rdf.tailrapi.TailrClient;
 import de.werft.tools.general.DwerftTools;
-import io.airlift.airline.Arguments;
-import io.airlift.airline.Command;
-import io.airlift.airline.Option;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 import org.joda.time.DateTime;
@@ -28,19 +30,24 @@ import java.util.List;
 public class Version extends DwerftTools {
 
     @Arguments(description = "Provide a key name from tailr.")
+    @Required
     private String key = "";
 
     @Option(name = {"-l", "--list" }, description = "Shows the time map for a key.")
+    @RequireOnlyOne(tag = "version")
     private boolean isList = false;
 
     @Option(name = {"-s", "--show"}, description = "Shows a specific revision or the latest when latest keyword provided.")
+    @RequireOnlyOne(tag = "version")
     private String revision = "";
 
     @Option(name = {"-d", "--delta"}, description = "Shows the delta for a specific revision or the latest when latest keyword provided.")
+    @RequireOnlyOne(tag = "version")
     private String delta = "";
 
     @Override
     public void run() {
+        super.run();
         logger.debug("Show version information.");
 
         try {
