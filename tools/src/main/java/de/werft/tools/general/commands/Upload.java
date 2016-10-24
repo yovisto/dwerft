@@ -33,11 +33,11 @@ public class Upload extends DwerftTools {
     @Arguments(description = "Uploads a file to a specified sparql endpoint. Valid formats are *.(rdf|ttl|nt|jsonld)")
     private String file = "";
 
-    @Option(name = {"-g", "--granularity"}, description = "Give a granularity for the upload command. Possible options are 0, 1, 2 where" +
-            "0 deletes the given model; 1 inserts a given model; 2 creates a diff with the remote endpoint. Default is 1.")
-    private String granularity = "1";
+    @Option(name = {"-m", "--method"}, description = "Give an upload method for the upload command. Possible options are 0, 1, 2 where" +
+            "0 deletes the given model; 1 inserts a given model; 2 creates a diff with the remote endpoint. Default is 2.")
+    private String method = "2";
 
-    @Option(name = {"-n", "--name"}, description = "Provide a graph name to store the rdf. Otherwise the default graph is used.")
+    @Option(name = {"-g", "--graph"}, description = "Provide a graph name to store the rdf. Otherwise the default graph is used.")
     private String graph = "";
 
     @Option(name = {"-k", "--key"}, description = "Provide the key name for versioning which should include the original tool name.")
@@ -55,7 +55,7 @@ public class Upload extends DwerftTools {
         String url = config.getRemoteUrl()
                 + "key=" + key
                 + "&graph=" + getGraphName()
-                + "&level=" + granularity;
+                + "&level=" + method;
 
         logger.debug("Put file with the url " + url);
         HttpPut put = new HttpPut(url);
