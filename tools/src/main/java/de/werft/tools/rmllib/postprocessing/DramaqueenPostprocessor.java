@@ -90,11 +90,9 @@ public class DramaqueenPostprocessor extends BasicPostprocessor {
 
         		if (split) {
         			rdfScene.addProperty(property, Integer.toString(sceneNumber)+"."+Integer.toString(sceneSplit));
-        			System.out.println(sceneNumber+"."+sceneSplit+" - "+sceneId + "  "+split);
         			sceneSplit++;
         		} else {
         			rdfScene.addProperty(property, Integer.toString(sceneNumber));
-            		System.out.println(sceneNumber+" - "+sceneId + "  "+split);
             		sceneNumber++;
         		}
 			}

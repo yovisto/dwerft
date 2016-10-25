@@ -155,10 +155,10 @@ public class DramaqueenPreprocessor extends BasicPreprocessor {
 
     /* mappings for gender informations */
     private final static HashMap<Integer, String> intextMapping = new HashMap<Integer, String>() {{
-        put(0, "inside");
-        put(1, "outside");
-        put(2, "inside-outside");
-        put(3, "outside-inside");
+        put(0, "int");
+        put(1, "ext");
+        put(2, "intext");
+        put(3, "extint");
     }};
 
     /* too many mappings for dramaqueen properties */
