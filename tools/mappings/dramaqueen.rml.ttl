@@ -37,7 +37,9 @@
     
 	rr:predicateObjectMap [
         rr:predicate foo:workingTitle;
-        rr:objectMap [ rml:reference "Property[@id='name']" ];
+        rr:objectMap [
+            rml:reference "Property[@id='name']";
+        ];
     ].
 
 

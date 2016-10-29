@@ -83,7 +83,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
                 }
             }
 
-            org.w3c.dom.Document result = generateUuidsForAdresses(combiner.buildDocument());
+            org.w3c.dom.Document result = generateUuidsForAddresses(combiner.buildDocument());
             /* write to disk */
             tmpFile = Files.createTempFile("prepro", ".xml");
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -100,12 +100,21 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
         return null;
     }
 
-    private org.w3c.dom.Document generateUuidsForAdresses(org.w3c.dom.Document doc) {
-        NodeList adresses = doc.getElementsByTagName("adress");
-        for (int i = 0; i < adresses.getLength(); i++) {
-            Element adress = (Element) adresses.item(i);
+    /* manipulate the address elements */
+    private org.w3c.dom.Document generateUuidsForAddresses(org.w3c.dom.Document doc) {
+        NodeList addresses = doc.getElementsByTagName("adress");
+        for (int i = 0; i < addresses.getLength(); i++) {
+            Element address = (Element) addresses.item(i);
             UUID uuid = UUID.randomUUID();
-            adress.setAttribute("id", uuid.toString());
+            address.setAttribute("id", uuid.toString());
+
+            /* append the house number to the street address */
+            NodeList number = address.getElementsByTagName("housenumber");
+            NodeList street = address.getElementsByTagName("street");
+            if (number.getLength() > 0 && street.getLength() > 0) {
+                street.item(0).setTextContent(street.item(0).getTextContent() + " " + number.item(0).getTextContent());
+            }
+
         }
 
         return doc;
