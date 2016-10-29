@@ -49,7 +49,7 @@ public class MyResourceTest extends JerseyTest {
      */
     @Test
     public void testUploadFile() throws IOException {
-        Invocation.Builder builder = target("upload").queryParam("key", "http://example.org").request();
+        Invocation.Builder builder = target("").queryParam("key", "http://example.org").request();
 
         Response resp = builder.put(Entity.entity(getStream(), MediaType.APPLICATION_OCTET_STREAM));
         Assert.assertEquals(HttpStatus.OK_200, resp.getStatus());
@@ -62,10 +62,10 @@ public class MyResourceTest extends JerseyTest {
      */
     @Test
     public void testUploadFileWithParams() throws IOException {
-        Invocation.Builder builder = target("upload")
+        Invocation.Builder builder = target("")
                 .queryParam("key", "http://example.org")
-                .queryParam("graph", "http://filmontology.org")
-                .queryParam("level", "2")
+                .queryParam("graph", "http://testing.org")
+                .queryParam("level", "1")
                 .queryParam("lang", "ttl").request();
 
         Response resp = builder.put(Entity.entity(getStream(), MediaType.APPLICATION_OCTET_STREAM));
@@ -79,7 +79,7 @@ public class MyResourceTest extends JerseyTest {
      */
     @Test
     public void testUploadFileNoContent() throws IOException {
-        Invocation.Builder builder = target("upload").queryParam("key", "http://example.org").request();
+        Invocation.Builder builder = target("").queryParam("key", "http://example.org").request();
 
         Response resp = builder.put(Entity.entity(new byte[0], MediaType.APPLICATION_OCTET_STREAM));
         Assert.assertEquals(HttpStatus.NO_CONTENT_204, resp.getStatus());
@@ -93,7 +93,7 @@ public class MyResourceTest extends JerseyTest {
      */
     @Test
     public void testUploadFileBadKey() throws IOException {
-        Invocation.Builder builder = target("upload").queryParam("key", "").request();
+        Invocation.Builder builder = target("").queryParam("key", "").request();
 
         Response resp = builder.put(Entity.entity(getStream(), MediaType.APPLICATION_OCTET_STREAM));
         Assert.assertEquals(HttpStatus.BAD_REQUEST_400, resp.getStatus());
@@ -106,7 +106,7 @@ public class MyResourceTest extends JerseyTest {
      */
     @Test
     public void testUploadIllegalGranularity() throws IOException {
-        Invocation.Builder builder = target("upload").queryParam("key", "http://example.org")
+        Invocation.Builder builder = target("").queryParam("key", "http://example.org")
                 .queryParam("level", "4").request();
 
         Response resp = builder.put(Entity.entity(getStream(), MediaType.APPLICATION_OCTET_STREAM));
@@ -120,7 +120,7 @@ public class MyResourceTest extends JerseyTest {
      */
     @Test
     public void testUploadFileBadFormat() throws IOException {
-        Invocation.Builder builder = target("upload").queryParam("key", "http://example.org")
+        Invocation.Builder builder = target("").queryParam("key", "http://example.org")
                 .queryParam("lang", "blah").request();
 
         Response resp = builder.put(Entity.entity(getStream(), MediaType.APPLICATION_OCTET_STREAM));
@@ -134,7 +134,7 @@ public class MyResourceTest extends JerseyTest {
      */
     @Test
     public void testUploadBadFile() throws IOException {
-        Invocation.Builder builder = target("upload").queryParam("key", "http://example.org").request();
+        Invocation.Builder builder = target("").queryParam("key", "http://example.org").request();
 
         byte[] in = Files.readAllBytes(new File("src/test/resources/false.ttl").toPath());
         Response resp = builder.put(Entity.entity(in, MediaType.APPLICATION_OCTET_STREAM));
@@ -148,13 +148,12 @@ public class MyResourceTest extends JerseyTest {
      */
     @Test
     public void testUploadWorkingTailr() throws IOException {
-        Invocation.Builder builder = target("upload").queryParam("key", "http://example.org").request();
+        Invocation.Builder builder = target("").queryParam("key", "http://example.org").request();
 
         byte[] in = Files.readAllBytes(new File("src/test/resources/test.ttl").toPath());
         Response resp = builder.put(Entity.entity(in, MediaType.APPLICATION_OCTET_STREAM));
         Assert.assertEquals(HttpStatus.OK_200, resp.getStatus());
     }
-
 
     /**
      * Test upload without working tailr.
@@ -164,7 +163,7 @@ public class MyResourceTest extends JerseyTest {
     @Test
     public void testUploadNotWorkingTailr() throws IOException {
         stub.setError(true);
-        Invocation.Builder builder = target("upload").queryParam("key", "http://example.org").request();
+        Invocation.Builder builder = target("").queryParam("key", "http://example.org").request();
 
         byte[] in = Files.readAllBytes(new File("src/test/resources/test.ttl").toPath());
         Response resp = builder.put(Entity.entity(in, MediaType.APPLICATION_OCTET_STREAM));

@@ -48,13 +48,13 @@ public class MyResource {
     private final static Logger L = org.apache.logging.log4j.LogManager.getLogger("UploadService.class");
 
     @Inject
-    ServiceConfig conf;
+    private ServiceConfig conf;
 
     @Inject
-    Tailr tailrClient;
+    private Tailr tailrClient;
 
     @Inject
-    Uploader uploader;
+    private Uploader uploader;
 
     @PUT
     @Consumes(MediaType.APPLICATION_OCTET_STREAM)
@@ -109,7 +109,12 @@ public class MyResource {
 
         /* create authentication */
         HttpAuthenticator auth = new SimpleAuthenticator(conf.getRemoteUser(), conf.getRemotePass().toCharArray());
-        uploader.uploadModel(new Update(g, d), graphName, auth);
+        if (g.equals(Update.Granularity.LEVEL_2)) {
+            uploader.uploadModel(new Update(g, d), graphName, auth);
+        } else {
+            Delta delta = convertToDelta(input);
+            uploader.uploadModel(new Update(g, delta), graphName, auth);
+        }
 
         return Response.ok(fileBytes, MediaType.APPLICATION_OCTET_STREAM).build();
     }
@@ -147,5 +152,17 @@ public class MyResource {
             L.error("Failed to convert the input.", e);
         }
         return writer.toString();
+    }
+
+    /* assume ntriples a devided by \n -> so convert the to a delta */
+    private Delta convertToDelta(String nttriples) {
+        Delta d = new Delta();
+        String[] splits = nttriples.split("\n");
+
+        for (int i = 0; i < splits.length; i++) {
+            d.getAddedTriples().add(splits[i]);
+        }
+
+        return d;
     }
 }

@@ -120,4 +120,12 @@ public class Update {
 
         return builder.toString();
     }
+
+    @Override
+    public String toString() {
+        return "Update{" +
+                "g=" + g +
+                ", d=" + d +
+                '}';
+    }
 }

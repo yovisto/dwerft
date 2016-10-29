@@ -21,6 +21,7 @@ public class UploaderStub extends Uploader {
 
     @Override
     public void uploadModel(Update u, String graphUri, HttpAuthenticator auth) {
+        System.out.println(u);
         /* noop */
     }
 }
