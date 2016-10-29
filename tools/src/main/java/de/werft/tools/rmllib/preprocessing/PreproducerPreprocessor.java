@@ -4,6 +4,7 @@ import de.werft.tools.general.Document;
 import org.apache.commons.codec.binary.Base64;
 import org.atteo.xmlcombiner.XmlCombiner;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -83,7 +84,11 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
                 }
             }
 
-            org.w3c.dom.Document result = generateUuidsForAddresses(combiner.buildDocument());
+            /* build xml and do pre processing */
+            org.w3c.dom.Document result = combiner.buildDocument();
+            generateUuidsForAddresses(result);
+            correctIds(result);
+
             /* write to disk */
             tmpFile = Files.createTempFile("prepro", ".xml");
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -100,8 +105,25 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
         return null;
     }
 
+    /* set the dqid as id and the old id as ppid */
+    private void correctIds(Node root) {
+        if (root != null && root.hasChildNodes()) {
+            NodeList childs = root.getChildNodes();
+
+            /* traverse the xml tree */
+            for (int i = 0; i < childs.getLength(); i++) {
+                Node child = childs.item(i);
+                /* if we have an id attribute, then set the id as new ppId attribute and dq id as new id */
+                if (child.hasAttributes() && child.getAttributes().getNamedItem("id") != null) {
+                    ((Element) child).setAttribute("ppid", ((Element) child).getAttribute("id"));
+                }
+                correctIds(child);
+            }
+        }
+    }
+
     /* manipulate the address elements */
-    private org.w3c.dom.Document generateUuidsForAddresses(org.w3c.dom.Document doc) {
+    private void generateUuidsForAddresses(org.w3c.dom.Document doc) {
         NodeList addresses = doc.getElementsByTagName("adress");
         for (int i = 0; i < addresses.getLength(); i++) {
             Element address = (Element) addresses.item(i);
@@ -114,10 +136,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             if (number.getLength() > 0 && street.getLength() > 0) {
                 street.item(0).setTextContent(street.item(0).getTextContent() + " " + number.item(0).getTextContent());
             }
-
         }
-
-        return doc;
     }
 
     /* read xml file from a url connection */

@@ -91,7 +91,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "@ppid"; rr:datatype xsd:string ];
      ];
 
     rr:predicateObjectMap [
@@ -208,7 +208,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "@ppid"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -408,7 +408,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "@ppid"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -492,7 +492,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "@ppid"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -523,7 +523,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "@ppid"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -697,7 +697,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "@ppid"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -718,7 +718,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "@ppid"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -744,7 +744,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "@ppid"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -775,7 +775,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@id"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "@ppid"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
