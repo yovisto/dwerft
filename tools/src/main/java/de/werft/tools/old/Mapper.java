@@ -93,7 +93,8 @@ public class Mapper {
 
     private boolean isChildProperty(Mapping property, Mapping parent) {
         return !property.isClassMapping() && (property.isAttrProperty() || property.isNodeProperty())
-                && StringUtils.startsWith(property.getPath(), parent.getPath());
+                && StringUtils.startsWith(property.getPath(), parent.getPath()) &&
+                property.getTargetClass().equals(parent.getTargetClass());
     }
 
     /* read the input file into a list of mapping definitions */
