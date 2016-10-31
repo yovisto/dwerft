@@ -5,6 +5,7 @@ import com.github.rvesse.airline.annotations.Option;
 import com.github.rvesse.airline.annotations.OptionType;
 import com.github.rvesse.airline.help.Help;
 import de.werft.tools.general.commands.Convert;
+import de.werft.tools.general.commands.Old;
 import de.werft.tools.general.commands.Upload;
 import de.werft.tools.general.commands.Version;
 import org.aeonbits.owner.ConfigFactory;
@@ -23,7 +24,7 @@ import org.apache.logging.log4j.core.config.Configuration;
 @com.github.rvesse.airline.annotations.Cli(name = "dwerft",
 description = "The dwerft tools for processing and versioning of linked data.",
 defaultCommand = Help.class,
-commands = {Help.class, Version.class, Upload.class, Convert.class})
+commands = {Help.class, Version.class, Upload.class, Convert.class, Old.class})
 public class DwerftTools implements Runnable {
 
     protected static final Logger logger = LogManager.getLogger(DwerftTools.class);
