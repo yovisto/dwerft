@@ -27,7 +27,7 @@ public class Old extends DwerftTools {
         super.run();
         logger.debug("Files: <from mapping> <to rml> " + files);
 
-        if (files.size() == 2 && StringUtils.endsWith(files.get(0), ".mapping")
+        if (files.size() == 2 && StringUtils.endsWith(files.get(0), ".mappings")
                 && StringUtils.endsWith(files.get(1), ".rml.ttl")) {
             Mapper mapper = new Mapper(logger);
             mapper.transform(new File(files.get(0)), new File(files.get(1)));
