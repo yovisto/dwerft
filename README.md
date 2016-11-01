@@ -115,11 +115,20 @@ fix one line.
   git submodule update --init --recursive 
   nano  RML-LogicalSourceHandler/src/main/java/be/ugent/mmlab/rml/logicalsourcehandler/termmap/concrete/XPathTermMapProcessor.java
   Change:
+  import java.io.StringBufferInputStream;
   StringBufferInputStream input = new StringBufferInputStream(node.toXML().toString());
   To:
+  import java.io.ByteArrayInputStream;
   ByteArrayInputStream input = new ByteArrayInputStream(node.toXML().getBytes());
   ```
 Lastly provide rml with `mvn clean install`.
+
+Install TailR:
+  ```
+  git clone https://github.com/SemanticMultimedia/tlr-java-api.git
+  cd tlr-java-api
+  mvn clean install -DskipTests
+  ```
 
 If you plan on using an operation which utilizes the Preproducer API, make sure to provide valid credentials. Simply copy the template we provide to the `tools` directory, and with an editor of your choice add your credentials. Adjust other settings to your needs. 
   
