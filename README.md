@@ -115,8 +115,10 @@ fix one line.
   git submodule update --init --recursive 
   nano  RML-LogicalSourceHandler/src/main/java/be/ugent/mmlab/rml/logicalsourcehandler/termmap/concrete/XPathTermMapProcessor.java
   Change:
+  import java.io.StringBufferInputStream;
   StringBufferInputStream input = new StringBufferInputStream(node.toXML().toString());
   To:
+  import java.io.ByteArrayInputStream;
   ByteArrayInputStream input = new ByteArrayInputStream(node.toXML().getBytes());
   ```
 Lastly provide rml with `mvn clean install`.
