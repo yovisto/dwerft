@@ -123,6 +123,13 @@ fix one line.
   ```
 Lastly provide rml with `mvn clean install`.
 
+Install TailR:
+  ```
+  git clone https://github.com/SemanticMultimedia/tlr-java-api.git
+  cd tlr-java-api
+  mvn clean install -DskipTests
+  ```
+
 If you plan on using an operation which utilizes the Preproducer API, make sure to provide valid credentials. Simply copy the template we provide to the `tools` directory, and with an editor of your choice add your credentials. Adjust other settings to your needs. 
   
   ```
