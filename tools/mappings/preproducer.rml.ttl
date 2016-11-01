@@ -523,17 +523,17 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
-        rr:objectMap [ rml:reference "@ppid"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "@ppid" ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:dramaqueenIdentifier;
-        rr:objectMap [ rml:reference "@dramaqueenid"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "@dramaqueenid" ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "name" ];
     ];
 
     rr:predicateObjectMap [
@@ -549,11 +549,6 @@
     rr:predicateObjectMap [
         rr:predicate foo:hasEmergency;
         rr:objectMap [ rr:parentTriplesMap <#emergency>; ]
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:address;
-        rr:objectMap [ rr:parentTriplesMap <#locationCard>; ]
     ].
 
 <#location>
