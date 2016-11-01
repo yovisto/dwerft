@@ -180,14 +180,14 @@ class Mapping {
         } else if (isNodeProperty()) {
             builder.append("\trr:predicateObjectMap [\n")
                     .append("\t\trr:predicate \"").append(targetProperty).append("\";\n")
-                    .append("\t\trr:objectMap [ rml:reference \"").append(path).append("\"; ];\n")
+                    .append("\t\trr:objectMap [ rml:reference \"").append(path).append("\"; ]\n")
                     .append("\t];\n\n");
 
             /* transform attribute content to predicate map */
         } else if (isAttrProperty()) {
             builder.append("\trr:predicateObjectMap [\n")
                     .append("\t\trr:predicate \"").append(targetProperty).append("\";\n")
-                    .append("\t\trr:objectMap [ rml:reference \"@").append(sourceName).append("\"; ];\n")
+                    .append("\t\trr:objectMap [ rml:reference \"@").append(sourceName).append("\"; ]\n")
                     .append("\t];\n\n");
         }
 
