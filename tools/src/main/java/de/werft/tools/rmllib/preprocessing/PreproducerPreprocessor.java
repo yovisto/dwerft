@@ -98,6 +98,9 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             transformer.transform(source, streamer);
 
             return tmpFile.toUri().toURL();
+            
+//          return new File("d:\\hagt\\googledrive\\DWerft\\Preproducer\\xml-testdreh\\2016-10-21-combined\\preproducer.xml").toURI().toURL();
+
         } catch (ParserConfigurationException | IOException | TransformerException | SAXException e) {
             logger.error("Could not fetch and preprocess Preproducer xml.");
         }

@@ -172,8 +172,8 @@ class Mapping {
                     .append(path).append("\";\n\t\trml:referenceFormulation ql:XPath;\n")
                     .append("\t];\n\n")
                     .append("\trr:subjectMap [\n")
-                    .append("\t\trr:template \"").append(targetClass).append("/{@id}\"\n")
-                    .append("\t\trr:class \"").append(targetClass).append("\"\n");
+                    .append("\t\trr:template \"").append(targetClass).append("/{@id}\";\n")
+                    .append("\t\trr:class <").append(targetClass).append(">;\n");
 
             if (nextClassOrLast) {
                 builder.append("\t].\n\n");
@@ -181,11 +181,11 @@ class Mapping {
                 builder.append("\t];\n\n");
             }
 
-            /* transform node content to predicate map */
+        /* transform node content to predicate map */
         } else if (isNodeProperty()) {
             builder.append("\trr:predicateObjectMap [\n")
                     .append("\t\trr:predicate \"").append(targetProperty).append("\";\n")
-                    .append("\t\trr:objectMap [ rml:reference \"").append(path).append("\" ];\n");
+                    .append("\t\trr:objectMap [ rml:reference \"").append(path).append("\"; ]\n");
 
             if (nextClassOrLast) {
                 builder.append("\t].\n\n");
@@ -196,7 +196,7 @@ class Mapping {
         } else if (isAttrProperty()) {
             builder.append("\trr:predicateObjectMap [\n")
                     .append("\t\trr:predicate \"").append(targetProperty).append("\";\n")
-                    .append("\t\trr:objectMap [ rml:reference \"@").append(sourceName).append("\" ];\n");
+                    .append("\t\trr:objectMap [ rml:reference \"@").append(sourceName).append("\"; ]\n");
 
             if (nextClassOrLast) {
                 builder.append("\t].\n\n");
