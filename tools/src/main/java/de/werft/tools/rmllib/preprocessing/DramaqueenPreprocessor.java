@@ -34,6 +34,10 @@ import java.util.zip.ZipFile;
  */
 public class DramaqueenPreprocessor extends BasicPreprocessor {
 
+    public DramaqueenPreprocessor(String projectUri) {
+
+    }
+
     @Override
     protected URL preprocessInput(Document doc) {
         try {

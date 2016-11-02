@@ -23,7 +23,7 @@ public class BasicPreprocessorTest {
 
     @Test
     public void preprocessMapping() throws Exception {
-        BasicPreprocessor basic = new BasicPreprocessor();
+        BasicPreprocessor basic = new BasicPreprocessor("");
         URL actualMapping = basic.preprocessMapping(createMapping(), new URL("file:///test"));
         Assert.assertTrue(compareMappings(actualMapping));
     }

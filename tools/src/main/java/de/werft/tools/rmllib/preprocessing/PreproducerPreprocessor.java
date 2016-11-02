@@ -54,12 +54,13 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
 
     /**
      * Instantiates a new Preproducer preprocessor.
-     *
-     * @param key       the key by preproducer
+     *  @param key       the key by preproducer
      * @param secret    the secret provided by preproducer
      * @param appSecret the app secret provided by preproducer
+     * @param projectUri
      */
-    public PreproducerPreprocessor(String key, String secret, String appSecret) {
+    public PreproducerPreprocessor(String key, String secret, String appSecret, String projectUri) {
+        super(projectUri);
         this.key = key;
         this.secret = secret;
         this.appSecret = appSecret;

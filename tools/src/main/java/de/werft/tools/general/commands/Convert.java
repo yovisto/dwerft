@@ -60,7 +60,7 @@ public class Convert extends DwerftTools {
 
     @Option(name = {"-u", "--project-uri"}, description = "A uri which refers to the main project.")
     @Required
-    private String projectUrl = "";
+    private String projectUri = "";
 
     private final String RDF_SUFFIX = "(rdf|ttl|n3|nt)";
 
@@ -116,15 +116,15 @@ public class Convert extends DwerftTools {
     private Preprocessor choosePreprocessor() throws InstantiationException {
         /* we choose preproducer as input tool */
         if (files.size() == 0 || (files.size() == 1 && hasExtension(files.get(0), RDF_SUFFIX))) {
-            return new PreproducerPreprocessor(config.getPreProducerKey(), config.getPreProducerSecret(), config.getPreProducerAppSecret());
+            return new PreproducerPreprocessor(config.getPreProducerKey(), config.getPreProducerSecret(), config.getPreProducerAppSecret(), projectUri);
         } else if (hasExtension(files.get(0), "dq")) {
-            return new DramaqueenPreprocessor();
+            return new DramaqueenPreprocessor(projectUri);
         } else if (hasExtension(files.get(0), "ale")) {
-            return new AlePreprocessor();
+            return new AlePreprocessor(projectUri);
         } else if (hasExtension(files.get(0), "csv")) {
-            return new CsvPreprocessor();
+            return new CsvPreprocessor(projectUri);
         } else if (hasExtension(files.get(0), "(xml|json)")) {
-            return new BasicPreprocessor();
+            return new BasicPreprocessor(projectUri);
         } else {
             throw new InstantiationException("Failed to choose the correct preprocessor. Check the file order.");
         }
@@ -133,9 +133,9 @@ public class Convert extends DwerftTools {
     private Postprocessor choosePostprocessor() throws InstantiationException {
         /* at the moment there is only dq which needs post processing */
         if (files.size() > 0 && hasExtension(files.get(0), "dq")) {
-            return new DramaqueenPostprocessor();
+            return new DramaqueenPostprocessor(projectUri);
         } else {
-            return new BasicPostprocessor();
+            return new BasicPostprocessor(projectUri);
         }
     }
 

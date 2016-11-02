@@ -27,6 +27,12 @@ public class BasicPostprocessor implements Postprocessor {
 
     protected final Logger logger = LogManager.getLogger(this.getClass().getName());
 
+    protected final String projectUri;
+
+    public BasicPostprocessor(String projectUri) {
+        this.projectUri = projectUri;
+    }
+
     @Override
     public RMLDataset postprocess(RMLDataset dataset, Document doc) {
         try {

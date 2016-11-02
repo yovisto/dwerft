@@ -20,6 +20,10 @@ import java.nio.file.Paths;
  */
 public class AlePreprocessor extends CsvPreprocessor {
 
+    public AlePreprocessor(String projectUri) {
+        super(projectUri);
+    }
+
     @Override
     protected URL preprocessInput(Document doc) {
         Path newInput;

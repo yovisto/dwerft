@@ -28,6 +28,12 @@ public class BasicPreprocessor implements Preprocessor {
 
     private static final String RML_SOURCE = "http://semweb.mmlab.be/ns/rml#source";
 
+    protected final String projectUri;
+
+    public BasicPreprocessor(String projectUri) {
+        this.projectUri = projectUri;
+    }
+
     /**
      * Gets the source property.
      *

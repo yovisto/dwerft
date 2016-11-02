@@ -1,11 +1,6 @@
 package de.werft.tools.rmllib.postprocessing;
 
-import java.io.IOException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
+import de.werft.tools.general.Document;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
@@ -15,7 +10,10 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import de.werft.tools.general.Document;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 /**
  * Post process dramaqueen documents.
@@ -23,8 +21,12 @@ import de.werft.tools.general.Document;
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 public class DramaqueenPostprocessor extends BasicPostprocessor {
-	
-	private String getScriptId(org.w3c.dom.Document document) {
+
+    public DramaqueenPostprocessor(String projectUri) {
+        super(projectUri);
+    }
+
+    private String getScriptId(org.w3c.dom.Document document) {
 		Element scriptDoc = (Element)document.getElementsByTagName("ScriptDocument").item(0);
 		return scriptDoc.getAttributes().getNamedItem("id").getTextContent();
 	}

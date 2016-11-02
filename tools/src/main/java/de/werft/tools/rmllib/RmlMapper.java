@@ -79,7 +79,7 @@ public class RmlMapper {
      */
     public RMLDataset convertPreproducer(Document doc) {
         return convert(doc, new PreproducerPreprocessor(config.getPreProducerKey(),
-                config.getPreProducerSecret(), config.getPreProducerAppSecret()));
+                config.getPreProducerSecret(), config.getPreProducerAppSecret(), projectUri));
     }
 
     /**

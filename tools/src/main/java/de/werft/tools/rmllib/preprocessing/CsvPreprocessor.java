@@ -13,6 +13,10 @@ public class CsvPreprocessor extends BasicPreprocessor {
 
     private static final String CSVW_SOURCE = "http://www.w3.org/ns/csvw#url";
 
+    public CsvPreprocessor(String projectUri) {
+        super(projectUri);
+    }
+
 
     @Override
     protected String getSourceProperty() {
