@@ -173,7 +173,7 @@ class Mapping {
                     .append("\t];\n\n")
                     .append("\trr:subjectMap [\n")
                     .append("\t\trr:template \"").append(targetClass).append("/{@id}\";\n")
-                    .append("\t\trr:class \"").append(targetClass).append("\";\n")
+                    .append("\t\trr:class <").append(targetClass).append(">;\n")
                     .append("\t];\n\n");
 
             /* transform node content to predicate map */
