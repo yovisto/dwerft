@@ -19,6 +19,7 @@
         a                         foo:Scene ;
         foo:identifierDramaqueen  "a6455908-8c65-4d9e-98da-98d809cd23c5" ;
         foo:interiorExterior      "ext" ;
+        foo:sceneCharacter        <http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> , <http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> ;
         foo:sceneContent          "Ein Mann mittleren Alters und eine junge Frau sitzen im Ludenbenz und fahren über einen Waldweg. Sie erreichen eine Lichtung und halten an. Parken, Aussteigen, entnehmen Dinge aus dem Kofferraum einen Rucksack, eine Decke, Picknickkorb mit Inhalt " ;
         foo:sceneHeader           "Waldweg Außen Tag" ;
         foo:sceneNumber           "7" ;
@@ -52,6 +53,7 @@
         a                         foo:Scene ;
         foo:identifierDramaqueen  "2191cde9-42ca-4b7e-bf71-e249895714e7" ;
         foo:interiorExterior      "intext" ;
+        foo:sceneCharacter        <http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> ;
         foo:sceneContent          "Drehvorbereitung: Kameramann und sein Assistent fahren zum Technikverleih um das Equipment zu testen. Sie kommen an und plaudern erst einmal mit dem Angestellten des Technikdienstleisters - sie kennen sich bereits von anderen Projekten. " ;
         foo:sceneHeader           "Technikverleih Innen/Außen Tag" ;
         foo:sceneNumber           "1" ;
@@ -85,6 +87,7 @@
         a                         foo:Scene ;
         foo:identifierDramaqueen  "49252729-71b3-4f46-8577-82431eaa9f1e" ;
         foo:interiorExterior      "int" ;
+        foo:sceneCharacter        <http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> ;
         foo:sceneContent          "Kameratest: Kameramann und Assistenz bauen die Technik auf und beginnen mit dem Testen. Sie machen Aufnahmen, wechseln Objektive, gehen das Equipment in den Einzelteilen durch. " ;
         foo:sceneHeader           "Labor Technikverleih Innen Tag" ;
         foo:sceneNumber           "2" ;
@@ -291,6 +294,7 @@
         a                         foo:Scene ;
         foo:identifierDramaqueen  "b3731988-c257-48ae-8641-81a256da8391" ;
         foo:interiorExterior      "ext" ;
+        foo:sceneCharacter        <http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> ;
         foo:sceneContent          "Die junge Frau zieht sich die Schuhe aus und geht mit den Füßen ins Wasser. Sie sammelt Steine. Der Mann bereitet derweil das Picknick vor. Breitet die Decke aus, holt Weinflasche und Gläser aus dem Picknickkorb. Brot, Käse, Couscous Salat, Oliven, griechischen Bauernsalat, Köfte... Sie setzt sich zu ihm (und haut rein) " ;
         foo:sceneHeader           "Lichtung am See Außen Tag" ;
         foo:sceneNumber           "10.1" ;
@@ -309,6 +313,6 @@
         a                         foo:Scene ;
         foo:identifierDramaqueen  "0bf63192-2c14-4d20-a256-7623f3215ad2" ;
         foo:sceneContent          "Bilder stehen im Kontrast zur heutigen Zeit und sollen den Wandel der Zeit beschreiben aber gleichzeitig eine parallele Dynamik entwickeln. Schnell geschnittene historische Aufnahmen vom Tempelhofer Feld: Flugzeuge landen und starten, Fluglotsen bei der Arbeit." ;
-        foo:sceneHeader           "Rückblende Tempelhofer Feld" ;
+        foo:sceneHeader           "Rückblende Tempelhofer FelD" ;
         foo:sceneNumber           "16.2" ;
         foo:sceneSet              <http://filmontology.org/resource/Set/0e03200e-44a6-4375-8699-4ec3ff7b029d> .

@@ -1,8 +1,12 @@
 @prefix foo:   <http://filmontology.org/ontology/2.0/> .
 @prefix for:   <http://filmontology.org/resource/> .
 
+for:DWERFT  <http://purl.org/dc/terms/hasPart>
+                <http://filmontology.org/resource/DwerftProject/c08a2dc4-728b-40d6-b1e0-ef510528a53f> .
+
 <http://filmontology.org/resource/DwerftProject/c08a2dc4-728b-40d6-b1e0-ef510528a53f>
         a                         foo:DwerftProject ;
+		foo:hasProduction <http://filmontology.org/resource/IndividualProduction/f434d145-f054-40f8-bf61-052eb0e0d691>;
         foo:hasTitle <http://filmontology.org/resource/Title/6234eb37-39eb-40ff-ba1f-d103df7642be> .
 
 <http://filmontology.org/resource/Title/6234eb37-39eb-40ff-ba1f-d103df7642be>

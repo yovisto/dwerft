@@ -1,0 +1,100 @@
+@prefix :      <http://filmontology.org/> .
+@prefix webprotege: <http://protege.stanford.edu/webprotege/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foo:   <http://filmontology.org/ontology/1.0/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix for:   <http://filmontology.org/resource/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://filmontology.org/resource/Clip/A004C005_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:clipDuration        "00:01:07:04"^^xsd:string ;
+        foo:clipName            "A004C005_150828_R2GJ.mov"^^xsd:string ;
+        foo:creationDate        "3/16/16 12:54:40 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "13:12:16:07"^^xsd:string ;
+        foo:internalIdentifier  "5"^^xsd:long ;
+        foo:sourceFile          "A004C005_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "13:11:09:03"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A004C001_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:clipDuration        "00:01:23:18"^^xsd:string ;
+        foo:clipName            "A004C001_150828_R2GJ.mov"^^xsd:string ;
+        foo:creationDate        "3/16/16 12:52:13 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "12:57:04:07"^^xsd:string ;
+        foo:internalIdentifier  "1"^^xsd:long ;
+        foo:sourceFile          "A004C001_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "12:55:40:13"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A004C004_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:clipDuration        "00:01:22:17"^^xsd:string ;
+        foo:clipName            "A004C004_150828_R2GJ.mov"^^xsd:string ;
+        foo:creationDate        "3/16/16 12:54:08 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "13:10:28:22"^^xsd:string ;
+        foo:internalIdentifier  "4"^^xsd:long ;
+        foo:sourceFile          "A004C004_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "13:09:06:05"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A004C007_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:clipDuration        "00:03:10:23"^^xsd:string ;
+        foo:clipName            "A004C007_150828_R2GJ.mov"^^xsd:string ;
+        foo:creationDate        "3/16/16 12:59:12 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "13:30:47:13"^^xsd:string ;
+        foo:internalIdentifier  "7"^^xsd:long ;
+        foo:sourceFile          "A004C007_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "13:27:36:14"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A004C003_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:clipDuration        "00:00:27:07"^^xsd:string ;
+        foo:clipName            "A004C003_150828_R2GJ.mov"^^xsd:string ;
+        foo:creationDate        "3/16/16 12:53:55 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "13:08:55:01"^^xsd:string ;
+        foo:internalIdentifier  "3"^^xsd:long ;
+        foo:sourceFile          "A004C003_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "13:08:27:18"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A004C006_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:clipDuration        "00:09:20:20"^^xsd:string ;
+        foo:clipName            "A004C006_150828_R2GJ.mov"^^xsd:string ;
+        foo:creationDate        "3/16/16 12:55:07 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "13:25:32:01"^^xsd:string ;
+        foo:internalIdentifier  "6"^^xsd:long ;
+        foo:sourceFile          "A004C006_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "13:16:11:05"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes (HD1080p)"^^xsd:string .
+
+<http://filmontology.org/resource/Clip/A004C002_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:clipDuration        "00:02:07:07"^^xsd:string ;
+        foo:clipName            "A004C002_150828_R2GJ.mov"^^xsd:string ;
+        foo:creationDate        "3/16/16 12:52:54 PM"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "13:08:20:14"^^xsd:string ;
+        foo:internalIdentifier  "2"^^xsd:long ;
+        foo:sourceFile          "A004C002_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "13:06:13:07"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:videoCodec          "Apple ProRes 4444 (HD1080p)"^^xsd:string .
