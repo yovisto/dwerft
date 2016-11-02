@@ -149,8 +149,25 @@
     rr:predicateObjectMap [
         rr:predicate foo:sceneSet;
         rr:objectMap [ rr:template "http://filmontology.org/resource/Set/{Property[@id='location']}"; ]
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneCharacter;
+        rr:objectMap [ rr:parentTriplesMap <#sceneCharacters>; ]
     ].
+    
+    
+<#sceneCharacters>
+    rml:logicalSource [
+        rml:iterator "/ScriptDocument/sequences/Step/children/Scene/children/Frame/Property[@id='character_list']/Option";
+        rml:referenceFormulation ql:XPath;
+    ];
 
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Character/{@value}";
+        rr:class foo:Character;
+    ].
+    
 <#location>
     rml:logicalSource [
         rml:iterator "/ScriptDocument/locations/Location";
