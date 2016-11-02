@@ -1,0 +1,28 @@
+@prefix :      <http://filmontology.org/> .
+@prefix webprotege: <http://protege.stanford.edu/webprotege/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foo:   <http://filmontology.org/ontology/1.0/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix for:   <http://filmontology.org/resource/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://filmontology.org/resource/Project/18989/Take/dee88135-cc19-4231-8cee-049e59a549c8>
+        a                          foo:Take ;
+        foo:takeNumber             "1"^^xsd:int ;
+        foo:hasClip               <http://filmontology.org/resource/Clip/A001C012_150827_R2GJ> .
+
+<http://filmontology.org/resource/Project/18989/Take/b9e2038c-85ab-44e0-8edc-b41e5cfee382>
+        a                          foo:Take ;
+        foo:takeNumber             "2"^^xsd:int ;
+        foo:hasClip               <http://filmontology.org/resource/Clip/A001C013_150827_R2GJ> .
+
+<http://filmontology.org/resource/Project/18989/Take/1508ed17-ff16-40cb-b012-7060eafb505a>
+        a                          foo:Take ;
+        foo:takeNumber             "3"^^xsd:int ;
+        foo:hasClip               <http://filmontology.org/resource/Clip/A001C014_150827_R2GJ> .
+
+
+<http://filmontology.org/resource/Project/18989/Scene/4A2D-14F46B09D5>
+        foo:hasTake               <http://filmontology.org/resource/Project/18989/Take/dee88135-cc19-4231-8cee-049e59a549c8>, <http://filmontology.org/resource/Project/18989/Take/b9e2038c-85ab-44e0-8edc-b41e5cfee382>, <http://filmontology.org/resource/Project/18989/Take/1508ed17-ff16-40cb-b012-7060eafb505a> .

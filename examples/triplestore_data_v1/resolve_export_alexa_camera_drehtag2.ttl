@@ -1,0 +1,254 @@
+@prefix :      <http://filmontology.org/> .
+@prefix webprotege: <http://protege.stanford.edu/webprotege/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foo:   <http://filmontology.org/ontology/1.0/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix for:   <http://filmontology.org/resource/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://filmontology.org/resource/Clip/A004C005_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraIdentifier    "R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraModel         "Alexa Plus"^^xsd:string ;
+        foo:cameraSerialNumber  "3187"^^xsd:int ;
+        foo:clipName            "A004C005_150828_R2GJ.mov"^^xsd:string ;
+        foo:clipNumber          "A004C005_150828_R2GJ"^^xsd:string ;
+        foo:colorspace          "LOG-C"^^xsd:string ;
+        foo:comments            "MOS"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:endTimecode         "13:12:16:07"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:eyeIndex            "SINGLE"^^xsd:string ;
+        foo:internalIdentifier  "5"^^xsd:long ;
+        foo:lensSerialNumber    "0"^^xsd:int ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:manufacturer        "DaVinci Resolve"^^xsd:string ;
+        foo:ndFilterdensity     "0"^^xsd:int ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:sceneNumber         "17_1"^^xsd:string ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterAngle        "1728"^^xsd:int ;
+        foo:sourceBitDepth      "16"^^xsd:int ;
+        foo:sourceFilePath      "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C005_150828_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920x1080"^^xsd:string ;
+        foo:startTimecode       "13:11:09:03"^^xsd:string ;
+        foo:take                "4"^^xsd:int ;
+        foo:tapeIdentifier      "A004C005_150828_R2GJ"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:uncPath             "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/004_transcode_resolve_for_avid/DT_02/dt_02_alexa_for_avid/A004C005_150828_R2GJ.mxf"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
+
+<http://filmontology.org/resource/Clip/A004C001_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraIdentifier    "R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraModel         "Alexa Plus"^^xsd:string ;
+        foo:cameraSerialNumber  "3187"^^xsd:int ;
+        foo:clipName            "A004C001_150828_R2GJ.mov"^^xsd:string ;
+        foo:clipNumber          "A004C001_150828_R2GJ"^^xsd:string ;
+        foo:colorspace          "LOG-C"^^xsd:string ;
+        foo:comments            "MOS"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:endTimecode         "12:57:04:07"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:eyeIndex            "SINGLE"^^xsd:string ;
+        foo:internalIdentifier  "1"^^xsd:long ;
+        foo:lensSerialNumber    "0"^^xsd:int ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:manufacturer        "DaVinci Resolve"^^xsd:string ;
+        foo:ndFilterdensity     "0"^^xsd:int ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:sceneNumber         "17_0"^^xsd:string ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterAngle        "1728"^^xsd:int ;
+        foo:sourceBitDepth      "16"^^xsd:int ;
+        foo:sourceFilePath      "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C001_150828_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920x1080"^^xsd:string ;
+        foo:startTimecode       "12:55:40:13"^^xsd:string ;
+        foo:take                "1"^^xsd:int ;
+        foo:tapeIdentifier      "A004C001_150828_R2GJ"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:uncPath             "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/004_transcode_resolve_for_avid/DT_02/dt_02_alexa_for_avid/A004C001_150828_R2GJ.mxf"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
+
+<http://filmontology.org/resource/Clip/A004C004_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraIdentifier    "R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraModel         "Alexa Plus"^^xsd:string ;
+        foo:cameraSerialNumber  "3187"^^xsd:int ;
+        foo:clipName            "A004C004_150828_R2GJ.mov"^^xsd:string ;
+        foo:clipNumber          "A004C004_150828_R2GJ"^^xsd:string ;
+        foo:colorspace          "LOG-C"^^xsd:string ;
+        foo:comments            "MOS"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:endTimecode         "13:10:28:22"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:eyeIndex            "SINGLE"^^xsd:string ;
+        foo:internalIdentifier  "4"^^xsd:long ;
+        foo:lensSerialNumber    "0"^^xsd:int ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:manufacturer        "DaVinci Resolve"^^xsd:string ;
+        foo:ndFilterdensity     "0"^^xsd:int ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:sceneNumber         "17_1"^^xsd:string ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterAngle        "1728"^^xsd:int ;
+        foo:sourceBitDepth      "16"^^xsd:int ;
+        foo:sourceFilePath      "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C004_150828_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920x1080"^^xsd:string ;
+        foo:startTimecode       "13:09:06:05"^^xsd:string ;
+        foo:take                "3"^^xsd:int ;
+        foo:tapeIdentifier      "A004C004_150828_R2GJ"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:uncPath             "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/004_transcode_resolve_for_avid/DT_02/dt_02_alexa_for_avid/A004C004_150828_R2GJ.mxf"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
+
+<http://filmontology.org/resource/Clip/A004C007_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraIdentifier    "R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraModel         "Alexa Plus"^^xsd:string ;
+        foo:cameraSerialNumber  "3187"^^xsd:int ;
+        foo:clipName            "A004C007_150828_R2GJ.mov"^^xsd:string ;
+        foo:clipNumber          "A004C007_150828_R2GJ"^^xsd:string ;
+        foo:colorspace          "LOG-C"^^xsd:string ;
+        foo:comments            "MOS/60fps"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:endTimecode         "13:30:47:13"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:eyeIndex            "SINGLE"^^xsd:string ;
+        foo:internalIdentifier  "7"^^xsd:long ;
+        foo:lensSerialNumber    "0"^^xsd:int ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:manufacturer        "DaVinci Resolve"^^xsd:string ;
+        foo:ndFilterdensity     "0"^^xsd:int ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:sceneNumber         "17_1"^^xsd:string ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterAngle        "1728"^^xsd:int ;
+        foo:sourceBitDepth      "10"^^xsd:int ;
+        foo:sourceFilePath      "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C007_150828_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920x1080"^^xsd:string ;
+        foo:startTimecode       "13:27:36:14"^^xsd:string ;
+        foo:take                "6"^^xsd:int ;
+        foo:tapeIdentifier      "A004C007_150828_R2GJ"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:uncPath             "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/004_transcode_resolve_for_avid/DT_02/dt_02_alexa_for_avid/A004C007_150828_R2GJ.mxf"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
+
+<http://filmontology.org/resource/Clip/A004C003_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraIdentifier    "R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraModel         "Alexa Plus"^^xsd:string ;
+        foo:cameraSerialNumber  "3187"^^xsd:int ;
+        foo:clipName            "A004C003_150828_R2GJ.mov"^^xsd:string ;
+        foo:clipNumber          "A004C003_150828_R2GJ"^^xsd:string ;
+        foo:colorspace          "LOG-C"^^xsd:string ;
+        foo:comments            "MOS"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:endTimecode         "13:08:55:01"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:eyeIndex            "SINGLE"^^xsd:string ;
+        foo:internalIdentifier  "3"^^xsd:long ;
+        foo:lensSerialNumber    "0"^^xsd:int ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:manufacturer        "DaVinci Resolve"^^xsd:string ;
+        foo:ndFilterdensity     "0"^^xsd:int ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:sceneNumber         "17_1"^^xsd:string ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterAngle        "1728"^^xsd:int ;
+        foo:sourceBitDepth      "16"^^xsd:int ;
+        foo:sourceFilePath      "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C003_150828_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920x1080"^^xsd:string ;
+        foo:startTimecode       "13:08:27:18"^^xsd:string ;
+        foo:take                "2"^^xsd:int ;
+        foo:tapeIdentifier      "A004C003_150828_R2GJ"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:uncPath             "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/004_transcode_resolve_for_avid/DT_02/dt_02_alexa_for_avid/A004C003_150828_R2GJ.mxf"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
+
+<http://filmontology.org/resource/Clip/A004C006_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraIdentifier    "R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraModel         "Alexa Plus"^^xsd:string ;
+        foo:cameraSerialNumber  "3187"^^xsd:int ;
+        foo:clipName            "A004C006_150828_R2GJ.mov"^^xsd:string ;
+        foo:clipNumber          "A004C006_150828_R2GJ"^^xsd:string ;
+        foo:colorspace          "LOG-C"^^xsd:string ;
+        foo:comments            "MOS/60fps"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:endTimecode         "13:25:32:01"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:eyeIndex            "SINGLE"^^xsd:string ;
+        foo:internalIdentifier  "6"^^xsd:long ;
+        foo:lensSerialNumber    "0"^^xsd:int ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:manufacturer        "DaVinci Resolve"^^xsd:string ;
+        foo:ndFilterdensity     "0"^^xsd:int ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:sceneNumber         "17_1"^^xsd:string ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterAngle        "1728"^^xsd:int ;
+        foo:sourceBitDepth      "10"^^xsd:int ;
+        foo:sourceFilePath      "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C006_150828_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920x1080"^^xsd:string ;
+        foo:startTimecode       "13:16:11:05"^^xsd:string ;
+        foo:take                "5"^^xsd:int ;
+        foo:tapeIdentifier      "A004C006_150828_R2GJ"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:uncPath             "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/004_transcode_resolve_for_avid/DT_02/dt_02_alexa_for_avid/A004C006_150828_R2GJ.mxf"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
+
+<http://filmontology.org/resource/Clip/A004C002_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:cameraIdentifier    "R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraModel         "Alexa Plus"^^xsd:string ;
+        foo:cameraSerialNumber  "3187"^^xsd:int ;
+        foo:clipName            "A004C002_150828_R2GJ.mov"^^xsd:string ;
+        foo:clipNumber          "A004C002_150828_R2GJ"^^xsd:string ;
+        foo:colorspace          "LOG-C"^^xsd:string ;
+        foo:comments            "MOS"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:endTimecode         "13:08:20:14"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:eyeIndex            "SINGLE"^^xsd:string ;
+        foo:internalIdentifier  "2"^^xsd:long ;
+        foo:lensSerialNumber    "0"^^xsd:int ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:manufacturer        "DaVinci Resolve"^^xsd:string ;
+        foo:ndFilterdensity     "0"^^xsd:int ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:sceneNumber         "17_1"^^xsd:string ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterAngle        "1728"^^xsd:int ;
+        foo:sourceBitDepth      "16"^^xsd:int ;
+        foo:sourceFilePath      "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C002_150828_R2GJ.mov"^^xsd:string ;
+        foo:sourceResolution    "1920x1080"^^xsd:string ;
+        foo:startTimecode       "13:06:13:07"^^xsd:string ;
+        foo:take                "1"^^xsd:int ;
+        foo:tapeIdentifier      "A004C002_150828_R2GJ"^^xsd:string ;
+        foo:tracks              "V"^^xsd:string ;
+        foo:uncPath             "/Volumes/LaCie/PROJEKTE/dwerft/DWERFT_TESTDREH/004_transcode_resolve_for_avid/DT_02/dt_02_alexa_for_avid/A004C002_150828_R2GJ.mxf"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .

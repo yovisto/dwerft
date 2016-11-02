@@ -1,0 +1,297 @@
+@prefix :      <http://filmontology.org/> .
+@prefix webprotege: <http://protege.stanford.edu/webprotege/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foo:   <http://filmontology.org/ontology/1.0/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix for:   <http://filmontology.org/resource/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://filmontology.org/resource/Clip/A004C005_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:binName             "A004R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraRoll          "A004R2GJ"^^xsd:string ;
+        foo:cinematographer     "ROBERT_FRIEBE"^^xsd:string ;
+        foo:circledTake         "-"^^xsd:string ;
+        foo:clipDuration        "00:01:07:04"^^xsd:string ;
+        foo:clipName            "A004C005_150828_R2GJ"^^xsd:string ;
+        foo:codec               "ProRes 4444"^^xsd:string ;
+        foo:colorLabel          "No Label"^^xsd:string ;
+        foo:colorSpace          "LogC"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "13:12:16:07"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:filePath            "/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C005_150828_R2GJ.mov"^^xsd:string ;
+        foo:fileSize            "2447539938"^^xsd:string ;
+        foo:fileType            "mov"^^xsd:string ;
+        foo:frameCount          "1612"^^xsd:int ;
+        foo:fstop               "0"^^xsd:int ;
+        foo:importPlugin        "ARRI Alexa Importer"^^xsd:string ;
+        foo:internalIdentifier  "5"^^xsd:long ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:rating              "Rating 0 of 5"^^xsd:string ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:resolution          "HD"^^xsd:string ;
+        foo:resourceCount       "7"^^xsd:int ;
+        foo:resourceSummary     "7 file resources (A004R2GJ, HFF_1, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_3, HFF_2)"^^xsd:string ;
+        foo:sceneNumber         "17 - 1"^^xsd:string ;
+        foo:sensorFps           "24"^^xsd:int ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterSpeed        "1/50s"^^xsd:string ;
+        foo:sourceFile          "A004C005_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "13:11:09:03"^^xsd:string ;
+        foo:take                "4"^^xsd:int ;
+        foo:uuid                "A61B18FD-357D-415D-8DA0-26A328FE6B0D"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
+
+<http://filmontology.org/resource/Clip/A004C001_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:binName             "A004R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraRoll          "A004R2GJ"^^xsd:string ;
+        foo:cinematographer     "ROBERT_FRIEBE"^^xsd:string ;
+        foo:circledTake         "-"^^xsd:string ;
+        foo:clipDuration        "00:01:23:18"^^xsd:string ;
+        foo:clipName            "A004C001_150828_R2GJ"^^xsd:string ;
+        foo:codec               "ProRes 4444"^^xsd:string ;
+        foo:colorLabel          "No Label"^^xsd:string ;
+        foo:colorSpace          "LogC"^^xsd:string ;
+        foo:description         "erster Test mit Lastenrad"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "12:57:04:07"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:filePath            "/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C001_150828_R2GJ.mov"^^xsd:string ;
+        foo:fileSize            "2979157530"^^xsd:string ;
+        foo:fileType            "mov"^^xsd:string ;
+        foo:frameCount          "2010"^^xsd:int ;
+        foo:fstop               "0"^^xsd:int ;
+        foo:importPlugin        "ARRI Alexa Importer"^^xsd:string ;
+        foo:internalIdentifier  "1"^^xsd:long ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:rating              "Rating 0 of 5"^^xsd:string ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:resolution          "HD"^^xsd:string ;
+        foo:resourceCount       "7"^^xsd:int ;
+        foo:resourceSummary     "7 file resources (A004R2GJ, HFF_1, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_3, HFF_2)"^^xsd:string ;
+        foo:sceneNumber         "17 - 0"^^xsd:string ;
+        foo:sensorFps           "24"^^xsd:int ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterSpeed        "1/50s"^^xsd:string ;
+        foo:sourceFile          "A004C001_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "12:55:40:13"^^xsd:string ;
+        foo:take                "1"^^xsd:int ;
+        foo:uuid                "9C8DDC7E-38DA-4FA9-ADD4-8B15CB071396"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
+
+<http://filmontology.org/resource/Clip/A004C004_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:binName             "A004R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraRoll          "A004R2GJ"^^xsd:string ;
+        foo:cinematographer     "ROBERT_FRIEBE"^^xsd:string ;
+        foo:circledTake         "-"^^xsd:string ;
+        foo:clipDuration        "00:01:22:17"^^xsd:string ;
+        foo:clipName            "A004C004_150828_R2GJ"^^xsd:string ;
+        foo:codec               "ProRes 4444"^^xsd:string ;
+        foo:colorLabel          "No Label"^^xsd:string ;
+        foo:colorSpace          "LogC"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "13:10:28:22"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:filePath            "/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C004_150828_R2GJ.mov"^^xsd:string ;
+        foo:fileSize            "2979157546"^^xsd:string ;
+        foo:fileType            "mov"^^xsd:string ;
+        foo:frameCount          "1985"^^xsd:int ;
+        foo:fstop               "0"^^xsd:int ;
+        foo:importPlugin        "ARRI Alexa Importer"^^xsd:string ;
+        foo:internalIdentifier  "4"^^xsd:long ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:rating              "Rating 0 of 5"^^xsd:string ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:resolution          "HD"^^xsd:string ;
+        foo:resourceCount       "7"^^xsd:int ;
+        foo:resourceSummary     "7 file resources (HFF_1, A004R2GJ, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_3, HFF_2)"^^xsd:string ;
+        foo:sceneNumber         "17 - 1"^^xsd:string ;
+        foo:sensorFps           "24"^^xsd:int ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterSpeed        "1/50s"^^xsd:string ;
+        foo:sourceFile          "A004C004_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "13:09:06:05"^^xsd:string ;
+        foo:take                "3"^^xsd:int ;
+        foo:uuid                "07E0389D-BB7A-49F3-8D3E-4E57082214DB"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
+
+<http://filmontology.org/resource/Clip/A004C007_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:binName             "A004R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraRoll          "A004R2GJ"^^xsd:string ;
+        foo:cinematographer     "ROBERT_FRIEBE"^^xsd:string ;
+        foo:circledTake         "-"^^xsd:string ;
+        foo:clipDuration        "00:03:10:23"^^xsd:string ;
+        foo:clipName            "A004C007_150828_R2GJ"^^xsd:string ;
+        foo:codec               "ProRes 422"^^xsd:string ;
+        foo:colorLabel          "No Label"^^xsd:string ;
+        foo:colorSpace          "LogC"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "13:30:47:13"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:filePath            "/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C007_150828_R2GJ.mov"^^xsd:string ;
+        foo:fileSize            "3070008174"^^xsd:string ;
+        foo:fileType            "mov"^^xsd:string ;
+        foo:frameCount          "4583"^^xsd:int ;
+        foo:fstop               "0"^^xsd:int ;
+        foo:importPlugin        "ARRI Alexa Importer"^^xsd:string ;
+        foo:internalIdentifier  "7"^^xsd:long ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:rating              "Rating 0 of 5"^^xsd:string ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:resolution          "HD"^^xsd:string ;
+        foo:resourceCount       "7"^^xsd:int ;
+        foo:resourceSummary     "7 file resources (HFF_1, A004R2GJ, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_3, HFF_2)"^^xsd:string ;
+        foo:sceneNumber         "17 - 1"^^xsd:string ;
+        foo:sensorFps           "60"^^xsd:int ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterSpeed        "1/125s"^^xsd:string ;
+        foo:sourceFile          "A004C007_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "13:27:36:14"^^xsd:string ;
+        foo:take                "5"^^xsd:int ;
+        foo:uuid                "98AAAB9A-20BB-49B2-9D2D-C71B4AA18794"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
+
+<http://filmontology.org/resource/Clip/A004C003_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:binName             "A004R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraRoll          "A004R2GJ"^^xsd:string ;
+        foo:cinematographer     "ROBERT_FRIEBE"^^xsd:string ;
+        foo:circledTake         "-"^^xsd:string ;
+        foo:clipDuration        "00:00:27:07"^^xsd:string ;
+        foo:clipName            "A004C003_150828_R2GJ"^^xsd:string ;
+        foo:codec               "ProRes 4444"^^xsd:string ;
+        foo:colorLabel          "No Label"^^xsd:string ;
+        foo:colorSpace          "LogC"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "13:08:55:01"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:filePath            "/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C003_150828_R2GJ.mov"^^xsd:string ;
+        foo:fileSize            "1065333994"^^xsd:int ;
+        foo:fileType            "mov"^^xsd:string ;
+        foo:frameCount          "655"^^xsd:int ;
+        foo:fstop               "0"^^xsd:int ;
+        foo:importPlugin        "ARRI Alexa Importer"^^xsd:string ;
+        foo:internalIdentifier  "3"^^xsd:long ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:rating              "Rating 0 of 5"^^xsd:string ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:resolution          "HD"^^xsd:string ;
+        foo:resourceCount       "7"^^xsd:int ;
+        foo:resourceSummary     "7 file resources (HFF_1, A004R2GJ, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_3, HFF_2)"^^xsd:string ;
+        foo:sceneNumber         "17 - 1"^^xsd:string ;
+        foo:sensorFps           "24"^^xsd:int ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterSpeed        "1/50s"^^xsd:string ;
+        foo:sourceFile          "A004C003_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "13:08:27:18"^^xsd:string ;
+        foo:take                "2"^^xsd:int ;
+        foo:uuid                "B6BFF032-29CC-4781-ADA6-9A50708898A9"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
+
+<http://filmontology.org/resource/Clip/A004C006_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:binName             "A004R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraRoll          "A004R2GJ"^^xsd:string ;
+        foo:cinematographer     "ROBERT_FRIEBE"^^xsd:string ;
+        foo:circledTake         "-"^^xsd:string ;
+        foo:clipDuration        "00:09:20:20"^^xsd:string ;
+        foo:clipName            "A004C006_150828_R2GJ"^^xsd:string ;
+        foo:codec               "ProRes 422"^^xsd:string ;
+        foo:colorLabel          "No Label"^^xsd:string ;
+        foo:colorSpace          "LogC"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "13:25:32:01"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:filePath            "/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C006_150828_R2GJ.mov"^^xsd:string ;
+        foo:fileSize            "8851838818"^^xsd:string ;
+        foo:fileType            "mov"^^xsd:string ;
+        foo:frameCount          "13460"^^xsd:int ;
+        foo:fstop               "0"^^xsd:int ;
+        foo:importPlugin        "ARRI Alexa Importer"^^xsd:string ;
+        foo:internalIdentifier  "6"^^xsd:long ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:rating              "Rating 0 of 5"^^xsd:string ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:resolution          "HD"^^xsd:string ;
+        foo:resourceCount       "7"^^xsd:int ;
+        foo:resourceSummary     "7 file resources (HFF_1, A004R2GJ, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_3, HFF_2)"^^xsd:string ;
+        foo:sceneNumber         "17 - 1"^^xsd:string ;
+        foo:sensorFps           "60"^^xsd:int ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterSpeed        "1/125s"^^xsd:string ;
+        foo:sourceFile          "A004C006_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "13:16:11:05"^^xsd:string ;
+        foo:take                "5"^^xsd:int ;
+        foo:uuid                "00325813-07F7-42CC-A56A-39DE36BB90A3"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
+
+<http://filmontology.org/resource/Clip/A004C002_150828_R2GJ>
+        a                       foo:Clip ;
+        foo:binName             "A004R2GJ"^^xsd:string ;
+        foo:cameraIndex         "A"^^xsd:string ;
+        foo:cameraRoll          "A004R2GJ"^^xsd:string ;
+        foo:cinematographer     "ROBERT_FRIEBE"^^xsd:string ;
+        foo:circledTake         "-"^^xsd:string ;
+        foo:clipDuration        "00:02:07:07"^^xsd:string ;
+        foo:clipName            "A004C002_150828_R2GJ"^^xsd:string ;
+        foo:codec               "ProRes 4444"^^xsd:string ;
+        foo:colorLabel          "No Label"^^xsd:string ;
+        foo:colorSpace          "LogC"^^xsd:string ;
+        foo:directorName        "CEVAT_MASKAR"^^xsd:string ;
+        foo:driveName           "LaCie"^^xsd:string ;
+        foo:endTimecode         "13:08:20:14"^^xsd:string ;
+        foo:exposureIndex       "320"^^xsd:int ;
+        foo:filePath            "/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C002_150828_R2GJ.mov"^^xsd:string ;
+        foo:fileSize            "4574010442"^^xsd:string ;
+        foo:fileType            "mov"^^xsd:string ;
+        foo:frameCount          "3055"^^xsd:int ;
+        foo:fstop               "0"^^xsd:int ;
+        foo:importPlugin        "ARRI Alexa Importer"^^xsd:string ;
+        foo:internalIdentifier  "2"^^xsd:long ;
+        foo:location            "BERNSTEINSEE"^^xsd:string ;
+        foo:productionName      "DWERFT_TESTDREH"^^xsd:string ;
+        foo:projectFps          "24"^^xsd:int ;
+        foo:rating              "Rating 0 of 5"^^xsd:string ;
+        foo:reelName            "A004R2GJ"^^xsd:string ;
+        foo:resolution          "HD"^^xsd:string ;
+        foo:resourceCount       "7"^^xsd:int ;
+        foo:resourceSummary     "7 file resources (HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, A004R2GJ, HFF_2)"^^xsd:string ;
+        foo:sceneNumber         "17 - 1"^^xsd:string ;
+        foo:sensorFps           "24"^^xsd:int ;
+        foo:shootDate           "20150828"^^xsd:int ;
+        foo:shutterSpeed        "1/50s"^^xsd:string ;
+        foo:sourceFile          "A004C002_150828_R2GJ.mov"^^xsd:string ;
+        foo:startTimecode       "13:06:13:07"^^xsd:string ;
+        foo:take                "1"^^xsd:int ;
+        foo:uuid                "878080C2-4C8D-499D-8D57-9EF4E0C866C0"^^xsd:string ;
+        foo:whiteBalance        "5600"^^xsd:int .
