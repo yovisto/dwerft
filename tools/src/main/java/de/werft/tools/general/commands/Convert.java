@@ -5,6 +5,7 @@ import com.github.rvesse.airline.annotations.Arguments;
 import com.github.rvesse.airline.annotations.Command;
 import com.github.rvesse.airline.annotations.Option;
 import com.github.rvesse.airline.annotations.help.ProseSection;
+import com.github.rvesse.airline.annotations.restrictions.Required;
 import de.werft.tools.general.Document;
 import de.werft.tools.general.DwerftConfig;
 import de.werft.tools.general.DwerftTools;
@@ -56,6 +57,10 @@ public class Convert extends DwerftTools {
 
     @Option(name = {"-p", "--print"}, description = "Print conversion output to console instead of file.")
     private boolean print = false;
+
+    @Option(name = {"-u", "--project-uri"}, description = "A uri which refers to the main project.")
+    @Required
+    private String projectUrl = "";
 
     private final String RDF_SUFFIX = "(rdf|ttl|n3|nt)";
 

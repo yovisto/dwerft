@@ -45,6 +45,7 @@ public class Mapper {
             List<Mapping> mappings = readInput(input);
             //logger.debug("Red the following mappings:\n" + mappings); /* maybe to much output */
             mappings = orderMappings(mappings);
+            transform(mappings);
             logger.debug("Ordered mappings are:##########################\n" + mappings);
             logger.debug("Write mapping to " + output);
             write(mappings, output);
@@ -76,19 +77,36 @@ public class Mapper {
         for (Mapping clazz : oldOrder) {
             if (clazz.isClassMapping()) {
                 newOrder.add(clazz);
-                clazz.transform();
 
                 /* then add all properties which starts with the class path */
                 for (Mapping property : oldOrder) {
                     if (isChildProperty(property, clazz)) {
                         newOrder.add(property);
-                        property.transform();
                     }
                 }
             }
         }
 
         return newOrder;
+    }
+
+    /* simply translate the old mappings into the new ones */
+    private void transform(List<Mapping> mappings) {
+        for (Mapping m : mappings) {
+            m.transform(isNextClassOrLast(mappings, m));
+        }
+    }
+
+    /* return true is the next mapping is a class or this is the last element in a list */
+    private boolean isNextClassOrLast(List<Mapping> oldOrder, Mapping m) {
+        try {
+            System.out.println(oldOrder.lastIndexOf(m));
+            System.out.println("last " + oldOrder.get(oldOrder.lastIndexOf(m) + 1).isClassMapping());
+            return oldOrder.get(oldOrder.lastIndexOf(m) + 1).isClassMapping();
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("default true ");
+            return true;
+        }
     }
 
     private boolean isChildProperty(Mapping property, Mapping parent) {

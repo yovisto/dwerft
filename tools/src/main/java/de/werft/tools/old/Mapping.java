@@ -162,7 +162,7 @@ class Mapping {
     }
 
 
-    void transform() {
+    void transform(boolean nextClassOrLast) {
         StringBuilder builder = new StringBuilder();
 
         /* transform class mappings */
@@ -173,24 +173,37 @@ class Mapping {
                     .append("\t];\n\n")
                     .append("\trr:subjectMap [\n")
                     .append("\t\trr:template \"").append(targetClass).append("/{@id}\"\n")
-                    .append("\t\trr:class \"").append(targetClass).append("\"\n")
-                    .append("\t];\n\n");
+                    .append("\t\trr:class \"").append(targetClass).append("\"\n");
+
+            if (nextClassOrLast) {
+                builder.append("\t].\n\n");
+            } else {
+                builder.append("\t];\n\n");
+            }
 
             /* transform node content to predicate map */
         } else if (isNodeProperty()) {
             builder.append("\trr:predicateObjectMap [\n")
                     .append("\t\trr:predicate \"").append(targetProperty).append("\";\n")
-                    .append("\t\trr:objectMap [ rml:reference \"").append(path).append("\" ];\n")
-                    .append("\t];\n\n");
+                    .append("\t\trr:objectMap [ rml:reference \"").append(path).append("\" ];\n");
 
+            if (nextClassOrLast) {
+                builder.append("\t].\n\n");
+            } else {
+                builder.append("\t];\n\n");
+            }
             /* transform attribute content to predicate map */
         } else if (isAttrProperty()) {
             builder.append("\trr:predicateObjectMap [\n")
                     .append("\t\trr:predicate \"").append(targetProperty).append("\";\n")
-                    .append("\t\trr:objectMap [ rml:reference \"@").append(sourceName).append("\" ];\n")
-                    .append("\t];\n\n");
-        }
+                    .append("\t\trr:objectMap [ rml:reference \"@").append(sourceName).append("\" ];\n");
 
+            if (nextClassOrLast) {
+                builder.append("\t].\n\n");
+            } else {
+                builder.append("\t];\n\n");
+            }
+        }
         this.rmlPart = builder.toString();
     }
 
