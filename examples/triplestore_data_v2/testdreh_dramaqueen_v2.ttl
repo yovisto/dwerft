@@ -309,6 +309,6 @@
         a                         foo:Scene ;
         foo:identifierDramaqueen  "0bf63192-2c14-4d20-a256-7623f3215ad2" ;
         foo:sceneContent          "Bilder stehen im Kontrast zur heutigen Zeit und sollen den Wandel der Zeit beschreiben aber gleichzeitig eine parallele Dynamik entwickeln. Schnell geschnittene historische Aufnahmen vom Tempelhofer Feld: Flugzeuge landen und starten, Fluglotsen bei der Arbeit." ;
-        foo:sceneHeader           "Rückblende Tempelhofer Feld" ;
+        foo:sceneHeader           "Rückblende Tempelhofer FelD" ;
         foo:sceneNumber           "16.2" ;
         foo:sceneSet              <http://filmontology.org/resource/Set/0e03200e-44a6-4375-8699-4ec3ff7b029d> .
