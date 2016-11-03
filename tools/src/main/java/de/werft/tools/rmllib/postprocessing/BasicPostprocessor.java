@@ -29,7 +29,11 @@ public class BasicPostprocessor implements Postprocessor {
 
     protected final String projectUri;
 
-    public BasicPostprocessor(String projectUri) {
+    public String getProjectUri() {
+		return projectUri;
+	}
+
+	public BasicPostprocessor(String projectUri) {
         this.projectUri = projectUri;
     }
 

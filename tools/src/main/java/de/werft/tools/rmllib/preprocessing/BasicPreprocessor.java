@@ -30,7 +30,11 @@ public class BasicPreprocessor implements Preprocessor {
 
     protected final String projectUri;
 
-    public BasicPreprocessor(String projectUri) {
+    public String getProjectUri() {
+		return projectUri;
+	}
+
+	public BasicPreprocessor(String projectUri) {
         this.projectUri = projectUri;
     }
 
