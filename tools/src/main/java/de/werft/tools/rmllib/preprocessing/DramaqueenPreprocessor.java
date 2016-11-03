@@ -35,7 +35,7 @@ import java.util.zip.ZipFile;
 public class DramaqueenPreprocessor extends BasicPreprocessor {
 
     public DramaqueenPreprocessor(String projectUri) {
-
+        super(projectUri);
     }
 
     @Override

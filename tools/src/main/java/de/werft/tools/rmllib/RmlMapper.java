@@ -49,8 +49,8 @@ public class RmlMapper {
      *
      * @param doc the the {@link Document}
      */
-    public RMLDataset convertGeneric(Document doc) {
-        return convert(doc, new BasicPreprocessor());
+    public RMLDataset convertGeneric(Document doc, String projectUri) {
+        return convert(doc, new BasicPreprocessor(projectUri));
     }
 
     /**
@@ -58,8 +58,8 @@ public class RmlMapper {
      *
      * @param doc the the {@link Document}
      */
-    public RMLDataset convertCsv(Document doc) {
-        return convert(doc, new CsvPreprocessor());
+    public RMLDataset convertCsv(Document doc, String projectUri) {
+        return convert(doc, new CsvPreprocessor(projectUri));
     }
 
     /**
@@ -67,8 +67,8 @@ public class RmlMapper {
      *
      * @param doc the the {@link Document}
      */
-    public RMLDataset convertAle(Document doc) {
-        return convert(doc, new AlePreprocessor());
+    public RMLDataset convertAle(Document doc, String projectUri) {
+        return convert(doc, new AlePreprocessor(projectUri));
     }
 
     /**
@@ -77,7 +77,7 @@ public class RmlMapper {
      *
      * @param doc the {@link Document} without an input file
      */
-    public RMLDataset convertPreproducer(Document doc) {
+    public RMLDataset convertPreproducer(Document doc, String projectUri) {
         return convert(doc, new PreproducerPreprocessor(config.getPreProducerKey(),
                 config.getPreProducerSecret(), config.getPreProducerAppSecret(), projectUri));
     }
@@ -87,8 +87,8 @@ public class RmlMapper {
      *
      * @param doc the {@link Document}
      */
-    public RMLDataset convertDramaqueen(Document doc) {
-        return convert(doc, new DramaqueenPreprocessor());
+    public RMLDataset convertDramaqueen(Document doc, String projectUri) {
+        return convert(doc, new DramaqueenPreprocessor(projectUri));
     }
 
     /**
