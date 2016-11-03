@@ -1,21 +1,5 @@
 package de.werft.tools.rmllib.preprocessing;
 
-import de.werft.tools.general.Document;
-import org.apache.commons.codec.binary.Base64;
-import org.atteo.xmlcombiner.XmlCombiner;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -28,8 +12,29 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.apache.commons.codec.binary.Base64;
+import org.atteo.xmlcombiner.XmlCombiner;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import de.werft.tools.general.Document;
 
 /**
  * This preprocessor fetches the xml files from the
@@ -51,6 +56,8 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
     private String secret;
 
     private String appSecret;
+    
+    private Map<String,String> idMapping;
 
     /**
      * Instantiates a new Preproducer preprocessor.
@@ -88,7 +95,12 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             /* build xml and do pre processing */
             org.w3c.dom.Document result = combiner.buildDocument();
             generateUuidsForAddresses(result);
+            
+            idMapping = new HashMap<String,String>();
+            buildFigureCharacterMapping(result);
             correctIds(result);
+            replaceIds(result);
+            addProductionId(result);
 
             /* write to disk */
             tmpFile = Files.createTempFile("prepro", ".xml");
@@ -100,13 +112,17 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
 
             return tmpFile.toUri().toURL();
             
-//          return new File("d:\\hagt\\googledrive\\DWerft\\Preproducer\\xml-testdreh\\2016-10-21-combined\\preproducer.xml").toURI().toURL();
-
         } catch (ParserConfigurationException | IOException | TransformerException | SAXException e) {
             logger.error("Could not fetch and preprocess Preproducer xml.");
         }
 
         return null;
+    }
+    
+    private void addProductionId(org.w3c.dom.Document document) {
+    	Node item = document.getElementsByTagName("project").item(0);
+    	String[] split = getProjectUri().split("/");
+    	((Element)item).setAttribute("productionId", split[split.length-1]);
     }
 
     /* set the dqid as id and the old id as ppid */
@@ -117,14 +133,83 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             /* traverse the xml tree */
             for (int i = 0; i < childs.getLength(); i++) {
                 Node child = childs.item(i);
+                /* if we have both dramaqueen and preproducer id, add a new preproducer id attribute and replace normal id with dramaqueen
                 /* if we have an id attribute, then set the id as new ppId attribute and dq id as new id */
-                if (child.hasAttributes() && child.getAttributes().getNamedItem("id") != null) {
-                    ((Element) child).setAttribute("ppid", ((Element) child).getAttribute("id"));
+                if (child.hasAttributes() && child.getAttributes().getNamedItem("id") != null && child.getAttributes().getNamedItem("dramaqueenid") != null) {
+                	String ppid = ((Element) child).getAttribute("id");
+                	String dqid = ((Element) child).getAttribute("dramaqueenid");
+                    ((Element) child).setAttribute("ppid", ppid);
+                    ((Element) child).setAttribute("id", dqid);
+                    idMapping.put(ppid, dqid);
                 }
                 correctIds(child);
             }
         }
     }
+    
+    private void replaceIds(Node root) {
+        if (root != null && root.hasChildNodes()) {
+            NodeList childs = root.getChildNodes();
+            for (int i = 0; i < childs.getLength(); i++) {
+                Node child = childs.item(i);
+                
+                if (child.hasAttributes()) {
+                	NamedNodeMap attributes = child.getAttributes();
+                	for (int j = 0; j < attributes.getLength(); j++) {
+                		String name = attributes.item(j).getNodeName();
+                		if (!"ppid".equals(name)) {
+	                		String value = ((Element) child).getAttribute(name);
+	                		if (idMapping.keySet().contains(value)) {
+	                			((Element) child).setAttribute(name, idMapping.get(value));
+	                		}
+                		}
+					}
+                }
+                String value = child.getTextContent();
+        		if (idMapping.keySet().contains(value)) {
+        			child.setTextContent(idMapping.get(value));
+        		}
+                replaceIds(child);
+            }
+        }
+    }
+    
+    private void buildFigureCharacterMapping(org.w3c.dom.Document root) {
+    	
+    	Map<String,Node> figurMap = new HashMap<String, Node>();
+    	Map<String,Node> charMap = new HashMap<String, Node>();
+    	
+    	NodeList figurs = root.getElementsByTagName("figur");
+    	for (int i = 0; i < figurs.getLength(); i++) {
+    		Node item = figurs.item(i);
+    		String id = ((Element)item).getAttribute("id");
+    		if (id != null && !"".equals(id)) {
+    			figurMap.put(id, item);
+    		}
+		}
+
+    	NodeList characters = root.getElementsByTagName("character");
+    	for (int i = 0; i < characters.getLength(); i++) {
+    		Node item = characters.item(i);
+    		String id = ((Element)item).getAttribute("id");
+    		if (id != null && !"".equals(id)) {
+    			charMap.put(id, item);
+    		}
+		}
+    	
+    	for (String figureId : figurMap.keySet()) {
+    		Node figur = figurMap.get(figureId);
+    		String dqid = ((Element)figur).getAttribute("dramaqueenid");
+    		if (dqid != null && !"".equals(dqid)) {
+    			NodeList rel = ((Element)figur).getElementsByTagName("relatedCharacter");
+    			if (rel.getLength() != 0) {
+		    		String characterRef = rel.item(0).getTextContent();
+		    		Node character = charMap.get(characterRef);
+		    		((Element)character).setAttribute("dramaqueenid", dqid);
+    			}
+    		}
+		}
+}
 
     /* manipulate the address elements */
     private void generateUuidsForAddresses(org.w3c.dom.Document doc) {

@@ -1,6 +1,11 @@
 package de.werft.tools.rmllib.postprocessing;
 
-import de.werft.tools.general.Document;
+import java.io.IOException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
@@ -10,10 +15,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
+import de.werft.tools.general.Document;
 
 /**
  * Post process dramaqueen documents.
@@ -184,6 +186,13 @@ public class DramaqueenPostprocessor extends BasicPostprocessor {
             org.w3c.dom.Document document = builder.parse(doc.getInputFile().getFile());
             
             buildSceneNumbering(model, document);
+            
+            // Link to production
+        	Resource linkUri = model.getResource(getProjectUri());
+        	Property hasScript = model.getProperty("http://filmontology.org/ontology/2.0/hasScript");
+        	String scriptId = getScriptId(document);
+        	Resource script = model.getResource("http://filmontology.org/resource/Script/"+scriptId);
+        	linkUri.addProperty(hasScript, script);
             
         } catch (SAXException | IOException e) {
             logger.error("Could not post process dramaqueen xml. " + e.getMessage());
