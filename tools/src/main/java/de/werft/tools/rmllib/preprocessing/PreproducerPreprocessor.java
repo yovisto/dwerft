@@ -2,6 +2,7 @@ package de.werft.tools.rmllib.preprocessing;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -98,8 +99,8 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             
             idMapping = new HashMap<String,String>();
             buildFigureCharacterMapping(result);
-            correctIds(result);
-            replaceIds(result);
+            replaceDramaQueenAndPreproducerIds(result);
+            replaceReferenceIds(result);
             addProductionId(result);
 
             /* write to disk */
@@ -112,6 +113,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
 
             return tmpFile.toUri().toURL();
             
+
         } catch (ParserConfigurationException | IOException | TransformerException | SAXException e) {
             logger.error("Could not fetch and preprocess Preproducer xml.");
         }
@@ -126,28 +128,30 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
     }
 
     /* set the dqid as id and the old id as ppid */
-    private void correctIds(Node root) {
+    private void replaceDramaQueenAndPreproducerIds(Node root) {
         if (root != null && root.hasChildNodes()) {
             NodeList childs = root.getChildNodes();
 
             /* traverse the xml tree */
             for (int i = 0; i < childs.getLength(); i++) {
                 Node child = childs.item(i);
-                /* if we have both dramaqueen and preproducer id, add a new preproducer id attribute and replace normal id with dramaqueen
-                /* if we have an id attribute, then set the id as new ppId attribute and dq id as new id */
+                /* if we have both dramaqueen and preproducer id, add a new preproducer id attribute and replace normal id with dramaqueen */
                 if (child.hasAttributes() && child.getAttributes().getNamedItem("id") != null && child.getAttributes().getNamedItem("dramaqueenid") != null) {
                 	String ppid = ((Element) child).getAttribute("id");
                 	String dqid = ((Element) child).getAttribute("dramaqueenid");
                     ((Element) child).setAttribute("ppid", ppid);
                     ((Element) child).setAttribute("id", dqid);
                     idMapping.put(ppid, dqid);
+                } else if (child.hasAttributes() && child.getAttributes().getNamedItem("id") != null) {
+                	String ppid = ((Element) child).getAttribute("id");
+                	((Element) child).setAttribute("ppid", ppid);
                 }
-                correctIds(child);
+                replaceDramaQueenAndPreproducerIds(child);
             }
         }
     }
     
-    private void replaceIds(Node root) {
+    private void replaceReferenceIds(Node root) {
         if (root != null && root.hasChildNodes()) {
             NodeList childs = root.getChildNodes();
             for (int i = 0; i < childs.getLength(); i++) {
@@ -169,7 +173,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
         		if (idMapping.keySet().contains(value)) {
         			child.setTextContent(idMapping.get(value));
         		}
-                replaceIds(child);
+                replaceReferenceIds(child);
             }
         }
     }
