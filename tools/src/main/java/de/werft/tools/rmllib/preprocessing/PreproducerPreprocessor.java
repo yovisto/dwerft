@@ -1,22 +1,13 @@
 package de.werft.tools.rmllib.preprocessing;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import de.werft.tools.general.Document;
+import org.apache.commons.codec.binary.Base64;
+import org.atteo.xmlcombiner.XmlCombiner;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -26,16 +17,17 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
-import org.apache.commons.codec.binary.Base64;
-import org.atteo.xmlcombiner.XmlCombiner;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-import de.werft.tools.general.Document;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+import java.util.*;
 
 /**
  * This preprocessor fetches the xml files from the
@@ -102,6 +94,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             replaceDramaQueenAndPreproducerIds(result);
             replaceReferenceIds(result);
             addProductionId(result);
+            correctFormattedScript(result);
 
             /* write to disk */
             tmpFile = Files.createTempFile("prepro", ".xml");
@@ -119,6 +112,39 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
         }
 
         return null;
+    }
+
+    private void correctFormattedScript(org.w3c.dom.Document doc) {
+        NodeList items = doc.getElementsByTagName("formattedscript");
+
+        for (int i = 0; i < items.getLength(); i++) {
+            Node n = items.item(i);
+            if (n.hasChildNodes()) {
+               n.setTextContent(childsToString(n));
+            }
+        }
+
+    }
+
+    private String childsToString(Node root) {
+        NodeList childs = root.getChildNodes();
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < childs.getLength(); i++) {
+            Node child = childs.item(i);
+            builder.append("<").append(child.getNodeName());
+
+            if (child.hasAttributes()) {
+                NamedNodeMap attr = child.getAttributes();
+                for (int j = 0; j < attr.getLength(); j++) {
+                    builder.append(" ").append(attr.item(j).getNodeName()).append("=\"").append(attr.item(j).getTextContent()).append("\"");
+                }
+            }
+            builder.append(">").append(child.getTextContent());
+
+            builder.append("</").append(child.getNodeName()).append(">");
+        }
+        return builder.toString();
     }
     
     private void addProductionId(org.w3c.dom.Document document) {
