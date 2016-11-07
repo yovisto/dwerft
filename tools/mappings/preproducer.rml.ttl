@@ -222,7 +222,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:sceneNumber;
-        rr:objectMap [ rml:reference "number"; rr:datatype xsd:float ];
+        rr:objectMap [ rml:reference "number"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -268,12 +268,17 @@
     rr:predicateObjectMap [
         rr:predicate foo:sceneCharacter;
         rr:objectMap [ rr:parentTriplesMap <#sceneCharacters>; ]
-    ].
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneCharacter;
+        rr:objectMap [ rr:parentTriplesMap <#sceneFigur>; ]
+    ];
     
-#    rr:predicateObjectMap [
-#        rr:predicate foo:sceneExtra;
-#        rr:objectMap [ rr:parentTriplesMap <#sceneExtras>; ]
-#    ].
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneExtra;
+        rr:objectMap [ rr:parentTriplesMap <#sceneExtras>; ]
+    ].
 
 # reference from scene to decoration
 <#sceneDecoration>
@@ -299,23 +304,29 @@
         rr:class foo:Character;
     ].
 
+# reference from scene to figures
+<#sceneFigur>
+    rml:logicalSource [
+        rml:iterator "/root/return/project/episode/scene-group/scene/figur";
+        rml:referenceFormulation ql:XPath;
+    ];
 
-# reference from scene to extra
-#<#sceneExtras>
-#    rml:logicalSource [
-#        rml:iterator "/root/return/project/episode/scene-group/scene/figur";
-#        rml:referenceFormulation ql:XPath;
-#    ];
-#
-#    rr:subjectMap [
-#        rr:template "http://filmontology.org/resource/Extra/{@ref}";
-#        rr:class foo:Extra;
-#    ];
-#
-#   rr:predicateObjectMap [
-#        rr:predicate foo:extraType;
-#        rr:objectMap [ rml:reference "@type"; rr:datatype xsd:string ];
-#    ].
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Character/{@ref}";
+        rr:class foo:Character;
+    ].
+    
+# reference from scene to extras
+<#sceneExtras>
+    rml:logicalSource [
+        rml:iterator "/root/return/project/episode/scene-group/scene/extras";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Extra/{@ref}";
+        rr:class foo:Extra;
+    ].
 
 
 <#company>
@@ -703,6 +714,37 @@
     rr:predicateObjectMap [
         rr:predicate foo:name;
         rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate foo:characterCast;
+        rr:objectMap [ rr:parentTriplesMap <#extraCast>; ]
+    ].
+
+<#extraCast>
+    rml:logicalSource [
+        rml:iterator "/root/return/project/extras/cast";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/CastMember/{@rel}";
+        rr:class foo:CastMember;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:preproducerIdentifier;
+        rr:objectMap [ rml:reference "@rel"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:name;
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sex;
+        rr:objectMap [ rml:reference "sex"; rr:datatype xsd:string ];
     ].
 
 #<#figure>
