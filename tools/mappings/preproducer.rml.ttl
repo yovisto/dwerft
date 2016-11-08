@@ -37,10 +37,10 @@
         rr:objectMap [ rr:parentTriplesMap <#title>; ]
     ];
 
-    rr:predicateObjectMap [
-        rr:predicate foo:hasCrewDepartment;
-        rr:objectMap [ rr:parentTriplesMap <#crewdepartment>; ]
-    ];
+#    rr:predicateObjectMap [
+#        rr:predicate foo:hasCrewDepartment;
+#        rr:objectMap [ rr:parentTriplesMap <#crewdepartment>; ]
+#    ];
 
     rr:predicateObjectMap [
         rr:predicate foo:crewMember;
@@ -469,31 +469,31 @@
         rr:objectMap [ rml:reference "sex"; rr:datatype xsd:string ];
     ].
 
-<#crewdepartment>
-    rml:logicalSource [
-        rml:iterator "/root/return/project/function-group";
-        rml:referenceFormulation ql:XPath;
-    ];
-
-    rr:subjectMap [
-        rr:template "http://filmontology.org/resource/CrewDepartment/{code}";
-        rr:class foo:CrewDepartment;
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:departementCode;
-        rr:objectMap [ rml:reference "code"; rr:datatype xsd:string ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:name;
-        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:hasCrewMember;
-        rr:objectMap [ rr:parentTriplesMap <#crewmember>; ]
-    ].
+#<#crewdepartment>
+#    rml:logicalSource [
+#        rml:iterator "/root/return/project/function-group";
+#        rml:referenceFormulation ql:XPath;
+#    ];
+#
+#    rr:subjectMap [
+#        rr:template "http://filmontology.org/resource/CrewDepartment/{code}";
+#        rr:class foo:CrewDepartment;
+#    ];
+#
+#    rr:predicateObjectMap [
+#        rr:predicate foo:departementCode;
+#        rr:objectMap [ rml:reference "code"; rr:datatype xsd:string ];
+#    ];
+#
+#    rr:predicateObjectMap [
+#        rr:predicate foo:name;
+#        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
+#    ];
+#
+#    rr:predicateObjectMap [
+#        rr:predicate foo:hasCrewMember;
+#        rr:objectMap [ rr:parentTriplesMap <#crewmember>; ]
+#    ].
 
 <#crewmember>
     rml:logicalSource [
@@ -512,18 +512,13 @@
     ];
 
     rr:predicateObjectMap [
-        rr:predicate foo:crewCode;
-        rr:objectMap [ rml:reference "typeCode"; rr:datatype xsd:string ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:crewType;
-        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
-    ];
-
-    rr:predicateObjectMap [
         rr:predicate foo:name;
         rr:objectMap [ rml:reference "team/name"; rr:datatype xsd:string ];
+    ];
+    
+	rr:predicateObjectMap [
+        rr:predicate foo:crewMemberPosition;
+        rr:objectMap [ rr:template "http://filmontology.org/resource/CrewPosition/{typeCode}"; ]
     ].
 
 <#decoration>
