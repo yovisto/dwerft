@@ -1,0 +1,57 @@
+@prefix foo:   <http://filmontology.org/ontology/2.0/> .
+@prefix for:   <http://filmontology.org/resource/> .
+
+<http://filmontology.org/resource/CrewDepartment/TON>
+        a                   foo:CrewPosition ;
+        foo:departmentCode  "TON" ;
+        foo:name            "Sound Department" .
+
+<http://filmontology.org/resource/CrewDepartment/SZE>
+        a                   foo:CrewPosition ;
+        foo:departmentCode  "SZE" ;
+        foo:name            "Production Design" .
+
+<http://filmontology.org/resource/CrewDepartment/LIG>
+        a                   foo:CrewPosition ;
+        foo:departmentCode  "LIG" ;
+        foo:name            "Electrical & Grip" .
+
+<http://filmontology.org/resource/CrewDepartment/RED>
+        a                   foo:CrewPosition ;
+        foo:departmentCode  "RED" ;
+        foo:name            "Editorial department" .
+
+<http://filmontology.org/resource/CrewDepartment/SST>
+        a                   foo:CrewPosition ;
+        foo:departmentCode  "SST" ;
+        foo:name            "Other Staff" .
+
+<http://filmontology.org/resource/CrewDepartment/REG>
+        a                   foo:CrewPosition ;
+        foo:departmentCode  "REG" ;
+        foo:name            "Director & Staff" .
+
+<http://filmontology.org/resource/CrewDepartment/PRD>
+        a                   foo:CrewPosition ;
+        foo:departmentCode  "PRD" ;
+        foo:name            "Production department" .
+
+<http://filmontology.org/resource/CrewDepartment/MUS>
+        a                   foo:CrewPosition ;
+        foo:departmentCode  "MUS" ;
+        foo:name            "Musicians" .
+
+<http://filmontology.org/resource/CrewDepartment/KAM>
+        a                   foo:CrewPosition ;
+        foo:departmentCode  "KAM" ;
+        foo:name            "Camera Department" .
+
+<http://filmontology.org/resource/CrewDepartment/PST>
+        a                   foo:CrewPosition ;
+        foo:departmentCode  "PST" ;
+        foo:name            "Postproduction" .
+
+<http://filmontology.org/resource/CrewDepartment/KST>
+        a                   foo:CrewPosition ;
+        foo:departmentCode  "KST" ;
+        foo:name            "Wardrobe and Makeup" .

@@ -1,0 +1,1160 @@
+@prefix foo:   <http://filmontology.org/ontology/2.0/> .
+@prefix for:   <http://filmontology.org/resource/> .
+
+<http://filmontology.org/resource/CrewPosition/PRD012>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD012" ;
+        foo:name                     "Location manager" .
+
+<http://filmontology.org/resource/CrewPosition/PST002b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST002b" ;
+        foo:name                     "2nd Assist. Editor" .
+
+<http://filmontology.org/resource/CrewPosition/RED011>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/RED> ;
+        foo:crewPositionCode         "RED011" ;
+        foo:name                     "Editorial department - others" .
+
+<http://filmontology.org/resource/CrewPosition/SZE024>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE024" ;
+        foo:name                     "assist. Makeup Artist" .
+
+<http://filmontology.org/resource/CrewPosition/REG019>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG019" ;
+        foo:name                     "Advisor" .
+
+<http://filmontology.org/resource/CrewPosition/PST012b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST012b" ;
+        foo:name                     "System Administrator" .
+
+<http://filmontology.org/resource/CrewPosition/SZE003>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE003" ;
+        foo:name                     "Set Decorator" .
+
+<http://filmontology.org/resource/CrewPosition/PRD020>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD020" ;
+        foo:name                     "Payroll accounting" .
+
+<http://filmontology.org/resource/CrewPosition/TON008>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/TON> ;
+        foo:crewPositionCode         "TON008" ;
+        foo:name                     "Sound Editor / Ton Cutter" .
+
+<http://filmontology.org/resource/CrewPosition/PST009c>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009c" ;
+        foo:name                     "3D Animation" .
+
+<http://filmontology.org/resource/CrewPosition/MUS001>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/MUS> ;
+        foo:crewPositionCode         "MUS001" ;
+        foo:name                     "Musicians on Screen" .
+
+<http://filmontology.org/resource/CrewPosition/PST007b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST007b" ;
+        foo:name                     "Color Supervisor" .
+
+<http://filmontology.org/resource/CrewPosition/REG003b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG003b" ;
+        foo:name                     "Animation Director" .
+
+<http://filmontology.org/resource/CrewPosition/KAM008>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM008" ;
+        foo:name                     "2nd Assist. Cameraman" .
+
+<http://filmontology.org/resource/CrewPosition/LIG007>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG007" ;
+        foo:name                     "Electrical others" .
+
+<http://filmontology.org/resource/CrewPosition/SST008>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SST> ;
+        foo:crewPositionCode         "SST008" ;
+        foo:name                     "Dialogue Writer" .
+
+<http://filmontology.org/resource/CrewPosition/PST008>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST008" ;
+        foo:name                     "Color Timer" .
+
+<http://filmontology.org/resource/CrewPosition/REG015c>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG015c" ;
+        foo:name                     "Postproduction Assist." .
+
+<http://filmontology.org/resource/CrewPosition/SZE011>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE011" ;
+        foo:name                     "Prop Driver" .
+
+<http://filmontology.org/resource/CrewPosition/REG006>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG006" ;
+        foo:name                     "Trainee" .
+
+<http://filmontology.org/resource/CrewPosition/PRD028>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD028" ;
+        foo:name                     "Lector(in)" .
+
+<http://filmontology.org/resource/CrewPosition/PRD007>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD007" ;
+        foo:name                     "Production Manager" .
+
+<http://filmontology.org/resource/CrewPosition/PST009k>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009k" ;
+        foo:name                     "Sequence Director" .
+
+<http://filmontology.org/resource/CrewPosition/LIG015>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG015" ;
+        foo:name                     "Lighting trainee" .
+
+<http://filmontology.org/resource/CrewPosition/PRD006b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD006b" ;
+        foo:name                     "Line Producer" .
+
+<http://filmontology.org/resource/CrewPosition/RED006>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/RED> ;
+        foo:crewPositionCode         "RED006" ;
+        foo:name                     "Assistence" .
+
+<http://filmontology.org/resource/CrewPosition/SZE019>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE019" ;
+        foo:name                     "Tailor / Seamstress" .
+
+<http://filmontology.org/resource/CrewPosition/REG014>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG014" ;
+        foo:name                     "Extras Coordinator" .
+
+<http://filmontology.org/resource/CrewPosition/PRD015>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD015" ;
+        foo:name                     "Unit manager synchron" .
+
+<http://filmontology.org/resource/CrewPosition/TON003>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/TON> ;
+        foo:crewPositionCode         "TON003" ;
+        foo:name                     "Sound Engineer" .
+
+<http://filmontology.org/resource/CrewPosition/SZE013b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE013b" ;
+        foo:name                     "Carpenter" .
+
+<http://filmontology.org/resource/CrewPosition/KAM003>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM003" ;
+        foo:name                     "2nd Unit Camera" .
+
+<http://filmontology.org/resource/CrewPosition/LIG002>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG002" ;
+        foo:name                     "Light Electrician" .
+
+<http://filmontology.org/resource/CrewPosition/SST003>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SST> ;
+        foo:crewPositionCode         "SST003" ;
+        foo:name                     "Visual Effects Supervisor" .
+
+<http://filmontology.org/resource/CrewPosition/PST003>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST003" ;
+        foo:name                     "Picture Negative Editor" .
+
+<http://filmontology.org/resource/CrewPosition/SZE027>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE027" ;
+        foo:name                     "Hair Stylist" .
+
+<http://filmontology.org/resource/CrewPosition/SZE018b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE018b" ;
+        foo:name                     "Costume Advisor" .
+
+<http://filmontology.org/resource/CrewPosition/SZE006>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE006" ;
+        foo:name                     "Architect" .
+
+<http://filmontology.org/resource/CrewPosition/REG001>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG001" ;
+        foo:name                     "Director" .
+
+<http://filmontology.org/resource/CrewPosition/PRD023>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD023" ;
+        foo:name                     "Runner" .
+
+<http://filmontology.org/resource/CrewPosition/TON011>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/TON> ;
+        foo:crewPositionCode         "TON011" ;
+        foo:name                     "Sound Department others" .
+
+<http://filmontology.org/resource/CrewPosition/PRD002>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD002" ;
+        foo:name                     "Co-Produzent" .
+
+<http://filmontology.org/resource/CrewPosition/MUS004>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/MUS> ;
+        foo:crewPositionCode         "MUS004" ;
+        foo:name                     "Soloists / Singer" .
+
+<http://filmontology.org/resource/CrewPosition/PST009f>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009f" ;
+        foo:name                     "Compositing Supervisor" .
+
+<http://filmontology.org/resource/CrewPosition/KAM011>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM011" ;
+        foo:name                     "Cable Grip" .
+
+<http://filmontology.org/resource/CrewPosition/LIG010>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG010" ;
+        foo:name                     "Crane Operator" .
+
+<http://filmontology.org/resource/CrewPosition/SST011>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SST> ;
+        foo:crewPositionCode         "SST011" ;
+        foo:name                     "Security / Ambulance man" .
+
+<http://filmontology.org/resource/CrewPosition/PST011>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST011" ;
+        foo:name                     "Composer" .
+
+<http://filmontology.org/resource/CrewPosition/RED001>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/RED> ;
+        foo:crewPositionCode         "RED001" ;
+        foo:name                     "Chief editor" .
+
+<http://filmontology.org/resource/CrewPosition/KAM009b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM009b" ;
+        foo:name                     "Data Wrangler" .
+
+<http://filmontology.org/resource/CrewPosition/SZE014>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE014" ;
+        foo:name                     "Set Painter" .
+
+<http://filmontology.org/resource/CrewPosition/REG009>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG009" ;
+        foo:name                     "Script Girl" .
+
+<http://filmontology.org/resource/CrewPosition/PRD010>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD010" ;
+        foo:name                     "Unit manager" .
+
+<http://filmontology.org/resource/CrewPosition/TON008b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/TON> ;
+        foo:crewPositionCode         "TON008b" ;
+        foo:name                     "Sound Editor Assistence" .
+
+<http://filmontology.org/resource/CrewPosition/RED009>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/RED> ;
+        foo:crewPositionCode         "RED009" ;
+        foo:name                     "Presenter" .
+
+<http://filmontology.org/resource/CrewPosition/SZE022>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE022" ;
+        foo:name                     "Add. Wardrobe Labor" .
+
+<http://filmontology.org/resource/CrewPosition/REG017>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG017" ;
+        foo:name                     "Dialog Coach" .
+
+<http://filmontology.org/resource/CrewPosition/SZE001>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE001" ;
+        foo:name                     "Production Designer" .
+
+<http://filmontology.org/resource/CrewPosition/PRD018>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD018" ;
+        foo:name                     "Collector" .
+
+<http://filmontology.org/resource/CrewPosition/TON006>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/TON> ;
+        foo:crewPositionCode         "TON006" ;
+        foo:name                     "Audio Engineer" .
+
+<http://filmontology.org/resource/CrewPosition/KAM006>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM006" ;
+        foo:name                     "Motion Control Operator" .
+
+<http://filmontology.org/resource/CrewPosition/LIG005>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG005" ;
+        foo:name                     "Lighting Desk Operator" .
+
+<http://filmontology.org/resource/CrewPosition/SST006>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SST> ;
+        foo:crewPositionCode         "SST006" ;
+        foo:name                     "Animal Trainer" .
+
+<http://filmontology.org/resource/CrewPosition/PST006>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST006" ;
+        foo:name                     "Computer Graphics" .
+
+<http://filmontology.org/resource/CrewPosition/PRD007c>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD007c" ;
+        foo:name                     "Production Coordinator" .
+
+<http://filmontology.org/resource/CrewPosition/SZE002b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE002b" ;
+        foo:name                     "Art Director" .
+
+<http://filmontology.org/resource/CrewPosition/SZE009>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE009" ;
+        foo:name                     "Property Master" .
+
+<http://filmontology.org/resource/CrewPosition/REG004>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG004" ;
+        foo:name                     "1st Assistent Director" .
+
+<http://filmontology.org/resource/CrewPosition/PRD026>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD026" ;
+        foo:name                     "Catering" .
+
+<http://filmontology.org/resource/CrewPosition/PRD005>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD005" ;
+        foo:name                     "Producer" .
+
+<http://filmontology.org/resource/CrewPosition/PST009i>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009i" ;
+        foo:name                     "Layout" .
+
+<http://filmontology.org/resource/CrewPosition/PRD015b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD015b" ;
+        foo:name                     "Multimedia chief" .
+
+<http://filmontology.org/resource/CrewPosition/KAM014>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM014" ;
+        foo:name                     "Advisor" .
+
+<http://filmontology.org/resource/CrewPosition/LIG013>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG013" ;
+        foo:name                     "Grip Assist." .
+
+<http://filmontology.org/resource/CrewPosition/SZE022b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE022b" ;
+        foo:name                     "Chief Makeup Artist" .
+
+<http://filmontology.org/resource/CrewPosition/RED004>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/RED> ;
+        foo:crewPositionCode         "RED004" ;
+        foo:name                     "TV editor" .
+
+<http://filmontology.org/resource/CrewPosition/SZE017>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE017" ;
+        foo:name                     "Costume Designer" .
+
+<http://filmontology.org/resource/CrewPosition/REG012>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG012" ;
+        foo:name                     "Casting Assistent" .
+
+<http://filmontology.org/resource/CrewPosition/PRD013>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD013" ;
+        foo:name                     "Unit manager assistence" .
+
+<http://filmontology.org/resource/CrewPosition/TON001>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/TON> ;
+        foo:crewPositionCode         "TON001" ;
+        foo:name                     "Sound Mixer" .
+
+<http://filmontology.org/resource/CrewPosition/KAM003b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM003b" ;
+        foo:name                     "3D Camera" .
+
+<http://filmontology.org/resource/CrewPosition/LIG002b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG002b" ;
+        foo:name                     "Best Boy" .
+
+<http://filmontology.org/resource/CrewPosition/KAM001>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM001" ;
+        foo:name                     "Director of Photography" .
+
+<http://filmontology.org/resource/CrewPosition/PST001>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST001" ;
+        foo:name                     "Film Editor" .
+
+<http://filmontology.org/resource/CrewPosition/SZE025>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE025" ;
+        foo:name                     "Add. Makup Labor" .
+
+<http://filmontology.org/resource/CrewPosition/REG020>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG020" ;
+        foo:name                     "Directors Staff others" .
+
+<http://filmontology.org/resource/CrewPosition/SZE004>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE004" ;
+        foo:name                     "Set Decoration Assist." .
+
+<http://filmontology.org/resource/CrewPosition/PRD021>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD021" ;
+        foo:name                     "Production advisor" .
+
+<http://filmontology.org/resource/CrewPosition/TON009>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/TON> ;
+        foo:crewPositionCode         "TON009" ;
+        foo:name                     "ADR Engineer" .
+
+<http://filmontology.org/resource/CrewPosition/MUS002>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/MUS> ;
+        foo:crewPositionCode         "MUS002" ;
+        foo:name                     "Recording Studio Musicians" .
+
+<http://filmontology.org/resource/CrewPosition/PST009d>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009d" ;
+        foo:name                     "3D Modeler" .
+
+<http://filmontology.org/resource/CrewPosition/PST007c>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST007c" ;
+        foo:name                     "Color Styler" .
+
+<http://filmontology.org/resource/CrewPosition/REG003c>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG003c" ;
+        foo:name                     "Associate Director" .
+
+<http://filmontology.org/resource/CrewPosition/KAM009>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM009" ;
+        foo:name                     "Film Loader" .
+
+<http://filmontology.org/resource/CrewPosition/LIG008>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG008" ;
+        foo:name                     "Key Grip" .
+
+<http://filmontology.org/resource/CrewPosition/SST009>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SST> ;
+        foo:crewPositionCode         "SST009" ;
+        foo:name                     "Double / Standin" .
+
+<http://filmontology.org/resource/CrewPosition/PST009>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009" ;
+        foo:name                     "Animation" .
+
+<http://filmontology.org/resource/CrewPosition/SZE012>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE012" ;
+        foo:name                     "Props - Helping Hand" .
+
+<http://filmontology.org/resource/CrewPosition/REG007>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG007" ;
+        foo:name                     "Script Supervisor" .
+
+<http://filmontology.org/resource/CrewPosition/PRD029>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD029" ;
+        foo:name                     "Production guest student" .
+
+<http://filmontology.org/resource/CrewPosition/PRD008>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD008" ;
+        foo:name                     "Production assistence" .
+
+<http://filmontology.org/resource/CrewPosition/PST009l>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009l" ;
+        foo:name                     "2D Animation" .
+
+<http://filmontology.org/resource/CrewPosition/SST003b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SST> ;
+        foo:crewPositionCode         "SST003b" ;
+        foo:name                     "Special Effects Supervisor" .
+
+<http://filmontology.org/resource/CrewPosition/RED007>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/RED> ;
+        foo:crewPositionCode         "RED007" ;
+        foo:name                     "Volunteer" .
+
+<http://filmontology.org/resource/CrewPosition/SZE020>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE020" ;
+        foo:name                     "Wardrobe" .
+
+<http://filmontology.org/resource/CrewPosition/REG015>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG015" ;
+        foo:name                     "Children Coordinator" .
+
+<http://filmontology.org/resource/CrewPosition/PRD016>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD016" ;
+        foo:name                     "Production secretary" .
+
+<http://filmontology.org/resource/CrewPosition/TON004>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/TON> ;
+        foo:crewPositionCode         "TON004" ;
+        foo:name                     "Playback Assistence" .
+
+<http://filmontology.org/resource/CrewPosition/KAM004>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM004" ;
+        foo:name                     "Camera Operator" .
+
+<http://filmontology.org/resource/CrewPosition/LIG003>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG003" ;
+        foo:name                     "Generator Operator" .
+
+<http://filmontology.org/resource/CrewPosition/SZE006b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE006b" ;
+        foo:name                     "Chief of Construction" .
+
+<http://filmontology.org/resource/CrewPosition/SST004>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SST> ;
+        foo:crewPositionCode         "SST004" ;
+        foo:name                     "Pyrotechnics / FX" .
+
+<http://filmontology.org/resource/CrewPosition/PST004>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST004" ;
+        foo:name                     "Synchron Editor" .
+
+<http://filmontology.org/resource/CrewPosition/SZE028>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE028" ;
+        foo:name                     "Production Design others" .
+
+<http://filmontology.org/resource/CrewPosition/SZE007>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE007" ;
+        foo:name                     "Construction Crew" .
+
+<http://filmontology.org/resource/CrewPosition/REG002>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG002" ;
+        foo:name                     "2nd Unit Director" .
+
+<http://filmontology.org/resource/CrewPosition/PST009g>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009g" ;
+        foo:name                     "Compositing" .
+
+<http://filmontology.org/resource/CrewPosition/PRD003>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD003" ;
+        foo:name                     "Executive Producer" .
+
+<http://filmontology.org/resource/CrewPosition/MUS005>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/MUS> ;
+        foo:crewPositionCode         "MUS005" ;
+        foo:name                     "Score Writing Work" .
+
+<http://filmontology.org/resource/CrewPosition/KAM012>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM012" ;
+        foo:name                     "Camera Trainee" .
+
+<http://filmontology.org/resource/CrewPosition/LIG011>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG011" ;
+        foo:name                     "Key Grip" .
+
+<http://filmontology.org/resource/CrewPosition/SZE026b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE026b" ;
+        foo:name                     "Body Makeup Artist" .
+
+<http://filmontology.org/resource/CrewPosition/SST012>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SST> ;
+        foo:crewPositionCode         "SST012" ;
+        foo:name                     "Trainee" .
+
+<http://filmontology.org/resource/CrewPosition/PST012>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST012" ;
+        foo:name                     "Postproduction Advisor" .
+
+<http://filmontology.org/resource/CrewPosition/RED002>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/RED> ;
+        foo:crewPositionCode         "RED002" ;
+        foo:name                     "Head of editorial department" .
+
+<http://filmontology.org/resource/CrewPosition/SZE015>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE015" ;
+        foo:name                     "Sculptor" .
+
+<http://filmontology.org/resource/CrewPosition/REG010>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG010" ;
+        foo:name                     "Casting" .
+
+<http://filmontology.org/resource/CrewPosition/PRD011>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD011" ;
+        foo:name                     "2nd unit manager (Set-AL)" .
+
+<http://filmontology.org/resource/CrewPosition/RED010>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/RED> ;
+        foo:crewPositionCode         "RED010" ;
+        foo:name                     "Advisor" .
+
+<http://filmontology.org/resource/CrewPosition/SZE023>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE023" ;
+        foo:name                     "Makeup Artist" .
+
+<http://filmontology.org/resource/CrewPosition/REG018>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG018" ;
+        foo:name                     "Storyboard Artist" .
+
+<http://filmontology.org/resource/CrewPosition/SZE002>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE002" ;
+        foo:name                     "Productions Design Assist." .
+
+<http://filmontology.org/resource/CrewPosition/PRD019>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD019" ;
+        foo:name                     "Accounting clerk" .
+
+<http://filmontology.org/resource/CrewPosition/TON007>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/TON> ;
+        foo:crewPositionCode         "TON007" ;
+        foo:name                     "Sound Design" .
+
+<http://filmontology.org/resource/CrewPosition/PST009b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009b" ;
+        foo:name                     "3D Supervisor" .
+
+<http://filmontology.org/resource/CrewPosition/REG005b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG005b" ;
+        foo:name                     "Assist. Animation Director" .
+
+<http://filmontology.org/resource/CrewPosition/KAM007>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM007" ;
+        foo:name                     "1st Assist. Cameraman" .
+
+<http://filmontology.org/resource/CrewPosition/LIG006>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG006" ;
+        foo:name                     "Electrician" .
+
+<http://filmontology.org/resource/CrewPosition/SST007>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SST> ;
+        foo:crewPositionCode         "SST007" ;
+        foo:name                     "Screenwriter" .
+
+<http://filmontology.org/resource/CrewPosition/REG015b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG015b" ;
+        foo:name                     "Postproduction Supervisor" .
+
+<http://filmontology.org/resource/CrewPosition/PST007>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST007" ;
+        foo:name                     "Visual Effects" .
+
+<http://filmontology.org/resource/CrewPosition/SZE010>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE010" ;
+        foo:name                     "Property man" .
+
+<http://filmontology.org/resource/CrewPosition/REG005>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG005" ;
+        foo:name                     "2nd Assistent Director" .
+
+<http://filmontology.org/resource/CrewPosition/PRD027>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD027" ;
+        foo:name                     "Production others" .
+
+<http://filmontology.org/resource/CrewPosition/PRD006>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD006" ;
+        foo:name                     "Line Producer" .
+
+<http://filmontology.org/resource/CrewPosition/PST009j>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009j" ;
+        foo:name                     "Colour Concept" .
+
+<http://filmontology.org/resource/CrewPosition/KAM015>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM015" ;
+        foo:name                     "Camera others" .
+
+<http://filmontology.org/resource/CrewPosition/LIG014>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG014" ;
+        foo:name                     "Grip others" .
+
+<http://filmontology.org/resource/CrewPosition/RED005>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/RED> ;
+        foo:crewPositionCode         "RED005" ;
+        foo:name                     "Reporter" .
+
+<http://filmontology.org/resource/CrewPosition/SZE018>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE018" ;
+        foo:name                     "Assist. Costume Designer" .
+
+<http://filmontology.org/resource/CrewPosition/REG013>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG013" ;
+        foo:name                     "Extras Casting" .
+
+<http://filmontology.org/resource/CrewPosition/PRD014>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD014" ;
+        foo:name                     "Set production assistent" .
+
+<http://filmontology.org/resource/CrewPosition/TON002>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/TON> ;
+        foo:crewPositionCode         "TON002" ;
+        foo:name                     "Boom Operator" .
+
+<http://filmontology.org/resource/CrewPosition/KAM002>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM002" ;
+        foo:name                     "Cameraman" .
+
+<http://filmontology.org/resource/CrewPosition/LIG001>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG001" ;
+        foo:name                     "Gaffer" .
+
+<http://filmontology.org/resource/CrewPosition/PST002>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST002" ;
+        foo:name                     "Assist. Film Editor" .
+
+<http://filmontology.org/resource/CrewPosition/SZE026>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE026" ;
+        foo:name                     "FX Makeup Artist" .
+
+<http://filmontology.org/resource/CrewPosition/REG021>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG021" ;
+        foo:name                     "Guest Student" .
+
+<http://filmontology.org/resource/CrewPosition/SZE005>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE005" ;
+        foo:name                     "Trainee Set Decoration" .
+
+<http://filmontology.org/resource/CrewPosition/PRD022>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD022" ;
+        foo:name                     "Production driver" .
+
+<http://filmontology.org/resource/CrewPosition/TON010>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/TON> ;
+        foo:crewPositionCode         "TON010" ;
+        foo:name                     "Foley Artist" .
+
+<http://filmontology.org/resource/CrewPosition/PRD001>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD001" ;
+        foo:name                     "Producer" .
+
+<http://filmontology.org/resource/CrewPosition/MUS003>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/MUS> ;
+        foo:crewPositionCode         "MUS003" ;
+        foo:name                     "Conductor" .
+
+<http://filmontology.org/resource/CrewPosition/PST009e>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009e" ;
+        foo:name                     "3D Painter" .
+
+<http://filmontology.org/resource/CrewPosition/KAM010>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM010" ;
+        foo:name                     "Video Operator" .
+
+<http://filmontology.org/resource/CrewPosition/LIG009>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG009" ;
+        foo:name                     "Grip" .
+
+<http://filmontology.org/resource/CrewPosition/SST010>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SST> ;
+        foo:crewPositionCode         "SST010" ;
+        foo:name                     "Press attendance" .
+
+<http://filmontology.org/resource/CrewPosition/PST010>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST010" ;
+        foo:name                     "DVD Authoring" .
+
+<http://filmontology.org/resource/CrewPosition/SZE013>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE013" ;
+        foo:name                     "Set Dresser" .
+
+<http://filmontology.org/resource/CrewPosition/REG008>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG008" ;
+        foo:name                     "Continuity" .
+
+<http://filmontology.org/resource/CrewPosition/PRD009>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD009" ;
+        foo:name                     "Production trainee" .
+
+<http://filmontology.org/resource/CrewPosition/PST009m>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009m" ;
+        foo:name                     "Supervisor 2D EFX" .
+
+<http://filmontology.org/resource/CrewPosition/RED008>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/RED> ;
+        foo:crewPositionCode         "RED008" ;
+        foo:name                     "Moderator" .
+
+<http://filmontology.org/resource/CrewPosition/REG016>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG016" ;
+        foo:name                     "Dramaturgie / Script-Consultant" .
+
+<http://filmontology.org/resource/CrewPosition/PRD017>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD017" ;
+        foo:name                     "production accounting" .
+
+<http://filmontology.org/resource/CrewPosition/TON005>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/TON> ;
+        foo:crewPositionCode         "TON005" ;
+        foo:name                     "Trainee Sound Department" .
+
+<http://filmontology.org/resource/CrewPosition/KAM005>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM005" ;
+        foo:name                     "Steadicam Operator" .
+
+<http://filmontology.org/resource/CrewPosition/PST005>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST005" ;
+        foo:name                     "Assist Synchron Editor" .
+
+<http://filmontology.org/resource/CrewPosition/PRD007b>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD007b" ;
+        foo:name                     "Production Manager" .
+
+<http://filmontology.org/resource/CrewPosition/SZE029>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KST> ;
+        foo:crewPositionCode         "SZE029" ;
+        foo:name                     "Costume trainee" .
+
+<http://filmontology.org/resource/CrewPosition/SZE008>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE008" ;
+        foo:name                     "Location Property Master" .
+
+<http://filmontology.org/resource/CrewPosition/REG003>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG003" ;
+        foo:name                     "Dialog Director" .
+
+<http://filmontology.org/resource/CrewPosition/PRD025>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD025" ;
+        foo:name                     "Set trainee" .
+
+<http://filmontology.org/resource/CrewPosition/PST009h>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST009h" ;
+        foo:name                     "Layout Supervisor" .
+
+<http://filmontology.org/resource/CrewPosition/PRD004>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PRD> ;
+        foo:crewPositionCode         "PRD004" ;
+        foo:name                     "Associate Producer" .
+
+<http://filmontology.org/resource/CrewPosition/MUS006>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/MUS> ;
+        foo:crewPositionCode         "MUS006" ;
+        foo:name                     "Musicians others" .
+
+<http://filmontology.org/resource/CrewPosition/KAM013>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/KAM> ;
+        foo:crewPositionCode         "KAM013" ;
+        foo:name                     "Still Photographer" .
+
+<http://filmontology.org/resource/CrewPosition/LIG012>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/LIG> ;
+        foo:crewPositionCode         "LIG012" ;
+        foo:name                     "Grip" .
+
+<http://filmontology.org/resource/CrewPosition/SST013>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SST> ;
+        foo:crewPositionCode         "SST013" ;
+        foo:name                     "Guest Student" .
+
+<http://filmontology.org/resource/CrewPosition/PST013>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/PST> ;
+        foo:crewPositionCode         "PST013" ;
+        foo:name                     "Postproduction others" .
+
+<http://filmontology.org/resource/CrewPosition/RED003>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/RED> ;
+        foo:crewPositionCode         "RED003" ;
+        foo:name                     "Secretary" .
+
+<http://filmontology.org/resource/CrewPosition/SZE016>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/SZE> ;
+        foo:crewPositionCode         "SZE016" ;
+        foo:name                     "Greenary" .
+
+<http://filmontology.org/resource/CrewPosition/REG011>
+        a                            foo:CrewPosition ;
+        foo:belongsToCrewDepartment  <http://filmontology.org/resource/CrewDepartment/REG> ;
+        foo:crewPositionCode         "REG011" ;
+        foo:name                     "Casting Director" .
