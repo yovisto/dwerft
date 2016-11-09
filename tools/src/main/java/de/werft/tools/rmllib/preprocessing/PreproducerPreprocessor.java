@@ -1,22 +1,5 @@
 package de.werft.tools.rmllib.preprocessing;
 
-import de.werft.tools.general.Document;
-import org.apache.commons.codec.binary.Base64;
-import org.atteo.xmlcombiner.XmlCombiner;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -27,7 +10,31 @@ import java.net.URLEncoder;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.apache.commons.codec.binary.Base64;
+import org.atteo.xmlcombiner.XmlCombiner;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import de.werft.tools.general.Document;
 
 /**
  * This preprocessor fetches the xml files from the
@@ -87,7 +94,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
 
             /* build xml and do pre processing */
             org.w3c.dom.Document result = combiner.buildDocument();
-            generateUuidsForAddresses(result);
+            generateUuidsForNonIdNodes(result);
             
             idMapping = new HashMap<String,String>();
             buildFigureCharacterMapping(result);
@@ -104,8 +111,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             StreamResult streamer = new StreamResult(Files.newOutputStream(tmpFile, StandardOpenOption.TRUNCATE_EXISTING));
             transformer.transform(source, streamer);
 
-            return tmpFile.toUri().toURL();
-            
+            return tmpFile.toUri().toURL();            
 
         } catch (ParserConfigurationException | IOException | TransformerException | SAXException e) {
             logger.error("Could not fetch and preprocess Preproducer xml.");
@@ -242,19 +248,33 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
 }
 
     /* manipulate the address elements */
-    private void generateUuidsForAddresses(org.w3c.dom.Document doc) {
+    private void generateUuidsForNonIdNodes(org.w3c.dom.Document doc) {
         NodeList addresses = doc.getElementsByTagName("adress");
         for (int i = 0; i < addresses.getLength(); i++) {
             Element address = (Element) addresses.item(i);
             UUID uuid = UUID.randomUUID();
             address.setAttribute("id", uuid.toString());
-
-            /* append the house number to the street address */
-            NodeList number = address.getElementsByTagName("housenumber");
-            NodeList street = address.getElementsByTagName("street");
-            if (number.getLength() > 0 && street.getLength() > 0) {
-                street.item(0).setTextContent(street.item(0).getTextContent() + " " + number.item(0).getTextContent());
-            }
+        }
+        
+        NodeList companies = doc.getElementsByTagName("company");
+        for (int i = 0; i < companies.getLength(); i++) {
+            Element company = (Element) companies.item(i);
+            UUID uuid = UUID.randomUUID();
+            company.setAttribute("id", uuid.toString());
+        }
+        
+        NodeList emergencies = doc.getElementsByTagName("emergency");
+        for (int i = 0; i < emergencies.getLength(); i++) {
+            Element emergency = (Element) emergencies.item(i);
+            UUID uuid = UUID.randomUUID();
+            emergency.setAttribute("id", uuid.toString());
+        }
+        
+        NodeList facilities = doc.getElementsByTagName("facility");
+        for (int i = 0; i < facilities.getLength(); i++) {
+            Element facility = (Element) facilities.item(i);
+            UUID uuid = UUID.randomUUID();
+            facility.setAttribute("id", uuid.toString());
         }
     }
 
