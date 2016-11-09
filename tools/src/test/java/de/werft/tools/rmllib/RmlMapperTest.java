@@ -22,7 +22,7 @@ public class RmlMapperTest {
         URL file = getClass().getResource("/rml/csv/csv.rml.ttl");
         URL input = getClass().getResource("/rml/csv/csv_dummy.csv");
         RmlMapper mapper = new RmlMapper(ConfigFactory.create(DwerftConfig.class));
-        mapper.convertCsv(new Document(file, input, getTempFile()));
+        mapper.convertCsv(new Document(file, input, getTempFile()), "http://filmontology.org/resource/Test");
     }
 
     @Test
@@ -30,7 +30,7 @@ public class RmlMapperTest {
         URL file = getClass().getResource("/rml/ale/ale.rml.ttl");
         URL input = getClass().getResource("/rml/ale/ale_dummy.ale");
         RmlMapper mapper = new RmlMapper(ConfigFactory.create(DwerftConfig.class));
-        mapper.convertAle(new Document(file, input, getTempFile()));
+        mapper.convertAle(new Document(file, input, getTempFile()), "http://filmontology.org/resource/Test");
     }
 
     @Test
@@ -38,7 +38,7 @@ public class RmlMapperTest {
         URL file = getClass().getResource("/rml/xml/xml.rml.ttl");
         URL input = getClass().getResource("/rml/xml/xml.xml");
         RmlMapper mapper = new RmlMapper(ConfigFactory.create(DwerftConfig.class));
-        mapper.convertGeneric(new Document(file, input, getTempFile()));
+        mapper.convertGeneric(new Document(file, input, getTempFile()), "http://filmontology.org/resource/Test");
     }
 
     @Test
@@ -46,14 +46,14 @@ public class RmlMapperTest {
         URL file = getClass().getResource("/rml/generic/generic.rml.ttl");
         URL input = getClass().getResource("/rml/generic/generic_example_cast.xml");
         RmlMapper mapper = new RmlMapper(ConfigFactory.create(DwerftConfig.class));
-        mapper.convertGeneric(new Document(file, input, getTempFile()));
+        mapper.convertGeneric(new Document(file, input, getTempFile()), "http://filmontology.org/resource/Test");
     }
 
     @Test
     public void testPreproducer() throws IOException {
         URL file = getClass().getResource("/rml/preproducer.rml.ttl");
         RmlMapper mapper = new RmlMapper(ConfigFactory.create(DwerftConfig.class));
-        mapper.convertPreproducer(new Document(file, null, getTempFile()));
+        mapper.convertPreproducer(new Document(file, null, getTempFile()), "http://filmontology.org/resource/Test");
     }
 
     @Test
@@ -61,7 +61,7 @@ public class RmlMapperTest {
         URL file = getClass().getResource("/rml/dq/dramaqueen.rml.ttl");
         URL input = getClass().getResource("/rml/dq/hansel_gretel.dq");
         RmlMapper mapper = new RmlMapper(ConfigFactory.create(DwerftConfig.class));
-        mapper.convertDramaqueen(new Document(file, input, getTempFile()));
+        mapper.convertDramaqueen(new Document(file, input, getTempFile()), "http://filmontology.org/resource/Test");
     }
 
     /* return a temporary output file */
