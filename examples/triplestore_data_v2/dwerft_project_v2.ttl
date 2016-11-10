@@ -17,7 +17,6 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
 <http://filmontology.org/resource/IndividualProduction/f434d145-f054-40f8-bf61-052eb0e0d691>
         a                         foo:IndividualProduction ;
 		foo:yearOfProduction		"2015" ;
-		foo:hasScript				<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> ;
         foo:hasTitle			<http://filmontology.org/resource/Title/7ac19243-bda0-4ea8-93cb-edbc1397c719>.
 		
 <http://filmontology.org/resource/Title/7ac19243-bda0-4ea8-93cb-edbc1397c719>
