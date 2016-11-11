@@ -667,6 +667,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/sceneItem -->
+
+    <owl:ObjectProperty rdf:about="&foo;sceneItem">
+        <rdfs:label>sceneItem</rdfs:label>
+        <rdfs:comment>Item or article used in a scene.</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;Item"/>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/sceneSet -->
 
     <owl:ObjectProperty rdf:about="&foo;sceneSet">
@@ -2813,6 +2825,19 @@
         <rdfs:domain rdf:resource="&foo;RecoupmentPosition"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/itemCategory -->
+
+    <owl:DatatypeProperty rdf:about="&foo;itemCategory">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>itemCategory</rdfs:label>
+        <rdfs:comment>Category of a item used in a scene (e.g., costume, props)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Item"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -5505,6 +5530,16 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
         <rdfs:label>Institution</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
         <rdfs:comment>An institution that conserves a collection of film material</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/Item -->
+
+    <owl:Class rdf:about="&foo;Item">
+        <rdfs:label>Item</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
+        <rdfs:comment>Item required or used in a scene from script breakdown.</rdfs:comment>
     </owl:Class>
     
 
