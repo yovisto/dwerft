@@ -2,6 +2,7 @@ package de.werft.tools.rmllib.preprocessing;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -118,6 +119,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             addProductionId(result);
             correctFormattedScript(result);
             replaceItemCategories(result);
+            removeEmptyShootingDays(result);
 
             /* write to disk */
             tmpFile = Files.createTempFile("prepro", ".xml");
@@ -127,8 +129,8 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             StreamResult streamer = new StreamResult(Files.newOutputStream(tmpFile, StandardOpenOption.TRUNCATE_EXISTING));
             transformer.transform(source, streamer);
 
-            return tmpFile.toUri().toURL();            
-
+            return tmpFile.toUri().toURL();
+            
         } catch (ParserConfigurationException | IOException | TransformerException | SAXException e) {
             logger.error("Could not fetch and preprocess Preproducer xml.");
         }
@@ -273,6 +275,18 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
     		if (itm != null && !"".equals(itm) && itemMapping.containsKey(itm)) {
     			String maping = itemMapping.get(itm);
     			code.setTextContent(maping);
+    		}
+		}
+    }
+    
+    private void removeEmptyShootingDays(org.w3c.dom.Document root) {
+    	NodeList days = root.getElementsByTagName("shooting-day");
+    	for (int i = 0; i < days.getLength(); i++) {
+    		Node day = days.item(i);
+    		String attribute = ((Element)day).getAttribute("mode");
+    		if ("invisible".equals(attribute)) {
+    			Node parentNode = day.getParentNode();
+    			parentNode.removeChild(day);
     		}
 		}
     }
