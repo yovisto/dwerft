@@ -96,6 +96,11 @@
     ];
     
     rr:predicateObjectMap [
+        rr:predicate foo:hasTitle;
+        rr:objectMap [ rr:parentTriplesMap <#episodetitle>; ]
+    ];
+    
+    rr:predicateObjectMap [
         rr:predicate foo:preproducerIdentifier;
         rr:objectMap [ rml:reference "@ppid"; rr:datatype xsd:string ];
      ];
@@ -148,6 +153,27 @@
     rr:predicateObjectMap [
       	rr:predicate foo:duration;
         rr:objectMap [ rml:reference "length-in-sec"; rr:datatype xsd:float ];
+    ].
+
+<#episodetitle>
+    rml:logicalSource [
+        rml:iterator "/root/return/project/episode/title";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:termType rr:BlankNode;
+        rr:class foo:Title
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:titleType;
+        rr:objectMap [ rr:constant "Main Title" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:titleText;
+        rr:objectMap [ rml:reference "."; rr:datatype xsd:string ];
     ].
 
 <#script>

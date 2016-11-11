@@ -35,13 +35,31 @@
         rr:objectMap [ rr:parentTriplesMap <#character>; ]
     ];
     
-	rr:predicateObjectMap [
-        rr:predicate foo:workingTitle;
-        rr:objectMap [
-            rml:reference "Property[@id='name']";
-        ];
+    rr:predicateObjectMap [
+        rr:predicate foo:hasTitle;
+        rr:objectMap [ rr:parentTriplesMap <#scripttitle>; ]
     ].
 
+<#scripttitle>
+    rml:logicalSource [
+        rml:iterator "/ScriptDocument";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:termType rr:BlankNode;
+        rr:class foo:Title
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:titleType;
+        rr:objectMap [ rr:constant "Working Title" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:titleText;
+        rr:objectMap [ rml:reference "Property[@id='name']" ];
+    ].
 
 <#character>
     rml:logicalSource [
