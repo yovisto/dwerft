@@ -4,10 +4,10 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY for "http://filmontology.org/resource/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY foo "http://filmontology.org/ontology/2.0/" >
-    <!ENTITY for "http://filmontology.org/resource/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
@@ -17,13 +17,14 @@
      xml:base="http://filmontology.org/ontology/ontology"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:for="http://filmontology.org/resource/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:foo="http://filmontology.org/ontology/2.0/"
-     xmlns:for="http://filmontology.org/resource/"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="http://filmontology.org/ontology/ontology">
+        <rdfs:label>dwerft Linked Production Data Cloud (LPDC) ontology.</rdfs:label>
         <dc:creator rdf:datatype="&xsd;string">Henning Agt-Rickauer</dc:creator>
         <dc:date rdf:datatype="&xsd;dateTime">May 09, 2016 8:00:00 AM</dc:date>
     </owl:Ontology>
@@ -86,6 +87,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/belongsToCrewDepartment -->
+
+    <owl:ObjectProperty rdf:about="&foo;belongsToCrewDepartment">
+        <rdfs:label>belongsToCrewDepartment</rdfs:label>
+        <rdfs:comment>Department of a crew position</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;CrewDepartment"/>
+        <rdfs:domain rdf:resource="&foo;CrewPosition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/belongsToProduction -->
 
     <owl:ObjectProperty rdf:about="&foo;belongsToProduction">
@@ -131,6 +144,30 @@
         <rdfs:range rdf:resource="&foo;CrewMember"/>
         <rdfs:domain rdf:resource="&foo;Production"/>
         <rdfs:subPropertyOf rdf:resource="&foo;involvedPerson"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/crewMemberDepartment -->
+
+    <owl:ObjectProperty rdf:about="&foo;crewMemberDepartment">
+        <rdfs:label>crewMemberDepartment</rdfs:label>
+        <rdfs:comment>Department of a crew member.</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;CrewDepartment"/>
+        <rdfs:domain rdf:resource="&foo;CrewMember"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/crewMemberPosition -->
+
+    <owl:ObjectProperty rdf:about="&foo;crewMemberPosition">
+        <rdfs:label>crewMemberPosition</rdfs:label>
+        <rdfs:comment>Position of the crew member</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;CrewMember"/>
+        <rdfs:range rdf:resource="&foo;CrewPosition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -267,25 +304,13 @@
     
 
 
-    <!-- http://filmontology.org/ontology/2.0/hasCrewDepartment -->
+    <!-- http://filmontology.org/ontology/2.0/hasCrewPosition -->
 
-    <owl:ObjectProperty rdf:about="&foo;hasCrewDepartment">
-        <rdfs:label>hasCrewDepartment</rdfs:label>
-        <rdfs:comment>Crew departments of a production</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;CrewDepartment"/>
-        <rdfs:domain rdf:resource="&foo;Production"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/2.0/hasCrewMember -->
-
-    <owl:ObjectProperty rdf:about="&foo;hasCrewMember">
-        <rdfs:label>hasCrewMember</rdfs:label>
-        <rdfs:comment>The members of a crew department.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="&foo;hasCrewPosition">
+        <rdfs:label>hasCrewPosition</rdfs:label>
+        <rdfs:comment>Crew positions of a crew department</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;CrewDepartment"/>
-        <rdfs:range rdf:resource="&foo;CrewMember"/>
+        <rdfs:range rdf:resource="&foo;CrewPosition"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -1545,19 +1570,6 @@
     
 
 
-    <!-- http://filmontology.org/ontology/2.0/crewCode -->
-
-    <owl:DatatypeProperty rdf:about="&foo;crewCode">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>crewCode</rdfs:label>
-        <rdfs:comment>Additional identifier (typeCode) for a crew member.</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;CrewMember"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://filmontology.org/ontology/2.0/crewNumber -->
 
     <owl:DatatypeProperty rdf:about="&foo;crewNumber">
@@ -1571,12 +1583,26 @@
     
 
 
-    <!-- http://filmontology.org/ontology/2.0/crewType -->
+    <!-- http://filmontology.org/ontology/2.0/crewPositionCode -->
 
-    <owl:DatatypeProperty rdf:about="&foo;crewType">
+    <owl:DatatypeProperty rdf:about="&foo;crewPositionCode">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>crewType</rdfs:label>
-        <rdfs:domain rdf:resource="&foo;CrewMember"/>
+        <rdfs:label>crewPositionCode</rdfs:label>
+        <rdfs:comment>Identifier (typeCode) for a crew position.</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;CrewPosition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/crewPositionName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;crewPositionName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>crewPositionName</rdfs:label>
+        <rdfs:comment>Name of the crew position (e.g., Producer, Chief editor)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;CrewPosition"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -1778,11 +1804,25 @@
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/emergencyDescription -->
+
+    <owl:DatatypeProperty rdf:about="&foo;emergencyDescription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>emergencyDescription</rdfs:label>
+        <rdfs:comment>Additional information on the emergency (e.g., address, location)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Emergency"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/emergencyType -->
 
     <owl:DatatypeProperty rdf:about="&foo;emergencyType">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>emergencyType</rdfs:label>
+        <rdfs:comment>The kind of emergency available at the set location</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Emergency"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1903,6 +1943,19 @@
         <rdfs:comment>Image channel information for stereoscopic productions (single / left / right)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/facilityDescription -->
+
+    <owl:DatatypeProperty rdf:about="&foo;facilityDescription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>facilityDescription</rdfs:label>
+        <rdfs:comment>Additional information on the facility (e.g., address, location)</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Facility"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3592,6 +3645,46 @@
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/productionPart -->
+
+    <owl:DatatypeProperty rdf:about="&foo;productionPart">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>productionPart</rdfs:label>
+        <rdfs:comment>Unselbständiger Teil oder Anhang einer VideoKreation, der im Produktionsprozess anfällt und separat vorliegt</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Essence"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/productionRemark -->
+
+    <owl:DatatypeProperty rdf:about="&foo;productionRemark">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>productionRemark</rdfs:label>
+        <rdfs:comment>Aus fernsehtechnischen oder produktionsbedingten Umständen resultierende Eigenschaften eines Medienobjekts</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Essence"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/productionStage -->
+
+    <owl:DatatypeProperty rdf:about="&foo;productionStage">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>productionStage</rdfs:label>
+        <rdfs:comment>Vorform oder Fassung einer VideoKreation, die durch einen bestimmten Schritt im Produktionsprozess, in der 
+technischen Herstellung des Medienobjekts oder durch die intendierte spezifische Verwendung gekennzeichnet ist</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Essence"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/productionType -->
 
     <owl:DatatypeProperty rdf:about="&foo;productionType">
@@ -5180,6 +5273,16 @@
         <rdfs:label>CrewMember</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;Person"/>
         <rdfs:comment>A person involved in the film production staff</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/CrewPosition -->
+
+    <owl:Class rdf:about="&foo;CrewPosition">
+        <rdfs:label>CrewPosition</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
+        <rdfs:comment>The function of a certain crew member.</rdfs:comment>
     </owl:Class>
     
 

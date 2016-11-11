@@ -1,0 +1,194 @@
+Code;Dep;Name
+PRD001;PRD;Producer
+PRD002;PRD;Co-Produzent
+PRD003;PRD;Executive Producer
+PRD004;PRD;Associate Producer
+PRD005;PRD;Producer
+PRD006;PRD;Line Producer
+PRD006b;PRD;Line Producer
+PRD007;PRD;Production Manager
+PRD007b;PRD;Production Manager
+PRD007c;PRD;Production Coordinator
+PRD008;PRD;Production assistence
+PRD009;PRD;Production trainee
+PRD010;PRD;Unit manager
+PRD011;PRD;2nd unit manager (Set-AL)
+PRD012;PRD;Location manager
+PRD013;PRD;Unit manager assistence
+PRD014;PRD;Set production assistent
+PRD015;PRD;Unit manager synchron
+PRD015b;PRD;Multimedia chief
+PRD016;PRD;Production secretary
+PRD017;PRD;production accounting
+PRD018;PRD;Collector
+PRD019;PRD;Accounting clerk
+PRD020;PRD;Payroll accounting
+PRD021;PRD;Production advisor
+PRD022;PRD;Production driver
+PRD023;PRD;Runner
+PRD025;PRD;Set trainee
+PRD026;PRD;Catering
+PRD027;PRD;Production others
+PRD028;PRD;Lector(in)
+PRD029;PRD;Production guest student
+RED001;RED;Chief editor
+RED002;RED;Head of editorial department
+RED003;RED;Secretary
+RED004;RED;TV editor
+RED005;RED;Reporter
+RED006;RED;Assistence
+RED007;RED;Volunteer
+RED008;RED;Moderator
+RED009;RED;Presenter
+RED010;RED;Advisor
+RED011;RED;Editorial department - others
+REG001;REG;Director
+REG002;REG;2nd Unit Director
+REG003;REG;Dialog Director
+REG003b;REG;Animation Director
+REG003c;REG;Associate Director
+REG004;REG;1st Assistent Director
+REG005;REG;2nd Assistent Director
+REG005b;REG;Assist. Animation Director
+REG006;REG;Trainee
+REG007;REG;Script Supervisor
+REG008;REG;Continuity
+REG009;REG;Script Girl
+REG010;REG;Casting
+REG011;REG;Casting Director
+REG012;REG;Casting Assistent
+REG013;REG;Extras Casting
+REG014;REG;Extras Coordinator
+REG015;REG;Children Coordinator
+REG015b;REG;Postproduction Supervisor
+REG015c;REG;Postproduction Assist.
+REG016;REG;Dramaturgie / Script-Consultant
+REG017;REG;Dialog Coach
+REG018;REG;Storyboard Artist
+REG019;REG;Advisor
+REG020;REG;Directors Staff others
+REG021;REG;Guest Student
+KAM001;KAM;Director of Photography
+KAM002;KAM;Cameraman
+KAM003;KAM;2nd Unit Camera
+KAM003b;KAM;3D Camera
+KAM004;KAM;Camera Operator
+KAM005;KAM;Steadicam Operator
+KAM006;KAM;Motion Control Operator
+KAM007;KAM;1st Assist. Cameraman
+KAM008;KAM;2nd Assist. Cameraman
+KAM009;KAM;Film Loader
+KAM009b;KAM;Data Wrangler
+KAM010;KAM;Video Operator
+KAM011;KAM;Cable Grip
+KAM012;KAM;Camera Trainee
+KAM013;KAM;Still Photographer
+KAM014;KAM;Advisor
+KAM015;KAM;Camera others
+LIG001;LIG;Gaffer
+LIG002;LIG;Light Electrician
+LIG002b;LIG;Best Boy
+LIG003;LIG;Generator Operator
+LIG005;LIG;Lighting Desk Operator
+LIG006;LIG;Electrician
+LIG007;LIG;Electrical others
+LIG008;LIG;Key Grip
+LIG009;LIG;Grip
+LIG010;LIG;Crane Operator
+LIG011;LIG;Key Grip
+LIG012;LIG;Grip
+LIG013;LIG;Grip Assist.
+LIG014;LIG;Grip others
+LIG015;LIG;Lighting trainee
+SZE001;SZE;Production Designer
+SZE002;SZE;Productions Design Assist.
+SZE002b;SZE;Art Director
+SZE003;SZE;Set Decorator
+SZE004;SZE;Set Decoration Assist.
+SZE005;SZE;Trainee Set Decoration
+SZE006;SZE;Architect
+SZE006b;SZE;Chief of Construction
+SZE007;SZE;Construction Crew
+SZE008;SZE;Location Property Master
+SZE009;SZE;Property Master
+SZE010;SZE;Property man
+SZE011;SZE;Prop Driver
+SZE012;SZE;Props - Helping Hand
+SZE013;SZE;Set Dresser
+SZE013b;SZE;Carpenter
+SZE014;SZE;Set Painter
+SZE015;SZE;Sculptor
+SZE016;SZE;Greenary
+SZE017;KST;Costume Designer
+SZE018;KST;Assist. Costume Designer
+SZE018b;KST;Costume Advisor
+SZE019;KST;Tailor / Seamstress
+SZE020;KST;Wardrobe
+SZE022;KST;Add. Wardrobe Labor
+SZE022b;KST;Chief Makeup Artist
+SZE023;KST;Makeup Artist
+SZE024;KST;assist. Makeup Artist
+SZE025;KST;Add. Makup Labor
+SZE026;KST;FX Makeup Artist
+SZE026b;KST;Body Makeup Artist
+SZE027;KST;Hair Stylist
+SZE028;KST;Production Design others
+SZE029;KST;Costume trainee
+TON001;TON;Sound Mixer
+TON002;TON;Boom Operator
+TON003;TON;Sound Engineer
+TON004;TON;Playback Assistence
+TON005;TON;Trainee Sound Department
+TON006;TON;Audio Engineer
+TON007;TON;Sound Design
+TON008;TON;Sound Editor / Ton Cutter
+TON008b;TON;Sound Editor Assistence
+TON009;TON;ADR Engineer
+TON010;TON;Foley Artist
+TON011;TON;Sound Department others
+PST001;PST;Film Editor
+PST002;PST;Assist. Film Editor
+PST002b;PST;2nd Assist. Editor
+PST003;PST;Picture Negative Editor
+PST004;PST;Synchron Editor
+PST005;PST;Assist Synchron Editor
+PST006;PST;Computer Graphics
+PST007;PST;Visual Effects
+PST007b;PST;Color Supervisor
+PST007c;PST;Color Styler
+PST008;PST;Color Timer
+PST009;PST;Animation
+PST009b;PST;3D Supervisor
+PST009c;PST;3D Animation
+PST009d;PST;3D Modeler
+PST009e;PST;3D Painter
+PST009f;PST;Compositing Supervisor
+PST009g;PST;Compositing
+PST009h;PST;Layout Supervisor
+PST009i;PST;Layout
+PST009j;PST;Colour Concept
+PST009k;PST;Sequence Director
+PST009l;PST;2D Animation
+PST009m;PST;Supervisor 2D EFX
+PST010;PST;DVD Authoring
+PST011;PST;Composer
+PST012;PST;Postproduction Advisor
+PST012b;PST;System Administrator
+PST013;PST;Postproduction others
+SST003;SST;Visual Effects Supervisor
+SST003b;SST;Special Effects Supervisor
+SST004;SST;Pyrotechnics / FX
+SST006;SST;Animal Trainer
+SST007;SST;Screenwriter
+SST008;SST;Dialogue Writer
+SST009;SST;Double / Standin
+SST010;SST;Press attendance
+SST011;SST;Security / Ambulance man
+SST012;SST;Trainee
+SST013;SST;Guest Student
+MUS001;MUS;Musicians on Screen
+MUS002;MUS;Recording Studio Musicians
+MUS003;MUS;Conductor
+MUS004;MUS;Soloists / Singer
+MUS005;MUS;Score Writing Work
+MUS006;MUS;Musicians others

@@ -37,10 +37,10 @@
         rr:objectMap [ rr:parentTriplesMap <#title>; ]
     ];
 
-    rr:predicateObjectMap [
-        rr:predicate foo:hasCrewDepartment;
-        rr:objectMap [ rr:parentTriplesMap <#crewdepartment>; ]
-    ];
+#    rr:predicateObjectMap [
+#        rr:predicate foo:hasCrewDepartment;
+#        rr:objectMap [ rr:parentTriplesMap <#crewdepartment>; ]
+#    ];
 
     rr:predicateObjectMap [
         rr:predicate foo:crewMember;
@@ -113,6 +113,16 @@
     rr:predicateObjectMap [
         rr:predicate foo:synopsis;
         rr:objectMap [ rml:reference "synopsis/formattedscript"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:seasonNumber;
+        rr:objectMap [ rml:reference "season"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:episodeNumber;
+        rr:objectMap [ rml:reference "number"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -334,9 +344,9 @@
         rml:iterator "/root/return/project/company";
         rml:referenceFormulation ql:XPath;
     ];
-
+    
     rr:subjectMap [
-        rr:termType rr:BlankNode;
+        rr:template "http://filmontology.org/resource/Company/{@id}";
         rr:class foo:Company;
     ];
 
@@ -346,32 +356,14 @@
     ];
 
     rr:predicateObjectMap [
+        rr:predicate foo:contactPerson;
+        rr:objectMap [ rml:reference "adress/contact"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
         rr:predicate foo:hasAddress;
         rr:objectMap [ rr:parentTriplesMap <#address>; ]
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate v:agent;
-        rr:objectMap [ rr:parentTriplesMap <#contact>; ]
     ].
-
-# map contact to agent in vcard
-<#contact>
-    rml:logicalSource [
-        rml:iterator "/root/return/project/company/adress";
-        rml:referenceFormulation ql:XPath;
-    ];
-
-    rr:subjectMap [
-        rr:termType rr:BlankNode;
-        rr:class v:Individual;
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:contactPerson;
-        rr:objectMap [ rml:reference "contact"; rr:datatype xsd:string ];
-    ].
-
 
 # company address
 <#address>
@@ -381,13 +373,13 @@
     ];
 
     rr:subjectMap [
-        rr:template "http://www.w3.org/2006/vcard/ns#Address/{@id}";
+        rr:template "http://filmontology.org/resource/VCardAddress/{@id}";
         rr:class v:Address;
     ];
 
     rr:predicateObjectMap [
         rr:predicate v:street-address;
-        rr:objectMap [ rml:reference "street"; rr:datatype xsd:string ];
+        rr:objectMap [ rr:template "{street} {housenumber}"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -405,7 +397,6 @@
         rr:objectMap [ rml:reference "country"; rr:datatype xsd:string ];
     ];
 
-# may be wrong owl class, check later
     rr:predicateObjectMap [
         rr:predicate v:organization-name;
         rr:objectMap [ rml:reference "co"; rr:datatype xsd:string ];
@@ -433,7 +424,7 @@
     ];
 
     rr:predicateObjectMap [
-        rr:predicate foo:fullName;
+        rr:predicate foo:name;
         rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
     ];
 
@@ -469,32 +460,6 @@
         rr:objectMap [ rml:reference "sex"; rr:datatype xsd:string ];
     ].
 
-<#crewdepartment>
-    rml:logicalSource [
-        rml:iterator "/root/return/project/function-group";
-        rml:referenceFormulation ql:XPath;
-    ];
-
-    rr:subjectMap [
-        rr:template "http://filmontology.org/resource/CrewDepartment/{code}";
-        rr:class foo:CrewDepartment;
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:departementCode;
-        rr:objectMap [ rml:reference "code"; rr:datatype xsd:string ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:name;
-        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:hasCrewMember;
-        rr:objectMap [ rr:parentTriplesMap <#crewmember>; ]
-    ].
-
 <#crewmember>
     rml:logicalSource [
         rml:iterator "/root/return/project/function-group/function";
@@ -512,18 +477,13 @@
     ];
 
     rr:predicateObjectMap [
-        rr:predicate foo:crewCode;
-        rr:objectMap [ rml:reference "typeCode"; rr:datatype xsd:string ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:crewType;
-        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
-    ];
-
-    rr:predicateObjectMap [
         rr:predicate foo:name;
         rr:objectMap [ rml:reference "team/name"; rr:datatype xsd:string ];
+    ];
+    
+	rr:predicateObjectMap [
+        rr:predicate foo:crewMemberPosition;
+        rr:objectMap [ rr:template "http://filmontology.org/resource/CrewPosition/{typeCode}"; ]
     ].
 
 <#decoration>
@@ -549,7 +509,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
-        rr:objectMap [ rml:reference "name" ];
+        rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -585,19 +545,13 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:contactPerson;
-        rr:objectMap [ rml:reference "contact"; rr:datatype xsd:string ];
+        rr:objectMap [ rml:reference "adress/contact"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:hasAddress;
         rr:objectMap [ rr:parentTriplesMap <#locationAddress>; ]
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate v:agent;
-        rr:objectMap [ rr:parentTriplesMap <#locationContact>; ]
     ].
-
 
 <#emergency>
     rml:logicalSource [
@@ -606,12 +560,12 @@
     ];
 
     rr:subjectMap [
-        rr:termtype rr:BlankNode;
+        rr:template "http://filmontology.org/resource/Emergency/{@id}";
         rr:class foo:Emergency;
     ];
 
     rr:predicateObjectMap [
-        rr:predicate foo:name;
+        rr:predicate foo:emergencyDescription;
         rr:objectMap [ rml:reference "."; rr:datatype xsd:string ];
     ];
 
@@ -627,12 +581,12 @@
     ];
 
     rr:subjectMap [
-        rr:termType rr:BlankNode;
+        rr:template "http://filmontology.org/resource/Facility/{@id}";
         rr:class foo:Facility;
     ];
 
     rr:predicateObjectMap [
-        rr:predicate foo:name;
+        rr:predicate foo:facilityDescription;
         rr:objectMap [ rml:reference "."; rr:datatype xsd:string ];
     ];
 
@@ -641,24 +595,6 @@
         rr:objectMap [ rml:reference "@type"; rr:datatype xsd:string ];
     ].
 
-# map contact to agent in vcard
-<#locationContact>
-    rml:logicalSource [
-        rml:iterator "/root/return/project/decoration/location/adress";
-        rml:referenceFormulation ql:XPath;
-    ];
-
-    rr:subjectMap [
-        rr:termType rr:BlankNode;
-        rr:class v:Individual;
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:contactPerson;
-        rr:objectMap [ rml:reference "contact"; rr:datatype xsd:string ];
-    ].
-
-
 <#locationAddress>
     rml:logicalSource [
         rml:iterator "/root/return/project/decoration/location/adress";
@@ -666,13 +602,13 @@
     ];
 
     rr:subjectMap [
-        rr:template "http://www.w3.org/2006/vcard/ns#Address/{@id}";
+        rr:template "http://filmontology.org/resource/VCardAddress/{@id}";
         rr:class v:Address;
     ];
 
     rr:predicateObjectMap [
-        rr:predicate v:street-name;
-        rr:objectMap [ rml:reference "street"; rr:datatype xsd:string ];
+        rr:predicate v:street-address;
+        rr:objectMap [ rr:template "{street} {housenumber}"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
