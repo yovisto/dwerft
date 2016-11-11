@@ -114,6 +114,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
         return null;
     }
 
+    /* add the childs as string to the formattedscript to keep the special xml elements */
     private void correctFormattedScript(org.w3c.dom.Document doc) {
         NodeList items = doc.getElementsByTagName("formattedscript");
 
@@ -126,6 +127,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
 
     }
 
+    /* transform a xml child into a string */
     private String childsToString(Node root) {
         NodeList childs = root.getChildNodes();
         StringBuilder builder = new StringBuilder();

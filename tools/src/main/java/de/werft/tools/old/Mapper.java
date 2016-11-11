@@ -92,7 +92,14 @@ public class Mapper {
 
     /* simply translate the old mappings into the new ones */
     private void transform(List<Mapping> mappings) {
+        String trunc = "";
         for (Mapping m : mappings) {
+            if (m.isClassMapping()) {
+                trunc = m.getPath();
+            } else if (m.isNodeProperty()) {
+                m.shortenPath(trunc);
+            }
+
             m.transform(isNextClassOrLast(mappings, m));
         }
     }

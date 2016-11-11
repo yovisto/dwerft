@@ -227,7 +227,7 @@ class Mapping {
     }
 
     void shortenPath(String path) {
-        this.path = StringUtils.substringAfter(this.path, path);
+        this.path = StringUtils.substringAfter(this.path, path + "/");
     }
 
 }
