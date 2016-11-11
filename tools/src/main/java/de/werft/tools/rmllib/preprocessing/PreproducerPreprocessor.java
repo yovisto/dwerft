@@ -51,6 +51,21 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
         "info", "listCharacters", "listCrew", "listDecorations", "listExtras", "listFigures",
         "listScenes", "listSchedule");
 
+    
+    /* mappings for item catergories */
+    private final static HashMap<String, String> itemMapping = new HashMap<String, String>() {{
+        put("itmset", "Set Dressing");
+        put("itmprp", "Props");
+        put("itmmkp", "Makeup");
+        put("itmcst", "Costumes");
+        put("itmcam", "Camera/Lighting");
+        put("itmsnd", "Sound");
+        put("itmcar", "Vehicles");
+        put("itmani", "Animals");
+        put("itmfxs", "FX/Stunts");
+        put("itmprd", "Production");
+    }};
+
     private String key;
 
     private String secret;
@@ -102,6 +117,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             replaceReferenceIds(result);
             addProductionId(result);
             correctFormattedScript(result);
+            replaceItemCategories(result);
 
             /* write to disk */
             tmpFile = Files.createTempFile("prepro", ".xml");
@@ -247,9 +263,21 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
     			}
     		}
 		}
-}
+    }
+    
+    private void replaceItemCategories(org.w3c.dom.Document root) {
+    	NodeList codes = root.getElementsByTagName("typeCode");
+    	for (int i = 0; i < codes.getLength(); i++) {
+    		Node code = codes.item(i);
+    		String itm = ((Element)code).getTextContent();
+    		if (itm != null && !"".equals(itm) && itemMapping.containsKey(itm)) {
+    			String maping = itemMapping.get(itm);
+    			code.setTextContent(maping);
+    		}
+		}
+    }
 
-    /* manipulate the address elements */
+    /* manipulate elements without ids */
     private void generateUuidsForNonIdNodes(org.w3c.dom.Document doc) {
         NodeList addresses = doc.getElementsByTagName("adress");
         for (int i = 0; i < addresses.getLength(); i++) {
