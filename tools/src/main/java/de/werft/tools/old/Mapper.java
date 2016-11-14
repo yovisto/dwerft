@@ -107,11 +107,11 @@ public class Mapper {
     /* return true is the next mapping is a class or this is the last element in a list */
     private boolean isNextClassOrLast(List<Mapping> oldOrder, Mapping m) {
         try {
-            System.out.println(oldOrder.lastIndexOf(m));
-            System.out.println("last " + oldOrder.get(oldOrder.lastIndexOf(m) + 1).isClassMapping());
+//            System.out.println(oldOrder.lastIndexOf(m));
+//            System.out.println("last " + oldOrder.get(oldOrder.lastIndexOf(m) + 1).isClassMapping());
             return oldOrder.get(oldOrder.lastIndexOf(m) + 1).isClassMapping();
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("default true ");
+//            System.out.println("default true ");
             return true;
         }
     }
