@@ -94,9 +94,12 @@ public class MyResource {
 
         /* create new memento and retrieve delta from tailr anyway */
         String input = convertToNTriplesRdfFile(new ByteArrayInputStream(fileBytes), format);
-        if ("".equals(input)) {
+        L.info("Input: " + input);
+
+        // empty input means delete all
+        /*if ("".equals(input)) {
             return Response.status(Response.Status.NOT_MODIFIED).build();
-        }
+        }*/
 
         Delta d = getDelta(input, tailrKey);
         if (d == null) {
@@ -110,9 +113,11 @@ public class MyResource {
         /* create authentication */
         HttpAuthenticator auth = new SimpleAuthenticator(conf.getRemoteUser(), conf.getRemotePass().toCharArray());
         if (g.equals(Update.Granularity.LEVEL_2)) {
-            uploader.uploadModel(new Update(g, d), graphName, auth);
+          //  L.info("Delta Tailr: " + d);
+          //  uploader.uploadModel(new Update(g, d), graphName, auth);
         } else {
             Delta delta = convertToDelta(input);
+            L.info("Delta: " + delta);
             uploader.uploadModel(new Update(g, delta), graphName, auth);
         }
 
