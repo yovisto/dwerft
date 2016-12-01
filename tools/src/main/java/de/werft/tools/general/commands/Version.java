@@ -58,7 +58,7 @@ public class Version extends DwerftTools {
             if (isList) {
                 logger.debug("Show revisions");
                 List<Memento> revisions = t.getMementos(repo, key);
-                logger.info(prettifyTimemap(revisions));
+                logger.info(t.prettifyTimemap(revisions));
             } else if (isShow()) {
                 logger.debug("Show " + revision + " revision");
                 Memento m = isLatest() ? t.getLatestMemento(repo, key) : new Memento(repo, key, new DateTime(revision));
@@ -86,23 +86,6 @@ public class Version extends DwerftTools {
     private TailrClient getClient() throws URISyntaxException {
         return TailrClient.getInstance(config.getTailrBase(), config.getTailrUser(), config.getTailrToken());
     }
-
-    /* prettify the output from tailr */
-    private String prettifyTimemap(List<Memento> revisions) {
-        StringBuilder builder = new StringBuilder();
-        builder.append("\n<------- Timemap ------->\n");
-
-        if (revisions.isEmpty()) {
-            builder.append("No revision found.\n");
-        } else {
-            for (int i = 0; i < revisions.size(); i++) {
-                builder.append("Revision ").append(i).append(": ")
-                        .append(revisions.get(i).getDateTime()).append("\n");
-            }
-        }
-        return builder.toString();
-    }
-
 
     /* since we can not distinct between different options, we need a latest keyword */
     private boolean isShow() {

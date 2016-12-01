@@ -92,19 +92,9 @@ public class MyResource {
             return Response.status(Response.Status.NOT_ACCEPTABLE).build();
         }
 
-        /* create new memento and retrieve delta from tailr anyway */
+        /* create ntriples from input */
         String input = convertToNTriplesRdfFile(new ByteArrayInputStream(fileBytes), format);
-        L.info("Input: " + input);
-
-        // empty input means delete all
-        /*if ("".equals(input)) {
-            return Response.status(Response.Status.NOT_MODIFIED).build();
-        }*/
-
-        Delta d = getDelta(input, tailrKey);
-        if (d == null) {
-            return Response.status(Response.Status.NOT_MODIFIED).build();
-        }
+        L.info("Input:\n" + input);
 
         if ("".equals(graphName)) {
             graphName = "http://filmontology.org";
@@ -113,11 +103,19 @@ public class MyResource {
         /* create authentication */
         HttpAuthenticator auth = new SimpleAuthenticator(conf.getRemoteUser(), conf.getRemotePass().toCharArray());
         if (g.equals(Update.Granularity.LEVEL_2)) {
-          //  L.info("Delta Tailr: " + d);
-          //  uploader.uploadModel(new Update(g, d), graphName, auth);
+            Delta d = getDelta(input, tailrKey);
+            L.info("Got delta from Tailr:\n" +d);
+            if (d == null) {
+                return Response.status(Response.Status.NOT_MODIFIED).build();
+            }
+
+            L.info("Start uploading...");
+            uploader.uploadModel(new Update(g, d), graphName, auth);
+            L.info("Upload done.");
         } else {
             Delta delta = convertToDelta(input);
-            L.info("Delta: " + delta);
+
+            L.info("Delta:\n" + delta);
             uploader.uploadModel(new Update(g, delta), graphName, auth);
         }
 
@@ -125,7 +123,7 @@ public class MyResource {
     }
 
     /* store the uploaded rdf file and retrieve the delta determined by tailr */
-    private Delta getDelta(String input, @QueryParam(value = "key") String tailrKey) {
+    private Delta getDelta(String input, String tailrKey) {
         try {
             Repository repo = new Repository(conf.getTailrUser(), conf.getTailrRepo());
             return tailrClient.putMemento(repo, tailrKey, input);

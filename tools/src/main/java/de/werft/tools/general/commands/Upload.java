@@ -48,6 +48,9 @@ public class Upload extends DwerftTools {
     @Required
     private String key = "";
 
+    @Option(name = {"-f", "--format"}, description = "Provide a language definition such as ttl, ntm, jsonld")
+    private String lang = "ttl";
+
     @Override
     public void run() {
         super.run();
@@ -61,7 +64,8 @@ public class Upload extends DwerftTools {
         String url = config.getRemoteUrl()
                 + "key=" + key
                 + "&graph=" + getGraphName()
-                + "&level=" + method;
+                + "&level=" + method
+                + "&lang=" + lang;
 
         logger.debug("Put file with the url " + url);
         HttpPut put = new HttpPut(url);

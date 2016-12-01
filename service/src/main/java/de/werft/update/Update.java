@@ -1,11 +1,7 @@
 package de.werft.update;
 
 import de.hpi.rdf.tailrapi.Delta;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.Statement;
-import org.apache.jena.rdf.model.StmtIterator;
 
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -37,7 +33,7 @@ public class Update {
         /**
          * The Level 1 inserts data.
          */
-        LEVEL_1 ("INSERT DATA"),
+        LEVEL_1 ("INSERT"),
         /**
          * Level 2 creates a diff.
          */
@@ -58,7 +54,7 @@ public class Update {
      * Instantiates a new insert/delete Update.
      *
      * @param g the g
-     * @param m the m
+     * @param d the delta
      */
     public Update(Granularity g, Delta d) {
         this.g = g;
@@ -92,7 +88,11 @@ public class Update {
 
         query.append(buildQueryBody(d.getAddedTriples()));
         query.append(buildQueryBody(d.getRemovedTriples()));
-        query.append("} }");
+        query.append("} }\n");
+
+        /* handle ba behaviour of the virtuoso triple store which
+         * can not insert bnodes without an non empty result set */
+        query.append("WHERE { SELECT * { OPTIONAL {?s ?p ?o.} } LIMIT 1 }");
         return query.toString();
     }
 
