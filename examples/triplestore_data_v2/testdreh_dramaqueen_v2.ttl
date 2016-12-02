@@ -117,11 +117,6 @@
         foo:identifierDramaqueen  "cc3e42bc-680b-4e38-9b89-3bdc030d6963" ;
         foo:name                  "Produktionsassistent" .
 
-[ a              foo:Title ;
-  foo:titleText  "THF Testdreh dwerft (AT).dq" ;
-  foo:titleType  "Working Title"
-] .
-
 <http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87>
         a                         foo:Scene ;
         foo:identifierDramaqueen  "a5358c37-c865-479a-b286-adcc1ae51f87" ;
@@ -145,6 +140,11 @@
         a                         foo:Set ;
         foo:identifierDramaqueen  "0e03200e-44a6-4375-8699-4ec3ff7b029d" ;
         foo:name                  "Rückblende Tempelhofer FelD" .
+
+[ a              foo:Title ;
+  foo:titleText  "THF Testdreh dwerft (AT).dq" ;
+  foo:titleType  "Working Title"
+] .
 
 <http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc>
         a                         foo:Scene ;
