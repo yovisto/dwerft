@@ -7,19 +7,13 @@ for:DWERFT  <http://purl.org/dc/terms/hasPart>
 <http://filmontology.org/resource/DwerftProject/c08a2dc4-728b-40d6-b1e0-ef510528a53f>
         a                         foo:DwerftProject ;
 		foo:hasProduction <http://filmontology.org/resource/IndividualProduction/f434d145-f054-40f8-bf61-052eb0e0d691>;
-        foo:hasTitle <http://filmontology.org/resource/Title/6234eb37-39eb-40ff-ba1f-d103df7642be> .
+        foo:hasTitle              [ a              foo:Title ;
+                                    foo:titleText  "THF Tempelhof" ;
+                                    foo:titleType  "Main Title"
+                                  ].
 
-<http://filmontology.org/resource/Title/6234eb37-39eb-40ff-ba1f-d103df7642be>
-        a                         foo:Title ;
-		foo:titleText             "THF Tempelhof";
-		foo:titleType             "Main Title".
-		
 <http://filmontology.org/resource/IndividualProduction/f434d145-f054-40f8-bf61-052eb0e0d691>
         a                         foo:IndividualProduction ;
 		foo:yearOfProduction		"2015" ;
         foo:hasTitle			<http://filmontology.org/resource/Title/7ac19243-bda0-4ea8-93cb-edbc1397c719>.
 		
-<http://filmontology.org/resource/Title/7ac19243-bda0-4ea8-93cb-edbc1397c719>
-        a                         foo:Title ;
-		foo:titleText             "Making of Testdreh dwerft";
-		foo:titleType             "Working Title".
