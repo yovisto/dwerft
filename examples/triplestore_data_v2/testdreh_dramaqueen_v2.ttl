@@ -141,11 +141,6 @@
         foo:identifierDramaqueen  "0e03200e-44a6-4375-8699-4ec3ff7b029d" ;
         foo:name                  "Rückblende Tempelhofer FelD" .
 
-[ a              foo:Title ;
-  foo:titleText  "THF Testdreh dwerft (AT).dq" ;
-  foo:titleType  "Working Title"
-] .
-
 <http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc>
         a                         foo:Scene ;
         foo:identifierDramaqueen  "846857bc-12c0-4216-aff9-0d7b155c21fc" ;
@@ -238,9 +233,6 @@
         foo:sceneNumber           "15" ;
         foo:sceneSet              <http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> .
 
-<http://filmontology.org/resource/IndividualProduction/f434d145-f054-40f8-bf61-052eb0e0d691>
-        foo:hasScript  <http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> .
-
 <http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6>
         a                         foo:Script ;
         foo:hasCharacter          <http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> , <http://filmontology.org/resource/Character/c3cbb55c-471d-4f4f-931b-3776f0e63edd> , <http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> , <http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> , <http://filmontology.org/resource/Character/e41215f2-eb35-42d6-ae34-cb95314f5e46> , <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> , <http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> , <http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> , <http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> , <http://filmontology.org/resource/Character/62442410-38a7-46b3-b17a-cc7cac2e4a0d> , <http://filmontology.org/resource/Character/57be2f23-94b7-41de-87ab-660546fba9a6> , <http://filmontology.org/resource/Character/a062557c-a6dd-4b71-8f24-c58ceac35056> , <http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> ;
@@ -282,6 +274,9 @@
         foo:sceneHeader           "Wald Außen Morgen" ;
         foo:sceneNumber           "5" .
 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691>
+        foo:hasScript  <http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> .
+
 <http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4>
         a                         foo:Character ;
         foo:identifierDramaqueen  "c8258b6e-382a-4006-9f9c-6d62fdafbae4" ;
@@ -319,6 +314,11 @@
         foo:sceneHeader           "Waldweg Außen Tag" ;
         foo:sceneNumber           "6" ;
         foo:sceneSet              <http://filmontology.org/resource/Set/91fe3e77-8647-49a3-a2e8-6ce1484008df> .
+
+[ a              foo:Title ;
+  foo:titleText  "THF Testdreh dwerft (AT).dq" ;
+  foo:titleType  "Working Title"
+] .
 
 <http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2>
         a                         foo:Scene ;
