@@ -99,50 +99,7 @@ To use it, run:
 For the available arguments see further down this readme.
 
 #### Manual setup
-
-Manually setting up the framework requires Apache Maven. So start of by getting Maven over [here](https://maven.apache.org/) if you haven't already done so. Next, clone the git repository to a destination of your choice.
-  
-  ```
-  mkdir ~/dwerft_lpdc
-  git clone https://github.com/yovisto/dwerft.git ~/dwerft_lpdc
-  ```
-  
-Since there is a bug within rml you have to checkout the rml repository and 
-fix one line.
- 
-  ```
-  git clone --recursive https://github.com/RMLio/RML-Mapper.git
-  git submodule update --init --recursive 
-  nano  RML-LogicalSourceHandler/src/main/java/be/ugent/mmlab/rml/logicalsourcehandler/termmap/concrete/XPathTermMapProcessor.java
-  Change:
-  import java.io.StringBufferInputStream;
-  StringBufferInputStream input = new StringBufferInputStream(node.toXML().toString());
-  To:
-  import java.io.ByteArrayInputStream;
-  ByteArrayInputStream input = new ByteArrayInputStream(node.toXML().getBytes());
-  ```
-Lastly provide rml with `mvn clean install`.
-
-Install TailR:
-  ```
-  git clone https://github.com/SemanticMultimedia/tlr-java-api.git
-  cd tlr-java-api
-  mvn clean install -DskipTests
-  ```
-
-If you plan on using an operation which utilizes the Preproducer API, make sure to provide valid credentials. Simply copy the template we provide to the `tools` directory, and with an editor of your choice add your credentials. Adjust other settings to your needs. 
-  
-  ```
-  cd ~/dwerft_lpdc/tools
-  cp src/main/resources/DwerftConfig.properties .
-  vim DwerftConfig.properties
-  ```
-
-Irrespective of whether you added credentials or not, you can now execute the lpdc project by running the run script provided. The various arguments available are listed in the next section.
-  
-  ```
-  ./run.sh <your arguments>
-  ```
+See the wiki [page](Manual Setup) how to setup the dwerft tools on your own.
 
 #### Command line arguments
 
