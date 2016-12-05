@@ -99,7 +99,7 @@ To use it, run:
 For the available arguments see further down this readme.
 
 #### Manual setup
-See the wiki [page](Manual Setup) how to setup the dwerft tools on your own.
+See the wiki [page](https://github.com/yovisto/dwerft/wiki/Manual-Setup) how to setup the dwerft tools on your own.
 
 #### Command line arguments
 
