@@ -1,4 +1,4 @@
-package de.werft.update;
+package de.werft;
 
 import de.hpi.rdf.tailrapi.Delta;
 import org.apache.jena.datatypes.xsd.impl.XSDBaseNumericType;
@@ -60,8 +60,7 @@ public class UploaderTest {
     public void testUpload() throws InterruptedException {
         /* test the basic upload mechanism */
         Delta d = convertModelToDelta(expectedModel);
-        Update u = new Update(Update.Granularity.LEVEL_1, d);
-        uploader.uploadModel(u, graphName);
+        uploader.uploadModel(d, graphName);
         Model remoteModel = getRemoteModel(endpoint);
         Assert.assertTrue(remoteModel.isIsomorphicWith(expectedModel));
     }
@@ -72,8 +71,7 @@ public class UploaderTest {
         Delta d = new Delta();
         d.getRemovedTriples().add("<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/title> \"Frog King Reloaded\" .");
         d.getRemovedTriples().add("<http://filmontology.org/resource/Cast/984745> <http://filmontology.org/ontology/1.0/identifier> \"984745\"^^<http://www.w3.org/2001/XMLSchema#int> .");
-        Update u = new Update(Update.Granularity.LEVEL_0, d);
-        uploader.uploadModel(u, graphName);
+        uploader.uploadModel(d, graphName);
         Model remote = getRemoteModel(endpoint);
 
         expectedModel.removeAll(ResourceFactory.createResource("http://filmontology.org/resource/Project/3298438"),
@@ -94,8 +92,7 @@ public class UploaderTest {
         d.getRemovedTriples().add("<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/title> \"Frog King Reloaded\" .");
         d.getRemovedTriples().add("<http://filmontology.org/resource/Cast/984745> <http://filmontology.org/ontology/1.0/identifier> \"984745\"^^<http://www.w3.org/2001/XMLSchema#int> .");
         d.getAddedTriples().add("<http://filmontology.org/resource/Project/3298438> <http://filmontology.org/ontology/1.0/title> \"Frog King Reloaded II\"^^<http://www.w3.org/2001/XMLSchema#string> .");
-        Update u = new Update(Update.Granularity.LEVEL_2, d);
-        uploader.uploadModel(u, graphName);
+        uploader.uploadModel(d, graphName);
         Model remote = getRemoteModel(endpoint);
 
         expectedModel.removeAll(ResourceFactory.createResource("http://filmontology.org/resource/Project/3298438"),
@@ -118,8 +115,7 @@ public class UploaderTest {
 
     /* upload data to a triple store */
     private void prepareEndpoint(Delta d) {
-        Update u = new Update(Update.Granularity.LEVEL_1, d);
-        uploader.uploadModel(u, graphName);
+        uploader.uploadModel(d, graphName);
     }
 
     /* returns a model from a remote endpoint containing all triples */

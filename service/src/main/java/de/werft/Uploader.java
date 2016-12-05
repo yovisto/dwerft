@@ -1,6 +1,7 @@
-package de.werft.update;
+package de.werft;
 
 
+import de.hpi.rdf.tailrapi.Delta;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.update.UpdateExecutionFactory;
 import org.apache.jena.update.UpdateFactory;
@@ -35,19 +36,12 @@ public class Uploader {
      * @param graphUri the graph uri
      * @param auth     the auth
      */
-    public void uploadModel(Update u, String graphUri, HttpAuthenticator auth) {
-        if (u.getGranularity().equals(Update.Granularity.LEVEL_0) ||
-                u.getGranularity().equals(Update.Granularity.LEVEL_1)) {
-            UpdateRequest request = UpdateFactory.create();
-            request.add(u.convertToQuery(graphUri));
-            update(request, auth);
-        } else {
-            String[] queries = u.convertToDiffQuery(graphUri);
-            UpdateRequest request = UpdateFactory.create();
-            request.add(queries[0]);
-            request.add(queries[1]);
-            update(request, auth);
-        }
+    public void uploadModel(Delta u, String graphUri, HttpAuthenticator auth) {
+        UpdateRequest request = UpdateFactory.create();
+        String s = u.toSparql(graphUri);
+        System.out.println(s);
+        request.add(s);
+        update(request, auth);
     }
 
     /**
@@ -56,19 +50,12 @@ public class Uploader {
      * @param u        the update
      * @param graphUri the graph uri
      */
-    public void uploadModel(Update u, String graphUri) {
-        if (u.getGranularity().equals(Update.Granularity.LEVEL_0) ||
-                u.getGranularity().equals(Update.Granularity.LEVEL_1)) {
-            UpdateRequest request = UpdateFactory.create();
-            request.add(u.convertToQuery(graphUri));
-            update(request);
-        } else {
-            String[] queries = u.convertToDiffQuery(graphUri);
-            UpdateRequest request = UpdateFactory.create();
-            request.add(queries[0]);
-            request.add(queries[1]);
-            update(request);
-        }
+    public void uploadModel(Delta u, String graphUri) {
+        UpdateRequest request = UpdateFactory.create();
+        String s = u.toSparql(graphUri);
+        System.out.println(s);
+        request.add(s);
+        update(request);
     }
 
     /**
@@ -78,7 +65,7 @@ public class Uploader {
      * @param graphName the graph name
      * @param auth      the auth
      */
-    protected void createGraph(String graphName, HttpAuthenticator... auth) {
+    void createGraph(String graphName, HttpAuthenticator... auth) {
         String query = "CREATE GRAPH <" + graphName + ">";
         UpdateRequest request = UpdateFactory.create();
         request.add(query);
@@ -92,7 +79,7 @@ public class Uploader {
      * @param graphName the graph name
      * @param auth      the auth
      */
-    protected void deleteGraph(String graphName, HttpAuthenticator... auth) {
+    void deleteGraph(String graphName, HttpAuthenticator... auth) {
         String query = "DROP SILENT GRAPH <" + graphName + ">";
         UpdateRequest request = UpdateFactory.create();
         request.add(query);

@@ -1,7 +1,6 @@
 package de.werft;
 
-import de.werft.update.Update;
-import de.werft.update.Uploader;
+import de.hpi.rdf.tailrapi.Delta;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 
 /**
@@ -20,7 +19,7 @@ public class UploaderStub extends Uploader {
     }
 
     @Override
-    public void uploadModel(Update u, String graphUri, HttpAuthenticator auth) {
+    public void uploadModel(Delta u, String graphUri, HttpAuthenticator auth) {
         System.out.println(u);
         /* noop */
     }

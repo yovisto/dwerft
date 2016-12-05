@@ -3,8 +3,6 @@ package de.werft;
 import de.hpi.rdf.tailrapi.Delta;
 import de.hpi.rdf.tailrapi.Repository;
 import de.hpi.rdf.tailrapi.Tailr;
-import de.werft.update.Update;
-import de.werft.update.Uploader;
 import io.swagger.annotations.*;
 import org.apache.jena.atlas.web.auth.HttpAuthenticator;
 import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
@@ -77,9 +75,9 @@ public class MyResource {
                                @ApiParam(value = "The rdf language.") @DefaultValue("ttl") @QueryParam(value = "lang") String lang) {
         /* handle failure cases */
         Lang format = RDFLanguages.nameToLang(lang);
-        Update.Granularity g = null;
+        Granularity g = null;
         try {
-            g = Update.Granularity.valueOf("LEVEL_" + level);
+            g = Granularity.valueOf("LEVEL_" + level);
         } catch (IllegalArgumentException e) {
             L.error("Illegal granularity level.", e);
         }
@@ -92,8 +90,17 @@ public class MyResource {
             return Response.status(Response.Status.NOT_ACCEPTABLE).build();
         }
 
+        Delta d;
+        if (Granularity.LEVEL_0.equals(g)) {
+            d = getDelta("", tailrKey);
+        } else {
+            /* create ntriples from input */
+            String input = convertToNtTriples(new ByteArrayInputStream(fileBytes), format);
+            L.info("Input:\n" + input);
+            d = getDelta(input, tailrKey);
+        }
         /* create ntriples from input */
-        String input = convertToNTriplesRdfFile(new ByteArrayInputStream(fileBytes), format);
+        String input = convertToNtTriples(new ByteArrayInputStream(fileBytes), format);
         L.info("Input:\n" + input);
 
         if ("".equals(graphName)) {
@@ -102,22 +109,14 @@ public class MyResource {
 
         /* create authentication */
         HttpAuthenticator auth = new SimpleAuthenticator(conf.getRemoteUser(), conf.getRemotePass().toCharArray());
-        if (g.equals(Update.Granularity.LEVEL_2)) {
-            Delta d = getDelta(input, tailrKey);
-            L.info("Got delta from Tailr:\n" +d);
-            if (d == null) {
-                return Response.status(Response.Status.NOT_MODIFIED).build();
-            }
-
-            L.info("Start uploading...");
-            uploader.uploadModel(new Update(g, d), graphName, auth);
-            L.info("Upload done.");
-        } else {
-            Delta delta = convertToDelta(input);
-
-            L.info("Delta:\n" + delta);
-            uploader.uploadModel(new Update(g, delta), graphName, auth);
+        L.info("Got delta from Tailr:\n" + d);
+        if (d == null) {
+            return Response.status(Response.Status.NOT_MODIFIED).build();
         }
+
+        L.info("Start uploading...");
+        uploader.uploadModel(d, graphName, auth);
+        L.info("Upload done.");
 
         return Response.ok(fileBytes, MediaType.APPLICATION_OCTET_STREAM).build();
     }
@@ -145,7 +144,7 @@ public class MyResource {
     }
 
     /* check if a inputstream is valid rdf */
-    private String convertToNTriplesRdfFile(InputStream stream, Lang format) {
+    private String convertToNtTriples(InputStream stream, Lang format) {
         StringWriter writer = new StringWriter();
         try {
             Model m = ModelFactory.createDefaultModel();
@@ -157,15 +156,18 @@ public class MyResource {
         return writer.toString();
     }
 
-    /* assume ntriples a devided by \n -> so convert the to a delta */
-    private Delta convertToDelta(String nttriples) {
-        Delta d = new Delta();
-        String[] splits = nttriples.split("\n");
-
-        for (int i = 0; i < splits.length; i++) {
-            d.getAddedTriples().add(splits[i]);
-        }
-
-        return d;
+    private enum Granularity {
+        /**
+         * The Level 0 deletes data.
+         */
+        LEVEL_0,
+        /**
+         * The Level 1 inserts data.
+         */
+        LEVEL_1,
+        /**
+         * Level 2 creates a diff.
+         */
+        LEVEL_2
     }
 }

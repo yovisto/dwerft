@@ -1,7 +1,6 @@
 package de.werft;
 
 import de.hpi.rdf.tailrapi.Tailr;
-import de.werft.update.Uploader;
 import org.eclipse.jetty.http.HttpStatus;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.test.JerseyTest;

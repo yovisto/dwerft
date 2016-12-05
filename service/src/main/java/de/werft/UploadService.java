@@ -2,7 +2,6 @@ package de.werft;
 
 import de.hpi.rdf.tailrapi.Tailr;
 import de.hpi.rdf.tailrapi.TailrClient;
-import de.werft.update.Uploader;
 import io.swagger.jaxrs.config.BeanConfig;
 import io.swagger.jaxrs.listing.ApiListingResource;
 import io.swagger.jaxrs.listing.SwaggerSerializers;
