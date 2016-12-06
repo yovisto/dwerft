@@ -106,7 +106,7 @@
      ];
 
     rr:predicateObjectMap [
-        rr:predicate foo:dramaqueenIdentifier;
+        rr:predicate foo:identifierDramaqueen;
         rr:objectMap [ rml:reference "@dramaqueenid"; rr:datatype xsd:string ];
     ];
 
@@ -252,7 +252,7 @@
     ];
 
     rr:predicateObjectMap [
-        rr:predicate foo:dramaqueenIdentifier;
+        rr:predicate foo:identifierDramaqueen;
         rr:objectMap [ rml:reference "@dramaqueenid"; rr:datatype xsd:string ];
     ];
 
@@ -296,6 +296,12 @@
         rr:objectMap [ rml:reference "script/formattedscript"; rr:datatype xsd:string ];
     ];
 
+
+    rr:predicateObjectMap [
+        rr:predicate foo:sceneItem;
+        rr:objectMap [ rr:parentTriplesMap <#sceneItem>; ]
+    ];
+
     rr:predicateObjectMap [
         rr:predicate foo:sceneSet;
         rr:objectMap [ rr:parentTriplesMap <#sceneDecoration>; ]
@@ -315,6 +321,28 @@
         rr:predicate foo:sceneExtra;
         rr:objectMap [ rr:parentTriplesMap <#sceneExtras>; ]
     ].
+
+# reference from scene to items
+<#sceneItem>
+    rml:logicalSource [
+        rml:iterator "/root/return/project/episode/scene-group/scene/article";
+        rml:referenceFormulation ql:XPath;
+    ];
+
+    rr:subjectMap [
+        rr:template "http://filmontology.org/resource/Item/{@rel}";
+        rr:class foo:Item;
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate foo:Name;
+        rr:objectMap [ rml:reference "."; rr:datatype xsd:string ];
+    ];    
+
+    rr:predicateObjectMap [
+        rr:predicate foo:itemCategory;
+        rr:objectMap [ rml:reference "@typeCode"; rr:datatype xsd:string ];
+    ]. 
 
 # reference from scene to decoration
 <#sceneDecoration>
@@ -403,6 +431,7 @@
         rr:class v:Address;
     ];
 
+	## problems with non-existing housenumbers
     rr:predicateObjectMap [
         rr:predicate v:street-address;
         rr:objectMap [ rr:template "{street} {housenumber}"; rr:datatype xsd:string ];
@@ -529,7 +558,7 @@
     ];
 
     rr:predicateObjectMap [
-        rr:predicate foo:dramaqueenIdentifier;
+        rr:predicate foo:identifierDramaqueen;
         rr:objectMap [ rml:reference "@dramaqueenid" ];
     ];
 
@@ -726,7 +755,7 @@
 #    ];
 #
 #    rr:predicateObjectMap [
-#        rr:predicate foo:dramaqueenIdentifier;
+#        rr:predicate foo:identifierDramaqueen;
 #        rr:objectMap [ rml:reference "@dramaqueenid"; rr:datatype xsd:string ];
 #    ];
 #
