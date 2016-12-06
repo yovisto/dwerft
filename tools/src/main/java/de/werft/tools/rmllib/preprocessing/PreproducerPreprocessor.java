@@ -2,7 +2,6 @@ package de.werft.tools.rmllib.preprocessing;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -268,17 +267,18 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
     }
     
     private void replaceItemCategories(org.w3c.dom.Document root) {
-    	NodeList codes = root.getElementsByTagName("typeCode");
-    	for (int i = 0; i < codes.getLength(); i++) {
-    		Node code = codes.item(i);
-    		String itm = ((Element)code).getTextContent();
+    	NodeList articles = root.getElementsByTagName("article");
+    	for (int i = 0; i < articles.getLength(); i++) {
+    		Node article = articles.item(i);
+    		String itm = ((Element)article).getAttribute("typeCode");
     		if (itm != null && !"".equals(itm) && itemMapping.containsKey(itm)) {
-    			String maping = itemMapping.get(itm);
-    			code.setTextContent(maping);
+    			String mapping = itemMapping.get(itm);
+    			((Element)article).setAttribute("typeCode", mapping);
     		}
 		}
     }
     
+    // TODO: No effect?
     private void removeEmptyShootingDays(org.w3c.dom.Document root) {
     	NodeList days = root.getElementsByTagName("shooting-day");
     	for (int i = 0; i < days.getLength(); i++) {
