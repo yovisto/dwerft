@@ -204,35 +204,17 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:hasCharacter;
-        rr:objectMap [ rr:parentTriplesMap <#charref> ];
+        rr:objectMap [ rr:parentTriplesMap <#sceneCharacter>; ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:hasCharacter;
+        rr:objectMap [ rr:parentTriplesMap <#sceneFigur>; ]
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:hasSet;
-        rr:objectMap [ rr:parentTriplesMap <#setref> ];
-    ].
-
-# prevent redefinition, use template generation only and other triples for extraction
-<#charref>
-    rml:logicalSource [
-        rml:iterator "/root/return/project/character";
-        rml:referenceFormulation ql:XPath;
-    ];
-
-    rr:subjectMap [
-        rr:template "http://filmontology.org/resource/Character/{@id}";
-        rr:class foo:Character;
-    ].
-
-<#setref>
-    rml:logicalSource [
-        rml:iterator "/root/return/project/decoration";
-        rml:referenceFormulation ql:XPath;
-    ];
-
-    rr:subjectMap [
-        rr:template "http://filmontology.org/resource/Set/{@id}";
-        rr:class foo:Set;
+        rr:objectMap [ rr:parentTriplesMap <#sceneDecoration>; ]
     ].
 
 <#scene>
@@ -309,7 +291,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:sceneCharacter;
-        rr:objectMap [ rr:parentTriplesMap <#sceneCharacters>; ]
+        rr:objectMap [ rr:parentTriplesMap <#sceneCharacter>; ]
     ];
 
     rr:predicateObjectMap [
@@ -357,7 +339,7 @@
     ].
 
 # reference from scene to characters
-<#sceneCharacters>
+<#sceneCharacter>
     rml:logicalSource [
         rml:iterator "/root/return/project/episode/scene-group/scene/character";
         rml:referenceFormulation ql:XPath;
