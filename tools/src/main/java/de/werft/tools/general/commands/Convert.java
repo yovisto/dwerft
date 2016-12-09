@@ -1,11 +1,13 @@
 package de.werft.tools.general.commands;
 
 import be.ugent.mmlab.rml.model.dataset.RMLDataset;
+
 import com.github.rvesse.airline.annotations.Arguments;
 import com.github.rvesse.airline.annotations.Command;
 import com.github.rvesse.airline.annotations.Option;
 import com.github.rvesse.airline.annotations.help.ProseSection;
 import com.github.rvesse.airline.annotations.restrictions.Required;
+
 import de.werft.tools.general.Document;
 import de.werft.tools.general.DwerftConfig;
 import de.werft.tools.general.DwerftTools;
@@ -13,7 +15,9 @@ import de.werft.tools.rmllib.RmlMapper;
 import de.werft.tools.rmllib.postprocessing.BasicPostprocessor;
 import de.werft.tools.rmllib.postprocessing.DramaqueenPostprocessor;
 import de.werft.tools.rmllib.postprocessing.Postprocessor;
+import de.werft.tools.rmllib.postprocessing.PreproducerPostprocessor;
 import de.werft.tools.rmllib.preprocessing.*;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -134,6 +138,8 @@ public class Convert extends DwerftTools {
         /* at the moment there is only dq which needs post processing */
         if (files.size() > 0 && hasExtension(files.get(0), "dq")) {
             return new DramaqueenPostprocessor(projectUri);
+        } else if (files.size() == 0 || (files.size() == 1 && hasExtension(files.get(0), RDF_SUFFIX))) {
+        	return new PreproducerPostprocessor(projectUri);
         } else {
             return new BasicPostprocessor(projectUri);
         }
