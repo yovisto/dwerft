@@ -21,6 +21,10 @@
         rr:objectMap [ rml:reference "number"; rr:datatype xsd:string ];
     ]; 
 
+    rr:predicateObjectMap [
+        rr:predicate foo:identifierPreProducer;
+        rr:objectMap [ rml:reference "@projectid"; rr:datatype xsd:string ];
+     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:hasShootingSchedule;
