@@ -266,6 +266,11 @@
         foo:sceneNumber           "14" ;
         foo:sceneSet              <http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> .
 
+[ a              foo:Title ;
+  foo:titleText  "THF Testdreh dwerft (AT).dq" ;
+  foo:titleType  "Working Title"
+] .
+
 <http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1>
         a                         foo:Scene ;
         foo:identifierDramaqueen  "5bb686ab-5a88-4bff-a9a5-15d356900de1" ;
@@ -314,11 +319,6 @@
         foo:sceneHeader           "Waldweg Außen Tag" ;
         foo:sceneNumber           "6" ;
         foo:sceneSet              <http://filmontology.org/resource/Set/91fe3e77-8647-49a3-a2e8-6ce1484008df> .
-
-[ a              foo:Title ;
-  foo:titleText  "THF Testdreh dwerft (AT).dq" ;
-  foo:titleType  "Working Title"
-] .
 
 <http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2>
         a                         foo:Scene ;
