@@ -100,8 +100,8 @@ public class MyResource {
             d = getDelta(input, tailrKey);
         }
         /* create ntriples from input */
-        String input = convertToNtTriples(new ByteArrayInputStream(fileBytes), format);
-        L.info("Input:\n" + input);
+        //String input = convertToNtTriples(new ByteArrayInputStream(fileBytes), format);
+        //L.info("Input:\n" + input);
 
         if ("".equals(graphName)) {
             graphName = "http://filmontology.org";

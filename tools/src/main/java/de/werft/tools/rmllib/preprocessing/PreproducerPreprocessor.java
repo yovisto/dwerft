@@ -1,5 +1,22 @@
 package de.werft.tools.rmllib.preprocessing;
 
+import de.werft.tools.general.Document;
+import org.apache.commons.codec.binary.Base64;
+import org.atteo.xmlcombiner.XmlCombiner;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -10,31 +27,7 @@ import java.net.URLEncoder;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
-import org.apache.commons.codec.binary.Base64;
-import org.atteo.xmlcombiner.XmlCombiner;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-import de.werft.tools.general.Document;
+import java.util.*;
 
 /**
  * This preprocessor fetches the xml files from the
@@ -110,7 +103,8 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             /* build xml and do pre processing */
             org.w3c.dom.Document result = combiner.buildDocument();
             generateUuidsForNonIdNodes(result);
-            
+            removeEmptyShootingDays(result);
+
             idMapping = new HashMap<String,String>();
             buildFigureCharacterMapping(result);
             replaceDramaQueenAndPreproducerIds(result);
@@ -118,7 +112,6 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
             addProductionId(result);
             correctFormattedScript(result);
             replaceItemCategories(result);
-            removeEmptyShootingDays(result);
 
             /* write to disk */
             tmpFile = Files.createTempFile("prepro", ".xml");
@@ -173,7 +166,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
     }
     
     private void addProductionId(org.w3c.dom.Document document) {
-    	Node item = document.getElementsByTagName("project").item(0);
+        Node item = document.getElementsByTagName("project").item(0);
     	String[] split = getProjectUri().split("/");
     	((Element)item).setAttribute("productionId", split[split.length-1]);
     }
@@ -278,17 +271,25 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
 		}
     }
     
-    // TODO: No effect?
+    /* delete shooting days which are set to invisible;
+     * since no list access and modification can be done at the same time
+     * save the reference and delete later */
     private void removeEmptyShootingDays(org.w3c.dom.Document root) {
-    	NodeList days = root.getElementsByTagName("shooting-day");
-    	for (int i = 0; i < days.getLength(); i++) {
+        NodeList days = root.getElementsByTagName("shooting-day");
+        List<Node> deletedNodes = new ArrayList<>();
+
+        for (int i = 0; i < days.getLength(); i++) {
     		Node day = days.item(i);
-    		String attribute = ((Element)day).getAttribute("mode");
-    		if ("invisible".equals(attribute)) {
-    			Node parentNode = day.getParentNode();
-    			parentNode.removeChild(day);
+            String attribute = ((Element)day).getAttribute("mode");
+            if ("free".equals(attribute)) {
+                deletedNodes.add(day);
     		}
 		}
+
+		// actual delete nodes
+		for (Node n : deletedNodes) {
+            n.getParentNode().removeChild(n);
+        }
     }
 
     /* manipulate elements without ids */
