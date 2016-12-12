@@ -25,8 +25,8 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="http://filmontology.org/ontology/ontology">
         <rdfs:label>dwerft Linked Production Data Cloud (LPDC) ontology.</rdfs:label>
+        <dc:date rdf:datatype="&xsd;dateTime">Dec 12, 2016 8:00:00 AM</dc:date>
         <dc:creator rdf:datatype="&xsd;string">Henning Agt-Rickauer</dc:creator>
-        <dc:date rdf:datatype="&xsd;dateTime">May 09, 2016 8:00:00 AM</dc:date>
     </owl:Ontology>
     
 
@@ -854,7 +854,7 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>archiveFlag</rdfs:label>
         <rdfs:comment>True for projects which were imported from external databases</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;DwerftProject"/>
+        <rdfs:domain rdf:resource="&foo;Production"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;boolean"/>
     </owl:DatatypeProperty>
@@ -910,7 +910,6 @@
         <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:domain rdf:resource="&foo;VideoTrack"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;length"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1005,7 +1004,7 @@
         <rdfs:comment>Barcode of medium</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Medium"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
     
 
@@ -2246,7 +2245,6 @@
         <rdfs:domain rdf:resource="&foo;Episode"/>
         <rdfs:domain rdf:resource="&foo;VideoTrack"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;filmLength"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -3365,12 +3363,12 @@
     <!-- http://filmontology.org/ontology/2.0/originalAirDate -->
 
     <owl:DatatypeProperty rdf:about="&foo;originalAirDate">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>originalAirDate</rdfs:label>
         <rdfs:comment>Date of the first broadcast of archived content</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Essence"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
