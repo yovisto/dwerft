@@ -1,0 +1,691 @@
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B096A> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/ShootingDay> . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Lichtung am See - TAG" . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/sceneDescription> "WaldwegDas Paar zieht los - ein fröhlicher, gelassener Spaziergang. Die Sonne funkelt durch das Blätterdach, Licht und Schatten spielen auf dem Waldboden. Nach kurzem Fußmarsch kommt das Paar an eine Lichtung, die auf einen See mündet" . 
+<http://filmontology.org/resource/Set/68df2588-c2fe-4f64-8064-84fcc5a534e8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> <http://filmontology.org/ontology/2.0/sceneDescription> "Lichtung am SeeDie junge Frau zieht sich die Schuhe aus und geht mit den Füßen ins Wasser. Sie sammelt Steine. Der Mann bereitet derweil das Picknick vor. Breitet die Decke aus, holt Weinflasche und Gläser aus dem Picknickkorb. Brot, Käse, Couscous Salat, Oliven, griechischen Bauernsalat, Köfte... Sie setzt sich zu ihm (und haut rein)" . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/sceneNumber> "6" . 
+<http://filmontology.org/resource/Set/91fe3e77-8647-49a3-a2e8-6ce1484008df> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0AB9" . 
+_:B63a660b4a3bb8edee6994255387a8a51 <http://filmontology.org/ontology/2.0/titleType> "false" . 
+<http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "ed220a3a-9484-44b5-8657-c2e3216de1f0" . 
+<http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "29f9fa4b-4c67-471e-a291-bbed72fc4540" . 
+<http://filmontology.org/resource/VCardAddress/e89bafed-ec37-4229-aab0-dfebf9133710> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/vcard/ns#Address> . 
+<http://filmontology.org/resource/Set/9cbb6db9-97a4-4ff8-8e19-0a2910300327> <http://filmontology.org/ontology/2.0/name> "Labor Technikverleih" . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B8B> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> . 
+<http://filmontology.org/resource/Set/1b040a05-35d9-4b52-8446-f99a65d8a773> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B8B> <http://filmontology.org/ontology/2.0/name> "Nadja Jankowski" . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasTitle> _:B0954397fa4b6765ccccb95e618efbe56 . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/logline> "dwerft-Testdreh erzählt die Geschichte der technologischen Entwicklung von Vernetzung im Filmbereich." . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/sceneNumber> "7" . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/interiorExterior> "intext" . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B53> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/PRD008> . 
+<http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> <http://filmontology.org/ontology/2.0/characterNumber> "4"^^<http://www.w3.org/2001/XMLSchema#int> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B56> <http://filmontology.org/ontology/2.0/name> "Maike albers" . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/sceneNumber> "3" . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B096A> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B096A> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B096A> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/57be2f23-94b7-41de-87ab-660546fba9a6> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/c3cbb55c-471d-4f4f-931b-3776f0e63edd> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/62442410-38a7-46b3-b17a-cc7cac2e4a0d> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/e41215f2-eb35-42d6-ae34-cb95314f5e46> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0926> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0926" . 
+<http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "e8c8fdcb-9e95-4144-9bb9-cb5434a24752" . 
+<http://filmontology.org/resource/VCardAddress/bc3c5439-66d6-497e-83b7-8eba4cfb8db4> <http://www.w3.org/2006/vcard/ns#postal-code> "14482"^^<http://www.w3.org/2001/XMLSchema#int> . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Das Paar zieht los - ein fröhlicher, gelassener Spaziergang. Die Sonne funkelt durch das Blätterdach, Licht und Schatten spielen auf dem Waldboden. Nach kurzem Fußmarsch kommt das Paar an eine Lichtung, die auf einen See mündet</p>" . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/hasScript> <http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> . 
+<http://filmontology.org/resource/Character/c3cbb55c-471d-4f4f-931b-3776f0e63edd> <http://filmontology.org/ontology/2.0/name> "Passanten" . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/hasTitle> _:B63a660b4a3bb8edee6994255387a8a51 . 
+_:B8d2156d7a0d66aee425633b89418b963 <http://filmontology.org/ontology/2.0/titleText> "THF Testdreh dwerft (AT).dq" . 
+_:B8d2156d7a0d66aee425633b89418b963 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Title> . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/sceneDescription> "Lichtung am SeeDas Paar spielt Frisbee oder pitscht Steine über den See." . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/6c159070-850e-425b-b439-12595b48a0a8> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Bilder stehen im Kontrast zur heutigen Zeit udn sollen den Wandel der Zeit beschreiben aber gleichzeitig eine parallele Dynamik entwickeln. Schnell geschnittene historische Aufnahmen vom Tempelhofer Feld: Flugzeuge landen und starten, Fluglotsen bei der Arbeit.</p>" . 
+<http://filmontology.org/resource/Location/52B9-14F46B0BA3> <http://filmontology.org/ontology/2.0/hasAddress> <http://filmontology.org/resource/VCardAddress/cb0326e6-3933-447d-8102-fedec8e634a2> . 
+<http://filmontology.org/resource/Set/59992bf6-d413-4b40-a3c0-748341cfd400> <http://filmontology.org/ontology/2.0/name> "Labor Technikverleih  Aben" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B9A> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneNumber> "15" . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B56> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/PRD002> . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://filmontology.org/ontology/2.0/interiorExterior> "int" . 
+<http://filmontology.org/resource/Character/57be2f23-94b7-41de-87ab-660546fba9a6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "84cf3715-96b2-41de-b81a-e433a49f192c" . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Lichtung am See - TAG" . 
+<http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> <http://filmontology.org/ontology/2.0/characterNumber> "2"^^<http://www.w3.org/2001/XMLSchema#int> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/ShootingDay> . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/Company/6494c5fe-bfc3-4cc6-abc3-18e4e94706e8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Company> . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/Facility/a94b49b8-a79e-408b-85a6-fa0fe3b675ea> <http://filmontology.org/ontology/2.0/facilityType> "toilets" . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+_:B63a660b4a3bb8edee6994255387a8a51 <http://filmontology.org/ontology/2.0/titleText> "THF Tempelhof" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B8E> <http://filmontology.org/ontology/2.0/name> "Robert Friebe" . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/ShootingSchedule/52B9-14F46B05B7> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B05B7" . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Rückblende Tempelhofer Feld - TAG" . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Lichtung am See - TAG" . 
+<http://filmontology.org/resource/Location/52B9-14F46B0BC3> <http://filmontology.org/ontology/2.0/name> "Camelot Technikverleih" . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B09EB" . 
+<http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "3cea68a0-6420-47a2-b465-34335bf925da" . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> . 
+<http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "cc3e42bc-680b-4e38-9b89-3bdc030d6963" . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayMode> "shoot" . 
+<http://filmontology.org/resource/CastMember/52B9-14F46B0B0B> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B0B" . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B82> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B8E> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B8E" . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Waldweg - TAG" . 
+<http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/3fdb9064-11d9-416c-9a53-8939bda36399> . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Die Kamera schwenkt vom Paar weg und filmt das Team hinter der Kamera und das Set drumherum</p>" . 
+<http://filmontology.org/resource/Character/e41215f2-eb35-42d6-ae34-cb95314f5e46> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/Set/91fe3e77-8647-49a3-a2e8-6ce1484008df> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/Item/52B9-14F46B0C0B> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Item> . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Eine kleine Gruppe trifft sich auf dem Tempelhofer Feld. Es ist später Nachmittag. Longboards, Skateboards, Rollerblades, Kites. Buntes, fröhliches Treiben. Die Kamera nimmt die Dynamik auf und zeigt ausgelassenen Spaß im Freizeitsport. Es wird Trendsport Skateboarden geübt, Fahrrad gefahren, Drachen steigen gelassen usw. </p>" . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0960> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/RED004> . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/sceneDescription> "Lichtung am SeeEs wird langsam Abend, die Sonne geht unter. Stimmungsbilder von junger Frau und Mann" . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B096A> <http://filmontology.org/ontology/2.0/name> "2. Drehtag: Fr, 28. August 2015" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0957> <http://filmontology.org/ontology/2.0/name> "Uli Kunz" . 
+<http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0AFE" . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B098D" . 
+<http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0926> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Set/1e7b0406-99d9-414c-9ad0-d916984906a8> <http://filmontology.org/ontology/2.0/name> "Tempelhofer Feld heute" . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/Location/52B9-14F46B0BE1> <http://filmontology.org/ontology/2.0/hasAddress> <http://filmontology.org/resource/VCardAddress/f66f097e-1f76-426c-a103-a523103c90b0> . 
+<http://filmontology.org/resource/Location/52B9-14F46B0BE1> <http://filmontology.org/ontology/2.0/hasAddress> <http://filmontology.org/resource/VCardAddress/f474bb90-49dd-44c9-9b6e-b94294ea4816> . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Tempelhofer Feld - TAG" . 
+<http://filmontology.org/resource/Item/52B9-14F46B0C0E> <http://filmontology.org/ontology/2.0/itemCategory> "itmprp" . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B09CB" . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://filmontology.org/ontology/2.0/sceneNumber> "2" . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/sceneDescription> "Lichtung am SeeAnkunft am See, das Team wird für die Mühen belohnt. Weißer Sand, Schilf, klares Wasser. Das Team beginnt mit dem Aufbau des Settings." . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/castMember> <http://filmontology.org/resource/CastMember/52B9-14F46B0B0B> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/castMember> <http://filmontology.org/resource/CastMember/52B9-14F46B0B36> . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/Set/68df2588-c2fe-4f64-8064-84fcc5a534e8> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0AAA" . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "c8881be3-4e01-4b50-8439-30cf721b73b8" . 
+_:B0954397fa4b6765ccccb95e618efbe56 <http://filmontology.org/ontology/2.0/titleText> "THF Testdreh dwerft (AT).dq" . 
+<http://filmontology.org/resource/Character/e41215f2-eb35-42d6-ae34-cb95314f5e46> <http://filmontology.org/ontology/2.0/characterNumber> "6"^^<http://www.w3.org/2001/XMLSchema#int> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Der dynamische Teil der Szene geht über in eine Erkundung des Ortes, Weite, Fahrten, Szenerie des ehemaligen Flughafens. Dann Picknickstimmung - der Dreh ist beendet. Set und Realität verschwimmen wieder - Drehschluß. Prost. </p>" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0C28> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/PRD027> . 
+<http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B01" . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneNumber> "17" . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/CastMember/52B9-14F46B0B36> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CastMember> . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/VCardAddress/f66f097e-1f76-426c-a103-a523103c90b0> <http://www.w3.org/2006/vcard/ns#organization-name> "Tempelhof Projekt GmbH" . 
+<http://filmontology.org/resource/Character/e41215f2-eb35-42d6-ae34-cb95314f5e46> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "e41215f2-eb35-42d6-ae34-cb95314f5e46" . 
+<http://filmontology.org/resource/Item/52B9-14F46B0C4C> <http://filmontology.org/ontology/2.0/Name> "Longboard" . 
+<http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Rückblende See / Archivmaterial -" . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/91fe3e77-8647-49a3-a2e8-6ce1484008df> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/0e03200e-44a6-4375-8699-4ec3ff7b029d> . 
+<http://filmontology.org/resource/Character/a062557c-a6dd-4b71-8f24-c58ceac35056> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "a062557c-a6dd-4b71-8f24-c58ceac35056" . 
+<http://filmontology.org/resource/Item/52B9-14F46B0C0B> <http://filmontology.org/ontology/2.0/Name> "Kameratechnik" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0926> <http://filmontology.org/ontology/2.0/name> "Helga Herstellungsleitung" . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneItem> <http://filmontology.org/resource/Item/52B9-14F46B0C4C> . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneItem> <http://filmontology.org/resource/Item/52B9-14F46B0C49> . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "5bb686ab-5a88-4bff-a9a5-15d356900de1" . 
+<http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Ein herrlicher Sommertag am See. Stimmungsbilder: Familien tummeln sich am kleinen Sandstrand, Kinder essen Eis, Jugendliche toben im Wasser...</p>" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B88> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/PRD025> . 
+<http://filmontology.org/resource/ShootingSchedule/52B9-14F46B05B7> <http://filmontology.org/ontology/2.0/revision> "1" . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/productionNumber> "62120001_0834" . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/Character/c3cbb55c-471d-4f4f-931b-3776f0e63edd> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "c3cbb55c-471d-4f4f-931b-3776f0e63edd" . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> . 
+<http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Ankunft am See, das Team wird für die Mühen belohnt. Weißer Sand, Schilf, klares Wasser. Das Team beginnt mit dem Aufbau und Einrichten des Sets „Picknick“.</p>" . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> . 
+<http://filmontology.org/resource/Character/a062557c-a6dd-4b71-8f24-c58ceac35056> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Extra/52B9-14F46B0C03> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0C03" . 
+<http://filmontology.org/resource/VCardAddress/cb0326e6-3933-447d-8102-fedec8e634a2> <http://www.w3.org/2006/vcard/ns#postal-code> "16348"^^<http://www.w3.org/2001/XMLSchema#int> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B97> <http://filmontology.org/ontology/2.0/name> "Maike Albers" . 
+<http://filmontology.org/resource/Location/52B9-14F46B0BA3> <http://filmontology.org/ontology/2.0/contactPerson> "Beatrix Wager" . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0A13" . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://filmontology.org/ontology/2.0/sceneNumber> "4" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0957> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/ShootingSchedule/52B9-14F46B05B7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/ShootingSchedule> . 
+<http://filmontology.org/resource/CastMember/52B9-14F46B0B0B> <http://filmontology.org/ontology/2.0/name> "Olgu Caglar" . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/sceneNumber> "16.2" . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B09D5" . 
+_:B0954397fa4b6765ccccb95e618efbe56 <http://filmontology.org/ontology/2.0/titleType> "Working Title" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B9C> <http://filmontology.org/ontology/2.0/name> "Friedrich Armleuchter" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B9C> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0A09" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B91> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B91" . 
+<http://filmontology.org/resource/VCardAddress/cb0326e6-3933-447d-8102-fedec8e634a2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/vcard/ns#Address> . 
+<http://filmontology.org/resource/Set/1b040a05-35d9-4b52-8446-f99a65d8a773> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0AB3" . 
+<http://filmontology.org/resource/Set/f7b3910d-c7b4-4f6e-86a0-e7699a716825> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Character/e41215f2-eb35-42d6-ae34-cb95314f5e46> <http://filmontology.org/ontology/2.0/name> "Skaterin" . 
+<http://filmontology.org/resource/Item/52B9-14F46B0C49> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Item> . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://filmontology.org/ontology/2.0/sceneDescription> "LaborKameratest: Kameramann und Assistenz bauen die Technik auf und beginnen mit dem Testen. Sie machen Aufnahmen, wechseln Objektive, gehen das Equipment in den Einzelteilen durch." . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/Set/91fe3e77-8647-49a3-a2e8-6ce1484008df> <http://filmontology.org/ontology/2.0/name> "Waldweg" . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Drehschluß: das Team packt ein und geht zurück zum Wagen.</p>" . 
+<http://filmontology.org/resource/Set/6c159070-850e-425b-b439-12595b48a0a8> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0ADA" . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/sceneDescription> "TechnikverleihDrehvorbereitung: Kameramann und sein Assistent fahren zum Technikverleih um das Equipment zu testen. Sie kommen an und plaudern erst einmal mit dem Angestellten des Technikdienstleisters - sie kennen sich bereits von anderen Projekten." . 
+<http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> <http://filmontology.org/ontology/2.0/sex> "male" . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Drehvorbereitung: Kameramann und sein Assistent fahren zum Technikverleih um das Equipment zu testen. Sie kommen an und plaudern erst einmal mit dem Angestellten des Technikdienstleisters - sie kennen sich bereits von anderen Projekten.</p>" . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/ShootingSchedule/52B9-14F46B05B7> <http://filmontology.org/ontology/2.0/hasShootingDay> <http://filmontology.org/resource/ShootingDay/52B9-14F46B096A> . 
+<http://filmontology.org/resource/ShootingSchedule/52B9-14F46B05B7> <http://filmontology.org/ontology/2.0/hasShootingDay> <http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneDescription> "Tempelhofer FeldDer dynamische Teil der Szene geht über in eine Erkundung des Ortes, Weite, Fahrten, Szenerie des ehemaligen Flughafens. Dann Picknickstimmung - der Dreh ist beendet. Set und Realität verschwimmen wieder - Drehschluß. Prost. ENDE" . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "8168b1fd-dfce-427c-9b9f-0bd4aefb5965" . 
+<http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://filmontology.org/ontology/2.0/sceneNumber> "10.1" . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "39ecba03-b536-442b-8313-74b552a4658d" . 
+<http://filmontology.org/resource/VCardAddress/f474bb90-49dd-44c9-9b6e-b94294ea4816> <http://www.w3.org/2006/vcard/ns#locality> "Berlin" . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0A33" . 
+<http://filmontology.org/resource/Character/a062557c-a6dd-4b71-8f24-c58ceac35056> <http://filmontology.org/ontology/2.0/characterNumber> "8"^^<http://www.w3.org/2001/XMLSchema#int> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B94> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B09FF" . 
+<http://filmontology.org/resource/CastMember/52B9-14F46B0B0B> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CastMember> . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Tempelhofer Feld heuted - TAG" . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "7bfa33d8-ea6c-4712-82d8-744b75120164" . 
+<http://filmontology.org/resource/CastMember/52B9-14F46B0B0B> <http://filmontology.org/ontology/2.0/sex> "male" . 
+<http://filmontology.org/resource/Set/1b040a05-35d9-4b52-8446-f99a65d8a773> <http://filmontology.org/ontology/2.0/name> "Straße" . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/91fe3e77-8647-49a3-a2e8-6ce1484008df> . 
+<http://filmontology.org/resource/CastMember/52B9-14F46B0B36> <http://filmontology.org/ontology/2.0/sex> "female" . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/1b040a05-35d9-4b52-8446-f99a65d8a773> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B9F> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> <http://filmontology.org/ontology/2.0/name> "Mann Mittleren Alters" . 
+<http://filmontology.org/resource/Set/0e03200e-44a6-4375-8699-4ec3ff7b029d> <http://filmontology.org/ontology/2.0/name> "Rückblende Tempelhofer Feld" . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B91> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B53> <http://filmontology.org/ontology/2.0/name> "Mareike Graf" . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasScene> <http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> . 
+<http://filmontology.org/resource/Character/57be2f23-94b7-41de-87ab-660546fba9a6> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B03" . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/c3cbb55c-471d-4f4f-931b-3776f0e63edd> . 
+<http://filmontology.org/resource/Facility/a94b49b8-a79e-408b-85a6-fa0fe3b675ea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Facility> . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "762400dc-23c2-4981-b3b3-a9922b70e224" . 
+<http://filmontology.org/resource/Extra/52B9-14F46B0C03> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Extra> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B88> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B88" . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "a5358c37-c865-479a-b286-adcc1ae51f87" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0926> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/PRD006b> . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/sceneDescription> "WaldDrehtag 1: Das Team trifft sich am ersten Drehtag und beginnt mit den Vorbereitungen. Aufriggen der Kamera, Verladen der Technik auf Rollwagen für Transport zum Drehort, packen der Rucksäcke, Hantieren mit Tontechnik" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B91> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/PST001> . 
+<http://filmontology.org/resource/Set/1e7b0406-99d9-414c-9ad0-d916984906a8> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "1e7b0406-99d9-414c-9ad0-d916984906a8" . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B096A> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B096A" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B094F> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/REG001> . 
+<http://filmontology.org/resource/Set/3fdb9064-11d9-416c-9a53-8939bda36399> <http://filmontology.org/ontology/2.0/name> "Rückblende See / Archivmaterial" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B094F> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "e2c02b39-5aed-4f83-a425-4161cbff03c6" . 
+<http://filmontology.org/resource/Set/91fe3e77-8647-49a3-a2e8-6ce1484008df> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "91fe3e77-8647-49a3-a2e8-6ce1484008df" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B9A> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B9A" . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B09C1" . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> . 
+<http://filmontology.org/resource/CastMember/52B9-14F46B0B36> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B36" . 
+<http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B85> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B85" . 
+<http://filmontology.org/resource/Set/3fdb9064-11d9-416c-9a53-8939bda36399> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0AC8" . 
+<http://filmontology.org/resource/Location/52B9-14F46B0BC3> <http://filmontology.org/ontology/2.0/hasAddress> <http://filmontology.org/resource/VCardAddress/e89bafed-ec37-4229-aab0-dfebf9133710> . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0983" . 
+<http://filmontology.org/resource/Set/3fdb9064-11d9-416c-9a53-8939bda36399> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/68df2588-c2fe-4f64-8064-84fcc5a534e8> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneNumber> "18" . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/sceneDescription> "Tempelhofer FeldDas Team kommt am Drehort des zweiten Drehtages an. Die Technik wird in ein Lastenfahrrad verladen bzw. auf die Teammitglieder verteilt. Es soll unauffällig sein, weil keine Drehgenehmigung vorliegt." . 
+<http://filmontology.org/resource/Set/9cbb6db9-97a4-4ff8-8e19-0a2910300327> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0AAD" . 
+_:B8d2156d7a0d66aee425633b89418b963 <http://filmontology.org/ontology/2.0/titleType> "Working Title" . 
+<http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B9C> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B9C" . 
+<http://filmontology.org/resource/VCardAddress/f66f097e-1f76-426c-a103-a523103c90b0> <http://www.w3.org/2006/vcard/ns#country-name> "DE" . 
+<http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> <http://filmontology.org/ontology/2.0/name> "Kameramann" . 
+<http://filmontology.org/resource/ShootingSchedule/52B9-14F46B05B7> <http://filmontology.org/ontology/2.0/lastModified> "2016-04-08T13:49:27" . 
+<http://filmontology.org/resource/Character/57be2f23-94b7-41de-87ab-660546fba9a6> <http://filmontology.org/ontology/2.0/characterNumber> "7"^^<http://www.w3.org/2001/XMLSchema#int> . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> . 
+<http://filmontology.org/resource/Set/68df2588-c2fe-4f64-8064-84fcc5a534e8> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "68df2588-c2fe-4f64-8064-84fcc5a534e8" . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneDescription> "Lichtung am See Das Team macht Mittagspause am See. Das Catering wird ausgepackt bzw. die Requisite wird gegessen... Alle essen, liegen im Gras oder im Sand - nur einer filmt ;-)" . 
+<http://filmontology.org/resource/Item/52B9-14F46B0C49> <http://filmontology.org/ontology/2.0/Name> "Sneaker" . 
+<http://filmontology.org/resource/Set/4a7b289a-1e11-4920-805c-25690c1e9264> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "4a7b289a-1e11-4920-805c-25690c1e9264" . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "87bd9def-a053-498b-a2ba-9d4d4ed8c3f6" . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Es wird langsam Abend, die Sonne geht unter. Stimmungsbilder von junger Frau und Mann</p>" . 
+_:B63a660b4a3bb8edee6994255387a8a51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Title> . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/sceneDescription> "Tempelhofer FeldDas Team kommt am Drehort des zweiten Drehtages an. Die Technik wird in ein Lastenfahrrad verladen bzw. auf die Teammitglieder verteilt. Es soll unauffällig sein, weil keine Drehgenehmigung vorliegt." . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0C28> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0C28" . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Set/f7b3910d-c7b4-4f6e-86a0-e7699a716825> <http://filmontology.org/ontology/2.0/hasLocation> <http://filmontology.org/resource/Location/52B9-14F46B0BE1> . 
+<http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B82> <http://filmontology.org/ontology/2.0/name> "Uli Kunz" . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Ein Mann mittleren Alters und eine junge Frau sitzen im Ludenbenz und fahren über einen Waldweg. Sie erreichen eine Lichtung und halten an.</p><p class=\"action\">Parken, Aussteigen, entnehmen Dinge aus dem Kofferraum</p><p class=\"action\">einen Rucksack, eine Decke, Picknickkorb mit Inhalt</p>" . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/sceneDescription> "WaldwegDas Team stiefelt durch den Wald, müht sich ab, die Technik durch das unwegsame Gelände zum Drehort zu transportieren" . 
+<http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/Location/52B9-14F46B0BE1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Location> . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Verladen: Der Test ist beendet, Equipment eingepackt. Die Kisten werden in das Produktionsfahrzeug verladen. Fahren vom Hof bzw. parken den Wagen auf einem gesicherten Parkplatz</p>" . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Tempelhofer Feld - DÄMM. ABEND" . 
+<http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "16d23934-857c-491d-90d0-94dceac4dfbc" . 
+<http://filmontology.org/resource/VCardAddress/f66f097e-1f76-426c-a103-a523103c90b0> <http://www.w3.org/2006/vcard/ns#postal-code> "12101"^^<http://www.w3.org/2001/XMLSchema#int> . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/sceneNumber> "16.1" . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/Set/f7b3910d-c7b4-4f6e-86a0-e7699a716825> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "f7b3910d-c7b4-4f6e-86a0-e7699a716825" . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/91fe3e77-8647-49a3-a2e8-6ce1484008df> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "0bf63192-2c14-4d20-a256-7623f3215ad2" . 
+<http://filmontology.org/resource/Item/52B9-14F46B0C0E> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Item> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B094F> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B094F" . 
+<http://filmontology.org/resource/Character/a062557c-a6dd-4b71-8f24-c58ceac35056> <http://filmontology.org/ontology/2.0/name> "Technikdienstleister" . 
+<http://filmontology.org/resource/Set/0e03200e-44a6-4375-8699-4ec3ff7b029d> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "0e03200e-44a6-4375-8699-4ec3ff7b029d" . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B91> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B85> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0960> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B88> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B7F> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0C28> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0957> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B8B> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B9C> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B53> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B94> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0953> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B8E> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B97> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B9A> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B82> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0926> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B094F> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B56> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/crewMember> <http://filmontology.org/resource/CrewMember/52B9-14F46B0B9F> . 
+<http://filmontology.org/resource/Character/62442410-38a7-46b3-b17a-cc7cac2e4a0d> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0C43" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B9F> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/SZE023> . 
+<http://filmontology.org/resource/Item/52B9-14F46B0C4C> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Item> . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/sceneDescription> "Ludenbenz auf WaldwegEin Mann mittleren Alters und eine junge Frau sitzen im Ludenbenz und fahren über einen Waldweg. Sie erreichen eine Lichtung und halten an.Parken, Aussteigen, entnehmen Dinge aus dem Kofferraumeinen Rucksack, eine Decke, Picknickkorb mit Inhalt" . 
+<http://filmontology.org/resource/Set/f7b3910d-c7b4-4f6e-86a0-e7699a716825> <http://filmontology.org/ontology/2.0/name> "Tempelhofer Feld" . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Das Paar spielt Frisbee oder pitscht Steine über den See. </p>" . 
+<http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> <http://filmontology.org/ontology/2.0/name> "Lichtung am See" . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Die junge Frau zieht sich die Schuhe aus und geht mit den Füßen ins Wasser. Sie sammelt Steine. Der Mann bereitet derweil das Picknick vor. Breitet die Decke aus, holt Weinflasche und Gläser aus dem Picknickkorb. Brot, Käse, Couscous Salat, Oliven, griechischen Bauernsalat, Köfte... Sie setzt sich zu ihm (und haut rein)</p>" . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://filmontology.org/ontology/2.0/sceneDescription> "Lichtung am SeeDie junge Frau zieht sich die Schuhe aus und geht mit den Füßen ins Wasser. Sie sammelt Steine. Der Mann bereitet derweil das Picknick vor. Breitet die Decke aus, holt Weinflasche und Gläser aus dem Picknickkorb. Brot, Käse, Couscous Salat, Oliven, griechischen Bauernsalat, Köfte... Sie setzt sich zu ihm (und haut rein)" . 
+<http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> <http://filmontology.org/ontology/2.0/name> "Tonmeisterin" . 
+<http://filmontology.org/resource/Character/a062557c-a6dd-4b71-8f24-c58ceac35056> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B08" . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "9275ef74-1b3d-495d-b781-8d7f7451f348" . 
+<http://filmontology.org/resource/Set/9cbb6db9-97a4-4ff8-8e19-0a2910300327> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> <http://filmontology.org/ontology/2.0/characterCast> <http://filmontology.org/resource/CastMember/52B9-14F46B0B36> . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0997" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0C28> <http://filmontology.org/ontology/2.0/name> "Henning Agt-Rickauer" . 
+<http://filmontology.org/resource/Character/57be2f23-94b7-41de-87ab-660546fba9a6> <http://filmontology.org/ontology/2.0/name> "Drachenflieger" . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/sceneNumber> "8" . 
+<http://filmontology.org/resource/Character/62442410-38a7-46b3-b17a-cc7cac2e4a0d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> <http://filmontology.org/ontology/2.0/name> "Produktionsassistent" . 
+<http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B00" . 
+<http://filmontology.org/resource/Item/52B9-14F46B0C4C> <http://filmontology.org/ontology/2.0/itemCategory> "itmprp" . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://filmontology.org/ontology/2.0/sceneDescription> "StraßenszenenFahraufnahmen: Subjektive aus dem Auto heraus. Fahrt durch die Straßenschluchten Stadt, Enge, gehetzte Fußgänger. Dann: die Häuser werden niedriger, immer weniger Menschen sind auf den Straßen. Die Straße wird zur Landstrasse, es wird grün, der Blick weitet sich auf Felder, Himmel und Baumalleen." . 
+<http://filmontology.org/resource/VCardAddress/f474bb90-49dd-44c9-9b6e-b94294ea4816> <http://www.w3.org/2006/vcard/ns#postal-code> "12101"^^<http://www.w3.org/2001/XMLSchema#int> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B85> <http://filmontology.org/ontology/2.0/name> "Tabea Tietz" . 
+_:B0954397fa4b6765ccccb95e618efbe56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Title> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/a062557c-a6dd-4b71-8f24-c58ceac35056> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/c3cbb55c-471d-4f4f-931b-3776f0e63edd> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/57be2f23-94b7-41de-87ab-660546fba9a6> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/e41215f2-eb35-42d6-ae34-cb95314f5e46> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/62442410-38a7-46b3-b17a-cc7cac2e4a0d> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasCharacter> <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/sceneNumber> "9" . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> <http://filmontology.org/ontology/2.0/hasLocation> <http://filmontology.org/resource/Location/52B9-14F46B0BA3> . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "846857bc-12c0-4216-aff9-0d7b155c21fc" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B9C> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/LIG001> . 
+<http://filmontology.org/resource/Character/c3cbb55c-471d-4f4f-931b-3776f0e63edd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> . 
+<http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - - TAG" . 
+<http://filmontology.org/resource/Location/52B9-14F46B0BE1> <http://filmontology.org/ontology/2.0/name> "Tempelhofer Feld" . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Drehtag 1: Das Team trifft sich am ersten Drehtag und beginnt mit den Vorbereitungen. Aufriggen der Kamera, Verladen der Technik auf Rollwagen für Transport zum Drehort, packen der Rucksäcke, Hantieren mit Tontechnik</p>" . 
+<http://filmontology.org/resource/Item/52B9-14F46B0C0B> <http://filmontology.org/ontology/2.0/itemCategory> "itmprp" . 
+<http://filmontology.org/resource/Set/0e03200e-44a6-4375-8699-4ec3ff7b029d> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0ADD" . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a" . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/VCardAddress/f474bb90-49dd-44c9-9b6e-b94294ea4816> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/vcard/ns#Address> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0953> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/PRD001> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B91> <http://filmontology.org/ontology/2.0/name> "Arno" . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Script> . 
+<http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B9F> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B9F" . 
+<http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> . 
+<http://filmontology.org/resource/Company/6494c5fe-bfc3-4cc6-abc3-18e4e94706e8> <http://filmontology.org/ontology/2.0/hasAddress> <http://filmontology.org/resource/VCardAddress/bc3c5439-66d6-497e-83b7-8eba4cfb8db4> . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B97> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/SST007> . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B8E> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Location/52B9-14F46B0BA3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Location> . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Lichtung am See - DÄMM. ABEND" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B94> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/TON001> . 
+<http://filmontology.org/resource/Set/9cbb6db9-97a4-4ff8-8e19-0a2910300327> <http://filmontology.org/ontology/2.0/hasLocation> <http://filmontology.org/resource/Location/52B9-14F46B0BC3> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Set/9cbb6db9-97a4-4ff8-8e19-0a2910300327> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "9cbb6db9-97a4-4ff8-8e19-0a2910300327" . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "2191cde9-42ca-4b7e-bf71-e249895714e7" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B7F> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/PRD017> . 
+<http://filmontology.org/resource/Set/59992bf6-d413-4b40-a3c0-748341cfd400> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "b3731988-c257-48ae-8641-81a256da8391" . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Fahraufnahmen: Subjektive aus dem Auto heraus. Fahrt durch die Straßenschluchten Stadt, Enge, gehetzte Fußgänger. Dann: die Häuser werden niedriger, immer weniger Menschen sind auf den Straßen. Die Straße wird zur Landstrasse, es wird grün, der Blick weitet sich auf Felder, Himmel und Baumalleen.</p>" . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/identifierPreProducer> "21177" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B88> <http://filmontology.org/ontology/2.0/name> "Jörg Waitelonis" . 
+<http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> <http://filmontology.org/ontology/2.0/sceneInserted> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/dayTime> "evening" . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/VCardAddress/f474bb90-49dd-44c9-9b6e-b94294ea4816> <http://www.w3.org/2006/vcard/ns#country-name> "DE" . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Straße - TAG" . 
+<http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> <http://filmontology.org/ontology/2.0/characterNumber> "1"^^<http://www.w3.org/2001/XMLSchema#int> . 
+<http://filmontology.org/resource/Set/68df2588-c2fe-4f64-8064-84fcc5a534e8> <http://filmontology.org/ontology/2.0/name> "Technikverleih" . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/dayTime> "evening" . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/3a116d45-d850-43f8-b520-0f13752231c0> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0960> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/sceneDescription> "ParkplatzVerladen: Der Test ist beendet, Equipment eingepackt. Die Kisten werden in das Produktionsfahrzeug verladen. Fahren vom Hof bzw. parken den Wagen auf einem gesicherten Parkplatz" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B97> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B8B> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/REG007> . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "dd839747-f4fb-43ce-8c7d-97fba35d54b6" . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "49252729-71b3-4f46-8577-82431eaa9f1e" . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> . 
+<http://filmontology.org/resource/CastMember/52B9-14F46B0B36> <http://filmontology.org/ontology/2.0/name> "Stefanie Antonia Wermeling" . 
+<http://filmontology.org/resource/Set/3fdb9064-11d9-416c-9a53-8939bda36399> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "3fdb9064-11d9-416c-9a53-8939bda36399" . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://filmontology.org/ontology/2.0/sceneHeader> "INT. - Labor Technikverleih - TAG" . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Production> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/f7b3910d-c7b4-4f6e-86a0-e7699a716825> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/duration> "0"^^<http://www.w3.org/2001/XMLSchema#float> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B82> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B82" . 
+<http://filmontology.org/resource/Character/57be2f23-94b7-41de-87ab-660546fba9a6> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "57be2f23-94b7-41de-87ab-660546fba9a6" . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Waldweg - TAG" . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/9cbb6db9-97a4-4ff8-8e19-0a2910300327> . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Waldweg - TAG" . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Set/3a116d45-d850-43f8-b520-0f13752231c0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0960> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0960" . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0969" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0953> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B09E0" . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/sceneDescription> "Lichtung am SeeDie Kamera schwenkt vom Paar weg und filmt das Team hinter der Kamera und das Set drumherum" . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B09AB" . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/dayTime> "evening" . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0953> <http://filmontology.org/ontology/2.0/name> "Martin Steyer" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B7F> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B7F" . 
+<http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B7F> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/sceneNumber> "12" . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B09F5" . 
+<http://filmontology.org/resource/Set/3a116d45-d850-43f8-b520-0f13752231c0> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "3a116d45-d850-43f8-b520-0f13752231c0" . 
+<http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> <http://filmontology.org/ontology/2.0/sceneNumber> "10.2" . 
+<http://filmontology.org/resource/Set/3a116d45-d850-43f8-b520-0f13752231c0> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0AB0" . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B8E> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/KAM001> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/shootingDayScene> <http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/sceneNumber> "13" . 
+<http://filmontology.org/resource/Location/52B9-14F46B0BC3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Location> . 
+<http://filmontology.org/resource/Character/62442410-38a7-46b3-b17a-cc7cac2e4a0d> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "62442410-38a7-46b3-b17a-cc7cac2e4a0d" . 
+<http://filmontology.org/resource/Set/4a7b289a-1e11-4920-805c-25690c1e9264> <http://filmontology.org/ontology/2.0/name> "Wald" . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0C28> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Scene/c8881be3-4e01-4b50-8439-30cf721b73b8> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/VCardAddress/cb0326e6-3933-447d-8102-fedec8e634a2> <http://www.w3.org/2006/vcard/ns#locality> "Marienwerder" . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Teammitglieder kommen auf dem Feld an. Drehvorbereitungen.</p>" . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/dayTime> "day" . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/sceneNumber> "1" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0960> <http://filmontology.org/ontology/2.0/name> "Rudi Redakteur" . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> . 
+<http://filmontology.org/resource/Character/e41215f2-eb35-42d6-ae34-cb95314f5e46> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B02" . 
+<http://filmontology.org/resource/Company/6494c5fe-bfc3-4cc6-abc3-18e4e94706e8> <http://filmontology.org/ontology/2.0/name> "Filmuniversität Babelsberg Konrad Wolf" . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> <http://filmontology.org/ontology/2.0/characterCast> <http://filmontology.org/resource/CastMember/52B9-14F46B0B0B> . 
+<http://filmontology.org/resource/Set/3a116d45-d850-43f8-b520-0f13752231c0> <http://filmontology.org/ontology/2.0/name> "Parkplatz" . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "89427481-e3b3-4b22-b305-c0ca4b3b992b" . 
+<http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0AC2" . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "b0e16c67-88a4-466d-a388-c7a3953638ff" . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Das Team macht Mittagspause am See. Das Catering wird ausgepackt bzw. die Requisite wird gegessen... Alle essen, liegen im Gras oder im Sand - nur einer filmt ;-)</p>" . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/sceneItem> <http://filmontology.org/resource/Item/52B9-14F46B0C0B> . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/sceneItem> <http://filmontology.org/resource/Item/52B9-14F46B0C0E> . 
+<http://filmontology.org/resource/Character/62442410-38a7-46b3-b17a-cc7cac2e4a0d> <http://filmontology.org/ontology/2.0/characterNumber> "3"^^<http://www.w3.org/2001/XMLSchema#int> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B85> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/PRD023> . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/VCardAddress/cb0326e6-3933-447d-8102-fedec8e634a2> <http://www.w3.org/2006/vcard/ns#organization-name> "Amt Biesenthal-Barnim" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0957> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0957" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B82> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/PST012> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/date> "2015-08-27" . 
+<http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> <http://filmontology.org/ontology/2.0/characterNumber> "5"^^<http://www.w3.org/2001/XMLSchema#int> . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneDescription> "Tempelhofer Feld\rEine kleine Gruppe trifft sich auf dem Tempelhofer Feld. Es ist später Nachmittag. Longboards, Skateboards, Rollerblades, Kites. Buntes, fröhliches Treiben. Die Kamera nimmt die Dynamik auf und zeigt ausgelassenen Spaß im Freizeitsport. Es wird Trendsport Skateboarden geübt, Fahrrad gefahren, Drachen steigen gelassen usw." . 
+<http://filmontology.org/resource/Location/52B9-14F46B0BA3> <http://filmontology.org/ontology/2.0/name> "Bernsteinsee" . 
+<http://filmontology.org/resource/Scene/87bd9def-a053-498b-a2ba-9d4d4ed8c3f6> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "c8258b6e-382a-4006-9f9c-6d62fdafbae4" . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0979" . 
+<http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> <http://filmontology.org/ontology/2.0/name> "Junge Frau" . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/hasLocation> <http://filmontology.org/resource/Location/52B9-14F46B0BC3> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/hasLocation> <http://filmontology.org/resource/Location/52B9-14F46B0BE1> . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/hasLocation> <http://filmontology.org/resource/Location/52B9-14F46B0BA3> . 
+<http://filmontology.org/resource/Facility/a94b49b8-a79e-408b-85a6-fa0fe3b675ea> <http://filmontology.org/ontology/2.0/facilityDescription> "keine" . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Set/6c159070-850e-425b-b439-12595b48a0a8> <http://filmontology.org/ontology/2.0/name> "Tempelhofer Feld heuted" . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/sceneNumber> "14" . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/synopsis> "<p class=\"\">dwerft-Testdreh ist ein Film über die Vernetzung von verschiedenen Tools. Drehbuch-Software, Preproduction-Tools, technische Drehdaten, die Vernetzung mit der Postproduktion bis hin zu Rechtemanagement und Mastering werden zukünftig über die Linked Production Data Cloud abgebildet. Alle im Projekt liegenden Daten dienen diesem Ziel. </p>" . 
+<http://filmontology.org/resource/Item/52B9-14F46B0C49> <http://filmontology.org/ontology/2.0/itemCategory> "itmcst" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B56> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B56" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B94> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B94" . 
+<http://filmontology.org/resource/Set/1b040a05-35d9-4b52-8446-f99a65d8a773> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "1b040a05-35d9-4b52-8446-f99a65d8a773" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B88> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/sceneNumber> "5" . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "a6455908-8c65-4d9e-98da-98d809cd23c5" . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B53> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0A28" . 
+<http://filmontology.org/resource/VCardAddress/bc3c5439-66d6-497e-83b7-8eba4cfb8db4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/vcard/ns#Address> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasSet> <http://filmontology.org/resource/Set/f7b3910d-c7b4-4f6e-86a0-e7699a716825> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasSet> <http://filmontology.org/resource/Set/1b040a05-35d9-4b52-8446-f99a65d8a773> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasSet> <http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasSet> <http://filmontology.org/resource/Set/68df2588-c2fe-4f64-8064-84fcc5a534e8> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasSet> <http://filmontology.org/resource/Set/6c159070-850e-425b-b439-12595b48a0a8> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasSet> <http://filmontology.org/resource/Set/9cbb6db9-97a4-4ff8-8e19-0a2910300327> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasSet> <http://filmontology.org/resource/Set/91fe3e77-8647-49a3-a2e8-6ce1484008df> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasSet> <http://filmontology.org/resource/Set/3fdb9064-11d9-416c-9a53-8939bda36399> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasSet> <http://filmontology.org/resource/Set/0e03200e-44a6-4375-8699-4ec3ff7b029d> . 
+<http://filmontology.org/resource/Script/e2c02b39-5aed-4f83-a425-4161cbff03c6> <http://filmontology.org/ontology/2.0/hasSet> <http://filmontology.org/resource/Set/3a116d45-d850-43f8-b520-0f13752231c0> . 
+<http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> <http://filmontology.org/ontology/2.0/name> "Produktionsleitung" . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/0bf63192-2c14-4d20-a256-7623f3215ad2> <http://filmontology.org/ontology/2.0/sceneInserted> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Kameratest: Kameramann und Assistenz bauen die Technik auf und beginnen mit dem Testen. Sie machen Aufnahmen, wechseln Objektive, gehen das Equipment in den Einzelteilen durch.</p>" . 
+<http://filmontology.org/resource/Set/1e7b0406-99d9-414c-9ad0-d916984906a8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/a062557c-a6dd-4b71-8f24-c58ceac35056> . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/e8c8fdcb-9e95-4144-9bb9-cb5434a24752> . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Lichtung am See - DÄMM. ABEND" . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/d6fc6f1a-eac4-43cf-ae87-05bfbff6f8fe> . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/84cf3715-96b2-41de-b81a-e433a49f192c> . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/62442410-38a7-46b3-b17a-cc7cac2e4a0d> . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/e41215f2-eb35-42d6-ae34-cb95314f5e46> . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0A3D" . 
+<http://filmontology.org/resource/Scene/39ecba03-b536-442b-8313-74b552a4658d> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B0969> <http://filmontology.org/ontology/2.0/name> "1. Drehtag: Do, 27. August 2015" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B9F> <http://filmontology.org/ontology/2.0/name> "Roger Pinsel" . 
+<http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0AFF" . 
+_:Ba252c2031d408e8da30ba004ff95d84c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Title> . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/sceneContent> "<p class=\"action\">Das Team stiefelt durch den Wald, müht sich ab, die Technik durch das unwegsame Gelände zum Drehort zu transportieren. Drehvorbereitung erste Einstellung...</p>" . 
+<http://filmontology.org/resource/VCardAddress/bc3c5439-66d6-497e-83b7-8eba4cfb8db4> <http://www.w3.org/2006/vcard/ns#locality> "Potsdam" . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+_:Ba252c2031d408e8da30ba004ff95d84c <http://filmontology.org/ontology/2.0/titleText> "THF Tempelhof" . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> <http://filmontology.org/ontology/2.0/name> "Schauspieler" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B8B> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B8B" . 
+<http://filmontology.org/resource/Scene/7b0bf08a-5bc8-4cc9-bd8d-c1adbcb6065a> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87> <http://filmontology.org/ontology/2.0/sceneSet> <http://filmontology.org/resource/Set/f7b3910d-c7b4-4f6e-86a0-e7699a716825> . 
+<http://filmontology.org/resource/Scene/b0e16c67-88a4-466d-a388-c7a3953638ff> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/5bb686ab-5a88-4bff-a9a5-15d356900de1> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B09A1" . 
+<http://filmontology.org/resource/Scene/2191cde9-42ca-4b7e-bf71-e249895714e7> <http://filmontology.org/ontology/2.0/sceneHeader> "INT.-EXT. - Technikverleih - TAG" . 
+<http://filmontology.org/resource/Scene/89427481-e3b3-4b22-b305-c0ca4b3b992b> <http://filmontology.org/ontology/2.0/sceneDescription> "Lichtung am SeeDrehschluß: das Team packt ein und geht zurück zum Wagen." . 
+<http://filmontology.org/resource/Set/4a7b289a-1e11-4920-805c-25690c1e9264> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B97> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B97" . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/sceneCancelled> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/VCardAddress/f474bb90-49dd-44c9-9b6e-b94294ea4816> <http://www.w3.org/2006/vcard/ns#organization-name> "Tempelhof Projekt GmbH" . 
+_:Ba252c2031d408e8da30ba004ff95d84c <http://filmontology.org/ontology/2.0/titleType> "false" . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Lichtung am See - TAG" . 
+<http://filmontology.org/resource/Extra/52B9-14F46B0C03> <http://filmontology.org/ontology/2.0/name> "Technikverleiher" . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Lichtung am See - TAG" . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> . 
+<http://filmontology.org/resource/VCardAddress/f66f097e-1f76-426c-a103-a523103c90b0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2006/vcard/ns#Address> . 
+<http://filmontology.org/resource/Scene/16d23934-857c-491d-90d0-94dceac4dfbc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Scene> . 
+<http://filmontology.org/resource/Set/59992bf6-d413-4b40-a3c0-748341cfd400> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "59992bf6-d413-4b40-a3c0-748341cfd400" . 
+<http://filmontology.org/resource/Set/6c159070-850e-425b-b439-12595b48a0a8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Item/52B9-14F46B0C0E> <http://filmontology.org/ontology/2.0/Name> "Kabel" . 
+<http://filmontology.org/resource/Set/6c159070-850e-425b-b439-12595b48a0a8> <http://filmontology.org/ontology/2.0/hasLocation> <http://filmontology.org/resource/Location/52B9-14F46B0BE1> . 
+<http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> <http://filmontology.org/ontology/2.0/sex> "male" . 
+<http://filmontology.org/resource/Scene/9275ef74-1b3d-495d-b781-8d7f7451f348> <http://filmontology.org/ontology/2.0/sceneHeader> "EXT. - Parkplatz - DÄMM. ABEND" . 
+<http://filmontology.org/resource/Set/f7b3910d-c7b4-4f6e-86a0-e7699a716825> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0AE0" . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "c929e923-b59c-4f4d-ba00-545182369eb7" . 
+<http://filmontology.org/resource/Scene/b3731988-c257-48ae-8641-81a256da8391> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Scene/dd839747-f4fb-43ce-8c7d-97fba35d54b6> <http://filmontology.org/ontology/2.0/sceneNumber> "11" . 
+<http://filmontology.org/resource/Set/6c159070-850e-425b-b439-12595b48a0a8> <http://filmontology.org/ontology/2.0/identifierDramaqueen> "6c159070-850e-425b-b439-12595b48a0a8" . 
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691> <http://filmontology.org/ontology/2.0/hasShootingSchedule> <http://filmontology.org/resource/ShootingSchedule/52B9-14F46B05B7> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0953> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0953" . 
+<http://filmontology.org/resource/Scene/7bfa33d8-ea6c-4712-82d8-744b75120164> <http://filmontology.org/ontology/2.0/dayTime> "evening" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B94> <http://filmontology.org/ontology/2.0/name> "Maike Albers" . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> . 
+<http://filmontology.org/resource/Scene/c929e923-b59c-4f4d-ba00-545182369eb7> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/interiorExterior> "ext" . 
+<http://filmontology.org/resource/Set/29f9fa4b-4c67-471e-a291-bbed72fc4540> <http://filmontology.org/ontology/2.0/hasFacility> <http://filmontology.org/resource/Facility/a94b49b8-a79e-408b-85a6-fa0fe3b675ea> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B094F> <http://filmontology.org/ontology/2.0/name> "Cevat Maskar" . 
+<http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Character> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B53> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0B53" . 
+<http://filmontology.org/resource/VCardAddress/f66f097e-1f76-426c-a103-a523103c90b0> <http://www.w3.org/2006/vcard/ns#locality> "Berlin" . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B0A1D" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B7F> <http://filmontology.org/ontology/2.0/name> "Franz Finanzheini" . 
+<http://filmontology.org/resource/Set/0e03200e-44a6-4375-8699-4ec3ff7b029d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/Set> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0957> <http://filmontology.org/ontology/2.0/crewMemberPosition> <http://filmontology.org/resource/CrewPosition/PRD001> . 
+<http://filmontology.org/resource/Character/ed220a3a-9484-44b5-8657-c2e3216de1f0> <http://filmontology.org/ontology/2.0/name> "Kameraassistent" . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B096A> <http://filmontology.org/ontology/2.0/shootingDayMode> "shoot" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B9A> <http://filmontology.org/ontology/2.0/name> "Daniela Bleistift" . 
+<http://filmontology.org/resource/ShootingDay/52B9-14F46B096A> <http://filmontology.org/ontology/2.0/date> "2015-08-28" . 
+<http://filmontology.org/resource/Scene/846857bc-12c0-4216-aff9-0d7b155c21fc> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/VCardAddress/bc3c5439-66d6-497e-83b7-8eba4cfb8db4> <http://www.w3.org/2006/vcard/ns#street-address> "Marlene-Dietrich-Allee 11" . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B56> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
+<http://filmontology.org/resource/Character/62442410-38a7-46b3-b17a-cc7cac2e4a0d> <http://filmontology.org/ontology/2.0/name> "Fahrradfahrer" . 
+<http://filmontology.org/resource/Scene/49252729-71b3-4f46-8577-82431eaa9f1e> <http://filmontology.org/ontology/2.0/sceneInserted> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> . 
+<http://filmontology.org/resource/Company/6494c5fe-bfc3-4cc6-abc3-18e4e94706e8> <http://filmontology.org/ontology/2.0/contactPerson> "Cevat Maskar" . 
+<http://filmontology.org/resource/Scene/a6455908-8c65-4d9e-98da-98d809cd23c5> <http://filmontology.org/ontology/2.0/identifierPreProducer> "52B9-14F46B09B5" . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/3cea68a0-6420-47a2-b465-34335bf925da> . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/762400dc-23c2-4981-b3b3-a9922b70e224> . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/c8258b6e-382a-4006-9f9c-6d62fdafbae4> . 
+<http://filmontology.org/resource/Scene/8168b1fd-dfce-427c-9b9f-0bd4aefb5965> <http://filmontology.org/ontology/2.0/sceneCharacter> <http://filmontology.org/resource/Character/cc3e42bc-680b-4e38-9b89-3bdc030d6963> . 
+<http://filmontology.org/resource/CrewMember/52B9-14F46B0B85> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://filmontology.org/ontology/2.0/CrewMember> . 
