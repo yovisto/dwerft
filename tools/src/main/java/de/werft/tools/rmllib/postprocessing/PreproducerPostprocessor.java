@@ -2,7 +2,6 @@ package de.werft.tools.rmllib.postprocessing;
 
 import java.util.ArrayList;
 
-import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.NodeIterator;
 import org.apache.jena.rdf.model.Property;
@@ -21,8 +20,6 @@ public class PreproducerPostprocessor extends BasicPostprocessor {
 	
 	private void fixProductionWithOnlyOneEpisode(Model model) {
     	Resource production = model.getResource(getProjectUri());
-    	System.out.println(production);
-    	
     	Property hasEpisode = model.getProperty("http://filmontology.org/ontology/2.0/hasEpisode");
 
     	int episodeCount = 0;
@@ -33,8 +30,10 @@ public class PreproducerPostprocessor extends BasicPostprocessor {
     		episodeCount++;
     	}
     	
+    	String productionType = "";    	
     	
     	if (episodeCount == 1) {
+    		productionType = "http://filmontology.org/ontology/2.0/IndividualProduction";
         	ArrayList<Statement> stToRemove = new ArrayList<Statement>();
         	
     		StmtIterator sit = ((Resource)lastEpisode).listProperties();
@@ -63,7 +62,13 @@ public class PreproducerPostprocessor extends BasicPostprocessor {
         	
         	model.remove(production, hasEpisode, lastEpisode);
         	
+    	} else {
+    		productionType = "http://filmontology.org/ontology/2.0/SeriesProduction";
     	}
+		Property type = model.getProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
+		Resource typeResource = model.getResource(productionType);
+		production.removeAll(type);
+		production.addProperty(type, typeResource);
 	}
 
     @Override
