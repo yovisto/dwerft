@@ -281,7 +281,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
         for (int i = 0; i < days.getLength(); i++) {
     		Node day = days.item(i);
             String attribute = ((Element)day).getAttribute("mode");
-            if ("free".equals(attribute)) {
+            if ("invisible".equals(attribute)) {
                 deletedNodes.add(day);
     		}
 		}
