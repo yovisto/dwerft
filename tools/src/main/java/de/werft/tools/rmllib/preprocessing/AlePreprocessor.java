@@ -26,6 +26,7 @@ public class AlePreprocessor extends CsvPreprocessor {
 
     @Override
     protected URL preprocessInput(Document doc) {
+        logger.info("Converting ALE file into CSV file");
         Path newInput;
         try {
             /* get file content and remove lines before header */

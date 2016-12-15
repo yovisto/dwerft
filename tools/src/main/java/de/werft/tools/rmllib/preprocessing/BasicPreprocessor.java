@@ -80,6 +80,7 @@ public class BasicPreprocessor implements Preprocessor {
 
     /* load the template mapping and insert the input files to every triples map */
     URL preprocessMapping(URL mapping, URL file) {
+        logger.info("Rewrite mapping with input file " + file.getFile());
         Model partialModel = loadModel(mapping);
         Set<Statement> logicalSources = getStartingNodes(partialModel);
         Property sourceProp = partialModel.createProperty(getSourceProperty());
