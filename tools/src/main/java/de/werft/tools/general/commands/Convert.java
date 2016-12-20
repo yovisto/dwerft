@@ -181,6 +181,9 @@ public class Convert extends DwerftTools {
         } else if (hasExtension(files.get(0), "dq")) {
             /* get the dramaqueen mapping */
             return determineMappingFile(config.getDramaQueenMappingName(), config.getMappingFolder()).toURI().toURL();
+        } else if (hasExtension(files.get(0), "ale")) {
+            /* get the ale mapping */
+            return determineMappingFile(config.getAleMappingName(), config.getMappingFolder()).toURI().toURL();
         }
         throw new InstantiationException("Could not find an appropriate mapping file.");
     }
