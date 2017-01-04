@@ -5,7 +5,4 @@ package de.werft.tools.rmllib.preprocessing;
  */
 public class DramaqueenPreprocessorTest extends BasicPreprocessorTest {
 
-    @Test
-
-
 }
