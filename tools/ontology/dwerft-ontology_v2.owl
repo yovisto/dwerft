@@ -24,7 +24,7 @@
      xmlns:foo="http://filmontology.org/ontology/2.0/"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="http://filmontology.org/ontology/ontology">
-        <rdfs:label rdf:datatype="&xsd;dateTime">dwerft Linked Production Data Cloud (LPDC) ontology V2</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;dateTime">dwerft Linked Production Data Cloud (LPDC) ontology V2.</rdfs:label>
         <dc:creator rdf:datatype="&xsd;string">Henning Agt-Rickauer</dc:creator>
         <dc:date rdf:datatype="&xsd;dateTime">Jan 19, 2017 8:00:00 AM</dc:date>
     </owl:Ontology>
@@ -56,22 +56,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://filmontology.org/ontology/2.0/address -->
-
-    <owl:ObjectProperty rdf:about="&foo;address">
-        <rdfs:label>address</rdfs:label>
-        <rdfs:comment>An address of a location, company, emergency facility or belonging to a cast member</rdfs:comment>
-        <rdfs:range rdf:resource="&foo;Address"/>
-        <rdfs:domain rdf:resource="&foo;Company"/>
-        <rdfs:domain rdf:resource="&foo;Emergency"/>
-        <rdfs:domain rdf:resource="&foo;Institution"/>
-        <rdfs:domain rdf:resource="&foo;Location"/>
-        <rdfs:domain rdf:resource="&foo;Person"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
-    </owl:ObjectProperty>
     
 
 
@@ -213,6 +197,18 @@
         <rdfs:comment>contains the financing and investment of a recoupment plan</rdfs:comment>
         <rdfs:range rdf:resource="&foo;FurtherInvestment"/>
         <rdfs:domain rdf:resource="&foo;RecoupmentPlan"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/hasAddress -->
+
+    <owl:ObjectProperty rdf:about="&foo;hasAddress">
+        <rdfs:label>hasAddress</rdfs:label>
+        <rdfs:comment>vCard Address of a location or company</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Company"/>
+        <rdfs:domain rdf:resource="&foo;Location"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -1282,19 +1278,6 @@
     
 
 
-    <!-- http://filmontology.org/ontology/2.0/cityName -->
-
-    <owl:DatatypeProperty rdf:about="&foo;cityName">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>cityName</rdfs:label>
-        <rdfs:comment>Name of the city of an address</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Address"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://filmontology.org/ontology/2.0/clipName -->
 
     <owl:DatatypeProperty rdf:about="&foo;clipName">
@@ -1548,19 +1531,6 @@
         <rdfs:label>coordinatedBy</rdfs:label>
         <rdfs:comment>describes who adjusts an evaluation right</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;EvaluationRight"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/2.0/countryName -->
-
-    <owl:DatatypeProperty rdf:about="&foo;countryName">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>countryName</rdfs:label>
-        <rdfs:comment>Name of the country of an address</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Address"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -2323,19 +2293,6 @@
         <rdfs:label>hobby</rdfs:label>
         <rdfs:comment>Free time activities of a character</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Character"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/2.0/houseNumber -->
-
-    <owl:DatatypeProperty rdf:about="&foo;houseNumber">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>houseNumber</rdfs:label>
-        <rdfs:comment>House number of an address</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Address"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -4558,19 +4515,6 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
     
 
 
-    <!-- http://filmontology.org/ontology/2.0/streetName -->
-
-    <owl:DatatypeProperty rdf:about="&foo;streetName">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>streetName</rdfs:label>
-        <rdfs:comment>Name of the street of an address</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Address"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://filmontology.org/ontology/2.0/subscriptionPrice -->
 
     <owl:DatatypeProperty rdf:about="&foo;subscriptionPrice">
@@ -5154,19 +5098,6 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
         <rdfs:label>yearOfProduction</rdfs:label>
         <rdfs:comment>Year of production</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Production"/>
-        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://filmontology.org/ontology/2.0/zipCode -->
-
-    <owl:DatatypeProperty rdf:about="&foo;zipCode">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>zipCode</rdfs:label>
-        <rdfs:comment>Postcal code of an address</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Address"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
