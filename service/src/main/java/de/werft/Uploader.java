@@ -1,8 +1,13 @@
 package de.werft;
 
 
+import arq.update;
 import de.hpi.rdf.tailrapi.Delta;
-import org.apache.jena.atlas.web.auth.HttpAuthenticator;
+import org.aksw.jena_sparql_api.core.SparqlService;
+import org.aksw.jena_sparql_api.core.utils.UpdateRequestUtils;
+import org.aksw.jena_sparql_api.update.FluentSparqlService;
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.auth.HttpAuthenticator;
 import org.apache.jena.update.UpdateExecutionFactory;
 import org.apache.jena.update.UpdateFactory;
 import org.apache.jena.update.UpdateProcessor;
@@ -29,6 +34,10 @@ public class Uploader {
         this.endpoint = endpoint;
     }
 
+    public String getEndpoint() {
+        return endpoint;
+    }
+
     /**
      * Uploads a model.
      *
@@ -36,12 +45,13 @@ public class Uploader {
      * @param graphUri the graph uri
      * @param auth     the auth
      */
-    public void uploadModel(Delta u, String graphUri, HttpAuthenticator auth) {
-        UpdateRequest request = UpdateFactory.create();
+    public void uploadModel(Delta u, String graphUri, HttpClient client) {
+        SparqlService service = FluentSparqlService.http(endpoint, graphUri, client).create();
         String s = u.toSparql(graphUri);
-        System.out.println(s);
-        request.add(s);
-        update(request, auth);
+        UpdateRequest request = UpdateRequestUtils.parse(s);
+        service.getUpdateExecutionFactory()
+                .createUpdateProcessor(request)
+                .execute();
     }
 
     /**
@@ -51,11 +61,12 @@ public class Uploader {
      * @param graphUri the graph uri
      */
     public void uploadModel(Delta u, String graphUri) {
-        UpdateRequest request = UpdateFactory.create();
+        SparqlService service = FluentSparqlService.http(endpoint, graphUri).create();
         String s = u.toSparql(graphUri);
-        System.out.println(s);
-        request.add(s);
-        update(request);
+        UpdateRequest request = UpdateRequestUtils.parse(s);
+        service.getUpdateExecutionFactory()
+                .createUpdateProcessor(request)
+                .execute();
     }
 
     /**
@@ -88,8 +99,8 @@ public class Uploader {
 
     private void update(UpdateRequest request, HttpAuthenticator... auth) {
         if (auth.length == 1) {
-            UpdateProcessor update = UpdateExecutionFactory.createRemote(request, endpoint, auth[0]);
-            update.execute();
+         //   UpdateProcessor update = UpdateExecutionFactory.createRemote(request, endpoint, auth[0]);
+         //   update.execute();
         } else {
             UpdateProcessor update = UpdateExecutionFactory.createRemote(request, endpoint);
             update.execute();

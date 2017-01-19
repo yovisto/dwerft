@@ -45,6 +45,9 @@ public class Version extends DwerftTools {
     @RequireOnlyOne(tag = "version")
     private String delta = "";
 
+    @Option(name = {"-p", "--private"}, description = "If the repository is private.")
+    private boolean isPrivate = false;
+
     @Override
     public void run() {
         super.run();
@@ -84,7 +87,7 @@ public class Version extends DwerftTools {
 
     /* build a new tailr client */
     private TailrClient getClient() throws URISyntaxException {
-        return TailrClient.getInstance(config.getTailrBase(), config.getTailrUser(), config.getTailrToken());
+        return TailrClient.getInstance(config.getTailrBase(), config.getTailrUser(), config.getTailrToken(), isPrivate);
     }
 
     /* since we can not distinct between different options, we need a latest keyword */

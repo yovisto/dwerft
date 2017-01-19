@@ -45,4 +45,8 @@ public interface ServiceConfig extends Config {
     @Key("tailr.repo")
     @DefaultValue("")
     String getTailrRepo();
+
+    @Key("tailr.private")
+    @DefaultValue("false")
+    boolean getTailrPrivateRepo();
 }

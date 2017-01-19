@@ -40,6 +40,13 @@
             <version>1.5.9</version>
         </dependency>
 
+        <!-- This is the core artifact; several other ones build on that. -->
+        <dependency>
+            <groupId>org.aksw.jena-sparql-api</groupId>
+            <artifactId>jena-sparql-api-core</artifactId>
+            <version>3.1.1-1</version>
+        </dependency>
+
         <!-- test dependencies -->
         <dependency>
             <groupId>org.glassfish.jersey.test-framework.providers</groupId>

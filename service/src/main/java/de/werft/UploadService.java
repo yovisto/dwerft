@@ -29,7 +29,7 @@ public class UploadService extends ResourceConfig {
             protected void configure() {
                 bind(conf).to(ServiceConfig.class);
                 try {
-                    bind(TailrClient.getInstance(conf.getTailrBase(), conf.getTailrUser(), conf.getTailrToken()))
+                    bind(TailrClient.getInstance(conf.getTailrBase(), conf.getTailrUser(), conf.getTailrToken(), conf.getTailrPrivateRepo()))
                     .to(Tailr.class);
                     bind(new Uploader(conf.getRemoteUrl())).to(Uploader.class);
                 } catch (URISyntaxException e) {

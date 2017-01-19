@@ -1,7 +1,7 @@
 package de.werft;
 
 import de.hpi.rdf.tailrapi.Delta;
-import org.apache.jena.atlas.web.auth.HttpAuthenticator;
+import org.apache.http.client.HttpClient;
 
 /**
  * A simple stub class for testing.
@@ -19,7 +19,7 @@ public class UploaderStub extends Uploader {
     }
 
     @Override
-    public void uploadModel(Delta u, String graphUri, HttpAuthenticator auth) {
+    public void uploadModel(Delta u, String graphUri, HttpClient client) {
         System.out.println(u);
         /* noop */
     }

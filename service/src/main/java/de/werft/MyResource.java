@@ -4,8 +4,6 @@ import de.hpi.rdf.tailrapi.Delta;
 import de.hpi.rdf.tailrapi.Repository;
 import de.hpi.rdf.tailrapi.Tailr;
 import io.swagger.annotations.*;
-import org.apache.jena.atlas.web.auth.HttpAuthenticator;
-import org.apache.jena.atlas.web.auth.SimpleAuthenticator;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.riot.Lang;
@@ -99,23 +97,25 @@ public class MyResource {
             L.info("Input:\n" + input);
             d = getDelta(input, tailrKey);
         }
-        /* create ntriples from input */
-        //String input = convertToNtTriples(new ByteArrayInputStream(fileBytes), format);
-        //L.info("Input:\n" + input);
 
         if ("".equals(graphName)) {
             graphName = "http://filmontology.org";
         }
 
-        /* create authentication */
-        HttpAuthenticator auth = new SimpleAuthenticator(conf.getRemoteUser(), conf.getRemotePass().toCharArray());
         L.info("Got delta from Tailr:\n" + d);
         if (d == null) {
             return Response.status(Response.Status.NOT_MODIFIED).build();
         }
 
+        /* create authentication */
+/*        HttpClientBuilder builder = HttpClientBuilder.create();
+        CredentialsProvider provider = new BasicCredentialsProvider();
+        provider.setCredentials(new AuthScope(uploader.getEndpoint(), 80),
+                new UsernamePasswordCredentials(conf.getRemoteUser(), conf.getRemotePass()));
+        builder.setDefaultCredentialsProvider(provider);
+*/
         L.info("Start uploading...");
-        uploader.uploadModel(d, graphName, auth);
+        uploader.uploadModel(d, graphName);
         L.info("Upload done.");
 
         return Response.ok(fileBytes, MediaType.APPLICATION_OCTET_STREAM).build();
