@@ -24,9 +24,9 @@
      xmlns:foo="http://filmontology.org/ontology/2.0/"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="http://filmontology.org/ontology/ontology">
-        <rdfs:label>dwerft Linked Production Data Cloud (LPDC) ontology.</rdfs:label>
-        <dc:date rdf:datatype="&xsd;dateTime">Dec 12, 2016 8:00:00 AM</dc:date>
+        <rdfs:label rdf:datatype="&xsd;dateTime">dwerft Linked Production Data Cloud (LPDC) ontology V2</rdfs:label>
         <dc:creator rdf:datatype="&xsd;string">Henning Agt-Rickauer</dc:creator>
+        <dc:date rdf:datatype="&xsd;dateTime">Jan 19, 2017 8:00:00 AM</dc:date>
     </owl:Ontology>
     
 
@@ -273,6 +273,7 @@
         <rdfs:label>hasCompany</rdfs:label>
         <rdfs:comment>Associated companies of a project (e.g. production company)</rdfs:comment>
         <rdfs:range rdf:resource="&foo;Company"/>
+        <rdfs:domain rdf:resource="&foo;Production"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -991,6 +992,19 @@
         <rdfs:comment>Average level of sound volume in dB</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;AudioTrack"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/bad -->
+
+    <owl:DatatypeProperty rdf:about="&foo;bad">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>bad</rdfs:label>
+        <rdfs:comment>Total number of bad splices</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Splice"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;analysisProperty"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
@@ -1773,6 +1787,19 @@
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/dry -->
+
+    <owl:DatatypeProperty rdf:about="&foo;dry">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>dry</rdfs:label>
+        <rdfs:comment>Total number of dry splices</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Splice"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;analysisProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
 
@@ -2879,6 +2906,19 @@
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/leap -->
+
+    <owl:DatatypeProperty rdf:about="&foo;leap">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>leap</rdfs:label>
+        <rdfs:comment>Value of the jumping distance or delta of a film condition</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;analysisProperty"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/length -->
 
     <owl:DatatypeProperty rdf:about="&foo;length">
@@ -3309,6 +3349,19 @@
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/numberOfShots -->
+
+    <owl:DatatypeProperty rdf:about="&foo;numberOfShots">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>numberOfShots</rdfs:label>
+        <rdfs:comment>Number of shots of a scene</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/numberOfSubscribers -->
 
     <owl:DatatypeProperty rdf:about="&foo;numberOfSubscribers">
@@ -3602,6 +3655,19 @@
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/prestop -->
+
+    <owl:DatatypeProperty rdf:about="&foo;prestop">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>prestop</rdfs:label>
+        <rdfs:comment>Estimated runtime of a scene in seconds</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Scene"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/pricePerPiece -->
 
     <owl:DatatypeProperty rdf:about="&foo;pricePerPiece">
@@ -3729,6 +3795,19 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
         <rdfs:comment>Name of the project (e.g., Avid Project)</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/quantity -->
+
+    <owl:DatatypeProperty rdf:about="&foo;quantity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>quantity</rdfs:label>
+        <rdfs:comment>Total number of the detected film condition</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;analysisProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -4432,7 +4511,7 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
     <owl:DatatypeProperty rdf:about="&foo;storyDay">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>storyDay</rdfs:label>
-        <rdfs:comment>On which day of the story the scene takes place.</rdfs:comment>
+        <rdfs:comment>Day of the story on which the scene takes place.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Scene"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;int"/>
@@ -4445,7 +4524,7 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
     <owl:DatatypeProperty rdf:about="&foo;storyTime">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>storyTime</rdfs:label>
-        <rdfs:comment>On which daytime of the story the scene takes place.</rdfs:comment>
+        <rdfs:comment>Daytime of the story on which a scene takes place.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Scene"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -4915,9 +4994,8 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
     <owl:DatatypeProperty rdf:about="&foo;value">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>value</rdfs:label>
-        <rdfs:comment>Value of the detected anomaly/film condition</rdfs:comment>
+        <rdfs:comment>Value of the detected anomaly</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;AbnormalArea"/>
-        <rdfs:domain rdf:resource="&foo;FilmCondition"/>
         <rdfs:subPropertyOf rdf:resource="&foo;analysisProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -4961,6 +5039,19 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/wet -->
+
+    <owl:DatatypeProperty rdf:about="&foo;wet">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>wet</rdfs:label>
+        <rdfs:comment>Total number of wet splices</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Splice"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;analysisProperty"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
 
@@ -5129,16 +5220,6 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
         <rdfs:label>AudioTrack</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
         <rdfs:comment>A single track of recorded audio of a film or video recording</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://filmontology.org/ontology/2.0/Bulge -->
-
-    <owl:Class rdf:about="&foo;Bulge">
-        <rdfs:label>Bulge</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
-        <rdfs:comment>Information regarding protuberant parts of analysed film stock</rdfs:comment>
     </owl:Class>
     
 
@@ -5461,6 +5542,16 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/FilmAdhesion -->
+
+    <owl:Class rdf:about="&foo;FilmAdhesion">
+        <rdfs:label>FilmAdhesion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+        <rdfs:comment>Information regarding film adhesions of analysed film stock</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/FilmCondition -->
 
     <owl:Class rdf:about="&foo;FilmCondition">
@@ -5477,6 +5568,16 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
         <rdfs:label>FilmGrain</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
         <rdfs:comment>Information regarding film grain noise in dB of analysed film stock</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/FilmRupture -->
+
+    <owl:Class rdf:about="&foo;FilmRupture">
+        <rdfs:label>FilmRupture</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&foo;FilmCondition"/>
+        <rdfs:comment>Information regarding film ruptures of analysed film stock</rdfs:comment>
     </owl:Class>
     
 
