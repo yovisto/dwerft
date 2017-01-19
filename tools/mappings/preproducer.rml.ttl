@@ -32,6 +32,11 @@
     ];
 
     rr:predicateObjectMap [
+        rr:predicate foo:hasCompany;
+        rr:objectMap [ rr:parentTriplesMap <#company>; ]
+    ];
+
+    rr:predicateObjectMap [
         rr:predicate foo:hasEpisode;
         rr:objectMap [ rr:parentTriplesMap <#episode>; ]
     ];
@@ -278,6 +283,31 @@
     ];
 
     rr:predicateObjectMap [
+        rr:predicate foo:storyDay;
+        rr:objectMap [ rml:reference "storyDay"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:storyTime;
+        rr:objectMap [ rml:reference "storyTime"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:numberOfShots;
+        rr:objectMap [ rml:reference "shots"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:prestop;
+        rr:objectMap [ rml:reference "prestop"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate foo:pages;
+        rr:objectMap [ rml:reference "pages"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
         rr:predicate foo:sceneContent;
         rr:objectMap [ rml:reference "script/formattedscript"; rr:datatype xsd:string ];
     ];
@@ -425,7 +455,7 @@
 
     rr:predicateObjectMap [
         rr:predicate v:postal-code;
-        rr:objectMap [ rml:reference "zipcode"; rr:datatype xsd:int ];
+        rr:objectMap [ rml:reference "zipcode"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
@@ -654,7 +684,7 @@
 
     rr:predicateObjectMap [
         rr:predicate v:postal-code;
-        rr:objectMap [ rml:reference "zipcode"; rr:datatype xsd:int ];
+        rr:objectMap [ rml:reference "zipcode"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
