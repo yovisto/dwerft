@@ -1,7 +1,6 @@
 package de.werft;
 
 
-import arq.update;
 import de.hpi.rdf.tailrapi.Delta;
 import org.aksw.jena_sparql_api.core.SparqlService;
 import org.aksw.jena_sparql_api.core.utils.UpdateRequestUtils;
@@ -12,6 +11,7 @@ import org.apache.jena.update.UpdateExecutionFactory;
 import org.apache.jena.update.UpdateFactory;
 import org.apache.jena.update.UpdateProcessor;
 import org.apache.jena.update.UpdateRequest;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Basic upload tool which takes an URI and simply uploads a model
@@ -22,6 +22,8 @@ import org.apache.jena.update.UpdateRequest;
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 public class Uploader {
+
+    private final static Logger L = org.apache.logging.log4j.LogManager.getLogger("UploadService.class");
 
     private String endpoint;
 
@@ -48,6 +50,7 @@ public class Uploader {
     public void uploadModel(Delta u, String graphUri, HttpClient client) {
         SparqlService service = FluentSparqlService.http(endpoint, graphUri, client).create();
         String s = u.toSparql(graphUri);
+        L.info("SPARQL Update\n" + s);
         UpdateRequest request = UpdateRequestUtils.parse(s);
         service.getUpdateExecutionFactory()
                 .createUpdateProcessor(request)
@@ -64,6 +67,7 @@ public class Uploader {
         SparqlService service = FluentSparqlService.http(endpoint, graphUri).create();
         String s = u.toSparql(graphUri);
         UpdateRequest request = UpdateRequestUtils.parse(s);
+        L.info("SPARQL Update\n" + s);
         service.getUpdateExecutionFactory()
                 .createUpdateProcessor(request)
                 .execute();

@@ -132,7 +132,7 @@ public class MyResource {
         return null;
     }
 
-    /* check if a inputstream is valid rdf */
+    /* check if an inputstream is valid rdf */
     private boolean isRdfFile(InputStream stream, Lang format) {
         try {
             Model m = ModelFactory.createDefaultModel();
@@ -143,7 +143,7 @@ public class MyResource {
         return true;
     }
 
-    /* check if a inputstream is valid rdf */
+    /* check if an inputstream is valid rdf */
     private String convertToNtTriples(InputStream stream, Lang format) {
         StringWriter writer = new StringWriter();
         try {
