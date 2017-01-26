@@ -970,6 +970,15 @@
 <rdfs:range rdf:resource="&xsd;string"/>
 </owl:DatatypeProperty>
 
+<owl:DatatypeProperty rdf:about="&foo;lockItuuid">
+<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+<rdfs:label>lockItuuid</rdfs:label>
+<rdfs:comment>UUID identifier created by lockit script toolkit</rdfs:comment>
+<rdfs:domain rdf:resource="&foo;Clip"/>
+<rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+<rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
 <owl:DatatypeProperty rdf:about="&foo;setName">
 <rdf:type rdf:resource="&owl;FunctionalProperty"/>
 <rdfs:label>setName</rdfs:label>

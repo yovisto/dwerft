@@ -147,7 +147,7 @@ DAY / NIGHT	http://filmontology.org/ontology/2.0/dayTime	Daytime of the scene (e
 Camera Model	http://filmontology.org/ontology/2.0/cameraModel	Name of the camera model (e.g., for Alexa cameras, prefix 'Alexa' followed by possible combinations of the product type and product sub type as strings)
 Camera number	http://filmontology.org/ontology/2.0/cameraNumber	Sequential number of the camera
 Camera Name	http://filmontology.org/ontology/2.0/cameraName	User-defined label of the camera
-IDclip	http://filmontology.org/ontology/2.0/uuid	UUID identifier created by camera or processing tool for each clip
+IDclip	http://filmontology.org/ontology/2.0/lockItuuid	UUID identifier created by lockit script toolkit
 Set	http://filmontology.org/ontology/2.0/setName	Name of set where the clip was shot
 Shot Description	http://filmontology.org/ontology/2.0/description	Additional notes on the clip
 Episode	http://filmontology.org/ontology/2.0/clipEpisodeName	Name of the episode
