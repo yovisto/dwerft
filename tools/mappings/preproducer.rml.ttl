@@ -79,7 +79,7 @@
 
     rr:predicateObjectMap [
         rr:predicate foo:titleType;
-        rr:objectMap [ rml:reference "@temptitle"; rr:datatype xsd:string ];
+        rr:objectMap [ rr:constant "Main Title" ];
     ];
 
     rr:predicateObjectMap [
