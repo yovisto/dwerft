@@ -1,9 +1,11 @@
 package de.werft;
 
 import de.hpi.rdf.tailrapi.Delta;
+import de.hpi.rdf.tailrapi.Memento;
 import de.hpi.rdf.tailrapi.Repository;
 import de.hpi.rdf.tailrapi.Tailr;
 import io.swagger.annotations.*;
+import org.apache.jena.graph.Graph;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.riot.Lang;
@@ -16,10 +18,7 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringWriter;
+import java.io.*;
 import java.net.URISyntaxException;
 
 /**
@@ -70,7 +69,8 @@ public class MyResource {
                                @ApiParam(value = "The key used in tailr", required = true) @QueryParam(value = "key") String tailrKey,
                                @ApiParam(value = "The triple store graph name", required = true) @QueryParam(value = "graph") String graphName,
                                @ApiParam(value = "The used upload procedure.") @DefaultValue("2") @QueryParam(value = "level") int level,
-                               @ApiParam(value = "The rdf language.") @DefaultValue("ttl") @QueryParam(value = "lang") String lang) {
+                               @ApiParam(value = "The rdf language.") @DefaultValue("ttl") @QueryParam(value = "lang") String lang,
+                               @ApiParam(value = "The tailr key for merge") @DefaultValue("") @QueryParam(value = "mkey") String mergeKey) {
         /* handle failure cases */
         Lang format = RDFLanguages.nameToLang(lang);
         Granularity g = null;
@@ -91,6 +91,18 @@ public class MyResource {
         Delta d;
         if (Granularity.LEVEL_0.equals(g)) {
             d = getDelta("", tailrKey);
+        } else if (Granularity.LEVEL_3.equals(g)) {
+            /* create ntriples from input */
+            if (mergeKey.isEmpty()) {
+                return Response.status(Response.Status.BAD_REQUEST).build();
+            }
+
+            String input = convertToNtTriples(new ByteArrayInputStream(fileBytes), format);
+            Memento m = getMemento(mergeKey);
+            input = Merge.merge(convertMementoToNtTriples(m), input);
+            L.info("Merge input with ");
+            d = getDelta(input, tailrKey);
+
         } else {
             /* create ntriples from input */
             String input = convertToNtTriples(new ByteArrayInputStream(fileBytes), format);
@@ -132,6 +144,18 @@ public class MyResource {
         return null;
     }
 
+    /* store the uploaded rdf file and retrieve the delta determined by tailr */
+    private Memento getMemento(String tailrKey) {
+        try {
+            Repository repo = new Repository(conf.getTailrUser(), conf.getTailrRepo());
+            return tailrClient.getLatestMemento(repo, tailrKey);
+        } catch (IOException e) {
+            L.error("Returning not modified.", e);
+        }
+        return null;
+    }
+
+
     /* check if an inputstream is valid rdf */
     private boolean isRdfFile(InputStream stream, Lang format) {
         try {
@@ -143,7 +167,7 @@ public class MyResource {
         return true;
     }
 
-    /* check if an inputstream is valid rdf */
+    /* convert some string input to ntriples */
     private String convertToNtTriples(InputStream stream, Lang format) {
         StringWriter writer = new StringWriter();
         try {
@@ -152,6 +176,19 @@ public class MyResource {
             RDFDataMgr.write(writer, m, Lang.NT);
         } catch (RiotException e) {
             L.error("Failed to convert the input.", e);
+        }
+        return writer.toString();
+    }
+
+
+    /* retrieve ntriples from tailr memento */
+    private static String convertMementoToNtTriples(Memento m) {
+        StringWriter writer = new StringWriter();
+        try {
+            Graph g = m.resolve();
+            RDFDataMgr.write(writer, g, Lang.NT);
+        } catch (RiotException | UnsupportedEncodingException | URISyntaxException e) {
+            L.error("Failed to convert the input to n-triples.", e);
         }
         return writer.toString();
     }
@@ -168,6 +205,10 @@ public class MyResource {
         /**
          * Level 2 creates a diff.
          */
-        LEVEL_2
+        LEVEL_2,
+        /**
+         * Merge old tailr and input
+         */
+        LEVEL_3
     }
 }
