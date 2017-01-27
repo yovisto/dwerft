@@ -133,6 +133,17 @@
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/clipsShot -->
+
+    <owl:ObjectProperty rdf:about="&foo;clipsShot">
+        <rdfs:label>clipsShot</rdfs:label>
+        <rdfs:comment>References to the shot clips of a script</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Script"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/crewMember -->
 
     <owl:ObjectProperty rdf:about="&foo;crewMember">
@@ -768,6 +779,7 @@
         <rdfs:comment>Additional name of a clip created by camera or processing tool</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
