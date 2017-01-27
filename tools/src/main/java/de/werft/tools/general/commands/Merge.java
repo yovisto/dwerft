@@ -179,7 +179,7 @@ public class Merge extends DwerftTools {
         try {
             String name = StringUtils.removeEnd(file, "." + lang);
             name = name + "-merged.nt";
-            Files.write(Paths.get(name), merged.getBytes());
+            Files.write(Paths.get(name), merged.getBytes("UTF8"));
         } catch (IOException e) {
             logger.error("Failed to write merged file.", e);
         }
