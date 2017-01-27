@@ -9,1215 +9,1261 @@
 @prefix csvw: <http://www.w3.org/ns/csvw#>.
 
 <#ClipMapping>
-    rml:logicalSource [
-    rml:source [
-      a csvw:Table;
-      csvw:dialect [
-      a csvw:Dialect;
-      csvw:delimiter ";";
-      #default
-      csvw:encoding "UTF-8";
-      csvw:header "1"^^xsd:boolean;
-      csvw:headerRowCount "1"^^xsd:nonNegativeInteger;
-      csvw:trim "1"^^xsd:boolean;
-    ] ];
-    rml:referenceFormulation ql:CSV;
-   ];
-
-   rr:subjectMap [
-	  rr:template "http://filmontology.org/resource/Clip/{Name}";
-	  rr:class foo:Clip;
-   ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:clipName;
-        rr:objectMap [
-            rml:reference "Name";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-            rr:predicate foo:sourceFile;
-            rr:objectMap [
-                rml:reference "Source File";
-                rr:datatype xsd:string;
-            ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:clipNumber;
-        rr:objectMap [
-            rml:reference "Clip";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:clipDuration;
-        rr:objectMap [
-            rml:reference "Duration";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:tracks;
-        rr:objectMap [
-            rml:reference "Tracks";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:startTimecode;
-        rr:objectMap [
-            rml:reference "Start";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:endTImecode;
-        rr:objectMap [
-            rml:reference "End";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:projectFps;
-        rr:objectMap [
-            rml:reference "Fps";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:amaPlugin;
-        rr:objectMap [
-            rml:reference "AMA Plug-in";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:shutterAngle;
-        rr:objectMap [
-            rml:reference "Angle";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:exposureIndex;
-        rr:objectMap [
-            rml:reference "ASA";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:audioBitDepth;
-        rr:objectMap [
-            rml:reference "Audio Bit Depth";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:audioSamplingRate;
-        rr:objectMap [
-            rml:reference "Audio SR";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:audioBitDepth;
-        rr:objectMap [
-            rml:reference "Audio_bit";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:audioFormat;
-        rr:objectMap [
-            rml:reference "Audio_format";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:Audio_sr;
-        rr:objectMap [
-            rml:reference "audioSamplingRate";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:auxiliaryTimecode;
-        rr:objectMap [
-            rml:reference "Auxiliary";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:binName;
-        rr:objectMap [
-            rml:reference "Bin Name";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraIndex;
-        rr:objectMap [
-            rml:reference "Camera";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraAssistant;
-        rr:objectMap [
-            rml:reference "Camera Asst.";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraIdentifier;
-        rr:objectMap [
-            rml:reference "Camera ID";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraSerialNumber;
-        rr:objectMap [
-            rml:reference "Camera Serial";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraModel;
-        rr:objectMap [
-            rml:reference "Camera Type";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraIdentifier;
-        rr:objectMap [
-            rml:reference "Camera_id";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraIndex;
-        rr:objectMap [
-            rml:reference "Camera_index";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraModel;
-        rr:objectMap [
-            rml:reference "Camera_model";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraSerialNumber;
-        rr:objectMap [
-            rml:reference "Camera_sn";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraRoll;
-        rr:objectMap [
-            rml:reference "CamRoll";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:captionInfo;
-        rr:objectMap [
-            rml:reference "Caption";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:ccShift;
-        rr:objectMap [
-            rml:reference "Cc_shift";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cinematographer;
-        rr:objectMap [
-            rml:reference "Cinematographer";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:circledTake;
-        rr:objectMap [
-            rml:reference "Circle";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:circledTake;
-        rr:objectMap [
-            rml:reference "Circled";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:clipNumber;
-        rr:objectMap [
-            rml:reference "Clip Number";
-            rr:datatype xsd:string;
-        ];
-    ];
-    
-    rr:predicateObjectMap [
-        rr:predicate foo:codec;
-        rr:objectMap [
-            rml:reference "Codec";
-            rr:datatype xsd:string;
-        ];
-    ];
-    
-    rr:predicateObjectMap [
-        rr:predicate foo:colorLabel;
-        rr:objectMap [
-            rml:reference "Color Label";
-            rr:datatype xsd:string;
-        ];
-    ];
-    
-    rr:predicateObjectMap [
-        rr:predicate foo:colorSpace;
-        rr:objectMap [
-            rml:reference "Colorspace";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:comments;
-        rr:objectMap [
-            rml:reference "Comments";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:company;
-        rr:objectMap [
-            rml:reference "Company";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:creationDate;
-        rr:objectMap [
-            rml:reference "Creation Date";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:dateCamera;
-        rr:objectMap [
-            rml:reference "Date_camera";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:description;
-        rr:objectMap [
-            rml:reference "DESCRIPT";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:description;
-        rr:objectMap [
-            rml:reference "Description";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:directorName;
-        rr:objectMap [
-            rml:reference "Director";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cinematographer;
-        rr:objectMap [
-            rml:reference "DOP";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:driveName;
-        rr:objectMap [
-            rml:reference "Drive";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:exposureIndex;
-        rr:objectMap [
-            rml:reference "Exposure_index";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:eyeIndex;
-        rr:objectMap [
-            rml:reference "Eye_index";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:fieldOrdering;
-        rr:objectMap [
-            rml:reference "Field Ordering";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:filePath;
-        rr:objectMap [
-            rml:reference "File path";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:fileSize;
-        rr:objectMap [
-            rml:reference "File Size";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:fileType;
-        rr:objectMap [
-            rml:reference "Filetype";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:ndFilterdensity;
-        rr:objectMap [
-            rml:reference "Filter";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:focusDistanceUnit;
-        rr:objectMap [
-            rml:reference "Focus_distance_u";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:focusDistanceUnit;
-        rr:objectMap [
-            rml:reference "Focus_distance_unit";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:projectFps;
-        rr:objectMap [
-            rml:reference "FPS";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:frameCount;
-        rr:objectMap [
-            rml:reference "Frame count";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:frameHeight;
-        rr:objectMap [
-            rml:reference "Frame_height";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:frameWidth;
-        rr:objectMap [
-            rml:reference "Frame_width";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:fstop;
-        rr:objectMap [
-            rml:reference "F-Stop";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:colorSpace;
-        rr:objectMap [
-            rml:reference "Gamma";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:colorSpace;
-        rr:objectMap [
-            rml:reference "Gamma Space";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:imageDetail;
-        rr:objectMap [
-            rml:reference "Image_detail";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:imageOrientation;
-        rr:objectMap [
-            rml:reference "Image_orientatio";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:imageOrientation;
-        rr:objectMap [
-            rml:reference "Image_orientation";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:imageSharpness;
-        rr:objectMap [
-            rml:reference "Image_sharpness";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:importPlugin;
-        rr:objectMap [
-            rml:reference "Import";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:inOut;
-        rr:objectMap [
-            rml:reference "IN-OUT";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:exposureIndex;
-        rr:objectMap [
-            rml:reference "ISO";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:knStart;
-        rr:objectMap [
-            rml:reference "KN Start";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:lensType;
-        rr:objectMap [
-            rml:reference "Lens";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:lensSerialNumber;
-        rr:objectMap [
-            rml:reference "Lens Number";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:lensSerialNumber;
-        rr:objectMap [
-            rml:reference "Lens_sn";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:lensType;
-        rr:objectMap [
-            rml:reference "Lens_type";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:location;
-        rr:objectMap [
-            rml:reference "Location";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:lookName;
-        rr:objectMap [
-            rml:reference "Look Name";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:lookBurnedIn;
-        rr:objectMap [
-            rml:reference "Look_burned_in";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:lookName;
-        rr:objectMap [
-            rml:reference "Look_name";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:lookUserLut;
-        rr:objectMap [
-            rml:reference "Look_user_lut";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:lutFileName;
-        rr:objectMap [
-            rml:reference "Lut_file_name";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:manufacturer;
-        rr:objectMap [
-            rml:reference "Manufacturer";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:markIn;
-        rr:objectMap [
-            rml:reference "Mark IN";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:markOut;
-        rr:objectMap [
-            rml:reference "Mark OUT";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:masterSlave;
-        rr:objectMap [
-            rml:reference "Master_slave";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:ndFilterdensity;
-        rr:objectMap [
-            rml:reference "Nd_filterdensity";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:operatorName;
-        rr:objectMap [
-            rml:reference "Operator";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:originalVideoCodec;
-        rr:objectMap [
-            rml:reference "Original_video";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:pixelaspectratio;
-        rr:objectMap [
-            rml:reference "Pixelaspectratio";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:producerName;
-        rr:objectMap [
-            rml:reference "Producer";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:productionName;
-        rr:objectMap [
-            rml:reference "Production";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:productionName;
-        rr:objectMap [
-            rml:reference "Production Name";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:projectFps;
-        rr:objectMap [
-            rml:reference "Project_fps";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:rating;
-        rr:objectMap [
-            rml:reference "Rating";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:reelName;
-        rr:objectMap [
-            rml:reference "Reel";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:reelName;
-        rr:objectMap [
-            rml:reference "Reel_name";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:reelName;
-        rr:objectMap [
-            rml:reference "reel name";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:resolution;
-        rr:objectMap [
-            rml:reference "Resolution";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:resourceCount;
-        rr:objectMap [
-            rml:reference "Resource count";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:resourceSummary;
-        rr:objectMap [
-            rml:reference "Resource sumary";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:sensorFps;
-        rr:objectMap [
-            rml:reference "Sensor Fps";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:sensorFps;
-        rr:objectMap [
-            rml:reference "Sensor_fps";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:shootDate;
-        rr:objectMap [
-            rml:reference "Shoot Date";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:shootDate;
-        rr:objectMap [
-            rml:reference "Shoot date";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:shutterSpeed;
-        rr:objectMap [
-            rml:reference "Shutter";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:shutterAngle;
-        rr:objectMap [
-            rml:reference "Shutter_angle";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:soundroll;
-        rr:objectMap [
-            rml:reference "Soundroll";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:sourceBitDepth;
-        rr:objectMap [
-            rml:reference "Source Bit Depth";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:sourceFile;
-        rr:objectMap [
-            rml:reference "Source File";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:sourceFilePath;
-        rr:objectMap [
-            rml:reference "Source File Path";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:sourceResolution;
-        rr:objectMap [
-            rml:reference "Source Resolution";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:eyeIndex;
-        rr:objectMap [
-            rml:reference "Stereoscopic Eye";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:supVersion;
-        rr:objectMap [
-            rml:reference "Sup_version";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:sxsSn;
-        rr:objectMap [
-            rml:reference "Sxs_sn";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:take;
-        rr:objectMap [
-            rml:reference "Take";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:tapeIdentifier;
-        rr:objectMap [
-            rml:reference "Tape";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:tapeIdentifier;
-        rr:objectMap [
-            rml:reference "TapeID";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:timeCamera;
-        rr:objectMap [
-            rml:reference "Time_camera";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:trk1;
-        rr:objectMap [
-            rml:reference "TRK1";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:trk2;
-        rr:objectMap [
-            rml:reference "TRK2";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:umid;
-        rr:objectMap [
-            rml:reference "Umid";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:uncPath;
-        rr:objectMap [
-            rml:reference "UNC";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:userInfo1;
-        rr:objectMap [
-            rml:reference "User_info1";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:userInfo2;
-        rr:objectMap [
-            rml:reference "User_info2";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:uuid;
-        rr:objectMap [
-            rml:reference "UUID";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:uuid;
-        rr:objectMap [
-            rml:reference "Uuid";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:videoCodec;
-        rr:objectMap [
-            rml:reference "Video";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:whiteBalance;
-        rr:objectMap [
-            rml:reference "White Point (Kelvin)";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:whiteBalance;
-        rr:objectMap [
-            rml:reference "White_balance";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:whiteBalance;
-        rr:objectMap [
-            rml:reference "Whitepoint";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraFps;
-        rr:objectMap [
-            rml:reference "CFPS";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:knDuration;
-        rr:objectMap [
-            rml:reference "KN Dur";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:projectName;
-        rr:objectMap [
-            rml:reference "Project";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:colorSpace;
-        rr:objectMap [
-            rml:reference "Color Space";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:pixelaspectratio;
-        rr:objectMap [
-            rml:reference "Pixel Aspect Ratio";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:reformat;
-        rr:objectMap [
-            rml:reference "Format";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:sourceResolution;
-        rr:objectMap [
-            rml:reference "Image Size";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:imageAspectRatio;
-        rr:objectMap [
-            rml:reference "Image Aspect Ratio";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:slate;
-        rr:objectMap [
-            rml:reference "Slate";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:circledTake;
-        rr:objectMap [
-            rml:reference "P/NP";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:comments;
-        rr:objectMap [
-            rml:reference "Takecomment";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraRoll;
-        rr:objectMap [
-            rml:reference "Cam Roll";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:clipName;
-        rr:objectMap [
-            rml:reference "Clipname";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:dayOfShooting;
-        rr:objectMap [
-            rml:reference "Day of Shooting";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:interiorExterior;
-        rr:objectMap [
-            rml:reference "INT / EXT";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:dayTime;
-        rr:objectMap [
-            rml:reference "DAY / NIGHT";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraModel;
-        rr:objectMap [
-            rml:reference "Camera Model";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:cameraName;
-        rr:objectMap [
-            rml:reference "Camera Name";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:uuid;
-        rr:objectMap [
-            rml:reference "IDclip";
-            rr:datatype xsd:string;
-        ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:setName;
-        rr:objectMap [
-            rml:reference "Set";
-            rr:datatype xsd:string;
-        ];
-    ].
+rml:logicalSource [
+rml:source [
+a csvw:Table;
+csvw:dialect [
+a csvw:Dialect;
+csvw:delimiter ";";
+csvw:encoding "UTF-8";
+csvw:header "1"^^xsd:boolean;
+csvw:headerRowCount "1"^^xsd:nonNegativeInteger;
+csvw:trim "1"^^xsd:boolean;
+] ];
+rml:referenceFormulation ql:CSV;
+];
+
+rr:subjectMap [
+rr:template "http://filmontology.org/resource/Clip/{UUID}";
+rr:class foo:Clip;
+];
+rr:predicateObjectMap [
+rr:predicate foo:amaPlugin;
+rr:objectMap [
+rml:reference "AMA Plug-in";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:shutterAngle;
+rr:objectMap [
+rml:reference "Angle";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:exposureIndex;
+rr:objectMap [
+rml:reference "ASA";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:audioBitDepth;
+rr:objectMap [
+rml:reference "Audio Bit Depth";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:audioSamplingRate;
+rr:objectMap [
+rml:reference "Audio SR";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:audioBitDepth;
+rr:objectMap [
+rml:reference "Audio_bit";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:audioFormat;
+rr:objectMap [
+rml:reference "Audio_format";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:audioSamplingRate;
+rr:objectMap [
+rml:reference "Audio_sr";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:auxiliaryTimecode;
+rr:objectMap [
+rml:reference "Auxiliary TC1";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:binName;
+rr:objectMap [
+rml:reference "Bin Name";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraIndex;
+rr:objectMap [
+rml:reference "Camera";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraAssistant;
+rr:objectMap [
+rml:reference "Camera Asst.";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraIdentifier;
+rr:objectMap [
+rml:reference "Camera ID";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraSerialNumber;
+rr:objectMap [
+rml:reference "Camera Serial #";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraModel;
+rr:objectMap [
+rml:reference "Camera Type";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraIdentifier;
+rr:objectMap [
+rml:reference "Camera_id";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraIndex;
+rr:objectMap [
+rml:reference "Camera_index";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraModel;
+rr:objectMap [
+rml:reference "Camera_model";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraSerialNumber;
+rr:objectMap [
+rml:reference "Camera_sn";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraRoll;
+rr:objectMap [
+rml:reference "CamRoll";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:captionInfo;
+rr:objectMap [
+rml:reference "Caption";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:ccShift;
+rr:objectMap [
+rml:reference "Cc_shift";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cinematographer;
+rr:objectMap [
+rml:reference "Cinematographer";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:circledTake;
+rr:objectMap [
+rml:reference "Circle";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:circledTake;
+rr:objectMap [
+rml:reference "Circled Take";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:clipNumber;
+rr:objectMap [
+rml:reference "Clip";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:clipNumber;
+rr:objectMap [
+rml:reference "Clip Number";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:codec;
+rr:objectMap [
+rml:reference "Codec";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:colorLabel;
+rr:objectMap [
+rml:reference "Color Label";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:colorSpace;
+rr:objectMap [
+rml:reference "Colorspace";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:comments;
+rr:objectMap [
+rml:reference "Comments";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:company;
+rr:objectMap [
+rml:reference "Company";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:creationDate;
+rr:objectMap [
+rml:reference "Creation Date";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:dateCamera;
+rr:objectMap [
+rml:reference "Date_camera";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:description;
+rr:objectMap [
+rml:reference "DESCRIPT";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:description;
+rr:objectMap [
+rml:reference "Description";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:directorName;
+rr:objectMap [
+rml:reference "Director";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cinematographer;
+rr:objectMap [
+rml:reference "DOP";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:driveName;
+rr:objectMap [
+rml:reference "Drive";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:duration;
+rr:objectMap [
+rml:reference "Duration";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:endTimecode;
+rr:objectMap [
+rml:reference "End";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:exposureIndex;
+rr:objectMap [
+rml:reference "Exposure_index";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:eyeIndex;
+rr:objectMap [
+rml:reference "Eye_index";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:fieldOrdering;
+rr:objectMap [
+rml:reference "Field Ordering";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:filePath;
+rr:objectMap [
+rml:reference "File path";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:fileSize;
+rr:objectMap [
+rml:reference "File Size";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:fileType;
+rr:objectMap [
+rml:reference "Filetype";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:ndFilterdensity;
+rr:objectMap [
+rml:reference "Filter";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:focusDistanceUnit;
+rr:objectMap [
+rml:reference "Focus_distance_u";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:focusDistanceUnit;
+rr:objectMap [
+rml:reference "Focus_distance_unit";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:frameRate;
+rr:objectMap [
+rml:reference "Fps";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:frameRate;
+rr:objectMap [
+rml:reference "FPS";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:frameCount;
+rr:objectMap [
+rml:reference "Frame count";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:frameHeight;
+rr:objectMap [
+rml:reference "Frame_height";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:frameWidth;
+rr:objectMap [
+rml:reference "Frame_width";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:fstop;
+rr:objectMap [
+rml:reference "F-Stop";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:colorSpace;
+rr:objectMap [
+rml:reference "Gamma";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:colorSpace;
+rr:objectMap [
+rml:reference "Gamma Space";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:imageDetail;
+rr:objectMap [
+rml:reference "Image_detail";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:imageOrientation;
+rr:objectMap [
+rml:reference "Image_orientatio";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:imageOrientation;
+rr:objectMap [
+rml:reference "Image_orientation";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:imageSharpness;
+rr:objectMap [
+rml:reference "Image_sharpness";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:importPlugin;
+rr:objectMap [
+rml:reference "Import Plugin";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:inOut;
+rr:objectMap [
+rml:reference "IN-OUT";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:exposureIndex;
+rr:objectMap [
+rml:reference "ISO";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:knStart;
+rr:objectMap [
+rml:reference "KN Start";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:lensType;
+rr:objectMap [
+rml:reference "Lens";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:lensSerialNumber;
+rr:objectMap [
+rml:reference "Lens Number";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:lensSerialNumber;
+rr:objectMap [
+rml:reference "Lens_sn";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:lensType;
+rr:objectMap [
+rml:reference "Lens_type";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:location;
+rr:objectMap [
+rml:reference "Location";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:lookName;
+rr:objectMap [
+rml:reference "Look Name";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:lookBurnedIn;
+rr:objectMap [
+rml:reference "Look_burned_in";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:lookName;
+rr:objectMap [
+rml:reference "Look_name";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:lookUserLut;
+rr:objectMap [
+rml:reference "Look_user_lut";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:lutFileName;
+rr:objectMap [
+rml:reference "Lut_file_name";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:manufacturer;
+rr:objectMap [
+rml:reference "Manufacturer";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:markIn;
+rr:objectMap [
+rml:reference "Mark IN";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:markOut;
+rr:objectMap [
+rml:reference "Mark OUT";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:masterSlave;
+rr:objectMap [
+rml:reference "Master_slave";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:clipName;
+rr:objectMap [
+rml:reference "Name";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:ndFilterdensity;
+rr:objectMap [
+rml:reference "Nd_filterdensity";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:operatorName;
+rr:objectMap [
+rml:reference "Operator";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:originalVideoCodec;
+rr:objectMap [
+rml:reference "Original_video";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:pixelaspectratio;
+rr:objectMap [
+rml:reference "Pixelaspectratio";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:producerName;
+rr:objectMap [
+rml:reference "Producer";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:productionName;
+rr:objectMap [
+rml:reference "Production";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:productionName;
+rr:objectMap [
+rml:reference "Production Name";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:frameRate;
+rr:objectMap [
+rml:reference "Project_fps";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:rating;
+rr:objectMap [
+rml:reference "Rating";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:reelName;
+rr:objectMap [
+rml:reference "Reel";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:reelName;
+rr:objectMap [
+rml:reference "Reel name";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:reelName;
+rr:objectMap [
+rml:reference "Reel_name";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:resolution;
+rr:objectMap [
+rml:reference "Resolution";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:resourceCount;
+rr:objectMap [
+rml:reference "Resource count";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:resourceSummary;
+rr:objectMap [
+rml:reference "Resource sumary";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:sceneNumber;
+rr:objectMap [
+rml:reference "Scene";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:sensorFps;
+rr:objectMap [
+rml:reference "Sensor Fps";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:sensorFps;
+rr:objectMap [
+rml:reference "Sensor_fps";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:shootDate;
+rr:objectMap [
+rml:reference "Shoot date";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:shootDate;
+rr:objectMap [
+rml:reference "Shoot Date";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:shutterSpeed;
+rr:objectMap [
+rml:reference "Shutter";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:shutterAngle;
+rr:objectMap [
+rml:reference "Shutter_angle";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:soundroll;
+rr:objectMap [
+rml:reference "Soundroll";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:videoBitDepth;
+rr:objectMap [
+rml:reference "Source Bit Depth";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:sourceFile;
+rr:objectMap [
+rml:reference "Source File";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:sourceFilePath;
+rr:objectMap [
+rml:reference "Source File Path";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:sourceResolution;
+rr:objectMap [
+rml:reference "Source Resolution";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:startTimecode;
+rr:objectMap [
+rml:reference "Start";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:eyeIndex;
+rr:objectMap [
+rml:reference "Stereoscopic Eye";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:supVersion;
+rr:objectMap [
+rml:reference "Sup_version";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:sxsSn;
+rr:objectMap [
+rml:reference "Sxs_sn";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:take;
+rr:objectMap [
+rml:reference "Take";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:tapeIdentifier;
+rr:objectMap [
+rml:reference "Tape";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:tapeIdentifier;
+rr:objectMap [
+rml:reference "TapeID";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:timeCamera;
+rr:objectMap [
+rml:reference "Time_camera";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:tracks;
+rr:objectMap [
+rml:reference "Tracks";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:trk1;
+rr:objectMap [
+rml:reference "TRK1";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:trk2;
+rr:objectMap [
+rml:reference "TRK2";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:umid;
+rr:objectMap [
+rml:reference "Umid";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:uncPath;
+rr:objectMap [
+rml:reference "UNC";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:userInfo1;
+rr:objectMap [
+rml:reference "User_info1";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:userInfo2;
+rr:objectMap [
+rml:reference "User_info2";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:uuid;
+rr:objectMap [
+rml:reference "Uuid";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:uuid;
+rr:objectMap [
+rml:reference "UUID";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:videoCodec;
+rr:objectMap [
+rml:reference "Video";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:whiteBalance;
+rr:objectMap [
+rml:reference "White Point (Kelvin)";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:whiteBalance;
+rr:objectMap [
+rml:reference "White_balance";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:whiteBalance;
+rr:objectMap [
+rml:reference "Whitepoint";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraFps;
+rr:objectMap [
+rml:reference "CFPS";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:knDuration;
+rr:objectMap [
+rml:reference "KN Dur";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:projectName;
+rr:objectMap [
+rml:reference "Project";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:colorSpace;
+rr:objectMap [
+rml:reference "Color Space";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:pixelaspectratio;
+rr:objectMap [
+rml:reference "Pixel Aspect Ratio";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:reformat;
+rr:objectMap [
+rml:reference "Reformat";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:scanningFormat;
+rr:objectMap [
+rml:reference "Format";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:sourceResolution;
+rr:objectMap [
+rml:reference "Image Size";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:aspectRatio;
+rr:objectMap [
+rml:reference "Image Aspect Ratio";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:slate;
+rr:objectMap [
+rml:reference "Slate";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:circledTake;
+rr:objectMap [
+rml:reference "P/NP";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:comments;
+rr:objectMap [
+rml:reference "Takecomment";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraRoll;
+rr:objectMap [
+rml:reference "Cam Roll";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:clipName;
+rr:objectMap [
+rml:reference "Clipname";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:dayOfShooting;
+rr:objectMap [
+rml:reference "Day of Shooting";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:interiorExterior;
+rr:objectMap [
+rml:reference "INT / EXT";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:dayTime;
+rr:objectMap [
+rml:reference "DAY / NIGHT";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraModel;
+rr:objectMap [
+rml:reference "Camera Model";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraNumber;
+rr:objectMap [
+rml:reference "Camera number";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:cameraName;
+rr:objectMap [
+rml:reference "Camera Name";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:lockItuuid;
+rr:objectMap [
+rml:reference "IDclip";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:setName;
+rr:objectMap [
+rml:reference "Set";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:description;
+rr:objectMap [
+rml:reference "Shot Description";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:clipEpisodeName;
+rr:objectMap [
+rml:reference "Episode";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:clipEpisodeNumber;
+rr:objectMap [
+rml:reference "EpisodeNumber";
+rr:datatype xsd:string;
+];
+];
+
+rr:predicateObjectMap [
+rr:predicate foo:locationAddress;
+rr:objectMap [
+rml:reference "Location Address";
+rr:datatype xsd:string;
+];
+];
 

@@ -1,0 +1,155 @@
+AMA Plug-in	http://filmontology.org/ontology/2.0/amaPlugin	Used external AMA plug-in for transcoding in AVID
+Angle	http://filmontology.org/ontology/2.0/shutterAngle	Exposure time in terms of a shutter angle (e.g., 1728 for 172,8 degree, equivalent to 1/50s - 24fps).
+ASA	http://filmontology.org/ontology/2.0/exposureIndex	Value of the sensor exposure index in ASA rating
+Audio Bit Depth	http://filmontology.org/ontology/2.0/audioBitDepth	Sampling depth of the audio signal in bit
+Audio SR	http://filmontology.org/ontology/2.0/audioSamplingRate	Sampling rate of the audio signal in kHz
+Audio_bit	http://filmontology.org/ontology/2.0/audioBitDepth	Sampling depth of the audio signal in bit
+Audio_format	http://filmontology.org/ontology/2.0/audioFormat	Format of the recorded audio signal (e.g. WAVE)
+Audio_sr	http://filmontology.org/ontology/2.0/audioSamplingRate	Sampling rate of the audio signal in kHz
+Auxiliary TC1	http://filmontology.org/ontology/2.0/auxiliaryTimecode	Auxiliary timecode (e.g., from external audio recorder)
+Bin Name	http://filmontology.org/ontology/2.0/binName	Folder name containing the clips
+Camera	http://filmontology.org/ontology/2.0/cameraIndex	User defined camera index A-Z, in case multiple cameras are used on set
+Camera Asst.	http://filmontology.org/ontology/2.0/cameraAssistant	Name of the camera assistant
+Camera ID	http://filmontology.org/ontology/2.0/cameraIdentifier	Camera identifier. (e.g. Alexa camera: ID Prefix (L or R, R is default) plus camera serial number.
+Camera Serial #	http://filmontology.org/ontology/2.0/cameraSerialNumber	Serial number of the camera
+Camera Type	http://filmontology.org/ontology/2.0/cameraModel	Name of the camera model (e.g., for Alexa cameras, prefix 'Alexa' followed by possible combinations of the product type and product sub type as strings)
+Camera_id	http://filmontology.org/ontology/2.0/cameraIdentifier	Camera identifier. (e.g. Alexa camera: ID Prefix (L or R, R is default) plus camera serial number.
+Camera_index	http://filmontology.org/ontology/2.0/cameraIndex	User defined camera index A-Z, in case multiple cameras are used on set
+Camera_model	http://filmontology.org/ontology/2.0/cameraModel	Name of the camera model (e.g., for Alexa cameras, prefix 'Alexa' followed by possible combinations of the product type and product sub type as strings)
+Camera_sn	http://filmontology.org/ontology/2.0/cameraSerialNumber	Serial number of the camera
+CamRoll	http://filmontology.org/ontology/2.0/cameraRoll	Identifies current reel using camera index letter (e.g., A, B) and the reel number.
+Caption	http://filmontology.org/ontology/2.0/captionInfo	Information about captions
+Cc_shift	http://filmontology.org/ontology/2.0/ccShift	Color effect. Value of a color shift to green or magenta (GreenTintFactor)
+Cinematographer	http://filmontology.org/ontology/2.0/cinematographer	Name of the cinematographer (director of photography - DOP)
+Circle	http://filmontology.org/ontology/2.0/circledTake	Flag for marking good takes
+Circled Take	http://filmontology.org/ontology/2.0/circledTake	Flag for marking good takes
+Clip	http://filmontology.org/ontology/2.0/clipNumber	Clip number on a camera magazine (cam roll)
+Clip Number	http://filmontology.org/ontology/2.0/clipNumber	Clip number on a camera magazine (cam roll)
+Codec	http://filmontology.org/ontology/2.0/codec	Video codec used by the camera for recording 
+Color Label	http://filmontology.org/ontology/2.0/colorLabel	User defined colored rating of a clip
+Colorspace	http://filmontology.org/ontology/2.0/colorSpace	Color space (gamma) of the clip (e.g., LogC, Rec 709)
+Comments	http://filmontology.org/ontology/2.0/comments	User-defined comments
+Company	http://filmontology.org/ontology/2.0/company	Production company name
+Creation Date	http://filmontology.org/ontology/2.0/creationDate	Creation date of the video essence
+Date_camera	http://filmontology.org/ontology/2.0/dateCamera	Date set on camera
+DESCRIPT	http://filmontology.org/ontology/2.0/description	Additional notes on the clip
+Description	http://filmontology.org/ontology/2.0/description	Additional notes on the clip
+Director	http://filmontology.org/ontology/2.0/directorName	Name of the director
+DOP	http://filmontology.org/ontology/2.0/cinematographer	Name of the cinematographer (director of photography - DOP)
+Drive	http://filmontology.org/ontology/2.0/driveName	Name of the volume containing the clip after copying
+Duration	http://filmontology.org/ontology/2.0/duration	Length of a piece of audio or audiovisual media
+End	http://filmontology.org/ontology/2.0/endTimecode	End time code of the clip (SMPTE RP188)
+Exposure_index	http://filmontology.org/ontology/2.0/exposureIndex	Value of the sensor exposure index in ASA rating
+Eye_index	http://filmontology.org/ontology/2.0/eyeIndex	Image channel information for stereoscopic productions (single / left / right)
+Field Ordering	http://filmontology.org/ontology/2.0/fieldOrdering	Field order for interlaced video
+File path	http://filmontology.org/ontology/2.0/filePath	Full file path to the copied original clip file
+File Size	http://filmontology.org/ontology/2.0/fileSize	Size of the file in bytes
+Filetype	http://filmontology.org/ontology/2.0/fileType	File type (e.g., mov, mp4)
+Filter	http://filmontology.org/ontology/2.0/ndFilterdensity	Optical density of the neutral-density (ND) filter.
+Focus_distance_u	http://filmontology.org/ontology/2.0/focusDistanceUnit	Unit of the lens focus distance (metric / imperial)
+Focus_distance_unit	http://filmontology.org/ontology/2.0/focusDistanceUnit	Unit of the lens focus distance (metric / imperial)
+Fps	http://filmontology.org/ontology/2.0/frameRate	General project playback/timecode framerate in frames per second.
+FPS	http://filmontology.org/ontology/2.0/frameRate	General project playback/timecode framerate in frames per second.
+Frame count	http://filmontology.org/ontology/2.0/frameCount	Number of frames of a video/clip
+Frame_height	http://filmontology.org/ontology/2.0/frameHeight	Total vertical pixel count of the image area (e.g. including overscan and non-image pixels) that is stored in the file.
+Frame_width	http://filmontology.org/ontology/2.0/frameWidth	Total horizontal pixel count of the image area (e.g. including overscan and non-image pixels) that is stored in the file.
+F-Stop	http://filmontology.org/ontology/2.0/fstop	Ratio of the lens's focal length to the diameter of the entrance pupil.
+Gamma	http://filmontology.org/ontology/2.0/colorSpace	Color space (gamma) of the clip (e.g., LogC, Rec 709)
+Gamma Space	http://filmontology.org/ontology/2.0/colorSpace	Color space (gamma) of the clip (e.g., LogC, Rec 709)
+Image_detail	http://filmontology.org/ontology/2.0/imageDetail	Field represents which Image Detail was applied during recording.
+Image_orientatio	http://filmontology.org/ontology/2.0/imageOrientation	Flag indicating whether the image is horizontally and/or vertically flipped.
+Image_orientation	http://filmontology.org/ontology/2.0/imageOrientation	Flag indicating whether the image is horizontally and/or vertically flipped.
+Image_sharpness	http://filmontology.org/ontology/2.0/imageSharpness	Field represents which Image Sharpness was applied during recording.
+Import Plugin	http://filmontology.org/ontology/2.0/importPlugin	Used external plug-in for copying in Silverstack
+IN-OUT	http://filmontology.org/ontology/2.0/inOut	In-point and out-point in a clip
+ISO	http://filmontology.org/ontology/2.0/exposureIndex	Value of the sensor exposure index in ASA rating
+KN Start	http://filmontology.org/ontology/2.0/knStart	Value for original camera negative identification
+Lens	http://filmontology.org/ontology/2.0/lensType	Lens mode (type, focal distance)
+Lens Number	http://filmontology.org/ontology/2.0/lensSerialNumber	Lens serial number
+Lens_sn	http://filmontology.org/ontology/2.0/lensSerialNumber	Lens serial number
+Lens_type	http://filmontology.org/ontology/2.0/lensType	Lens mode (type, focal distance)
+Location	http://filmontology.org/ontology/2.0/location	Location where the clip was shot
+Look Name	http://filmontology.org/ontology/2.0/lookName	String for the look file name, up to 32 characters.
+Look_burned_in	http://filmontology.org/ontology/2.0/lookBurnedIn	Determines whether a Look File has been burned in during recording
+Look_name	http://filmontology.org/ontology/2.0/lookName	String for the look file name, up to 32 characters.
+Look_user_lut	http://filmontology.org/ontology/2.0/lookUserLut	Whether a user-defined 3DLUT is used
+Lut_file_name	http://filmontology.org/ontology/2.0/lutFileName	The name of the LUT file if a user-defined 3DLUT is used in the look.
+Manufacturer	http://filmontology.org/ontology/2.0/manufacturer	Name of the camera or software manufacturer
+Mark IN	http://filmontology.org/ontology/2.0/markIn	Timecode of a user-defined in-point
+Mark OUT	http://filmontology.org/ontology/2.0/markOut	Timecode of a user-defined out-point
+Master_slave	http://filmontology.org/ontology/2.0/masterSlave	Flag for indicating if the camera is master or slave in a multi-camera setup (on/off)
+Name	http://filmontology.org/ontology/2.0/clipName	Clip name as created by camera
+Nd_filterdensity	http://filmontology.org/ontology/2.0/ndFilterdensity	Optical density of the neutral-density (ND) filter.
+Operator	http://filmontology.org/ontology/2.0/operatorName	Name of the camera operator
+Original_video	http://filmontology.org/ontology/2.0/originalVideoCodec	Video codec and resolution used by the camera for recording 
+Pixelaspectratio	http://filmontology.org/ontology/2.0/pixelaspectratio	The lens squeeze factor for visual correct pixel aspect ratio of images recorded with anamorphic lenses.
+Producer	http://filmontology.org/ontology/2.0/producerName	Name of the producer
+Production	http://filmontology.org/ontology/2.0/productionName	Name of the production
+Production Name	http://filmontology.org/ontology/2.0/productionName	Name of the production
+Project_fps	http://filmontology.org/ontology/2.0/frameRate	General project playback/timecode framerate in frames per second.
+Rating	http://filmontology.org/ontology/2.0/rating	User-defined rating of a clip.
+Reel	http://filmontology.org/ontology/2.0/reelName	Reel Name
+Reel name	http://filmontology.org/ontology/2.0/reelName	Reel Name
+Reel_name	http://filmontology.org/ontology/2.0/reelName	Reel Name
+Resolution	http://filmontology.org/ontology/2.0/resolution	Camera resolution (e.g. HD, 4K)
+Resource count	http://filmontology.org/ontology/2.0/resourceCount	Number of resources in a Silverstack project
+Resource sumary	http://filmontology.org/ontology/2.0/resourceSummary	List of resources associated to a Silverstack project
+Scene	http://filmontology.org/ontology/2.0/sceneNumber	Number or name of the scene as used in the clapperboard
+Sensor Fps	http://filmontology.org/ontology/2.0/sensorFps	Sensor speed for the clip in frames per second.
+Sensor_fps	http://filmontology.org/ontology/2.0/sensorFps	Sensor speed for the clip in frames per second.
+Shoot date	http://filmontology.org/ontology/2.0/shootDate	Date of the shoot
+Shoot Date	http://filmontology.org/ontology/2.0/shootDate	Date of the shoot
+Shutter	http://filmontology.org/ontology/2.0/shutterSpeed	Exposure time in terms of a shutter speed (e.g. 1/50s)
+Shutter_angle	http://filmontology.org/ontology/2.0/shutterAngle	Exposure time in terms of a shutter angle (e.g., 1728 for 172,8 degree, equivalent to 1/50s - 24fps).
+Soundroll	http://filmontology.org/ontology/2.0/soundroll	Sound roll name
+Source Bit Depth	http://filmontology.org/ontology/2.0/videoBitDepth	Sample rate of the video signal
+Source File	http://filmontology.org/ontology/2.0/sourceFile	Name of the original source file
+Source File Path	http://filmontology.org/ontology/2.0/sourceFilePath	Path to the original source file
+Source Resolution	http://filmontology.org/ontology/2.0/sourceResolution	Resolution (Width x Height) of the original source file
+Start	http://filmontology.org/ontology/2.0/startTimecode	Start time code of the clip (SMPTE RP188)
+Stereoscopic Eye	http://filmontology.org/ontology/2.0/eyeIndex	Image channel information for stereoscopic productions (single / left / right)
+Sup_version	http://filmontology.org/ontology/2.0/supVersion	Name of installed camera software update package.
+Sxs_sn	http://filmontology.org/ontology/2.0/sxsSn	Storage media serial number.
+Take	http://filmontology.org/ontology/2.0/take	Take number/name
+Tape	http://filmontology.org/ontology/2.0/tapeIdentifier	Identifies current tape
+TapeID	http://filmontology.org/ontology/2.0/tapeIdentifier	Identifies current tape
+Time_camera	http://filmontology.org/ontology/2.0/timeCamera	Time set on camera
+Tracks	http://filmontology.org/ontology/2.0/tracks	Information on which tracks have been recorded (V - Video; A1, A2, Ax for audio tracks)
+TRK1	http://filmontology.org/ontology/2.0/trk1	Additional information in the audio tracks (e.g. MixL, MixR)
+TRK2	http://filmontology.org/ontology/2.0/trk2	Additional information in the audio tracks (e.g. MixL, MixR)
+Umid	http://filmontology.org/ontology/2.0/umid	Unique material identifier (SMPTE 330M UMID)
+UNC	http://filmontology.org/ontology/2.0/uncPath	Path to the video in UNC format
+User_info1	http://filmontology.org/ontology/2.0/userInfo1	User Info 1 Note
+User_info2	http://filmontology.org/ontology/2.0/userInfo2	User Info 2 Note
+Uuid	http://filmontology.org/ontology/2.0/uuid	UUID identifier created by camera or processing tool for each clip
+UUID	http://filmontology.org/ontology/2.0/uuid	UUID identifier created by camera or processing tool for each clip
+Video	http://filmontology.org/ontology/2.0/videoCodec	Video codec and resolution
+White Point (Kelvin)	http://filmontology.org/ontology/2.0/whiteBalance	Value of the white balance in Kelvin, calculated from the R, G and B factors
+White_balance	http://filmontology.org/ontology/2.0/whiteBalance	Value of the white balance in Kelvin, calculated from the R, G and B factors
+Whitepoint	http://filmontology.org/ontology/2.0/whiteBalance	Value of the white balance in Kelvin, calculated from the R, G and B factors
+CFPS	http://filmontology.org/ontology/2.0/cameraFps	Camera framerate for the clip in frames per second.
+KN Dur	http://filmontology.org/ontology/2.0/knDuration	Duration for original camera negative identification
+Project	http://filmontology.org/ontology/2.0/projectName	Name of the project (e.g., Avid Project)
+Color Space	http://filmontology.org/ontology/2.0/colorSpace	Color space (gamma) of the clip (e.g., LogC, Rec 709)
+Pixel Aspect Ratio	http://filmontology.org/ontology/2.0/pixelaspectratio	The lens squeeze factor for visual correct pixel aspect ratio of images recorded with anamorphic lenses.
+Reformat	http://filmontology.org/ontology/2.0/reformat	Reformatting options for the clip (Strech, Pillarbox / Letterbox, Center Crop, Center Keep Size)
+Format	http://filmontology.org/ontology/2.0/scanningFormat	Video format (combination of pixel width and frames per second)
+Image Size	http://filmontology.org/ontology/2.0/sourceResolution	Resolution (Width x Height) of the original source file
+Image Aspect Ratio	http://filmontology.org/ontology/2.0/aspectRatio	Relationship between width and height that was used for recording (e.g., 16:9)
+Slate	http://filmontology.org/ontology/2.0/slate	Number or label of the clapperboard. Refers to the number of the shot.
+P/NP	http://filmontology.org/ontology/2.0/circledTake	Flag for marking good takes
+Takecomment	http://filmontology.org/ontology/2.0/comments	User-defined comments
+Cam Roll	http://filmontology.org/ontology/2.0/cameraRoll	Identifies current reel using camera index letter (e.g., A, B) and the reel number.
+Clipname	http://filmontology.org/ontology/2.0/clipName	Clip name as created by camera
+Day of Shooting	http://filmontology.org/ontology/2.0/dayOfShooting	Sequential number of the day of shooting
+INT / EXT	http://filmontology.org/ontology/2.0/interiorExterior	Information on whether a scene (and/or associated clip) is shot interior, exterior, or both
+DAY / NIGHT	http://filmontology.org/ontology/2.0/dayTime	Daytime of the scene (e.g., day, night, morning, etc)
+Camera Model	http://filmontology.org/ontology/2.0/cameraModel	Name of the camera model (e.g., for Alexa cameras, prefix 'Alexa' followed by possible combinations of the product type and product sub type as strings)
+Camera number	http://filmontology.org/ontology/2.0/cameraNumber	Sequential number of the camera
+Camera Name	http://filmontology.org/ontology/2.0/cameraName	User-defined label of the camera
+IDclip	http://filmontology.org/ontology/2.0/lockItuuid	UUID identifier created by lockit script toolkit
+Set	http://filmontology.org/ontology/2.0/setName	Name of set where the clip was shot
+Shot Description	http://filmontology.org/ontology/2.0/description	Additional notes on the clip
+Episode	http://filmontology.org/ontology/2.0/clipEpisodeName	Name of the episode
+EpisodeNumber	http://filmontology.org/ontology/2.0/clipEpisodeNumber	Number of the episode
+Location Address	http://filmontology.org/ontology/2.0/locationAddress	Address of the location where the clip was shot

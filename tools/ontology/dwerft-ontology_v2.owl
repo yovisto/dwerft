@@ -24,7 +24,7 @@
      xmlns:foo="http://filmontology.org/ontology/2.0/"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="http://filmontology.org/ontology/ontology">
-        <rdfs:label rdf:datatype="&xsd;dateTime">dwerft Linked Production Data Cloud (LPDC) ontology V2.</rdfs:label>
+        <rdfs:label rdf:datatype="&xsd;dateTime">dwerft Linked Production Data Cloud (LPDC) ontology V2</rdfs:label>
         <dc:creator rdf:datatype="&xsd;string">Henning Agt-Rickauer</dc:creator>
         <dc:date rdf:datatype="&xsd;dateTime">Jan 19, 2017 8:00:00 AM</dc:date>
     </owl:Ontology>
@@ -67,6 +67,19 @@
         <rdfs:range rdf:resource="&foo;AbnormalArea"/>
         <rdfs:domain rdf:resource="&foo;FilmCondition"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/analysesMedium -->
+
+    <owl:ObjectProperty rdf:about="&foo;analysesMedium">
+        <rdfs:label>analysesMedium</rdfs:label>
+        <rdfs:comment>Inverse of hasAnalysis for mapping purposes</rdfs:comment>
+        <rdfs:range rdf:resource="&foo;AnalysedMedium"/>
+        <rdfs:domain rdf:resource="&foo;ConditionAnalysis"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
+        <owl:inverseOf rdf:resource="&foo;hasAnalysis"/>
     </owl:ObjectProperty>
     
 
@@ -716,7 +729,7 @@
 
     <owl:ObjectProperty rdf:about="&foo;storesEssence">
         <rdfs:label>storesEssence</rdfs:label>
-        <rdfs:comment>Inverse of hasMedium for mappings purposes</rdfs:comment>
+        <rdfs:comment>Inverse of hasMedium for mapping purposes</rdfs:comment>
         <rdfs:range rdf:resource="&foo;Essence"/>
         <rdfs:domain rdf:resource="&foo;Medium"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
@@ -729,6 +742,8 @@
     <owl:ObjectProperty rdf:about="&foo;supersedesMedium">
         <rdfs:label>supersedesMedium</rdfs:label>
         <rdfs:comment>The data for the AnalysedMedium is based on the same physical medium as the data for Medium. In case of divergence, the AnalysedMedium is correct</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;AnalysedMedium"/>
+        <rdfs:range rdf:resource="&foo;Medium"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -1136,6 +1151,19 @@
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/cameraNumber -->
+
+    <owl:DatatypeProperty rdf:about="&foo;cameraNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>cameraNumber</rdfs:label>
+        <rdfs:comment>Sequential number of the camera</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/cameraRoll -->
 
     <owl:DatatypeProperty rdf:about="&foo;cameraRoll">
@@ -1271,6 +1299,32 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>circledTake</rdfs:label>
         <rdfs:comment>Flag for marking good takes</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/clipEpisodeName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;clipEpisodeName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>clipEpisodeName</rdfs:label>
+        <rdfs:comment>Name of the episode</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/clipEpisodeNumber -->
+
+    <owl:DatatypeProperty rdf:about="&foo;clipEpisodeNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>clipEpisodeNumber</rdfs:label>
+        <rdfs:comment>Number of the episode</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -1491,7 +1545,6 @@
     <owl:DatatypeProperty rdf:about="&foo;contactPerson">
         <rdfs:label>contactPerson</rdfs:label>
         <rdfs:comment>Contact person of a location</rdfs:comment>
-        <rdfs:domain rdf:resource="&foo;Address"/>
         <rdfs:domain rdf:resource="&foo;Location"/>
         <rdfs:subPropertyOf rdf:resource="&foo;dwerftDataProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -2960,10 +3013,35 @@
     <owl:DatatypeProperty rdf:about="&foo;location">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>location</rdfs:label>
-        <rdfs:comment>Location of where the clip is shot</rdfs:comment>
+        <rdfs:comment>Location where the clip was shot</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/locationAddress -->
+
+    <owl:DatatypeProperty rdf:about="&foo;locationAddress">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>locationAddress</rdfs:label>
+        <rdfs:comment>Address of the location where the clip was shot</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://filmontology.org/ontology/2.0/lockItuuid -->
+
+    <owl:DatatypeProperty rdf:about="&foo;lockItuuid">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>lockItuuid</rdfs:label>
+        <rdfs:comment>UUID identifier created by lockit script toolkit</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
     </owl:DatatypeProperty>
     
 
@@ -4232,7 +4310,7 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
     <owl:DatatypeProperty rdf:about="&foo;setName">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>setName</rdfs:label>
-        <rdfs:comment>Name of set where the clip is shot</rdfs:comment>
+        <rdfs:comment>Name of set where the clip was shot</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -4364,7 +4442,7 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
     <owl:DatatypeProperty rdf:about="&foo;slate">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>slate</rdfs:label>
-        <rdfs:comment>Number or label of the clapperboard</rdfs:comment>
+        <rdfs:comment>Number or label of the clapperboard. Refers to the number of the shot.</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -5121,16 +5199,6 @@ technischen Herstellung des Medienobjekts oder durch die intendierte spezifische
         <rdfs:label>AbnormalArea</rdfs:label>
         <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
         <rdfs:comment>An area on a storage medium which is affected by a specific film condition. Identified by time code and frame number.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://filmontology.org/ontology/2.0/Address -->
-
-    <owl:Class rdf:about="&foo;Address">
-        <rdfs:label>Address</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&foo;DwerftClass"/>
-        <rdfs:comment>Street address of a company, location, cast member, etc.</rdfs:comment>
     </owl:Class>
     
 
