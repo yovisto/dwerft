@@ -760,6 +760,18 @@
     
 
 
+    <!-- http://filmontology.org/ontology/2.0/additionalClipName -->
+
+    <owl:DatatypeProperty rdf:about="&foo;additionalClipName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>additionalClipName</rdfs:label>
+        <rdfs:comment>Additional name of a clip created by camera or processing tool</rdfs:comment>
+        <rdfs:domain rdf:resource="&foo;Clip"/>
+        <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://filmontology.org/ontology/2.0/age -->
 
     <owl:DatatypeProperty rdf:about="&foo;age">
@@ -3042,6 +3054,7 @@
         <rdfs:comment>UUID identifier created by lockit script toolkit</rdfs:comment>
         <rdfs:domain rdf:resource="&foo;Clip"/>
         <rdfs:subPropertyOf rdf:resource="&foo;clipProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
