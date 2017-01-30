@@ -189,6 +189,8 @@ public class MyResource {
             RDFDataMgr.write(writer, g, Lang.NT);
         } catch (RiotException | UnsupportedEncodingException | URISyntaxException e) {
             L.error("Failed to convert the input to n-triples.", e);
+        } catch (IOException e) {
+            L.error("Failed to resolve memento.", e);
         }
         return writer.toString();
     }

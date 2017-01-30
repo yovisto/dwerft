@@ -48,6 +48,7 @@ public class Merge extends DwerftTools {
     @Override
     public void run() {
         super.run();
+        logger.info("p is " + isPrivate);
         logger.debug("Merging the file " + file);
 
         try {
@@ -56,6 +57,7 @@ public class Merge extends DwerftTools {
 
             try {
                 Memento m = client.getLatestMemento(repo, key);
+                //System.out.println(m.getMementoUri());
                 String old = convertMementoToNtTriples(m);
                 String input = convertToNtTriples(new FileInputStream(file), RDFLanguages.nameToLang(lang));
                 merge(old, input);
@@ -97,6 +99,8 @@ public class Merge extends DwerftTools {
             RDFDataMgr.write(writer, g, Lang.NT);
         } catch (RiotException | UnsupportedEncodingException | URISyntaxException e) {
             logger.error("Failed to convert the input to n-triples.", e);
+        } catch (IOException e) {
+            logger.error("Unable to resolve memento.", e);
         }
         return writer.toString();
     }
