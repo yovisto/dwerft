@@ -1164,7 +1164,7 @@ rr:datatype xsd:string;
 ];
 
 rr:predicateObjectMap [
-rr:predicate foo:clipName;
+rr:predicate foo:additionalClipName;
 rr:objectMap [
 rml:reference "Clipname";
 rr:datatype xsd:string;

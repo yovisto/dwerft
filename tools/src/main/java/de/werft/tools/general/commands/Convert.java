@@ -12,6 +12,7 @@ import de.werft.tools.general.Document;
 import de.werft.tools.general.DwerftConfig;
 import de.werft.tools.general.DwerftTools;
 import de.werft.tools.rmllib.RmlMapper;
+import de.werft.tools.rmllib.postprocessing.AlePostprocessor;
 import de.werft.tools.rmllib.postprocessing.BasicPostprocessor;
 import de.werft.tools.rmllib.postprocessing.DramaqueenPostprocessor;
 import de.werft.tools.rmllib.postprocessing.Postprocessor;
@@ -140,6 +141,8 @@ public class Convert extends DwerftTools {
             return new DramaqueenPostprocessor(projectUri);
         } else if (files.size() == 0 || (files.size() == 1 && hasExtension(files.get(0), RDF_SUFFIX))) {
         	return new PreproducerPostprocessor(projectUri);
+        } else if (hasExtension(files.get(0), "ale")) {
+            return new AlePostprocessor(projectUri);
         } else {
             return new BasicPostprocessor(projectUri);
         }

@@ -30,7 +30,7 @@ import java.util.*;
 @Command(name = "merge", description = "Merges to tailr repositories, creating a merge file")
 public class Merge extends DwerftTools {
 
-    @Arguments(description = "Uploads a file to a specified sparql endpoint. Valid formats are *.(rdf|ttl|nt|jsonld)")
+    @Arguments(description = "Creates a merge file based on the latest version under the supplied tailr key and specified file.")
     @Required
     @Path(mustExist = true)
     private String file = "";
@@ -182,8 +182,8 @@ public class Merge extends DwerftTools {
 
         try {
             String name = StringUtils.removeEnd(file, "." + lang);
-            name = name + "-merged.n3";
-            Files.write(Paths.get(name), merged.getBytes());
+            name = name + "-merged.nt";
+            Files.write(Paths.get(name), merged.getBytes("UTF8"));
         } catch (IOException e) {
             logger.error("Failed to write merged file.", e);
         }
