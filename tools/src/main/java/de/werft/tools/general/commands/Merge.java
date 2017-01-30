@@ -30,7 +30,7 @@ import java.util.*;
 @Command(name = "merge", description = "Merges to tailr repositories, creating a merge file")
 public class Merge extends DwerftTools {
 
-    @Arguments(description = "Uploads a file to a specified sparql endpoint. Valid formats are *.(rdf|ttl|nt|jsonld)")
+    @Arguments(description = "Creates a merge file based on the latest version under the supplied tailr key and specified file.")
     @Required
     @Path(mustExist = true)
     private String file = "";
