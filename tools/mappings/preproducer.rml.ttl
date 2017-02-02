@@ -730,29 +730,20 @@
 
 <#extraCast>
     rml:logicalSource [
-        rml:iterator "/root/return/project/extras/cast";
+        rml:iterator "/root/return/project/extras/extrascast";
         rml:referenceFormulation ql:XPath;
     ];
 
     rr:subjectMap [
-        rr:template "http://filmontology.org/resource/CastMember/{@rel}";
+        rr:termType rr:BlankNode;
         rr:class foo:CastMember;
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:identifierPreProducer;
-        rr:objectMap [ rml:reference "@rel"; rr:datatype xsd:string ];
     ];
 
     rr:predicateObjectMap [
         rr:predicate foo:name;
         rr:objectMap [ rml:reference "name"; rr:datatype xsd:string ];
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate foo:sex;
-        rr:objectMap [ rml:reference "sex"; rr:datatype xsd:string ];
     ].
+
 
 #<#figure>
 #    rml:logicalSource [
