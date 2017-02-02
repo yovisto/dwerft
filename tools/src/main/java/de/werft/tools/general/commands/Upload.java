@@ -65,7 +65,8 @@ public class Upload extends DwerftTools {
                 + "key=" + key
                 + "&graph=" + getGraphName()
                 + "&level=" + method
-                + "&lang=" + lang;
+                + "&lang=" + lang
+                + "&mkey=" + key;
 
         logger.debug("Put file with the url " + url);
         HttpPut put = new HttpPut(url);

@@ -45,7 +45,6 @@ public class Uploader {
      *
      * @param u        the update
      * @param graphUri the graph uri
-     * @param auth     the auth
      */
     public void uploadModel(Delta u, String graphUri, HttpClient client) {
         SparqlService service = FluentSparqlService.http(endpoint, graphUri, client).create();
