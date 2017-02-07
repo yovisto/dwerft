@@ -69,10 +69,13 @@ public class PreproducerPostprocessor extends BasicPostprocessor {
 		Resource typeResource = model.getResource(productionType);
 		production.removeAll(type);
 		production.addProperty(type, typeResource);
+		
+		
 	}
 
     @Override
     protected Model process(Model model, Document doc) {
+    	super.process(model, doc);
     	
     	fixProductionWithOnlyOneEpisode(model);
     	
