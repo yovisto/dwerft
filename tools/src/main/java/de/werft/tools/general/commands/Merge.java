@@ -1,14 +1,18 @@
 package de.werft.tools.general.commands;
 
-import com.github.rvesse.airline.annotations.Arguments;
-import com.github.rvesse.airline.annotations.Command;
-import com.github.rvesse.airline.annotations.Option;
-import com.github.rvesse.airline.annotations.restrictions.Path;
-import com.github.rvesse.airline.annotations.restrictions.Required;
-import de.hpi.rdf.tailrapi.Memento;
-import de.hpi.rdf.tailrapi.Repository;
-import de.hpi.rdf.tailrapi.TailrClient;
-import de.werft.tools.general.DwerftTools;
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.URISyntaxException;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.jena.graph.Graph;
 import org.apache.jena.rdf.model.Model;
@@ -18,11 +22,16 @@ import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFLanguages;
 import org.apache.jena.riot.RiotException;
 
-import java.io.*;
-import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.*;
+import com.github.rvesse.airline.annotations.Arguments;
+import com.github.rvesse.airline.annotations.Command;
+import com.github.rvesse.airline.annotations.Option;
+import com.github.rvesse.airline.annotations.restrictions.Path;
+import com.github.rvesse.airline.annotations.restrictions.Required;
+
+import de.hpi.rdf.tailrapi.Memento;
+import de.hpi.rdf.tailrapi.Repository;
+import de.hpi.rdf.tailrapi.TailrClient;
+import de.werft.tools.general.DwerftTools;
 
 /**
  * Created by ratzeputz on 23.01.17.
@@ -182,8 +191,18 @@ public class Merge extends DwerftTools {
 
         try {
             String name = StringUtils.removeEnd(file, "." + lang);
-            name = name + "-merged.nt";
-            Files.write(Paths.get(name), merged.getBytes("UTF8"));
+            name = name + "-merged."+lang;
+            
+            Model m = ModelFactory.createDefaultModel();
+            
+            InputStream stream = new ByteArrayInputStream(merged.getBytes("UTF8"));
+            RDFDataMgr.read(m, stream, RDFLanguages.NTRIPLES);
+            m.setNsPrefix("for", "http://filmontology.org/resource/");
+            m.setNsPrefix("foo", "http://filmontology.org/ontology/2.0/");
+            RDFDataMgr.write(new FileOutputStream(name), m, RDFLanguages.nameToLang(lang));
+            
+            logger.info("Merged file written: "+name);
+            
         } catch (IOException e) {
             logger.error("Failed to write merged file.", e);
         }
