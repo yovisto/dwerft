@@ -13,6 +13,10 @@ import org.apache.jena.update.UpdateProcessor;
 import org.apache.jena.update.UpdateRequest;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * Basic upload tool which takes an URI and simply uploads a model
  * to the SPARQL endpoint.
@@ -48,12 +52,16 @@ public class Uploader {
      */
     public void uploadModel(Delta u, String graphUri, HttpClient client) {
         SparqlService service = FluentSparqlService.http(endpoint, graphUri, client).create();
-        String s = u.toSparql(graphUri);
-        L.info("SPARQL Update\n" + s);
-        UpdateRequest request = UpdateRequestUtils.parse(s);
-        service.getUpdateExecutionFactory()
-                .createUpdateProcessor(request)
-                .execute();
+        //String s = u.toSparql(graphUri);
+        List<String> queries = paginate(u,graphUri);
+
+        for (String query : queries) {
+            L.info("SPARQL Update\n" + query);
+            UpdateRequest request = UpdateRequestUtils.parse(query);
+            service.getUpdateExecutionFactory()
+                    .createUpdateProcessor(request)
+                    .execute();
+        }
     }
 
     /**
@@ -64,13 +72,22 @@ public class Uploader {
      */
     public void uploadModel(Delta u, String graphUri) {
         SparqlService service = FluentSparqlService.http(endpoint, graphUri).create();
-        String s = u.toSparql(graphUri);
-        UpdateRequest request = UpdateRequestUtils.parse(s);
+      //  String s = u.toSparql(graphUri);
+        List<String> queries = paginate(u, graphUri);
+
+        for (String query : queries) {
+            L.info("SPARQL Update\n" + query);
+            UpdateRequest request = UpdateRequestUtils.parse(query);
+            service.getUpdateExecutionFactory()
+                    .createUpdateProcessor(request)
+                    .execute();
+        }
+    /*    UpdateRequest request = UpdateRequestUtils.parse(s);
         L.info("SPARQL Update\n" + s);
         service.getUpdateExecutionFactory()
                 .createUpdateProcessor(request)
                 .execute();
-    }
+    */}
 
     /**
      * Create graph.
@@ -98,6 +115,77 @@ public class Uploader {
         UpdateRequest request = UpdateFactory.create();
         request.add(query);
         update(request, auth);
+    }
+
+    private List<String> paginate(Delta d, String graphUri) {
+        List<String> queries = new ArrayList<>();
+
+        int chunks = d.getRemovedTriples().size() / 500;
+        for (int i = 0; i < chunks; i++) {
+            StringBuilder builder = new StringBuilder();
+            builder.append( "Delete { Graph <").append(graphUri).append("> {\n");
+            ArrayList<String> whereClause = new ArrayList<>();
+
+            List<String> chunk = new ArrayList<>();
+            for (int j = i * 500; j < 500 || j < d.getRemovedTriples().size() ;j++) {
+                chunk.add(d.getRemovedTriples().get(j));
+            }
+
+            //int end = d.getRemovedTriples().size() < i * 500 ? d.getRemovedTriples().size() - i * 500  : 500;
+            //List<String> chunk = d.getRemovedTriples().subList(i, end);
+
+
+            for (String triple : handleBlankNodes(chunk)) {
+                builder.append(triple.replace("_:", "?")).append(" ");
+                if (triple.contains("?")) whereClause.add(triple);
+            }
+            builder.append("} }\n");
+
+            /* handle using <> where clause */
+            //if (!whereClause.isEmpty())
+            builder.append("Where {\n");
+            for (String blankNode : whereClause) {
+                builder.append(blankNode).append(" ");
+            }
+            //if (!whereClause.isEmpty())
+            builder.append("}\n");
+            queries.add(builder.toString());
+        }
+
+        chunks = d.getAddedTriples().size() / 500;
+        for (int i = 0; i < chunks; i++) {
+            StringBuilder builder = new StringBuilder();
+            builder.append( "INSERT { Graph <").append(graphUri).append("> {\n");
+
+
+            List<String> chunk = new ArrayList<>();
+            for (int j = i * 500; j < 500 || j < d.getAddedTriples().size() ;j++) {
+                chunk.add(d.getAddedTriples().get(j));
+            }
+            //int end = d.getRemovedTriples().size() < i * 500 ? d.getAddedTriples().size() - i * 500  : 500;
+            //List<String> chunk = d.getRemovedTriples().subList(i, end);
+
+            for (String triple : chunk) {
+                builder.append(triple.replace("  ", " ")).append(" ");
+            }
+
+            builder.append("\n} }Where {\n}\n");
+            queries.add(builder.toString());
+        }
+
+        return queries;
+    }
+
+    static List<String> handleBlankNodes(List<String> triples) {
+        ArrayList<String> handledTriples = new ArrayList<>();
+        Iterator<String> itr = triples.iterator();
+
+        while(itr.hasNext()) {
+            String triple = itr.next();
+            handledTriples.add(triple.replace("_:", "?"));
+        }
+
+        return handledTriples;
     }
 
     private void update(UpdateRequest request, HttpAuthenticator... auth) {
