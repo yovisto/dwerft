@@ -128,8 +128,8 @@ public class MyResource {
 */
         L.info("Start uploading...");
         uploader.uploadModel(d, graphName);
-        L.info("Upload done.");
 
+        L.info("Upload done.");
         return Response.ok(fileBytes, MediaType.APPLICATION_OCTET_STREAM).build();
     }
 
