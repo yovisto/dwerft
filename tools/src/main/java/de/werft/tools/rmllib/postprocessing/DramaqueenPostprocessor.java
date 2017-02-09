@@ -179,6 +179,8 @@ public class DramaqueenPostprocessor extends BasicPostprocessor {
     
     @Override
     protected Model process(Model model, Document doc) {
+    	super.process(model, doc);
+    	
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             /* get the root node */
@@ -193,6 +195,13 @@ public class DramaqueenPostprocessor extends BasicPostprocessor {
         	String scriptId = getScriptId(document);
         	Resource script = model.getResource("http://filmontology.org/resource/Script/"+scriptId);
         	linkUri.addProperty(hasScript, script);
+        	
+            Property typeProp = model.getProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
+            Resource prodClass = model.getResource("http://filmontology.org/ontology/2.0/Production");
+            linkUri.addProperty(typeProp, prodClass);
+            
+            
+
             
         } catch (SAXException | IOException e) {
             logger.error("Could not post process dramaqueen xml. " + e.getMessage());
