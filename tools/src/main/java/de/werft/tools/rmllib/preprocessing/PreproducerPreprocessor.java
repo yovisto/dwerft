@@ -338,7 +338,7 @@ public class PreproducerPreprocessor extends BasicPreprocessor {
         StringBuilder builder = new StringBuilder();
         try {
             URLConnection conn = url.openConnection();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
 
             String line;
             while ((line = reader.readLine()) != null) {
