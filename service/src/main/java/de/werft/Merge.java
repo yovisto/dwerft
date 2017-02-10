@@ -64,11 +64,11 @@ public class Merge {
 
             if (newTriples == null) {
                 for (String s : oldTriples) {
-                	mergedTriples.append(key+" "+s+" ");
+                	mergedTriples.append(key+" "+s+"\n");
                 }
             } else {
                 for (String s : newTriples) {
-                	mergedTriples.append(key+" "+s+" ");
+                	mergedTriples.append(key+" "+s+"\n");
                 }
             }
 
