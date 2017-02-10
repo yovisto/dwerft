@@ -8,10 +8,11 @@ import java.io.InputStream;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
-import java.util.HashMap;
+import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.jena.graph.Graph;
@@ -115,9 +116,10 @@ public class Merge extends DwerftTools {
     }
 
     private void merge(String old, String input) {
-        Map<String, Set<String>> file1 = new HashMap<>();
-        Map<String, Set<String>> file2 = new HashMap<>();
-        String merged = "";
+        Map<String, Set<String>> file1 = new TreeMap<String, Set<String>>();
+        Map<String, Set<String>> file2 = new TreeMap<String, Set<String>>();
+        
+        StringBuilder mergedTriples = new StringBuilder();
 
         String[] split = old.split("\n");
         for (String s : split) {
@@ -132,7 +134,7 @@ public class Merge extends DwerftTools {
 
             Set<String> set = file1.get(subpred);
             if (set == null) {
-                set = new HashSet<>();
+                set = new HashSet<String>();
                 file1.put(subpred, set);
             }
             set.add(rest);
@@ -151,51 +153,39 @@ public class Merge extends DwerftTools {
 
             Set<String> set = file2.get(subpred);
             if (set == null) {
-                set = new HashSet<>();
+                set = new HashSet<String>();
                 file2.put(subpred, set);
             }
             set.add(rest);
         }
 
-        Set<String> keys = new HashSet<>();
+        Set<String> keys = new HashSet<String>();
         keys.addAll(file1.keySet());
         keys.addAll(file2.keySet());
-
+        
         for (String key : keys) {
-            Set<String> dq = file1.get(key);
-            Set<String> pp = file2.get(key);
+            Set<String> oldTriples = file1.get(key);
+            Set<String> newTriples = file2.get(key);
 
-            if (dq == null) {
-                for (String s : pp) {
-                    merged = merged + key+" "+s+"\n";
+            if (newTriples == null) {
+                for (String s : oldTriples) {
+                	mergedTriples.append(key+" "+s+" ");
+                }
+            } else {
+                for (String s : newTriples) {
+                	mergedTriples.append(key+" "+s+" ");
                 }
             }
 
-            if (pp == null) {
-                for (String s : dq) {
-                    merged = merged + key+" "+s+"\n";
-                }
-            }
-
-            if (dq != null && pp != null) {
-//				String[] split = key.split(" ");
-//				if (datProps.contains(split[1])) {
-//
-//				}
-
-                for (String s : pp) {
-                    merged = merged + key+" "+s+"\n";
-                }
-            }
         }
-
+        
         try {
             String name = StringUtils.removeEnd(file, "." + lang);
             name = name + "-merged."+lang;
             
             Model m = ModelFactory.createDefaultModel();
             
-            InputStream stream = new ByteArrayInputStream(merged.getBytes("UTF8"));
+            InputStream stream = new ByteArrayInputStream(mergedTriples.toString().getBytes(StandardCharsets.UTF_8));
             RDFDataMgr.read(m, stream, RDFLanguages.NTRIPLES);
             m.setNsPrefix("for", "http://filmontology.org/resource/");
             m.setNsPrefix("foo", "http://filmontology.org/ontology/2.0/");
