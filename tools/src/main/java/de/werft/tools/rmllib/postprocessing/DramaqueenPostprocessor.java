@@ -196,9 +196,9 @@ public class DramaqueenPostprocessor extends BasicPostprocessor {
         	Resource script = model.getResource("http://filmontology.org/resource/Script/"+scriptId);
         	linkUri.addProperty(hasScript, script);
         	
-            Property typeProp = model.getProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
-            Resource prodClass = model.getResource("http://filmontology.org/ontology/2.0/Production");
-            linkUri.addProperty(typeProp, prodClass);
+//            Property typeProp = model.getProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
+//            Resource prodClass = model.getResource("http://filmontology.org/ontology/2.0/Production");
+//            linkUri.addProperty(typeProp, prodClass);
             
             
 
