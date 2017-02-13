@@ -54,7 +54,7 @@ public class Upload extends DwerftTools {
     @Override
     public void run() {
         super.run();
-        logger.debug("Upload the file " + file);
+        logger.info("Upload the file " + file);
 
         CredentialsProvider provider = new BasicCredentialsProvider();
         UsernamePasswordCredentials cred = new UsernamePasswordCredentials(config.getRemoteUser(), config.getRemotePass());
