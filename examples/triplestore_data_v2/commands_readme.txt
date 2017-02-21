@@ -3,6 +3,10 @@ The following commands where used to convert, merge, link, and update the Testdr
 # Upload Project
 java -jar dwerft-tools.jar upload -k testdreh_v2_project testdreh_project_v2.ttl
 
+# Upload Departments and Positions
+java -jar dwerft-tools.jar upload -k testdreh_v2_crew_dep crew_departments.ttl
+java -jar dwerft-tools.jar upload -k testdreh_v2_crew_pos crew_positions.ttl
+
 # Convert DramaQueen and Preproducer
 java -jar dwerft-tools.jar convert v2_testdreh_v2.dq v2_testdreh_dq.ttl -u http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691
 java -jar dwerft-tools.jar convert v2_testdreh_pp.ttl -u http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691
