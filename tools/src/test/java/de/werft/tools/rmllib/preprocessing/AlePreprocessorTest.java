@@ -18,7 +18,6 @@ import java.nio.file.Paths;
  */
 public class AlePreprocessorTest extends CsvPreprocessorTest {
 
-
     @Test
     public void testInputPreprocessing() throws IOException, URISyntaxException {
         AlePreprocessor processor = new AlePreprocessor("");

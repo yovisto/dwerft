@@ -72,6 +72,15 @@ public class RmlMapper {
     }
 
     /**
+     * Utilize the {@link AlePreprocessor} beforehand.
+     *
+     * @param doc the the {@link Document}
+     */
+    public RMLDataset convertTsv(Document doc, String projectUri) {
+        return convert(doc, new TsvPreprocessor(projectUri));
+    }
+
+    /**
      * Utilize the {@link PreproducerPreprocessor} beforehand.
      * Since the xml files are fetched from a api no input file is needed.
      *

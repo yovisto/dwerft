@@ -113,6 +113,7 @@ public class Convert extends DwerftTools {
             print       no print
     Prep    0           1(rdf)
     Dq      1(dq)       2(dq|rdf)
+    Tsv     2(tsv|rml)  3(tsv|rdf|rml)
     ALE     2(ale|rml)  3(ale|rdf|rml)
     CSV     2(csv|rml)  3(csv|rdf|rml)
     XML     2(xml|rml)  3(xml|rdf|rml)
@@ -126,6 +127,8 @@ public class Convert extends DwerftTools {
             return new DramaqueenPreprocessor(projectUri);
         } else if (hasExtension(files.get(0), "ale")) {
             return new AlePreprocessor(projectUri);
+        } else if (hasExtension(files.get(0), "tsv")) {
+            return new TsvPreprocessor(projectUri);
         } else if (hasExtension(files.get(0), "csv")) {
             return new CsvPreprocessor(projectUri);
         } else if (hasExtension(files.get(0), "(xml|json)")) {

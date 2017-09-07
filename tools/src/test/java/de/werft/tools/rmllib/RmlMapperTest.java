@@ -8,6 +8,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /**
  * Test the {@link RmlMapper} which utilizes the RML library
@@ -16,6 +17,15 @@ import java.nio.file.Files;
  * Created by Henrik Jürges (juerges.henrik@gmail.com)
  */
 public class RmlMapperTest {
+
+    @Test
+    public void testTsv() throws IOException {
+        URL file = Paths.get("drive", "ada_level.rml.ttl").toUri().toURL();
+        URL input = Paths.get("drive", "ada_level.tsv").toUri().toURL();
+        RmlMapper mapper = new RmlMapper(ConfigFactory.create(DwerftConfig.class));
+        mapper.convertTsv(new Document(file, input, getTempFile()), "http://filmontology.org/resource/Test");
+    }
+
 
     @Test
     public void testCsv() throws IOException {
