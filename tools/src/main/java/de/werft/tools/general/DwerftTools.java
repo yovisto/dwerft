@@ -21,7 +21,7 @@ import org.apache.logging.log4j.core.config.Configuration;
 @com.github.rvesse.airline.annotations.Cli(name = "dwerft",
 description = "The dwerft tools for processing and versioning of linked data.",
 defaultCommand = Help.class,
-commands = {Help.class, Version.class, Upload.class, Convert.class, Old.class, Merge.class, LinkAle.class})
+commands = {Help.class, Version.class, Upload.class, Convert.class, Old.class, MergeTlr.class, LinkAle.class, Merge.class})
 public class DwerftTools implements Runnable {
 
     protected static final Logger logger = LogManager.getLogger(DwerftTools.class);

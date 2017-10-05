@@ -10,7 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class TsvPreprocessor extends BasicPreprocessor {
+public class TsvPreprocessor extends CsvPreprocessor {
 
     public TsvPreprocessor(String projectUri) {
         super(projectUri);
@@ -26,7 +26,7 @@ public class TsvPreprocessor extends BasicPreprocessor {
             content = StringUtils.replace(content, "\t", ";");
 
             /* write new input file and return URL */
-            newInput = Files.createTempFile("input", ".ale");
+            newInput = Files.createTempFile("input", ".csv");
             Files.write(newInput, content.getBytes());
             return newInput.toUri().toURL();
         } catch (IOException | URISyntaxException e) {

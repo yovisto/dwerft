@@ -3,6 +3,7 @@ package de.werft.tools.general;
 import org.aeonbits.owner.Config;
 
 import java.io.File;
+import java.util.List;
 
 /**
  * Implements the owner config system.
@@ -47,6 +48,10 @@ public interface DwerftConfig extends Config {
 
     @Key("dwerft.ontology")
     File getOntologyFile();
+
+    @Key("dwerft.prefixes")
+    @DefaultValue("")
+    List<String> getOutputPrefixes();
 
     @Key("remote.url")
     String getRemoteUrl();

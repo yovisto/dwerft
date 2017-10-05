@@ -85,7 +85,7 @@ public class Convert extends DwerftTools {
 
             RmlMapper mapper = new RmlMapper(config);
             RMLDataset dataset = mapper.convert(d, pre, post);
-            writeResult(dataset, d.getOutputFile(), format);
+            writeResult(dataset, d.getOutputFile(), format, config.getOutputPrefixes());
 
             logger.info("Successfully converted " + d.getInputFile() + " to rdf " + d.getOutputFile());
         } catch (InstantiationException e) {
@@ -222,14 +222,18 @@ public class Convert extends DwerftTools {
     }
 
     /* dump the dataset to a file or on screen */
-    private void writeResult(RMLDataset dataset, URL out, String format) throws IOException {
+    private void writeResult(RMLDataset dataset, URL out, String format, List<String> prefixes) throws IOException {
     	Path tmp = Files.createTempFile("tmp", ".ttl");
     	dataset.dumpRDF(new FileOutputStream(tmp.toFile()), RDFFormat.TURTLE);
 
         Model m = ModelFactory.createDefaultModel();
         RDFDataMgr.read(m, tmp.toUri().toString());
-        m.setNsPrefix("for", "http://filmontology.org/resource/");
-        m.setNsPrefix("foo", "http://filmontology.org/ontology/2.0/");
+
+        for (String prefix : prefixes) {
+            String akr = org.apache.commons.lang.StringUtils.substringBefore(prefix, ":");
+            String full_uri = org.apache.commons.lang.StringUtils.substringAfter(prefix, ":");
+            m.setNsPrefix(akr, full_uri);
+        }
 
         if (print) {
             RDFDataMgr.write(System.out, m, RDFLanguages.nameToLang(format));
