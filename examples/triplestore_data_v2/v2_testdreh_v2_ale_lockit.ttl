@@ -1,0 +1,89 @@
+@prefix foo:   <http://filmontology.org/ontology/2.0/> .
+@prefix for:   <http://filmontology.org/resource/> .
+
+<http://filmontology.org/resource/Clip/878080C2-4C8D-499D-8D57-9EF4E0C866C0>
+        a                       foo:Clip ;
+        foo:additionalClipName  "C002" ;
+        foo:cameraModel         "Arri ALEXA A" ;
+        foo:cameraName          "Cam 1" ;
+        foo:cameraNumber        "1" ;
+        foo:cameraRoll          "A004" ;
+        foo:circledTake         "K" ;
+        foo:clipEpisodeName     "1" ;
+        foo:clipEpisodeNumber   "1" ;
+        foo:clipName            "17-1-1 K" ;
+        foo:dayOfShooting       "2" ;
+        foo:dayTime             "Tag" ;
+        foo:endTimecode         "13:08:20:14" ;
+        foo:interiorExterior    "Aussen" ;
+        foo:location            "noch offen" ;
+        foo:lockItuuid          "54d682b8a70a42ea84fa5bc7f66ecf73" ;
+        foo:sceneNumber         "17" ;
+        foo:setName             "Tempelhofer Feld" ;
+        foo:shutterAngle        "0" ;
+        foo:slate               "1" ;
+        foo:sourceFile          "A004C002_150828_R2GJ.mov" ;
+        foo:startTimecode       "13:06:13:07" ;
+        foo:take                "1" ;
+        foo:tapeIdentifier      "A004C002_150828_R2GJ.mov" ;
+        foo:tracks              "V" ;
+        foo:uuid                "878080C2-4C8D-499D-8D57-9EF4E0C866C0" .
+
+<http://filmontology.org/resource/Clip/9C8DDC7E-38DA-4FA9-ADD4-8B15CB071396>
+        a                       foo:Clip ;
+        foo:additionalClipName  "C001" ;
+        foo:cameraModel         "Arri ALEXA A" ;
+        foo:cameraName          "Cam 1" ;
+        foo:cameraNumber        "1" ;
+        foo:cameraRoll          "A004" ;
+        foo:circledTake         "K" ;
+        foo:clipEpisodeName     "1" ;
+        foo:clipEpisodeNumber   "1" ;
+        foo:clipName            "17-0-1 K" ;
+        foo:dayOfShooting       "2" ;
+        foo:dayTime             "Tag" ;
+        foo:endTimecode         "12:57:04:07" ;
+        foo:interiorExterior    "Aussen" ;
+        foo:location            "noch offen" ;
+        foo:lockItuuid          "c770837a146e402db2ad189d2e342216" ;
+        foo:sceneNumber         "17" ;
+        foo:setName             "Tempelhofer Feld" ;
+        foo:shutterAngle        "0" ;
+        foo:slate               "0" ;
+        foo:sourceFile          "A004C001_150828_R2GJ.mov" ;
+        foo:startTimecode       "12:55:40:13" ;
+        foo:take                "1" ;
+        foo:tapeIdentifier      "A004C001_150828_R2GJ.mov" ;
+        foo:tracks              "V" ;
+        foo:uuid                "9C8DDC7E-38DA-4FA9-ADD4-8B15CB071396" .
+
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691>
+        foo:clipsShot  <http://filmontology.org/resource/Clip/B6BFF032-29CC-4781-ADA6-9A50708898A9> , <http://filmontology.org/resource/Clip/9C8DDC7E-38DA-4FA9-ADD4-8B15CB071396> , <http://filmontology.org/resource/Clip/878080C2-4C8D-499D-8D57-9EF4E0C866C0> .
+
+<http://filmontology.org/resource/Clip/B6BFF032-29CC-4781-ADA6-9A50708898A9>
+        a                       foo:Clip ;
+        foo:additionalClipName  "C003" ;
+        foo:cameraModel         "Arri ALEXA A" ;
+        foo:cameraName          "Cam 1" ;
+        foo:cameraNumber        "1" ;
+        foo:cameraRoll          "A004" ;
+        foo:circledTake         "K" ;
+        foo:clipEpisodeName     "1" ;
+        foo:clipEpisodeNumber   "1" ;
+        foo:clipName            "17-1-2 K" ;
+        foo:dayOfShooting       "2" ;
+        foo:dayTime             "Tag" ;
+        foo:endTimecode         "13:08:55:01" ;
+        foo:interiorExterior    "Aussen" ;
+        foo:location            "noch offen" ;
+        foo:lockItuuid          "dd791c6a2143460eb70c08b4ff717b25" ;
+        foo:sceneNumber         "17" ;
+        foo:setName             "Tempelhofer Feld" ;
+        foo:shutterAngle        "0" ;
+        foo:slate               "1" ;
+        foo:sourceFile          "A004C003_150828_R2GJ.mov" ;
+        foo:startTimecode       "13:08:27:18" ;
+        foo:take                "2" ;
+        foo:tapeIdentifier      "A004C003_150828_R2GJ.mov" ;
+        foo:tracks              "V" ;
+        foo:uuid                "B6BFF032-29CC-4781-ADA6-9A50708898A9" .

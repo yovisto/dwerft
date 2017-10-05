@@ -1,0 +1,200 @@
+@prefix foo:   <http://filmontology.org/ontology/2.0/> .
+@prefix for:   <http://filmontology.org/resource/> .
+
+<http://filmontology.org/resource/Clip/B6BFF032-29CC-4781-ADA6-9A50708898A9>
+        a                       foo:Clip ;
+        foo:additionalClipName  "C003" ;
+        foo:binName             "A004R2GJ" ;
+        foo:cameraIndex         "A" ;
+        foo:cameraModel         "Arri ALEXA A" ;
+        foo:cameraName          "Cam 1" ;
+        foo:cameraNumber        "1" ;
+        foo:cameraRoll          "A004" ;
+        foo:cinematographer     "ROBERT_FRIEBE" ;
+        foo:circledTake         "K" ;
+        foo:clipEpisodeName     "1" ;
+        foo:clipEpisodeNumber   "1" ;
+        foo:clipName            "17-1-2 K" ;
+        foo:codec               "ProRes 4444" ;
+        foo:colorLabel          "No Label" ;
+        foo:colorSpace          "LogC" ;
+        foo:dayOfShooting       "2" ;
+        foo:dayTime             "Tag" ;
+        foo:directorName        "CEVAT_MASKAR" ;
+        foo:driveName           "LaCie" ;
+        foo:duration            "00:00:27:07" ;
+        foo:endTimecode         "13:08:55:01" ;
+        foo:exposureIndex       "320" ;
+        foo:filePath            "/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C003_150828_R2GJ.mov" ;
+        foo:fileSize            "1065333994" ;
+        foo:fileType            "mov" ;
+        foo:frameCount          "655" ;
+        foo:frameRate           "24" ;
+        foo:fstop               "0" ;
+        foo:importPlugin        "ARRI Alexa Importer" ;
+        foo:interiorExterior    "Aussen" ;
+        foo:location            "noch offen" ;
+        foo:lockItuuid          "dd791c6a2143460eb70c08b4ff717b25" ;
+        foo:productionName      "DWERFT_TESTDREH" ;
+        foo:rating              "Rating 0 of 5" ;
+        foo:reelName            "A004R2GJ" ;
+        foo:resolution          "HD" ;
+        foo:resourceCount       "7" ;
+        foo:resourceSummary     "7 file resources (HFF_1, A004R2GJ, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_3, HFF_2)" ;
+        foo:sceneNumber         "17" ;
+        foo:sensorFps           "24" ;
+        foo:setName             "Tempelhofer Feld" ;
+        foo:shootDate           "20150828" ;
+        foo:shutterAngle        "0" ;
+        foo:shutterSpeed        "1/50s" ;
+        foo:slate               "1" ;
+        foo:sourceFile          "A004C003_150828_R2GJ.mov" ;
+        foo:startTimecode       "13:08:27:18" ;
+        foo:take                "2" ;
+        foo:tapeIdentifier      "A004C003_150828_R2GJ.mov" ;
+        foo:tracks              "V" ;
+        foo:uuid                "B6BFF032-29CC-4781-ADA6-9A50708898A9" ;
+        foo:whiteBalance        "5600" .
+
+<http://filmontology.org/resource/Take/765f9977-6650-4e8f-8e73-e77ae49ac326>
+        a               foo:Take ;
+        foo:hasClip     <http://filmontology.org/resource/Clip/B6BFF032-29CC-4781-ADA6-9A50708898A9> ;
+        foo:takeNumber  "2" .
+
+<http://filmontology.org/resource/Take/27040543-3362-4086-860e-1f096f96c576>
+        a               foo:Take ;
+        foo:hasClip     <http://filmontology.org/resource/Clip/9C8DDC7E-38DA-4FA9-ADD4-8B15CB071396> ;
+        foo:takeNumber  "1" .
+
+<http://filmontology.org/resource/Clip/9C8DDC7E-38DA-4FA9-ADD4-8B15CB071396>
+        a                       foo:Clip ;
+        foo:additionalClipName  "C001" ;
+        foo:binName             "A004R2GJ" ;
+        foo:cameraIndex         "A" ;
+        foo:cameraModel         "Arri ALEXA A" ;
+        foo:cameraName          "Cam 1" ;
+        foo:cameraNumber        "1" ;
+        foo:cameraRoll          "A004" ;
+        foo:cinematographer     "ROBERT_FRIEBE" ;
+        foo:circledTake         "K" ;
+        foo:clipEpisodeName     "1" ;
+        foo:clipEpisodeNumber   "1" ;
+        foo:clipName            "17-0-1 K" ;
+        foo:codec               "ProRes 4444" ;
+        foo:colorLabel          "No Label" ;
+        foo:colorSpace          "LogC" ;
+        foo:dayOfShooting       "2" ;
+        foo:dayTime             "Tag" ;
+        foo:description         "erster Test mit Lastenrad" ;
+        foo:directorName        "CEVAT_MASKAR" ;
+        foo:driveName           "LaCie" ;
+        foo:duration            "00:01:23:18" ;
+        foo:endTimecode         "12:57:04:07" ;
+        foo:exposureIndex       "320" ;
+        foo:filePath            "/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C001_150828_R2GJ.mov" ;
+        foo:fileSize            "2979157530" ;
+        foo:fileType            "mov" ;
+        foo:frameCount          "2010" ;
+        foo:frameRate           "24" ;
+        foo:fstop               "0" ;
+        foo:importPlugin        "ARRI Alexa Importer" ;
+        foo:interiorExterior    "Aussen" ;
+        foo:location            "noch offen" ;
+        foo:lockItuuid          "c770837a146e402db2ad189d2e342216" ;
+        foo:productionName      "DWERFT_TESTDREH" ;
+        foo:rating              "Rating 0 of 5" ;
+        foo:reelName            "A004R2GJ" ;
+        foo:resolution          "HD" ;
+        foo:resourceCount       "7" ;
+        foo:resourceSummary     "7 file resources (A004R2GJ, HFF_1, projekte, LaCie, DWERFT_TESTDREH_BACKUP, HFF_3, HFF_2)" ;
+        foo:sceneNumber         "17" ;
+        foo:sensorFps           "24" ;
+        foo:setName             "Tempelhofer Feld" ;
+        foo:shootDate           "20150828" ;
+        foo:shutterAngle        "0" ;
+        foo:shutterSpeed        "1/50s" ;
+        foo:slate               "0" ;
+        foo:sourceFile          "A004C001_150828_R2GJ.mov" ;
+        foo:startTimecode       "12:55:40:13" ;
+        foo:take                "1" ;
+        foo:tapeIdentifier      "A004C001_150828_R2GJ.mov" ;
+        foo:tracks              "V" ;
+        foo:uuid                "9C8DDC7E-38DA-4FA9-ADD4-8B15CB071396" ;
+        foo:whiteBalance        "5600" .
+
+<http://filmontology.org/resource/Scene/a5358c37-c865-479a-b286-adcc1ae51f87>
+        foo:hasShot  <http://filmontology.org/resource/Shot/e09f71f5-39c7-4a78-a838-ef1519411f14> , <http://filmontology.org/resource/Shot/176c1d97-2f08-4ea3-880d-d3cd639370d3> .
+
+<http://filmontology.org/resource/Shot/e09f71f5-39c7-4a78-a838-ef1519411f14>
+        a               foo:Shot ;
+        foo:hasTake     <http://filmontology.org/resource/Take/27040543-3362-4086-860e-1f096f96c576> ;
+        foo:name        "erster Test mit Lastenrad" ;
+        foo:shotNumber  "0" .
+
+<http://filmontology.org/resource/Production/f434d145-f054-40f8-bf61-052eb0e0d691>
+        foo:clipsShot  <http://filmontology.org/resource/Clip/9C8DDC7E-38DA-4FA9-ADD4-8B15CB071396> , <http://filmontology.org/resource/Clip/878080C2-4C8D-499D-8D57-9EF4E0C866C0> , <http://filmontology.org/resource/Clip/B6BFF032-29CC-4781-ADA6-9A50708898A9> .
+
+<http://filmontology.org/resource/Take/98d3c53e-f3ae-4a45-b54f-5491d8458975>
+        a               foo:Take ;
+        foo:hasClip     <http://filmontology.org/resource/Clip/878080C2-4C8D-499D-8D57-9EF4E0C866C0> ;
+        foo:takeNumber  "1" .
+
+<http://filmontology.org/resource/Shot/176c1d97-2f08-4ea3-880d-d3cd639370d3>
+        a               foo:Shot ;
+        foo:hasTake     <http://filmontology.org/resource/Take/98d3c53e-f3ae-4a45-b54f-5491d8458975> , <http://filmontology.org/resource/Take/765f9977-6650-4e8f-8e73-e77ae49ac326> ;
+        foo:shotNumber  "1" .
+
+<http://filmontology.org/resource/Clip/878080C2-4C8D-499D-8D57-9EF4E0C866C0>
+        a                       foo:Clip ;
+        foo:additionalClipName  "C002" ;
+        foo:binName             "A004R2GJ" ;
+        foo:cameraIndex         "A" ;
+        foo:cameraModel         "Arri ALEXA A" ;
+        foo:cameraName          "Cam 1" ;
+        foo:cameraNumber        "1" ;
+        foo:cameraRoll          "A004" ;
+        foo:cinematographer     "ROBERT_FRIEBE" ;
+        foo:circledTake         "K" ;
+        foo:clipEpisodeName     "1" ;
+        foo:clipEpisodeNumber   "1" ;
+        foo:clipName            "17-1-1 K" ;
+        foo:codec               "ProRes 4444" ;
+        foo:colorLabel          "No Label" ;
+        foo:colorSpace          "LogC" ;
+        foo:dayOfShooting       "2" ;
+        foo:dayTime             "Tag" ;
+        foo:directorName        "CEVAT_MASKAR" ;
+        foo:driveName           "LaCie" ;
+        foo:duration            "00:02:07:07" ;
+        foo:endTimecode         "13:08:20:14" ;
+        foo:exposureIndex       "320" ;
+        foo:filePath            "/Volumes/LaCie/dwerft/DWERFT_TESTDREH/001_rohmaterial/DT_2/alexa/A004R2GJ/A004R2GJ/A004C002_150828_R2GJ.mov" ;
+        foo:fileSize            "4574010442" ;
+        foo:fileType            "mov" ;
+        foo:frameCount          "3055" ;
+        foo:frameRate           "24" ;
+        foo:fstop               "0" ;
+        foo:importPlugin        "ARRI Alexa Importer" ;
+        foo:interiorExterior    "Aussen" ;
+        foo:location            "noch offen" ;
+        foo:lockItuuid          "54d682b8a70a42ea84fa5bc7f66ecf73" ;
+        foo:productionName      "DWERFT_TESTDREH" ;
+        foo:rating              "Rating 0 of 5" ;
+        foo:reelName            "A004R2GJ" ;
+        foo:resolution          "HD" ;
+        foo:resourceCount       "7" ;
+        foo:resourceSummary     "7 file resources (HFF_1, HFF_3, projekte, LaCie, DWERFT_TESTDREH_BACKUP, A004R2GJ, HFF_2)" ;
+        foo:sceneNumber         "17" ;
+        foo:sensorFps           "24" ;
+        foo:setName             "Tempelhofer Feld" ;
+        foo:shootDate           "20150828" ;
+        foo:shutterAngle        "0" ;
+        foo:shutterSpeed        "1/50s" ;
+        foo:slate               "1" ;
+        foo:sourceFile          "A004C002_150828_R2GJ.mov" ;
+        foo:startTimecode       "13:06:13:07" ;
+        foo:take                "1" ;
+        foo:tapeIdentifier      "A004C002_150828_R2GJ.mov" ;
+        foo:tracks              "V" ;
+        foo:uuid                "878080C2-4C8D-499D-8D57-9EF4E0C866C0" ;
+        foo:whiteBalance        "5600" .

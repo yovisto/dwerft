@@ -2,6 +2,7 @@ package de.werft;
 
 
 import de.hpi.rdf.tailrapi.Delta;
+
 import org.aksw.jena_sparql_api.core.SparqlService;
 import org.aksw.jena_sparql_api.core.utils.UpdateRequestUtils;
 import org.aksw.jena_sparql_api.update.FluentSparqlService;
@@ -113,15 +114,31 @@ public class Uploader {
         List<String> queries = new ArrayList<>();
 
         if (d.getRemovedTriples().size() > 0) {
-            int chunks = d.getRemovedTriples().size() / 500;
+        	
+        	List<String> sortedTriples = new ArrayList<String>();
+        	List<String> blankNodeTriples = new ArrayList<String>();
+        	List<String> restTriples = new ArrayList<String>();
+        	
+        	for (String triple : d.getRemovedTriples()) {
+        		if (triple.contains("_:")) {
+        			blankNodeTriples.add(triple);
+        		} else {
+        			restTriples.add(triple);
+        		}
+			}
+        	sortedTriples.addAll(blankNodeTriples);
+        	sortedTriples.addAll(restTriples);
+        	
+        	
+            int chunks = sortedTriples.size() / 500;
             for (int i = 0; i <= chunks; i++) {
                 StringBuilder builder = new StringBuilder();
                 builder.append("Delete { Graph <").append(graphUri).append("> {\n");
                 ArrayList<String> whereClause = new ArrayList<>();
 
                 List<String> chunk = new ArrayList<>();
-                for (int j = i * 500; j < (i + 1) * 500 && j < d.getRemovedTriples().size(); j++) {
-                    chunk.add(d.getRemovedTriples().get(j));
+                for (int j = i * 500; j < (i + 1) * 500 && j < sortedTriples.size(); j++) {
+                    chunk.add(sortedTriples.get(j));
                 }
 
                 //int end = d.getRemovedTriples().size() < i * 500 ? d.getRemovedTriples().size() - i * 500  : 500;
@@ -147,15 +164,30 @@ public class Uploader {
         }
 
         if (d.getAddedTriples().size() > 0) {
-            int chunks = d.getAddedTriples().size() / 500;
+        	
+        	List<String> sortedTriples = new ArrayList<String>();
+        	List<String> blankNodeTriples = new ArrayList<String>();
+        	List<String> restTriples = new ArrayList<String>();
+        	
+        	for (String triple : d.getAddedTriples()) {
+        		if (triple.contains("_:")) {
+        			blankNodeTriples.add(triple);
+        		} else {
+        			restTriples.add(triple);
+        		}
+			}
+        	sortedTriples.addAll(blankNodeTriples);
+        	sortedTriples.addAll(restTriples);
+        	
+            int chunks = sortedTriples.size() / 500;
             for (int i = 0; i <= chunks; i++) {
                 StringBuilder builder = new StringBuilder();
                 builder.append( "INSERT { Graph <").append(graphUri).append("> {\n");
 
 
                 List<String> chunk = new ArrayList<>();
-                for (int j = i * 500; j < (i + 1) * 500 && j < d.getAddedTriples().size(); j++) {
-                    chunk.add(d.getAddedTriples().get(j));
+                for (int j = i * 500; j < (i + 1) * 500 && j < sortedTriples.size(); j++) {
+                    chunk.add(sortedTriples.get(j));
                 }
                 //int end = d.getRemovedTriples().size() < i * 500 ? d.getAddedTriples().size() - i * 500  : 500;
                 //List<String> chunk = d.getRemovedTriples().subList(i, end);

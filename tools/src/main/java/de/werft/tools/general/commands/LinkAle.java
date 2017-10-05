@@ -195,7 +195,7 @@ public class LinkAle extends DwerftTools {
 				if (episodeNumber != null && sceneNumber != null && shotNumber != null && takeNumber != null ) {
 					String sceneUri = sceneIndex.get(episodeNumber+"-"+sceneNumber);
 					if (sceneUri == null) {
-	                	logger.warn("No matching scene (Episode "+episodeNumber+" - Scene "+sceneNumber+" found for clip "+clip.getURI());
+	                	logger.warn("No matching scene (Episode "+episodeNumber+" - Scene "+sceneNumber+") found for clip "+clip.getURI());
 	                	continue;
 					} else {
 	                	logger.info("Episode "+episodeNumber+" - Scene "+sceneNumber+" - Shot "+shotNumber+" - Take "+takeNumber+" : "+clip.getURI()+" matched with "+sceneUri);
