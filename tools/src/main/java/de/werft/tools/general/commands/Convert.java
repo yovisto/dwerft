@@ -67,6 +67,10 @@ public class Convert extends DwerftTools {
     @Required
     private String projectUri = "";
 
+    @Option(name = {"-s", "--split"}, description = "If CSV files contains sub lists, these can be splitted and the rows" +
+            "are duplicated. Provide column position.")
+    private int splitCol = -1;
+
     private final String RDF_SUFFIX = "(rdf|ttl|n3|nt)";
 
     @Override
@@ -128,7 +132,7 @@ public class Convert extends DwerftTools {
         } else if (hasExtension(files.get(0), "ale")) {
             return new AlePreprocessor(projectUri);
         } else if (hasExtension(files.get(0), "tsv")) {
-            return new TsvPreprocessor(projectUri);
+            return new TsvPreprocessor(projectUri, splitCol);
         } else if (hasExtension(files.get(0), "csv")) {
             return new CsvPreprocessor(projectUri);
         } else if (hasExtension(files.get(0), "(xml|json)")) {

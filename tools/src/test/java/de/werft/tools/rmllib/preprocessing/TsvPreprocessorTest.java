@@ -14,6 +14,19 @@ import java.util.List;
 public class TsvPreprocessorTest extends CsvPreprocessorTest {
 
     @Test
+    public void testWithSublist() throws IOException, URISyntaxException {
+        TsvPreprocessor processor = new TsvPreprocessor("", 3);
+        URL inputFile = Paths.get("drive", "anno.tsv").toUri().toURL();
+        Document doc = new Document(null, inputFile, null);
+        URL actualInput = processor.preprocessInput(doc);
+        List<String> lines = Files.readAllLines(Paths.get(actualInput.toURI()));
+
+        for (String line : lines) {
+            System.out.println(line + "\n");
+        }
+    }
+
+    @Test
     public void testOnFile() throws IOException, URISyntaxException {
         TsvPreprocessor processor = new TsvPreprocessor("");
         URL inputFile = Paths.get("drive", "ada_level.tsv").toUri().toURL();
