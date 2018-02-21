@@ -40,8 +40,8 @@ public class TsvPreprocessor extends CsvPreprocessor {
                 String[] rows = StringUtils.split(content, '\n');
 
                 for (String row : rows) {
-                    String[] cols = StringUtils.split(row, '\t');
-                    String[] sublist = StringUtils.split(cols[splitCol], ',');
+                    String[] cols = StringUtils.splitPreserveAllTokens(row, '\t');
+                    String[] sublist = StringUtils.splitPreserveAllTokens(cols[splitCol], ',');
 
                     for (String elem : sublist) {
                         cols[splitCol] = elem;

@@ -27,6 +27,19 @@ public class TsvPreprocessorTest extends CsvPreprocessorTest {
     }
 
     @Test
+    public void testSublist() throws IOException, URISyntaxException {
+        TsvPreprocessor processor = new TsvPreprocessor("", 1);
+        URL inputFile = Paths.get("src", "test", "resources", "rml", "tsv", "test.tsv").toUri().toURL();
+        Document doc = new Document(null, inputFile, null);
+        URL actualInput = processor.preprocessInput(doc);
+        List<String> lines = Files.readAllLines(Paths.get(actualInput.toURI()));
+
+        for (String line : lines) {
+            System.out.println(line);
+        }
+    }
+
+    @Test
     public void testOnFile() throws IOException, URISyntaxException {
         TsvPreprocessor processor = new TsvPreprocessor("");
         URL inputFile = Paths.get("drive", "ada_level.tsv").toUri().toURL();

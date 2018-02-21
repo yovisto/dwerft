@@ -68,7 +68,7 @@ public class Convert extends DwerftTools {
     private String projectUri = "";
 
     @Option(name = {"-s", "--split"}, description = "If CSV files contains sub lists, these can be splitted and the rows" +
-            "are duplicated. Provide column position.")
+            "are duplicated. Provide column position number starting with 0.")
     private int splitCol = -1;
 
     private final String RDF_SUFFIX = "(rdf|ttl|n3|nt)";
