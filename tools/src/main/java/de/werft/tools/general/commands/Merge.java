@@ -2,28 +2,13 @@ package de.werft.tools.general.commands;
 
 import com.github.rvesse.airline.annotations.Arguments;
 import com.github.rvesse.airline.annotations.Command;
+import com.github.rvesse.airline.annotations.Option;
 import com.github.rvesse.airline.annotations.restrictions.Required;
 import de.werft.tools.general.DwerftTools;
-import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
-import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-
-import org.apache.commons.lang.StringUtils;
-import org.apache.jena.graph.Graph;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.RDFLanguages;
 
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
@@ -41,9 +26,13 @@ import java.util.List;
 public class Merge extends DwerftTools {
 
     @Arguments(description = "Creates a merged file based on an ontology and the input files. " +
-            "The output file shall end with .ttl and the input files shall contain the representation of their ending.", title = "<output file> <input files>")
+            "The input files shall contain the representation of their ending.", title = "<output file> <input files>")
     @Required
     private List<String> files = new ArrayList<>(5);
+
+    @Option(name = {"-f", "--format"}, description = "Specifies rdf output format. Available options are " +
+            "all provided by Jena. Default is Turtle.")
+    private String format = "ttl";
 
     @Override
     public void run() {
@@ -63,7 +52,7 @@ public class Merge extends DwerftTools {
         }
 
         try {
-            merge.write(new BufferedOutputStream(new FileOutputStream(output)), Lang.TTL.getName());
+            merge.write(new BufferedOutputStream(new FileOutputStream(output)), RDFLanguages.nameToLang(format).getName());
         } catch (FileNotFoundException e) {
             logger.error("Could not write output file.");
         }

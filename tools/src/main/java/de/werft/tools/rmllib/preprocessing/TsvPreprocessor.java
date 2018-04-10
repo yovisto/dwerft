@@ -43,11 +43,13 @@ public class TsvPreprocessor extends CsvPreprocessor {
                     String[] cols = StringUtils.splitPreserveAllTokens(row, '\t');
                     String[] sublist = StringUtils.splitPreserveAllTokens(cols[splitCol], ',');
 
+                    /* if we have no sublist add line and skip */
                     if (sublist.length < 1) {
                         result.add(StringUtils.join(cols, ';'));
                         continue;
                     }
 
+                    /* for every sublist item create a new line */
                     for (String elem : sublist) {
                         cols[splitCol] = elem;
                         result.add(StringUtils.join(cols, ';'));
