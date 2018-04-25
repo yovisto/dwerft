@@ -15,7 +15,7 @@ import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openrdf.rio.RDFFormat;
+import org.eclipse.rdf4j.rio.RDFFormat;
 
 import java.io.IOException;
 import java.nio.file.Files;

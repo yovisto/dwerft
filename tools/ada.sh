@@ -18,7 +18,7 @@ cd $DWERFT
 mvn clean compile exec:java -Dexec.mainClass="de.werft.tools.general.DwerftTools" -Dexec.args="convert -u http://ada.filmontology.org/ontology/ ada_in/ada_types.tsv ada_out/ada_types.ttl ada_ont/ada_types.rml.ttl"
 mvn exec:java -Dexec.mainClass="de.werft.tools.general.DwerftTools" -Dexec.args="convert -u http://ada.filmontology.org/ontology/ ada_in/ada_level.tsv ada_out/ada_level.ttl ada_ont/ada_level.rml.ttl "
 mvn exec:java -Dexec.mainClass="de.werft.tools.general.DwerftTools" -Dexec.args="convert -u http://ada.filmontology.org/ontology/ ada_in/ada_values.tsv ada_out/ada_values.ttl ada_ont/ada_values.rml.ttl"
-mvn exec:java -Dexec.mainClass="de.werft.tools.general.DwerftTools" -Dexec.args="merge -f rdf/xml ada_out/ada_owl.ttl ada_out/ada_level.ttl ada_out/ada_types.ttl ada_out/ada_values.ttl ada_ont/ada_basic_ontology.owl"
+mvn exec:java -Dexec.mainClass="de.werft.tools.general.DwerftTools" -Dexec.args="merge -f rdf/xml ada_out/ada.owl ada_out/ada_level.ttl ada_out/ada_types.ttl ada_out/ada_values.ttl ada_ont/ada_basic_ontology.owl"
 
 DATE=`date -I`
 sed -i "s/modified>.*<\/dcterms/modified>$DATE<\/dcterms/" ada_out/ada_owl.ttl 

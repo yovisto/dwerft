@@ -12,7 +12,8 @@ import de.werft.tools.rmllib.postprocessing.Postprocessor;
 import de.werft.tools.rmllib.preprocessing.*;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
-import org.openrdf.repository.Repository;
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.rio.RDFFormat;
 
 /**
  * The RmlMapper takes care of the actual conversion process.
@@ -133,7 +134,7 @@ public class RmlMapper {
      * @param doc the {@link Document}
      */
     public RMLDataset convert(Document doc) {
-        Repository repo = docRetrieval.getMappingDoc(doc.getMappingFile().getFile(), org.openrdf.rio.RDFFormat.TURTLE);
+        Repository repo = docRetrieval.getMappingDoc(doc.getMappingFile().getFile(), RDFFormat.TURTLE);
         RMLMapping mapping = mappingFactory.extractRMLMapping(repo);
         RMLDataset dataset = engine.chooseSesameDataSet("dataset", null, null);
         return engine.runRMLMapping(dataset, mapping, "http://example.com", null, null);

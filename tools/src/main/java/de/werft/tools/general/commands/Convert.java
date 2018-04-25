@@ -1,30 +1,23 @@
 package de.werft.tools.general.commands;
 
 import be.ugent.mmlab.rml.model.dataset.RMLDataset;
-
 import com.github.rvesse.airline.annotations.Arguments;
 import com.github.rvesse.airline.annotations.Command;
 import com.github.rvesse.airline.annotations.Option;
 import com.github.rvesse.airline.annotations.help.ProseSection;
 import com.github.rvesse.airline.annotations.restrictions.Required;
-
 import de.werft.tools.general.Document;
 import de.werft.tools.general.DwerftConfig;
 import de.werft.tools.general.DwerftTools;
 import de.werft.tools.rmllib.RmlMapper;
-import de.werft.tools.rmllib.postprocessing.AlePostprocessor;
-import de.werft.tools.rmllib.postprocessing.BasicPostprocessor;
-import de.werft.tools.rmllib.postprocessing.DramaqueenPostprocessor;
-import de.werft.tools.rmllib.postprocessing.Postprocessor;
-import de.werft.tools.rmllib.postprocessing.PreproducerPostprocessor;
+import de.werft.tools.rmllib.postprocessing.*;
 import de.werft.tools.rmllib.preprocessing.*;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFLanguages;
-import org.openrdf.rio.RDFFormat;
+import org.eclipse.rdf4j.rio.RDFFormat;
 
 import java.io.File;
 import java.io.FileOutputStream;
